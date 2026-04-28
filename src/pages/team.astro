@@ -1,0 +1,351 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import erik from '../assets/team/erik.jpg';
+import ritchie from '../assets/team/ritchie.jpg';
+import brianna from '../assets/team/brianna.jpg';
+import shuman from '../assets/team/shuman.jpg';
+import payton from '../assets/team/payton.jpg';
+
+const title = 'Team';
+const description =
+  'The Now City Inc. team and advisors. Founders, head of legal, and senior advisors focused on local economies and urbanism.';
+
+interface Value {
+  number: string;
+  name: string;
+  body: string;
+}
+
+const values: Value[] = [
+  {
+    number: '01',
+    name: 'Cultivate Curiosity',
+    body: "We ask big questions. Where are the healthiest, happiest people and places in the world, and what can we learn from them? How do we build and live better, everywhere? How do we move faster on climate, equity, and resilience? We chase the answers.",
+  },
+  {
+    number: '02',
+    name: 'Catalyze Creativity',
+    body: 'Creativity is imagination in action. It is how we learn, grow, and solve problems. We need it running at full strength to design better places and figure out what nobody else has figured out yet.',
+  },
+  {
+    number: '03',
+    name: 'Be Courageous',
+    body: 'Walk a mile in someone else’s shoes. Face the hard internal and external challenges. Choose to act for the good of the whole. Build and live in new ways that are better for people and planet.',
+  },
+  {
+    number: '04',
+    name: 'Develop Diversity',
+    body: 'Because it is the right thing, and because it works. Diverse communities of people, species, and ideas are healthier, more resilient, more alive. We design for it, hire for it, build for it.',
+  },
+  {
+    number: '05',
+    name: 'Build Trust',
+    body: 'Trust is how a team, a neighborhood, and a partnership stay coordinated. Transparency builds it, even when transparency feels uncomfortable. We choose it anyway.',
+  },
+  {
+    number: '06',
+    name: 'Begin Regeneration',
+    body: 'Sustainable holds the line. Regenerative makes things better than we found them. We are not interested in defending the status quo. We are interested in repair, renewal, and growth.',
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  {/* ============================================================ */}
+  {/* SECTION 1 — HERO                                             */}
+  {/* ============================================================ */}
+  <section class="pt-12 md:pt-20">
+    <div class="container-narrow">
+      <p class="eyebrow">Team</p>
+      <h1 class="mt-5 font-display text-display-xl text-forest-700">
+        Built around the work in front of us.
+      </h1>
+      <p class="lede mt-8">
+        Founders, head of legal, and senior advisors. We hire
+        carefully and bring partners in for the right moment in the
+        right project.
+      </p>
+    </div>
+  </section>
+
+  {/* ============================================================ */}
+  {/* SECTION 2 — LEADERSHIP                                       */}
+  {/* ============================================================ */}
+  <section class="mt-section py-section bg-cream-50">
+    <div class="container-wide">
+      <p class="eyebrow">Leadership</p>
+      <h2 class="mt-5 font-display text-display-lg text-forest-700">
+        The team.
+      </h2>
+
+      <div class="mt-12 grid gap-12 md:grid-cols-3 md:gap-10">
+        <article>
+          <div class="overflow-hidden rounded-md">
+            <Image
+              src={erik}
+              alt="Portrait of Erik Gillberg, co-founder and CEO of Now City Inc."
+              widths={[300, 400, 600]}
+              sizes="(min-width: 768px) 30vw, 100vw"
+              class="aspect-square w-full object-cover"
+            />
+          </div>
+          <h3 class="mt-6 font-display text-2xl text-forest-700">
+            Erik Gillberg
+          </h3>
+          <p class="font-brand text-xs font-medium uppercase tracking-[0.18em] text-stone-500 mt-2">
+            Co-founder &amp; CEO
+          </p>
+          <div class="prose-body mt-4 text-base">
+            <p>
+              Erik is a systems thinker focused on aligning capital,
+              design, and operations into development that is
+              financially viable, operationally sound, and grounded in
+              care. He brings 30 years of property operations and 20
+              years in technology, business development, and startup
+              leadership.
+            </p>
+          </div>
+          <p class="mt-4 text-sm">
+            <a href="https://www.linkedin.com/in/erikgillberg/">LinkedIn →</a>
+          </p>
+        </article>
+
+        <article>
+          <div class="overflow-hidden rounded-md">
+            <Image
+              src={ritchie}
+              alt="Portrait of Ritchie Ju, co-founder and COO of Now City Inc."
+              widths={[300, 400, 600]}
+              sizes="(min-width: 768px) 30vw, 100vw"
+              class="aspect-square w-full object-cover"
+            />
+          </div>
+          <h3 class="mt-6 font-display text-2xl text-forest-700">
+            Ritchie Ju
+          </h3>
+          <p class="font-brand text-xs font-medium uppercase tracking-[0.18em] text-stone-500 mt-2">
+            Co-founder &amp; COO
+          </p>
+          <div class="prose-body mt-4 text-base">
+            <p>
+              Ritchie leads design, development, and operations.
+              B.Architecture from Carnegie Mellon, MS in Architecture
+              and Urban Design from Columbia, MBA candidate at Johns
+              Hopkins. Previously a mobility planner at Lyft in New
+              York, where he led bike-share expansion.
+            </p>
+          </div>
+          <p class="mt-4 text-sm">
+            <a href="https://www.linkedin.com/in/ritchie-ju-616059124/">LinkedIn →</a>
+          </p>
+        </article>
+
+        <article>
+          <div class="overflow-hidden rounded-md">
+            <Image
+              src={brianna}
+              alt="Portrait of Brianna Gonzalez, Head of Legal and Business Relations at Now City Inc."
+              widths={[300, 400, 600]}
+              sizes="(min-width: 768px) 30vw, 100vw"
+              class="aspect-square w-full object-cover"
+            />
+          </div>
+          <h3 class="mt-6 font-display text-2xl text-forest-700">
+            Brianna Gonzalez
+          </h3>
+          <p class="font-brand text-xs font-medium uppercase tracking-[0.18em] text-stone-500 mt-2">
+            Head of Legal &amp; Business Relations
+          </p>
+          <div class="prose-body mt-4 text-base">
+            <p>
+              Brianna is a securities and real-estate attorney.
+              Managing Partner of Keiretsu Law. Her practice spans
+              equity and debt securities offerings, fund formation,
+              and innovative financing structures. Her background in
+              public finance is a particular advantage for navigating
+              public-private partnerships and municipal finance.
+            </p>
+          </div>
+          <p class="mt-4 text-sm">
+            <a href="https://www.linkedin.com/in/briannagonzalez/">LinkedIn →</a>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {/* ============================================================ */}
+  {/* SECTION 3 — ADVISORS                                         */}
+  {/* ============================================================ */}
+  <section class="py-section">
+    <div class="container-wide">
+      <p class="eyebrow">Advisors</p>
+      <h2 class="mt-5 font-display text-display-lg text-forest-700">
+        Senior advisors.
+      </h2>
+      <p class="prose-body mt-6 max-w-2xl">
+        We work with senior advisors whose expertise is directly
+        load-bearing for the work.
+      </p>
+
+      <div class="mt-12 grid gap-12 md:grid-cols-2 md:gap-10">
+        <article>
+          <div class="overflow-hidden rounded-md">
+            <Image
+              src={shuman}
+              alt="Portrait of Michael H. Shuman, advisor on local economies."
+              widths={[300, 500, 800]}
+              sizes="(min-width: 768px) 45vw, 100vw"
+              class="aspect-[4/3] w-full object-cover"
+            />
+          </div>
+          <h3 class="mt-6 font-display text-2xl text-forest-700">
+            Michael H. Shuman
+          </h3>
+          <p class="font-brand text-xs font-medium uppercase tracking-[0.18em] text-stone-500 mt-2">
+            Local economies
+          </p>
+          <div class="prose-body mt-4 text-base">
+            <p>
+              Michael is an economist, attorney, and one of the
+              architects of the 2012 JOBS Act. Adjunct Professor at
+              Bard Business School. Author of Put Your Money Where
+              Your Life Is, The Local Economy Solution, and others.
+              He advises Now City on community-rooted ownership,
+              local capital formation, and finance models that keep
+              wealth in place.
+            </p>
+          </div>
+          <p class="mt-4 text-sm">
+            <a href="https://www.linkedin.com/in/mishuman/">LinkedIn →</a>
+          </p>
+        </article>
+
+        <article>
+          <div class="overflow-hidden rounded-md">
+            <Image
+              src={payton}
+              alt="Portrait of Neal Payton, advisor on urban planning and design."
+              widths={[300, 500, 800]}
+              sizes="(min-width: 768px) 45vw, 100vw"
+              class="aspect-[4/3] w-full object-cover"
+            />
+          </div>
+          <h3 class="mt-6 font-display text-2xl text-forest-700">
+            Neal Payton
+          </h3>
+          <p class="font-brand text-xs font-medium uppercase tracking-[0.18em] text-stone-500 mt-2">
+            Urban planning &amp; design
+          </p>
+          <div class="prose-body mt-4 text-base">
+            <p>
+              Neal, FAIA, FCNU, directs the western U.S. urban and
+              architectural design practice at Torti Gallas. His work
+              focuses on master plans, form-based codes, and the
+              public realm, especially the revitalization of declining
+              urban centers, brownfields, and aging suburbs. He
+              advises Now City on urbanism, master planning, and
+              entitlement strategy.
+            </p>
+          </div>
+          <p class="mt-4 text-sm">
+            <a href="https://www.linkedin.com/in/neal-i-payton-faia-fcnu-675a934/">LinkedIn →</a>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {/* ============================================================ */}
+  {/* SECTION 4 — VALUES (accordion)                               */}
+  {/* ============================================================ */}
+  <section class="py-section bg-cream-50">
+    <div class="container-narrow">
+      <p class="eyebrow">How we show up</p>
+      <h2 class="mt-5 font-display text-display-lg text-forest-700">
+        Six values.
+      </h2>
+      <p class="lede mt-6">
+        Our values drive our design process and our decisions. They
+        help us find the people who want to build this with us.
+      </p>
+      <blockquote class="mt-8 border-l-2 border-copper-400 pl-5 font-display text-lg italic text-forest-800 md:text-xl">
+        Beliefs divide us. Values unite us.
+        <footer class="mt-2 font-sans text-xs not-italic uppercase tracking-[0.18em] text-stone-500">
+          Jeff Rasley
+        </footer>
+      </blockquote>
+
+      <div class="mt-10 divide-y divide-stone-100 border-y border-stone-100">
+        {values.map((v) => (
+          <details class="group value-item">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-6">
+              <div class="flex items-baseline gap-5">
+                <span class="font-brand text-xs font-medium uppercase tracking-[0.18em] text-copper-400">
+                  {v.number}
+                </span>
+                <span class="font-display text-lg leading-snug text-forest-700 md:text-xl">
+                  {v.name}
+                </span>
+              </div>
+              <span
+                class="flex h-7 w-7 flex-none items-center justify-center rounded-full border border-stone-200 text-stone-500 transition-transform group-open:rotate-45 group-open:border-forest-700/30 group-open:text-forest-700"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 16 16" class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                  <path d="M8 2 V14 M2 8 H14" />
+                </svg>
+              </span>
+            </summary>
+            <div class="prose-body pb-6 pl-12 pr-12 text-base">
+              <p>{v.body}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ============================================================ */}
+  {/* SECTION 5 — JOIN US                                          */}
+  {/* ============================================================ */}
+  <section class="py-section">
+    <div class="container-narrow">
+      <p class="eyebrow">Join us</p>
+      <h2 class="mt-5 font-display text-display-md text-forest-700">
+        Help us build it.
+      </h2>
+      <p class="prose-body mt-6">
+        We are designers, developers, and operators who care deeply
+        about people and ecosystems. We are building toward a future
+        where humanity has figured out how to live well without
+        breaking the home world. We could use your help.
+      </p>
+      <p class="prose-body mt-5">
+        We hire carefully across development, urban design, capital,
+        operations, and engineering. Strong candidates with
+        experience in walkable urbanism, district-scale
+        infrastructure, public-private partnerships, or institutional
+        capital are welcome to introduce themselves. Interns and
+        project-based collaborators are welcome too.
+      </p>
+      <p class="prose-body mt-5">
+        Drop us a line at
+        <a href="mailto:hello@nowcity.co">hello@nowcity.co</a>
+        or via the <a href="/contact">Contact page</a>.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hide native disclosure marker on values accordion. */
+  details.value-item summary::-webkit-details-marker {
+    display: none;
+  }
+  details.value-item > summary {
+    list-style: none;
+  }
+</style>

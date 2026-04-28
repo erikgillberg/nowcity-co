@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'FAQs';
+const description =
+  'Common questions about Now City Inc., our brands, our model, and how to work with us.';
+
+interface FaqItem {
+  q: string;
+  a: string[];
+}
+
+interface FaqGroup {
+  heading: string;
+  items: FaqItem[];
+}
+
+const groups: FaqGroup[] = [
+  {
+    heading: 'The company and the brands',
+    items: [
+      {
+        q: 'What is Now City Inc., and how does it relate to Now City Labs, Urban Reboot, and Now City Neighborhoods?',
+        a: [
+          'Now City Inc. is the parent company. We are a regenerative neighborhood developer and operator working on the West Coast.',
+          'Now City Neighborhoods is our consumer-facing brand at nowcity.life. It is the brand under which we develop, market, and operate the neighborhoods themselves. Future residents follow along there.',
+          'Now City Labs is our B2B services and intelligence arm at nowcitylabs.com. We offer the same methodology used in our own projects to landowners, operators, and municipalities as a structured engagement.',
+          'Urban Reboot is a related nonprofit at urbanreboot.org. It operates two related arms: a capacity-building practice that provides technical assistance, advisory, and feasibility support to cities and developers, and a venture philanthropy practice that catalyzes mission-aligned capital into mixed-use, mixed-income neighborhoods. Together, the two arms help cities and developers create and participate in public-private partnerships, especially the early-stage planning, feasibility, and capital-stacking work that traditional capital markets are reluctant to underwrite.',
+          'Same world. Three doors. One company.',
+        ],
+      },
+      {
+        q: 'Where do you develop?',
+        a: [
+          'California and the Pacific Northwest. We focus on the West Coast because land use frameworks, climate adaptation needs, and policy momentum align with our model. We do not currently develop outside the U.S. West Coast.',
+        ],
+      },
+      {
+        q: 'What stage is the company at?',
+        a: [
+          'Now City Inc. is an early-stage company with a long time horizon. We are well-organized for the work in front of us, with founders, head of legal, and a small advisor bench in place. Our pipeline is in active pre-development, and first homes are scheduled for 2029.',
+        ],
+      },
+      {
+        q: 'Why "Now City"?',
+        a: [
+          'Cities take decades to build, but the people who live in them experience them every day, now. Our work is to shorten the distance between long-term place-making and the daily quality of life that residents feel from day one. The "now" is a commitment to that immediacy.',
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'How we work',
+    items: [
+      {
+        q: 'How is Now City different from a traditional developer?',
+        a: [
+          'We start with the land and the systems, then design the program and capital around them. Most development inverts that order. We also operate and steward the neighborhoods we build, rather than exiting at stabilization. And we bring four delivery layers (industrialized construction, green infrastructure, regenerative placemaking, innovative finance) under one team rather than treating them as parallel work streams.',
+        ],
+      },
+      {
+        q: 'What is a typical project size and timeline?',
+        a: [
+          'Our work is at the neighborhood scale, roughly 1,000 to 10,000 residents. Site sizes vary, from compact infill assemblages of a few acres to larger edge-urban or campus-redevelopment opportunities. Pre-development typically runs 18 to 36 months. From site control to first occupancy is generally 4 to 6 years, depending on entitlements and capital.',
+        ],
+      },
+      {
+        q: 'How do you handle community engagement and public-private partnerships?',
+        a: [
+          'Community engagement starts in pre-development, before a plan is locked, and continues through stewardship. Our urbanism is responsive to local fabric and to civic priorities, not imposed onto them.',
+          'On public-private partnerships, we work where municipalities want to partner on shared outcomes (housing, walkability, climate adaptation, fiscal performance) and where the deal structure aligns long-term incentives.',
+          'Urban Reboot, our nonprofit, is the vehicle we use to start that work. As a mission-aligned nonprofit, it can hold philanthropic capital, license shared tooling, and serve as a politically-neutral counterparty for cities during the pre-deal-structure phase. Once a partnership is structured, work moves through standard developer and city channels.',
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'Capital and ownership',
+    items: [
+      {
+        q: 'How are Now City projects financed?',
+        a: [
+          'Projects combine equity and debt sourced from institutional, family-office, and mission-aligned partners, alongside public-sector tools where they apply (LIHTC, MFTE, tax-increment, public infrastructure financing, philanthropic capital, and others). We structure capital around the long-term operating model rather than a short-term exit.',
+        ],
+      },
+      {
+        q: 'Is Now City a real estate fund? Where are your investment vehicles?',
+        a: [
+          'Now City Inc. is not a fund. It is an operating company. We expect to use a variety of project-level vehicles over time, structured deal by deal with our capital partners. If you are interested in conversations about platform-level investment in Now City Inc. or project-level co-investment, see our Investment page for the interest form.',
+        ],
+      },
+      {
+        q: 'Where do tokenization and digital ownership fit in your model?',
+        a: [
+          'We expect that real-asset ownership will eventually trade with the transparency, liquidity, and accessibility of public securities, while preserving the durable value characteristics of physical assets. We are designing our governance, data infrastructure, and ownership architecture so the platform can integrate with digital frameworks as they mature and as regulation catches up.',
+          'We do not currently offer tokenized securities or any digital ownership instrument.',
+        ],
+      },
+      {
+        q: 'How does Urban Reboot deploy capital?',
+        a: [
+          'Urban Reboot uses a flexible, project-level deployment strategy rather than a complex fund-of-funds. Philanthropic grants are deployed bespoke per project to crowd in additional capital from risk-averse investors, structure mission-aligned public-private partnerships, and underwrite the early-stage work (feasibility, capacity-building, impact measurement) that traditional capital markets will not.',
+          'The goal is catalytic: every dollar Urban Reboot deploys is meant to unlock more dollars from sources that would otherwise sit on the sidelines.',
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'Working with Now City',
+    items: [
+      {
+        q: 'I hold land that might be a fit. How do I start a conversation?',
+        a: [
+          'The fastest path is our services arm at nowcitylabs.com. We start with a short framing call, then a structured pre-development engagement if there is a fit.',
+        ],
+      },
+      {
+        q: 'Are you hiring?',
+        a: [
+          'We hire selectively as the work demands it, across development, urban design, capital, operations, and engineering. Strong candidates with experience in walkable urbanism, district-scale infrastructure, public-private partnerships, or institutional capital are always welcome to introduce themselves.',
+          'Reach out via the Contact page.',
+        ],
+      },
+      {
+        q: 'How can I follow what you are building?',
+        a: [
+          'Now City Neighborhoods at nowcity.life is the consumer-facing channel where future residents and the curious follow along. There is a short signup form on that site.',
+        ],
+      },
+    ],
+  },
+];
+
+// Build FAQPage JSON-LD for Google rich results.
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: groups.flatMap((g) =>
+    g.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a.join(' '),
+      },
+    }))
+  ),
+};
+---
+
+<Layout title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  </Fragment>
+
+  {/* ============================================================ */}
+  {/* SECTION 1 — HERO                                             */}
+  {/* ============================================================ */}
+  <section class="pt-12 md:pt-20">
+    <div class="container-narrow">
+      <p class="eyebrow">FAQs</p>
+      <h1 class="mt-5 font-display text-display-xl text-forest-700">
+        Frequently asked questions.
+      </h1>
+      <p class="lede mt-8">
+        Cross-cutting answers for planners, investors, partners, and
+        the curious public. Click any question to expand.
+      </p>
+    </div>
+  </section>
+
+  {/* ============================================================ */}
+  {/* SECTION 2 — FAQ GROUPS                                       */}
+  {/* ============================================================ */}
+  <section class="py-section">
+    <div class="container-narrow">
+      <div class="grid gap-16">
+        {groups.map((group, gi) => (
+          <div>
+            <p class="eyebrow">{`Group 0${gi + 1}`}</p>
+            <h2 class="mt-3 font-display text-display-md text-forest-700">
+              {group.heading}
+            </h2>
+
+            <div class="mt-8 divide-y divide-stone-100 border-y border-stone-100">
+              {group.items.map((item) => (
+                <details class="group faq-item">
+                  <summary class="flex cursor-pointer list-none items-start justify-between gap-6 py-6">
+                    <span class="font-display text-lg leading-snug text-forest-700 md:text-xl">
+                      {item.q}
+                    </span>
+                    <span
+                      class="mt-1 flex h-7 w-7 flex-none items-center justify-center rounded-full border border-stone-200 text-stone-500 transition-transform group-open:rotate-45 group-open:border-forest-700/30 group-open:text-forest-700"
+                      aria-hidden="true"
+                    >
+                      <svg viewBox="0 0 16 16" class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                        <path d="M8 2 V14 M2 8 H14" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div class="prose-body pb-6 pr-12 text-base">
+                    {item.a.map((para) => (
+                      <p>{para}</p>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ============================================================ */}
+  {/* SECTION 3 — STILL HAVE QUESTIONS                             */}
+  {/* ============================================================ */}
+  <section class="py-section bg-cream-50">
+    <div class="container-narrow">
+      <p class="eyebrow">Still have questions?</p>
+      <h2 class="mt-5 font-display text-display-md text-forest-700">
+        Get in touch.
+      </h2>
+      <p class="prose-body mt-6">
+        For general inquiries, reach us via the <a href="/contact">Contact page</a>.
+        For services or development conversations, start at <a href="https://nowcitylabs.com">nowcitylabs.com</a>.
+        For investor and platform-partner conversations, see the <a href="/investment">Investment page</a>.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hide the default disclosure triangle in WebKit browsers. */
+  details.faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  /* Hide for Firefox too. */
+  details.faq-item > summary {
+    list-style: none;
+  }
+</style>

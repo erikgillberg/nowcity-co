@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+import Wordmark from '../components/Wordmark.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Now City Inc. develops walkable, regenerative neighborhoods on the West Coast and operates a platform of brands serving residents, partners, and capital.',
+} = Astro.props;
+
+const fullTitle = title === 'Now City Inc.' ? title : `${title} · Now City Inc.`;
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/';
+
+const nav = [
+  { href: '/approach', label: 'Approach' },
+  { href: '/investment', label: 'Investment' },
+  { href: '/faqs', label: 'FAQs' },
+  { href: '/team', label: 'Team' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={Astro.url.href} />
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-forest-700 focus:px-4 focus:py-2 focus:text-cream focus:no-underline"
+    >
+      Skip to content
+    </a>
+
+    <header class="border-b border-stone-100/60 bg-cream/80 backdrop-blur-sm">
+      <div class="container-wide flex items-center justify-between py-5">
+        <a href="/" class="no-underline" aria-label="Now City home">
+          <Wordmark class="h-9 w-auto md:h-10" />
+        </a>
+        <nav class="hidden gap-8 md:flex" aria-label="Primary">
+          {nav.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                'text-sm font-medium no-underline tracking-tight',
+                currentPath.startsWith(item.href)
+                  ? 'text-forest-700'
+                  : 'text-stone-600 hover:text-forest-700',
+              ]}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="mt-section border-t border-stone-100 py-12">
+      <div class="container-wide grid gap-8 md:grid-cols-3">
+        <div>
+          <Wordmark class="h-8 w-auto" />
+          <p class="prose-body mt-5 max-w-sm text-sm">
+            A regenerative neighborhood developer and operator. Building
+            on the West Coast for the long now.
+          </p>
+        </div>
+        <div>
+          <p class="eyebrow">Our Brands</p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>
+              <a href="https://nowcity.life">Now City Neighborhoods</a>
+              <span class="text-stone-400"> · for residents</span>
+            </li>
+            <li>
+              <a href="https://nowcitylabs.com">Now City Labs</a>
+              <span class="text-stone-400"> · for landowners and operators</span>
+            </li>
+            <li>
+              <a href="https://urbanreboot.org">Urban Reboot</a>
+              <span class="text-stone-400"> · for public-private partnerships</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="eyebrow">Visit</p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li class="text-stone-600">101 Cooper Street</li>
+            <li class="text-stone-600">Santa Cruz, CA 95060</li>
+            <li class="mt-3"><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-wide mt-12 flex flex-col items-start justify-between gap-2 border-t border-stone-100 pt-8 text-xs text-stone-500 md:flex-row md:items-center">
+        <p>© {new Date().getFullYear()} Now City Inc. All rights reserved.</p>
+        <p>
+          <a href="/privacy" class="text-stone-500 hover:text-forest-700">Privacy</a>
+          <span class="mx-2 text-stone-300">·</span>
+          <a href="/cookies" class="text-stone-500 hover:text-forest-700">Cookies</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

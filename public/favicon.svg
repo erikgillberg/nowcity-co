@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <!-- Now City Inc. favicon
+       The "+" mark from the official wordmark, rendered as a self-contained
+       tile with the wordmark green as background and cream as foreground.
+       Path is the BUG path from wordmark_2025.svg, translated to fit a
+       centered 80x80 viewBox.
+  -->
+  <rect width="80" height="80" rx="14" fill="#5A847E"/>
+  <path
+    transform="translate(2 -27)"
+    d="M62.74,77.49s-3.09,0-2.18,0c-5.13,0-9.29,4.31-9.29,9.44v1.89c0,4.01-3.25,7.26-7.26,7.26h-4.07c-4.01,0-7.26-3.25-7.26-7.26v-1.89c0-5.13-4.16-9.44-9.29-9.44.98,0-2.03,0-2.03,0-4.01,0-7.26-3.25-7.26-7.26v-4.07c0-4.01,3.25-7.26,7.26-7.26h1.92s9.4-.4,9.4-9.44v-2.03c0-4.01,3.25-7.26,7.26-7.26h4.07c4.01,0,7.26,3.25,7.26,7.26l.15,2.03c0,9.01,9.19,9.44,9.19,9.44h2.14c4.01,0,7.26,3.25,7.26,7.26v4.07c0,4.01-3.25,7.26-7.26,7.26Z"
+    fill="#F6F4EE"
+  />
+</svg>

@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Contact';
+const description =
+  'Get in touch with Now City Inc. General inquiries, services, partnerships, and investment paths.';
+---
+
+<Layout title={title} description={description}>
+  {/* ============================================================ */}
+  {/* SECTION 1 — HERO                                             */}
+  {/* ============================================================ */}
+  <section class="pt-12 md:pt-20">
+    <div class="container-narrow">
+      <p class="eyebrow">Contact</p>
+      <h1 class="mt-5 font-display text-display-xl text-forest-700">
+        Get in touch.
+      </h1>
+      <p class="lede mt-8">
+        We read every message. The right path depends on what brings
+        you here.
+      </p>
+    </div>
+  </section>
+
+  {/* ============================================================ */}
+  {/* SECTION 2 — PATHS                                            */}
+  {/* ============================================================ */}
+  <section class="py-section">
+    <div class="container-wide">
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="rounded-2xl bg-cream-50 p-8 ring-1 ring-stone-100">
+          <h2 class="font-display text-2xl text-forest-700">
+            Landowners and operators
+          </h2>
+          <p class="prose-body mt-3 text-base">
+            If you steward a site large enough to become a
+            neighborhood, our services arm runs structured
+            pre-development engagements.
+          </p>
+          <p class="mt-6">
+            <a href="https://nowcitylabs.com" class="text-sm font-medium">
+              nowcitylabs.com →
+            </a>
+          </p>
+        </article>
+
+        <article class="rounded-2xl bg-cream-50 p-8 ring-1 ring-stone-100">
+          <h2 class="font-display text-2xl text-forest-700">
+            Capital partners
+          </h2>
+          <p class="prose-body mt-3 text-base">
+            For platform-level investment, project-level
+            co-investment, or strategic partnership conversations,
+            see our Investment overview.
+          </p>
+          <p class="mt-6">
+            <a href="/investment" class="text-sm font-medium">
+              Investment →
+            </a>
+          </p>
+        </article>
+
+        <article class="rounded-2xl bg-cream-50 p-8 ring-1 ring-stone-100">
+          <h2 class="font-display text-2xl text-forest-700">
+            Cities and civic partners
+          </h2>
+          <p class="prose-body mt-3 text-base">
+            Public-private partnerships, planning collaborations,
+            and mission-aligned philanthropic work go through Urban
+            Reboot.
+          </p>
+          <p class="mt-6">
+            <a href="https://urbanreboot.org" class="text-sm font-medium">
+              urbanreboot.org →
+            </a>
+          </p>
+        </article>
+
+        <article class="rounded-2xl bg-cream-50 p-8 ring-1 ring-stone-100">
+          <h2 class="font-display text-2xl text-forest-700">
+            Future residents and the curious
+          </h2>
+          <p class="prose-body mt-3 text-base">
+            Tell us where you would want a Now City neighborhood.
+            We pay attention.
+          </p>
+          <p class="mt-6">
+            <a href="https://nowcity.life" class="text-sm font-medium">
+              nowcity.life →
+            </a>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {/* ============================================================ */}
+  {/* SECTION 3 — DIRECT CONTACT                                   */}
+  {/* ============================================================ */}
+  <section class="py-section bg-cream-50">
+    <div class="container-narrow">
+      <p class="eyebrow">For everything else</p>
+      <h2 class="mt-5 font-display text-display-md text-forest-700">
+        Reach us directly.
+      </h2>
+      <p class="prose-body mt-6">
+        Press, recruiting, advisor introductions, or anything we did
+        not anticipate above:
+      </p>
+
+      <div class="mt-8 rounded-2xl bg-cream p-8 ring-1 ring-stone-100">
+        <p class="text-sm">
+          <span class="font-brand text-xs font-medium uppercase tracking-[0.18em] text-stone-500">
+            Email
+          </span>
+        </p>
+        <p class="mt-2 font-display text-xl text-forest-700">
+          <a href="mailto:hello@nowcity.co">hello@nowcity.co</a>
+        </p>
+
+        <p class="mt-8 text-sm">
+          <span class="font-brand text-xs font-medium uppercase tracking-[0.18em] text-stone-500">
+            Mailing address
+          </span>
+        </p>
+        <p class="prose-body mt-2 text-base">
+          Now City Inc.<br />
+          101 Cooper Street<br />
+          Santa Cruz, CA 95060
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
