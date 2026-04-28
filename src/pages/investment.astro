@@ -293,14 +293,15 @@ const description =
       </div>
 
       {/*
-        Form action URL is a placeholder. Wire to the real submission
-        endpoint (Mailchimp / a backend / formspree) before publishing.
+        Mailchimp endpoint for the "Now City Inc. — Investor Interest"
+        audience (us19, list id 9c44948c78). Distinct from the NCN
+        audience used on nowcity.life.
         Disclaimer text below is verbatim from Brianna and MUST NOT be
-        edited without her review — it establishes the regulatory
+        edited without her review. It establishes the regulatory
         posture for this entire page.
       */}
       <form
-        action="https://nowcitylabs.us19.list-manage.com/subscribe/post?u=88bfb2c8f34fdd20e85cce03f&amp;id=PLACEHOLDER_INTEREST_LIST_ID"
+        action="https://nowcitylabs.us19.list-manage.com/subscribe/post?u=88bfb2c8f34fdd20e85cce03f&amp;id=9c44948c78&amp;f_id=0098bbe7f0"
         method="post"
         target="_blank"
         novalidate
@@ -353,23 +354,23 @@ const description =
           </legend>
           <div class="mt-3 grid gap-2 sm:grid-cols-2">
             <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="radio" name="INVTYPE" value="Individual" class="accent-forest-700" />
+              <input type="radio" name="group[181122]" value="1" class="accent-forest-700" />
               Individual investor
             </label>
             <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="radio" name="INVTYPE" value="Family office" class="accent-forest-700" />
+              <input type="radio" name="group[181122]" value="2" class="accent-forest-700" />
               Family office
             </label>
             <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="radio" name="INVTYPE" value="Institutional" class="accent-forest-700" />
+              <input type="radio" name="group[181122]" value="4" class="accent-forest-700" />
               Institutional
             </label>
             <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="radio" name="INVTYPE" value="Foundation or impact" class="accent-forest-700" />
+              <input type="radio" name="group[181122]" value="8" class="accent-forest-700" />
               Foundation or impact
             </label>
             <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5 sm:col-span-2">
-              <input type="radio" name="INVTYPE" value="Other" class="accent-forest-700" />
+              <input type="radio" name="group[181122]" value="16" class="accent-forest-700" />
               Something else
             </label>
           </div>
@@ -382,23 +383,23 @@ const description =
           <p class="mt-1 text-xs text-stone-500">Optional. Pick anything that fits.</p>
           <div class="mt-3 grid gap-2">
             <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="checkbox" name="INT_PLATFORM" class="accent-forest-700" />
+              <input type="checkbox" name="group[181123][32]" class="accent-forest-700" />
               Platform-level investment in Now City Inc.
             </label>
             <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="checkbox" name="INT_PROJECT" class="accent-forest-700" />
+              <input type="checkbox" name="group[181123][64]" class="accent-forest-700" />
               Project-level co-investment
             </label>
             <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="checkbox" name="INT_PARTNER" class="accent-forest-700" />
+              <input type="checkbox" name="group[181123][128]" class="accent-forest-700" />
               Strategic partnerships and joint ventures
             </label>
             <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="checkbox" name="INT_PHIL" class="accent-forest-700" />
+              <input type="checkbox" name="group[181123][256]" class="accent-forest-700" />
               Philanthropic alignment with Urban Reboot
             </label>
             <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="checkbox" name="INT_CURIOUS" class="accent-forest-700" />
+              <input type="checkbox" name="group[181123][512]" class="accent-forest-700" />
               General curiosity
             </label>
           </div>
@@ -444,9 +445,9 @@ const description =
           </p>
         </div>
 
-        {/* Mailchimp anti-bot honeypot. Update name when interest list ID is set. */}
+        {/* Mailchimp anti-bot honeypot. Hidden field; bots fill it, humans don't. */}
         <div style="position:absolute;left:-5000px" aria-hidden="true">
-          <input type="text" name="b_88bfb2c8f34fdd20e85cce03f_PLACEHOLDER_INTEREST_LIST_ID" tabindex="-1" value="" />
+          <input type="text" name="b_88bfb2c8f34fdd20e85cce03f_9c44948c78" tabindex="-1" value="" />
         </div>
 
         <div class="mt-2">
