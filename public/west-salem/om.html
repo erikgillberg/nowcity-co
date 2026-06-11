@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confidential Investment Summary — Now City West Salem</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.fintable{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+.fintable th{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);text-align:right;padding:9px 10px;border-bottom:2px solid var(--line);white-space:nowrap}
+.fintable th:first-child{text-align:left}
+.fintable td{padding:8px 10px;border-bottom:1px solid rgba(0,0,0,.06);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fintable td:first-child{text-align:left;white-space:normal}
+.fintable tr.total td{font-weight:700;border-top:2px solid var(--line);border-bottom:none;background:rgba(168,112,63,.05)}
+.fintable tr.base td{background:rgba(108,125,94,.1);font-weight:600}
+.fintable tr.subtle td{color:#8a857a}
+.table-scroll{overflow-x:auto}
+.unitmix{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:8px}
+.unitmix th{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);text-align:left;padding:10px 12px;border-bottom:2px solid var(--line)}
+.unitmix td{padding:9px 12px;border-bottom:1px solid rgba(0,0,0,.06)}
+.unitmix tr:last-child td{border-bottom:none;font-weight:700}
+.qa{border-bottom:1px solid var(--line);padding:26px 0}
+.qa:last-child{border:none}
+.qa .q{font-family:var(--serif);font-size:19px;color:var(--ink-deep);margin-bottom:10px}
+.qa .a{font-size:15.5px}
+.divider{position:relative;color:#fff;padding:140px 0;text-align:center}
+.divider .shade{position:absolute;inset:0;background:rgba(20,18,14,.62)}
+.divider .wrap{position:relative}
+.divider h2{font-size:clamp(32px,5vw,52px);color:var(--cream);margin:14px 0 12px}
+.divider p{font-family:var(--serif);font-style:italic;font-size:19px;color:#e8dfc9}
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:760px){.app-grid{grid-template-columns:1fr}}
+.disclaimer{font-size:12px;line-height:1.7;color:#8a857a}
+.vibe-card{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.vibe-card .txt{padding:34px 32px}
+.vibe-card .img{min-height:280px;background-size:cover;background-position:center}
+.vibe-card.flip .txt{order:2}
+@media(max-width:820px){.vibe-card{grid-template-columns:1fr}.vibe-card .img{min-height:220px;order:0!important}}
+.avatar{width:108px;height:108px;border-radius:50%;margin-bottom:18px;border:3px solid #3d392f;background:#2b2823;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:32px;color:#d9a26c}
+details.fin{border:1px solid var(--line);border-radius:8px;background:var(--cream-2);margin-top:18px}
+details.fin summary{cursor:pointer;padding:18px 24px;font-family:var(--serif);font-size:17px;color:var(--ink-deep);list-style:none;display:flex;justify-content:space-between;align-items:center}
+details.fin summary::after{content:'+';font-size:22px;color:var(--terra)}
+details.fin[open] summary::after{content:'–'}
+details.fin .inner{padding:0 24px 24px}
+.toplink{position:fixed;right:22px;bottom:22px;z-index:90;width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;opacity:0;pointer-events:none;transition:opacity .3s;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.toplink.show{opacity:1;pointer-events:auto}
+</style>
+</head>
+<body class="gated">
+
+<!-- PASSCODE GATE -->
+<div id="gate">
+  <div class="panel">
+    <div class="eyebrow" style="color:#d9a26c">Now City West Salem</div>
+    <h1 class="serif">Confidential<br>Investment Summary</h1>
+    <p>This document is furnished solely for the purpose of considering investment in the property described herein. Enter the access code to continue.</p>
+    <form id="gateform">
+      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+      <div class="err" id="gateerr"></div>
+    </form>
+    <p style="margin-top:22px;font-size:12.5px">Need access? Contact <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
+    <p style="margin-top:8px"><a href="index.html" style="color:#a39d8f;font-size:12.5px">← Back to project home</a></p>
+  </div>
+</div>
+
+<div class="page">
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Now City West Salem</a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="plan.html">Business Plan</a></li>
+      <li><a href="activation.html">Activation</a></li>
+      <li><a href="om.html" class="active">Investment Summary</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#summary">Executive Summary</a>
+    <a href="#offering">The Offering</a>
+    <a href="#project">The Project</a>
+    <a href="#market">Market</a>
+    <a href="#financials">Financials</a>
+    <a href="#devplan">Development Plan</a>
+    <a href="#impact">Impact &amp; Placemaking</a>
+    <a href="#team">Team</a>
+    <a href="#faq">Investor FAQ</a>
+    <a href="#disclaimers">Disclaimers</a>
+  </div>
+</div>
+
+<header class="hero short" id="top">
+  <div class="bg" style="background-image:url('assets/mp-01.jpg')"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="eyebrow">A mixed-use wellness and technology innovation district redefining Salem's urban identity</div>
+    <h1>Now City<br>West Salem</h1>
+    <p class="sub">Confidential Investment Summary</p>
+    <div class="meta">Presented by Now City Inc &nbsp;·&nbsp; For discussion purposes only — subject to change pending site control and due diligence</div>
+  </div>
+</header>
+
+<!-- 1 EXECUTIVE SUMMARY -->
+<section id="summary">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">01 · Executive Summary</div>
+      <h2>A rare window where land use, policy, and market momentum align</h2>
+      <p class="lead">In Salem, Oregon, the under-appreciated and growing capital, Now City is catalyzing the transformation of an aging light-industrial corridor into a high-density, mixed-use innovation and entertainment district. The City has already rezoned the area to support this shift, creating a rare window where land use, policy, and market momentum are aligned.</p>
+      <p style="margin-top:18px">Now City's strategy begins with an incrementally phased 5.29-acre mixed-use development (Phase One) and scales through the formation of a Qualified Opportunity Fund to assemble up to 40 acres, activate regional mobility and landmark attractions, and deploy a new generation of regenerative urban infrastructure across the district.</p>
+      <p style="margin-top:18px">Regionally, the project is strategically aligned with Oregon's expanding Silicon Forest innovation economy, including Oregon State University in nearby Corvallis, home to the Jen-Hsun Huang and Lori Mills Huang Collaborative Innovation Complex for AI, robotics, semiconductors, climate science, and ag-tech.</p>
+    </div>
+    <div class="rv">
+      <h3 class="serif" style="font-size:21px;margin-bottom:22px">The district at completion</h3>
+      <div class="stats">
+        <div class="stat"><div class="num">18 AC</div><div class="lbl">River-adjacent district, four phases</div></div>
+        <div class="stat"><div class="num">~780</div><div class="lbl">Attainable, healthy, beautiful apartments, townhomes &amp; condos</div></div>
+        <div class="stat"><div class="num">100–150</div><div class="lbl">Lease-to-own townhouses</div></div>
+        <div class="stat"><div class="num">105,000 SF</div><div class="lbl">Experiential retail + flex work + small business</div></div>
+        <div class="stat"><div class="num">100,000+ SF</div><div class="lbl">Sports, recreation &amp; wellness facility</div></div>
+        <div class="stat"><div class="num">100-key</div><div class="lbl">Hotel with meeting &amp; event space</div></div>
+        <div class="stat"><div class="num">100,000 SF</div><div class="lbl">Green + civic space</div></div>
+      </div>
+    </div>
+    <div class="rv" style="margin-top:56px">
+      <h3 class="serif" style="font-size:21px;margin-bottom:6px">District Baseline Financials</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:24px">West Salem 18.5-acre financial projections</p>
+      <div class="stats">
+        <div class="stat"><div class="num">$400M</div><div class="lbl">Total capitalization</div></div>
+        <div class="stat"><div class="num">$120M</div><div class="lbl">Equity required (phased)</div></div>
+        <div class="stat"><div class="num">25%</div><div class="lbl">Levered IRR</div></div>
+        <div class="stat"><div class="num">2.5x</div><div class="lbl">Equity multiple</div></div>
+        <div class="stat"><div class="num">6.9%</div><div class="lbl">Untrended yield on cost</div></div>
+        <div class="stat"><div class="num">10 yr</div><div class="lbl">Investment term</div></div>
+      </div>
+    </div>
+    <div class="note rv">This summary is aligned with the <a href="plan.html" style="color:var(--terra)">10-Year Phased Development Business Plan</a> (June 2026), which details site control, interim activation, capital formation, and the four district phases.</div>
+  </div>
+</section>
+
+<!-- 2 THE OFFERING -->
+<section id="offering" class="dark">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">02 · The Offering</div>
+      <h2>The entry point: capitalizing Phase 1A</h2>
+    </div>
+    <div class="grid g2 rv">
+      <div class="card" style="border-left:3px solid #d9a26c">
+        <h3>Raising: $4 Million <span class="eyebrow" style="display:inline-block;margin-left:8px">50% committed</span></h3>
+        <p class="muted" style="font-size:14px;margin-bottom:10px">Phase 1A capital requirement — uses for the next 18–24 months:</p>
+        <ol class="numlist">
+          <li><strong>$2,000,000</strong> — Land acquisition / contribution</li>
+          <li><strong>$1,200,000</strong> — Entitlement &amp; permitting cost (to shovel ready)</li>
+          <li><strong>$150,000</strong> — Contingencies</li>
+          <li><strong>$400,000</strong> — Developer fees</li>
+          <li><strong>$250,000</strong> — Operating cost (legal, fundraising, etc.)</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Co-GP Financial Overview</h3>
+        <p class="muted" style="font-size:14px;margin-bottom:16px">Assuming $3.6 million invested and 5-year hold</p>
+        <div class="stats" style="grid-template-columns:1fr 1fr 1fr;gap:24px 18px">
+          <div class="stat"><div class="num" style="font-size:28px">43.8%</div><div class="lbl">Co-GP IRR</div></div>
+          <div class="stat"><div class="num" style="font-size:28px">3.2x</div><div class="lbl">Equity multiple</div></div>
+          <div class="stat"><div class="num" style="font-size:28px">$9.8M</div><div class="lbl">Estimated profits</div></div>
+        </div>
+        <ul class="tick" style="margin-top:16px;font-size:14px">
+          <li>High-impact OZ + URA incentives — any gains from tax credits flow straight to investors as additional upside beyond the modeled promote</li>
+          <li>Low basis, high design quality</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card rv" style="margin-top:26px">
+      <h3>Willamette Wellness OZ Fund — the district growth vehicle</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:10px">Unlocking district-scale value that individual parcels can't access — a coordinated district growth vehicle that improves economic vitality, human well-being, and environmental performance at once.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 30px">
+        <ol class="numlist">
+          <li><strong>$100M 10-year Qualified Opportunity Zone fund</strong> to achieve district-scale control of up to 40 acres in West Salem</li>
+          <li><strong>$60M strategic acquisitions + $40M district enablement</strong> — entitlements, infrastructure, district systems</li>
+        </ol>
+        <ol class="numlist" style="counter-reset:n 2">
+          <li><strong>Structured exclusively for OZ-eligible capital</strong> through a dedicated QOF → QOZB operating structure</li>
+          <li><strong>An OZ district control platform</strong> that upstreams value to the entire vertical OZ ecosystem through phased JV capitalization and institutional exits</li>
+        </ol>
+      </div>
+      <p class="muted" style="font-size:13.5px;margin-top:14px">Designed for early value realization through refinancings and JV recaps, with full OZ optimization at 10+ years. Multiple capital pathways — OZ fund, strategic equity, bridge + equity, HUD financing, and a hybrid stack — are detailed in the <a href="plan.html#capital" style="color:#d9a26c">Business Plan capital formation strategy</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 THE PROJECT -->
+<section id="project" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">03 · The Project</div>
+      <h2>The District Scale Vision</h2>
+      <p class="lead">Now City West Salem is a next-generation urban district designed for everyday vitality, prosperity, and long-term resilience — integrating housing, work, play, food, wellness, and mobility into a connected daily experience.</p>
+    </div>
+    <div class="figure-block rv" style="margin-top:0"><img src="assets/om/om08.jpg" alt="District-scale vision map" loading="lazy"><div class="fig-cap">The district-scale vision — West Salem and the Willamette riverfront</div></div>
+    <div class="figure-block rv"><img src="assets/om/om05.jpg" alt="Context aerial of Phase One within West Salem" loading="lazy"><div class="fig-cap">Context — Phase One within the district</div></div>
+
+    <div class="rv" style="margin-top:64px">
+      <h3 class="serif" style="font-size:22px;margin-bottom:6px">District phasing</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:24px">Per the 10-Year Phased Development Business Plan — each phase is sequenced as absorption and revenue justify expansion.</p>
+      <div class="grid g4">
+        <a class="card on-alt" href="plan.html#phase1" style="text-decoration:none"><h4>Phase 1 · 5.29 AC</h4><h3 style="font-size:16.5px">Innovation District + Residential Catalyst</h3><p class="muted" style="font-size:13px">Mark May Parcel · 740 Bassett St NW</p></a>
+        <a class="card on-alt" href="plan.html#phase2" style="text-decoration:none"><h4>Phase 2 · 6.50 AC</h4><h3 style="font-size:16.5px">Courtyard Residential Neighborhood</h3><p class="muted" style="font-size:13px">300 Patterson St NW</p></a>
+        <a class="card on-alt" href="plan.html#phase3" style="text-decoration:none"><h4>Phase 3 · 6.50 AC</h4><h3 style="font-size:16.5px">Sports &amp; Entertainment District</h3><p class="muted" style="font-size:13px">400 Patterson St NW</p></a>
+        <a class="card on-alt" href="plan.html#phase4" style="text-decoration:none"><h4>Phase 4 · 3.9 AC</h4><h3 style="font-size:16.5px">Riverview Penthouses &amp; Multifamily</h3><p class="muted" style="font-size:13px">809 Edgewater St NW</p></a>
+      </div>
+      <p class="muted rv" style="font-size:13.5px;margin-top:16px">Phase 0 (site control, due diligence &amp; capital formation) and Phase 0B (West Salem Works interim activation) precede and de-risk vertical development — see the <a href="plan.html#phase0" style="color:var(--terra)">Business Plan</a>.</p>
+    </div>
+
+    <div class="sec-head rv" style="margin-top:72px;margin-bottom:30px">
+      <h3 class="serif" style="font-size:26px;margin-bottom:12px">The Entry Point — Phase 1A: Scandi Block</h3>
+      <p class="lead">A 2.3-acre Scandinavian courtyard block with Japanese garden philosophy. Inspired by Copenhagen's courtyard urbanism and Japanese spatial calm, the block creates family-friendly density with a quiet interior garden and walkable retail edges.</p>
+    </div>
+    <div class="stats rv">
+      <div class="stat"><div class="num">200</div><div class="lbl">Attainable, healthy, beautiful apartments, townhomes &amp; condos</div></div>
+      <div class="stat"><div class="num">6,000 SF</div><div class="lbl">Retail</div></div>
+      <div class="stat"><div class="num">2,000 SF</div><div class="lbl">Incubator &amp; office</div></div>
+      <div class="stat"><div class="num">20,000 SF</div><div class="lbl">Kid-safe green space</div></div>
+      <div class="stat"><div class="num">100</div><div class="lbl">Parking spots</div></div>
+    </div>
+    <div class="figure-block rv"><img src="assets/om/om22.jpg" alt="Phase 1A and 1B context within the parcel" loading="lazy"><div class="fig-cap">Context — Phase 1A and Phase 1B within the 5.29-acre parcel</div></div>
+    <div class="figure-block rv"><img src="assets/om/om23.jpg" alt="Scandi Block concept" loading="lazy"><div class="fig-cap">The Scandi Block</div></div>
+    <div class="figure-block rv"><img src="assets/om/om24.jpg" alt="Home as sanctuary interior concept" loading="lazy"><div class="fig-cap">Home as Sanctuary — light-filled homes blend natural materials and Nordic simplicity with high-performance building systems that improve comfort, reduce energy costs, and support everyday wellness</div></div>
+
+    <div class="grid g2 rv" style="margin-top:64px">
+      <div class="card on-alt">
+        <h3>Phase 1A In Focus</h3>
+        <table class="unitmix">
+          <tr><th>Type</th><th>SF/Unit (NRA)</th><th>Beds</th><th>Units</th></tr>
+          <tr><td>Studio</td><td>400</td><td>1</td><td>10</td></tr>
+          <tr><td>Jr. 1 BR</td><td>525</td><td>1</td><td>20</td></tr>
+          <tr><td>1 BR</td><td>625</td><td>1</td><td>80</td></tr>
+          <tr><td>1 BR + Office</td><td>725</td><td>1</td><td>20</td></tr>
+          <tr><td>2 BR</td><td>900</td><td>2</td><td>50</td></tr>
+          <tr><td>2 BR + Office</td><td>1,100</td><td>2</td><td>17</td></tr>
+          <tr><td>3 BR</td><td>1,300</td><td>3</td><td>3</td></tr>
+          <tr><td>Total Units</td><td></td><td></td><td>200</td></tr>
+        </table>
+        <ul class="tick" style="margin-top:16px;font-size:14px">
+          <li>Retail &amp; Entertainment: 6,000 SF</li>
+          <li>Incubator &amp; Office: 2,000 SF</li>
+          <li>Amenities &amp; Civic: 5,000 SF</li>
+          <li>100+ unbundled parking spots (onsite + offsite)</li>
+        </ul>
+        <figure style="margin-top:18px;border-radius:6px;overflow:hidden"><img src="assets/om/om25.jpg" alt="Phase 1A massing study" loading="lazy"></figure>
+        <p class="muted" style="font-size:12.5px;margin-top:8px">Massing study only</p>
+      </div>
+      <div class="card on-alt">
+        <h3>Phase 1A &amp; 1B In Focus</h3>
+        <table class="unitmix">
+          <tr><th>Type</th><th>SF/Unit (NRA)</th><th>Beds</th><th>Units</th></tr>
+          <tr><td>Studio</td><td>400</td><td>1</td><td>19</td></tr>
+          <tr><td>Jr. 1 BR</td><td>525</td><td>1</td><td>38</td></tr>
+          <tr><td>1 BR</td><td>625</td><td>1</td><td>152</td></tr>
+          <tr><td>1 BR + Office</td><td>725</td><td>1</td><td>38</td></tr>
+          <tr><td>2 BR</td><td>900</td><td>2</td><td>95</td></tr>
+          <tr><td>2 BR + Office</td><td>1,100</td><td>2</td><td>33</td></tr>
+          <tr><td>3 BR</td><td>1,300</td><td>3</td><td>5</td></tr>
+          <tr><td>Total Units</td><td></td><td></td><td>380</td></tr>
+        </table>
+        <ul class="tick" style="margin-top:16px;font-size:14px">
+          <li>Retail &amp; Entertainment: 22,000 SF</li>
+          <li>Incubator &amp; Office: 18,000 SF</li>
+          <li>Amenities &amp; Civic: 10,000 SF</li>
+          <li>300+ structured parking spots</li>
+        </ul>
+        <figure style="margin-top:18px;border-radius:6px;overflow:hidden"><img src="assets/om/om32.jpg" alt="Phase 1A and 1B massing study" loading="lazy"></figure>
+        <p class="muted" style="font-size:12.5px;margin-top:8px">Massing study only</p>
+      </div>
+    </div>
+
+    <div class="card on-alt rv" style="margin-top:26px">
+      <h3>Phase One — the disciplined entry point</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:10px">Phase 1 is structured as a disciplined, revenue-generating entry point that validates demand, underwriting, and execution ahead of district-scale expansion.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start">
+        <ul class="tick">
+          <li>Phase 1: 5.29 AC mixed use — 380 multifamily units + amenities (phased construction)</li>
+          <li>40,000 SF of commercial (experiential retail + F&amp;B + tech innovation flex office)</li>
+          <li>Immediate regional draw: serving Keizer, Albany, Corvallis, south Portland suburbs</li>
+          <li>Opportunity Zone + Urban Renewal Area for stacked tax advantages</li>
+        </ul>
+        <figure style="border-radius:6px;overflow:hidden"><img src="assets/om/om49.jpg" alt="Phase One massing study" loading="lazy"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 MARKET -->
+<section id="market">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">04 · Market Overview</div>
+      <h2>Why Salem, why now</h2>
+      <p class="lead">Nature, access, and undervalued quality of life. Salem sits at the heart of the Willamette River Valley, one of the most livable and productive regions in the U.S. — rare proximity to world-class nature, a growing innovation economy, and a lower-cost, under-recognized lifestyle advantage.</p>
+    </div>
+
+    <div class="rv">
+      <h3 class="serif" style="font-size:22px;margin-bottom:6px">The Next Silicon Story: Why Salem Is Poised</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:24px">State capitals like Austin saw rents nearly double in 10 years; Denver grew 32% in 5 years. With property values more than doubled in those markets, Salem is next.</p>
+      <div class="grid g3">
+        <div class="card" style="border-top:3px solid var(--terra)">
+          <h4>Salem, OR · Silicon Forest</h4>
+          <ul class="tick" style="font-size:14px">
+            <li>Population (2025): 180K</li>
+            <li>2025 rent: $1,600/month</li>
+            <li>Cycle position: ground floor, high upside potential</li>
+            <li>Tech: Nvidia, Intel, Oregon State University</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Denver, CO</h4>
+          <ul class="tick" style="font-size:14px">
+            <li>Population (2010 → 2020): 600K → 715K</li>
+            <li>2015–2025 rent increase: $1,184 → $1,672/month (+41%)</li>
+            <li>Cycle position: middle, more potential upside</li>
+            <li>Tech: Arrow, Palantir HQ, big tech offices</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Austin, TX · Silicon Hills</h4>
+          <ul class="tick" style="font-size:14px">
+            <li>City population (2010 → 2020): 790K → ~979K</li>
+            <li>2015–2025 rent increase: $1,200 → $2,500/month (+92%)</li>
+            <li>Cycle position: mature</li>
+            <li>Tech: Tesla, Oracle, UT-Austin, big tech offices</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g3 rv" style="margin-top:54px">
+      <div class="card">
+        <h4>Why Salem</h4>
+        <ol class="numlist">
+          <li>45 minutes to Portland (international airport, talent, culture)</li>
+          <li>60 minutes to the Oregon Coast</li>
+          <li>Surrounded by vineyards, farms, rivers, and forests</li>
+          <li>Four-season outdoor living (hiking, cycling, water, wine, mountains)</li>
+          <li>Strong in-migration from California and the Pacific Northwest</li>
+          <li>Undervalued relative to quality of life and long-term upside</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4>City of Salem Alignment</h4>
+        <ol class="numlist">
+          <li>Expands Salem's long-term tax base while preserving near-term employment and enabling gradual land use transition</li>
+          <li>Delivers new housing supply calibrated to local incomes, workforce needs, and demographic demand</li>
+          <li>Activates the Willamette Riverfront and strengthens west–east connectivity through targeted infrastructure sequencing</li>
+          <li>Reduces long-term infrastructure strain by prioritizing walkability, proximity, and daily services</li>
+          <li>Phases density, traffic, and investment in alignment with absorption and performance thresholds</li>
+          <li>Positions Salem to capture regional growth while maintaining local control and fiscal discipline</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4>Oregon State Alignment</h4>
+        <ol class="numlist">
+          <li>A coordinated urban development initiative that strengthens housing supply, job creation, and long-term tax base growth at once</li>
+          <li>A phased, infrastructure-aligned approach supporting housing delivery, workforce stability, and private investment confidence</li>
+          <li>Designed to align with statewide housing production goals, economic development priorities, and talent retention strategies</li>
+          <li>Advances efficient use of Opportunity Zone and urban renewal tools without expanding public balance-sheet risk</li>
+          <li>Supports construction, small business formation, and innovation-sector employment across the Willamette Valley</li>
+          <li>A replicable district framework for mid-sized Oregon cities seeking durable, market-driven growth</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="grid g2 rv" style="margin-top:54px">
+      <div class="card">
+        <h3>The Location — Proximity To…</h3>
+        <ul class="tick">
+          <li>45-minute commute to the Huang Collaborative Innovation Complex (NVIDIA) for AI research at Oregon State University</li>
+          <li>Interstate 5, major thoroughfares, bridges, parks, museums, bike trails, and public transit</li>
+          <li>Retailers such as Costco, Roth's Fresh Market, Walmart Supercenter, and Home Depot, among others</li>
+          <li>State Capitol — nearing completion of a $600M capital improvement project</li>
+          <li>Willamette University and Western Oregon University</li>
+          <li>Salem Hospital — one of the busiest ERs on the West Coast, 650 beds, with a recently completed 150-bed patient tower</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Housing Demand — The Core Stability Layer</h3>
+        <ul class="tick">
+          <li>Multifamily housing in Salem is significantly undersupplied (avg 6% multifamily vacancy rate)</li>
+          <li>54% of households within 1.5 miles are renters (above city average)</li>
+          <li>Renters spend 36–37% of income on housing, creating a captive tenant pool</li>
+          <li>Median income projected to rise from $58,860 (2024) to $67,159 (2030)</li>
+          <li>Supports $1,600–$2,500 rents with 15% of units reserved for workforce housing (80–120% AMI)</li>
+          <li>Multifamily program provides durable cash flow, strong absorption, and OZ tax advantages</li>
+        </ul>
+        <figure style="margin-top:18px;border-radius:6px;overflow:hidden"><img src="assets/om/om-housing.jpg" alt="Townhouse and courtyard housing render" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <div class="grid g2 rv" style="margin-top:26px">
+      <div class="card">
+        <h3>Market &amp; Economic Drivers</h3>
+        <ul class="tick" style="font-size:14.5px">
+          <li><strong>Strong demographics</strong> — City of Salem ~180,000 | MSA 441,000; 50.3% of downtown residents college educated; 48% aged 25–59 (prime renters); 32% of households earn $75K–$150K annually</li>
+          <li><strong>Undersupplied rental market</strong> — limited new deliveries near the CBD; strong demand, rising rents, low vacancy; few active comps in the pipeline = first-mover advantage</li>
+          <li><strong>Housing stability &amp; retail demand</strong> — 54% renter households; &lt;6% vacancy; $275M+ retail leakage within 1.5 miles; curated F&amp;B focus avoids oversupply</li>
+          <li><strong>Implications</strong> — stable government + healthcare employment; predictable daytime population to backfill retail and F&amp;B tenants; #1 ag county + food processors with authentic branding around Salem's food heritage; growing visitor economy supporting boutique hospitality; logistics + robotics innovation fueling demand for market-rate apartments</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Latent Opportunity</h3>
+        <ul class="tick" style="font-size:14.5px">
+          <li><strong>Critical undersupply</strong> — &lt;2% vacancy in the core market → severe pricing power; 636 units of unmet demand = immediate absorption; thin pipeline means premium exit multiples for first movers</li>
+          <li><strong>Retail &amp; lifestyle compatibility</strong> — $60K+ average disposable income; opportunity to capture $7M in unmet F&amp;B demand; strong fit for incubator retail, restaurant adaptive reuse, and curated ground-floor activation</li>
+        </ul>
+        <figure style="margin-top:18px;border-radius:6px;overflow:hidden"><img src="assets/om/om-market.jpg" alt="Food hall and experiential retail interior render" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <div class="card rv" style="margin-top:26px;border-left:3px solid var(--terra)">
+      <h3>Strategic Advantage: Location, Workforce &amp; Demographics</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:10px">The district sits at the nexus of Salem's growth corridor.</p>
+      <div class="grid g3">
+        <div><h4>Mobility</h4><p style="font-size:14.5px">Wallace Road carries 30,000+ daily trips, linking directly to downtown Salem.</p></div>
+        <div><h4>Employment Base</h4><p style="font-size:14.5px">Within 3 miles, 5,300 businesses employ over 63,000 workers, providing both renter households and daytime audiences for retail and events.</p></div>
+        <div><h4>Daytime Population</h4><p style="font-size:14.5px">Over 51,000 people within 1.5 miles — a vital base for local vibrance, events and retail activity.</p></div>
+      </div>
+    </div>
+
+    <div class="card rv" style="margin-top:26px;border-left:3px solid var(--green-soft)">
+      <h3>Thesis</h3>
+      <p style="font-size:15.5px;margin-bottom:18px">As OSU graduates hundreds of AI, robotics, and materials science professionals into Oregon's economy starting in 2026, Now City West Salem will be ready with housing, flex office &amp; lab space, and cultural amenities designed to capture and retain this talent — ensuring Salem becomes not only Oregon's capital, but also a magnet for its innovation economy.</p>
+      <div class="grid g3">
+        <div>
+          <h4>Why Here?</h4>
+          <ul class="tick" style="font-size:14px">
+            <li>Undersupplied housing, retail leakage, rising incomes</li>
+            <li>Prime location: I-5, Willamette River, Opportunity Zone + Urban Renewal Area</li>
+            <li>Stable government employment base anchors demand</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Why Now?</h4>
+          <ul class="tick" style="font-size:14px">
+            <li>Pro-development city; by-right development &amp; upzoning of West Salem riverfront</li>
+            <li>Portland headwinds = Salem's opportunity</li>
+            <li>OSU's Huang Innovation Complex (Nvidia founder) &amp; local robotics growth</li>
+            <li>Technology-driven job growth</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Why Us?</h4>
+          <ul class="tick" style="font-size:14px">
+            <li>Local expertise + strong city relationships</li>
+            <li>Team has entitled thousands of units &amp; structured billions in capital</li>
+            <li>Passion for resilient healthy placemaking, economic development, and long-term value creation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-grid rv" style="margin-top:54px">
+      <div><div class="slide" style="margin-top:0"><img src="assets/om/om55.jpg" alt="Supply dynamics: construction pipeline and forecasted deliveries" loading="lazy"></div><div class="slide-cap">Supply Dynamics — construction pipeline &amp; forecasted deliveries</div></div>
+      <div><div class="slide" style="margin-top:0"><img src="assets/om/om56.jpg" alt="Land comparables" loading="lazy"></div><div class="slide-cap">Land Comparables</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 FINANCIALS -->
+<section id="financials" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">05 · Financial Analysis</div>
+      <h2>Baseline financials, sources &amp; uses, and sensitivity</h2>
+      <p class="lead">Underwriting reflects a conservative base case. Pre-development value-add strategies are activated to improve returns for GPs and LPs beyond the modeled base.</p>
+    </div>
+
+    <div class="grid g2 rv">
+      <div class="card on-alt">
+        <h3>Phase 1A Baseline</h3>
+        <p class="muted" style="font-size:14px;margin-bottom:16px">2.3 acres of 5.29 acres at 740 Bassett St NW</p>
+        <div class="stats" style="grid-template-columns:1fr 1fr 1fr;gap:24px 18px">
+          <div class="stat"><div class="num" style="font-size:26px">$70M</div><div class="lbl">Total capitalization</div></div>
+          <div class="stat"><div class="num" style="font-size:26px">$23M</div><div class="lbl">Equity (phased)</div></div>
+          <div class="stat"><div class="num" style="font-size:26px">30%</div><div class="lbl">Levered IRR</div></div>
+          <div class="stat"><div class="num" style="font-size:26px">2.3x</div><div class="lbl">Equity multiple</div></div>
+          <div class="stat"><div class="num" style="font-size:26px">6.8%</div><div class="lbl">Untrended YoC</div></div>
+          <div class="stat"><div class="num" style="font-size:26px">5 yr</div><div class="lbl">Investment term</div></div>
+        </div>
+      </div>
+      <div class="card on-alt">
+        <h3>Phase 1 Baseline</h3>
+        <p class="muted" style="font-size:14px;margin-bottom:16px">5.29 acres at 740 Bassett St NW — aligns strategic capital partners around tangible assets, operating cash flow, and priority access to future district phases</p>
+        <div class="stats" style="grid-template-columns:1fr 1fr 1fr;gap:24px 18px">
+          <div class="stat"><div class="num" style="font-size:26px">$144M</div><div class="lbl">Total capitalization</div></div>
+          <div class="stat"><div class="num" style="font-size:26px">$46.5M</div><div class="lbl">Equity (phased)</div></div>
+          <div class="stat"><div class="num" style="font-size:26px">31%</div><div class="lbl">Levered IRR</div></div>
+          <div class="stat"><div class="num" style="font-size:26px">2.3x</div><div class="lbl">Equity multiple</div></div>
+          <div class="stat"><div class="num" style="font-size:26px">6.9%</div><div class="lbl">Untrended YoC</div></div>
+          <div class="stat"><div class="num" style="font-size:26px">5 yr</div><div class="lbl">Investment term</div></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="serif rv" style="font-size:22px;margin:54px 0 8px">Project Sources &amp; Uses</h3>
+    <div class="grid g2 rv">
+      <div class="card on-alt">
+        <h4>Phase 1A (2.3 AC)</h4>
+        <div class="table-scroll">
+        <table class="fintable">
+          <tr><th>Sources of Capital</th><th>Amount</th><th>Per GSF</th><th>Per Unit</th><th>% of Total</th></tr>
+          <tr><td>Debt</td><td>$46,181,023</td><td>$176</td><td>$222,024</td><td>65.72%</td></tr>
+          <tr><td>Grants</td><td>$1,000,000</td><td>$4</td><td>$4,808</td><td>1.42%</td></tr>
+          <tr><td>Sales proceeds</td><td>$0</td><td>$0</td><td>$0</td><td>0.00%</td></tr>
+          <tr><td>Total Equity</td><td>$23,083,387</td><td>$88.1</td><td>$110,978</td><td>32.85%</td></tr>
+          <tr class="subtle"><td>— LP Equity</td><td>$18,621,719</td><td>$71</td><td>$89,527</td><td>26.50%</td></tr>
+          <tr class="subtle"><td>— Co-GP Equity</td><td>$4,461,668</td><td>$17</td><td>$21,450</td><td>6.35%</td></tr>
+          <tr class="total"><td>Total Sources</td><td>$70,264,410</td><td>$268</td><td>$337,810</td><td>100.00%</td></tr>
+        </table>
+        <table class="fintable" style="margin-top:22px">
+          <tr><th>Uses of Capital</th><th>Amount</th><th>Per GSF</th><th>Per Unit</th><th>% of Total</th></tr>
+          <tr><td>Pre-Development Cost</td><td>$4,000,000</td><td>$15</td><td>$19,231</td><td>5.69%</td></tr>
+          <tr><td>Land Development Costs</td><td>$1,040,000</td><td>$4</td><td>$5,000</td><td>1.48%</td></tr>
+          <tr><td>Hard Costs</td><td>$45,624,620</td><td>$174</td><td>$219,349</td><td>64.93%</td></tr>
+          <tr><td>Contingency (10.0%)</td><td>$4,562,462</td><td>$17.4</td><td>$21,935</td><td>6.49%</td></tr>
+          <tr><td>Soft Costs</td><td>$8,320,853</td><td>$32</td><td>$40,004</td><td>11.84%</td></tr>
+          <tr><td>Other Costs</td><td>$504,380</td><td>$2</td><td>$2,425</td><td>0.72%</td></tr>
+          <tr><td>Financing Costs</td><td>$6,212,094</td><td>$24</td><td>$29,866</td><td>8.84%</td></tr>
+          <tr class="total"><td>Total Uses</td><td>$70,264,410</td><td>$268.0</td><td>$337,810</td><td>100.00%</td></tr>
+        </table>
+        </div>
+      </div>
+      <div class="card on-alt">
+        <h4>Phase 1 (5.29 AC)</h4>
+        <div class="table-scroll">
+        <table class="fintable">
+          <tr><th>Sources of Capital</th><th>Amount</th><th>Per GSF</th><th>Per Unit</th><th>% of Total</th></tr>
+          <tr><td>Debt</td><td>$96,184,392</td><td>$168</td><td>$229,010</td><td>66.93%</td></tr>
+          <tr><td>Grants</td><td>$1,000,000</td><td>$2</td><td>$2,381</td><td>0.70%</td></tr>
+          <tr><td>Sales proceeds</td><td>$0</td><td>$0</td><td>$0</td><td>0.00%</td></tr>
+          <tr><td>Total Equity</td><td>$46,522,800</td><td>$81</td><td>$110,769</td><td>32.37%</td></tr>
+          <tr class="subtle"><td>— LP Equity</td><td>$38,092,344</td><td>$66</td><td>$90,696</td><td>26.51%</td></tr>
+          <tr class="subtle"><td>— Co-GP Equity</td><td>$8,430,456</td><td>$15</td><td>$20,073</td><td>5.87%</td></tr>
+          <tr class="total"><td>Total Sources</td><td>$143,707,191</td><td>$251</td><td>$342,160</td><td>100.00%</td></tr>
+        </table>
+        <table class="fintable" style="margin-top:22px">
+          <tr><th>Uses of Capital</th><th>Amount</th><th>Per GSF</th><th>Per Unit</th><th>% of Total</th></tr>
+          <tr><td>Pre-Development Cost</td><td>$7,500,000</td><td>$13</td><td>$17,857</td><td>5.22%</td></tr>
+          <tr><td>Land Development Costs</td><td>$2,600,000</td><td>$5</td><td>$6,190</td><td>1.81%</td></tr>
+          <tr><td>Hard Costs</td><td>$93,293,520</td><td>$163</td><td>$222,127</td><td>64.92%</td></tr>
+          <tr><td>Contingency (10.0%)</td><td>$9,329,352</td><td>$16</td><td>$22,213</td><td>6.49%</td></tr>
+          <tr><td>Soft Costs</td><td>$17,046,717</td><td>$30</td><td>$40,587</td><td>11.86%</td></tr>
+          <tr><td>Other Costs</td><td>$1,031,360</td><td>$2</td><td>$2,456</td><td>0.72%</td></tr>
+          <tr><td>Financing Costs</td><td>$12,906,243</td><td>$23</td><td>$30,729</td><td>8.98%</td></tr>
+          <tr class="total"><td>Total Uses</td><td>$143,707,191</td><td>$251</td><td>$342,160</td><td>100.00%</td></tr>
+        </table>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="serif rv" style="font-size:22px;margin:54px 0 8px">Project Returns / Sensitivity Analysis — Exit Cap Rates</h3>
+    <div class="card on-alt rv">
+      <h4>Phase 1A (2.3 AC)</h4>
+      <div class="table-scroll">
+      <table class="fintable">
+        <tr><th>Exit Cap Rate (Overall)</th><th>4.12%</th><th>4.62%</th><th class="base">5.13% · Base</th><th>5.63%</th><th>6.13%</th></tr>
+        <tr><td>Exit Cap Rate — Commercial</td><td>6%</td><td>7%</td><td>7%</td><td>8%</td><td>8%</td></tr>
+        <tr><td>Exit Cap Rate — Residential</td><td>4%</td><td>4.5%</td><td>5%</td><td>5.5%</td><td>6%</td></tr>
+        <tr><td>Exit Year Revenue</td><td colspan="5" style="text-align:center">$6,613,674</td></tr>
+        <tr><td>(Less: Operating Expenses)</td><td colspan="5" style="text-align:center">-$1,699,263</td></tr>
+        <tr><td>Exit Year NOI</td><td colspan="5" style="text-align:center">$4,914,412</td></tr>
+        <tr><td>Stabilized NOI</td><td colspan="5" style="text-align:center">$5,062,001</td></tr>
+        <tr><td>Gross Sales Proceeds</td><td>$119,355,763</td><td>$106,333,637</td><td>$95,885,127</td><td>$87,313,940</td><td>$80,154,596</td></tr>
+        <tr><td>(Less: Sales Costs)</td><td>-$1,193,558</td><td>-$1,063,336</td><td>-$958,851</td><td>-$873,139</td><td>-$801,546</td></tr>
+        <tr><td>Net Exit Value</td><td>$118,162,205</td><td>$105,270,301</td><td>$94,926,276</td><td>$86,440,801</td><td>$79,353,050</td></tr>
+        <tr><td>(Less: Permanent Loan Payoff at Exit)</td><td colspan="5" style="text-align:center">-$47,583,302</td></tr>
+        <tr><td>Net Proceeds from Exit</td><td>$70,578,903</td><td>$57,686,999</td><td>$47,342,974</td><td>$38,857,499</td><td>$31,769,748</td></tr>
+        <tr><td>Plus: Operating Cash Flows after Financing</td><td colspan="5" style="text-align:center">$6,102,530</td></tr>
+        <tr><td>(Less: Equity)</td><td colspan="5" style="text-align:center">-$23,083,387</td></tr>
+        <tr class="total"><td>Net Profit</td><td>$53,598,047</td><td>$40,706,142</td><td>$30,362,118</td><td>$21,876,642</td><td>$14,788,892</td></tr>
+        <tr class="total"><td>Levered IRR</td><td>45.31%</td><td>37.54%</td><td>30.40%</td><td>23.70%</td><td>17.29%</td></tr>
+        <tr class="total"><td>Levered Equity Multiple</td><td>3.3x</td><td>2.8x</td><td>2.3x</td><td>1.9x</td><td>1.6x</td></tr>
+      </table>
+      </div>
+    </div>
+    <div class="card on-alt rv" style="margin-top:26px">
+      <h4>Phase 1 (5.29 AC)</h4>
+      <div class="table-scroll">
+      <table class="fintable">
+        <tr><th>Exit Cap Rate (Overall)</th><th>4.24%</th><th>4.75%</th><th class="base">5.26% · Base</th><th>5.76%</th><th>6.27%</th></tr>
+        <tr><td>Exit Cap Rate — Commercial</td><td>6%</td><td>6.5%</td><td>7%</td><td>7.5%</td><td>8%</td></tr>
+        <tr><td>Exit Cap Rate — Residential</td><td>4.00%</td><td>4.50%</td><td>5.00%</td><td>5.50%</td><td>6.00%</td></tr>
+        <tr><td>Exit Year Revenue</td><td colspan="5" style="text-align:center">$13,731,904</td></tr>
+        <tr><td>(Less: Operating Expenses)</td><td colspan="5" style="text-align:center">-$3,446,513</td></tr>
+        <tr><td>Exit Year NOI</td><td colspan="5" style="text-align:center">$10,285,391</td></tr>
+        <tr><td>Stabilized NOI</td><td colspan="5" style="text-align:center">$10,594,430</td></tr>
+        <tr><td>Gross Sales Proceeds</td><td>$242,575,457</td><td>$216,618,138</td><td>$195,724,288</td><td>$178,536,233</td><td>$164,143,525</td></tr>
+        <tr><td>(Less: Sales Costs)</td><td>-$2,425,755</td><td>-$2,166,181</td><td>-$1,957,243</td><td>-$1,785,362</td><td>-$1,641,435</td></tr>
+        <tr><td>Net Exit Value</td><td>$240,149,703</td><td>$214,451,956</td><td>$193,767,045</td><td>$176,750,871</td><td>$162,502,089</td></tr>
+        <tr><td>(Less: Permanent Loan Payoff at Exit)</td><td colspan="5" style="text-align:center">-$97,390,237</td></tr>
+        <tr><td>Net Proceeds from Exit</td><td>$142,759,466</td><td>$117,061,720</td><td>$96,376,808</td><td>$79,360,635</td><td>$65,111,853</td></tr>
+        <tr><td>Plus: Operating Cash Flows after Financing</td><td colspan="5" style="text-align:center">$12,857,215</td></tr>
+        <tr><td>(Less: Equity)</td><td colspan="5" style="text-align:center">-$46,522,800</td></tr>
+        <tr class="total"><td>Net Profit</td><td>$109,093,881</td><td>$83,396,135</td><td>$62,711,224</td><td>$45,695,050</td><td>$31,446,268</td></tr>
+        <tr class="total"><td>Levered IRR</td><td>45.7%</td><td>38.07%</td><td>31.04%</td><td>24.44%</td><td>18.13%</td></tr>
+        <tr class="total"><td>Levered Equity Multiple</td><td>3.3x</td><td>2.8x</td><td>2.3x</td><td>2.0x</td><td>1.7x</td></tr>
+      </table>
+      </div>
+    </div>
+
+    <h3 class="serif rv" style="font-size:22px;margin:54px 0 4px">Sensitivity Analyses (2.3 AC)</h3>
+    <p class="muted rv" style="font-size:14px">Base case shaded. Columns: change variable, dollar difference, delta, project IRR, average LP cash-on-cash, LP IRR, LP multiple, LP profit, GP profit.</p>
+
+    <details class="fin rv"><summary>Hard Cost <span class="muted" style="font-size:12.5px;font-family:var(--sans)">increment 2.50%</span></summary><div class="inner table-scroll">
+      <table class="fintable">
+        <tr><th>Hard Cost</th><th>Diff</th><th>Delta</th><th>Project IRR</th><th>Avg LP CoC</th><th>LP IRR</th><th>LP Multiple</th><th>LP Profit</th><th>GP Profit</th></tr>
+        <tr><td>$50,022,389</td><td>$2,382,019</td><td>+5%</td><td>27.36%</td><td>7%</td><td>30.1%</td><td>1.9x</td><td>$18,462,782</td><td>$8,616,926</td></tr>
+        <tr><td>$48,831,379</td><td>$1,191,009</td><td>+3%</td><td>28.88%</td><td>8%</td><td>31.8%</td><td>2.0x</td><td>$19,488,492</td><td>$9,232,420</td></tr>
+        <tr class="base"><td>$47,640,370</td><td>$0</td><td>0%</td><td>30.40%</td><td>8%</td><td>33.5%</td><td>2.1x</td><td>$20,514,202</td><td>$9,847,915</td></tr>
+        <tr><td>$46,449,361</td><td>-$1,191,009</td><td>-2.50%</td><td>31.92%</td><td>8.30%</td><td>35.1%</td><td>2.2x</td><td>$21,539,912</td><td>$10,463,410</td></tr>
+        <tr><td>$45,258,352</td><td>-$2,382,019</td><td>-5.00%</td><td>33.44%</td><td>8.60%</td><td>36.8%</td><td>2.3x</td><td>$22,565,622</td><td>$11,078,904</td></tr>
+      </table>
+    </div></details>
+
+    <details class="fin rv"><summary>Operating Expenses <span class="muted" style="font-size:12.5px;font-family:var(--sans)">increment 5.00%</span></summary><div class="inner table-scroll">
+      <table class="fintable">
+        <tr><th>OpEx</th><th>Diff</th><th>Delta</th><th>Project IRR</th><th>Avg LP CoC</th><th>LP IRR</th><th>LP Multiple</th><th>LP Profit</th><th>GP Profit</th></tr>
+        <tr><td>$4,633,390</td><td>$421,217</td><td>+10%</td><td>28%</td><td>8%</td><td>30.4%</td><td>2.0x</td><td>$18,462,782</td><td>$8,666,165</td></tr>
+        <tr><td>$4,422,782</td><td>$210,609</td><td>+5%</td><td>29%</td><td>8%</td><td>31.9%</td><td>2.0x</td><td>$19,488,492</td><td>$9,257,040</td></tr>
+        <tr class="base"><td>$4,212,173</td><td>$0</td><td>0%</td><td>30.4%</td><td>8%</td><td>33.5%</td><td>2.1x</td><td>$20,514,202</td><td>$9,847,915</td></tr>
+        <tr><td>$4,001,564</td><td>-$210,609</td><td>-5.00%</td><td>31.62%</td><td>8.20%</td><td>35.0%</td><td>2.1x</td><td>$21,539,912</td><td>$10,438,790</td></tr>
+        <tr><td>$3,790,956</td><td>-$421,217</td><td>-10.00%</td><td>32.83%</td><td>8.50%</td><td>36.5%</td><td>2.2x</td><td>$22,565,622</td><td>$11,029,665</td></tr>
+      </table>
+    </div></details>
+
+    <details class="fin rv"><summary>Rents on Operated Units <span class="muted" style="font-size:12.5px;font-family:var(--sans)">increment 2.50%</span></summary><div class="inner table-scroll">
+      <table class="fintable">
+        <tr><th>Rents</th><th>Diff</th><th>Delta</th><th>Project IRR</th><th>Avg LP CoC</th><th>LP IRR</th><th>LP Multiple</th><th>LP Profit</th><th>GP Profit</th></tr>
+        <tr><td>$5,364,219</td><td>-$282,327</td><td>-5%</td><td>28%</td><td>8%</td><td>30.4%</td><td>2.0x</td><td>$18,462,782</td><td>$8,764,644</td></tr>
+        <tr><td>$5,505,382</td><td>-$141,164</td><td>-2%</td><td>29%</td><td>8%</td><td>31.9%</td><td>2.0x</td><td>$19,488,492</td><td>$9,306,280</td></tr>
+        <tr class="base"><td>$5,646,546</td><td>$0</td><td>0%</td><td>30.4%</td><td>8%</td><td>33.5%</td><td>2.1x</td><td>$20,514,202</td><td>$9,847,915</td></tr>
+        <tr><td>$5,787,710</td><td>$141,164</td><td>+2.50%</td><td>31.54%</td><td>8.20%</td><td>35.0%</td><td>2.2x</td><td>$21,539,912</td><td>$10,389,550</td></tr>
+        <tr><td>$5,928,873</td><td>$282,327</td><td>+5.00%</td><td>32.68%</td><td>8.50%</td><td>36.5%</td><td>2.2x</td><td>$22,565,622</td><td>$10,931,186</td></tr>
+      </table>
+    </div></details>
+
+    <details class="fin rv"><summary>Vacancy <span class="muted" style="font-size:12.5px;font-family:var(--sans)">increment 2.50%</span></summary><div class="inner table-scroll">
+      <table class="fintable">
+        <tr><th>Vacancy</th><th>Diff</th><th>Delta</th><th>Project IRR</th><th>Avg LP CoC</th><th>LP IRR</th><th>LP Multiple</th><th>LP Profit</th><th>GP Profit</th></tr>
+        <tr><td>10%</td><td>n/a</td><td>+6%</td><td>26%</td><td>7%</td><td>27.8%</td><td>1.8x</td><td>$16,821,646</td><td>$7,779,853</td></tr>
+        <tr><td>7.5%</td><td>n/a</td><td>+4%</td><td>28%</td><td>7%</td><td>30.2%</td><td>2.0x</td><td>$18,360,211</td><td>$8,641,545</td></tr>
+        <tr class="base"><td>5%</td><td>n/a</td><td>+1%</td><td>30.4%</td><td>8%</td><td>33.5%</td><td>2.1x</td><td>$20,514,202</td><td>$9,847,915</td></tr>
+        <tr><td>2.5%</td><td>n/a</td><td>-1.50%</td><td>31.54%</td><td>8.20%</td><td>34.9%</td><td>2.2x</td><td>$21,437,341</td><td>$10,364,931</td></tr>
+        <tr><td>0%</td><td>n/a</td><td>-4.00%</td><td>33.44%</td><td>8.60%</td><td>37.2%</td><td>2.3x</td><td>$22,975,906</td><td>$11,226,623</td></tr>
+      </table>
+    </div></details>
+
+    <details class="fin rv"><summary>Interest on Construction Loan <span class="muted" style="font-size:12.5px;font-family:var(--sans)">increment 0.50%</span></summary><div class="inner table-scroll">
+      <table class="fintable">
+        <tr><th>Rate</th><th>Diff</th><th>Delta</th><th>Project IRR</th><th>Avg LP CoC</th><th>LP IRR</th><th>LP Multiple</th><th>LP Profit</th><th>GP Profit</th></tr>
+        <tr><td>8%</td><td>+100 bps</td><td>+1%</td><td>30%</td><td>8%</td><td>32.9%</td><td>2.1x</td><td>$20,144,946</td><td>$9,631,261</td></tr>
+        <tr><td>7.5%</td><td>+50 bps</td><td>+1%</td><td>30%</td><td>8%</td><td>33.2%</td><td>2.1x</td><td>$20,329,574</td><td>$9,739,588</td></tr>
+        <tr class="base"><td>7%</td><td>0 bps</td><td>0%</td><td>30.4%</td><td>8%</td><td>33.5%</td><td>2.1x</td><td>$20,514,202</td><td>$9,847,915</td></tr>
+        <tr><td>6.5%</td><td>-50 bps</td><td>-0.50%</td><td>30.58%</td><td>8.00%</td><td>33.7%</td><td>2.1x</td><td>$20,698,830</td><td>$9,956,242</td></tr>
+        <tr><td>6%</td><td>-100 bps</td><td>-1.00%</td><td>30.76%</td><td>8.10%</td><td>34.0%</td><td>2.1x</td><td>$20,883,458</td><td>$10,064,569</td></tr>
+      </table>
+    </div></details>
+
+    <details class="fin rv"><summary>Interest on Refi Loan <span class="muted" style="font-size:12.5px;font-family:var(--sans)">increment 0.50%</span></summary><div class="inner table-scroll">
+      <table class="fintable">
+        <tr><th>Rate</th><th>Diff</th><th>Delta</th><th>Project IRR</th><th>Avg LP CoC</th><th>LP IRR</th><th>LP Multiple</th><th>LP Profit</th><th>GP Profit</th></tr>
+        <tr><td>8%</td><td>+100 bps</td><td>+1%</td><td>30%</td><td>8%</td><td>21.4%</td><td>2.1x</td><td>$20,062,890</td><td>$9,572,173</td></tr>
+        <tr><td>7.5%</td><td>+50 bps</td><td>+1%</td><td>30%</td><td>8%</td><td>21.6%</td><td>2.1x</td><td>$20,288,546</td><td>$9,710,044</td></tr>
+        <tr class="base"><td>7%</td><td>0 bps</td><td>0%</td><td>30.4%</td><td>8%</td><td>33.5%</td><td>2.1x</td><td>$20,514,202</td><td>$9,847,915</td></tr>
+        <tr><td>6.5%</td><td>-50 bps</td><td>-0.50%</td><td>30.63%</td><td>8.10%</td><td>22.0%</td><td>2.1x</td><td>$20,739,858</td><td>$9,985,786</td></tr>
+        <tr><td>6%</td><td>-100 bps</td><td>-1.00%</td><td>30.86%</td><td>8.10%</td><td>22.2%</td><td>2.1x</td><td>$20,965,514</td><td>$10,123,657</td></tr>
+      </table>
+    </div></details>
+
+    <div class="note rv" style="margin-top:34px">Note: underwriting reflects a conservative base case. In pre-development, value-add strategies (regenerative placemaking, industrialized construction, green infrastructure, innovative finance) are activated to improve returns for GPs and LPs, deliver superior outcomes for residents and stakeholders, and position the district to attract corporate partners and long-term offtakers such as pension funds.</div>
+  </div>
+</section>
+
+<!-- 6 DEVELOPMENT PLAN -->
+<section id="devplan" class="dark">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">06 · Development Plan &amp; Timeline</div>
+      <h2>From site control to exit</h2>
+      <p class="lead">The development plan follows the value creation sequence set out in the 10-Year Phased Development Business Plan: Control Land → Create Value → Build Catalyst Phase → Expand District → Stabilize → Exit.</p>
+    </div>
+    <div class="flow rv" style="margin-bottom:48px">
+      <div class="step"><span class="n">1</span><span>LOI</span></div><div class="arrow">→</div>
+      <div class="step"><span class="n">2</span><span>Due Diligence &amp; Capital Raise</span></div><div class="arrow">→</div>
+      <div class="step"><span class="n">3</span><span>Financing Secured</span></div><div class="arrow">→</div>
+      <div class="step"><span class="n">4</span><span>Land Contribution</span></div><div class="arrow">→</div>
+      <div class="step"><span class="n">5</span><span>JV Formation</span></div><div class="arrow">→</div>
+      <div class="step"><span class="n">6</span><span>Phase 1 Construction</span></div><div class="arrow">→</div>
+      <div class="step"><span class="n">7</span><span>District Expansion</span></div>
+    </div>
+    <div class="grid g3 rv">
+      <div class="card">
+        <h4>Phase 1 · Year 0–1</h4>
+        <ul class="tick" style="font-size:14px"><li>LOI execution</li><li>Due diligence</li><li>Master planning</li><li>Entitlements</li><li>Capital raise</li><li>Financing commitments</li></ul>
+      </div>
+      <div class="card">
+        <h4>Phase 1 · Year 1–3</h4>
+        <ul class="tick" style="font-size:14px"><li>Phased construction — multifamily, retail, office</li></ul>
+      </div>
+      <div class="card">
+        <h4>Phase 1 · Year 3–5</h4>
+        <ul class="tick" style="font-size:14px"><li>Lease-up</li><li>Operational stabilization &amp; financial seasoning</li><li>Innovation district activation</li><li>Project sale, refinance, or roll over to full district</li></ul>
+      </div>
+    </div>
+    <div class="note rv" style="border-color:#d9a26c">De-risked by Phase 0B — West Salem Works: interim adaptive reuse of the 300 and 400 Patterson buildings generates operating income, tenant commitments, event traffic, and community proof-of-demand before major vertical construction begins, reducing market and entitlement risk for OZ equity, strategic partners, and lenders. <a href="plan.html#phase0b" style="color:#d9a26c">Details in the Business Plan →</a></div>
+    <div class="gantt rv" style="background:#2b2823;border-color:#3d392f">
+      <div class="gantt-inner">
+        <div class="g-yrs"><span style="font-weight:700;color:#e9e5da">10-Year Horizon</span><span>Y1</span><span>Y2</span><span>Y3</span><span>Y4</span><span>Y5</span><span>Y6</span><span>Y7</span><span>Y8</span><span>Y9</span><span>Y10</span></div>
+        <div class="g-row"><div class="g-lbl">Phase 0 — Site Control</div><div class="g-bar b0" style="grid-column:2/span 1"></div></div>
+        <div class="g-row"><div class="g-lbl">Phase 0B — Activation</div><div class="g-bar b0b" style="grid-column:2/span 3"></div></div>
+        <div class="g-row"><div class="g-lbl">Phase 1 — Catalyst</div><div class="g-bar b1" style="grid-column:2/span 5"></div></div>
+        <div class="g-row"><div class="g-lbl">Phase 2 — Courtyard Res.</div><div class="g-bar b2" style="grid-column:5/span 4"></div></div>
+        <div class="g-row"><div class="g-lbl">Phase 3 — Sports &amp; Ent.</div><div class="g-bar b3" style="grid-column:7/span 3"></div></div>
+        <div class="g-row"><div class="g-lbl">Phase 4 — Edgewater</div><div class="g-bar b4" style="grid-column:8/span 3"></div></div>
+        <div class="g-row"><div class="g-lbl">Exit Window</div><div class="g-bar" style="grid-column:10/span 2;background:repeating-linear-gradient(45deg,#c8b89a,#c8b89a 6px,#8a7d63 6px,#8a7d63 12px)"></div></div>
+      </div>
+      <div class="g-note" style="color:#a39d8f">Indicative sequencing aligned with the 10-Year Phased Development Business Plan (June 2026). Exit paths: district sale, long-term hold, or component disposition.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 IMPACT & PLACEMAKING -->
+<section id="impact">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">07 · Impact &amp; Placemaking</div>
+      <h2>Designed for everyday vitality</h2>
+      <p class="lead">Now City's mission is to accelerate the transition to regenerative, resilient, and equitable communities and cities.</p>
+    </div>
+    <div class="grid g3 rv">
+      <div class="card"><h4>Regeneration</h4><p style="font-size:14.5px">Restore the natural systems that sustain daily life (clean air, water, soil, and food), improving personal health while rebuilding ecological function at the neighborhood and district scale.</p></div>
+      <div class="card"><h4>Resilience</h4><p style="font-size:14.5px">Homes, mobility, energy, food, and social systems are designed to perform under stress (climate and economic disruption), strengthening household security and community-wide stability.</p></div>
+      <div class="card"><h4>Equity</h4><p style="font-size:14.5px">Designing around the realities of caregiving, childhood, aging, mobility independence, and access to opportunity improves daily life for individuals while creating more stable, connected, and inclusive communities for all.</p></div>
+    </div>
+
+    <div class="vibe-card rv" style="margin-top:54px">
+      <div class="txt">
+        <h3 class="serif" style="font-size:21px;margin-bottom:14px">Regenerative Placemaking</h3>
+        <ul class="tick" style="font-size:14.5px">
+          <li><strong>Built for Well-Being</strong> — biophilic streetscapes, shaded walking paths, green plazas, and active gathering spaces that support daily movement, mental health, and social connection</li>
+          <li><strong>Culture &amp; Flavor</strong> — breweries, food halls, artisan retail, and year-round programming that celebrate local creativity, craft, and regional identity</li>
+          <li><strong>Innovation in Daily Life</strong> — maker spaces, startup studios, and flexible work environments that place entrepreneurship, research, and creation directly into the fabric of the district</li>
+          <li><strong>Connected Living</strong> — walkable streets, safe bike networks, and future-forward transit connections that seamlessly link the district to downtown Salem, the riverfront, and the region</li>
+        </ul>
+      </div>
+      <div class="img" style="background-image:url('assets/om/om-placemaking.jpg')"></div>
+    </div>
+
+    <div class="vibe-card flip rv" style="margin-top:26px">
+      <div class="txt">
+        <h3 class="serif" style="font-size:21px;margin-bottom:10px">Resilience by Design</h3>
+        <p class="muted" style="font-size:14px;margin-bottom:10px">Now City West Salem is designed to quietly become a resilience hub — not through emergency labeling, but through everyday civic life. By anchoring the district in shared gathering, local infrastructure, and walkable access to daily needs, resilience emerges naturally as a byproduct of good urban design.</p>
+        <ol class="numlist" style="font-size:14.5px">
+          <li><strong>Indoor soccer arena &amp; event space</strong> as a year-round community gathering and response anchor</li>
+          <li><strong>District-scale green infrastructure</strong> integrating power, heating and cooling, wastewater, last-mile mobility, and data infrastructure for continuous operation under stress</li>
+          <li><strong>High-paying innovation jobs + regenerative placemaking</strong> connecting people to nature, heritage, and long-term opportunity</li>
+        </ol>
+      </div>
+      <div class="img" style="background-image:url('assets/om/om-resilience.jpg')"></div>
+    </div>
+
+    <div class="vibe-card rv" style="margin-top:26px">
+      <div class="txt">
+        <h3 class="serif" style="font-size:21px;margin-bottom:10px">Beyond Agrihoods: Food as District Infrastructure</h3>
+        <p class="muted" style="font-size:14px;margin-bottom:10px">A living innovation framework to design, test, and scale urban+rural circular food systems. By linking regenerative agriculture, food logistics, local markets, waste recovery, and community participation, the district becomes a real-world platform for proving what truly resilient food economies look like.</p>
+        <ol class="numlist" style="font-size:14.5px">
+          <li><strong>Urban+rural circular food systems</strong> connecting regional regenerative farms with on-site processing, markets, and daily life</li>
+          <li><strong>Living testbed for agri-tech + soil + food innovation</strong> supporting founders, researchers, and farmers</li>
+          <li><strong>Closed-loop nutrient and organic waste recovery</strong> feeding back into regional food production</li>
+          <li><strong>Scalable agrihood innovation framework</strong> that can be replicated globally</li>
+        </ol>
+      </div>
+      <div class="img" style="background-image:url('assets/om/om-food.jpg')"></div>
+    </div>
+
+    <div class="vibe-card flip rv" style="margin-top:26px">
+      <div class="txt">
+        <h3 class="serif" style="font-size:21px;margin-bottom:10px">Regenerative AI — A New Kind of Innovation District</h3>
+        <p class="muted" style="font-size:14px;margin-bottom:10px">At first glance, "Regenerative AI" may sound like an oxymoron. We believe it reflects the work ahead: redirecting powerful digital tools toward the healing and long-term resilience of living systems. West Salem is imagined as an innovation district made to incubate a new generation of graduates, founders, and community leaders in applying AI in ways that restore ecological health and strengthen human wellbeing — directly within the fabric of daily life.</p>
+        <ol class="numlist" style="font-size:14.5px">
+          <li>Improve building performance, energy efficiency, and material stewardship</li>
+          <li>Support mobility optimization and accessibility</li>
+          <li>Enable real-time water, waste, and resource intelligence</li>
+          <li>Strengthen food systems, climate adaptation, and carbon awareness</li>
+          <li>Enhance public health insights, safety, and community services</li>
+        </ol>
+      </div>
+      <div class="img" style="background-image:url('assets/om/om-ai.jpg')"></div>
+    </div>
+
+    <div class="vibe-card rv" style="margin-top:26px">
+      <div class="txt">
+        <h3 class="serif" style="font-size:21px;margin-bottom:10px">Landscape Intelligence: Designing Nature as Infrastructure</h3>
+        <p class="muted" style="font-size:14px;margin-bottom:10px">Not just parks or green decoration — treating landscape as living infrastructure: integrated ecology, climate adaptation, social systems, and public health. It means designing with nature's logic, not tacking nature onto development.</p>
+        <ol class="numlist" style="font-size:14.5px">
+          <li><strong>"City-Nature" as foundational infrastructure</strong> — ecology woven into streets, plazas, and open space as a working system, not surface decoration</li>
+          <li><strong>Climate and water performance by design</strong> — cooling, stormwater management, and microclimate regulation handled through living landscapes</li>
+          <li><strong>Health, biodiversity, and public life integrated</strong> — landscapes that simultaneously support human well-being, habitat, and social connection</li>
+          <li><strong>Adaptive and evolving open space</strong> — flexible landscapes that change with use, seasons, and the district's long-term growth</li>
+        </ol>
+      </div>
+      <div class="img" style="background-image:url('assets/om/om-landscape.jpg')"></div>
+    </div>
+
+    <div class="vibe-card flip rv" style="margin-top:26px">
+      <div class="txt">
+        <h3 class="serif" style="font-size:21px;margin-bottom:10px">Women-First, Family-First, and Aging-In-Place Design</h3>
+        <p class="muted" style="font-size:14px;margin-bottom:10px">Communities designed around the daily realities of women, children, and aging adults consistently outperform conventional development on health, safety, stability, and long-term value. By prioritizing care economies, mobility independence, social connection, and lifelong housing, Now City West Salem uses a women-first lens to create places that work better for everyone.</p>
+        <ol class="numlist" style="font-size:14.5px">
+          <li><strong>Aging-in-place housing + services</strong> supporting independence, dignity, and reduced healthcare burden over time</li>
+          <li><strong>Child-centered public realm</strong> with safe mobility, nature-based play, and everyday supervision through active streets</li>
+          <li><strong>Women-first safety, access, and care design</strong> shown to increase walkability, retail vitality, and neighborhood stability</li>
+          <li><strong>Intergenerational community fabric</strong> proven to reduce isolation, improve mental health, and increase long-term residency</li>
+        </ol>
+      </div>
+      <div class="img" style="background-image:url('assets/om/om-women.jpg')"></div>
+    </div>
+
+    <div class="vibe-card rv" style="margin-top:26px">
+      <div class="txt">
+        <h3 class="serif" style="font-size:21px;margin-bottom:10px">What Brings People In — and Keeps Them</h3>
+        <p class="muted" style="font-size:14px;margin-bottom:10px">To attract young people and the young at heart, Now City West Salem is envisioned as a place of wonder, movement, meaning, and opportunity. Landmark experiences, immersive nature-based play, seamless regional connection, and access to high-value careers come together to create a district people travel to — and choose to stay in.</p>
+        <ol class="numlist" style="font-size:14.5px">
+          <li><strong>Iconic landmark experiences</strong> — a Danish Forest Tower visible from I-5 as a connected vertical climbing and strolling park supporting play, wellness, and intergenerational community life</li>
+          <li><strong>Swyft Cities gondola connectivity</strong> linking West Salem to downtown, Riverfront Park, and Willamette University</li>
+          <li><strong>High-paying innovation jobs + regenerative placemaking</strong> connecting people to nature, heritage, and long-term opportunity</li>
+        </ol>
+      </div>
+      <div class="img" style="background-image:url('assets/om/om-tower.jpg')"></div>
+    </div>
+    <div class="duo rv">
+      <figure><img src="assets/om/om-gondola.jpg" alt="Aerial gondola connectivity concept over the district" loading="lazy"><figcaption>Gondola connectivity — West Salem to downtown, Riverfront Park &amp; Willamette University</figcaption></figure>
+      <figure><img src="assets/om/om-skyline.jpg" alt="District skyline concept" loading="lazy"><figcaption>The next Silicon story — district skyline concept</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 8 TEAM -->
+<section id="team" class="dark">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">08 · Sponsorship &amp; Team</div>
+      <h2>Built around the work in front of us</h2>
+      <p class="lead">Now City operates as a district strategy and systems integrator, supported by a growing bench of development, construction, infrastructure, and operating partners. This model allows Phase 1 and early district phases to be executed by experienced local and regional teams with direct market knowledge, while Now City maintains continuity of vision, performance standards, and long-term district control. As the platform scales, execution capacity scales with it — through joint ventures, operating partnerships, and institutional collaborators aligned with district-level outcomes.</p>
+    </div>
+    <h3 class="serif rv" style="font-size:21px;color:var(--cream);margin-bottom:24px">Leadership</h3>
+    <div class="team rv">
+      <div class="member">
+        <img src="assets/team-erik.jpg" alt="Erik Gillberg" loading="lazy">
+        <h3>Erik Gillberg</h3><div class="role">Co-Founder &amp; CEO</div>
+        <p>Erik is a systems thinker focused on aligning capital, design, and operations into development that is financially viable, operationally sound, and grounded in care. He brings 30 years of property operations and 20 years in technology, business development, and startup leadership.</p>
+      </div>
+      <div class="member">
+        <img src="assets/team-ritchie.jpg" alt="Ritchie Ju" loading="lazy">
+        <h3>Ritchie Ju</h3><div class="role">Co-Founder &amp; COO</div>
+        <p>Ritchie leads design, development, and operations. B.Architecture from Carnegie Mellon, MS in Architecture and Urban Design from Columbia, MBA candidate at Johns Hopkins. Previously a mobility planner at Lyft in New York, where he led bike-share expansion, and later supported capital raise and development of a 1,000-unit multifamily mixed-use project in NYC.</p>
+      </div>
+      <div class="member">
+        <img src="assets/team-brianna.jpg" alt="Brianna Gonzalez" loading="lazy">
+        <h3>Brianna Gonzalez</h3><div class="role">Head of Legal &amp; Business Relations</div>
+        <p>Brianna is a securities and real-estate attorney and Managing Partner of Keiretsu Law. Her practice spans equity and debt securities offerings, fund formation, and innovative financing structures. Her background in public finance is a particular advantage for navigating public-private partnerships and municipal finance.</p>
+      </div>
+    </div>
+    <h3 class="serif rv" style="font-size:21px;color:var(--cream);margin:54px 0 8px">Senior Advisors</h3>
+    <p class="muted rv" style="font-size:14px;margin-bottom:24px">We work with senior advisors whose expertise is directly load-bearing for the work.</p>
+    <div class="team rv" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+      <div class="member">
+        <img src="assets/team-michael.jpg" alt="Michael H. Shuman" loading="lazy">
+        <h3>Michael H. Shuman</h3><div class="role">Advisor · Local Economies</div>
+        <p>Michael is an economist, attorney, and one of the architects of the 2012 JOBS Act. Adjunct Professor at Bard Business School and author of <em>Put Your Money Where Your Life Is</em>, <em>The Local Economy Solution</em>, and others. He advises Now City on community-rooted ownership, local capital formation, and finance models that keep wealth in place.</p>
+      </div>
+      <div class="member">
+        <img src="assets/team-neal.jpg" alt="Neal Payton" loading="lazy">
+        <h3>Neal Payton</h3><div class="role">Advisor · Urban Planning &amp; Design</div>
+        <p>Neal, FAIA, FCNU, directs the western U.S. urban and architectural design practice at Torti Gallas. His work focuses on master plans, form-based codes, and the public realm — especially the revitalization of declining urban centers, brownfields, and aging suburbs. He advises Now City on urbanism, master planning, and entitlement strategy.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:64px" class="rv">
+      <h3 class="serif" style="font-size:22px;color:var(--cream);margin-bottom:6px">Value Add Strategies: How We Deliver More Without Spending More</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:24px">AI-native development, advanced modeling, data intelligence, automation, and modern delivery methods reduce design friction, compress timelines, lower soft costs, and provide the reporting backbone institutional capital now requires.</p>
+      <div class="grid g4">
+        <div class="card"><h4>Regenerative Placemaking</h4><p style="font-size:14px">Wellness, prosperity, and ecology data-driven community design.</p></div>
+        <div class="card"><h4>Industrialized Construction</h4><p style="font-size:14px">Modern methods that reduce cost, shorten schedules &amp; minimize waste.</p></div>
+        <div class="card"><h4>Green Infrastructure</h4><p style="font-size:14px">Integrated energy, water &amp; mobility systems that cut OpEx &amp; boost resilience.</p></div>
+        <div class="card"><h4>Innovative Finance</h4><p style="font-size:14px">Stacked incentives + carbon &amp; brand capital to enhance returns.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">09 · Investor FAQ</div>
+      <h2>Addressing investor concerns directly</h2>
+    </div>
+    <div class="rv">
+      <div class="qa"><div class="q">"Is this too ambitious for a market like Salem?"</div><div class="a">Salem is not a Tier 1 metro, and that is exactly why basis, zoning, and phasing matter. High-density mixed-use zoning on formerly light-industrial land creates a step-change in value without Tier 1 land costs.</div></div>
+      <div class="qa"><div class="q">"Can this scale without overbuilding?"</div><div class="a">Yes. The district is sequenced through a phased 5.29-acre Phase 1, with infrastructure, amenities, and subsequent land assembly deployed only as absorption and revenue justify expansion.</div></div>
+      <div class="qa"><div class="q">"Are local incomes strong enough?"</div><div class="a">While median incomes trail national benchmarks, Salem is a renter-dominant, supply-constrained market. Unit mix and pricing are calibrated directly to local income bands, with workforce and attainable housing driving durable demand.</div></div>
+      <div class="qa"><div class="q">"Will the retail be oversupplied?"</div><div class="a">The plan avoids commodity retail and prioritizes food, beverage, fitness, culture, and experiential uses with validated unmet demand and regional draw.</div></div>
+      <div class="qa"><div class="q">"Is execution risk too high?"</div><div class="a">Execution is structured through a partnership-led delivery model, combining local and regional developers, builders, infrastructure operators, and Now City's district strategy and systems platform.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section id="join" class="dark cta">
+  <div class="wrap rv">
+    <div class="eyebrow">Join Us</div>
+    <h2 class="serif">Be part of Salem's<br>transformation.</h2>
+    <p class="muted" style="max-width:560px;margin:0 auto">Visit <a href="https://nowcity.co" style="color:#d9a26c;text-decoration:none">nowcity.co</a> to learn more about Now City.</p>
+    <div class="contacts">
+      <a href="mailto:erik@nowcitylabs.com">erik@nowcitylabs.com · +1 818 312 0491</a>
+      <a href="mailto:ritchie@nowcitylabs.com">ritchie@nowcitylabs.com · +1 718 916 1106</a>
+    </div>
+  </div>
+</section>
+
+<!-- 10 DISCLAIMERS -->
+<section class="dark" id="disclaimers" style="padding:60px 0;border-top:1px solid #3d392f">
+  <div class="wrap">
+    <h3 class="serif" style="font-size:18px;color:var(--cream);margin-bottom:16px">Disclaimers</h3>
+    <p class="disclaimer">All projections were made based on certain assumptions regarding revenues and costs of the project, among other things, which may not equate to actual results. Although the Manager believes these assumptions to be reasonable, actual results will differ from the Manager's assumptions and related projections may differ materially. A prospective investor, together with his or her financial and legal advisers, should independently evaluate the reasonableness of any assumptions or projections and should not place undue or significant weight on any projections by the Manager or any other persons related to the Manager. This presentation does not constitute an offer to buy or sell securities. Prospective investors should not rely in whole or in part on this presentation. An offering can only be made pursuant to delivery of a private placement memorandum and receipt of investment related documentation. The offer to invest in the securities and the sale thereof has not been registered under the Securities Act, or any state securities act. The securities are being offered and sold in reliance on exemptions from the registration requirements of such acts. These securities are being offered and sold only to bona fide residents of the states in which such exemption is available, who can meet certain requirements, including net worth and income requirements, and who purchase the securities without a view to distribution or resale.</p>
+    <p class="disclaimer" style="margin-top:12px">All statements contained herein may constitute "forward-looking statements." Forward-looking statements are generally identifiable by the use of the words "may," "should," "plan," "expect," "anticipate," "estimate," "believe," "intend," "project," "goal," or "target" or the negative of these words or other variations of these words or comparable terminology. Forward-looking statements are based on current expectations and involve a number of known and unknown risks, uncertainties and other factors, many of which are beyond the Manager's control, that could cause the project's or its actual results, levels of activity, performance or achievements to be materially different from any future results, levels of activity, performance or achievements expressed or implied by such forward-looking statements. No representation is made or assurance given that such statements or views are correct or that the objectives of the Manager will be achieved. You should not place undue reliance on forward-looking statements and no responsibility is accepted by the Manager or any of its directors, officers, employees, agents or advisers, or any other person in respect thereof. The Manager does not undertake to publicly update or revise any forward-looking statements that may be made herein, whether as a result of new information, future events or otherwise.</p>
+    <p class="disclaimer" style="margin-top:12px">The material contained in this document is confidential, furnished solely for the purpose of considering investment in the property described herein and is not to be copied and/or used for any purpose or made available to any other person without the written consent of the Manager. In accepting this, the recipient agrees to keep all material contained herein confidential.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>©2026 Now City Inc. Proprietary &amp; Confidential. All Rights Reserved.</div>
+    <div>For discussion purposes only. Subject to change pending site control and due diligence.</div>
+  </div>
+</footer>
+
+</div><!-- /.page -->
+<a href="#top" class="toplink" id="toplink" aria-label="Back to top">↑</a>
+
+<script>
+// --- Passcode gate (deterrent only; use Cloudflare Access for real protection) ---
+const HASH='aad5d67e3ddeda88953d6714e4569a4399b3201023dae82d5931a6c376de96d4';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');document.getElementById('gate').style.display='none'}
+if(sessionStorage.getItem('ws-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const v=document.getElementById('code').value.trim();
+  let h='';try{h=await sha256(v)}catch(_){h=(v==='WestSalem2026')?HASH:''}
+  if(h===HASH){sessionStorage.setItem('ws-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+// --- nav / reveal / top ---
+const nav=document.getElementById('nav');const sub=document.getElementById('subnav');const tl=document.getElementById('toplink');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.5);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
