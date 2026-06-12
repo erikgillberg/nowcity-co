@@ -4,7 +4,6 @@ import { Image } from 'astro:assets';
 
 import erik from '../assets/team/erik.jpg';
 import ritchie from '../assets/team/ritchie.jpg';
-import brianna from '../assets/team/brianna.jpg';
 import shuman from '../assets/team/shuman.jpg';
 import payton from '../assets/team/payton.jpg';
 
@@ -63,9 +62,8 @@ const values: Value[] = [
         Built around the work in front of us.
       </h1>
       <p class="lede mt-8">
-        Founders, head of legal, and senior advisors. We hire
-        carefully and bring partners in for the right moment in the
-        right project.
+        Founders and senior advisors. We hire carefully and bring
+        partners in for the right moment in the right project.
       </p>
     </div>
   </section>
@@ -82,7 +80,7 @@ const values: Value[] = [
 
       <div class="mt-12 grid gap-12 md:grid-cols-3 md:gap-10">
         <article>
-          <div class="overflow-hidden rounded-md">
+          <div class="overflow-hidden rounded-md max-w-[280px]">
             <Image
               src={erik}
               alt="Portrait of Erik Gillberg, co-founder and CEO of Now City Inc."
@@ -113,7 +111,7 @@ const values: Value[] = [
         </article>
 
         <article>
-          <div class="overflow-hidden rounded-md">
+          <div class="overflow-hidden rounded-md max-w-[280px]">
             <Image
               src={ritchie}
               alt="Portrait of Ritchie Ju, co-founder and COO of Now City Inc."
@@ -142,36 +140,7 @@ const values: Value[] = [
           </p>
         </article>
 
-        <article>
-          <div class="overflow-hidden rounded-md">
-            <Image
-              src={brianna}
-              alt="Portrait of Brianna Gonzalez, Head of Legal and Business Relations at Now City Inc."
-              widths={[300, 400, 600]}
-              sizes="(min-width: 768px) 30vw, 100vw"
-              class="aspect-square w-full object-cover"
-            />
-          </div>
-          <h3 class="mt-6 font-display text-2xl text-forest-700">
-            Brianna Gonzalez
-          </h3>
-          <p class="font-brand text-xs font-medium uppercase tracking-[0.18em] text-stone-500 mt-2">
-            Head of Legal &amp; Business Relations
-          </p>
-          <div class="prose-body mt-4 text-base">
-            <p>
-              Brianna is a securities and real-estate attorney.
-              Managing Partner of Keiretsu Law. Her practice spans
-              equity and debt securities offerings, fund formation,
-              and innovative financing structures. Her background in
-              public finance is a particular advantage for navigating
-              public-private partnerships and municipal finance.
-            </p>
-          </div>
-          <p class="mt-4 text-sm">
-            <a href="https://www.linkedin.com/in/briannagonzalez/">LinkedIn →</a>
-          </p>
-        </article>
+        
       </div>
     </div>
   </section>
@@ -192,7 +161,7 @@ const values: Value[] = [
 
       <div class="mt-12 grid gap-12 md:grid-cols-2 md:gap-10">
         <article>
-          <div class="overflow-hidden rounded-md">
+          <div class="overflow-hidden rounded-md max-w-[280px]">
             <Image
               src={shuman}
               alt="Portrait of Michael H. Shuman, advisor on local economies."
@@ -224,7 +193,7 @@ const values: Value[] = [
         </article>
 
         <article>
-          <div class="overflow-hidden rounded-md">
+          <div class="overflow-hidden rounded-md max-w-[280px]">
             <Image
               src={payton}
               alt="Portrait of Neal Payton, advisor on urban planning and design."
