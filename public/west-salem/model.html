@@ -127,6 +127,19 @@ body.gated{overflow:hidden}
 </aside>
 
 <main class="main">
+  <details class="card" id="about" open style="margin-bottom:20px">
+    <summary style="cursor:pointer;font-family:var(--serif);font-size:16px;color:var(--green);list-style:none;display:flex;justify-content:space-between;align-items:center">
+      What you are looking at, and the assumptions behind it
+      <span style="font-size:12px;color:#8a857a;font-family:var(--sans)">click to collapse / expand</span>
+    </summary>
+    <div style="margin-top:14px;font-size:13.5px;line-height:1.7;max-width:980px">
+      <p><strong>This is a live underwriting model for Phase One of the Edgewater district:</strong> the 5.29-acre first phase at 740 Bassett St NW. Every control on the left feeds a month-by-month engine running from April 2026 through exit. It mirrors our Excel pro forma: land and pre-development spend, construction draws, a construction loan with capitalized interest, a permanent refinance, lease-up, operations, and a sale roughly two years after opening. Nothing is precomputed. Each adjustment re-runs the entire model in your browser, including the sensitivity grid.</p>
+      <p style="margin-top:10px"><strong>The base case</strong> is the company's June 2026 underwriting on the current 383-unit, three-block design: $315/SF residential hard cost plus 10% contingency, $10.9M land all-in, construction debt at 7% with a 65% loan-to-cost target, a 30-year permanent refinance 18 months after completion, 95% stabilized occupancy after a 12-month lease-up, and exit pricing at a 5.0% residential and 7.0% commercial cap rate on forward 12-month NOI.</p>
+      <p style="margin-top:10px"><strong>Held constant</strong> (deliberately not on sliders): the development calendar beyond construction duration, soft-cost ratios (~14.9% of hard costs), the 45,280 SF commercial program at $32/SF, 200 parking spaces, 1% bad debt, and a 3% in-kind sponsor contribution that funds the development fee.</p>
+      <p style="margin-top:10px"><strong>Read with care.</strong> Base rents carry the prior unit schedule's $/SF onto larger units and have not yet been validated against Salem market comps. That is the single assumption most worth stress-testing here. The model also excludes things that sit outside Phase One underwriting: Opportunity Zone tax benefits, the interim activation businesses, and district Phases 2 through 4. Returns shown are project-level, before GP/LP waterfall splits and before taxes.</p>
+      <p style="margin-top:10px;color:#8a857a;font-size:12.5px">For discussion purposes only. This is a planning tool, not an offer of securities. All figures are estimates subject to change with site control, design development, and due diligence. Questions or a scenario worth keeping? Export it and send it to erik@nowcitylabs.com.</p>
+    </div>
+  </details>
   <div class="kpis">
     <div class="kpi"><div class="l">Levered IRR</div><div class="v" id="k_irr">-</div><div class="d" id="d_irr"></div></div>
     <div class="kpi"><div class="l">Equity Multiple</div><div class="v" id="k_em">-</div><div class="d" id="d_em"></div></div>
@@ -369,6 +382,9 @@ document.getElementById('bImport').onclick=()=>{
   catch(e){alert('Could not parse scenario JSON');}
 };
 sync();recalc();
+const ab=document.getElementById('about');
+if(localStorage.getItem('ws-about')==='closed')ab.removeAttribute('open');
+ab.addEventListener('toggle',()=>localStorage.setItem('ws-about',ab.open?'open':'closed'));
 </script>
 </body>
 </html>
