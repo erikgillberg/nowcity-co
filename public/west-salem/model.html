@@ -79,6 +79,22 @@ body.gated{overflow:hidden}
 
 <div class="layout">
 <aside class="panel">
+  <h3>Financing Scenario</h3>
+  <style>.seg{display:flex;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:12px}
+  .seg button{flex:1;border:none;border-radius:0;padding:10px 6px;background:#fff}
+  .seg button.on{background:var(--green);color:#fff}
+  #hudCtls.off{opacity:.35;pointer-events:none}</style>
+  <div class="seg"><button id="finM" class="on">Merchant<br><span style="font-weight:400;font-size:10.5px">conventional debt, Y2 sale</span></button><button id="finH">HUD / LIHTC<br><span style="font-weight:400;font-size:10.5px">221(d)(4) + affordable sleeve</span></button></div>
+  <div id="hudCtls" class="off">
+    <div class="ctl"><label>HUD all-in rate (incl. MIP) <span class="val" id="v_hudRate"></span></label><input type="range" id="hudRate" min="0.05" max="0.08" step="0.00125"></div>
+    <div class="ctl"><label>Davis-Bacon hard cost premium <span class="val" id="v_davis"></span></label><input type="range" id="davis" min="0" max="0.15" step="0.005"></div>
+    <div class="ctl"><label>Affordable unit share (LIHTC) <span class="val" id="v_affShare"></span></label><input type="range" id="affShare" min="0" max="0.5" step="0.025"></div>
+    <div class="ctl"><label>Affordable rent discount vs market <span class="val" id="v_affDisc"></span></label><input type="range" id="affDisc" min="0.1" max="0.5" step="0.025"></div>
+    <div class="ctl"><label>LIHTC credit equity ($M) <span class="val" id="v_lihtcEq"></span></label><input type="range" id="lihtcEq" min="0" max="25" step="0.5"></div>
+    <div class="ctl"><label>HUD loan-to-cost cap <span class="val" id="v_hudLTC"></span></label><input type="range" id="hudLTC" min="0.75" max="0.90" step="0.005"></div>
+    <p class="note">HUD case: one construction-to-perm loan, 40-yr amortization, conversion 12 months after opening. Equity is sized to the LTC cap (the LP cash equity slider below applies to the Merchant case only), and LIHTC equity enters the stack ahead of debt. Indicative terms; subject to HUD sizing (incl. DSCR tests) and OHCS allocation.</p>
+  </div>
+
   <h3>Residential Rents ($/SF/mo)</h3>
   <div class="ctl"><label>Studio <span class="val" id="v_rStudio"></span></label><input type="range" id="rStudio" min="1.5" max="4" step="0.01"></div>
   <div class="ctl"><label>1 Bedroom <span class="val" id="v_r1br"></span></label><input type="range" id="r1br" min="1.5" max="4" step="0.01"></div>
@@ -135,6 +151,7 @@ body.gated{overflow:hidden}
     <div style="margin-top:14px;font-size:13.5px;line-height:1.7;max-width:980px">
       <p><strong>This is a live underwriting model for Phase One of the Edgewater district:</strong> the 5.29-acre first phase at 740 Bassett St NW. Every control on the left feeds a month-by-month engine running from April 2026 through exit. It mirrors our Excel pro forma: land and pre-development spend, construction draws, a construction loan with capitalized interest, a permanent refinance, lease-up, operations, and a sale roughly two years after opening. Nothing is precomputed. Each adjustment re-runs the entire model in your browser, including the sensitivity grid.</p>
       <p style="margin-top:10px"><strong>The base case</strong> is the company's June 2026 underwriting on the current 383-unit, three-block design: $315/SF residential hard cost plus 10% contingency, $10.9M land all-in, construction debt at 7% with a 65% loan-to-cost target, a 30-year permanent refinance 18 months after completion, 95% stabilized occupancy after a 12-month lease-up, and exit pricing at a 5.0% residential and 7.0% commercial cap rate on forward 12-month NOI.</p>
+      <p style="margin-top:10px"><strong>Two financing cases.</strong> The Merchant case is conventional construction debt rolling to a 30-year perm with a sale about two years after opening. The HUD / LIHTC case models a single FHA 221(d)(4) construction-to-perm loan with 40-year amortization, a Davis-Bacon prevailing-wage premium on residential hard costs, a LIHTC affordable sleeve with rent discounts and credit equity in the stack, and conversion 12 months after opening. Both are indicative structures for comparison, not committed terms.</p>
       <p style="margin-top:10px"><strong>Held constant</strong> (deliberately not on sliders): the development calendar beyond construction duration, soft-cost ratios (~14.9% of hard costs), the 45,280 SF commercial program at $32/SF, 200 parking spaces, 1% bad debt, and a 3% in-kind sponsor contribution that funds the development fee.</p>
       <p style="margin-top:10px"><strong>Read with care.</strong> Base rents carry the prior unit schedule's $/SF onto larger units and have not yet been validated against Salem market comps. That is the single assumption most worth stress-testing here. The model also excludes things that sit outside Phase One underwriting: Opportunity Zone tax benefits, the interim activation businesses, and district Phases 2 through 4. Returns shown are project-level, before GP/LP waterfall splits and before taxes.</p>
       <p style="margin-top:10px;color:#8a857a;font-size:12.5px">For discussion purposes only. This is a planning tool, not an offer of securities. All figures are estimates subject to change with site control, design development, and due diligence. Questions or a scenario worth keeping? Export it and send it to erik@nowcitylabs.com.</p>
@@ -177,7 +194,8 @@ if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}else{document.getElement
 })();
 
 // ===== model engine (mirrors Edgewater_Phase 1 Pro Forma_383 Units xlsx) =====
-const BASE={rStudio:3.0824,r1br:3.0108,r2br:2.9534,rth:3.1828,
+const BASE={fin:0,hudRate:0.0625,davis:0.08,affShare:0.30,affDisc:0.35,lihtcEq:11,hudLTC:0.85,
+rStudio:3.0824,r1br:3.0108,r2br:2.9534,rth:3.1828,
 uStudio:230,u1br:54,u2br:98,uth:1,sfStudio:648,sf1br:1006,sf2br:1086,sfth:2120,
 occs:0.95,pace:0.05,opexr:0.30,rgrow:0.03,
 comrent:32,hcres:315,hccont:0.10,land:5,crate:0.07,prate:0.07,casheq:42,rcap:0.05,ccap:0.07,exitm:24,vdur:16};
@@ -188,64 +206,84 @@ ENT=2.5e6, PERM=0.8e6, DEMO=0.5e6, SITEW=2.1e6, INK=0.03, OI_R=0.10, OI_C=0.24, 
 ROCCS=0.95, OOCCS=0.89, CGROW=0.03, PSP=200, PRENT=79.5675, POPEX=300, POPG=0.025, TXN=0.01, OCC0=0.35, SOFTEARLY=0.65;
 
 function run(p){
-  const VS=15, VE=15+p.vdur-1, OPEN=VE+1, REFI=VE+18, EXIT=OPEN+p.exitm-1, N=EXIT+13;
+  const HUD=p.fin>=1;
+  const crate=HUD?p.hudRate:p.crate, prate=HUD?p.hudRate:p.prate, amN=(HUD?40:30)*12;
+  const VS=15, VE=15+p.vdur-1, OPEN=VE+1, REFI=HUD?OPEN+12:VE+18, EXIT=OPEN+p.exitm-1, N=EXIT+13;
   const MIX=mixOf(p);
   const resNRA=MIX.reduce((s,m)=>s+m.u*m.sf,0);
-  const resAnnual=MIX.reduce((s,m)=>s+m.u*m.sf*p[m.k]*12,0);
+  const affFactor=HUD?(1-p.affShare*p.affDisc):1;
+  const resAnnual=MIX.reduce((s,m)=>s+m.u*m.sf*p[m.k]*12,0)*affFactor;
   const resUnits=MIX.reduce((s,m)=>s+m.u,0);
   const landdev=DEMO+SITEW;
-  const hard=(resNRA*p.hcres+(RETNRA+OFFNRA)*HCCOM+AMEN)*(1+p.hccont);
+  const hard=(resNRA*p.hcres*(HUD?1+p.davis:1)+(RETNRA+OFFNRA)*HCCOM+AMEN)*(1+p.hccont);
   const sbase=hard*0.09+(landdev+hard)*0.02;
   const fee3=0.03*(landdev+hard+sbase), scont=0.03*(sbase+fee3), soft=sbase+fee3+scont;
   const other=hard*0.01005;
   const inkTot=INK*(hard+soft+other);
   const landAcq=p.land*1e6+ENT+PERM;
   const prefin=landAcq+landdev+hard+soft+other;
-  let bal=0,permOpen=0,pmt=0,permBal=0,cumEq=0,fees=0,intTot=0;
-  const pool=GP+p.casheq*1e6;
-  const rows=[];
-  for(let i=0;i<=N;i++){
-    let cost=0;
-    if(i===1)cost+=p.land*1e6;
-    if(i>=0&&i<=8)cost+=ENT/9;
-    if(i>=9&&i<=11)cost+=PERM/3;
-    if(i===12)cost+=DEMO;
-    if(i===13||i===14)cost+=SITEW/2;
-    let hso=0;
-    if(i>=VS&&i<=VE){hso+=hard/p.vdur+soft*(1-SOFTEARLY)/p.vdur+other/p.vdur;}
-    if(i<VS)hso+=soft*SOFTEARLY/VS;
-    cost+=hso;
-    const ink=hso/(hard+soft+other)*inkTot;
-    const need=Math.max(0,cost-ink-(i===12?GRANT:0));
-    const eq=Math.min(need,Math.max(0,pool-cumEq)); cumEq+=eq;
-    const draw=need-eq;
-    let f=0; if(i===VS){f=FAC*FACFEE;fees+=f;}
-    let it=0; if(i>0&&i<REFI){it=bal*p.crate/12;intTot+=it;}
-    if(i<REFI)bal=bal+draw+f+it;
-    if(i===REFI){permOpen=bal*(1+p.crate/12);intTot+=bal*p.crate/12;bal=0;
-      const r=p.prate/12;pmt=permOpen*r/(1-Math.pow(1+r,-360));permBal=permOpen;}
-    else if(i>REFI){permBal=permBal*(1+p.prate/12)-pmt;}
-    const mo=i-OPEN;
-    let resB=0,resO=0,retB=0,retO=0,offB=0,offO=0,park=0,noi=0,noiR=0;
-    if(mo>=0){
-      const g=Math.pow(1+p.rgrow,mo/12), cg=Math.pow(1+CGROW,mo/12);
-      const oR=Math.min(p.occs,OCC0+p.pace*mo), oRet=Math.min(ROCCS,OCC0+p.pace*mo), oOff=Math.min(OOCCS,OCC0+p.pace*mo);
-      resB=resAnnual/12*g*oR; resO=resB*OI_R;
-      retB=RETNRA*p.comrent/12*cg*oRet; retO=retB*OI_C;
-      offB=OFFNRA*p.comrent/12*cg*oOff; offO=offB*OI_C;
-      park=PSP*PRENT*cg;
-      const rev=resB+resO+retB+retO+offB+offO+park;
-      const bad=rev*BAD, oxR=resB*p.opexr, oxC=(retB+offB)*OPEX_C, oxP=PSP*POPEX/12*Math.pow(1+POPG,mo/12);
-      noi=rev-bad-oxR-oxC-oxP;
-      noiR=resB+resO-(resB+resO)*BAD-oxR;
+
+  function simulate(pool){
+    let bal=0,permOpen=0,pmt=0,permBal=0,cumEq=0,fees=0,intTot=0;
+    const rows=[];
+    for(let i=0;i<=N;i++){
+      let cost=0;
+      if(i===1)cost+=p.land*1e6;
+      if(i>=0&&i<=8)cost+=ENT/9;
+      if(i>=9&&i<=11)cost+=PERM/3;
+      if(i===12)cost+=DEMO;
+      if(i===13||i===14)cost+=SITEW/2;
+      let hso=0;
+      if(i>=VS&&i<=VE){hso+=hard/p.vdur+soft*(1-SOFTEARLY)/p.vdur+other/p.vdur;}
+      if(i<VS)hso+=soft*SOFTEARLY/VS;
+      cost+=hso;
+      const ink=hso/(hard+soft+other)*inkTot;
+      const need=Math.max(0,cost-ink-(i===12?GRANT:0));
+      const eq=Math.min(need,Math.max(0,pool-cumEq)); cumEq+=eq;
+      const draw=need-eq;
+      let f=0; if(i===VS){f=FAC*FACFEE;fees+=f;}
+      let it=0; if(i>0&&i<REFI){it=bal*crate/12;intTot+=it;}
+      if(i<REFI)bal=bal+draw+f+it;
+      if(i===REFI){permOpen=bal*(1+crate/12);intTot+=bal*crate/12;bal=0;
+        const r=prate/12;pmt=permOpen*r/(1-Math.pow(1+r,-amN));permBal=permOpen;}
+      else if(i>REFI){permBal=permBal*(1+prate/12)-pmt;}
+      const mo=i-OPEN;
+      let resB=0,resO=0,retB=0,retO=0,offB=0,offO=0,park=0,noi=0,noiR=0;
+      if(mo>=0){
+        const g=Math.pow(1+p.rgrow,mo/12), cg=Math.pow(1+CGROW,mo/12);
+        const oR=Math.min(p.occs,OCC0+p.pace*mo), oRet=Math.min(ROCCS,OCC0+p.pace*mo), oOff=Math.min(OOCCS,OCC0+p.pace*mo);
+        resB=resAnnual/12*g*oR; resO=resB*OI_R;
+        retB=RETNRA*p.comrent/12*cg*oRet; retO=retB*OI_C;
+        offB=OFFNRA*p.comrent/12*cg*oOff; offO=offB*OI_C;
+        park=PSP*PRENT*cg;
+        const rev=resB+resO+retB+retO+offB+offO+park;
+        const bad=rev*BAD, oxR=resB*p.opexr, oxC=(retB+offB)*OPEX_C, oxP=PSP*POPEX/12*Math.pow(1+POPG,mo/12);
+        noi=rev-bad-oxR-oxC-oxP;
+        noiR=resB+resO-(resB+resO)*BAD-oxR;
+      }
+      rows.push({i,cost,ink,eq,draw,noi,noiR,noiO:noi-noiR,permBal,pmtPaid:(i>REFI?pmt:0)});
     }
-    rows.push({i,cost,ink,eq,draw,noi,noiR,noiO:noi-noiR,permBal,pmtPaid:(i>REFI?pmt:0)});
+    return {rows,cumEq,fees,intTot,permOpen,pmt,totalCost:prefin+fees+intTot};
   }
+
+  let pool=GP+p.casheq*1e6+(HUD?p.lihtcEq*1e6:0);
+  let s=simulate(pool);
+  if(HUD){
+    // HUD sizing: loan = lesser of (LTC cap x cost) and (debt the stabilized NOI carries at 1.176 DSCR)
+    const HUDDSCR=1.176;
+    const debtConst=(prate/12)/(1-Math.pow(1+prate/12,-amN))*12;
+    for(let k=0;k<3;k++){
+      let noi12=0; for(let i=REFI+1;i<=REFI+12;i++) noi12+=s.rows[i].noi;
+      const maxLoan=Math.min(p.hudLTC*s.totalCost, noi12/HUDDSCR/debtConst);
+      pool=Math.max(GP+p.lihtcEq*1e6, s.totalCost-maxLoan-inkTot-GRANT);
+      s=simulate(pool);
+    }
+  }
+  const {rows,cumEq,permOpen,pmt}=s;
   let fwdR=0,fwdO=0;
   for(let i=EXIT+1;i<=EXIT+12;i++){fwdR+=rows[i].noiR;fwdO+=rows[i].noiO;}
   const gross=fwdR/p.rcap+fwdO/p.ccap, net=gross*(1-TXN), payoff=rows[EXIT].permBal, proceeds=net-payoff;
   const lev=[],dts=[];
-  const d0=new Date(2026,3,30);
   for(let i=0;i<=EXIT;i++){
     const mo=i-OPEN;
     let cf=-rows[i].eq-rows[i].ink+(mo>=0?rows[i].noi-rows[i].pmtPaid:0)+(i===EXIT?proceeds:0);
@@ -253,12 +291,14 @@ function run(p){
   }
   const profit=lev.reduce((a,b)=>a+b,0);
   const pos=lev.filter(x=>x>0).reduce((a,b)=>a+b,0), neg=-lev.filter(x=>x<0).reduce((a,b)=>a+b,0);
-  const totalCost=prefin+fees+intTot;
+  const totalCost=s.totalCost;
   const eqTot=cumEq+inkTot;
-  return {lev,dts,profit,em:pos/neg,irr:xirr(lev,dts),totalCost,eqTot,cumEq,
+  const lpCash=Math.max(0,cumEq-GP-(HUD?p.lihtcEq*1e6:0));
+  return {lev,dts,profit,em:pos/neg,irr:xirr(lev,dts),totalCost,eqTot,cumEq,lpCash,
     yoc:(fwdR+fwdO)/totalCost,dscr:(fwdR+fwdO)/(12*pmt),ltc:permOpen/totalCost,
     net,proceeds,permOpen,rows,OPEN,EXIT,resAnnual,resNRA,
-    avgRent:resAnnual/12/Math.max(1,resUnits),resUnits,fwd:fwdR+fwdO,pool,peak:permOpen};
+    avgRent:resAnnual/12/Math.max(1,resUnits),resUnits,fwd:fwdR+fwdO,pool,peak:permOpen,
+    HUD,affUnits:HUD?Math.round(resUnits*p.affShare):0,amN,crate,prate,REFI};
 }
 function xirr(cf,dts){
   const t0=dts[0];
@@ -277,7 +317,9 @@ const base=run(BASE);
 let charts={};
 const MIXKEYS=['uStudio','u1br','u2br','uth','sfStudio','sf1br','sf2br','sfth'];
 function vlabel(k,v){
-  if(MIXKEYS.includes(k))return v;
+  if(MIXKEYS.includes(k)||k==='fin')return v;
+  if(['hudRate','davis','affShare','affDisc','hudLTC'].includes(k))return fmtP(v);
+  if(k==='lihtcEq')return '$'+v+'M';
   if(['occs','pace','opexr','rgrow','crate','prate','rcap','ccap','hccont'].includes(k))return fmtP(v);
   if(['land','casheq'].includes(k))return '$'+v+'M';
   if(k==='comrent')return '$'+v;
@@ -285,7 +327,8 @@ function vlabel(k,v){
   if(['exitm','vdur'].includes(k))return v+' mo';
   return '$'+(+v).toFixed(2);
 }
-function sync(){ids.forEach(k=>{document.getElementById(k).value=P[k];const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);});}
+function sync(){ids.forEach(k=>{const el=document.getElementById(k);if(!el)return;el.value=P[k];const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);});
+  if(document.getElementById('finM')){document.getElementById('finM').classList.toggle('on',P.fin===0);document.getElementById('finH').classList.toggle('on',P.fin===1);document.getElementById('hudCtls').classList.toggle('off',P.fin===0);}}
 function delta(el,cur,b,fmt,goodUp=true){
   const d=cur-b, e=document.getElementById(el);
   if(Math.abs(d)<1e-9){e.textContent='base';e.className='d';return;}
@@ -311,9 +354,10 @@ function recalc(){
   delta('d_dscr',r.dscr,base.dscr,x=>x.toFixed(2));
   delta('d_ltc',r.ltc,base.ltc,x=>(100*x).toFixed(1)+'pts',false);
   document.getElementById('avgRent').textContent='$'+Math.round(r.avgRent).toLocaleString()+'/mo';
-  document.getElementById('mixTot').innerHTML='<strong>'+r.resUnits.toLocaleString()+' units · '+Math.round(r.resNRA).toLocaleString()+' SF NRA</strong> (base: 383 · 311,912). Hard cost, revenue, debt and equity needs all rescale automatically.';
+  document.getElementById('mixTot').innerHTML='<strong>'+r.resUnits.toLocaleString()+' units · '+Math.round(r.resNRA).toLocaleString()+' SF NRA</strong>'+(r.HUD?' · <strong>'+r.affUnits+' affordable</strong>':'')+' (base: 383 · 311,912). Hard cost, revenue, debt and equity needs all rescale automatically.';
   const w=[];
-  if(r.dscr<1.20)w.push('DSCR below 1.20 - perm lender will size down the loan.');
+  if(r.HUD)w.unshift('<strong>HUD / LIHTC case:</strong> 40-yr amortization at '+fmtP(P.hudRate)+', Davis-Bacon +'+fmtP(P.davis)+' on residential hard cost, '+r.affUnits+' affordable units at a '+fmtP(P.affDisc)+' rent discount, $'+P.lihtcEq+'M LIHTC equity, loan sized to '+fmtP(P.hudLTC)+' of cost. Implied LP cash equity: <strong>'+fmt$(r.lpCash)+'</strong> (vs $'+P.casheq+'M in the Merchant case). LIHTC equity is counted in project equity; credit investors are paid through tax credits, so cash-investor returns run higher than the blended figure shown.');
+  if(r.dscr<(r.HUD?1.176:1.20))w.push('DSCR below the '+(r.HUD?'1.176 HUD affordable minimum':'1.20 conventional floor')+' - the lender will size down the loan.');
   if(r.ltc>0.70)w.push('LTC above 70% - add equity or trim cost.');
   if(r.peak>FAC)w.push('Loan exceeds the stated facility.');
   if(r.cumEq>=r.pool-1)w.push('Equity pool fully drawn (loan is absorbing the balance).');
@@ -365,8 +409,16 @@ function drawSens(){
   document.getElementById('tSens').innerHTML=h;
 }
 ids.forEach(k=>{
-  document.getElementById(k).addEventListener('input',e=>{P[k]=+e.target.value||0;const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);recalc();});
+  const el=document.getElementById(k); if(!el)return;
+  el.addEventListener('input',e=>{P[k]=+e.target.value||0;const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);recalc();});
 });
+function setFin(f){P.fin=f;
+  document.getElementById('finM').classList.toggle('on',f===0);
+  document.getElementById('finH').classList.toggle('on',f===1);
+  document.getElementById('hudCtls').classList.toggle('off',f===0);
+  recalc();}
+document.getElementById('finM').onclick=()=>setFin(0);
+document.getElementById('finH').onclick=()=>setFin(1);
 document.getElementById('bReset').onclick=()=>{P={...BASE};sync();recalc();};
 document.getElementById('bExport').onclick=()=>{
   const s=JSON.stringify({scenario:'edgewater-phase1',exported:new Date().toISOString(),inputs:P},null,1);
