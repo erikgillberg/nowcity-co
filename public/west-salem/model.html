@@ -80,10 +80,21 @@ body.gated{overflow:hidden}
 <div class="layout">
 <aside class="panel">
   <h3>Residential Rents ($/SF/mo)</h3>
-  <div class="ctl"><label>Studio (230 × 648 SF) <span class="val" id="v_rStudio"></span></label><input type="range" id="rStudio" min="1.5" max="4" step="0.01"></div>
-  <div class="ctl"><label>1 Bedroom (54 × 1,006 SF) <span class="val" id="v_r1br"></span></label><input type="range" id="r1br" min="1.5" max="4" step="0.01"></div>
-  <div class="ctl"><label>2 Bedroom (98 × 1,086 SF) <span class="val" id="v_r2br"></span></label><input type="range" id="r2br" min="1.5" max="4" step="0.01"></div>
-  <div class="ctl"><label>Townhouse (1 × 2,120 SF) <span class="val" id="v_rth"></span></label><input type="range" id="rth" min="1.5" max="4" step="0.01"></div>
+  <div class="ctl"><label>Studio <span class="val" id="v_rStudio"></span></label><input type="range" id="rStudio" min="1.5" max="4" step="0.01"></div>
+  <div class="ctl"><label>1 Bedroom <span class="val" id="v_r1br"></span></label><input type="range" id="r1br" min="1.5" max="4" step="0.01"></div>
+  <div class="ctl"><label>2 Bedroom <span class="val" id="v_r2br"></span></label><input type="range" id="r2br" min="1.5" max="4" step="0.01"></div>
+  <div class="ctl"><label>Townhouse <span class="val" id="v_rth"></span></label><input type="range" id="rth" min="1.5" max="4" step="0.01"></div>
+
+  <h3>Unit Mix (counts &amp; SF/unit)</h3>
+  <style>.mixrow{display:grid;grid-template-columns:1fr 70px 78px;gap:8px;align-items:center;margin-bottom:8px;font-size:12px;font-weight:600}
+  .mixrow input{width:100%;padding:5px 6px;border:1px solid var(--line);border-radius:4px;font-size:13px;font-family:var(--sans)}
+  .mixhead{display:grid;grid-template-columns:1fr 70px 78px;gap:8px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8a857a;margin-bottom:4px}</style>
+  <div class="mixhead"><span></span><span>Units</span><span>SF/unit</span></div>
+  <div class="mixrow"><span>Studio</span><input type="number" id="uStudio" min="0" step="1"><input type="number" id="sfStudio" min="300" step="10"></div>
+  <div class="mixrow"><span>1 Bedroom</span><input type="number" id="u1br" min="0" step="1"><input type="number" id="sf1br" min="400" step="10"></div>
+  <div class="mixrow"><span>2 Bedroom</span><input type="number" id="u2br" min="0" step="1"><input type="number" id="sf2br" min="500" step="10"></div>
+  <div class="mixrow"><span>Townhouse</span><input type="number" id="uth" min="0" step="1"><input type="number" id="sfth" min="800" step="10"></div>
+  <p class="note" id="mixTot"></p>
 
   <h3>Operations</h3>
   <div class="ctl"><label>Stabilized occupancy <span class="val" id="v_occs"></span></label><input type="range" id="occs" min="0.85" max="0.98" step="0.005"></div>
@@ -153,18 +164,22 @@ if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}else{document.getElement
 })();
 
 // ===== model engine (mirrors Edgewater_Phase 1 Pro Forma_383 Units xlsx) =====
-const BASE={rStudio:3.0824,r1br:3.0108,r2br:2.9534,rth:3.1828,occs:0.95,pace:0.05,opexr:0.30,rgrow:0.03,
+const BASE={rStudio:3.0824,r1br:3.0108,r2br:2.9534,rth:3.1828,
+uStudio:230,u1br:54,u2br:98,uth:1,sfStudio:648,sf1br:1006,sf2br:1086,sfth:2120,
+occs:0.95,pace:0.05,opexr:0.30,rgrow:0.03,
 comrent:32,hcres:315,hccont:0.10,land:5,crate:0.07,prate:0.07,casheq:42,rcap:0.05,ccap:0.07,exitm:24,vdur:16};
 let P={...BASE};
-const MIX=[{n:'Studio',u:230,sf:648,k:'rStudio'},{n:'1BR',u:54,sf:1006,k:'r1br'},{n:'2BR',u:98,sf:1086,k:'r2br'},{n:'TH',u:1,sf:2120,k:'rth'}];
+const mixOf=p=>[{n:'Studio',u:p.uStudio,sf:p.sfStudio,k:'rStudio'},{n:'1BR',u:p.u1br,sf:p.sf1br,k:'r1br'},{n:'2BR',u:p.u2br,sf:p.sf2br,k:'r2br'},{n:'TH',u:p.uth,sf:p.sfth,k:'rth'}];
 const RETNRA=38513.2, OFFNRA=6767, AMEN=3868020, HCCOM=160, GRANT=1e6, GP=8.3e6, FACFEE=0.01, FAC=125e6,
 ENT=2.5e6, PERM=0.8e6, DEMO=0.5e6, SITEW=2.1e6, INK=0.03, OI_R=0.10, OI_C=0.24, OPEX_C=0.24, BAD=0.01,
 ROCCS=0.95, OOCCS=0.89, CGROW=0.03, PSP=200, PRENT=79.5675, POPEX=300, POPG=0.025, TXN=0.01, OCC0=0.35, SOFTEARLY=0.65;
 
 function run(p){
   const VS=15, VE=15+p.vdur-1, OPEN=VE+1, REFI=VE+18, EXIT=OPEN+p.exitm-1, N=EXIT+13;
+  const MIX=mixOf(p);
   const resNRA=MIX.reduce((s,m)=>s+m.u*m.sf,0);
   const resAnnual=MIX.reduce((s,m)=>s+m.u*m.sf*p[m.k]*12,0);
+  const resUnits=MIX.reduce((s,m)=>s+m.u,0);
   const landdev=DEMO+SITEW;
   const hard=(resNRA*p.hcres+(RETNRA+OFFNRA)*HCCOM+AMEN)*(1+p.hccont);
   const sbase=hard*0.09+(landdev+hard)*0.02;
@@ -230,7 +245,7 @@ function run(p){
   return {lev,dts,profit,em:pos/neg,irr:xirr(lev,dts),totalCost,eqTot,cumEq,
     yoc:(fwdR+fwdO)/totalCost,dscr:(fwdR+fwdO)/(12*pmt),ltc:permOpen/totalCost,
     net,proceeds,permOpen,rows,OPEN,EXIT,resAnnual,resNRA,
-    avgRent:resAnnual/12/MIX.reduce((s,m)=>s+m.u,0),fwd:fwdR+fwdO,pool,peak:permOpen};
+    avgRent:resAnnual/12/Math.max(1,resUnits),resUnits,fwd:fwdR+fwdO,pool,peak:permOpen};
 }
 function xirr(cf,dts){
   const t0=dts[0];
@@ -247,7 +262,9 @@ const fmtP=x=>(100*x).toFixed(1)+'%';
 const ids=Object.keys(BASE);
 const base=run(BASE);
 let charts={};
+const MIXKEYS=['uStudio','u1br','u2br','uth','sfStudio','sf1br','sf2br','sfth'];
 function vlabel(k,v){
+  if(MIXKEYS.includes(k))return v;
   if(['occs','pace','opexr','rgrow','crate','prate','rcap','ccap','hccont'].includes(k))return fmtP(v);
   if(['land','casheq'].includes(k))return '$'+v+'M';
   if(k==='comrent')return '$'+v;
@@ -255,7 +272,7 @@ function vlabel(k,v){
   if(['exitm','vdur'].includes(k))return v+' mo';
   return '$'+(+v).toFixed(2);
 }
-function sync(){ids.forEach(k=>{document.getElementById(k).value=P[k];document.getElementById('v_'+k).textContent=vlabel(k,P[k]);});}
+function sync(){ids.forEach(k=>{document.getElementById(k).value=P[k];const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);});}
 function delta(el,cur,b,fmt,goodUp=true){
   const d=cur-b, e=document.getElementById(el);
   if(Math.abs(d)<1e-9){e.textContent='base';e.className='d';return;}
@@ -281,6 +298,7 @@ function recalc(){
   delta('d_dscr',r.dscr,base.dscr,x=>x.toFixed(2));
   delta('d_ltc',r.ltc,base.ltc,x=>(100*x).toFixed(1)+'pts',false);
   document.getElementById('avgRent').textContent='$'+Math.round(r.avgRent).toLocaleString()+'/mo';
+  document.getElementById('mixTot').innerHTML='<strong>'+r.resUnits.toLocaleString()+' units · '+Math.round(r.resNRA).toLocaleString()+' SF NRA</strong> (base: 383 · 311,912). Hard cost, revenue, debt and equity needs all rescale automatically.';
   const w=[];
   if(r.dscr<1.20)w.push('DSCR below 1.20 - perm lender will size down the loan.');
   if(r.ltc>0.70)w.push('LTC above 70% - add equity or trim cost.');
@@ -334,7 +352,7 @@ function drawSens(){
   document.getElementById('tSens').innerHTML=h;
 }
 ids.forEach(k=>{
-  document.getElementById(k).addEventListener('input',e=>{P[k]=+e.target.value;document.getElementById('v_'+k).textContent=vlabel(k,P[k]);recalc();});
+  document.getElementById(k).addEventListener('input',e=>{P[k]=+e.target.value||0;const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);recalc();});
 });
 document.getElementById('bReset').onclick=()=>{P={...BASE};sync();recalc();};
 document.getElementById('bExport').onclick=()=>{
