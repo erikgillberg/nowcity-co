@@ -74,7 +74,7 @@ body.gated{overflow:hidden}
 <header class="bar">
   <span class="tag">Edgewater · Internal</span>
   <h1>Phase 1 Underwriting Dashboard</h1>
-  <span class="right">383-unit block design · monthly engine · mirrors the Excel model · <a href="index.html" style="color:#d9a26c">back to site</a></span>
+  <span class="right">Model v2 · market-anchored base + credited upside · mirrors the Excel model · <a href="index.html" style="color:#d9a26c">back to site</a></span>
 </header>
 
 <div class="layout">
@@ -94,6 +94,16 @@ body.gated{overflow:hidden}
     <div class="ctl"><label>HUD loan-to-cost cap <span class="val" id="v_hudLTC"></span></label><input type="range" id="hudLTC" min="0.75" max="0.90" step="0.005"></div>
     <p class="note">HUD case: one construction-to-perm loan, 40-yr amortization, conversion 12 months after opening. Equity is sized to the LTC cap (the LP cash equity slider below applies to the Merchant case only), and LIHTC equity enters the stack ahead of debt. Indicative terms; subject to HUD sizing (incl. DSCR tests) and OHCS allocation.</p>
   </div>
+
+  <h3>Upside Credit Layers</h3>
+  <p class="note" style="margin:0 0 10px">Forward-looking claims, underwritten at partial credit until validated. Base case at 0% earns only what current market data supports.</p>
+  <div class="ctl"><label>Maxumal hard-cost savings ($/SF claim) <span class="val" id="v_maxSave"></span></label><input type="range" id="maxSave" min="0" max="115" step="5"></div>
+  <div class="ctl"><label>Maxumal credit factor <span class="val" id="v_maxCred"></span></label><input type="range" id="maxCred" min="0" max="1" step="0.05"></div>
+  <div class="ctl"><label>District placemaking premium (max) <span class="val" id="v_distPrem"></span></label><input type="range" id="distPrem" min="0" max="0.2" step="0.01"></div>
+  <div class="ctl"><label>District premium credit factor <span class="val" id="v_distCred"></span></label><input type="range" id="distCred" min="0" max="1" step="0.05"></div>
+  <div class="ctl"><label>Premium ramp (years from opening) <span class="val" id="v_dRamp"></span></label><input type="range" id="dRamp" min="2" max="8" step="0.5"></div>
+  <div class="ctl"><label>Green opex savings (pts, claim) <span class="val" id="v_greenSave"></span></label><input type="range" id="greenSave" min="0" max="0.08" step="0.005"></div>
+  <div class="ctl"><label>Green credit factor <span class="val" id="v_greenCred"></span></label><input type="range" id="greenCred" min="0" max="1" step="0.05"></div>
 
   <h3>Residential Rents ($/SF/mo)</h3>
   <div class="ctl"><label>Studio <span class="val" id="v_rStudio"></span></label><input type="range" id="rStudio" min="1.5" max="4" step="0.01"></div>
@@ -149,8 +159,8 @@ body.gated{overflow:hidden}
       <span style="font-size:12px;color:#8a857a;font-family:var(--sans)">click to collapse / expand</span>
     </summary>
     <div style="margin-top:14px;font-size:13.5px;line-height:1.7;max-width:980px">
-      <p><strong>This is a live underwriting model for Phase One of the Edgewater district:</strong> the 5.29-acre first phase at 740 Bassett St NW. Every control on the left feeds a month-by-month engine running from April 2026 through exit. It mirrors our Excel pro forma: land and pre-development spend, construction draws, a construction loan with capitalized interest, a permanent refinance, lease-up, operations, and a sale roughly two years after opening. Nothing is precomputed. Each adjustment re-runs the entire model in your browser, including the sensitivity grid.</p>
-      <p style="margin-top:10px"><strong>The base case</strong> is the company's June 2026 underwriting on the current 383-unit, three-block design: $315/SF residential hard cost plus 10% contingency, $10.9M land all-in, construction debt at 7% with a 65% loan-to-cost target, a 30-year permanent refinance 18 months after completion, 95% stabilized occupancy after a 12-month lease-up, and exit pricing at a 5.0% residential and 7.0% commercial cap rate on forward 12-month NOI.</p>
+      <p><strong>This is Model v2: a live underwriting model for Phase One of the Edgewater district</strong> (5.29 acres, 740 Bassett St NW), rebuilt June 2026 after an independent market audit. Every control feeds a month-by-month engine from April 2026 through exit, mirroring the Excel workbook. Nothing is precomputed.</p>
+      <p style="margin-top:10px"><strong>The philosophy: the base case earns nothing it cannot cite.</strong> Rents are anchored to achieved Salem comps (Spring Woods at ~$2.23/SF, Rivenwood; market average $1,493/mo, RentCafe Apr-2026), rent growth to forecast 2.5%, vacancy and exit caps to current market reports. The unit program is 420 attainable units averaging ~$1,475/month, priced for Salem's actual renter incomes. Every forward-looking claim lives in an explicit <strong>credit layer</strong>: Maxumal's industrialized cost savings, the district placemaking rent premium (which ramps over years as district phases deliver - this is also the district-model integration point), and green-systems opex savings. Each is underwritten at 50% credit until validated; drag to 0% to see the no-credit floor or 100% for the fully-proven case.</p>
       <p style="margin-top:10px"><strong>Two financing cases.</strong> The Merchant case is conventional construction debt rolling to a 30-year perm with a sale about two years after opening. The HUD / LIHTC case models a single FHA 221(d)(4) construction-to-perm loan with 40-year amortization, a Davis-Bacon prevailing-wage premium on residential hard costs, a LIHTC affordable sleeve with rent discounts and credit equity in the stack, and conversion 12 months after opening. Both are indicative structures for comparison, not committed terms.</p>
       <p style="margin-top:10px"><strong>Held constant</strong> (deliberately not on sliders): the development calendar beyond construction duration, soft-cost ratios (~14.9% of hard costs), the 45,280 SF commercial program at $32/SF, 200 parking spaces, 1% bad debt, and a 3% in-kind sponsor contribution that funds the development fee.</p>
       <p style="margin-top:10px"><strong>Read with care.</strong> Base rents carry the prior unit schedule's $/SF onto larger units and have not yet been validated against Salem market comps. That is the single assumption most worth stress-testing here. The model also excludes things that sit outside Phase One underwriting: Opportunity Zone tax benefits, the interim activation businesses, and district Phases 2 through 4. Returns shown are project-level, before GP/LP waterfall splits and before taxes.</p>
@@ -194,14 +204,15 @@ if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}else{document.getElement
 })();
 
 // ===== model engine (mirrors Edgewater_Phase 1 Pro Forma_383 Units xlsx) =====
-const BASE={fin:0,hudRate:0.0625,davis:0.08,affShare:0.30,affDisc:0.35,lihtcEq:11,hudLTC:0.85,
-rStudio:3.0824,r1br:3.0108,r2br:2.9534,rth:3.1828,
-uStudio:230,u1br:54,u2br:98,uth:1,sfStudio:648,sf1br:1006,sf2br:1086,sfth:2120,
-occs:0.95,pace:0.05,opexr:0.30,rgrow:0.03,
-comrent:32,hcres:315,hccont:0.10,land:5,crate:0.07,prate:0.07,casheq:42,rcap:0.05,ccap:0.07,exitm:24,vdur:16};
+const BASE={fin:0,hudRate:0.0625,davis:0.08,affShare:0.30,affDisc:0.25,lihtcEq:11,hudLTC:0.85,
+rStudio:2.60,r1br:2.25,r2br:2.00,rth:1.90,
+uStudio:180,u1br:150,u2br:85,uth:5,sfStudio:500,sf1br:640,sf2br:880,sfth:1300,
+occs:0.95,pace:0.05,opexr:0.30,rgrow:0.025,
+comrent:24,hcres:315,hccont:0.10,land:5,crate:0.07,prate:0.07,casheq:28,rcap:0.055,ccap:0.07,exitm:24,vdur:16,
+maxSave:85,maxCred:0.5,distPrem:0.10,distCred:0.5,dRamp:5,greenSave:0.05,greenCred:0.5};
 let P={...BASE};
 const mixOf=p=>[{n:'Studio',u:p.uStudio,sf:p.sfStudio,k:'rStudio'},{n:'1BR',u:p.u1br,sf:p.sf1br,k:'r1br'},{n:'2BR',u:p.u2br,sf:p.sf2br,k:'r2br'},{n:'TH',u:p.uth,sf:p.sfth,k:'rth'}];
-const RETNRA=38513.2, OFFNRA=6767, AMEN=3868020, HCCOM=160, GRANT=1e6, GP=8.3e6, FACFEE=0.01, FAC=125e6,
+const RETNRA=38513.2, OFFNRA=6767, AMEN=3868020, HCCOM=160, GRANT=1e6, GP=8.3e6, FACFEE=0.01, FAC=95e6,
 ENT=2.5e6, PERM=0.8e6, DEMO=0.5e6, SITEW=2.1e6, INK=0.03, OI_R=0.10, OI_C=0.24, OPEX_C=0.24, BAD=0.01,
 ROCCS=0.95, OOCCS=0.89, CGROW=0.03, PSP=200, PRENT=79.5675, POPEX=300, POPG=0.025, TXN=0.01, OCC0=0.35, SOFTEARLY=0.65;
 
@@ -215,7 +226,8 @@ function run(p){
   const resAnnual=MIX.reduce((s,m)=>s+m.u*m.sf*p[m.k]*12,0)*affFactor;
   const resUnits=MIX.reduce((s,m)=>s+m.u,0);
   const landdev=DEMO+SITEW;
-  const hard=(resNRA*p.hcres*(HUD?1+p.davis:1)+(RETNRA+OFFNRA)*HCCOM+AMEN)*(1+p.hccont);
+  const hcresEff=p.hcres-p.maxSave*p.maxCred, opexEff=p.opexr-p.greenSave*p.greenCred;
+  const hard=(resNRA*hcresEff*(HUD?1+p.davis:1)+(RETNRA+OFFNRA)*HCCOM+AMEN)*(1+p.hccont);
   const sbase=hard*0.09+(landdev+hard)*0.02;
   const fee3=0.03*(landdev+hard+sbase), scont=0.03*(sbase+fee3), soft=sbase+fee3+scont;
   const other=hard*0.01005;
@@ -252,12 +264,13 @@ function run(p){
       if(mo>=0){
         const g=Math.pow(1+p.rgrow,mo/12), cg=Math.pow(1+CGROW,mo/12);
         const oR=Math.min(p.occs,OCC0+p.pace*mo), oRet=Math.min(ROCCS,OCC0+p.pace*mo), oOff=Math.min(OOCCS,OCC0+p.pace*mo);
-        resB=resAnnual/12*g*oR; resO=resB*OI_R;
+        const dp=1+p.distPrem*p.distCred*Math.min(1,mo/(p.dRamp*12));
+        resB=resAnnual/12*g*oR*dp; resO=resB*OI_R;
         retB=RETNRA*p.comrent/12*cg*oRet; retO=retB*OI_C;
         offB=OFFNRA*p.comrent/12*cg*oOff; offO=offB*OI_C;
         park=PSP*PRENT*cg;
         const rev=resB+resO+retB+retO+offB+offO+park;
-        const bad=rev*BAD, oxR=resB*p.opexr, oxC=(retB+offB)*OPEX_C, oxP=PSP*POPEX/12*Math.pow(1+POPG,mo/12);
+        const bad=rev*BAD, oxR=resB*opexEff, oxC=(retB+offB)*OPEX_C, oxP=PSP*POPEX/12*Math.pow(1+POPG,mo/12);
         noi=rev-bad-oxR-oxC-oxP;
         noiR=resB+resO-(resB+resO)*BAD-oxR;
       }
@@ -318,8 +331,10 @@ let charts={};
 const MIXKEYS=['uStudio','u1br','u2br','uth','sfStudio','sf1br','sf2br','sfth'];
 function vlabel(k,v){
   if(MIXKEYS.includes(k)||k==='fin')return v;
-  if(['hudRate','davis','affShare','affDisc','hudLTC'].includes(k))return fmtP(v);
+  if(['hudRate','davis','affShare','affDisc','hudLTC','maxCred','distPrem','distCred','greenSave','greenCred'].includes(k))return fmtP(v);
   if(k==='lihtcEq')return '$'+v+'M';
+  if(k==='maxSave')return '$'+v+'/SF';
+  if(k==='dRamp')return v+' yrs';
   if(['occs','pace','opexr','rgrow','crate','prate','rcap','ccap','hccont'].includes(k))return fmtP(v);
   if(['land','casheq'].includes(k))return '$'+v+'M';
   if(k==='comrent')return '$'+v;
@@ -421,7 +436,11 @@ document.getElementById('finM').onclick=()=>setFin(0);
 document.getElementById('finH').onclick=()=>setFin(1);
 document.getElementById('bReset').onclick=()=>{P={...BASE};sync();recalc();};
 document.getElementById('bExport').onclick=()=>{
-  const s=JSON.stringify({scenario:'edgewater-phase1',exported:new Date().toISOString(),inputs:P},null,1);
+  const r=run(P);
+  const s=JSON.stringify({scenario:'edgewater-phase1-v2',exported:new Date().toISOString(),inputs:P,
+    districtHandoff:{units:r.resUnits,resNRA:Math.round(r.resNRA),totalCost:Math.round(r.totalCost),
+    equity:Math.round(r.eqTot),stabilizedNOI:Math.round(r.fwd),netExitValue:Math.round(r.net),
+    irr:+(100*r.irr).toFixed(2),em:+r.em.toFixed(3)}},null,1);
   navigator.clipboard&&navigator.clipboard.writeText(s);
   const b=new Blob([s],{type:'application/json'});const a=document.createElement('a');
   a.href=URL.createObjectURL(b);a.download='edgewater-scenario.json';a.click();
