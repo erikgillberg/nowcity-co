@@ -88,7 +88,7 @@ body.gated{overflow:hidden}
 
 <header class="bar">
   <span class="tag">Edgewater · Internal</span>
-  <h1>How It Pencils &mdash; Upside Explorer</h1>
+  <h1>How It Pencils - Upside Explorer</h1>
   <span class="right">Base case starts in the red &middot; stack the levers &middot; <a href="model.html" style="color:#d9a26c">&larr; base-case model</a> &middot; <a href="feasibility.html" style="color:#d9a26c">feasibility review</a> &middot; <a href="index.html" style="color:#d9a26c">back to site</a></span>
 </header>
 
@@ -213,7 +213,7 @@ body.gated{overflow:hidden}
 
   <div class="grid2">
     <div class="card full">
-      <h4>How it pencils &mdash; IRR build-up by lever category</h4>
+      <h4>How it pencils - IRR build-up by lever category</h4>
       <p class="sub">Each bar is a full re-run of the engine. Starting from the red base case, levers are switched on one category at a time at your current settings. The final bar is the all-in levered IRR.</p>
       <canvas id="cWF"></canvas>
       <table class="wf" id="tWF"></table>
@@ -230,7 +230,7 @@ body.gated{overflow:hidden}
       <span style="font-size:12px;color:#8a857a;font-family:var(--sans)">click to expand</span>
     </summary>
     <div style="margin-top:14px;font-size:13.5px;line-height:1.7;max-width:980px">
-      <p><strong>This is the companion to the base-case model.</strong> The <a href="model.html" style="color:var(--terra);font-weight:600">underwriting model</a> holds Phase One to a plain merchant pro forma and shows the honest result: a conventional developer building at honest Salem rents loses money, which is exactly why this corridor sits undeveloped. This page is the other half of the argument &mdash; the toolkit creative development teams use to close that gap, every lever separable and individually sized.</p>
+      <p><strong>This is the companion to the base-case model.</strong> The <a href="model.html" style="color:var(--terra);font-weight:600">underwriting model</a> holds Phase One to a plain merchant pro forma and shows the honest result: a conventional developer building at honest Salem rents loses money, which is exactly why this corridor sits undeveloped. This page is the other half of the argument - the toolkit creative development teams use to close that gap, every lever separable and individually sized.</p>
       <p style="margin-top:10px"><strong>The waterfall is the whole story.</strong> It starts at the base-case floor and attributes the climb to five categories: cost &amp; efficiency, revenue &amp; placemaking, public subsidy, affordable / tax-credit equity, and financing structure. Because the levers interact, the decomposition is order-dependent (each category is added on top of the ones before it); the final all-in IRR is exact regardless of order.</p>
       <p style="margin-top:10px"><strong>Every lever is real and in use.</strong> LIHTC and HUD 221(d)(4) are the backbone of attainable housing finance. TIF, MUPTE / Vertical Housing abatement, SDC waivers, and capacity grants are standard public gap-funding tools. C-PACE, NMTC, Opportunity Zones, ground leases, industrialized construction, right-sized parking, on-site solar, and ancillary income are all levers experienced teams combine. None is a silver bullet; the thesis is that the <em>combination</em>, executed well, turns a -15% floor into an investable deal while keeping rents attainable.</p>
       <p style="margin-top:10px;color:#8a857a;font-size:12.5px">For discussion purposes only. This is a planning tool, not an offer of securities, and several levers (LIHTC allocation, HUD sizing, TIF eligibility, OZ treatment) are subject to program rules, third-party validation, and public approvals. After-tax figures are illustrative. Questions or a scenario worth keeping? Export it and send it to erik@nowcitylabs.com.</p>
@@ -488,7 +488,7 @@ function recalc(){
 
   // status / DSCR warnings
   const w=[];
-  if(r.HUD&&r.dscr<1.176)w.push('HUD case: DSCR '+r.dscr.toFixed(2)+' is below the 1.176 affordable minimum &mdash; the loan will size down.');
+  if(r.HUD&&r.dscr<1.176)w.push('HUD case: DSCR '+r.dscr.toFixed(2)+' is below the 1.176 affordable minimum - the loan will size down.');
   if(!r.HUD&&r.dscr<1.20&&r.dscr>0)w.push('Conventional DSCR '+r.dscr.toFixed(2)+' is below the 1.20 floor.');
   if(r.permOpen>FAC)w.push('Loan exceeds the $95M facility.');
   document.getElementById('status').innerHTML=w.length?'<div class="flag" style="border-color:#d99;background:#fdeeee;margin-top:16px">'+w.join(' ')+'</div>':'';
@@ -503,7 +503,7 @@ function recalc(){
     +r.em.toFixed(2)+'x equity, DSCR '+r.dscr.toFixed(2)+', on <strong>'+fmt$(r.cashEq)+'</strong> of cash equity'
     +(P.affShare>0?' with <strong>'+r.affUnits+'</strong> affordable units':'')
     +'. Base-case floor: '+fmtP(base.irr)+'. '
-    +(cleared?'The lever stack closes the '+((nz(r.irr)-nz(base.irr))*100).toFixed(0)+'-point gap.':'Keep stacking &mdash; you need about '+((0.15-nz(r.irr))*100).toFixed(0)+' more points.');
+    +(cleared?'The lever stack closes the '+((nz(r.irr)-nz(base.irr))*100).toFixed(0)+'-point gap.':'Keep stacking - you need about '+((0.15-nz(r.irr))*100).toFixed(0)+' more points.');
 }
 function drawWaterfall(){
   const steps=waterfall(P);
@@ -518,7 +518,7 @@ function drawWaterfall(){
   let h='<tr><th>Lever category</th><th>IRR after</th><th>Adds</th><th>Equity x</th><th>DSCR</th></tr>';
   steps.forEach((s,i)=>{
     h+='<tr><td>'+(i===0?s.name:'+ '+s.name)+'</td><td>'+(isNaN(s.irr)?'n/a':fmtP(s.irr))+'</td>'
-      +'<td style="color:'+(i===0?'#8a857a':(s.delta>=0?'#3c7a3c':'#b04a2f'))+'">'+(i===0?'&mdash;':(s.delta>=0?'+':'')+(100*s.delta).toFixed(1)+'pts')+'</td>'
+      +'<td style="color:'+(i===0?'#8a857a':(s.delta>=0?'#3c7a3c':'#b04a2f'))+'">'+(i===0?'-':(s.delta>=0?'+':'')+(100*s.delta).toFixed(1)+'pts')+'</td>'
       +'<td>'+s.em.toFixed(2)+'x</td><td>'+s.dscr.toFixed(2)+'</td></tr>';
   });
   const last=steps[steps.length-1];
