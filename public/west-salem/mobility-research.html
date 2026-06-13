@@ -27,7 +27,7 @@
 .dna .card{position:relative;padding-left:58px}
 .dna .card::before{counter-increment:dna;content:counter(dna,decimal-leading-zero);position:absolute;left:18px;top:18px;font-family:var(--serif);font-size:20px;color:var(--terra);opacity:.9}
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:30px}
-table.matrix{border-collapse:collapse;font-size:12.5px;min-width:820px;width:100%}
+table.matrix{border-collapse:collapse;font-size:12.5px;min-width:920px;width:100%}
 table.matrix th,table.matrix td{padding:9px 7px;text-align:center;border-bottom:1px solid rgba(0,0,0,.07)}
 table.matrix thead th{font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--terra);vertical-align:bottom;border-bottom:2px solid var(--line);line-height:1.25}
 table.matrix tbody th{text-align:left;font-weight:600;font-size:12.5px;white-space:nowrap;color:var(--ink-deep)}
@@ -101,6 +101,7 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
   <div class="wrap">
     <a href="#thesis">Thesis</a>
     <a href="#cases">The Cases</a>
+    <a href="#metromover">Metromover</a>
     <a href="#patterns">The Patterns</a>
     <a href="#matrix">Pattern Matrix</a>
     <a href="#value">Cost &amp; Ridership</a>
@@ -114,7 +115,7 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
   <div class="wrap">
     <div class="eyebrow">Research &middot; Mobility Innovation</div>
     <h1>What Moves<br>a District</h1>
-    <p class="sub">A dozen ways cities reinvented how people move - and the patterns that separate the breakthroughs from the expensive curiosities.</p>
+    <p class="sub">More than a dozen ways cities reinvented how people move - and the patterns that separate the breakthroughs from the expensive curiosities.</p>
     <div class="meta">Global mobility precedents · The replicable DNA · Cost per rider</div>
   </div>
 </header>
@@ -125,7 +126,7 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
     <div class="sec-head rv">
       <div class="eyebrow">The Thesis</div>
       <h2>The last mile is the whole game</h2>
-      <p class="lead">We studied a dozen of the most-cited mobility innovations of the last fifty years - from near-zero open-streets programs to billion-dollar cable networks - to find what actually separates the ones that changed how a city moves from the ones that became expensive curiosities. It is rarely the technology. It is whether the system solved a real trip people were already trying to make, started cheap enough to prove demand, and fed the existing network instead of competing with it.</p>
+      <p class="lead">We studied more than a dozen of the most-cited mobility innovations of the last fifty years - from near-zero open-streets programs to billion-dollar cable networks - to find what actually separates the ones that changed how a city moves from the ones that became expensive curiosities. It is rarely the technology. It is whether the system solved a real trip people were already trying to make, started cheap enough to prove demand, and fed the existing network instead of competing with it.</p>
     </div>
     <div class="rv" style="text-align:center;padding:18px 0 6px">
       <p class="bigquote" style="margin:0 auto;max-width:780px">Faster-than-car, or behavior will not shift. Cheaper-than-rail, or it will not get built. Feed the trunk, or it will not last.</p>
@@ -148,7 +149,7 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Evidence</div>
-      <h2>Twelve cases, three capital tiers</h2>
+      <h2>Thirteen cases, three capital tiers</h2>
       <p class="lead">Ordered by the capital required to start. The pattern repeats the economic-development finding: the cheapest interventions move behavior fastest per dollar, and they are what make the expensive infrastructure financeable later.</p>
     </div>
 
@@ -239,6 +240,14 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
           <p class="caution">Caution: proving grounds need sustained private demand to stay solvent.</p>
         </div>
         <div class="card on-alt case">
+          <div class="cmedia"><a href="https://commons.wikimedia.org/wiki/File:Knight%20Center%20Metromover%20station.jpg" target="_blank" rel="noopener" title="Source and license: Wikimedia Commons"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Knight%20Center%20Metromover%20station.jpg?width=640" alt="An elevated Miami Metromover station and automated car downtown" loading="lazy" onerror="this.closest('.cmedia').remove()"></a><span class="credit">Wikimedia Commons</span></div>
+          <h4>Miami Metromover</h4>
+          <div class="loc">Florida &middot; 1986</div>
+          <p style="font-size:14px">A fare-free, fully automated, elevated downtown circulator - the closest thing to Whoosh already running at scale, and a credited catalyst for Brickell's density.</p>
+          <div class="metric">21 stations · 7.25M rides/yr · free</div>
+          <p style="font-size:13px;color:#6e6a61;margin-top:6px">Ridership nearly doubled when the fare was removed in 2002.</p>
+        </div>
+        <div class="card on-alt case">
           <h4>Whoosh by Swyft Cities</h4>
           <div class="loc">Irvine Great Park &middot; 2025</div>
           <p style="font-size:14px">An autonomous, electric cable circulator with offline stations, so every trip is nonstop and zero-wait. Chosen by Irvine in April 2025.</p>
@@ -248,6 +257,60 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- METROMOVER SPOTLIGHT -->
+<section id="metromover" class="dark">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Spotlight &middot; Why It Works</div>
+      <h2>Miami's Metromover: the model already running</h2>
+      <p class="lead">If you want proof that an automated, grade-separated circulator can carry a city, Miami has run one since 1986. The Metromover is fare-free, fully driverless, elevated above the traffic, and widely credited as a catalyst that helped turn Brickell from a sleepy office strip into one of the densest financial districts in the United States. It is the closest thing to Whoosh already operating at scale - and it tells us exactly why the model works.</p>
+    </div>
+    <div class="stats rv" style="margin-top:6px">
+      <div class="stat"><div class="num">1986</div><div class="lbl">Running, fully automated, ever since</div></div>
+      <div class="stat"><div class="num">21 stations</div><div class="lbl">across 4.4 miles, about every two blocks</div></div>
+      <div class="stat"><div class="num">7.25M</div><div class="lbl">rides a year; peaked above 30,000 per weekday</div></div>
+      <div class="stat"><div class="num">Free</div><div class="lbl">since 2002 - ridership nearly doubled after</div></div>
+      <div class="stat"><div class="num">~$1</div><div class="lbl">to operate per ride; trains every 90 seconds at rush</div></div>
+    </div>
+
+    <h3 class="serif rv" style="font-size:21px;color:var(--cream);margin:46px 0 0">Six reasons it works - and what each says about Whoosh</h3>
+    <div class="grid g3 rv" style="margin-top:20px">
+      <div class="card on-alt">
+        <h4>Free and frequent drives demand</h4>
+        <p style="font-size:13.5px">Miami dropped the 25-cent fare in 2002 - collecting it cost more than it raised - and ridership nearly doubled in three years. Trains arrive every 90 seconds at rush.</p>
+        <p style="font-size:13.5px;margin-top:8px"><strong style="color:var(--terra)">For Whoosh:</strong> zero-wait boarding and a low-friction fare remove exactly what keeps people in cars.</p>
+      </div>
+      <div class="card on-alt">
+        <h4>Automated means cheap to run</h4>
+        <p style="font-size:13.5px">Driverless from day one, it runs 19 hours a day, seven days a week, at roughly a dollar per ride.</p>
+        <p style="font-size:13.5px;margin-top:8px"><strong style="color:var(--terra)">For Whoosh:</strong> autonomy is what makes the projected one-sixth operating cost - and all-day service - affordable.</p>
+      </div>
+      <div class="card on-alt">
+        <h4>Grade-separated means reliable</h4>
+        <p style="font-size:13.5px">Elevated above the street, it never sits in traffic and runs through any weather.</p>
+        <p style="font-size:13.5px;margin-top:8px"><strong style="color:var(--terra)">For Whoosh:</strong> an aerial alignment soars over Wallace Road, SR-22, and the river - immune to congestion, snow, and construction.</p>
+      </div>
+      <div class="card on-alt">
+        <h4>Dense stops capture the short trip</h4>
+        <p style="font-size:13.5px">Stations every two blocks connect nearly every major downtown building, so walking to one is trivial.</p>
+        <p style="font-size:13.5px;margin-top:8px"><strong style="color:var(--terra)">For Whoosh:</strong> a station for each three-story-or-taller block across a ~1,000-acre hub does the same in Salem.</p>
+      </div>
+      <div class="card on-alt">
+        <h4>It feeds the trunk</h4>
+        <p style="font-size:13.5px">Built mutually reliant with Metrorail and Metrobus, it delivers thousands of daily transfers and enlarges the rail system's reach.</p>
+        <p style="font-size:13.5px;margin-top:8px"><strong style="color:var(--terra)">For Whoosh:</strong> integrating with Cherriots lets the buses run shorter, more frequent spokes into a far larger catchment.</p>
+      </div>
+      <div class="card on-alt">
+        <h4>It is a development catalyst</h4>
+        <p style="font-size:13.5px">By letting people "park once," it is credited as a catalyst for the Brickell building boom.</p>
+        <p style="font-size:13.5px;margin-top:8px"><strong style="color:var(--terra)">For Whoosh:</strong> the same park-once effect optimizes parking and turns avoided structures into land value and new development.</p>
+      </div>
+    </div>
+
+    <div class="flag rv" style="margin-top:22px"><strong>The honest read:</strong> Metromover's one weakness is speed - it averages about 9 mph, a circulator rather than a faster-than-car ride. And two sibling US people movers, in Detroit and Jacksonville, badly underperformed: the model only works where there is real density, a free or near-free fare, and a trunk to feed. Whoosh keeps everything that made Miami work and fixes the speed - it is faster-than-car. The market's verdict on the model is clear too: Miami is now extending the Metromover, and the county is studying Metromover-like systems in five more corridors.</div>
   </div>
 </section>
 
@@ -280,24 +343,24 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
     <div class="sec-head rv">
       <div class="eyebrow">Pattern Language &times; System</div>
       <h2>Who did what</h2>
-      <p class="lead">The ten moves mapped against eight of the systems. The proven movers - the cable networks and BRT - express nearly every pattern; the cases that came with cautions (a tech-led pilot, a pioneering app with a fragile business model) visibly skip a few.</p>
+      <p class="lead">The ten moves mapped against nine of the systems. The proven movers - the cable networks and BRT - express nearly every pattern; the cases that came with cautions (a tech-led pilot, a pioneering app with a fragile business model) visibly skip a few.</p>
     </div>
     <div class="card on-alt rv" style="padding:18px">
       <div class="tbl-scroll">
         <table class="matrix">
-          <thead><tr><th style="text-align:left">Pattern</th><th>Curitiba BRT</th><th>Medell&iacute;n</th><th>Mexico City</th><th>La Paz</th><th>Morgantown</th><th>Smart Columbus</th><th>Helsinki MaaS</th><th>Whoosh</th></tr></thead>
+          <thead><tr><th style="text-align:left">Pattern</th><th>Curitiba BRT</th><th>Medell&iacute;n</th><th>Mexico City</th><th>La Paz</th><th>Morgantown</th><th>Smart Columbus</th><th>Helsinki MaaS</th><th>Whoosh</th><th>Miami Metromover</th></tr></thead>
           <tbody>
-          <tr><th>Solve a Real Trip</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
-          <tr><th>Start Cheap, Prove Demand</th><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="n">&#9675;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td></tr>
-          <tr><th>Faster-than-Car</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td></tr>
-          <tr><th>Cheaper-than-Rail</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="n">&#9675;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
-          <tr><th>Feed the Trunk</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
-          <tr><th>Equity-First Placement</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td></tr>
-          <tr><th>Parking &rarr; Land</th><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td></tr>
-          <tr><th>Iconic Experience</th><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="n">&#9675;</span></td><td><span class="y">&#9679;</span></td></tr>
-          <tr><th>A Dedicated Vehicle</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td></tr>
-          <tr><th>Measure &amp; Iterate</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td></tr>
-          <tr class="sum"><th>Moves fully expressed</th><td>8</td><td>8</td><td>8</td><td>8</td><td>6</td><td>5</td><td>5</td><td>7</td></tr>
+          <tr><th>Solve a Real Trip</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Start Cheap, Prove Demand</th><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="n">&#9675;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td></tr>
+          <tr><th>Faster-than-Car</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td></tr>
+          <tr><th>Cheaper-than-Rail</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="n">&#9675;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Feed the Trunk</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Equity-First Placement</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td></tr>
+          <tr><th>Parking &rarr; Land</th><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Iconic Experience</th><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="n">&#9675;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td></tr>
+          <tr><th>A Dedicated Vehicle</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Measure &amp; Iterate</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr class="sum"><th>Moves fully expressed</th><td>8</td><td>8</td><td>8</td><td>8</td><td>6</td><td>5</td><td>5</td><td>7</td><td>6</td></tr>
           </tbody>
         </table>
       </div>
@@ -327,6 +390,7 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
             <tr><td class="place">Morgantown PRT</td><td>~$120M (Boeing / USDOT)</td><td>16,000/day for 50 years of continuous automated service</td><td class="num">Durable; ran over budget</td></tr>
             <tr><td class="place">Smart Columbus</td><td>~$140M incl. local match</td><td>+$173M gross metro product; 2,366 jobs; AV and app pilots</td><td class="num">Ecosystem ROI</td></tr>
             <tr><td class="place">Helsinki Whim (MaaS)</td><td>App / software platform</td><td>2M+ trips in year one; 84% on transit; 12% of users dropped a car</td><td class="num">Operator later failed</td></tr>
+            <tr><td class="place">Miami Metromover</td><td>~$153M build; ~$1/ride to operate; fare-free since 2002</td><td>7.25M/yr; ~23,400 weekday (peaked 30,000+ pre-COVID); ridership doubled when the fare was removed</td><td class="num">Catalyst for Brickell density</td></tr>
             <tr><td class="place">Whoosh &middot; Irvine</td><td>~$6.1M initial city segment + Swyft donation</td><td>27,000 daily projected; 4&times; ridership at 1/6 operating cost vs traditional</td><td class="num">Frontier, unproven at scale</td></tr>
           </tbody>
         </table>
@@ -356,6 +420,7 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
             <tr><td class="place">Mexico City Cableb&uacute;s</td><td class="num">2021</td><td>Beat forecast immediately</td><td>Three lines built out within a few years</td></tr>
             <tr><td class="place">La Paz Mi Telef&eacute;rico</td><td class="num">2014</td><td>Strong ridership from first lines</td><td>Ten lines completed over ~5-8 yrs</td></tr>
             <tr><td class="place">Morgantown PRT</td><td class="num">Opened 1975</td><td>Late and over budget at first</td><td>50 years of continuous service since</td></tr>
+            <tr><td class="place">Miami Metromover</td><td class="num">1986</td><td>Record ridership within a year</td><td>Free fare in 2002 doubled it; now expanding across the county</td></tr>
             <tr><td class="place">Whoosh &middot; Irvine</td><td class="num">Founded 2021</td><td>Irvine selected it in 2025</td><td>Initial operating segment now in build</td></tr>
           </tbody>
         </table>
@@ -401,6 +466,7 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
       <p><strong>Morgantown PRT:</strong> <a href="https://prt.wvu.edu/about-the-prt" target="_blank" rel="noopener">West Virginia University</a>.</p>
       <p><strong>Smart Columbus:</strong> <a href="https://www.smartcitiesdive.com/news/smart-columbus-ohio-smart-city-challenge-winner-lessons-learned/607999/" target="_blank" rel="noopener">Smart Cities Dive</a>; USDOT.</p>
       <p><strong>Helsinki Whim (MaaS):</strong> <a href="https://maas-alliance.eu/2019/04/02/whimpact-insights-from-the-worlds-first-mobility-as-a-service-maas-system/" target="_blank" rel="noopener">MaaS Alliance (Whimpact)</a>.</p>
+      <p><strong>Miami Metromover:</strong> <a href="https://en.wikipedia.org/wiki/Metromover" target="_blank" rel="noopener">Metromover</a>; <a href="https://www.apta.com/research-technical-resources/transit-statistics/ridership-report/" target="_blank" rel="noopener">APTA ridership reports</a>; Miami-Dade Transit.</p>
       <p><strong>Whoosh / Swyft Cities:</strong> <a href="https://cityofirvine.org/news-media/news-article/great-park-board-votes-enter-negotiations-swyft-cities" target="_blank" rel="noopener">City of Irvine</a>; Swyft Cities.</p>
     </div>
     <p class="muted rv" style="font-size:12.5px;margin-top:18px">Planning-level synthesis for discussion. Figures describe the precedent systems, not any specific project. Case photographs are hosted on <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a> under their respective licenses; click any image for its source and license.</p>
