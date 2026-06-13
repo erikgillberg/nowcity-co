@@ -195,3 +195,6 @@ body.gated .page{filter:blur(14px);pointer-events:none;user-select:none}
 .navlinks .dd .ddm li{display:block;margin:0}
 .navlinks .dd .ddm a{display:block;padding:9px 16px;font-size:13px;color:#e9e5da;text-decoration:none;white-space:nowrap}
 .navlinks .dd .ddm a:hover{color:#d9a26c;background:rgba(255,255,255,.04)}
+.navlinks .dd .ddm{max-height:80vh;overflow-y:auto}
+.navlinks .dd .ddm .dd-head{padding:10px 16px 4px;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a857a;border-top:1px solid #3d392f;margin-top:5px}
+.navlinks .dd .ddm a{padding-left:16px}

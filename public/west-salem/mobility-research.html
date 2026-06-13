@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobility Research &amp; Precedents - Now City West Salem</title>
+<meta name="description" content="What moves a district: a dozen global mobility innovations, from near-zero open streets to billion-dollar cable networks, and the patterns that separate the ones that changed a city from the expensive curiosities.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.tier{margin-top:40px}
+.tier-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.tier-head .lbl{font-family:var(--serif);font-size:19px;color:var(--ink-deep)}
+.tier-head .cap{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+.case h4{margin-bottom:2px}
+.case .loc{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9a948a;margin-bottom:10px}
+.case .metric{font-family:var(--serif);font-size:15px;color:var(--green);margin-top:10px}
+.case .caution{font-size:13px;color:#9a5a3f;margin-top:8px}
+.case img{border-radius:8px;width:100%;height:170px;object-fit:cover;margin-bottom:14px}
+.case .cmedia{position:relative;margin-bottom:14px;border-radius:8px;overflow:hidden}
+.case .cmedia img{margin-bottom:0;display:block}
+.case .credit{position:absolute;right:6px;bottom:6px;background:rgba(20,18,14,.62);color:#fff;font-size:9px;padding:2px 6px;border-radius:3px;letter-spacing:.04em}
+.dna{counter-reset:dna}
+.dna .card{position:relative;padding-left:58px}
+.dna .card::before{counter-increment:dna;content:counter(dna,decimal-leading-zero);position:absolute;left:18px;top:18px;font-family:var(--serif);font-size:20px;color:var(--terra);opacity:.9}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:30px}
+table.matrix{border-collapse:collapse;font-size:12.5px;min-width:820px;width:100%}
+table.matrix th,table.matrix td{padding:9px 7px;text-align:center;border-bottom:1px solid rgba(0,0,0,.07)}
+table.matrix thead th{font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--terra);vertical-align:bottom;border-bottom:2px solid var(--line);line-height:1.25}
+table.matrix tbody th{text-align:left;font-weight:600;font-size:12.5px;white-space:nowrap;color:var(--ink-deep)}
+table.matrix td .y{color:var(--green);font-size:15px}
+table.matrix td .p{color:#c89a6a;font-size:15px}
+table.matrix td .n{color:#cfc8bb;font-size:14px}
+table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);border-bottom:none;font-family:var(--serif);color:var(--green);font-size:15px;padding-top:12px}
+.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:#6e6a61;margin-top:14px}
+.dtable{border-collapse:collapse;width:100%;font-size:13.5px;min-width:680px}
+.dtable th{font-family:Inter,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--terra);text-align:left;padding:10px 12px;border-bottom:2px solid var(--line);vertical-align:bottom}
+.dtable td{padding:11px 12px;border-bottom:1px solid rgba(0,0,0,.06);vertical-align:top}
+.dtable td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.dtable tbody tr:hover{background:rgba(168,112,63,.04)}
+.dtable .place{font-weight:600;color:var(--ink-deep);white-space:nowrap}
+.srcs{font-size:12.5px;color:#7a756b;line-height:1.8;column-count:2;column-gap:40px}
+@media(max-width:720px){.srcs{column-count:1}}
+</style>
+</head>
+<body class="gated">
+
+<!-- PASSCODE GATE -->
+<div id="gate">
+  <div class="panel">
+    <div class="eyebrow" style="color:#d9a26c">Now City West Salem</div>
+    <h1 class="serif">Private<br>Preview</h1>
+    <p>This site is shared with project stakeholders for discussion purposes. Enter the access code to continue.</p>
+    <form id="gateform">
+      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+      <div class="err" id="gateerr"></div>
+    </form>
+    <p style="margin-top:22px;font-size:12.5px">Need access? Contact <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Now City West Salem</a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="district.html">The District</a></li>
+      <li><a href="plan.html">Business Plan</a></li>
+      <li class="dd"><a href="activation.html" class="active">Activation</a>
+        <ul class="ddm">
+          <li><a href="activation.html">Activation Plan</a></li>
+          <li class="dd-head">Research &amp; Precedents</li>
+          <li><a href="research.html">District Economic Development</a></li>
+          <li><a href="mobility-research.html">District Mobility</a></li>
+          <li class="dd-head">Concepts</li>
+          <li><a href="mobility-concepts.html">Salem Mobility Concepts</a></li>
+          <li class="dd-head">West Salem Activation</li>
+          <li><a href="activation.html#market">Retail Activation</a></li>
+          <li><a href="activation.html#scandi">Housing Activation</a></li>
+        </ul>
+      </li>
+      <li><a href="om.html">Investment Summary</a></li>
+      <li class="dd"><a href="model.html">Model</a>
+        <ul class="ddm">
+          <li><a href="model.html">Base Case Model</a></li>
+          <li><a href="upside.html">How It Pencils</a></li>
+          <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#thesis">Thesis</a>
+    <a href="#cases">The Cases</a>
+    <a href="#patterns">The Patterns</a>
+    <a href="#matrix">Pattern Matrix</a>
+    <a href="#value">Cost &amp; Ridership</a>
+    <a href="#timeline">Timing</a>
+    <a href="#vehicle">The Vehicle</a>
+  </div>
+</div>
+
+<header class="hero short" id="top">
+  <div class="bg" style="background-image:url('assets/om/om-gondola.jpg')"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="eyebrow">Research &middot; Mobility Innovation</div>
+    <h1>What Moves<br>a District</h1>
+    <p class="sub">A dozen ways cities reinvented how people move - and the patterns that separate the breakthroughs from the expensive curiosities.</p>
+    <div class="meta">Global mobility precedents · The replicable DNA · Cost per rider</div>
+  </div>
+</header>
+
+<!-- THESIS -->
+<section id="thesis">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Thesis</div>
+      <h2>The last mile is the whole game</h2>
+      <p class="lead">We studied a dozen of the most-cited mobility innovations of the last fifty years - from near-zero open-streets programs to billion-dollar cable networks - to find what actually separates the ones that changed how a city moves from the ones that became expensive curiosities. It is rarely the technology. It is whether the system solved a real trip people were already trying to make, started cheap enough to prove demand, and fed the existing network instead of competing with it.</p>
+    </div>
+    <div class="rv" style="text-align:center;padding:18px 0 6px">
+      <p class="bigquote" style="margin:0 auto;max-width:780px">Faster-than-car, or behavior will not shift. Cheaper-than-rail, or it will not get built. Feed the trunk, or it will not last.</p>
+    </div>
+    <div class="grid g2 rv" style="margin-top:40px">
+      <div class="card">
+        <h4>What the breakthroughs did</h4>
+        <p style="font-size:14.5px">Solved the last mile, placed equity-first so the biggest time savings went to the people with the worst options, integrated with mainline transit, ran through a dedicated delivery authority, and measured ridership relentlessly.</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--terra)">
+        <h4>Where others stalled</h4>
+        <p style="font-size:14.5px">Chased a flagship technology for its own sake, or built a service that competed with the trunk network instead of feeding it. Helsinki's pioneering mobility app outran its business model; some autonomous-shuttle pilots logged more press than passengers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CASES -->
+<section id="cases" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Evidence</div>
+      <h2>Twelve cases, three capital tiers</h2>
+      <p class="lead">Ordered by the capital required to start. The pattern repeats the economic-development finding: the cheapest interventions move behavior fastest per dollar, and they are what make the expensive infrastructure financeable later.</p>
+    </div>
+
+    <div class="tier rv">
+      <div class="tier-head"><span class="cap">Tier 1</span><span class="lbl">Lightest - near-zero to software</span></div>
+      <div class="grid g3">
+        <div class="card on-alt case">
+          <h4>Open Streets / Ciclov&iacute;a</h4>
+          <div class="loc">Bogot&aacute; &amp; worldwide</div>
+          <p style="font-size:14px">Close the roads to cars on a schedule and watch latent demand appear. The cheapest way to prove a corridor wants to be walkable.</p>
+          <div class="metric">~120 km car-free weekly · 1M+ participants</div>
+        </div>
+        <div class="card on-alt case">
+          <h4>Mobility-as-a-Service</h4>
+          <div class="loc">Helsinki &middot; Whim</div>
+          <p style="font-size:14px">The world's first MaaS app bundled transit, bikes, scooters, taxis and car-share into one subscription and plan-and-pay flow.</p>
+          <div class="metric">2M+ trips in year one · 84% on public transit</div>
+          <p class="caution">Caution: 12% of users dropped a car, but operator MaaS Global later collapsed - the model outran its economics.</p>
+        </div>
+        <div class="card on-alt case">
+          <h4>Micromobility &amp; Hubs</h4>
+          <div class="loc">Global method</div>
+          <p style="font-size:14px">Bike and scooter share plus curbside mobility hubs that bundle modes at one corner - cheap to deploy, fast to move, and a feeder for transit.</p>
+          <div class="metric">Last-mile coverage at low capex</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tier rv">
+      <div class="tier-head"><span class="cap">Tier 2</span><span class="lbl">Mid-scale catalytic - tens to a few hundred $M</span></div>
+      <div class="grid g4">
+        <div class="card on-alt case">
+          <div class="cmedia"><a href="https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o%20tubo%20Linha%20Verde%20Curitiba%20BRT%2005%202013%20Est%20Marechal%20Floriano%206543.JPG" target="_blank" rel="noopener" title="Source and license: Wikimedia Commons"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Esta%C3%A7%C3%A3o%20tubo%20Linha%20Verde%20Curitiba%20BRT%2005%202013%20Est%20Marechal%20Floriano%206543.JPG?width=640" alt="Curitiba BRT tube station" loading="lazy" onerror="this.closest('.cmedia').remove()"></a><span class="credit">Wikimedia Commons</span></div>
+          <h4>Curitiba BRT</h4>
+          <div class="loc">Brazil &middot; 1974</div>
+          <p style="font-size:14px">The world's first Bus Rapid Transit - rail-like service on rubber tyres, invented because rail was unaffordable.</p>
+          <div class="metric">~$200k/km vs ~$90M/km for subway</div>
+          <p style="font-size:13px;color:#6e6a61;margin-top:6px">54,000 &rarr; 2.4M daily riders by 2014; ~50% of city trips by transit.</p>
+          <p class="caution">Caution: ridership slid after 2014 without reinvestment.</p>
+        </div>
+        <div class="card on-alt case">
+          <div class="cmedia"><a href="https://commons.wikimedia.org/wiki/File:Metro%20cable%20medellin.JPG" target="_blank" rel="noopener" title="Source and license: Wikimedia Commons"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Metro%20cable%20medellin.JPG?width=640" alt="Medellin Metrocable over hillside neighborhoods" loading="lazy" onerror="this.closest('.cmedia').remove()"></a><span class="credit">Wikimedia Commons</span></div>
+          <h4>Medell&iacute;n Metrocable</h4>
+          <div class="loc">Colombia &middot; 2004</div>
+          <p style="font-size:14px">Aerial cable transit run up the hillsides to the barrios the metro could never reach - the equity-first cable case.</p>
+          <div class="metric">Access + safety gains for hillside barrios</div>
+        </div>
+        <div class="card on-alt case">
+          <h4>Mexico City Cableb&uacute;s</h4>
+          <div class="loc">Mexico &middot; 2021</div>
+          <p style="font-size:14px">Public gondola lines threaded over dense, hilly, working-class boroughs to the metro and bus network.</p>
+          <div class="metric">Line 1: 50,000/day - 78% above forecast</div>
+          <p style="font-size:13px;color:#6e6a61;margin-top:6px">Halved the commute downtown; fare ~$0.40.</p>
+        </div>
+        <div class="card on-alt case">
+          <h4>Smart Columbus</h4>
+          <div class="loc">Ohio &middot; 2016-2020</div>
+          <p style="font-size:14px">Winner of the USDOT Smart City Challenge - AV shuttles, trip-planning apps, and a prenatal trip-assistance program.</p>
+          <div class="metric">+$173M GMP · 2,366 jobs</div>
+          <p class="caution">Lesson: technology only works when it solves a real problem; the AV shuttle's own ridership stayed modest.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tier rv">
+      <div class="tier-head"><span class="cap">Tier 3</span><span class="lbl">Large network or frontier technology</span></div>
+      <div class="grid g4">
+        <div class="card on-alt case">
+          <div class="cmedia"><a href="https://commons.wikimedia.org/wiki/File:La%20Paz-center.jpg" target="_blank" rel="noopener" title="Source and license: Wikimedia Commons"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Paz-center.jpg?width=640" alt="La Paz, Bolivia cityscape served by the teleferico network" loading="lazy" onerror="this.closest('.cmedia').remove()"></a><span class="credit">Wikimedia Commons</span></div>
+          <h4>La Paz Mi Telef&eacute;rico</h4>
+          <div class="loc">Bolivia &middot; 2014</div>
+          <p style="font-size:14px">The world's largest aerial cable network - ten lines knitted into a metro-scale system over an impossible topography.</p>
+          <div class="metric">31.6 km · 300,000+ daily riders</div>
+          <p style="font-size:13px;color:#6e6a61;margin-top:6px">Cut some commutes from 1 hour to 10 minutes; fare ~$0.40.</p>
+        </div>
+        <div class="card on-alt case">
+          <h4>Morgantown PRT</h4>
+          <div class="loc">West Virginia &middot; 1975</div>
+          <p style="font-size:14px">The oldest automated guideway transit in the US - driverless pods on a fixed guideway, still running fifty years on.</p>
+          <div class="metric">16,000 daily riders · 50 years continuous</div>
+          <p class="caution">Caution: a Boeing/USDOT project that ran over budget at ~$120M - durable, but a costly first-of-kind.</p>
+        </div>
+        <div class="card on-alt case">
+          <h4>AV Proving Grounds</h4>
+          <div class="loc">Michigan &middot; Mcity / ACM</div>
+          <p style="font-size:14px">A university test track (Mcity, 2015) plus a 500-acre proving ground (ACM, 2017) anchoring a regional mobility-R&amp;D cluster.</p>
+          <div class="metric">200+ customers · test-bed ecosystem</div>
+          <p class="caution">Caution: proving grounds need sustained private demand to stay solvent.</p>
+        </div>
+        <div class="card on-alt case">
+          <h4>Whoosh by Swyft Cities</h4>
+          <div class="loc">Irvine Great Park &middot; 2025</div>
+          <p style="font-size:14px">An autonomous, electric cable circulator with offline stations, so every trip is nonstop and zero-wait. Chosen by Irvine in April 2025.</p>
+          <div class="metric">12 stations · 27,000 daily projected</div>
+          <p style="font-size:13px;color:#6e6a61;margin-top:6px">Forecast 4&times; the ridership at 1/6 the operating cost per trip of a traditional circulator.</p>
+          <p class="caution">Frontier: not yet proven at production scale - only a quarter-scale demo to date.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PATTERNS -->
+<section id="patterns">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Replicable DNA</div>
+      <h2>Ten moves the winners share</h2>
+      <p class="lead">Strip away the vehicle - bus, gondola, pod, app - and the systems that changed a city run on the same ten moves. The technology is interchangeable. The discipline is not.</p>
+    </div>
+    <div class="grid g2 rv dna">
+      <div class="card"><h4>Solve a Real Trip</h4><p style="font-size:14px">Serve a journey people are already trying to make, not a technology looking for a rider.</p></div>
+      <div class="card"><h4>Start Cheap, Prove Demand</h4><p style="font-size:14px">Open streets and pilots before permanent rails; let ridership earn the capital.</p></div>
+      <div class="card"><h4>Faster-than-Car</h4><p style="font-size:14px">If it is slower than driving, behavior will not change. Speed is the whole proposition.</p></div>
+      <div class="card"><h4>Cheaper-than-Rail</h4><p style="font-size:14px">Capital efficiency is what gets a system built and extended at all.</p></div>
+      <div class="card"><h4>Feed the Trunk</h4><p style="font-size:14px">Integrate with mainline transit and enlarge its catchment; never compete with it.</p></div>
+      <div class="card"><h4>Equity-First Placement</h4><p style="font-size:14px">Serve the underserved edge first - that is where the time savings are largest.</p></div>
+      <div class="card"><h4>Parking &rarr; Land</h4><p style="font-size:14px">Every parking structure avoided funds the mobility and frees real estate for better use.</p></div>
+      <div class="card"><h4>Iconic Experience</h4><p style="font-size:14px">A ride people enjoy is itself an attraction - it pulls in riders and investment.</p></div>
+      <div class="card"><h4>A Dedicated Vehicle</h4><p style="font-size:14px">An authority or operator that owns the outcome through every phase.</p></div>
+      <div class="card"><h4>Measure &amp; Iterate</h4><p style="font-size:14px">Count trips, expand what works, retire what does not.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PATTERN MATRIX -->
+<section id="matrix" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Pattern Language &times; System</div>
+      <h2>Who did what</h2>
+      <p class="lead">The ten moves mapped against eight of the systems. The proven movers - the cable networks and BRT - express nearly every pattern; the cases that came with cautions (a tech-led pilot, a pioneering app with a fragile business model) visibly skip a few.</p>
+    </div>
+    <div class="card on-alt rv" style="padding:18px">
+      <div class="tbl-scroll">
+        <table class="matrix">
+          <thead><tr><th style="text-align:left">Pattern</th><th>Curitiba BRT</th><th>Medell&iacute;n</th><th>Mexico City</th><th>La Paz</th><th>Morgantown</th><th>Smart Columbus</th><th>Helsinki MaaS</th><th>Whoosh</th></tr></thead>
+          <tbody>
+          <tr><th>Solve a Real Trip</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Start Cheap, Prove Demand</th><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="n">&#9675;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td></tr>
+          <tr><th>Faster-than-Car</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Cheaper-than-Rail</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="n">&#9675;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Feed the Trunk</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Equity-First Placement</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td></tr>
+          <tr><th>Parking &rarr; Land</th><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Iconic Experience</th><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="n">&#9675;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>A Dedicated Vehicle</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Measure &amp; Iterate</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td></tr>
+          <tr class="sum"><th>Moves fully expressed</th><td>8</td><td>8</td><td>8</td><td>8</td><td>6</td><td>5</td><td>5</td><td>7</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="legend"><span><b style="color:var(--green)">&#9679;</b> fully expressed</span><span><b style="color:#c89a6a">&#9680;</b> partial</span><span><b style="color:#cfc8bb">&#9675;</b> absent</span></div>
+      <p class="note" style="margin-top:10px">A reading of the cited cases meant to show the shape of each playbook, not to score the systems precisely.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COST & RIDERSHIP -->
+<section id="value">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Cost &amp; Ridership</div>
+      <h2>What it cost, who it moved</h2>
+      <p class="lead">Capital or operating cost against the ridership and value each system produced. Figures are nominal, drawn from the cited literature across years and currencies - directional, not directly comparable - but the order of magnitude is the point: well-placed mobility moves enormous numbers of people per dollar.</p>
+    </div>
+    <div class="card rv" style="padding:18px">
+      <div class="tbl-scroll">
+        <table class="dtable">
+          <thead><tr><th>System</th><th>Cost basis</th><th>Ridership &amp; value</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td class="place">Curitiba BRT</td><td>~$200k/km - 20-50&times; cheaper than rail</td><td>54,000 &rarr; 2.4M daily riders; ~50% mode share; ~27M car trips/yr avoided</td><td class="num">Highest capital efficiency</td></tr>
+            <tr><td class="place">Medell&iacute;n Metrocable</td><td>Public aerial cable</td><td>Access and safety gains to hillside barrios; rising land values</td><td class="num">Social ROI</td></tr>
+            <tr><td class="place">Mexico City Cableb&uacute;s</td><td>Public gondola lines</td><td>Line 1: 50,000/day, 78% above forecast; commute halved</td><td class="num">Beat forecast</td></tr>
+            <tr><td class="place">La Paz Mi Telef&eacute;rico</td><td>10-line cable network, 31.6 km</td><td>300,000+ daily; some commutes 1 hr &rarr; 10 min; ~7,000 gal/day fuel saved</td><td class="num">World's largest</td></tr>
+            <tr><td class="place">Morgantown PRT</td><td>~$120M (Boeing / USDOT)</td><td>16,000/day for 50 years of continuous automated service</td><td class="num">Durable; ran over budget</td></tr>
+            <tr><td class="place">Smart Columbus</td><td>~$140M incl. local match</td><td>+$173M gross metro product; 2,366 jobs; AV and app pilots</td><td class="num">Ecosystem ROI</td></tr>
+            <tr><td class="place">Helsinki Whim (MaaS)</td><td>App / software platform</td><td>2M+ trips in year one; 84% on transit; 12% of users dropped a car</td><td class="num">Operator later failed</td></tr>
+            <tr><td class="place">Whoosh &middot; Irvine</td><td>~$6.1M initial city segment + Swyft donation</td><td>27,000 daily projected; 4&times; ridership at 1/6 operating cost vs traditional</td><td class="num">Frontier, unproven at scale</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:10px">Sources below. Nominal figures across multiple years and currencies; shown to convey order of magnitude.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMING -->
+<section id="timeline" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Timing &amp; Maturity</div>
+      <h2>How fast, how long</h2>
+      <p class="lead">Mobility shifts behavior fast when it solves a real trip - a new line can beat its forecast in months. But a network matures over five to fifteen years, and even a fifty-year success needs reinvestment. Pilot cheap, prove the trip, then build the rails.</p>
+    </div>
+    <div class="card on-alt rv" style="padding:18px">
+      <div class="tbl-scroll">
+        <table class="dtable">
+          <thead><tr><th>System</th><th>Started</th><th>First results</th><th>Toward maturity</th></tr></thead>
+          <tbody>
+            <tr><td class="place">Open Streets / Ciclov&iacute;a</td><td class="num">Pilot in a weekend</td><td>Instant turnout</td><td>Permanent weekly program over years</td></tr>
+            <tr><td class="place">Helsinki Whim (MaaS)</td><td class="num">2017</td><td>2M+ trips within a year</td><td>Operator wound down by ~2024 - model still maturing</td></tr>
+            <tr><td class="place">Curitiba BRT</td><td class="num">1974</td><td>Ridership climbed steadily</td><td>Peaked ~2014; needs reinvestment at 50 yrs</td></tr>
+            <tr><td class="place">Medell&iacute;n Metrocable</td><td class="num">2004</td><td>Access + safety gains within 2-3 yrs</td><td>Network extended over the following decade</td></tr>
+            <tr><td class="place">Mexico City Cableb&uacute;s</td><td class="num">2021</td><td>Beat forecast immediately</td><td>Three lines built out within a few years</td></tr>
+            <tr><td class="place">La Paz Mi Telef&eacute;rico</td><td class="num">2014</td><td>Strong ridership from first lines</td><td>Ten lines completed over ~5-8 yrs</td></tr>
+            <tr><td class="place">Morgantown PRT</td><td class="num">Opened 1975</td><td>Late and over budget at first</td><td>50 years of continuous service since</td></tr>
+            <tr><td class="place">Whoosh &middot; Irvine</td><td class="num">Founded 2021</td><td>Irvine selected it in 2025</td><td>Initial operating segment now in build</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="flag rv" style="margin-top:18px"><strong>The expectation to set:</strong> a well-placed line can beat its ridership forecast in its first months, but a network is a 5-to-15-year build. The cheap pilots up front are what make the patient capital behind them investable.</div>
+  </div>
+</section>
+
+<!-- THE VEHICLE / BRIDGE -->
+<section id="vehicle" class="dark">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">From Evidence to Plan</div>
+      <h2>A district can be the proving ground</h2>
+      <p class="lead">The same lesson the cable cities learned applies here: the way to earn a transformative mobility system is to start with the cheap moves, prove the trip, and integrate with the network already running. A new district is the rare place that can pilot a last-mile circulator, knit the modes together, and even incubate the companies building them - all on one site, under one patient owner-operator.</p>
+    </div>
+    <div class="grid g2 rv">
+      <div class="card on-alt">
+        <h4>The opportunity</h4>
+        <p style="font-size:14.5px">West Salem's geography - a river, a state route, rail, and hills between downtown and the district - is exactly the obstacle course these cable and circulator systems were built to leap. It is also a blank enough canvas to design mobility in from the start rather than retrofit it.</p>
+      </div>
+      <div class="card on-alt">
+        <h4>The next step</h4>
+        <p style="font-size:14.5px">We translated this evidence into a concrete, multimodal plan for the district - protected active mobility, Cherriots integration, a Swyft Cities Whoosh circulator, and a mobility-company incubator. <a href="mobility-concepts.html" style="color:#e8c79d;font-weight:600">See Salem Mobility Concepts &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section id="sources" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Sources</div>
+      <h2>The evidence base</h2>
+    </div>
+    <div class="rv srcs">
+      <p><strong>Curitiba BRT:</strong> <a href="https://usa.streetsblog.org/2024/10/17/curitiba-50-years-of-lessons-from-the-worlds-first-bus-rapid-transit" target="_blank" rel="noopener">Streetsblog USA</a>; Project for Public Spaces.</p>
+      <p><strong>Medell&iacute;n Metrocable:</strong> <a href="https://www.wri.org/insights/urban-transformations-medellin-metrocable-connects-people-more-ways-one" target="_blank" rel="noopener">World Resources Institute</a>.</p>
+      <p><strong>Mexico City Cableb&uacute;s:</strong> <a href="https://mexiconewsdaily.com/news/passenger-numbers-on-mexico-city-cablebus-line-78-more-than-expected/" target="_blank" rel="noopener">Mexico News Daily</a>.</p>
+      <p><strong>La Paz Mi Telef&eacute;rico:</strong> <a href="https://inclusiveinfra.gihub.org/case-studies/mi-teleferico-cable-car-bolivia/" target="_blank" rel="noopener">Global Infrastructure Hub</a>; <a href="https://en.wikipedia.org/wiki/Mi_Telef%C3%A9rico" target="_blank" rel="noopener">Mi Telef&eacute;rico</a>.</p>
+      <p><strong>Morgantown PRT:</strong> <a href="https://prt.wvu.edu/about-the-prt" target="_blank" rel="noopener">West Virginia University</a>.</p>
+      <p><strong>Smart Columbus:</strong> <a href="https://www.smartcitiesdive.com/news/smart-columbus-ohio-smart-city-challenge-winner-lessons-learned/607999/" target="_blank" rel="noopener">Smart Cities Dive</a>; USDOT.</p>
+      <p><strong>Helsinki Whim (MaaS):</strong> <a href="https://maas-alliance.eu/2019/04/02/whimpact-insights-from-the-worlds-first-mobility-as-a-service-maas-system/" target="_blank" rel="noopener">MaaS Alliance (Whimpact)</a>.</p>
+      <p><strong>Whoosh / Swyft Cities:</strong> <a href="https://cityofirvine.org/news-media/news-article/great-park-board-votes-enter-negotiations-swyft-cities" target="_blank" rel="noopener">City of Irvine</a>; Swyft Cities.</p>
+    </div>
+    <p class="muted rv" style="font-size:12.5px;margin-top:18px">Planning-level synthesis for discussion. Figures describe the precedent systems, not any specific project. Case photographs are hosted on <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a> under their respective licenses; click any image for its source and license.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="dark cta">
+  <div class="wrap rv">
+    <div class="eyebrow">From evidence to action</div>
+    <h2 class="serif">The playbook,<br>applied to Salem.</h2>
+    <p class="muted" style="max-width:600px;margin:0 auto">See the concrete plan on <a href="mobility-concepts.html" style="color:#d9a26c;text-decoration:none">Salem Mobility Concepts</a>, or the economic-development evidence on <a href="research.html" style="color:#d9a26c;text-decoration:none">District Economic Development</a>.</p>
+    <div class="contacts">
+      <a href="mailto:erik@nowcitylabs.com">erik@nowcitylabs.com · +1 818 312 0491</a>
+      <a href="mailto:ritchie@nowcitylabs.com">ritchie@nowcitylabs.com · +1 718 916 1106</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>©2026 Now City Inc. All Rights Reserved.</div>
+    <div>For discussion purposes only. Planning-level research synthesis.</div>
+  </div>
+</footer>
+
+<a href="#top" class="toplink" id="toplink" aria-label="Back to top">↑</a>
+<script>
+const nav=document.getElementById('nav');const sub=document.getElementById('subnav');const tl=document.getElementById('toplink');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.5);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+<script>
+(function(){
+const HASH='aad5d67e3ddeda88953d6714e4569a4399b3201023dae82d5931a6c376de96d4';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('ws-ok')==='1'||sessionStorage.getItem('ws-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
