@@ -48,9 +48,14 @@ table.matrix{border-collapse:collapse;font-size:12.5px;min-width:760px;width:100
 table.matrix th,table.matrix td{padding:9px 8px;text-align:center;border-bottom:1px solid rgba(0,0,0,.07)}
 table.matrix thead th{font-family:Inter,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--terra);vertical-align:bottom;border-bottom:2px solid var(--line);line-height:1.25}
 table.matrix tbody th{text-align:left;font-weight:600;font-size:13px;white-space:nowrap;color:var(--ink-deep)}
-table.matrix td .y{color:#3c7a3c;font-size:21px;line-height:1}
-table.matrix td .p{color:#c08a4a;font-size:16px;line-height:1}
-table.matrix td .n{color:#d6cfc2;font-size:12px;line-height:1}
+table.matrix td .y,table.matrix td .p,table.matrix td .n{display:inline-block;width:15px;height:15px;border-radius:50%;box-sizing:border-box;vertical-align:middle;font-size:0;line-height:0}
+table.matrix td .y{background:#3c7a3c}
+table.matrix td .p{background:linear-gradient(90deg,#c08a4a 50%,#fff 50%);border:1.5px solid #c08a4a}
+table.matrix td .n{border:2.5px solid #a89e8c;background:transparent}
+.legend .lk{display:inline-block;width:14px;height:14px;border-radius:50%;box-sizing:border-box;vertical-align:-2px;margin-right:6px}
+.legend .lk.y{background:#3c7a3c}
+.legend .lk.p{background:linear-gradient(90deg,#c08a4a 50%,#fff 50%);border:1.5px solid #c08a4a}
+.legend .lk.n{border:2.5px solid #a89e8c}
 table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);border-bottom:none;font-family:var(--serif);color:var(--green);font-size:15px;padding-top:12px}
 .legend{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:#6e6a61;margin-top:14px}
 .legend span b{font-size:14px}
@@ -310,7 +315,7 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
           </tbody>
         </table>
       </div>
-      <div class="legend"><span><b style="color:#3c7a3c;font-size:18px;vertical-align:-3px;margin-right:2px">&#9679;</b> fully expressed</span><span><b style="color:#c08a4a;font-size:15px;vertical-align:-2px;margin-right:2px">&#9680;</b> partial</span><span><b style="color:#cdc6b8;font-size:12px;margin-right:2px">&#9675;</b> absent</span></div>
+      <div class="legend"><span><i class="lk y"></i> fully expressed</span><span><i class="lk p"></i> partial</span><span><i class="lk n"></i> absent</span></div>
       <p class="note" style="margin-top:10px">Assessment is the authors' reading of the cited cases, meant to show the shape of each playbook rather than to score the places precisely.</p>
     </div>
   </div>
