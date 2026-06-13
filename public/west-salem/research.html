@@ -39,6 +39,27 @@
 @media(max-width:480px){.seq{grid-template-columns:1fr}.seq .step{border-right:none}}
 .srcs{font-size:12.5px;color:#7a756b;line-height:1.8;column-count:2;column-gap:40px}
 @media(max-width:720px){.srcs{column-count:1}}
+
+.case .cmedia{position:relative;margin-bottom:14px;border-radius:8px;overflow:hidden}
+.case .cmedia img{margin-bottom:0;display:block}
+.case .credit{position:absolute;right:6px;bottom:6px;background:rgba(20,18,14,.62);color:#fff;font-size:9px;padding:2px 6px;border-radius:3px;letter-spacing:.04em}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:30px}
+table.matrix{border-collapse:collapse;font-size:12.5px;min-width:760px;width:100%}
+table.matrix th,table.matrix td{padding:9px 8px;text-align:center;border-bottom:1px solid rgba(0,0,0,.07)}
+table.matrix thead th{font-family:Inter,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--terra);vertical-align:bottom;border-bottom:2px solid var(--line);line-height:1.25}
+table.matrix tbody th{text-align:left;font-weight:600;font-size:13px;white-space:nowrap;color:var(--ink-deep)}
+table.matrix td .y{color:var(--green);font-size:15px}
+table.matrix td .p{color:#c89a6a;font-size:15px}
+table.matrix td .n{color:#cfc8bb;font-size:14px}
+table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);border-bottom:none;font-family:var(--serif);color:var(--green);font-size:15px;padding-top:12px}
+.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:#6e6a61;margin-top:14px}
+.legend span b{font-size:14px}
+.dtable{border-collapse:collapse;width:100%;font-size:13.5px;min-width:680px}
+.dtable th{font-family:Inter,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--terra);text-align:left;padding:10px 12px;border-bottom:2px solid var(--line);vertical-align:bottom}
+.dtable td{padding:11px 12px;border-bottom:1px solid rgba(0,0,0,.06);vertical-align:top}
+.dtable td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.dtable tbody tr:hover{background:rgba(168,112,63,.04)}
+.dtable .place{font-weight:600;color:var(--ink-deep);white-space:nowrap}
 </style>
 </head>
 <body class="gated">
@@ -88,14 +109,16 @@
     <a href="#thesis">Thesis</a>
     <a href="#cases">The Cases</a>
     <a href="#patterns">The Patterns</a>
+    <a href="#matrix">Pattern Matrix</a>
     <a href="#roi">Capital Efficiency</a>
+    <a href="#timeline">Timing</a>
     <a href="#conditions">Conditions</a>
     <a href="#vehicle">The Vehicle</a>
   </div>
 </div>
 
 <header class="hero short" id="top">
-  <div class="bg" style="background-image:url('assets/props/precedent-torvehallerne.jpg')"></div><div class="shade"></div>
+  <div class="bg" style="background-image:url('assets/props/research-hero.jpg')"></div><div class="shade"></div>
   <div class="wrap">
     <div class="eyebrow">Research &middot; Field Notes</div>
     <h1>What Makes a<br>District Work</h1>
@@ -144,8 +167,8 @@
           <h4>Melbourne Laneways</h4>
           <div class="loc">Melbourne, Australia</div>
           <p style="font-size:14px">Active-frontage policy paired with residential repopulation. The city legislated street life into being, then let it compound.</p>
-          <div class="metric">Laneways grew 10&times; (300m &rarr; 3km, 1994-2004)</div>
-          <p style="font-size:13px;color:#6e6a61;margin-top:6px">A measured +10% in walking connectivity has been associated with roughly +$2.1B/yr to the local economy.</p>
+          <div class="metric">CBD homes ~1,000 &rarr; ~10,000 in a decade</div>
+          <p style="font-size:13px;color:#6e6a61;margin-top:6px">Laneways went from 8% to 92% active (1994-2004); a measured +10% in walking connectivity has been associated with roughly +$2.1B/yr to the local economy.</p>
         </div>
         <div class="card on-alt case">
           <h4>Tactical Urbanism</h4>
@@ -168,24 +191,27 @@
       <div class="tier-head"><span class="cap">Tier 2</span><span class="lbl">Mid-scale catalytic - $30M to $150M</span></div>
       <div class="grid g3">
         <div class="card on-alt case">
+          <div class="cmedia"><a href="https://commons.wikimedia.org/wiki/File:Chief%20John%20Ross%20Bridge%3B%20Chattanooga%2C%20Tennessee%3B%20April%205%2C%202013.JPG" target="_blank" rel="noopener" title="Source and license: Wikimedia Commons"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chief%20John%20Ross%20Bridge%3B%20Chattanooga%2C%20Tennessee%3B%20April%205%2C%202013.JPG?width=640" alt="Chattanooga riverfront and bridge over the Tennessee River" loading="lazy" onerror="this.closest('.cmedia').remove()"></a><span class="credit">Wikimedia Commons</span></div>
           <h4>Chattanooga Riverfront</h4>
           <div class="loc">Tennessee, USA</div>
           <p style="font-size:14px">A nonprofit delivery vehicle (River City Company) led a public riverfront investment that pulled private capital in behind it.</p>
-          <div class="metric">$120M public &rarr; ~$480M private (4&times;)</div>
-          <p style="font-size:13px;color:#6e6a61;margin-top:6px">Downtown residential population grew +23% (2000-2015).</p>
+          <div class="metric">$120M waterfront · ~$3.8B central-city development since 1992</div>
+          <p style="font-size:13px;color:#6e6a61;margin-top:6px">River City Company leveraged $12M of seed capital into roughly $1.5B of private investment.</p>
         </div>
         <div class="card on-alt case">
+          <div class="cmedia"><a href="https://commons.wikimedia.org/wiki/File:Metro%20cable%20medellin.JPG" target="_blank" rel="noopener" title="Source and license: Wikimedia Commons"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Metro%20cable%20medellin.JPG?width=640" alt="Metrocable gondola over Medellin hillside neighborhoods" loading="lazy" onerror="this.closest('.cmedia').remove()"></a><span class="credit">Wikimedia Commons</span></div>
           <h4>Medell&iacute;n Social Urbanism</h4>
           <div class="loc">Colombia</div>
           <p style="font-size:14px">Equity-first investment - Metrocable transit and library parks placed in the hardest-hit neighborhoods first.</p>
-          <div class="metric">Falling homicide, rising land values</div>
+          <div class="metric">Homicide down ~75% in intervention areas (2004-2012)</div>
           <p class="caution">Caution: long-term maintenance and displacement pressures must be planned for.</p>
         </div>
         <div class="card on-alt case">
+          <div class="cmedia"><a href="https://commons.wikimedia.org/wiki/File:Museo%20Guggenheim%20Bilbao,%20Bilbao.%20(23811575351).jpg" target="_blank" rel="noopener" title="Source and license: Wikimedia Commons"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Museo%20Guggenheim%20Bilbao,%20Bilbao.%20(23811575351).jpg?width=640" alt="Guggenheim Museum Bilbao exterior on the Nervion river" loading="lazy" onerror="this.closest('.cmedia').remove()"></a><span class="credit">Wikimedia Commons</span></div>
           <h4>Bilbao / Guggenheim</h4>
           <div class="loc">Bilbao, Spain</div>
           <p style="font-size:14px">The canonical culture-led flagship. Strong returns - but the lesson is the fine print.</p>
-          <div class="metric">~10.9% ROI · building cost repaid ~5 yrs</div>
+          <div class="metric">~&euro;500M activity in 3 yrs · taxes repaid the build</div>
           <p class="caution">Key lesson: it worked only as one move inside a larger regional plan, not as "just add art."</p>
         </div>
       </div>
@@ -202,10 +228,11 @@
           <p class="caution">Caution: fewer than 25K jobs were net-new; gentrification and heritage concerns followed.</p>
         </div>
         <div class="card on-alt case">
+          <div class="cmedia"><a href="https://commons.wikimedia.org/wiki/File:1071%20Streetcar%20(6905264289).jpg" target="_blank" rel="noopener" title="Source and license: Wikimedia Commons"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/1071%20Streetcar%20(6905264289).jpg?width=640" alt="Portland Streetcar in the Pearl District" loading="lazy" onerror="this.closest('.cmedia').remove()"></a><span class="credit">Wikimedia Commons</span></div>
           <h4>Pearl District</h4>
           <div class="loc">Portland, Oregon</div>
           <p style="font-size:14px">A North American model for streetcar-led, brownfield-to-neighborhood transformation delivered by a consortium.</p>
-          <div class="metric">~$13.3B corridor development</div>
+          <div class="metric">~$100M streetcar · $3.5B+ private within 3 blocks</div>
         </div>
         <div class="card on-alt case">
           <h4>Creative Placemaking</h4>
@@ -247,6 +274,39 @@
   </div>
 </section>
 
+<!-- PATTERN MATRIX -->
+<section id="matrix" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Pattern Language &times; Place</div>
+      <h2>Who did what</h2>
+      <p class="lead">The ten patterns mapped against seven of the places. Read down a column to judge how complete a place's playbook was; read across a row to see how universal a pattern is. The lesson is in the totals: the repopulation-and-activation stories (Melbourne, Pearl) express nearly every pattern, while the single-flagship case (Bilbao) and the zoning-only case (22@) visibly skip several - which is exactly why their outcomes carried cautions.</p>
+    </div>
+    <div class="card on-alt rv" style="padding:18px">
+      <div class="tbl-scroll">
+        <table class="matrix">
+          <thead><tr><th style="text-align:left">Pattern</th><th>Melbourne</th><th>Copenhagen</th><th>Chattanooga</th><th>Medell&iacute;n</th><th>Bilbao</th><th>22@ Barcelona</th><th>Pearl District</th></tr></thead>
+          <tbody>
+          <tr><th>Anchor + Activation</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Patient Blended Capital</th><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Dedicated Delivery Vehicle</th><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Residents First</th><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="n">&#9675;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Active Ground Floors</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="n">&#9675;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Measure &amp; Iterate</th><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td></tr>
+          <tr><th>Connectivity Unlocks Value</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Incubate Small Business</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="n">&#9675;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td></tr>
+          <tr><th>Identity as Asset</th><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="y">&#9679;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr><th>Equity by Design</th><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="p">&#9680;</span></td><td><span class="y">&#9679;</span></td><td><span class="n">&#9675;</span></td><td><span class="n">&#9675;</span></td><td><span class="y">&#9679;</span></td></tr>
+          <tr class="sum"><th>Patterns fully expressed</th><td>8</td><td>5</td><td>5</td><td>8</td><td>4</td><td>4</td><td>8</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="legend"><span><b class="y" style="color:var(--green)">&#9679;</b> fully expressed</span><span><b style="color:#c89a6a">&#9680;</b> partial</span><span><b style="color:#cfc8bb">&#9675;</b> absent</span></div>
+      <p class="note" style="margin-top:10px">Assessment is the authors' reading of the cited cases, meant to show the shape of each playbook rather than to score the places precisely.</p>
+    </div>
+  </div>
+</section>
+
 <!-- CAPITAL EFFICIENCY -->
 <section id="roi" class="alt">
   <div class="wrap">
@@ -274,6 +334,62 @@
       <div class="step"><div class="n">Stage 2</div><div class="t">Populate</div><p>Residential density becomes the demand engine. Institutional joint-venture capital, with affordability locked early.</p></div>
       <div class="step"><div class="n">Stage 3</div><div class="t">Complete</div><p>Full retail, civic, and green program. Permanent value, underwritten on a place that already works.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- INVESTMENT VS VALUE -->
+<section id="investment">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Investment &rarr; Value</div>
+      <h2>What it cost, what it created</h2>
+      <p class="lead">The catalytic public or patient capital that started each place, against the value it went on to unlock. The figures are nominal, drawn from the cited literature across different years and currencies, so they are directional, not directly comparable - but the pattern is unmistakable: small, well-placed catalytic capital pulls in many multiples of private value.</p>
+    </div>
+    <div class="card rv" style="padding:18px">
+      <div class="tbl-scroll">
+        <table class="dtable">
+          <thead><tr><th>Place</th><th>Catalytic / patient investment</th><th>Value &amp; outcomes created</th><th>Leverage / note</th></tr></thead>
+          <tbody>
+            <tr><td class="place">Melbourne &middot; Postcode 3000</td><td>Near-zero - planning &amp; zoning reform, no grants</td><td>CBD homes ~1,000 &rarr; ~10,000 in a decade; inner-city population now 116,000+</td><td class="num">Policy, not capital</td></tr>
+            <tr><td class="place">Copenhagen &middot; Torvehallerne</td><td>Private market-hall capex</td><td>60,000+ weekly visitors; a permanent identity anchor and small-business incubator</td><td class="num">Identity + tenant pipeline</td></tr>
+            <tr><td class="place">Chattanooga</td><td>~$120M public (21st Century Waterfront, 2005)</td><td>~$3.8B of central-city development since the 1992 Aquarium</td><td class="num">~$12M seed &rarr; ~$1.5B private</td></tr>
+            <tr><td class="place">Medell&iacute;n</td><td>Public Metrocable + library parks + public space</td><td>Homicide down ~75% in intervention areas; rising land value and public trust</td><td class="num">Social ROI</td></tr>
+            <tr><td class="place">Bilbao &middot; Guggenheim</td><td>~$228M total project (~$100M building)</td><td>~&euro;500M of activity and ~&euro;100M of taxes in the first 3 years; &euro;4.3B GDP and &euro;659M tax by 2016</td><td class="num">Repaid the build in ~3-6 yrs</td></tr>
+            <tr><td class="place">22@ Barcelona</td><td>&gt;&euro;180M public infrastructure</td><td>4,300+ companies and ~93,000 jobs on former industrial land</td><td class="num">Jobs (not all net-new)</td></tr>
+            <tr><td class="place">Pearl District &middot; Portland</td><td>~$100M streetcar (2001)</td><td>$3.5B+ private investment within three blocks (1997-2008); $5B+ along the line</td><td class="num">~35&times; locally</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:10px">Sources below. Nominal figures across multiple years and currencies; shown to convey order of magnitude.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMING & PHASING -->
+<section id="timeline" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Timing &amp; Phasing</div>
+      <h2>How long it really takes</h2>
+      <p class="lead">The single most important expectation to set. None of these places turned overnight. Early, visible wins tend to land in the first one to three years - which is what the cheap activation layer buys - but full maturity is a ten-to-twenty-year arc. Patience, and a vehicle built to outlast it, is the precondition.</p>
+    </div>
+    <div class="card on-alt rv" style="padding:18px">
+      <div class="tbl-scroll">
+        <table class="dtable">
+          <thead><tr><th>Place</th><th>Kicked off</th><th>First visible wins</th><th>Toward maturity</th><th>Full arc</th></tr></thead>
+          <tbody>
+            <tr><td class="place">Melbourne &middot; Postcode 3000</td><td class="num">1992 (policy)</td><td>Homes &amp; laneway life within 2-5 yrs</td><td>3,000-home goal met by 2000; laneways 92% active by 2004</td><td class="num">~10-15 yrs</td></tr>
+            <tr><td class="place">Copenhagen &middot; Torvehallerne</td><td class="num">Opened 2011</td><td>A draw from opening day</td><td>City landmark within a few years; Reffen added 2018</td><td class="num">~10 yrs idea&rarr;icon</td></tr>
+            <tr><td class="place">Chattanooga</td><td class="num">1984 / Aquarium 1992</td><td>Aquarium drew visitors immediately</td><td>21st Century Waterfront 2002-05; momentum sustained 20+ yrs</td><td class="num">20+ yrs</td></tr>
+            <tr><td class="place">Medell&iacute;n</td><td class="num">2004</td><td>Ridership &amp; safety gains within 2-3 yrs</td><td>Library parks by 2007; measured turnaround by 2012</td><td class="num">~8-10 yrs</td></tr>
+            <tr><td class="place">Bilbao &middot; Guggenheim</td><td class="num">Agreed 1991</td><td>Tourism spike on the 1997 opening</td><td>Building cost repaid within ~3-6 yrs</td><td class="num">~6-10 yrs to payback</td></tr>
+            <tr><td class="place">22@ Barcelona</td><td class="num">2000</td><td>Firms arriving within a few years</td><td>4,300 firms / 93k jobs accrued over two decades</td><td class="num">20-25 yrs</td></tr>
+            <tr><td class="place">Pearl District &middot; Portland</td><td class="num">Late 1990s / streetcar 2001</td><td>Lofts &amp; galleries within 3-5 yrs</td><td>$3.5B by 2008; still maturing</td><td class="num">~10-15 yrs</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="flag rv" style="margin-top:18px"><strong>The expectation to set:</strong> plan for a decade-plus. Early wins in 1-3 years, full maturity in 10-20+. The activation-first sequence exists precisely to manufacture those early wins while the long arc plays out.</div>
   </div>
 </section>
 
@@ -326,16 +442,16 @@
       <h2>The evidence base</h2>
     </div>
     <div class="rv srcs">
-      <p><strong>Melbourne / Postcode 3000:</strong> The Urbanist; Centre for Public Impact; Global Designing Cities; Monocle.</p>
-      <p><strong>Bilbao:</strong> Plaza (2006, IJURR); ScienceDirect (2016).</p>
-      <p><strong>Medell&iacute;n:</strong> WRI; ArchDaily; Architect Magazine; LabGov.</p>
-      <p><strong>22@ Barcelona:</strong> Atlas of Urban Tech; Smart Cities Dive; University of Barcelona.</p>
-      <p><strong>Chattanooga:</strong> Brookings Bass Center; PPS; River City Company; Times Free Press.</p>
-      <p><strong>Pearl District:</strong> Energy Innovation; ZGF; TREC / PSU; NW Examiner.</p>
-      <p><strong>Copenhagen:</strong> VisitCopenhagen; Eating Europe; Copenhagen Tourism.</p>
-      <p><strong>Creative Placemaking / Tactical Urbanism:</strong> ULI (2020); NEA; Urban Institute / ArtPlace; LISC; MAPC; ScienceDirect (2025); World Bank.</p>
+      <p><strong>Melbourne / Postcode 3000:</strong> <a href="https://www.theurbanist.org/2015/09/17/melbourne-a-case-study-in-the-revitalization-of-city-laneways-part-2/" target="_blank" rel="noopener">The Urbanist</a>; <a href="https://en.wikipedia.org/wiki/Postcode_3000" target="_blank" rel="noopener">City of Melbourne / Postcode 3000</a>; Global Designing Cities; Monocle.</p>
+      <p><strong>Bilbao:</strong> <a href="https://www.guggenheim-bilbao.eus/en" target="_blank" rel="noopener">Guggenheim Bilbao economic-impact studies</a>; <a href="https://www.theartnewspaper.com/2017/11/24/twenty-years-on-how-the-guggenheim-bilbao-came-of-age" target="_blank" rel="noopener">The Art Newspaper</a>.</p>
+      <p><strong>Medell&iacute;n:</strong> <a href="https://www.wri.org/insights/urban-transformations-medellin-metrocable-connects-people-more-ways-one" target="_blank" rel="noopener">World Resources Institute</a>; ArchDaily; Architect Magazine.</p>
+      <p><strong>22@ Barcelona:</strong> <a href="https://atlasofurbantech.org/cases/esp-at22-barcelona/" target="_blank" rel="noopener">Atlas of Urban Tech</a>; <a href="https://www.barcelona.cat/internationalwelcome/en" target="_blank" rel="noopener">Barcelona City Council</a>.</p>
+      <p><strong>Chattanooga:</strong> <a href="https://www.rivercitycompany.com/" target="_blank" rel="noopener">River City Company</a>; <a href="https://www.timesfreepress.com/" target="_blank" rel="noopener">Chattanooga Times Free Press</a>; Brookings Bass Center.</p>
+      <p><strong>Pearl District:</strong> <a href="https://energyinnovation.org/wp-content/uploads/2015/11/Pearl-District-Case-Study.pdf" target="_blank" rel="noopener">Energy Innovation case study</a>; ZGF; <a href="https://nwexaminer.com/" target="_blank" rel="noopener">NW Examiner</a>.</p>
+      <p><strong>Copenhagen:</strong> <a href="https://www.visitcopenhagen.com/" target="_blank" rel="noopener">VisitCopenhagen</a>; Copenhagen Tourism.</p>
+      <p><strong>Creative Placemaking / Tactical Urbanism:</strong> <a href="https://www.arts.gov/" target="_blank" rel="noopener">NEA</a>; ULI (2020); Urban Institute / ArtPlace; LISC; World Bank.</p>
     </div>
-    <p class="muted rv" style="font-size:12.5px;margin-top:18px">Planning-level synthesis for discussion. Figures are drawn from the cited third-party literature and describe the precedent cases, not any specific project.</p>
+    <p class="muted rv" style="font-size:12.5px;margin-top:18px">Planning-level synthesis for discussion. Figures are drawn from the cited third-party literature and describe the precedent cases, not any specific project. Case photographs are hosted on <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a> under their respective Creative Commons or public-domain licenses; click any image for its source and license.</p>
   </div>
 </section>
 
