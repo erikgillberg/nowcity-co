@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Pencils - Edgewater Upside Explorer</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--cream:#f4f1e9;--cream2:#ece8dc;--ink:#333230;--ink-deep:#1f1d1a;--terra:#a8703f;--green:#48593f;--line:rgba(0,0,0,.12);--serif:'Libre Baskerville',serif;--sans:'Inter',sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5}
+header.bar{background:var(--ink-deep);color:#e9e5da;padding:18px 28px;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+header.bar h1{font-family:var(--serif);font-size:20px;color:var(--cream)}
+header.bar .tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#d9a26c}
+header.bar .right{margin-left:auto;font-size:12px;color:#a39d8f}
+.layout{display:grid;grid-template-columns:360px 1fr;min-height:calc(100vh - 60px)}
+@media(max-width:980px){.layout{grid-template-columns:1fr}}
+.panel{background:#fff;border-right:1px solid var(--line);padding:20px 18px 60px;overflow-y:auto;max-height:calc(100vh - 60px)}
+@media(max-width:980px){.panel{max-height:none}}
+details.grp{border:1px solid var(--line);border-radius:7px;margin-bottom:12px;overflow:hidden}
+details.grp>summary{cursor:pointer;list-style:none;padding:12px 14px;background:var(--cream2);font-family:var(--serif);font-size:13.5px;color:var(--green);display:flex;justify-content:space-between;align-items:center;gap:8px}
+details.grp>summary::-webkit-details-marker{display:none}
+details.grp>summary .chev{font-size:11px;color:#8a857a;transition:transform .15s}
+details.grp[open]>summary .chev{transform:rotate(90deg)}
+details.grp .body{padding:14px 14px 6px}
+.glabel{font-size:11px;color:#8a857a;line-height:1.5;margin:-2px 0 12px}
+.ctl{margin-bottom:12px}
+.ctl label{display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:4px}
+.ctl label .val{color:var(--terra);font-variant-numeric:tabular-nums}
+.ctl input[type=range]{width:100%;accent-color:var(--terra)}
+.ctl .hint{font-size:10.5px;color:#9a948a;margin-top:2px;line-height:1.4}
+.toggle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;padding:9px 11px;border:1px solid var(--line);border-radius:6px}
+.toggle .tl{font-size:12.5px;font-weight:600}
+.toggle button{font-size:11.5px;font-weight:600;padding:5px 12px;border-radius:20px;border:1px solid var(--line);background:#fff;cursor:pointer;min-width:54px}
+.toggle button.on{background:var(--green);border-color:var(--green);color:#fff}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+button{font-family:var(--sans);font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:6px;border:1px solid var(--line);background:#fff;cursor:pointer}
+button.primary{background:var(--terra);border-color:var(--terra);color:#fff}
+button:hover{filter:brightness(.96)}
+.main{padding:24px 28px 80px;overflow-y:auto;max-height:calc(100vh - 60px)}
+@media(max-width:980px){.main{max-height:none}}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.kpi .l{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8a857a}
+.kpi .v{font-family:var(--serif);font-size:24px;color:var(--green);margin-top:4px;font-variant-numeric:tabular-nums}
+.kpi .d{font-size:11.5px;margin-top:2px;font-variant-numeric:tabular-nums}
+.kpi .d.up{color:#3c7a3c}.kpi .d.dn{color:#b04a2f}
+.kpi.hero{background:var(--green);border-color:var(--green)}
+.kpi.hero .l{color:#cdd5c3}.kpi.hero .v{color:#fff}.kpi.hero .d{color:#e3e9dc}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+@media(max-width:1200px){.grid2{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px}
+.card.full{grid-column:1/-1}
+.card h4{font-family:var(--serif);font-size:15px;color:var(--green);margin-bottom:4px}
+.card .sub{font-size:11.5px;color:#8a857a;margin-bottom:12px}
+.card canvas{max-height:300px}
+table.wf{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;margin-top:8px}
+table.wf th{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--terra);padding:7px 8px;border-bottom:2px solid var(--line);text-align:right}
+table.wf th:first-child{text-align:left}
+table.wf td{padding:7px 8px;text-align:right;border-bottom:1px solid rgba(0,0,0,.05)}
+table.wf td:first-child{text-align:left;font-weight:600}
+table.wf tr.tot td{border-top:2px solid var(--line);font-weight:700;color:var(--green)}
+.note{font-size:12px;color:#8a857a;margin-top:10px;line-height:1.6}
+.flag{background:#fff8d6;border:1px solid #e6d77a;border-radius:6px;padding:10px 14px;font-size:12.5px;margin-top:16px}
+.flag.good{background:#eef5e9;border-color:#b6cfa3}
+#gate{position:fixed;inset:0;z-index:1000;background:var(--ink-deep);display:flex;align-items:center;justify-content:center;padding:24px}
+#gate .gp{max-width:420px;width:100%;text-align:center;color:#e9e5da}
+#gate h1{font-family:var(--serif);font-size:30px;color:var(--cream);margin:14px 0 10px}
+#gate p{font-size:14px;color:#a39d8f;margin-bottom:26px}
+#gate input{width:100%;padding:14px 16px;border-radius:6px;border:1px solid #4a453a;background:#2b2823;color:var(--cream);font-size:16px;text-align:center;letter-spacing:.1em}
+#gate button{margin-top:14px;width:100%;padding:14px;border:none;border-radius:6px;background:var(--terra);color:#fff;font-weight:600;font-size:15px}
+#gate .err{color:#d98c6c;font-size:13px;margin-top:12px;min-height:18px}
+body.gated{overflow:hidden}
+</style>
+</head>
+<body class="gated">
+<div id="gate"><div class="gp">
+  <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#d9a26c">Now City West Salem</div>
+  <h1>How It<br>Pencils</h1>
+  <p>Internal upside explorer. Enter the access code to continue.</p>
+  <form id="gateform"><input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+  <button type="submit">Enter</button><div class="err" id="gateerr"></div></form>
+</div></div>
+
+<header class="bar">
+  <span class="tag">Edgewater · Internal</span>
+  <h1>How It Pencils &mdash; Upside Explorer</h1>
+  <span class="right">Base case starts in the red &middot; stack the levers &middot; <a href="model.html" style="color:#d9a26c">&larr; base-case model</a> &middot; <a href="feasibility.html" style="color:#d9a26c">feasibility review</a> &middot; <a href="index.html" style="color:#d9a26c">back to site</a></span>
+</header>
+
+<div class="layout">
+<aside class="panel">
+  <p style="font-size:12px;color:#8a857a;line-height:1.6;margin-bottom:14px">Every lever below is <strong>off</strong> by default, so the dashboard opens on the same red base case as the underwriting model. Switch them on and drag to see how a creative team gets the deal to clear. The waterfall on the right attributes the climb to each category.</p>
+
+  <div class="btns" style="margin-bottom:16px">
+    <button class="primary" id="bAll">Stack a viable case</button>
+    <button id="bReset">All levers off</button>
+  </div>
+
+  <details class="grp" open><summary><span>1 &middot; Cost &amp; efficiency</span><span class="chev">&#9654;</span></summary>
+    <div class="body">
+      <p class="glabel">Industrialized construction and right-sized parking attack the single biggest barrier in this market: hard cost.</p>
+      <div class="ctl"><label>Maxumal hard-cost savings <span class="val" id="v_maxSave"></span></label><input type="range" id="maxSave" min="0" max="115" step="5"><div class="hint">Claimed $/SF saving from industrialized delivery. Needs third-party validation.</div></div>
+      <div class="ctl"><label>Cost-saving credit factor <span class="val" id="v_maxCred"></span></label><input type="range" id="maxCred" min="0" max="1" step="0.05"><div class="hint">How much of the claim you underwrite. 0% = ignore it, 100% = fully proven.</div></div>
+      <div class="ctl"><label>Structured spaces removed <span class="val" id="v_parkCut"></span></label><input type="range" id="parkCut" min="0" max="150" step="5"><div class="hint">Reduced parking ratio (transit, shared, unbundled). ~$40k/space saved, parking income falls too.</div></div>
+      <div class="ctl"><label>Green opex savings <span class="val" id="v_greenSave"></span></label><input type="range" id="greenSave" min="0" max="0.08" step="0.005"><div class="hint">Operating-cost points cut by efficient systems.</div></div>
+      <div class="ctl"><label>Green credit factor <span class="val" id="v_greenCred"></span></label><input type="range" id="greenCred" min="0" max="1" step="0.05"></div>
+    </div>
+  </details>
+
+  <details class="grp"><summary><span>2 &middot; Revenue &amp; placemaking</span><span class="chev">&#9654;</span></summary>
+    <div class="body">
+      <p class="glabel">District-scale placemaking, on-site energy, and ancillary income lift NOI without raising base rents beyond the market.</p>
+      <div class="ctl"><label>District placemaking premium (max) <span class="val" id="v_distPrem"></span></label><input type="range" id="distPrem" min="0" max="0.2" step="0.01"><div class="hint">Rent premium earned as district phases deliver and the place matures.</div></div>
+      <div class="ctl"><label>Premium credit factor <span class="val" id="v_distCred"></span></label><input type="range" id="distCred" min="0" max="1" step="0.05"></div>
+      <div class="ctl"><label>Premium ramp <span class="val" id="v_dRamp"></span></label><input type="range" id="dRamp" min="2" max="8" step="0.5"><div class="hint">Years from opening to full premium.</div></div>
+      <div class="ctl"><label>Solar / energy income <span class="val" id="v_solarK"></span></label><input type="range" id="solarK" min="0" max="600" step="25"><div class="hint">Net rooftop / community-solar revenue and net-metering offset.</div></div>
+      <div class="ctl"><label>Ancillary income <span class="val" id="v_ancil"></span></label><input type="range" id="ancil" min="0" max="120" step="5"><div class="hint">Per unit / month: storage, parking premium, fees, retail percentage rent.</div></div>
+      <div class="ctl"><label>Commercial rent <span class="val" id="v_comrent"></span></label><input type="range" id="comrent" min="18" max="45" step="0.5"><div class="hint">$/SF/yr on the 45,280 SF commercial program.</div></div>
+    </div>
+  </details>
+
+  <details class="grp"><summary><span>3 &middot; Public subsidy &amp; incentives</span><span class="chev">&#9654;</span></summary>
+    <div class="body">
+      <p class="glabel">Gap funding and tax relief that public partners deploy for catalytic, attainable projects in priority corridors.</p>
+      <div class="ctl"><label>TIF / urban renewal <span class="val" id="v_tif"></span></label><input type="range" id="tif" min="0" max="30" step="0.5"><div class="hint">Tax-increment reimbursement of eligible public infrastructure and site work ($M).</div></div>
+      <div class="ctl"><label>Grants &amp; fee / SDC waivers <span class="val" id="v_grants"></span></label><input type="range" id="grants" min="0" max="20" step="0.5"><div class="hint">State / local capacity and infrastructure grants, system-development-charge relief ($M). On top of the $1M already in the base case.</div></div>
+      <div class="ctl"><label>NMTC subsidy <span class="val" id="v_nmtc"></span></label><input type="range" id="nmtc" min="0" max="12" step="0.5"><div class="hint">Net New Markets Tax Credit benefit on the commercial component ($M).</div></div>
+      <div class="ctl"><label>Property-tax abatement <span class="val" id="v_abate"></span></label><input type="range" id="abate" min="0" max="0.08" step="0.005"><div class="hint">Opex points cut by Oregon MUPTE / Vertical Housing abatement during the hold.</div></div>
+    </div>
+  </details>
+
+  <details class="grp"><summary><span>4 &middot; Affordable &amp; tax-credit equity</span><span class="chev">&#9654;</span></summary>
+    <div class="body">
+      <p class="glabel">An affordable sleeve brings 4% LIHTC equity into the stack. It trades some rent for a large, cheap, non-recourse layer of capital.</p>
+      <div class="ctl"><label>Affordable unit share (LIHTC) <span class="val" id="v_affShare"></span></label><input type="range" id="affShare" min="0" max="0.5" step="0.025"></div>
+      <div class="ctl"><label>Affordable rent discount vs market <span class="val" id="v_affDisc"></span></label><input type="range" id="affDisc" min="0.1" max="0.5" step="0.025"></div>
+      <div class="ctl"><label>LIHTC credit equity <span class="val" id="v_lihtcEq"></span></label><input type="range" id="lihtcEq" min="0" max="30" step="0.5"><div class="hint">Syndicated 4% credit equity entering the stack ahead of debt ($M).</div></div>
+    </div>
+  </details>
+
+  <details class="grp"><summary><span>5 &middot; Financing structure</span><span class="chev">&#9654;</span></summary>
+    <div class="body">
+      <p class="glabel">Patient, low-cost, long-amortization capital and land structures that cut the equity check and the carry.</p>
+      <div class="toggle"><span class="tl">HUD 221(d)(4)<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">40-yr am, high-LTC, non-recourse</span></span><button id="t_hudOn">Off</button></div>
+      <div class="ctl"><label>HUD all-in rate (incl. MIP) <span class="val" id="v_hudRate"></span></label><input type="range" id="hudRate" min="0.05" max="0.08" step="0.00125"></div>
+      <div class="ctl"><label>HUD loan-to-cost cap <span class="val" id="v_hudLTC"></span></label><input type="range" id="hudLTC" min="0.75" max="0.90" step="0.005"></div>
+      <div class="ctl"><label>Davis-Bacon hard-cost premium <span class="val" id="v_davis"></span></label><input type="range" id="davis" min="0" max="0.15" step="0.005"><div class="hint">Prevailing-wage premium that comes with HUD / public money.</div></div>
+      <div class="ctl"><label>C-PACE financing <span class="val" id="v_cpace"></span></label><input type="range" id="cpace" min="0" max="20" step="0.5"><div class="hint">Long-term assessment on energy / resiliency scope ($M). Replaces equity; stays with the building at sale.</div></div>
+      <div class="ctl"><label>C-PACE rate <span class="val" id="v_cpaceRate"></span></label><input type="range" id="cpaceRate" min="0.05" max="0.085" step="0.0025"></div>
+      <div class="toggle"><span class="tl">Ground lease the land<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">no land purchase; pay ground rent</span></span><button id="t_glOn">Off</button></div>
+      <div class="ctl"><label>Annual ground rent <span class="val" id="v_glRent"></span></label><input type="range" id="glRent" min="0.1" max="1.2" step="0.05"><div class="hint">$M/yr to the land owner if ground-leased.</div></div>
+    </div>
+  </details>
+
+  <details class="grp"><summary><span>6 &middot; Investor overlay (after-tax)</span><span class="chev">&#9654;</span></summary>
+    <div class="body">
+      <p class="glabel">Opportunity Zone treatment does not change project economics; it shelters the investor's exit gain. Shown as a separate after-tax readout.</p>
+      <div class="toggle"><span class="tl">Opportunity Zone equity<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">tax-free appreciation on 10-yr hold</span></span><button id="t_ozOn">Off</button></div>
+      <p class="note" style="margin-top:0">Illustrative only. Assumes a qualifying 10-year hold; exit gain modeled as free of federal capital-gains tax. Non-OZ comparison taxes the gain at an assumed 25%.</p>
+    </div>
+  </details>
+
+  <details class="grp"><summary><span>Base-case inputs (rents, mix, costs, exit)</span><span class="chev">&#9654;</span></summary>
+    <div class="body">
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:2px 0 10px">Residential rents ($/SF/mo)</h4>
+      <div class="ctl"><label>Studio <span class="val" id="v_rStudio"></span></label><input type="range" id="rStudio" min="1.5" max="4" step="0.01"></div>
+      <div class="ctl"><label>1 Bedroom <span class="val" id="v_r1br"></span></label><input type="range" id="r1br" min="1.5" max="4" step="0.01"></div>
+      <div class="ctl"><label>2 Bedroom <span class="val" id="v_r2br"></span></label><input type="range" id="r2br" min="1.5" max="4" step="0.01"></div>
+      <div class="ctl"><label>Townhouse <span class="val" id="v_rth"></span></label><input type="range" id="rth" min="1.5" max="4" step="0.01"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Operations</h4>
+      <div class="ctl"><label>Stabilized occupancy <span class="val" id="v_occs"></span></label><input type="range" id="occs" min="0.85" max="0.98" step="0.005"></div>
+      <div class="ctl"><label>Lease-up pace (pts/mo) <span class="val" id="v_pace"></span></label><input type="range" id="pace" min="0.02" max="0.10" step="0.005"></div>
+      <div class="ctl"><label>Residential opex (% of rents) <span class="val" id="v_opexr"></span></label><input type="range" id="opexr" min="0.2" max="0.45" step="0.005"></div>
+      <div class="ctl"><label>Rent growth (annual) <span class="val" id="v_rgrow"></span></label><input type="range" id="rgrow" min="0" max="0.06" step="0.0025"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Costs &amp; capital</h4>
+      <div class="ctl"><label>Residential hard cost ($/SF) <span class="val" id="v_hcres"></span></label><input type="range" id="hcres" min="250" max="400" step="5"></div>
+      <div class="ctl"><label>Hard cost contingency <span class="val" id="v_hccont"></span></label><input type="range" id="hccont" min="0.05" max="0.15" step="0.005"></div>
+      <div class="ctl"><label>Land purchase ($M) <span class="val" id="v_land"></span></label><input type="range" id="land" min="2" max="10" step="0.25"></div>
+      <div class="ctl"><label>Construction loan rate <span class="val" id="v_crate"></span></label><input type="range" id="crate" min="0.05" max="0.10" step="0.0025"></div>
+      <div class="ctl"><label>Perm loan rate <span class="val" id="v_prate"></span></label><input type="range" id="prate" min="0.05" max="0.09" step="0.0025"></div>
+      <div class="ctl"><label>LP cash equity ($M) <span class="val" id="v_casheq"></span></label><input type="range" id="casheq" min="20" max="70" step="1"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Exit</h4>
+      <div class="ctl"><label>Residential exit cap <span class="val" id="v_rcap"></span></label><input type="range" id="rcap" min="0.04" max="0.065" step="0.0025"></div>
+      <div class="ctl"><label>Commercial exit cap <span class="val" id="v_ccap"></span></label><input type="range" id="ccap" min="0.055" max="0.085" step="0.0025"></div>
+      <div class="ctl"><label>Exit month (from opening) <span class="val" id="v_exitm"></span></label><input type="range" id="exitm" min="18" max="120" step="1"></div>
+      <div class="ctl"><label>Vertical duration (months) <span class="val" id="v_vdur"></span></label><input type="range" id="vdur" min="12" max="24" step="1"></div>
+    </div>
+  </details>
+
+  <div class="btns">
+    <button class="primary" id="bExport">Export scenario</button>
+    <button id="bImport">Paste scenario</button>
+  </div>
+  <textarea id="scen" placeholder='Paste scenario JSON here, then click "Paste scenario" again' style="width:100%;height:70px;font-size:11px;font-family:monospace;margin-top:8px;border:1px solid var(--line);border-radius:4px;padding:6px;display:none"></textarea>
+  <p class="note" id="exportNote">Export copies the scenario and downloads it. Send it to Claude to regenerate the Excel workbook with these exact levers.</p>
+</aside>
+
+<main class="main">
+  <div class="kpis">
+    <div class="kpi hero"><div class="l">Levered IRR</div><div class="v" id="k_irr">-</div><div class="d" id="d_irr"></div></div>
+    <div class="kpi"><div class="l">Equity Multiple</div><div class="v" id="k_em">-</div><div class="d" id="d_em"></div></div>
+    <div class="kpi"><div class="l">Stabilized DSCR</div><div class="v" id="k_dscr">-</div><div class="d" id="d_dscr"></div></div>
+    <div class="kpi"><div class="l">LP Cash Equity</div><div class="v" id="k_eq">-</div><div class="d" id="d_eq"></div></div>
+    <div class="kpi"><div class="l">Yield on Cost</div><div class="v" id="k_yoc">-</div><div class="d" id="d_yoc"></div></div>
+    <div class="kpi"><div class="l">After-tax IRR <span id="k_oztag" style="font-size:9px;color:#8a857a"></span></div><div class="v" id="k_irrat">-</div><div class="d" id="d_irrat"></div></div>
+  </div>
+  <div id="status"></div>
+
+  <div class="grid2">
+    <div class="card full">
+      <h4>How it pencils &mdash; IRR build-up by lever category</h4>
+      <p class="sub">Each bar is a full re-run of the engine. Starting from the red base case, levers are switched on one category at a time at your current settings. The final bar is the all-in levered IRR.</p>
+      <canvas id="cWF"></canvas>
+      <table class="wf" id="tWF"></table>
+    </div>
+    <div class="card"><h4>Sources &amp; uses</h4><p class="sub">How the capital stack is filled at your current settings.</p><canvas id="cSU"></canvas></div>
+    <div class="card"><h4>Levered cash flow by month</h4><p class="sub">Equity out, then operations and exit.</p><canvas id="cCF"></canvas></div>
+  </div>
+
+  <div class="flag" id="readout"></div>
+
+  <details class="card" id="about" style="margin-top:20px">
+    <summary style="cursor:pointer;font-family:var(--serif);font-size:16px;color:var(--green);list-style:none;display:flex;justify-content:space-between;align-items:center">
+      What this is, and how to read it
+      <span style="font-size:12px;color:#8a857a;font-family:var(--sans)">click to expand</span>
+    </summary>
+    <div style="margin-top:14px;font-size:13.5px;line-height:1.7;max-width:980px">
+      <p><strong>This is the companion to the base-case model.</strong> The <a href="model.html" style="color:var(--terra);font-weight:600">underwriting model</a> holds Phase One to a plain merchant pro forma and shows the honest result: a conventional developer building at honest Salem rents loses money, which is exactly why this corridor sits undeveloped. This page is the other half of the argument &mdash; the toolkit creative development teams use to close that gap, every lever separable and individually sized.</p>
+      <p style="margin-top:10px"><strong>The waterfall is the whole story.</strong> It starts at the base-case floor and attributes the climb to five categories: cost &amp; efficiency, revenue &amp; placemaking, public subsidy, affordable / tax-credit equity, and financing structure. Because the levers interact, the decomposition is order-dependent (each category is added on top of the ones before it); the final all-in IRR is exact regardless of order.</p>
+      <p style="margin-top:10px"><strong>Every lever is real and in use.</strong> LIHTC and HUD 221(d)(4) are the backbone of attainable housing finance. TIF, MUPTE / Vertical Housing abatement, SDC waivers, and capacity grants are standard public gap-funding tools. C-PACE, NMTC, Opportunity Zones, ground leases, industrialized construction, right-sized parking, on-site solar, and ancillary income are all levers experienced teams combine. None is a silver bullet; the thesis is that the <em>combination</em>, executed well, turns a -15% floor into an investable deal while keeping rents attainable.</p>
+      <p style="margin-top:10px;color:#8a857a;font-size:12.5px">For discussion purposes only. This is a planning tool, not an offer of securities, and several levers (LIHTC allocation, HUD sizing, TIF eligibility, OZ treatment) are subject to program rules, third-party validation, and public approvals. After-tax figures are illustrative. Questions or a scenario worth keeping? Export it and send it to erik@nowcitylabs.com.</p>
+    </div>
+  </details>
+</main>
+</div>
+
+<script>
+// ===== passcode gate (same code as the rest of the site) =====
+(function(){
+const HASH='aad5d67e3ddeda88953d6714e4569a4399b3201023dae82d5931a6c376de96d4';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('ws-ok')==='1'||sessionStorage.getItem('ws-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){e.preventDefault();
+let h='';try{h=await sha256(document.getElementById('code').value.trim())}catch(_){ }
+if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}});
+})();
+
+// ===== shared constants (mirror the base-case engine) =====
+const RETNRA=38513.2, OFFNRA=6767, AMEN=3868020, HCCOM=160, GRANT=1e6, GP=8.3e6, FACFEE=0.01, FAC=95e6,
+ENT=2.5e6, PERM=0.8e6, DEMO=0.5e6, SITEW=2.1e6, INK=0.03, OI_R=0.10, OI_C=0.24, OPEX_C=0.24, BAD=0.01,
+ROCCS=0.95, OOCCS=0.89, CGROW=0.03, PSP=200, PRENT=79.5675, POPEX=300, POPG=0.025, TXN=0.01, OCC0=0.35, SOFTEARLY=0.65,
+PARKCOST=40000;
+
+// Base scenario = clean base case with EVERY lever off.
+const BASE={
+ rStudio:2.60,r1br:2.25,r2br:2.00,rth:1.90,
+ uStudio:180,u1br:150,u2br:85,uth:5,sfStudio:500,sf1br:640,sf2br:880,sfth:1300,
+ occs:0.95,pace:0.05,opexr:0.30,rgrow:0.025,comrent:24,
+ hcres:315,hccont:0.10,land:5,crate:0.07,prate:0.07,casheq:28,rcap:0.055,ccap:0.07,exitm:24,vdur:16,
+ // cost & efficiency
+ maxSave:0,maxCred:0,parkCut:0,greenSave:0,greenCred:0,
+ // revenue & placemaking
+ distPrem:0,distCred:0,dRamp:5,solarK:0,ancil:0,
+ // public subsidy
+ tif:0,grants:0,nmtc:0,abate:0,
+ // affordable / tax-credit equity
+ affShare:0,affDisc:0.25,lihtcEq:0,
+ // financing structure
+ hudOn:0,hudRate:0.0575,hudLTC:0.87,davis:0.08,cpace:0,cpaceRate:0.065,glOn:0,glRent:0.35,
+ // investor overlay
+ ozOn:0
+};
+// A worked, viable combination (the "Stack a viable case" preset).
+const VIABLE={maxSave:70,maxCred:0.5,parkCut:40,greenSave:0.04,greenCred:0.5,
+ distPrem:0.08,distCred:0.5,solarK:200,ancil:35,comrent:28,
+ tif:7,grants:4,nmtc:3,abate:0.04,
+ affShare:0.20,affDisc:0.25,lihtcEq:10};
+
+let P={...BASE};
+const mixOf=p=>[{n:'Studio',u:p.uStudio,sf:p.sfStudio,k:'rStudio'},{n:'1BR',u:p.u1br,sf:p.sf1br,k:'r1br'},{n:'2BR',u:p.u2br,sf:p.sf2br,k:'r2br'},{n:'TH',u:p.uth,sf:p.sfth,k:'rth'}];
+
+function run(p){
+  const HUD=p.hudOn>=1;
+  const crate=HUD?p.hudRate:p.crate, prate=HUD?p.hudRate:p.prate, amN=(HUD?40:30)*12;
+  const VS=15, VE=15+p.vdur-1, OPEN=VE+1, REFI=HUD?OPEN+12:VE+18, EXIT=OPEN+p.exitm-1, N=EXIT+13;
+  const MIX=mixOf(p);
+  const resNRA=MIX.reduce((s,m)=>s+m.u*m.sf,0);
+  const resUnits=MIX.reduce((s,m)=>s+m.u,0);
+  const affFactor=(p.affShare>0)?(1-p.affShare*p.affDisc):1;
+  const resAnnual=MIX.reduce((s,m)=>s+m.u*m.sf*p[m.k]*12,0)*affFactor;
+  const landdev=DEMO+SITEW;
+  const hcresEff=Math.max(50,p.hcres-p.maxSave*p.maxCred);
+  const opexEff=Math.max(0.05,p.opexr-p.greenSave*p.greenCred-p.abate);
+  const parkSpaces=Math.max(0,PSP-p.parkCut);
+  const parkSave=p.parkCut*PARKCOST;
+  const hard=Math.max(1e6,(resNRA*hcresEff*(HUD?1+p.davis:1)+(RETNRA+OFFNRA)*HCCOM+AMEN-parkSave)*(1+p.hccont));
+  const sbase=hard*0.09+(landdev+hard)*0.02;
+  const fee3=0.03*(landdev+hard+sbase), scont=0.03*(sbase+fee3), soft=sbase+fee3+scont;
+  const other=hard*0.01005;
+  const inkTot=INK*(hard+soft+other);
+  const landAcq=(p.glOn?0:p.land*1e6)+ENT+PERM;
+  const prefin=landAcq+landdev+hard+soft+other;
+  const subsidy=(p.tif+p.grants+p.nmtc)*1e6;
+  const cpaceProceeds=p.cpace*1e6;
+  const groundRentM=p.glOn?p.glRent*1e6/12:0;
+  const cpaceAssessM=p.cpace*1e6*p.cpaceRate/12;
+  const solarM=p.solarK*1000/12;
+  const ancilPU=p.ancil;
+
+  function simulate(pool){
+    let bal=0,permOpen=0,pmt=0,permBal=0,cumEq=0,fees=0,intTot=0;
+    const rows=[];
+    // Grants, public subsidy and C-PACE proceeds are non-equity, non-recourse sources
+    // that fund construction draws (from ~month 12 on), reducing the senior loan rather
+    // than being dumped in a single month. C-PACE is later settled at exit (buyer assumes it).
+    let softLeft=GRANT+subsidy+cpaceProceeds;
+    for(let i=0;i<=N;i++){
+      let cost=0;
+      if(i===1)cost+=(p.glOn?0:p.land*1e6);
+      if(i>=0&&i<=8)cost+=ENT/9;
+      if(i>=9&&i<=11)cost+=PERM/3;
+      if(i===12)cost+=DEMO;
+      if(i===13||i===14)cost+=SITEW/2;
+      let hso=0;
+      if(i>=VS&&i<=VE){hso+=hard/p.vdur+soft*(1-SOFTEARLY)/p.vdur+other/p.vdur;}
+      if(i<VS)hso+=soft*SOFTEARLY/VS;
+      cost+=hso;
+      const ink=hso/(hard+soft+other)*inkTot;
+      let need=Math.max(0,cost-ink);
+      if(i>=12&&softLeft>0){const sd=Math.min(need,softLeft);softLeft-=sd;need-=sd;}
+      const eq=Math.min(need,Math.max(0,pool-cumEq)); cumEq+=eq;
+      const draw=need-eq;
+      let f=0; if(i===VS){f=FAC*FACFEE;fees+=f;}
+      let it=0; if(i>0&&i<REFI){it=bal*crate/12;intTot+=it;}
+      if(i<REFI)bal=bal+draw+f+it;
+      if(i===REFI){permOpen=bal*(1+crate/12);intTot+=bal*crate/12;bal=0;
+        const r=prate/12;pmt=permOpen*r/(1-Math.pow(1+r,-amN));permBal=permOpen;}
+      else if(i>REFI){permBal=permBal*(1+prate/12)-pmt;}
+      const mo=i-OPEN;
+      let noi=0,noiR=0;
+      if(mo>=0){
+        const g=Math.pow(1+p.rgrow,mo/12), cg=Math.pow(1+CGROW,mo/12);
+        const oR=Math.min(p.occs,OCC0+p.pace*mo), oRet=Math.min(ROCCS,OCC0+p.pace*mo), oOff=Math.min(OOCCS,OCC0+p.pace*mo);
+        const dp=1+p.distPrem*p.distCred*Math.min(1,mo/(p.dRamp*12));
+        const resB=resAnnual/12*g*oR*dp, resO=resB*OI_R;
+        const retB=RETNRA*p.comrent/12*cg*oRet, retO=retB*OI_C;
+        const offB=OFFNRA*p.comrent/12*cg*oOff, offO=offB*OI_C;
+        const park=parkSpaces*PRENT*cg;
+        const rev=resB+resO+retB+retO+offB+offO+park;
+        const bad=rev*BAD, oxR=resB*opexEff, oxC=(retB+offB)*OPEX_C, oxP=parkSpaces*POPEX/12*Math.pow(1+POPG,mo/12);
+        const extraInc=solarM+ancilPU*resUnits*oR;
+        // ground rent reduces both cash flow and leasehold value; C-PACE assessment is a
+        // cash cost during the hold but the obligation is assumed by the buyer at sale, so it
+        // is settled against proceeds (below) rather than capitalized into value here.
+        noi=rev-bad-oxR-oxC-oxP+extraInc-groundRentM;
+        noiR=resB+resO-(resB+resO)*BAD-oxR+extraInc-groundRentM;
+      }
+      rows.push({i,cost,ink,eq,draw,noi,noiR,noiO:noi-noiR,cashAdj:(mo>=0?-cpaceAssessM:0),permBal,pmtPaid:(i>REFI?pmt:0)});
+    }
+    return {rows,cumEq,fees,intTot,permOpen,pmt,totalCost:prefin+fees+intTot};
+  }
+
+  let pool=GP+p.casheq*1e6+p.lihtcEq*1e6;
+  let s=simulate(pool);
+  if(HUD){
+    const HUDDSCR=1.176;
+    const debtConst=(prate/12)/(1-Math.pow(1+prate/12,-amN))*12;
+    for(let k=0;k<3;k++){
+      let noi12=0; for(let i=REFI+1;i<=REFI+12;i++) noi12+=s.rows[i].noi;
+      const maxLoan=Math.min(p.hudLTC*s.totalCost, noi12/HUDDSCR/debtConst);
+      pool=Math.max(GP+p.lihtcEq*1e6, s.totalCost-maxLoan-inkTot-(GRANT+subsidy+cpaceProceeds));
+      s=simulate(pool);
+    }
+  }
+  const {rows,cumEq,permOpen,pmt}=s;
+  let fwdR=0,fwdO=0;
+  for(let i=EXIT+1;i<=EXIT+12;i++){fwdR+=rows[i].noiR;fwdO+=rows[i].noiO;}
+  const gross=fwdR/p.rcap+fwdO/p.ccap, net=gross*(1-TXN), payoff=rows[EXIT].permBal, proceeds=net-payoff-cpaceProceeds;
+  const lev=[],dts=[];
+  for(let i=0;i<=EXIT;i++){
+    const mo=i-OPEN;
+    let cf=-rows[i].eq-rows[i].ink+(mo>=0?rows[i].noi-rows[i].pmtPaid+rows[i].cashAdj:0)+(i===EXIT?proceeds:0);
+    lev.push(cf); dts.push(new Date(2026,3+i,28));
+  }
+  const profit=lev.reduce((a,b)=>a+b,0);
+  const pos=lev.filter(x=>x>0).reduce((a,b)=>a+b,0), neg=-lev.filter(x=>x<0).reduce((a,b)=>a+b,0);
+  const totalCost=s.totalCost;
+  const eqTot=cumEq+inkTot;
+  const cashEq=Math.max(0,cumEq-GP-p.lihtcEq*1e6);
+  const irr=xirr(lev,dts);
+  const taxRate=0.25, taxable=Math.max(0,profit);
+  const levTax=lev.slice(); levTax[levTax.length-1]-=taxable*taxRate;
+  const irrAT_noOZ=xirr(levTax,dts), irrAT_OZ=irr;
+  return {lev,dts,profit,em:neg>0?pos/neg:0,irr,irrAT_noOZ,irrAT_OZ,totalCost,eqTot,cumEq,cashEq,
+    yoc:(fwdR+fwdO)/totalCost,dscr:pmt>0?(fwdR+fwdO)/(12*pmt):0,ltc:permOpen/totalCost,
+    net,proceeds,permOpen,rows,OPEN,EXIT,resAnnual,resNRA,
+    avgRent:resAnnual/12/Math.max(1,resUnits),resUnits,fwd:fwdR+fwdO,pool,
+    HUD,affUnits:p.affShare>0?Math.round(resUnits*p.affShare):0,subsidy,cpaceProceeds,lihtcEqV:p.lihtcEq*1e6};
+}
+function xirr(cf,dts){
+  const t0=dts[0];
+  const f=r=>cf.reduce((s,c,i)=>s+c/Math.pow(1+r,(dts[i]-t0)/31536e6),0);
+  let lo=-0.95,hi=5;
+  if(f(lo)*f(hi)>0)return NaN;
+  for(let k=0;k<80;k++){const m=(lo+hi)/2;(f(lo)*f(m)<=0)?hi=m:lo=m;}
+  return (lo+hi)/2;
+}
+const nz=x=>isNaN(x)?-0.95:x;
+
+// ===== waterfall decomposition =====
+const WF_OFF={maxSave:0,maxCred:0,parkCut:0,greenSave:0,greenCred:0,distPrem:0,distCred:0,solarK:0,ancil:0,comrent:24,
+ tif:0,grants:0,nmtc:0,abate:0,affShare:0,lihtcEq:0,hudOn:0,cpace:0,glOn:0};
+const WF_GROUPS=[
+ ['Cost & efficiency',['maxSave','maxCred','parkCut','greenSave','greenCred']],
+ ['Revenue & placemaking',['distPrem','distCred','solarK','ancil','comrent']],
+ ['Public subsidy',['tif','grants','nmtc','abate']],
+ ['Tax-credit equity',['affShare','lihtcEq']],
+ ['Financing structure',['hudOn','cpace','glOn']],
+];
+function waterfall(p){
+  let q={...p,...WF_OFF};
+  const floor=run(q);
+  const steps=[{name:'Base case',irr:floor.irr,em:floor.em,delta:0,dscr:floor.dscr}];
+  WF_GROUPS.forEach(([name,keys])=>{
+    keys.forEach(k=>q[k]=p[k]);
+    const r=run(q);
+    const prev=steps[steps.length-1];
+    steps.push({name,irr:r.irr,em:r.em,dscr:r.dscr,delta:nz(r.irr)-nz(prev.irr)});
+  });
+  return steps;
+}
+
+// ===== UI =====
+const fmt$=x=>(x<0?'-$':'$')+(Math.abs(x)>=1e6?(Math.abs(x)/1e6).toFixed(1)+'M':Math.round(Math.abs(x)/1e3)+'K');
+const fmtP=x=>(100*x).toFixed(1)+'%';
+const SLIDERS=['rStudio','r1br','r2br','rth','occs','pace','opexr','rgrow','comrent','hcres','hccont','land','crate','prate','casheq','rcap','ccap','exitm','vdur','maxSave','maxCred','parkCut','greenSave','greenCred','distPrem','distCred','dRamp','solarK','ancil','tif','grants','nmtc','abate','affShare','affDisc','lihtcEq','hudRate','hudLTC','davis','cpace','cpaceRate','glRent'];
+const PCT=['occs','pace','opexr','rgrow','hccont','crate','prate','rcap','ccap','maxCred','greenSave','greenCred','distPrem','distCred','abate','affShare','affDisc','hudRate','hudLTC','davis','cpaceRate'];
+const MUSD=['land','casheq','tif','grants','nmtc','lihtcEq','cpace'];
+function vlabel(k,v){
+  if(PCT.includes(k))return fmtP(v);
+  if(MUSD.includes(k))return '$'+v+'M';
+  if(k==='maxSave')return '$'+v+'/SF';
+  if(k==='parkCut')return v+' spaces';
+  if(k==='solarK')return '$'+v+'K/yr';
+  if(k==='ancil')return '$'+v+'/unit/mo';
+  if(k==='glRent')return '$'+v+'M/yr';
+  if(k==='dRamp')return v+' yrs';
+  if(['exitm','vdur'].includes(k))return v+' mo';
+  if(['comrent','hcres'].includes(k))return '$'+v;
+  return '$'+(+v).toFixed(2);
+}
+let charts={};
+const base=run(BASE);
+
+function sync(){
+  SLIDERS.forEach(k=>{const el=document.getElementById(k);if(!el)return;el.value=P[k];const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);});
+  ['hudOn','glOn','ozOn'].forEach(k=>{const b=document.getElementById('t_'+k);if(b){b.classList.toggle('on',P[k]>=1);b.textContent=P[k]>=1?'On':'Off';}});
+}
+function delta(el,cur,b,fmt,goodUp=true){
+  const d=cur-b, e=document.getElementById(el);
+  if(Math.abs(d)<1e-9){e.textContent='base';e.className='d';return;}
+  e.textContent=(d>0?'+':'')+fmt(d)+' vs base';
+  e.className='d '+((d>0)===goodUp?'up':'dn');
+}
+function recalc(){
+  const r=run(P);
+  document.getElementById('k_irr').textContent=isNaN(r.irr)?'n/a':fmtP(r.irr);
+  document.getElementById('k_em').textContent=r.em.toFixed(2)+'x';
+  document.getElementById('k_dscr').textContent=r.dscr.toFixed(2);
+  document.getElementById('k_eq').textContent=fmt$(r.cashEq);
+  document.getElementById('k_yoc').textContent=fmtP(r.yoc);
+  const atIRR=P.ozOn>=1?r.irrAT_OZ:r.irrAT_noOZ;
+  document.getElementById('k_irrat').textContent=isNaN(atIRR)?'n/a':fmtP(atIRR);
+  document.getElementById('k_oztag').textContent=P.ozOn>=1?'(OZ)':'(no OZ)';
+  delta('d_irr',nz(r.irr),nz(base.irr),x=>(100*x).toFixed(1)+'pts');
+  delta('d_em',r.em,base.em,x=>x.toFixed(2)+'x');
+  delta('d_dscr',r.dscr,base.dscr,x=>x.toFixed(2));
+  delta('d_eq',r.cashEq,base.cashEq,fmt$,false);
+  delta('d_yoc',r.yoc,base.yoc,x=>(100*x).toFixed(2)+'pts');
+  const atBase=base.irrAT_noOZ;
+  delta('d_irrat',nz(atIRR),nz(atBase),x=>(100*x).toFixed(1)+'pts');
+
+  // status / DSCR warnings
+  const w=[];
+  if(r.HUD&&r.dscr<1.176)w.push('HUD case: DSCR '+r.dscr.toFixed(2)+' is below the 1.176 affordable minimum &mdash; the loan will size down.');
+  if(!r.HUD&&r.dscr<1.20&&r.dscr>0)w.push('Conventional DSCR '+r.dscr.toFixed(2)+' is below the 1.20 floor.');
+  if(r.permOpen>FAC)w.push('Loan exceeds the $95M facility.');
+  document.getElementById('status').innerHTML=w.length?'<div class="flag" style="border-color:#d99;background:#fdeeee;margin-top:16px">'+w.join(' ')+'</div>':'';
+
+  drawWaterfall();drawSU(r);drawCF(r);
+  // bottom readout
+  const cleared=nz(r.irr)>=0.15;
+  const ro=document.getElementById('readout');
+  ro.className='flag'+(cleared?' good':'');
+  ro.innerHTML='<strong>'+(cleared?'This combination pencils.':'Not there yet.')+'</strong> '
+    +'At these settings the deal runs <strong>'+(isNaN(r.irr)?'n/a':fmtP(r.irr))+' levered IRR</strong>, '
+    +r.em.toFixed(2)+'x equity, DSCR '+r.dscr.toFixed(2)+', on <strong>'+fmt$(r.cashEq)+'</strong> of cash equity'
+    +(P.affShare>0?' with <strong>'+r.affUnits+'</strong> affordable units':'')
+    +'. Base-case floor: '+fmtP(base.irr)+'. '
+    +(cleared?'The lever stack closes the '+((nz(r.irr)-nz(base.irr))*100).toFixed(0)+'-point gap.':'Keep stacking &mdash; you need about '+((0.15-nz(r.irr))*100).toFixed(0)+' more points.');
+}
+function drawWaterfall(){
+  const steps=waterfall(P);
+  const labels=steps.map((s,i)=>i===0?s.name:'+ '+s.name);
+  const bars=steps.map((s,i)=>i===0?[0,nz(s.irr)]:[nz(steps[i-1].irr),nz(s.irr)]);
+  const colors=steps.map((s,i)=>i===0?'#8a857a':(s.delta>=0?'rgba(72,89,63,.82)':'rgba(168,112,63,.82)'));
+  labels.push('All-in'); bars.push([0,nz(steps[steps.length-1].irr)]); colors.push('#1f1d1a');
+  mk('cWF','bar',{labels,datasets:[{data:bars,backgroundColor:colors,borderRadius:3}]},
+    {plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const a=c.raw;return 'from '+fmtP(a[0])+' to '+fmtP(a[1]);}}}},
+     scales:{y:{ticks:{callback:v=>(100*v).toFixed(0)+'%'},grid:{color:c=>c.tick.value===0?'#999':'rgba(0,0,0,.06)'}},x:{ticks:{font:{size:10},maxRotation:30,minRotation:0}}}});
+  // 15% hurdle reference handled visually by reading the axis; build the table
+  let h='<tr><th>Lever category</th><th>IRR after</th><th>Adds</th><th>Equity x</th><th>DSCR</th></tr>';
+  steps.forEach((s,i)=>{
+    h+='<tr><td>'+(i===0?s.name:'+ '+s.name)+'</td><td>'+(isNaN(s.irr)?'n/a':fmtP(s.irr))+'</td>'
+      +'<td style="color:'+(i===0?'#8a857a':(s.delta>=0?'#3c7a3c':'#b04a2f'))+'">'+(i===0?'&mdash;':(s.delta>=0?'+':'')+(100*s.delta).toFixed(1)+'pts')+'</td>'
+      +'<td>'+s.em.toFixed(2)+'x</td><td>'+s.dscr.toFixed(2)+'</td></tr>';
+  });
+  const last=steps[steps.length-1];
+  h+='<tr class="tot"><td>All-in</td><td>'+(isNaN(last.irr)?'n/a':fmtP(last.irr))+'</td><td>'+((100*(nz(last.irr)-nz(steps[0].irr))).toFixed(1))+'pts</td><td>'+last.em.toFixed(2)+'x</td><td>'+last.dscr.toFixed(2)+'</td></tr>';
+  document.getElementById('tWF').innerHTML=h;
+}
+function drawSU(r){
+  mk('cSU','bar',{labels:['Sources','Uses'],datasets:[
+    {label:'GP equity',data:[GP,0],backgroundColor:'#a8703f'},
+    {label:'LP cash equity',data:[r.cashEq,0],backgroundColor:'#c89a6a'},
+    {label:'In-kind',data:[r.eqTot-r.cumEq,0],backgroundColor:'#e0c9ab'},
+    {label:'LIHTC equity',data:[r.lihtcEqV,0],backgroundColor:'#7d9b8a'},
+    {label:'Grants & subsidy',data:[GRANT+r.subsidy,0],backgroundColor:'#8a9b7d'},
+    {label:'C-PACE',data:[r.cpaceProceeds,0],backgroundColor:'#b9c4a6'},
+    {label:'Perm / senior loan',data:[r.permOpen,0],backgroundColor:'#48593f'},
+    {label:'Total cost',data:[0,r.totalCost],backgroundColor:'#33312e'}]},
+    {plugins:{legend:{labels:{font:{family:'Inter',size:10},boxWidth:11}}},scales:{x:{stacked:true},y:{stacked:true,ticks:{callback:v=>fmt$(v)}}}});
+}
+function drawCF(r){
+  const mklab=r.lev.map((_,i)=>new Date(2026,3+i,1).toLocaleDateString('en-US',{month:'short',year:'2-digit'}));
+  let cum=0;const cumA=r.lev.map(v=>cum+=v);
+  mk('cCF','bar',{labels:mklab,datasets:[
+    {label:'Monthly levered CF',data:r.lev,backgroundColor:r.lev.map(v=>v<0?'rgba(168,112,63,.75)':'rgba(72,89,63,.75)'),order:2},
+    {label:'Cumulative',data:cumA,type:'line',borderColor:'#1f1d1a',borderWidth:1.5,pointRadius:0,yAxisID:'y1',order:1}]},
+    {plugins:{legend:{labels:{font:{family:'Inter',size:10},boxWidth:11}}},scales:{y:{ticks:{callback:v=>fmt$(v)}},y1:{position:'right',grid:{display:false},ticks:{callback:v=>fmt$(v)}},x:{ticks:{maxTicksLimit:9,font:{size:9}}}}});
+}
+function mk(id,type,data,opts){
+  if(charts[id])charts[id].destroy();
+  charts[id]=new Chart(document.getElementById(id),{type,data,options:{responsive:true,animation:false,...opts}});
+}
+
+// wire sliders
+SLIDERS.forEach(k=>{
+  const el=document.getElementById(k); if(!el)return;
+  el.addEventListener('input',e=>{P[k]=+e.target.value||0;const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);recalc();});
+});
+// wire toggles
+['hudOn','glOn','ozOn'].forEach(k=>{
+  const b=document.getElementById('t_'+k); if(!b)return;
+  b.addEventListener('click',()=>{P[k]=P[k]>=1?0:1;b.classList.toggle('on',P[k]>=1);b.textContent=P[k]>=1?'On':'Off';recalc();});
+});
+document.getElementById('bReset').onclick=()=>{P={...BASE};sync();recalc();};
+document.getElementById('bAll').onclick=()=>{P={...BASE,...VIABLE};sync();
+  // open the lever groups so the change is visible
+  document.querySelectorAll('details.grp').forEach((d,i)=>{if(i<5)d.open=true;});recalc();};
+document.getElementById('bExport').onclick=()=>{
+  const r=run(P);
+  const s=JSON.stringify({scenario:'edgewater-phase1-upside',exported:new Date().toISOString(),inputs:P,
+    result:{irr:+(100*nz(r.irr)).toFixed(2),em:+r.em.toFixed(3),dscr:+r.dscr.toFixed(2),cashEquity:Math.round(r.cashEq),totalCost:Math.round(r.totalCost),affordableUnits:r.affUnits}},null,1);
+  navigator.clipboard&&navigator.clipboard.writeText(s);
+  const b=new Blob([s],{type:'application/json'});const a=document.createElement('a');
+  a.href=URL.createObjectURL(b);a.download='edgewater-upside-scenario.json';a.click();
+  document.getElementById('exportNote').textContent='Scenario copied and downloaded. Send it to Claude to rebuild the workbook with these levers.';
+};
+document.getElementById('bImport').onclick=()=>{
+  const t=document.getElementById('scen');
+  if(t.style.display!=='block'){t.style.display='block';t.focus();return;}
+  try{const j=JSON.parse(t.value);Object.assign(P,j.inputs||j);sync();recalc();t.style.display='none';}
+  catch(e){alert('Could not parse scenario JSON');}
+};
+sync();recalc();
+</script>
+</body>
+</html>

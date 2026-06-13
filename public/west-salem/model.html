@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phase 1 Model Dashboard - Edgewater</title>
+<title>Phase 1 Base Case - Edgewater</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,37 +73,15 @@ body.gated{overflow:hidden}
 
 <header class="bar">
   <span class="tag">Edgewater · Internal</span>
-  <h1>Phase 1 Underwriting Dashboard</h1>
-  <span class="right">Model v2 · market-anchored base + credited upside · mirrors the Excel model · <a href="feasibility.html" style="color:#d9a26c">feasibility review</a> · <a href="index.html" style="color:#d9a26c">back to site</a></span>
+  <h1>Phase 1 Base Case</h1>
+  <span class="right">Conventional underwriting · market rents, conventional debt · <a href="upside.html" style="color:#d9a26c">how it pencils &rarr;</a> · <a href="feasibility.html" style="color:#d9a26c">feasibility review</a> · <a href="index.html" style="color:#d9a26c">back to site</a></span>
 </header>
 
 <div class="layout">
 <aside class="panel">
-  <h3>Financing Scenario</h3>
-  <style>.seg{display:flex;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:12px}
-  .seg button{flex:1;border:none;border-radius:0;padding:10px 6px;background:#fff}
-  .seg button.on{background:var(--green);color:#fff}
-  #hudCtls.off{opacity:.35;pointer-events:none}</style>
-  <div class="seg"><button id="finM" class="on">Merchant<br><span style="font-weight:400;font-size:10.5px">conventional debt, Y2 sale</span></button><button id="finH">HUD / LIHTC<br><span style="font-weight:400;font-size:10.5px">221(d)(4) + affordable sleeve</span></button></div>
-  <div id="hudCtls" class="off">
-    <div class="ctl"><label>HUD all-in rate (incl. MIP) <span class="val" id="v_hudRate"></span></label><input type="range" id="hudRate" min="0.05" max="0.08" step="0.00125"></div>
-    <div class="ctl"><label>Davis-Bacon hard cost premium <span class="val" id="v_davis"></span></label><input type="range" id="davis" min="0" max="0.15" step="0.005"></div>
-    <div class="ctl"><label>Affordable unit share (LIHTC) <span class="val" id="v_affShare"></span></label><input type="range" id="affShare" min="0" max="0.5" step="0.025"></div>
-    <div class="ctl"><label>Affordable rent discount vs market <span class="val" id="v_affDisc"></span></label><input type="range" id="affDisc" min="0.1" max="0.5" step="0.025"></div>
-    <div class="ctl"><label>LIHTC credit equity ($M) <span class="val" id="v_lihtcEq"></span></label><input type="range" id="lihtcEq" min="0" max="25" step="0.5"></div>
-    <div class="ctl"><label>HUD loan-to-cost cap <span class="val" id="v_hudLTC"></span></label><input type="range" id="hudLTC" min="0.75" max="0.90" step="0.005"></div>
-    <p class="note">HUD case: one construction-to-perm loan, 40-yr amortization, conversion 12 months after opening. Equity is sized to the LTC cap (the LP cash equity slider below applies to the Merchant case only), and LIHTC equity enters the stack ahead of debt. Indicative terms; subject to HUD sizing (incl. DSCR tests) and OHCS allocation.</p>
+  <div style="background:var(--cream2);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin-bottom:18px">
+    <p style="font-size:12.5px;line-height:1.6;color:var(--ink)"><strong>This is the conventional base case.</strong> A merchant developer building at honest Salem market rents on conventional debt. No subsidy, no incentives, no forward-looking premiums. To explore how the project is made to pencil &mdash; LIHTC, HUD, tax abatement, C-PACE, and the full toolkit &mdash; open the <a href="upside.html" style="color:var(--terra);font-weight:600">how-it-pencils explorer &rarr;</a></p>
   </div>
-
-  <h3>Upside Credit Layers</h3>
-  <p class="note" style="margin:0 0 10px">Forward-looking claims, underwritten at partial credit until validated. Base case at 0% earns only what current market data supports.</p>
-  <div class="ctl"><label>Maxumal hard-cost savings ($/SF claim) <span class="val" id="v_maxSave"></span></label><input type="range" id="maxSave" min="0" max="115" step="5"></div>
-  <div class="ctl"><label>Maxumal credit factor <span class="val" id="v_maxCred"></span></label><input type="range" id="maxCred" min="0" max="1" step="0.05"></div>
-  <div class="ctl"><label>District placemaking premium (max) <span class="val" id="v_distPrem"></span></label><input type="range" id="distPrem" min="0" max="0.2" step="0.01"></div>
-  <div class="ctl"><label>District premium credit factor <span class="val" id="v_distCred"></span></label><input type="range" id="distCred" min="0" max="1" step="0.05"></div>
-  <div class="ctl"><label>Premium ramp (years from opening) <span class="val" id="v_dRamp"></span></label><input type="range" id="dRamp" min="2" max="8" step="0.5"></div>
-  <div class="ctl"><label>Green opex savings (pts, claim) <span class="val" id="v_greenSave"></span></label><input type="range" id="greenSave" min="0" max="0.08" step="0.005"></div>
-  <div class="ctl"><label>Green credit factor <span class="val" id="v_greenCred"></span></label><input type="range" id="greenCred" min="0" max="1" step="0.05"></div>
 
   <h3>Residential Rents ($/SF/mo)</h3>
   <div class="ctl"><label>Studio <span class="val" id="v_rStudio"></span></label><input type="range" id="rStudio" min="1.5" max="4" step="0.01"></div>
@@ -159,11 +137,11 @@ body.gated{overflow:hidden}
       <span style="font-size:12px;color:#8a857a;font-family:var(--sans)">click to collapse / expand</span>
     </summary>
     <div style="margin-top:14px;font-size:13.5px;line-height:1.7;max-width:980px">
-      <p><strong>This is Model v2: a live underwriting model for Phase One of the Edgewater district</strong> (5.29 acres, 740 Bassett St NW), rebuilt June 2026 after an independent market audit. Every control feeds a month-by-month engine from April 2026 through exit, mirroring the Excel workbook. Nothing is precomputed.</p>
-      <p style="margin-top:10px"><strong>The philosophy: the base case earns nothing it cannot cite.</strong> Rents are anchored to achieved Salem comps (Spring Woods at ~$2.23/SF, Rivenwood; market average $1,493/mo, RentCafe Apr-2026), rent growth to forecast 2.5%, vacancy and exit caps to current market reports. The unit program is 420 attainable units averaging ~$1,475/month, priced for Salem's actual renter incomes. Every forward-looking claim lives in an explicit <strong>credit layer</strong>: Maxumal's industrialized cost savings, the district placemaking rent premium (which ramps over years as district phases deliver - this is also the district-model integration point), and green-systems opex savings. Each is underwritten at 50% credit until validated; drag to 0% to see the no-credit floor or 100% for the fully-proven case.</p>
-      <p style="margin-top:10px"><strong>Two financing cases.</strong> The Merchant case is conventional construction debt rolling to a 30-year perm with a sale about two years after opening. The HUD / LIHTC case models a single FHA 221(d)(4) construction-to-perm loan with 40-year amortization, a Davis-Bacon prevailing-wage premium on residential hard costs, a LIHTC affordable sleeve with rent discounts and credit equity in the stack, and conversion 12 months after opening. Both are indicative structures for comparison, not committed terms.</p>
+      <p><strong>This is the conventional base case for Phase One of the Edgewater district</strong> (5.29 acres, 740 Bassett St NW), rebuilt June 2026 after an independent market audit. Every control feeds a month-by-month engine from April 2026 through exit. Nothing is precomputed. This page deliberately holds the deal to a plain-vanilla institutional underwriting: a merchant developer, conventional construction debt, market rents, and a sale about two years after stabilization &mdash; no subsidy and no forward-looking credit.</p>
+      <p style="margin-top:10px"><strong>The base case earns nothing it cannot cite.</strong> Rents are anchored to achieved Salem comps (Spring Woods at ~$2.23/SF, Rivenwood; market average $1,493/mo, RentCafe Apr-2026), rent growth to forecast 2.5%, vacancy and exit caps to current market reports. The unit program is 420 attainable units averaging ~$1,475/month, priced for Salem's actual renter incomes. <strong>The honest result is a deal that does not yet clear a developer's return</strong> &mdash; which is precisely why this corridor sits undeveloped. The work of making it pencil &mdash; subsidy, public incentives, industrialized cost, placemaking, green operations &mdash; is moved out of the base case and into the <a href="upside.html" style="color:var(--terra);font-weight:600">how-it-pencils explorer</a>, where each lever is separable and measurable.</p>
+      <p style="margin-top:10px"><strong>Financing.</strong> Conventional construction debt rolling to a 30-year permanent loan, with a sale about two years after opening. Agency (HUD 221(d)(4)) and affordable (LIHTC) structures are not modeled here; they live in the explorer, since they change the deal's character rather than refine the base case.</p>
       <p style="margin-top:10px"><strong>Held constant</strong> (deliberately not on sliders): the development calendar beyond construction duration, soft-cost ratios (~14.9% of hard costs), the 45,280 SF commercial program at $32/SF, 200 parking spaces, 1% bad debt, and a 3% in-kind sponsor contribution that funds the development fee.</p>
-      <p style="margin-top:10px"><strong>Read with care.</strong> Base rents carry the prior unit schedule's $/SF onto larger units and have not yet been validated against Salem market comps. That is the single assumption most worth stress-testing here. The model also excludes things that sit outside Phase One underwriting: Opportunity Zone tax benefits, the interim activation businesses, and district Phases 2 through 4. Returns shown are project-level, before GP/LP waterfall splits and before taxes.</p>
+      <p style="margin-top:10px"><strong>Read with care.</strong> The single assumption most worth stress-testing is rents &mdash; use the rent sliders to test levels against Salem comps. The base case also excludes everything that sits outside a plain Phase One underwriting: subsidy, tax benefits, the interim activation businesses, and district Phases 2 through 4. Returns shown are project-level, before GP/LP waterfall splits and before taxes.</p>
       <p style="margin-top:10px;color:#8a857a;font-size:12.5px">For discussion purposes only. This is a planning tool, not an offer of securities. All figures are estimates subject to change with site control, design development, and due diligence. Questions or a scenario worth keeping? Export it and send it to erik@nowcitylabs.com.</p>
     </div>
   </details>
@@ -187,7 +165,7 @@ body.gated{overflow:hidden}
       <p class="note">Each cell is a full re-run of the engine, not an approximation. Outlined cell = current settings.</p>
     </div>
   </div>
-  <div class="flag"><strong>Reminder:</strong> base-case rents carry the prior schedule's $/SF onto much larger units (e.g. 1BR at ~$3,029/mo). Use the rent sliders to test market-validated levels. Average rent per unit at current settings: <strong id="avgRent">-</strong>.</div>
+  <div class="flag"><strong>Base-case rents are the assumption to stress first.</strong> Use the rent sliders to test levels against achieved Salem comps. Average rent per unit at current settings: <strong id="avgRent">-</strong>.</div>
 </main>
 </div>
 
@@ -209,7 +187,7 @@ rStudio:2.60,r1br:2.25,r2br:2.00,rth:1.90,
 uStudio:180,u1br:150,u2br:85,uth:5,sfStudio:500,sf1br:640,sf2br:880,sfth:1300,
 occs:0.95,pace:0.05,opexr:0.30,rgrow:0.025,
 comrent:24,hcres:315,hccont:0.10,land:5,crate:0.07,prate:0.07,casheq:28,rcap:0.055,ccap:0.07,exitm:24,vdur:16,
-maxSave:85,maxCred:0.5,distPrem:0.10,distCred:0.5,dRamp:5,greenSave:0.05,greenCred:0.5};
+maxSave:0,maxCred:0,distPrem:0,distCred:0,dRamp:5,greenSave:0,greenCred:0};
 let P={...BASE};
 const mixOf=p=>[{n:'Studio',u:p.uStudio,sf:p.sfStudio,k:'rStudio'},{n:'1BR',u:p.u1br,sf:p.sf1br,k:'r1br'},{n:'2BR',u:p.u2br,sf:p.sf2br,k:'r2br'},{n:'TH',u:p.uth,sf:p.sfth,k:'rth'}];
 const RETNRA=38513.2, OFFNRA=6767, AMEN=3868020, HCCOM=160, GRANT=1e6, GP=8.3e6, FACFEE=0.01, FAC=95e6,
@@ -427,17 +405,10 @@ ids.forEach(k=>{
   const el=document.getElementById(k); if(!el)return;
   el.addEventListener('input',e=>{P[k]=+e.target.value||0;const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);recalc();});
 });
-function setFin(f){P.fin=f;
-  document.getElementById('finM').classList.toggle('on',f===0);
-  document.getElementById('finH').classList.toggle('on',f===1);
-  document.getElementById('hudCtls').classList.toggle('off',f===0);
-  recalc();}
-document.getElementById('finM').onclick=()=>setFin(0);
-document.getElementById('finH').onclick=()=>setFin(1);
 document.getElementById('bReset').onclick=()=>{P={...BASE};sync();recalc();};
 document.getElementById('bExport').onclick=()=>{
   const r=run(P);
-  const s=JSON.stringify({scenario:'edgewater-phase1-v2',exported:new Date().toISOString(),inputs:P,
+  const s=JSON.stringify({scenario:'edgewater-phase1-base',exported:new Date().toISOString(),inputs:P,
     districtHandoff:{units:r.resUnits,resNRA:Math.round(r.resNRA),totalCost:Math.round(r.totalCost),
     equity:Math.round(r.eqTot),stabilizedNOI:Math.round(r.fwd),netExitValue:Math.round(r.net),
     irr:+(100*r.irr).toFixed(2),em:+r.em.toFixed(3)}},null,1);

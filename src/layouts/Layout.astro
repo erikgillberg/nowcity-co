@@ -73,8 +73,66 @@ const nav = [
             </a>
           ))}
         </nav>
+
+        <!-- Mobile menu toggle: visible below md, hidden at md+ where the inline nav shows -->
+        <button
+          id="mobile-nav-toggle"
+          type="button"
+          class="inline-flex items-center justify-center rounded-md p-2 text-stone-600 hover:text-forest-700 md:hidden"
+          aria-label="Open menu"
+          aria-controls="mobile-nav"
+          aria-expanded="false"
+        >
+          <svg id="mobile-nav-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+          </svg>
+          <svg id="mobile-nav-icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
+
+      <!-- Mobile nav panel -->
+      <nav
+        id="mobile-nav"
+        class="hidden border-t border-stone-100/60 md:hidden"
+        aria-label="Mobile"
+      >
+        <div class="container-wide flex flex-col py-3">
+          {nav.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                'py-3 text-base font-medium no-underline tracking-tight',
+                currentPath.startsWith(item.href)
+                  ? 'text-forest-700'
+                  : 'text-stone-600 hover:text-forest-700',
+              ]}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
     </header>
+
+    <script>
+      // Mobile nav toggle. Kept dependency-free so it works regardless of
+      // hydration; toggles the panel and swaps the open/close icon.
+      const navToggle = document.getElementById('mobile-nav-toggle');
+      const navPanel = document.getElementById('mobile-nav');
+      const iconOpen = document.getElementById('mobile-nav-icon-open');
+      const iconClose = document.getElementById('mobile-nav-icon-close');
+      if (navToggle && navPanel && iconOpen && iconClose) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navPanel.classList.toggle('hidden') === false;
+          navToggle.setAttribute('aria-expanded', String(isOpen));
+          navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+          iconOpen.classList.toggle('hidden', isOpen);
+          iconClose.classList.toggle('hidden', !isOpen);
+        });
+      }
+    </script>
 
     <main id="main">
       <slot />
