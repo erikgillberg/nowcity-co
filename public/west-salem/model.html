@@ -70,12 +70,14 @@ body.gated{overflow:hidden}
 #wsnav a:hover{color:var(--terra)}
 #wsnav a.active{color:var(--cream);border-bottom:1.5px solid #d9a26c;padding-bottom:2px}
 #wsnav .dd>a::after{content:' \25BE';font-size:9px;opacity:.7}
-#wsnav .ddm{display:none;position:absolute;top:100%;left:-8px;min-width:215px;background:#1f1d1a;border:1px solid #3d392f;border-radius:6px;padding:8px 0;z-index:400;list-style:none;margin:0}
+#wsnav .ddm{display:none;position:absolute;top:100%;left:-8px;min-width:215px;max-height:80vh;overflow-y:auto;background:#1f1d1a;border:1px solid #3d392f;border-radius:6px;padding:8px 0;z-index:400;list-style:none;margin:0}
 #wsnav .dd:hover .ddm,#wsnav .dd:focus-within .ddm{display:block}
 #wsnav .ddm li{display:block;margin:0}
 #wsnav .ddm a{display:block;padding:9px 16px;font-size:12.5px;text-transform:none;letter-spacing:0;color:#e9e5da}
 #wsnav .ddm a:hover{color:#d9a26c;background:rgba(255,255,255,.04)}
 #wsnav .ddm .dd-head{padding:10px 16px 4px;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#e8c79d;border-top:1px solid #4a453a;margin-top:5px}
+#wsnav .brand-sub{font-weight:400;font-size:11px;opacity:.75}
+@media(max-width:600px){#wsnav .brand-sub{display:none}}
 @media(max-width:820px){#wsnav .wrap{flex-wrap:wrap;padding:8px 16px}#wsnav>.wrap>ul{gap:12px}}
 .ctx{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-bottom:20px}
 .ctx .ctx-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px}
@@ -94,13 +96,14 @@ body.gated{overflow:hidden}
 
 <nav id="wsnav">
   <div class="wrap">
-    <a class="brand" href="index.html">Now City West Salem</a>
+    <a class="brand" href="index.html">Edgewater West Salem<span class="brand-sub"> &middot; A Now City Neighborhood</span></a>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="district.html">The District</a></li>
-      <li><a href="plan.html">Business Plan</a></li>
-      <li class="dd"><a href="activation.html">Activation</a>
+      <li class="dd"><a href="plan.html" class="active">District Plan</a>
         <ul class="ddm">
+          <li><a href="district.html">District Vision</a></li>
+          <li><a href="plan.html">Business Plan</a></li>
+          <li><a href="om.html">Investment Summary</a></li>
           <li><a href="activation.html">Activation Plan</a></li>
           <li class="dd-head">Research &amp; Precedents</li>
           <li><a href="research.html">District Economic Development</a></li>
@@ -112,16 +115,13 @@ body.gated{overflow:hidden}
           <li class="dd-head">West Salem Activation</li>
           <li><a href="activation.html#market">Retail Activation</a></li>
           <li><a href="activation.html#scandi">Housing Activation</a></li>
-        </ul>
-      </li>
-      <li><a href="om.html">Investment Summary</a></li>
-      <li class="dd"><a href="model.html" class="active">Model</a>
-        <ul class="ddm">
+          <li class="dd-head">Model</li>
           <li><a href="model.html">Base Case Model</a></li>
           <li><a href="upside.html">How It Pencils</a></li>
           <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
         </ul>
       </li>
+      <li><a href="team.html">Team</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </div>
