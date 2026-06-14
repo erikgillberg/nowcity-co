@@ -59,6 +59,26 @@ nav a.cta{font-size:13px;font-weight:600;color:#fff;background:var(--green);padd
 .mock .wf .col .bb{width:100%;border-radius:3px 3px 0 0}
 .mock .wf .col .cl{font-size:9px;color:#8a857a;text-align:center;line-height:1.1}
 @media(max-width:720px){.mock .body{grid-template-columns:1fr 1fr}}
+.mock .inner{display:grid;grid-template-columns:188px 1fr}
+.mock .ctrls{background:#faf8f3;border-right:1px solid var(--line);padding:14px 14px 16px}
+.mock .ctrls .cl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a948a;margin:10px 0 7px}
+.mock .ctrls .cl:first-child{margin-top:0}
+.mock .typo{display:flex;flex-direction:column;gap:4px;font-size:10.5px;font-weight:600;color:#fff;background:var(--green);border-radius:5px;padding:6px 8px}
+.mock .typo small{font-weight:400;color:#d7e0cf;font-size:9px}
+.mock .sld{margin:9px 0}
+.mock .sld .t{display:flex;justify-content:space-between;font-size:10px;color:#6e6a61;margin-bottom:3px}
+.mock .sld .track{height:4px;border-radius:3px;background:#e3ddcf;position:relative}
+.mock .sld .track i{position:absolute;top:-3px;width:10px;height:10px;border-radius:50%;background:var(--terra)}
+.mock .res{padding:18px 20px}
+.mock .krow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mock .mini{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.mock .mtab{border:1px solid var(--line);border-radius:7px;padding:11px 13px}
+.mock .mtab .mh{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--green);margin-bottom:7px}
+.mock .mtab table{width:100%;border-collapse:collapse;font-size:11px}
+.mock .mtab td{padding:3px 0;border-bottom:1px solid rgba(0,0,0,.05)}
+.mock .mtab td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.mock .mtab tr.t td{font-weight:700;color:var(--green);border-bottom:none;border-top:1px solid var(--line);padding-top:5px}
+@media(max-width:720px){.mock .inner{grid-template-columns:1fr}.mock .ctrls{display:none}.mock .krow{grid-template-columns:1fr 1fr}.mock .mini{grid-template-columns:1fr}}
 
 /* generic */
 .lead{font-size:18px;color:var(--ink2);max-width:760px}
@@ -135,26 +155,54 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
     <div class="mock">
       <div class="bar"><span class="dot" style="background:#e0686a"></span><span class="dot" style="background:#e6b35c"></span><span class="dot" style="background:#7bbf6a"></span><span class="t">Now City Upside Explorer &middot; Edgewater West Salem</span></div>
       <div class="scnbar">
-        <span class="scap">Build &amp; capital</span>
-        <span class="pill">Base</span><span class="pill on">P</span><span class="pill">A</span><span class="pill">B</span><span class="pill">C</span>
-        <span class="scap" style="margin-left:10px">Rents &amp; program</span>
-        <span class="pill">D</span><span class="pill">E</span><span class="pill">F</span><span class="pill">G</span>
-        <span style="margin-left:auto;color:#cfc9bd;font-size:11px">PAB design &middot; <b style="color:#fff">+8.8% IRR</b></span>
+        <span class="scap">Live scenarios</span>
+        <span class="pill">Base</span><span class="pill">P</span><span class="pill">A</span><span class="pill">B</span><span class="pill">C</span>
+        <span class="pill">D</span><span class="pill">E</span><span class="pill">F</span><span class="pill on">G</span>
+        <span style="margin-left:auto;color:#cfc9bd;font-size:11px">Full regenerative stack &middot; <b style="color:#fff">+22.2% IRR &middot; 97 affordable homes</b></span>
       </div>
-      <div class="body">
-        <div class="kpi"><div class="l">Levered IRR</div><div class="v">8.8%</div></div>
-        <div class="kpi"><div class="l">Equity multiple</div><div class="v">1.33x</div></div>
-        <div class="kpi"><div class="l">Stabilized DSCR</div><div class="v">1.06</div></div>
-        <div class="wf">
-          <div class="h">Upside build-up: IRR by lever category</div>
-          <div class="bars">
-            <div class="col"><div class="bb" style="height:22%;background:#a8703f"></div><div class="cl">Base<br>-17%</div></div>
-            <div class="col"><div class="bb" style="height:64%;background:#6c7d5e"></div><div class="cl">Building<br>type</div></div>
-            <div class="col"><div class="bb" style="height:74%;background:#5e7150"></div><div class="cl">Cost</div></div>
-            <div class="col"><div class="bb" style="height:82%;background:#557049"></div><div class="cl">Revenue</div></div>
-            <div class="col"><div class="bb" style="height:90%;background:#4c663f"></div><div class="cl">Subsidy</div></div>
-            <div class="col"><div class="bb" style="height:96%;background:#445c38"></div><div class="cl">Tax<br>credit</div></div>
-            <div class="col"><div class="bb" style="height:100%;background:#1f1d1a"></div><div class="cl">All-in<br>+22%</div></div>
+      <div class="inner">
+        <div class="ctrls">
+          <div class="cl">Layout typology</div>
+          <div class="typo">Point Access Block<small>93% efficiency &middot; slab-on-grade</small></div>
+          <div class="cl">Levers</div>
+          <div class="sld"><div class="t"><span>Industrialized cost</span><span>$42/SF</span></div><div class="track"><i style="left:42%"></i></div></div>
+          <div class="sld"><div class="t"><span>Placemaking premium</span><span>4.0%</span></div><div class="track"><i style="left:30%"></i></div></div>
+          <div class="sld"><div class="t"><span>TIF / urban renewal</span><span>$7M</span></div><div class="track"><i style="left:35%"></i></div></div>
+          <div class="sld"><div class="t"><span>Affordable share</span><span>20%</span></div><div class="track"><i style="left:40%"></i></div></div>
+          <div class="sld"><div class="t"><span>LIHTC equity</span><span>$10M</span></div><div class="track"><i style="left:33%"></i></div></div>
+        </div>
+        <div class="res">
+          <div class="krow">
+            <div class="kpi"><div class="l">Levered IRR</div><div class="v">22.2%</div></div>
+            <div class="kpi"><div class="l">Equity multiple</div><div class="v">2.27x</div></div>
+            <div class="kpi"><div class="l">Stabilized DSCR</div><div class="v">1.74</div></div>
+            <div class="kpi"><div class="l">Affordable homes</div><div class="v">97</div></div>
+          </div>
+          <div class="wf" style="margin-top:14px">
+            <div class="h">Upside build-up: IRR by lever category</div>
+            <div class="bars">
+              <div class="col"><div class="bb" style="height:20%;background:#a8703f"></div><div class="cl">Base<br>-17%</div></div>
+              <div class="col"><div class="bb" style="height:56%;background:#6c7d5e"></div><div class="cl">Building<br>type</div></div>
+              <div class="col"><div class="bb" style="height:68%;background:#5e7150"></div><div class="cl">Cost</div></div>
+              <div class="col"><div class="bb" style="height:80%;background:#557049"></div><div class="cl">Revenue</div></div>
+              <div class="col"><div class="bb" style="height:90%;background:#4c663f"></div><div class="cl">Public<br>subsidy</div></div>
+              <div class="col"><div class="bb" style="height:96%;background:#445c38"></div><div class="cl">Tax<br>credit</div></div>
+              <div class="col"><div class="bb" style="height:100%;background:#1f1d1a"></div><div class="cl">All-in<br>+22%</div></div>
+            </div>
+          </div>
+          <div class="mini">
+            <div class="mtab"><div class="mh">Stabilized operating statement</div><table>
+              <tr><td>Effective gross income</td><td>$11.1M</td></tr>
+              <tr><td>Operating expenses</td><td>($2.7M)</td></tr>
+              <tr class="t"><td>Net operating income</td><td>$8.6M</td></tr>
+              <tr><td>Yield on cost</td><td>7.0%</td></tr>
+            </table></div>
+            <div class="mtab"><div class="mh">Sources &amp; uses</div><table>
+              <tr><td>Senior loan</td><td>$80M</td></tr>
+              <tr><td>LIHTC + grants</td><td>$22M</td></tr>
+              <tr><td>Equity</td><td>$22M</td></tr>
+              <tr class="t"><td>Total cost</td><td>$124M</td></tr>
+            </table></div>
           </div>
         </div>
       </div>

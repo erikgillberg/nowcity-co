@@ -170,6 +170,27 @@ body.gated{overflow:hidden}
 .sbtn.on{background:var(--terra);border-color:var(--terra);color:#fff}
 .scnbar .sb-read{margin-left:auto;font-size:12px;color:#cfc9bd;font-variant-numeric:tabular-nums;white-space:nowrap}
 .scnbar .sb-read strong{color:var(--cream);font-family:var(--serif);font-weight:700}
+.whatis{background:#fff;border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:8px;padding:15px 16px}
+.whatis .wi-h{font-family:var(--serif);font-size:15px;color:var(--green);margin-bottom:7px;line-height:1.25}
+.whatis .wi-p{font-size:12.5px;color:#4a463f;line-height:1.55}
+.whatis .wi-more{margin-top:9px}
+.whatis .wi-more>summary{cursor:pointer;font-size:11.5px;font-weight:600;color:var(--terra);list-style:none}
+.whatis .wi-more>summary::-webkit-details-marker{display:none}
+.whatis .wi-more>summary::before{content:"+ ";font-weight:700}
+.whatis .wi-more[open]>summary::before{content:"\2212 "}
+.whatis .wi-md{margin-top:8px;font-size:12px;line-height:1.55;color:#4a463f}
+.whatis .wi-md p{margin-bottom:6px}
+.sb-live{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);background:var(--terra);padding:5px 9px;border-radius:4px;white-space:nowrap}
+.activehdr{background:#fff;border:1px solid var(--line);border-top:3px solid var(--green);border-radius:8px;padding:15px 18px;margin-bottom:14px}
+.activehdr .ah-top{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+.activehdr .ah-tag{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9a948a}
+.activehdr .ah-chip{font-size:12px;font-weight:600;color:var(--green);font-variant-numeric:tabular-nums}
+.activehdr .ah-name{font-family:var(--serif);font-size:19px;color:var(--ink-deep);line-height:1.2}
+.activehdr .ah-desc{font-size:12.5px;color:#4a463f;line-height:1.5;margin-top:5px}
+.sclib .scnwrap{margin:0}
+#scntip{position:fixed;z-index:500;max-width:288px;background:#1f1d1a;color:#e9e5da;border:1px solid #4a453a;border-radius:8px;padding:11px 13px;font-size:12px;line-height:1.45;box-shadow:0 12px 30px rgba(0,0,0,.42);pointer-events:none;opacity:0;display:none}
+#scntip .tt-t{font-weight:700;color:#fff;margin-bottom:4px}
+#scntip .tt-r{margin-top:7px;color:#d9a26c;font-weight:600;font-variant-numeric:tabular-nums}
 .typorow{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
 .typo{flex:1;min-width:96px;display:flex;flex-direction:column;align-items:flex-start;gap:1px;font-size:11px;font-weight:600;padding:7px 9px;border:1px solid var(--line);border-radius:6px;background:#fff;cursor:pointer;line-height:1.2;text-align:left}
 .typo span{font-weight:400;font-size:10px;color:#8a857a}
@@ -227,6 +248,7 @@ body.gated{overflow:hidden}
 </header>
 
 <div class="scnbar" id="scnbar">
+  <span class="sb-live">Live scenarios</span>
   <div class="sb-group">
     <span class="sb-cap">Build &amp; capital</span>
     <div class="sb-btns">
@@ -249,17 +271,99 @@ body.gated{overflow:hidden}
   <span class="sb-read" id="sbRead">-</span>
 </div>
 
+<div id="scntip"></div>
 <div class="layout">
 <aside class="panel">
-  <p style="font-size:12px;color:#8a857a;line-height:1.6;margin-bottom:14px">The Base Case module sits at the top: the honest merchant pro forma at market Salem rents, which loses money. Start with the building itself, the Point Access Block typology in the site envelope is the foundational move, then layer the levers below. Pick a scenario from the bar at the top of the page, then adjust anything; the waterfall attributes the climb to each category.</p>
-
-  <div class="btns" style="margin-bottom:16px">
-    <button id="bReset">Reset to base-case floor</button>
-    <button id="toggleAll" type="button">Collapse all</button>
+  <div class="whatis">
+    <div class="wi-h">What is the Now City Upside Explorer?</div>
+    <p class="wi-p">A live model of one real neighborhood. It starts with an honest truth, that built the ordinary way this project loses money, then shows how each real move (a smarter building, public partnerships, affordable-housing finance) changes the result. Pick a scenario in the green bar above, and the numbers and charts on the right update instantly.</p>
+    <details class="wi-more"><summary>How to read it</summary><div class="wi-md">
+      <p><strong>The big chart</strong> on the right shows the return climbing from the red starting point, one kind of move at a time, so you can see what each one is worth.</p>
+      <p><strong>The scenarios</strong> are nine worked examples, from the plain base case to a fully optimized version with affordable homes. Pick one from the bar, hover a button to read what it does, then open any panel below to change the assumptions yourself.</p>
+      <p style="color:#8a857a;font-size:11.5px;margin-top:6px">A planning tool for discussion, not an offer of securities. Figures are estimates to be confirmed in diligence. Questions, or a scenario worth keeping? Export it below and email erik@nowcitylabs.com.</p>
+    </div></details>
+  </div>
+  <div class="btns" style="margin:14px 0 8px">
+    <button id="bReset">Reset to base case</button>
+    <button id="toggleAll" type="button">Expand all</button>
   </div>
 
-  <div class="modlabel">Base Case</div>
-  <details class="grp" open><summary><span>Base case &middot; rents, mix, costs, exit</span><span class="chev">&#9654;</span></summary>
+  <details class="grp"><summary><span>Scenario library &middot; all nine</span><span class="chev">&#9654;</span></summary>
+    <div class="body sclib">
+  <div class="scnwrap">
+    <div class="scnhead"><span class="scnlabel">Build &amp; capital</span><span class="scnsub">The honest floor, the single-stair Point Access Block design move that transforms it, and three ways a team stacks capital on that efficient base. Click any card, or use the scenario bar pinned at the top of the page to toggle them as you scroll. Or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
+    <div class="scnrow">
+      <div class="scn" data-k="base" role="button" tabindex="0">
+        <div class="scn-t">Base &middot; the honest floor</div>
+        <div class="scn-d">A conventional double-loaded podium at market Salem rents, 82% efficient, no subsidy or design optimization. What the deal returns on its own, and why the corridor sits undeveloped. Every path builds from here.</div>
+        <div class="scn-r" id="r_base">-</div>
+      </div>
+      <div class="scn" data-k="P" role="button" tabindex="0">
+        <div class="scn-t">P &middot; Point Access Block</div>
+        <div class="scn-d">The same site and rents, rebuilt as a single-stair PAB: ~93% efficiency (vs 82%) fits 15% more homes in the same shell, slab-on-grade construction cuts hard cost, and dual-aspect units lease better. The design move alone clears the floor, before a dollar of subsidy.</div>
+        <div class="scn-r" id="r_P">-</div>
+      </div>
+      <div class="scn" data-k="A" role="button" tabindex="0">
+        <div class="scn-t">A &middot; Market-rate on PAB</div>
+        <div class="scn-d">PAB plus the levers a private team controls: placemaking, on-site solar, ancillary income, right-sized parking, and light public gap tools. No affordable sleeve, no agency debt, sold ~2 years after stabilization.</div>
+        <div class="scn-r" id="r_A">-</div>
+      </div>
+      <div class="scn" data-k="B" role="button" tabindex="0">
+        <div class="scn-t">B &middot; Attainable + tax-credit equity</div>
+        <div class="scn-d">PAB with a 25% LIHTC affordable sleeve, FHA/HUD agency debt, and C-PACE. Trades headline return for ~120 affordable homes and near-zero cash equity, held long on non-recourse debt.</div>
+        <div class="scn-r" id="r_B">-</div>
+      </div>
+      <div class="scn" data-k="C" role="button" tabindex="0">
+        <div class="scn-t">C &middot; Catalytic public partnership</div>
+        <div class="scn-d">PAB leaning on the West Salem Urban Renewal Area: TIF, grants, NMTC, abatement and a modest affordable sleeve, the deal a city treats as a priority corridor.</div>
+        <div class="scn-r" id="r_C">-</div>
+      </div>
+    </div>
+    <div class="scnhead" style="margin-top:26px"><span class="scnlabel">Rents &amp; program</span><span class="scnsub">All on the PAB base, asking what real demand and a different unit mix do, and what a fully-optimized regenerative stack can reach while keeping homes attainable.</span></div>
+    <div class="scnrow">
+      <div class="scn" data-k="D" role="button" tabindex="0">
+        <div class="scn-t">D &middot; Demand-led (in-migration)</div>
+        <div class="scn-d">PAB with rents ~10% above the grounded Salem comps, renters relocating from pricier metros (Portland, the Bay Area). Tests what genuine demand does on the efficient base, no placemaking fudge.</div>
+        <div class="scn-r" id="r_D">-</div>
+      </div>
+      <div class="scn" data-k="E" role="button" tabindex="0">
+        <div class="scn-t">E &middot; Micro-forward (Portland model)</div>
+        <div class="scn-d">PAB at its most land-efficient: 250 studios averaging ~410 SF, the deepest parking cut for no-car renters. The densest, most attainable program the comps support.</div>
+        <div class="scn-r" id="r_E">-</div>
+      </div>
+      <div class="scn" data-k="F" role="button" tabindex="0">
+        <div class="scn-t">F &middot; Family + co-living</div>
+        <div class="scn-d">PAB reweighted to families and co-living: 46 three-bed and 16 four-bed units (rented by the room), with a small affordable sleeve. The richer, less land-efficient mix on the efficient base.</div>
+        <div class="scn-r" id="r_F">-</div>
+      </div>
+      <div class="scn" data-k="G" role="button" tabindex="0">
+        <div class="scn-t">G &middot; Full regenerative stack</div>
+        <div class="scn-d">Everything a sophisticated team stacks on PAB: industrialized cost, placemaking, solar, the public toolkit, and a 20% affordable sleeve. The credible ceiling, strong institutional returns and ~95 affordable homes at once.</div>
+        <div class="scn-r" id="r_G">-</div>
+      </div>
+    </div>
+  </div>
+    </div>
+  </details>
+
+  <details class="grp"><summary><span>Property &amp; site facts</span><span class="chev">&#9654;</span></summary>
+    <div class="body">
+  <div class="ctx">
+    <div class="ctx-row">
+      <div><span class="k">Project</span><span class="v">Edgewater - Now City West Salem, Phase One</span></div>
+      <div><span class="k">Address</span><span class="v">740 Bassett St NW, Salem, OR 97304</span></div>
+      <div><span class="k">Site</span><span class="v">5.29 acres (Phase 1)</span></div>
+      <div><span class="k">Setting</span><span class="v">West bank of the Willamette, across from downtown Salem</span></div>
+      <div><span class="k">Jurisdiction</span><span class="v">City of Salem &middot; West Salem Urban Renewal Area</span></div>
+      <div><span class="k">Zoning</span><span class="v">Mixed-Use (rezoned from industrial, 2022)</span></div>
+      <div><span class="k">Program</span><span class="v">~420 attainable homes + ground-floor commercial + parking</span></div>
+    </div>
+  </div>
+    </div>
+  </details>
+
+  <div class="modlabel">Inputs &middot; adjust any assumption</div>
+  <details class="grp"><summary><span>Base case &middot; rents, mix, costs, exit</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:2px 0 10px">Site &amp; buildable envelope</h4>
       <div class="ctl"><label>Site area <span class="val" id="v_siteAcres"></span></label><input type="range" id="siteAcres" min="1" max="25" step="0.1"><div class="hint">Phase 1 is 5.3 acres. Drag down (e.g. 2.3 for Phase 1A) to resize the parcel. Land purchase price is set separately below.</div></div>
@@ -325,7 +429,7 @@ body.gated{overflow:hidden}
   </details>
 
   <div class="modlabel" style="margin-top:22px">The levers</div>
-  <details class="grp" open><summary><span>1 &middot; Cost &amp; efficiency</span><span class="chev">&#9654;</span></summary>
+  <details class="grp"><summary><span>1 &middot; Cost &amp; efficiency</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">Industrialized construction and right-sized parking attack the single biggest barrier in this market: hard cost.</p>
       <div class="ctl"><label>Maxumal cost savings, underwritten ($/SF) <span class="val" id="v_maxSave"></span></label><input type="range" id="maxSave" min="0" max="115" step="1"><div class="hint">The $/SF saving you actually carry. Maxumal’s full claim is ~$115/SF; underwrite less until a GMP bid or built comp proves it. (Base case carries $0.)</div></div>
@@ -334,7 +438,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp" open><summary><span>2 &middot; Revenue &amp; placemaking</span><span class="chev">&#9654;</span></summary>
+  <details class="grp"><summary><span>2 &middot; Revenue &amp; placemaking</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">District-scale placemaking, on-site energy, and ancillary income lift NOI without raising base rents beyond the market.</p>
       <div class="ctl"><label>District placemaking premium, underwritten <span class="val" id="v_distPrem"></span></label><input type="range" id="distPrem" min="0" max="0.15" step="0.005"><div class="hint">Rent premium you carry as the district matures, anchored to comparable districts that achieved one. Ramps in over the years set below. (Base case carries 0.)</div></div>
@@ -344,7 +448,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp" open><summary><span>3 &middot; Public subsidy &amp; incentives</span><span class="chev">&#9654;</span></summary>
+  <details class="grp"><summary><span>3 &middot; Public subsidy &amp; incentives</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">Gap funding and tax relief that public partners deploy for catalytic, attainable projects in priority corridors.</p>
       <div class="ctl"><label>TIF / urban renewal <span class="val" id="v_tif"></span></label><input type="range" id="tif" min="0" max="30" step="0.5"><div class="hint">Tax-increment reimbursement of eligible public infrastructure and site work ($M).</div></div>
@@ -354,7 +458,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp" open><summary><span>4 &middot; Affordable &amp; tax-credit equity</span><span class="chev">&#9654;</span></summary>
+  <details class="grp"><summary><span>4 &middot; Affordable &amp; tax-credit equity</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">An affordable sleeve brings 4% LIHTC equity into the stack. It trades some rent for a large, cheap, non-recourse layer of capital.</p>
       <div class="ctl"><label>Affordable unit share (LIHTC) <span class="val" id="v_affShare"></span></label><input type="range" id="affShare" min="0" max="0.5" step="0.025"></div>
@@ -363,7 +467,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp" open><summary><span>5 &middot; Financing structure</span><span class="chev">&#9654;</span></summary>
+  <details class="grp"><summary><span>5 &middot; Financing structure</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">Patient, low-cost, long-amortization capital and land structures that cut the equity check and the carry.</p>
       <div class="toggle"><span class="tl">HUD 221(d)(4)<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">40-yr am, high-LTC, non-recourse</span></span><button id="t_hudOn">Off</button></div>
@@ -377,7 +481,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp" open><summary><span>6 &middot; Investor overlay (after-tax)</span><span class="chev">&#9654;</span></summary>
+  <details class="grp"><summary><span>6 &middot; Investor overlay (after-tax)</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">Opportunity Zone treatment does not change project economics; it shelters the investor's exit gain. Shown as a separate after-tax readout.</p>
       <div class="toggle"><span class="tl">Opportunity Zone equity<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">tax-free appreciation on 10-yr hold</span></span><button id="t_ozOn">Off</button></div>
@@ -395,69 +499,10 @@ body.gated{overflow:hidden}
 </aside>
 
 <main class="main">
-  <div class="ctx">
-    <div class="ctx-row">
-      <div><span class="k">Project</span><span class="v">Edgewater - Now City West Salem, Phase One</span></div>
-      <div><span class="k">Address</span><span class="v">740 Bassett St NW, Salem, OR 97304</span></div>
-      <div><span class="k">Site</span><span class="v">5.29 acres (Phase 1)</span></div>
-      <div><span class="k">Setting</span><span class="v">West bank of the Willamette, across from downtown Salem</span></div>
-      <div><span class="k">Jurisdiction</span><span class="v">City of Salem &middot; West Salem Urban Renewal Area</span></div>
-      <div><span class="k">Zoning</span><span class="v">Mixed-Use (rezoned from industrial, 2022)</span></div>
-      <div><span class="k">Program</span><span class="v">~420 attainable homes + ground-floor commercial + parking</span></div>
-    </div>
-  </div>
-  <div class="scnwrap">
-    <div class="scnhead"><span class="scnlabel">Build &amp; capital</span><span class="scnsub">The honest floor, the single-stair Point Access Block design move that transforms it, and three ways a team stacks capital on that efficient base. Click any card, or use the scenario bar pinned at the top of the page to toggle them as you scroll. Or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
-    <div class="scnrow">
-      <div class="scn" data-k="base" role="button" tabindex="0">
-        <div class="scn-t">Base &middot; the honest floor</div>
-        <div class="scn-d">A conventional double-loaded podium at market Salem rents, 82% efficient, no subsidy or design optimization. What the deal returns on its own, and why the corridor sits undeveloped. Every path builds from here.</div>
-        <div class="scn-r" id="r_base">-</div>
-      </div>
-      <div class="scn" data-k="P" role="button" tabindex="0">
-        <div class="scn-t">P &middot; Point Access Block</div>
-        <div class="scn-d">The same site and rents, rebuilt as a single-stair PAB: ~93% efficiency (vs 82%) fits 15% more homes in the same shell, slab-on-grade construction cuts hard cost, and dual-aspect units lease better. The design move alone clears the floor, before a dollar of subsidy.</div>
-        <div class="scn-r" id="r_P">-</div>
-      </div>
-      <div class="scn" data-k="A" role="button" tabindex="0">
-        <div class="scn-t">A &middot; Market-rate on PAB</div>
-        <div class="scn-d">PAB plus the levers a private team controls: placemaking, on-site solar, ancillary income, right-sized parking, and light public gap tools. No affordable sleeve, no agency debt, sold ~2 years after stabilization.</div>
-        <div class="scn-r" id="r_A">-</div>
-      </div>
-      <div class="scn" data-k="B" role="button" tabindex="0">
-        <div class="scn-t">B &middot; Attainable + tax-credit equity</div>
-        <div class="scn-d">PAB with a 25% LIHTC affordable sleeve, FHA/HUD agency debt, and C-PACE. Trades headline return for ~120 affordable homes and near-zero cash equity, held long on non-recourse debt.</div>
-        <div class="scn-r" id="r_B">-</div>
-      </div>
-      <div class="scn" data-k="C" role="button" tabindex="0">
-        <div class="scn-t">C &middot; Catalytic public partnership</div>
-        <div class="scn-d">PAB leaning on the West Salem Urban Renewal Area: TIF, grants, NMTC, abatement and a modest affordable sleeve, the deal a city treats as a priority corridor.</div>
-        <div class="scn-r" id="r_C">-</div>
-      </div>
-    </div>
-    <div class="scnhead" style="margin-top:26px"><span class="scnlabel">Rents &amp; program</span><span class="scnsub">All on the PAB base, asking what real demand and a different unit mix do, and what a fully-optimized regenerative stack can reach while keeping homes attainable.</span></div>
-    <div class="scnrow">
-      <div class="scn" data-k="D" role="button" tabindex="0">
-        <div class="scn-t">D &middot; Demand-led (in-migration)</div>
-        <div class="scn-d">PAB with rents ~10% above the grounded Salem comps, renters relocating from pricier metros (Portland, the Bay Area). Tests what genuine demand does on the efficient base, no placemaking fudge.</div>
-        <div class="scn-r" id="r_D">-</div>
-      </div>
-      <div class="scn" data-k="E" role="button" tabindex="0">
-        <div class="scn-t">E &middot; Micro-forward (Portland model)</div>
-        <div class="scn-d">PAB at its most land-efficient: 250 studios averaging ~410 SF, the deepest parking cut for no-car renters. The densest, most attainable program the comps support.</div>
-        <div class="scn-r" id="r_E">-</div>
-      </div>
-      <div class="scn" data-k="F" role="button" tabindex="0">
-        <div class="scn-t">F &middot; Family + co-living</div>
-        <div class="scn-d">PAB reweighted to families and co-living: 46 three-bed and 16 four-bed units (rented by the room), with a small affordable sleeve. The richer, less land-efficient mix on the efficient base.</div>
-        <div class="scn-r" id="r_F">-</div>
-      </div>
-      <div class="scn" data-k="G" role="button" tabindex="0">
-        <div class="scn-t">G &middot; Full regenerative stack</div>
-        <div class="scn-d">Everything a sophisticated team stacks on PAB: industrialized cost, placemaking, solar, the public toolkit, and a 20% affordable sleeve. The credible ceiling, strong institutional returns and ~95 affordable homes at once.</div>
-        <div class="scn-r" id="r_G">-</div>
-      </div>
-    </div>
+  <div class="activehdr" id="activehdr">
+    <div class="ah-top"><span class="ah-tag">Now showing</span><span class="ah-chip" id="ahChip">-</span></div>
+    <div class="ah-name" id="ahName">-</div>
+    <div class="ah-desc" id="ahDesc"></div>
   </div>
   <div class="kpis">
     <div class="kpi hero"><div class="l">Levered IRR</div><div class="v" id="k_irr">-</div><div class="d" id="d_irr"></div></div>
@@ -485,18 +530,6 @@ body.gated{overflow:hidden}
 
   <div class="flag" id="readout"></div>
 
-  <details class="card" id="about" style="margin-top:20px">
-    <summary style="cursor:pointer;font-family:var(--serif);font-size:16px;color:var(--green);list-style:none;display:flex;justify-content:space-between;align-items:center">
-      What this is, and how to read it
-      <span style="font-size:12px;color:#8a857a;font-family:var(--sans)">click to expand</span>
-    </summary>
-    <div style="margin-top:14px;font-size:13.5px;line-height:1.7;max-width:980px">
-      <p><strong>This page holds both halves of the argument.</strong> The Base Case module at the top is a plain merchant pro forma: a conventional developer building at honest Salem rents loses money, which is exactly why this corridor sits undeveloped. The Upside Explorer below is the other half - the toolkit creative development teams use to close that gap, every lever separable and individually sized.</p>
-      <p style="margin-top:10px"><strong>The waterfall is the whole story.</strong> It starts at the base-case floor and attributes the climb to five categories: cost &amp; efficiency, revenue &amp; placemaking, public subsidy, affordable / tax-credit equity, and financing structure. Because the levers interact, the decomposition is order-dependent (each category is added on top of the ones before it); the final all-in IRR is exact regardless of order.</p>
-      <p style="margin-top:10px"><strong>Every lever is real and in use.</strong> LIHTC and HUD 221(d)(4) are the backbone of attainable housing finance. TIF, MUPTE / Vertical Housing abatement, SDC waivers, and capacity grants are standard public gap-funding tools. C-PACE, NMTC, Opportunity Zones, ground leases, industrialized construction, right-sized parking, on-site solar, and ancillary income are all levers experienced teams combine. The foundational move is the building itself: a single-stair Point Access Block lifts efficiency from ~82% to ~93% and shifts construction from a concrete podium to slab-on-grade, which alone clears most of the gap. None of the financing levers is a silver bullet; the thesis is that the <em>combination</em>, executed well, turns a roughly -17% floor into an investable deal while keeping rents attainable.</p>
-      <p style="margin-top:10px;color:#8a857a;font-size:12.5px">For discussion purposes only. This is a planning tool, not an offer of securities, and several levers (LIHTC allocation, HUD sizing, TIF eligibility, OZ treatment) are subject to program rules, third-party validation, and public approvals. After-tax figures are illustrative. Questions or a scenario worth keeping? Export it and send it to erik@nowcitylabs.com.</p>
-    </div>
-  </details>
 </main>
 </div>
 
@@ -1010,9 +1043,17 @@ function activeKey(){const keys=[...SLIDERS,'hudOn','glOn','ozOn'];
   for(const k in SCN){const tgt={...BASE,...SCN[k].inputs};
     if(keys.every(x=>(+P[x]||0)===(+(tgt[x]??0)||0)))return k;}
   return null;}
+function scnMeta(k){const c=document.querySelector('.scn[data-k="'+k+'"]');if(!c)return null;
+  return {t:c.querySelector('.scn-t').textContent,d:c.querySelector('.scn-d').textContent,r:(document.getElementById('r_'+k)||{}).innerHTML||''};}
+function updActiveHdr(r,ak){const nm=document.getElementById('ahName'),ds=document.getElementById('ahDesc'),ch=document.getElementById('ahChip');
+  let t,d; if(ak){const m=scnMeta(ak); t=m?m.t:ak; d=m?m.d:'';}
+  else{t='Custom mix';d='You have adjusted the levers away from a named scenario. Pick one from the bar above, or hit Reset, to return to a worked example.';}
+  if(nm)nm.textContent=t; if(ds)ds.textContent=d;
+  if(ch)ch.innerHTML=(isNaN(r.irr)?'n/a':fmtP(r.irr))+' IRR &middot; '+r.em.toFixed(2)+'x EM'+(r.affUnits>0?' &middot; '+r.affUnits+' affordable homes':'');}
 function markScn(r){const ak=activeKey();
   document.querySelectorAll('.scn').forEach(e=>e.classList.toggle('on',e.getAttribute('data-k')===ak));
   document.querySelectorAll('.sbtn').forEach(e=>e.classList.toggle('on',e.getAttribute('data-k')===ak));
+  updActiveHdr(r,ak);
   const sb=document.getElementById('sbRead');
   if(sb)sb.innerHTML=(ak?'':'Custom &middot; ')+'<strong>'+(isNaN(r.irr)?'n/a':fmtP(r.irr))+' IRR</strong> &middot; '+r.em.toFixed(2)+'x EM';}
 document.querySelectorAll('.scn').forEach(e=>{const k=e.getAttribute('data-k');
@@ -1026,6 +1067,15 @@ document.querySelectorAll('.sbtn').forEach(b=>{const k=b.getAttribute('data-k');
   tg.addEventListener('click',()=>{const anyOpen=[...grps()].some(d=>d.open);grps().forEach(d=>d.open=!anyOpen);refresh();});
   grps().forEach(d=>d.addEventListener('toggle',refresh));refresh();})();
 const _b2=document.getElementById('bReset2'); if(_b2)_b2.addEventListener('click',ev=>{ev.preventDefault();document.getElementById('bReset').click();});
+(function(){const tip=document.getElementById('scntip');if(!tip)return;
+  document.querySelectorAll('.sbtn').forEach(b=>{const k=b.getAttribute('data-k');b.removeAttribute('title');
+    b.addEventListener('mouseenter',()=>{const m=scnMeta(k);if(!m)return;
+      tip.innerHTML='<div class="tt-t">'+m.t+'</div>'+m.d+(m.r?'<div class="tt-r">'+m.r+'</div>':'');
+      tip.style.display='block';tip.style.opacity='1';
+      const rc=b.getBoundingClientRect();const tw=Math.min(288,tip.offsetWidth||288);
+      let x=Math.min(rc.left,window.innerWidth-tw-12);tip.style.left=Math.max(8,x)+'px';tip.style.top=(rc.bottom+8)+'px';});
+    b.addEventListener('mouseleave',()=>{tip.style.opacity='0';tip.style.display='none';});
+  });})();
 applyScn('base');
 </script>
 </body>
