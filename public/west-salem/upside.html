@@ -959,14 +959,30 @@ SLIDERS.forEach(k=>{
   b.addEventListener('click',()=>{P[k]=P[k]>=1?0:1;b.classList.toggle('on',P[k]>=1);b.textContent=P[k]>=1?'On':'Off';recalc();});
 });
 document.getElementById('bReset').onclick=()=>{P={...BASE};sync();recalc();};
+function buildExport(){
+  const r=run(P);const ak=(typeof activeKey==='function')?activeKey():null;
+  const mix=mixOf(P).map(m=>({type:m.n,units:+P[m.k.replace(/^r/,'u').replace('uStudio','uStudio')]||0,sf:+m.sf||0,rentPSF:+P[m.k]||0,units2:m.u,nra:m.u*m.sf,rentMo:Math.round(m.sf*P[m.k])}));
+  const um=mixOf(P).map(m=>({type:m.n,units:m.u,sizeSF:m.sf,rentPSF:+P[m.k],rentPerUnitMo:Math.round(m.sf*P[m.k]),nraSF:m.u*m.sf}));
+  return {
+    meta:{tool:'Now City Upside Explorer',brand:'Now City',project:'Edgewater West Salem - Phase One',scenario:ak||'custom',exported:new Date().toISOString(),passcodeNote:'Planning model for stakeholder discussion. Not an offer of securities.'},
+    envelope:{siteAcres:+P.siteAcres,maxFAR:+P.maxFAR,effRatio:+P.effRatio,residentialNRA:Math.round(r.resNRA),commercialNRA:Math.round(r.retSFv+r.offSFv),totalRentableSF:Math.round(r.resNRA+r.retSFv+r.offSFv),homes:r.resUnits,affordableHomes:r.affUnits},
+    unitMix:um,
+    returns:{leveredIRR:+(100*nz(r.irr)).toFixed(2),afterTaxIRR:+(100*nz(P.ozOn>=1?r.irrAT_OZ:r.irrAT_noOZ)).toFixed(2),equityMultiple:+r.em.toFixed(3),leveredProfit:Math.round(r.profit),yieldOnCost:+(100*r.yoc).toFixed(2),stabilizedDSCR:+r.dscr.toFixed(2),totalEquity:Math.round(r.eqTot),lpCashEquity:Math.round(r.cashEq),totalCost:Math.round(r.totalCost)},
+    operatingStatement:{rentalRevenue:Math.round(r.opStmt.rentRev),otherIncome:Math.round(r.opStmt.othInc),creditVacancyLoss:Math.round(r.opStmt.credit),effectiveGrossIncome:Math.round(r.opStmt.egi),operatingExpenses:Math.round(r.opStmt.opex),groundRent:Math.round(r.opStmt.ground),netOperatingIncome:Math.round(r.opStmt.noi),residentialNOI:Math.round(r.opStmt.resNOI),commercialNOI:Math.round(r.opStmt.comNOI)},
+    sourcesUses:{sources:{seniorLoan:Math.round(r.su.sources.seniorLoan),gpEquity:Math.round(r.su.sources.gpEquity),lpCashEquity:Math.round(r.su.sources.lpEquity),lihtcEquity:Math.round(r.su.sources.lihtc),grantsSubsidy:Math.round(r.su.sources.grantsSubsidy),cpace:Math.round(r.su.sources.cpace),inKindCredit:Math.round(r.su.sources.inKind)},uses:{landAndSite:Math.round(r.su.uses.land),hardCost:Math.round(r.su.uses.hard),softCost:Math.round(r.su.uses.soft),financingAndCarry:Math.round(r.su.uses.financing),totalCost:Math.round(r.su.uses.total)}},
+    debt:{loanAmount:Math.round(r.debt.loan),loanToCost:+(100*r.debt.ltc).toFixed(1),rate:+(100*r.debt.rate).toFixed(3),amortizationYears:r.debt.amYears,annualDebtService:Math.round(r.debt.annualDS),stabilizedDSCR:+r.debt.dscr.toFixed(2),hud:!!r.HUD},
+    exit:{exitMonth:r.exitV.exitMonth,grossSaleValue:Math.round(r.exitV.gross),costOfSalePct:+(100*r.exitV.saleCost).toFixed(2),netSale:Math.round(r.exitV.net),loanPayoff:Math.round(r.exitV.payoff),cpaceAssumed:Math.round(r.cpaceProceeds),netProceedsToEquity:Math.round(r.exitV.proceeds),residentialExitCap:+(100*r.exitV.capR).toFixed(2),commercialExitCap:+(100*r.exitV.capC).toFixed(2)},
+    annualCashFlow:r.annualCF.map((c,i)=>({year:i+1,calendarYear:2026+i,leveredCashFlow:Math.round(c)})),
+    monthlyCashFlow:r.lev.map((c,i)=>({month:i,date:r.dts[i].toISOString().slice(0,10),leveredCashFlow:Math.round(c)})),
+    inputs:P
+  };
+}
 document.getElementById('bExport').onclick=()=>{
-  const r=run(P);
-  const s=JSON.stringify({scenario:'edgewater-phase1-upside',exported:new Date().toISOString(),inputs:P,
-    result:{irr:+(100*nz(r.irr)).toFixed(2),em:+r.em.toFixed(3),dscr:+r.dscr.toFixed(2),cashEquity:Math.round(r.cashEq),totalCost:Math.round(r.totalCost),affordableUnits:r.affUnits}},null,1);
+  const s=JSON.stringify(buildExport(),null,1);
   navigator.clipboard&&navigator.clipboard.writeText(s);
   const b=new Blob([s],{type:'application/json'});const a=document.createElement('a');
-  a.href=URL.createObjectURL(b);a.download='edgewater-upside-scenario.json';a.click();
-  document.getElementById('exportNote').textContent='Scenario copied and downloaded. Send it to Claude to rebuild the workbook with these levers.';
+  a.href=URL.createObjectURL(b);a.download='ncue-scenario.json';a.click();
+  document.getElementById('exportNote').textContent='Scenario copied and downloaded. Send the JSON to Claude (or use the Now City Upside Explorer skill) to rebuild it as a branded Excel model.';
 };
 document.getElementById('bImport').onclick=()=>{
   const t=document.getElementById('scen');
