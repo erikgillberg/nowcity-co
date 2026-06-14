@@ -230,6 +230,7 @@ body.gated{overflow:hidden}
       <button class="sbtn" data-k="E" type="button" title="E - Trended rents">E</button>
       <button class="sbtn" data-k="F" type="button" title="F - Strong lease-up">F</button>
       <button class="sbtn" data-k="G" type="button" title="G - Family + co-living program">G</button>
+      <button class="sbtn" data-k="H" type="button" title="H - Micro-forward (Portland model)">H</button>
     </div>
   </div>
   <span class="sb-read" id="sbRead">-</span>
@@ -401,7 +402,7 @@ body.gated{overflow:hidden}
     <div class="scnrow">
       <div class="scn" data-k="D" role="button" tabindex="0">
         <div class="scn-t">D &middot; Demand-led (in-migration)</div>
-        <div class="scn-d">Asks what genuine higher market rents do - renters relocating from pricier metros (Portland, the Bay Area) paying roughly 15% above today's Salem comps, sustained over the hold. This is the rent line moving on real demand, not a placemaking premium.</div>
+        <div class="scn-d">Asks what genuine higher market rents do - renters relocating from pricier metros (Portland, the Bay Area) paying roughly 15% above the grounded Salem comps, sustained over the hold. This is the rent line moving on real demand, not a placemaking premium.</div>
         <div class="scn-r" id="r_D">-</div>
       </div>
       <div class="scn" data-k="E" role="button" tabindex="0">
@@ -418,6 +419,11 @@ body.gated{overflow:hidden}
         <div class="scn-t">G &middot; Family + co-living program</div>
         <div class="scn-d">Reweights the program toward families and co-living: 40 three-bed and 14 four-bed units (rented by the room at a higher $/SF), on a light public stack with a small affordable sleeve. Shows how the richer, less land-efficient mix pencils.</div>
         <div class="scn-r" id="r_G">-</div>
+      </div>
+      <div class="scn" data-k="H" role="button" tabindex="0">
+        <div class="scn-t">H &middot; Micro-forward (Portland model)</div>
+        <div class="scn-d">Leans into the small-efficient thesis the comps validate: 215 studios averaging ~410 SF, the deepest parking cut (no-car renters), placemaking and a light public stack. The most land-efficient program, and the strongest floor-to-pencil swing in the set.</div>
+        <div class="scn-r" id="r_H">-</div>
       </div>
     </div>
   </div>
@@ -479,9 +485,9 @@ PARKCOST=40000;
 
 // Base scenario = clean base case with EVERY lever off.
 const BASE={
- rStudio:2.60,r1br:2.25,r2br:2.00,r3br:1.90,r4br:2.60,rth:1.90,
- uStudio:176,u1br:146,u2br:79,u3br:12,u4br:3,uth:4,
- sfStudio:500,sf1br:640,sf2br:880,sf3br:1100,sf4br:1350,sfth:1300,
+ rStudio:2.78,r1br:2.10,r2br:1.88,r3br:1.72,r4br:2.55,rth:1.78,
+ uStudio:190,u1br:140,u2br:73,u3br:11,u4br:3,uth:3,
+ sfStudio:440,sf1br:645,sf2br:900,sf3br:1150,sf4br:1400,sfth:1300,
  occs:0.95,pace:0.05,opexr:0.30,rgrow:0.025,comrent:24,
  hcres:315,hccont:0.10,land:5,crate:0.07,prate:0.07,casheq:28,rcap:0.055,ccap:0.07,exitm:24,vdur:16,
  // cost & efficiency
@@ -806,10 +812,11 @@ const SCN={
  A:{inputs:{exitm:24,rcap:0.055,ccap:0.07,maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,distPrem:0.07,distCred:0.5,solarK:200,ancil:30,comrent:28,tif:6,grants:3,nmtc:2,abate:0.04}},
  B:{inputs:{exitm:48,rcap:0.0525,ccap:0.0675,maxSave:58,maxCred:0.5,parkCut:33,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:200,ancil:28,comrent:28,tif:6,grants:3,nmtc:2,abate:0.05,affShare:0.22,affDisc:0.25,lihtcEq:11,hudOn:1,cpace:5}},
  C:{inputs:{exitm:36,rcap:0.0525,ccap:0.0675,maxSave:55,maxCred:0.5,parkCut:30,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:180,ancil:25,comrent:27,tif:12,grants:6,nmtc:4,abate:0.06,affShare:0.15,affDisc:0.25,lihtcEq:8}},
- D:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:3.00,r1br:2.60,r2br:2.32,r3br:2.20,r4br:3.00,rth:2.20,distPrem:0.03,distCred:0.5,solarK:150}},
+ D:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:3.20,r1br:2.42,r2br:2.16,r3br:1.98,r4br:2.93,rth:2.05,distPrem:0.03,distCred:0.5,solarK:150}},
  E:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:60,rcap:0.0525,ccap:0.07,ancil:25,comrent:27,rgrow:0.0375,distPrem:0.04,distCred:0.5,solarK:150}},
- F:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:2.95,r1br:2.55,r2br:2.28,r3br:2.15,r4br:2.95,rth:2.15,pace:0.085,occs:0.96,distPrem:0.02,distCred:0.5,solarK:120}},
- G:{inputs:{uStudio:150,u1br:128,u2br:80,u3br:40,u4br:14,uth:8,r4br:2.95,r3br:1.95,maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,distPrem:0.05,distCred:0.5,solarK:200,tif:6,grants:3,abate:0.04,affShare:0.12,affDisc:0.25,lihtcEq:6}}
+ F:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:3.11,r1br:2.35,r2br:2.11,r3br:1.93,r4br:2.86,rth:2.00,pace:0.085,occs:0.96,distPrem:0.02,distCred:0.5,solarK:120}},
+ G:{inputs:{uStudio:150,u1br:128,u2br:80,u3br:40,u4br:14,uth:8,r4br:2.62,r3br:1.78,maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,distPrem:0.05,distCred:0.5,solarK:200,tif:6,grants:3,abate:0.04,affShare:0.12,affDisc:0.25,lihtcEq:6}},
+ H:{inputs:{uStudio:215,u1br:128,u2br:64,u3br:9,u4br:2,uth:2,sfStudio:410,sf1br:640,sf2br:890,sf3br:1150,sf4br:1380,sfth:1280,rStudio:2.92,r1br:2.14,r2br:1.90,r3br:1.74,r4br:2.62,rth:1.80,maxSave:60,maxCred:0.5,parkCut:75,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,distPrem:0.05,distCred:0.5,solarK:200,ancil:35,comrent:27,tif:6,grants:3,abate:0.04}}
 };
 function scnChip(k){const r=run({...BASE,...SCN[k].inputs});
   const eq=r.cashEq<1e6?'$0 cash equity':'$'+(r.cashEq/1e6).toFixed(0)+'M equity';
