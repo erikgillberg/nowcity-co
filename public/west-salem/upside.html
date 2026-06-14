@@ -292,19 +292,16 @@ body.gated{overflow:hidden}
   <details class="grp" open><summary><span>1 &middot; Cost &amp; efficiency</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">Industrialized construction and right-sized parking attack the single biggest barrier in this market: hard cost.</p>
-      <div class="ctl"><label>Maxumal hard-cost savings <span class="val" id="v_maxSave"></span></label><input type="range" id="maxSave" min="0" max="115" step="5"><div class="hint">Claimed $/SF saving from industrialized delivery. Needs third-party validation.</div></div>
-      <div class="ctl"><label>Cost-saving credit factor <span class="val" id="v_maxCred"></span></label><input type="range" id="maxCred" min="0" max="1" step="0.05"><div class="hint">How much of the claim you underwrite. 0% = ignore it, 100% = fully proven.</div></div>
+      <div class="ctl"><label>Maxumal cost savings, underwritten ($/SF) <span class="val" id="v_maxSave"></span></label><input type="range" id="maxSave" min="0" max="115" step="1"><div class="hint">The $/SF saving you actually carry. Maxumal’s full claim is ~$115/SF; underwrite less until a GMP bid or built comp proves it. (Base case carries $0.)</div></div>
       <div class="ctl"><label>Structured spaces removed <span class="val" id="v_parkCut"></span></label><input type="range" id="parkCut" min="0" max="150" step="5"><div class="hint">Reduced parking ratio (transit, shared, unbundled). ~$40k/space saved, parking income falls too.</div></div>
-      <div class="ctl"><label>Green opex savings <span class="val" id="v_greenSave"></span></label><input type="range" id="greenSave" min="0" max="0.08" step="0.005"><div class="hint">Operating-cost points cut by efficient systems.</div></div>
-      <div class="ctl"><label>Green credit factor <span class="val" id="v_greenCred"></span></label><input type="range" id="greenCred" min="0" max="1" step="0.05"></div>
+      <div class="ctl"><label>Green opex savings, underwritten <span class="val" id="v_greenSave"></span></label><input type="range" id="greenSave" min="0" max="0.08" step="0.005"><div class="hint">Operating-cost points you carry from efficient systems. Hold conservative until metered in operation.</div></div>
     </div>
   </details>
 
   <details class="grp" open><summary><span>2 &middot; Revenue &amp; placemaking</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">District-scale placemaking, on-site energy, and ancillary income lift NOI without raising base rents beyond the market.</p>
-      <div class="ctl"><label>District placemaking premium (max) <span class="val" id="v_distPrem"></span></label><input type="range" id="distPrem" min="0" max="0.2" step="0.01"><div class="hint">Rent premium earned as district phases deliver and the place matures.</div></div>
-      <div class="ctl"><label>Premium credit factor <span class="val" id="v_distCred"></span></label><input type="range" id="distCred" min="0" max="1" step="0.05"></div>
+      <div class="ctl"><label>District placemaking premium, underwritten <span class="val" id="v_distPrem"></span></label><input type="range" id="distPrem" min="0" max="0.15" step="0.005"><div class="hint">Rent premium you carry as the district matures, anchored to comparable districts that achieved one. Ramps in over the years set below. (Base case carries 0.)</div></div>
       <div class="ctl"><label>Premium ramp <span class="val" id="v_dRamp"></span></label><input type="range" id="dRamp" min="2" max="8" step="0.5"><div class="hint">Years from opening to full premium.</div></div>
       <div class="ctl"><label>Solar / energy income <span class="val" id="v_solarK"></span></label><input type="range" id="solarK" min="0" max="600" step="25"><div class="hint">Net rooftop / community-solar revenue and net-metering offset.</div></div>
       <div class="ctl"><label>Ancillary income <span class="val" id="v_ancil"></span></label><input type="range" id="ancil" min="0" max="120" step="5"><div class="hint">Per unit / month: storage, parking premium, fees, retail percentage rent.</div></div>
@@ -336,7 +333,7 @@ body.gated{overflow:hidden}
       <p class="glabel">Patient, low-cost, long-amortization capital and land structures that cut the equity check and the carry.</p>
       <div class="toggle"><span class="tl">HUD 221(d)(4)<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">40-yr am, high-LTC, non-recourse</span></span><button id="t_hudOn">Off</button></div>
       <div class="ctl"><label>HUD all-in rate (incl. MIP) <span class="val" id="v_hudRate"></span></label><input type="range" id="hudRate" min="0.05" max="0.08" step="0.00125"></div>
-      <div class="ctl"><label>HUD loan-to-cost cap <span class="val" id="v_hudLTC"></span></label><input type="range" id="hudLTC" min="0.75" max="0.90" step="0.005"></div>
+      <div class="ctl"><label>HUD loan-to-cost cap <span class="val" id="v_hudLTC"></span></label><input type="range" id="hudLTC" min="0.75" max="0.90" step="0.005"><div class="hint">HUD sizes the loan on the lesser of this cap and DSCR. In this low-NOI deal DSCR governs, so the cap only bites in stronger-income cases.</div></div>
       <div class="ctl"><label>Davis-Bacon hard-cost premium <span class="val" id="v_davis"></span></label><input type="range" id="davis" min="0" max="0.15" step="0.005"><div class="hint">Prevailing-wage premium that comes with HUD / public money.</div></div>
       <div class="ctl"><label>C-PACE financing <span class="val" id="v_cpace"></span></label><input type="range" id="cpace" min="0" max="20" step="0.5"><div class="hint">Long-term assessment on energy / resiliency scope ($M). Replaces equity; stays with the building at sale.</div></div>
       <div class="ctl"><label>C-PACE rate <span class="val" id="v_cpaceRate"></span></label><input type="range" id="cpaceRate" min="0.05" max="0.085" step="0.0025"></div>
@@ -491,9 +488,9 @@ const BASE={
  occs:0.95,pace:0.05,opexr:0.30,rgrow:0.025,comrent:24,
  hcres:315,hccont:0.10,land:5,crate:0.07,prate:0.07,casheq:28,rcap:0.055,ccap:0.07,exitm:24,vdur:16,
  // cost & efficiency
- maxSave:0,maxCred:0,parkCut:0,greenSave:0,greenCred:0,
+ maxSave:0,parkCut:0,greenSave:0,
  // revenue & placemaking
- distPrem:0,distCred:0,dRamp:5,solarK:0,ancil:0,
+ distPrem:0,dRamp:5,solarK:0,ancil:0,
  // public subsidy
  tif:0,grants:0,nmtc:0,abate:0,
  // affordable / tax-credit equity
@@ -503,11 +500,6 @@ const BASE={
  // investor overlay
  ozOn:0
 };
-// A worked, viable combination (the "Stack a viable case" preset).
-const VIABLE={maxSave:70,maxCred:0.5,parkCut:40,greenSave:0.04,greenCred:0.5,
- distPrem:0.08,distCred:0.5,solarK:200,ancil:35,comrent:28,
- tif:7,grants:4,nmtc:3,abate:0.04,
- affShare:0.20,affDisc:0.25,lihtcEq:10};
 
 let P={...BASE};
 const mixOf=p=>[{n:'Studio',u:p.uStudio,sf:p.sfStudio,k:'rStudio'},{n:'1BR',u:p.u1br,sf:p.sf1br,k:'r1br'},{n:'2BR',u:p.u2br,sf:p.sf2br,k:'r2br'},{n:'3BR',u:p.u3br,sf:p.sf3br,k:'r3br'},{n:'4BR co-living',u:p.u4br,sf:p.sf4br,k:'r4br'},{n:'TH',u:p.uth,sf:p.sfth,k:'rth'}];
@@ -522,8 +514,8 @@ function run(p){
   const affFactor=(p.affShare>0)?(1-p.affShare*p.affDisc):1;
   const resAnnual=MIX.reduce((s,m)=>s+m.u*m.sf*p[m.k]*12,0)*affFactor;
   const landdev=DEMO+SITEW;
-  const hcresEff=Math.max(50,p.hcres-p.maxSave*p.maxCred);
-  const opexEff=Math.max(0.05,p.opexr-p.greenSave*p.greenCred-p.abate);
+  const hcresEff=Math.max(50,p.hcres-p.maxSave);
+  const opexEff=Math.max(0.05,p.opexr-p.greenSave-p.abate);
   const parkSpaces=Math.max(0,PSP-p.parkCut);
   const parkSave=p.parkCut*PARKCOST;
   const hard=Math.max(1e6,(resNRA*hcresEff*(HUD?1+p.davis:1)+(RETNRA+OFFNRA)*HCCOM+AMEN-parkSave)*(1+p.hccont));
@@ -574,7 +566,7 @@ function run(p){
       if(mo>=0){
         const g=Math.pow(1+p.rgrow,mo/12), cg=Math.pow(1+CGROW,mo/12);
         const oR=Math.min(p.occs,OCC0+p.pace*mo), oRet=Math.min(ROCCS,OCC0+p.pace*mo), oOff=Math.min(OOCCS,OCC0+p.pace*mo);
-        const dp=1+p.distPrem*p.distCred*Math.min(1,mo/(p.dRamp*12));
+        const dp=1+p.distPrem*Math.min(1,mo/(p.dRamp*12));
         const resB=resAnnual/12*g*oR*dp, resO=resB*OI_R;
         const retB=RETNRA*p.comrent/12*cg*oRet, retO=retB*OI_C;
         const offB=OFFNRA*p.comrent/12*cg*oOff, offO=offB*OI_C;
@@ -641,11 +633,11 @@ function xirr(cf,dts){
 const nz=x=>isNaN(x)?-0.95:x;
 
 // ===== waterfall decomposition =====
-const WF_OFF={maxSave:0,maxCred:0,parkCut:0,greenSave:0,greenCred:0,distPrem:0,distCred:0,solarK:0,ancil:0,comrent:24,
+const WF_OFF={maxSave:0,parkCut:0,greenSave:0,distPrem:0,solarK:0,ancil:0,comrent:24,
  tif:0,grants:0,nmtc:0,abate:0,affShare:0,lihtcEq:0,hudOn:0,cpace:0,glOn:0};
 const WF_GROUPS=[
- ['Cost & efficiency',['maxSave','maxCred','parkCut','greenSave','greenCred']],
- ['Revenue & placemaking',['distPrem','distCred','solarK','ancil','comrent']],
+ ['Cost & efficiency',['maxSave','parkCut','greenSave']],
+ ['Revenue & placemaking',['distPrem','solarK','ancil','comrent']],
  ['Public subsidy',['tif','grants','nmtc','abate']],
  ['Tax-credit equity',['affShare','lihtcEq']],
  ['Financing structure',['hudOn','cpace','glOn']],
@@ -666,8 +658,8 @@ function waterfall(p){
 // ===== UI =====
 const fmt$=x=>(x<0?'-$':'$')+(Math.abs(x)>=1e6?(Math.abs(x)/1e6).toFixed(1)+'M':Math.round(Math.abs(x)/1e3)+'K');
 const fmtP=x=>(100*x).toFixed(1)+'%';
-const SLIDERS=['rStudio','r1br','r2br','r3br','r4br','rth','uStudio','u1br','u2br','u3br','u4br','uth','sfStudio','sf1br','sf2br','sf3br','sf4br','sfth','occs','pace','opexr','rgrow','comrent','hcres','hccont','land','crate','prate','casheq','rcap','ccap','exitm','vdur','maxSave','maxCred','parkCut','greenSave','greenCred','distPrem','distCred','dRamp','solarK','ancil','tif','grants','nmtc','abate','affShare','affDisc','lihtcEq','hudRate','hudLTC','davis','cpace','cpaceRate','glRent'];
-const PCT=['occs','pace','opexr','rgrow','hccont','crate','prate','rcap','ccap','maxCred','greenSave','greenCred','distPrem','distCred','abate','affShare','affDisc','hudRate','hudLTC','davis','cpaceRate'];
+const SLIDERS=['rStudio','r1br','r2br','r3br','r4br','rth','uStudio','u1br','u2br','u3br','u4br','uth','sfStudio','sf1br','sf2br','sf3br','sf4br','sfth','occs','pace','opexr','rgrow','comrent','hcres','hccont','land','crate','prate','casheq','rcap','ccap','exitm','vdur','maxSave','parkCut','greenSave','distPrem','dRamp','solarK','ancil','tif','grants','nmtc','abate','affShare','affDisc','lihtcEq','hudRate','hudLTC','davis','cpace','cpaceRate','glRent'];
+const PCT=['occs','pace','opexr','rgrow','hccont','crate','prate','rcap','ccap','greenSave','distPrem','abate','affShare','affDisc','hudRate','hudLTC','davis','cpaceRate'];
 const MUSD=['land','casheq','tif','grants','nmtc','lihtcEq','cpace'];
 function vlabel(k,v){
   if(PCT.includes(k))return fmtP(v);
@@ -809,14 +801,14 @@ document.getElementById('bImport').onclick=()=>{
 };
 const SCN={
  base:{inputs:{}},
- A:{inputs:{exitm:24,rcap:0.055,ccap:0.07,maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,distPrem:0.07,distCred:0.5,solarK:200,ancil:30,comrent:28,tif:6,grants:3,nmtc:2,abate:0.04}},
- B:{inputs:{exitm:48,rcap:0.0525,ccap:0.0675,maxSave:58,maxCred:0.5,parkCut:33,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:200,ancil:28,comrent:28,tif:6,grants:3,nmtc:2,abate:0.05,affShare:0.22,affDisc:0.25,lihtcEq:11,hudOn:1,cpace:5}},
- C:{inputs:{exitm:36,rcap:0.0525,ccap:0.0675,maxSave:55,maxCred:0.5,parkCut:30,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:180,ancil:25,comrent:27,tif:12,grants:6,nmtc:4,abate:0.06,affShare:0.15,affDisc:0.25,lihtcEq:8}},
- D:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:3.20,r1br:2.42,r2br:2.16,r3br:1.98,r4br:2.93,rth:2.05,distPrem:0.03,distCred:0.5,solarK:150}},
- E:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:60,rcap:0.0525,ccap:0.07,ancil:25,comrent:27,rgrow:0.0375,distPrem:0.04,distCred:0.5,solarK:150}},
- F:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:3.11,r1br:2.35,r2br:2.11,r3br:1.93,r4br:2.86,rth:2.00,pace:0.085,occs:0.96,distPrem:0.02,distCred:0.5,solarK:120}},
- G:{inputs:{uStudio:150,u1br:128,u2br:80,u3br:40,u4br:14,uth:8,r4br:2.62,r3br:1.78,maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,distPrem:0.05,distCred:0.5,solarK:200,tif:6,grants:3,abate:0.04,affShare:0.12,affDisc:0.25,lihtcEq:6}},
- H:{inputs:{uStudio:215,u1br:128,u2br:64,u3br:9,u4br:2,uth:2,sfStudio:410,sf1br:640,sf2br:890,sf3br:1150,sf4br:1380,sfth:1280,rStudio:2.92,r1br:2.14,r2br:1.90,r3br:1.74,r4br:2.62,rth:1.80,maxSave:60,maxCred:0.5,parkCut:75,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,distPrem:0.05,distCred:0.5,solarK:200,ancil:35,comrent:27,tif:6,grants:3,abate:0.04}}
+ A:{inputs:{exitm:24,rcap:0.055,ccap:0.07,maxSave:30,parkCut:35,greenSave:0.02,distPrem:0.035,solarK:200,ancil:30,comrent:28,tif:6,grants:3,nmtc:2,abate:0.04}},
+ B:{inputs:{exitm:48,rcap:0.0525,ccap:0.0675,maxSave:29,parkCut:33,greenSave:0.02,distPrem:0.03,solarK:200,ancil:28,comrent:28,tif:6,grants:3,nmtc:2,abate:0.05,affShare:0.22,affDisc:0.25,lihtcEq:11,hudOn:1,cpace:5}},
+ C:{inputs:{exitm:36,rcap:0.0525,ccap:0.0675,maxSave:28,parkCut:30,greenSave:0.02,distPrem:0.03,solarK:180,ancil:25,comrent:27,tif:12,grants:6,nmtc:4,abate:0.06,affShare:0.15,affDisc:0.25,lihtcEq:8}},
+ D:{inputs:{maxSave:30,parkCut:35,greenSave:0.02,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:3.20,r1br:2.42,r2br:2.16,r3br:1.98,r4br:2.93,rth:2.05,distPrem:0.015,solarK:150}},
+ E:{inputs:{maxSave:30,parkCut:35,greenSave:0.02,exitm:60,rcap:0.0525,ccap:0.07,ancil:25,comrent:27,rgrow:0.0375,distPrem:0.02,solarK:150}},
+ F:{inputs:{maxSave:30,parkCut:35,greenSave:0.02,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:3.11,r1br:2.35,r2br:2.11,r3br:1.93,r4br:2.86,rth:2.00,pace:0.085,occs:0.96,distPrem:0.01,solarK:120}},
+ G:{inputs:{uStudio:150,u1br:128,u2br:80,u3br:40,u4br:14,uth:8,r4br:2.62,r3br:1.78,maxSave:30,parkCut:35,greenSave:0.02,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,distPrem:0.025,solarK:200,tif:6,grants:3,abate:0.04,affShare:0.12,affDisc:0.25,lihtcEq:6}},
+ H:{inputs:{uStudio:215,u1br:128,u2br:64,u3br:9,u4br:2,uth:2,sfStudio:410,sf1br:640,sf2br:890,sf3br:1150,sf4br:1380,sfth:1280,rStudio:2.92,r1br:2.14,r2br:1.90,r3br:1.74,r4br:2.62,rth:1.80,maxSave:30,parkCut:75,greenSave:0.02,exitm:24,rcap:0.055,ccap:0.07,distPrem:0.025,solarK:200,ancil:35,comrent:27,tif:6,grants:3,abate:0.04}}
 };
 function scnChip(k){const r=run({...BASE,...SCN[k].inputs});
   const eq=r.cashEq<1e6?'$0 cash equity':'$'+(r.cashEq/1e6).toFixed(0)+'M equity';
