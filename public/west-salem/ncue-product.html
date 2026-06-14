@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Now City Upside Explorer</title>
-<meta name="description" content="The underwriting tool that proves a new generation of regenerative, attainable districts can actually be financed and built.">
+<meta name="description" content="An interactive underwriting tool that shows, one move at a time, how a project that loses money on paper becomes one that pencils, with every point of upside traced to a real, defensible move.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -122,6 +122,16 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
 .cta-band{background:var(--terra);color:#fff;text-align:center}
 .cta-band h2{color:#fff;font-size:clamp(26px,3.6vw,38px)}
 .cta-band p{color:#fbe9d8;max-width:620px;margin:14px auto 0}
+.flips{margin-top:38px;display:flex;flex-direction:column;gap:13px}
+.flip{display:grid;grid-template-columns:1fr 38px 1fr;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:17px 22px}
+.flip .from{font-size:15px;color:#9a5a3f;font-style:italic}
+.flip .arr{font-size:20px;color:var(--terra);text-align:center}
+.flip .to{font-size:15px;color:var(--ink);font-weight:600}
+@media(max-width:680px){.flip{grid-template-columns:1fr;gap:5px}.flip .arr{text-align:left}}
+.mock .ahline{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:var(--cream);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:7px;padding:9px 13px;margin-bottom:13px;font-size:13px}
+.mock .ahline .tg{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9a948a}
+.mock .ahline b{font-family:var(--serif);color:var(--ink);font-weight:700}
+.mock .ahline .ch{margin-left:auto;font-size:11.5px;font-weight:600;color:var(--green)}
 </style>
 </head>
 <body>
@@ -136,16 +146,16 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Now City Upside Explorer</div>
-    <h1>Prove the good district pencils.</h1>
-    <p class="sub">An underwriting tool that starts from an honest base case and shows, lever by lever, how a sophisticated team turns a project that loses money into institutional returns while keeping homes attainable. The argument for a new generation of districts, made transparent.</p>
+    <h1>Prove the good project pencils.</h1>
+    <p class="sub">An interactive model that starts from an honest base case and shows, one move at a time, how a skilled team turns a project that loses money on paper into one that earns institutional returns, with attainable homes and durable value. Every point of upside traced to a real, defensible move.</p>
     <div class="cta-row">
       <a class="btn" href="mailto:erik@nowcitylabs.com">Request a demo</a>
       <a class="btn ghost" href="#how">See how it works</a>
     </div>
     <div class="stats">
-      <div class="s"><div class="n">-17% &rarr; +22%</div><div class="l">a failing base case to institutional returns, every point attributed to a named move</div></div>
-      <div class="s"><div class="n">50+ levers</div><div class="l">cost, revenue, subsidy, affordable, financing, all real tools, all separable</div></div>
-      <div class="s"><div class="n">9 scenarios</div><div class="l">a narrative from the honest floor to a full regenerative stack</div></div>
+      <div class="s"><div class="n">-17% &rarr; +22%</div><div class="l">from a base case that loses money to institutional returns, every point traced to a named move</div></div>
+      <div class="s"><div class="n">50+ levers</div><div class="l">cost, revenue, public partnerships, affordable-housing finance, every real tool, separable and underwritten</div></div>
+      <div class="s"><div class="n">8 scenarios</div><div class="l">worked examples from the honest floor to a fully optimized, attainable plan</div></div>
     </div>
   </div>
 </header>
@@ -153,10 +163,10 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="mock">
-      <div class="bar"><span class="dot" style="background:#e0686a"></span><span class="dot" style="background:#e6b35c"></span><span class="dot" style="background:#7bbf6a"></span><span class="t">Now City Upside Explorer &middot; Edgewater West Salem</span></div>
+      <div class="bar"><span class="dot" style="background:#e0686a"></span><span class="dot" style="background:#e6b35c"></span><span class="dot" style="background:#7bbf6a"></span><span class="t">Now City Upside Explorer &middot; sample project model</span></div>
       <div class="scnbar">
         <span class="scap">Live scenarios</span>
-        <span class="pill">Base</span><span class="pill">P</span><span class="pill">A</span><span class="pill">B</span><span class="pill">C</span>
+        <span class="pill">Base</span><span class="pill">A</span><span class="pill">B</span><span class="pill">C</span>
         <span class="pill">D</span><span class="pill">E</span><span class="pill">F</span><span class="pill on">G</span>
         <span style="margin-left:auto;color:#cfc9bd;font-size:11px">Full regenerative stack &middot; <b style="color:#fff">+22.2% IRR &middot; 97 affordable homes</b></span>
       </div>
@@ -172,6 +182,7 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
           <div class="sld"><div class="t"><span>LIHTC equity</span><span>$10M</span></div><div class="track"><i style="left:33%"></i></div></div>
         </div>
         <div class="res">
+          <div class="ahline"><span class="tg">Now showing</span> <b>G &middot; Full regenerative stack</b> <span class="ch">+22.2% IRR &middot; 2.27x &middot; 97 affordable</span></div>
           <div class="krow">
             <div class="kpi"><div class="l">Levered IRR</div><div class="v">22.2%</div></div>
             <div class="kpi"><div class="l">Equity multiple</div><div class="v">2.27x</div></div>
@@ -213,8 +224,14 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
 <section id="problem" class="alt">
   <div class="wrap">
     <div class="eyebrow">The Problem</div>
-    <h2 style="font-size:clamp(26px,3.4vw,36px);margin-top:12px;max-width:820px">Conventional underwriting says the good district does not pencil. It is wrong, and that error keeps corridors empty for decades.</h2>
-    <p class="lead" style="margin-top:20px">At honest, attainable rents, a conventional building on a conventional cost basis loses money. Capable teams close that gap every day, with a stack of moves that stay invisible to the investors, public partners, and communities whose support a project needs. The Now City Upside Explorer makes that case visible, credible, and interactive, so the people who decide whether a district gets built can see exactly how it works.</p>
+    <h2 style="font-size:clamp(26px,3.4vw,36px);margin-top:12px;max-width:820px">Conventional underwriting says the good project does not pencil. It is wrong, and that error leaves good projects unbuilt.</h2>
+    <p class="lead" style="margin-top:20px">At honest, attainable rents, a conventional building on a conventional cost basis loses money. Capable teams close that gap every day, with a stack of moves that stay invisible to the investors, lenders, and partners whose yes a project needs. The Now City Upside Explorer makes that case visible, credible, and interactive, so the people who decide whether a project gets built can see exactly how it works.</p>
+    <div class="flips">
+      <div class="flip"><div class="from">"It doesn't pencil."</div><div class="arr">&rarr;</div><div class="to">Here is exactly what makes it pencil, move by move.</div></div>
+      <div class="flip"><div class="from">"The model is a black box no one trusts."</div><div class="arr">&rarr;</div><div class="to">Every dollar of return traced to a named, defensible move.</div></div>
+      <div class="flip"><div class="from">"Investors do not believe the upside."</div><div class="arr">&rarr;</div><div class="to">A transparent build-up they can interrogate live, with the receipts.</div></div>
+      <div class="flip"><div class="from">"It takes weeks to make the case to the city."</div><div class="arr">&rarr;</div><div class="to">One model that shows a partner exactly what their support unlocks.</div></div>
+    </div>
   </div>
 </section>
 
@@ -225,7 +242,7 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
     <div class="steps">
       <div class="st"><h3>Start honest</h3><p>The base case earns nothing it cannot cite. Rents, unit sizes, and caps are grounded to achieved local comps. The floor is allowed to be negative.</p></div>
       <div class="st"><h3>Pull real levers</h3><p>Building type, industrialized cost, placemaking, public tools, tax-credit equity, agency debt. Each is a separable, underwritten number, not a fudge.</p></div>
-      <div class="st"><h3>Read the build-up</h3><p>A waterfall attributes every point of the climb to a named category, so the result is legible, not asserted. Toggle nine worked scenarios.</p></div>
+      <div class="st"><h3>Read the build-up</h3><p>A waterfall attributes every point of the climb to a named category, so the result is legible, not asserted. Toggle eight worked scenarios.</p></div>
       <div class="st"><h3>Export &amp; share</h3><p>Send a scenario to anyone, or rebuild it as a branded, industry-standard Excel model with live formulas. One source of truth for every stakeholder.</p></div>
     </div>
   </div>
@@ -239,7 +256,7 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
       <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><div class="ic">$</div><h3>Developers &amp; sponsors</h3><p>Find the lever combination that makes an attainable project pencil, and present a defensible return without overclaiming.</p></div>
       <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><div class="ic">%</div><h3>Investors &amp; lenders</h3><p>See the honest floor first, then a transparent, decomposable climb, with DSCR, sources and uses, and a stabilized operating statement.</p></div>
       <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><div class="ic">&#9632;</div><h3>Cities &amp; public partners</h3><p>Quantify exactly what a TIF, an abatement, or a grant unlocks, in affordable homes, tax base, and catalytic investment.</p></div>
-      <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><div class="ic">&#9650;</div><h3>Communities</h3><p>Understand, in plain terms, why a daylit, attainable, low-carbon district is financially possible, and what it takes to deliver it.</p></div>
+      <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><div class="ic">&#9650;</div><h3>Communities</h3><p>Understand, in plain terms, why a daylit, attainable, low-carbon project is financially possible, and what it takes to deliver it.</p></div>
     </div>
   </div>
 </section>
@@ -257,7 +274,7 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
       <div class="mr"><div class="feat">Point Access Block typology<small>Building type tied to efficiency and cost</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
       <div class="mr"><div class="feat">Investor dashboards<small>Operating statement, sources &amp; uses, debt, returns</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
       <div class="mr"><div class="feat">Branded Excel export<small>Industry-standard workbook with live formulas</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
-      <div class="mr"><div class="feat">Nine worked scenarios<small>Floor to full regenerative stack</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
+      <div class="mr"><div class="feat">Eight worked scenarios<small>Honest floor to a fully optimized plan</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
       <div class="mr"><div class="feat">Outcomes dashboard<small>Affordable homes, carbon, jobs, tax base alongside IRR</small></div><div><span class="dash">&middot;</span></div><div><span class="soon">Next</span></div></div>
       <div class="mr"><div class="feat">Project templating<small>Re-ground to a new market in hours</small></div><div><span class="dash">&middot;</span></div><div><span class="soon">Next</span></div></div>
       <div class="mr"><div class="feat">On-page LLM co-pilot<small>Ask the model in plain language, watch it answer</small></div><div><span class="dash">&middot;</span></div><div><span class="soon">Flagship</span></div></div>
@@ -268,7 +285,7 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
 
 <section class="cta-band">
   <div class="wrap">
-    <h2>It is possible to build districts like this. At scale.</h2>
+    <h2>It is possible to build projects like this. At scale.</h2>
     <p>The barrier was never good design or good intent. It was the underwriting. The Now City Upside Explorer is how we change what stakeholders believe is possible, with evidence, in the open.</p>
     <div style="margin-top:28px"><a class="btn ghost" style="border-color:#fff" href="mailto:erik@nowcitylabs.com">Request a demo</a></div>
   </div>

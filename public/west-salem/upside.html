@@ -170,16 +170,16 @@ body.gated{overflow:hidden}
 .sbtn.on{background:var(--terra);border-color:var(--terra);color:#fff}
 .scnbar .sb-read{margin-left:auto;font-size:12px;color:#cfc9bd;font-variant-numeric:tabular-nums;white-space:nowrap}
 .scnbar .sb-read strong{color:var(--cream);font-family:var(--serif);font-weight:700}
-.whatis{background:#fff;border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:8px;padding:15px 16px}
-.whatis .wi-h{font-family:var(--serif);font-size:15px;color:var(--green);margin-bottom:7px;line-height:1.25}
-.whatis .wi-p{font-size:12.5px;color:#4a463f;line-height:1.55}
-.whatis .wi-more{margin-top:9px}
-.whatis .wi-more>summary{cursor:pointer;font-size:11.5px;font-weight:600;color:var(--terra);list-style:none}
-.whatis .wi-more>summary::-webkit-details-marker{display:none}
-.whatis .wi-more>summary::before{content:"+ ";font-weight:700}
-.whatis .wi-more[open]>summary::before{content:"\2212 "}
-.whatis .wi-md{margin-top:8px;font-size:12px;line-height:1.55;color:#4a463f}
-.whatis .wi-md p{margin-bottom:6px}
+.whatis{background:#fff;border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:8px;margin-bottom:4px}
+.whatis>summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:14.5px;color:var(--green);padding:13px 15px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.whatis>summary::-webkit-details-marker{display:none}
+.whatis>summary::after{content:"+";font-family:var(--sans);font-weight:700;color:var(--terra);font-size:18px;line-height:1}
+.whatis[open]>summary::after{content:"\2212"}
+.whatis .wi-body{padding:0 15px 14px}
+.whatis .wi-p{font-size:12.5px;color:#4a463f;line-height:1.55;margin-bottom:9px}
+.whatis .wi-steps{margin:2px 0 10px 18px;font-size:12.5px;color:#4a463f;line-height:1.5}
+.whatis .wi-steps li{margin-bottom:4px}
+.whatis .wi-note{font-size:11.5px;color:#8a857a;line-height:1.5}
 .sb-live{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);background:var(--terra);padding:5px 9px;border-radius:4px;white-space:nowrap}
 .activehdr{background:#fff;border:1px solid var(--line);border-top:3px solid var(--green);border-radius:8px;padding:15px 18px;margin-bottom:14px}
 .activehdr .ah-top{display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap}
@@ -286,15 +286,21 @@ body.gated{overflow:hidden}
 <div id="scntip"></div>
 <div class="layout">
 <aside class="panel">
-  <div class="whatis">
-    <div class="wi-h">What is the Now City Upside Explorer?</div>
-    <p class="wi-p">A live model of one real neighborhood. It starts with an honest truth, that built the ordinary way this project loses money, then shows how each real move (a smarter building, public partnerships, affordable-housing finance) changes the result. Pick a scenario from the dark bar above, and the numbers and charts on the right update instantly.</p>
-    <details class="wi-more"><summary>How to read it</summary><div class="wi-md">
-      <p><strong>The big chart</strong> on the right shows the return climbing from the red starting point, one kind of move at a time, so you can see what each one is worth.</p>
-      <p><strong>The scenarios</strong> are nine worked examples, from the plain base case to a fully optimized version with affordable homes. Pick one from the scenario bar, hover a button to read what it does, then open any panel below to change the assumptions yourself.</p>
-      <p style="color:#8a857a;font-size:11.5px;margin-top:6px">A planning tool for discussion, not an offer of securities. Figures are estimates to be confirmed in diligence. Questions, or a scenario worth keeping? Export it below and email erik@nowcitylabs.com.</p>
-    </div></details>
-  </div>
+  <details class="whatis">
+    <summary>Upside Explorer: why, what &amp; how it works</summary>
+    <div class="wi-body">
+      <p class="wi-p"><strong>Why it exists.</strong> Built the ordinary way, many worthwhile projects lose money on paper, so they never get built. This tool shows, transparently, how a skilled team closes that gap with real, defensible moves rather than wishful assumptions.</p>
+      <p class="wi-p"><strong>What it is.</strong> A live financial model of a real project. It starts from the honest base case (what the project returns built conventionally, with nothing added) and lets you stack on each real move, a more efficient building, public partnerships, affordable-housing finance, and watch the return respond instantly.</p>
+      <p class="wi-p" style="margin-bottom:3px"><strong>How to use it.</strong></p>
+      <ol class="wi-steps">
+        <li>Pick a scenario from the dark bar at the top. The numbers and charts on the right update at once.</li>
+        <li>Hover any scenario button to read exactly what that scenario does.</li>
+        <li>Open the input panels below to change any assumption yourself.</li>
+        <li>Export any version as a branded Excel model to share or keep.</li>
+      </ol>
+      <p class="wi-note">The big chart on the right is the heart of it: the return climbing from the red starting point, one kind of move at a time, so you can see what each one is worth. A planning tool for discussion, not an offer of securities; figures are estimates to be confirmed in diligence.</p>
+    </div>
+  </details>
   <div class="btns" style="margin:14px 0 8px">
     <button id="bReset">Reset to base case</button>
     <button id="toggleAll" type="button">Expand all</button>
