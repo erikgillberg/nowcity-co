@@ -281,21 +281,21 @@ body.gated{overflow:hidden}
     </div>
   </div>
   <div class="scnwrap">
-    <div class="scnhead"><span class="scnlabel">Worked scenarios</span><span class="scnsub">Three defensible paths from the base-case floor to a deal that pencils. Click to load one, adjust any lever, or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
+    <div class="scnhead"><span class="scnlabel">Worked scenarios</span><span class="scnsub">Three defensible paths from the base-case floor to a deal that pencils. Each one moves the levers and the two base-case assumptions that genuinely differ by strategy - hold period and exit cap. Click to load one, adjust any lever, or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
     <div class="scnrow">
       <div class="scn" data-k="A" role="button" tabindex="0">
         <div class="scn-t">A &middot; Market-Rate, Lightly Subsidized</div>
-        <div class="scn-d">Industrialized cost savings, a district placemaking premium, on-site solar and ancillary income, plus standard public gap tools (TIF, SDC waivers, abatement, NMTC). No affordable sleeve, no agency debt - the path a private team can pursue on its own.</div>
+        <div class="scn-d">Industrialized cost savings, a district placemaking premium, on-site solar and ancillary income, plus standard public gap tools (TIF, SDC waivers, abatement, NMTC). No affordable sleeve, no agency debt - the path a private team can pursue on its own. Merchant build, sold ~2 years after stabilization.</div>
         <div class="scn-r" id="r_A">-</div>
       </div>
       <div class="scn" data-k="B" role="button" tabindex="0">
         <div class="scn-t">B &middot; Attainable + Tax-Credit Equity</div>
-        <div class="scn-d">Adds a 22% LIHTC affordable sleeve, FHA/HUD 221(d)(4) agency debt, and C-PACE on the green scope. Trades headline return for near-zero cash equity, ~90 affordable homes, and non-recourse risk.</div>
+        <div class="scn-d">Adds a 22% LIHTC affordable sleeve, FHA/HUD 221(d)(4) agency debt, and C-PACE on the green scope. Trades headline return for near-zero cash equity, ~90 affordable homes, and non-recourse risk. Held ~4 years on long-term agency debt, with the exit cap trading a touch tighter.</div>
         <div class="scn-r" id="r_B">-</div>
       </div>
       <div class="scn" data-k="C" role="button" tabindex="0">
         <div class="scn-t">C &middot; Catalytic Public Partnership</div>
-        <div class="scn-d">Leans on the West Salem Urban Renewal Area: a large TIF reimbursement, expanded grants, tax abatement and NMTC, with a modest affordable sleeve - the deal a city treats as a priority corridor.</div>
+        <div class="scn-d">Leans on the West Salem Urban Renewal Area: a large TIF reimbursement, expanded grants, tax abatement and NMTC, with a modest affordable sleeve - the deal a city treats as a priority corridor. A ~3-year hold as placemaking matures and the exit cap firms.</div>
         <div class="scn-r" id="r_C">-</div>
       </div>
     </div>
@@ -676,9 +676,9 @@ document.getElementById('bImport').onclick=()=>{
   catch(e){alert('Could not parse scenario JSON');}
 };
 const SCN={
- A:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,distPrem:0.07,distCred:0.5,solarK:200,ancil:30,comrent:28,tif:6,grants:3,nmtc:2,abate:0.04}},
- B:{inputs:{maxSave:58,maxCred:0.5,parkCut:33,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:200,ancil:28,comrent:28,tif:6,grants:3,nmtc:2,abate:0.05,affShare:0.22,affDisc:0.25,lihtcEq:11,hudOn:1,cpace:5}},
- C:{inputs:{maxSave:55,maxCred:0.5,parkCut:30,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:180,ancil:25,comrent:27,tif:12,grants:6,nmtc:4,abate:0.06,affShare:0.15,affDisc:0.25,lihtcEq:8}}
+ A:{inputs:{exitm:24,rcap:0.055,ccap:0.07,maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,distPrem:0.07,distCred:0.5,solarK:200,ancil:30,comrent:28,tif:6,grants:3,nmtc:2,abate:0.04}},
+ B:{inputs:{exitm:48,rcap:0.0525,ccap:0.0675,maxSave:58,maxCred:0.5,parkCut:33,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:200,ancil:28,comrent:28,tif:6,grants:3,nmtc:2,abate:0.05,affShare:0.22,affDisc:0.25,lihtcEq:11,hudOn:1,cpace:5}},
+ C:{inputs:{exitm:36,rcap:0.0525,ccap:0.0675,maxSave:55,maxCred:0.5,parkCut:30,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:180,ancil:25,comrent:27,tif:12,grants:6,nmtc:4,abate:0.06,affShare:0.15,affDisc:0.25,lihtcEq:8}}
 };
 function scnChip(k){const r=run({...BASE,...SCN[k].inputs});
   const eq=r.cashEq<1e6?'$0 cash equity':'$'+(r.cashEq/1e6).toFixed(0)+'M equity';
