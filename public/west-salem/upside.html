@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Upside Explorer - Edgewater</title>
+<title>Financial Model - Edgewater</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,6 +110,7 @@ body.gated{overflow:hidden}
 .scn.on{border-color:var(--green);box-shadow:0 0 0 2px rgba(72,89,63,.18)}
 .scn .scn-t{font-family:var(--serif);font-size:15px;color:var(--green);margin-bottom:6px}
 .scn .scn-d{font-size:12.5px;color:#6e6a61;line-height:1.5}
+.modlabel{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#d9a26c;margin:0 0 10px;padding-bottom:7px;border-bottom:1px solid rgba(217,162,108,.28)}
 .scn .scn-r{font-family:var(--serif);font-size:13px;color:var(--ink-deep);margin-top:11px;padding-top:10px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
 </style>
 </head>
@@ -133,9 +134,8 @@ body.gated{overflow:hidden}
           <li><a href="plan.html">Business Plan</a></li>
           <li><a href="activation.html">Activation Plan</a></li>
           <li><a href="om.html">Investment Summary</a></li>
-          <li class="dd-head">Financial Model</li>
-          <li><a href="model.html">Base Case Model</a></li>
-          <li><a href="upside.html">Upside Explorer</a></li>
+          <li class="dd-head">Underwriting</li>
+          <li><a href="upside.html">Financial Model</a></li>
           <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
           <li class="dd-head">Research &amp; Precedents</li>
           <li><a href="research.html">District Economic Development</a></li>
@@ -156,19 +156,20 @@ body.gated{overflow:hidden}
 </nav>
 <header class="bar">
   <span class="tag">Edgewater · Internal</span>
-  <h1>Upside Explorer</h1>
-  <span class="right">Base case starts in the red &middot; stack the levers &middot; <a href="model.html" style="color:#d9a26c">&larr; base-case model</a> &middot; <a href="feasibility.html" style="color:#d9a26c">feasibility review</a> &middot; <a href="index.html" style="color:#d9a26c">back to site</a></span>
+  <h1>Financial Model</h1>
+  <span class="right">Base case starts in the red &middot; stack the levers to make it pencil &middot; <a href="feasibility.html" style="color:#d9a26c">feasibility review</a> &middot; <a href="index.html" style="color:#d9a26c">back to site</a></span>
 </header>
 
 <div class="layout">
 <aside class="panel">
-  <p style="font-size:12px;color:#8a857a;line-height:1.6;margin-bottom:14px">Start from one of the three worked scenarios on the right, then adjust any lever below. The base-case assumptions the levers build on are in the first panel; the waterfall attributes the climb to each category.</p>
+  <p style="font-size:12px;color:#8a857a;line-height:1.6;margin-bottom:14px">The Base Case module sits at the top: the honest merchant pro forma at market Salem rents, which loses money. Below it is the Upside Explorer - every lever a creative team can use to close the gap. Start from one of the three worked scenarios on the right, then adjust anything; the waterfall attributes the climb to each category.</p>
 
   <div class="btns" style="margin-bottom:16px">
     <button id="bReset">Reset to base-case floor</button>
   </div>
 
-  <details class="grp"><summary><span>Base case &middot; rents, mix, costs, exit</span><span class="chev">&#9654;</span></summary>
+  <div class="modlabel">Base Case</div>
+  <details class="grp" open><summary><span>Base case &middot; rents, mix, costs, exit</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:2px 0 10px">Residential rents ($/SF/mo)</h4>
       <div class="ctl"><label>Studio <span class="val" id="v_rStudio"></span></label><input type="range" id="rStudio" min="1.5" max="4" step="0.01"></div>
@@ -195,6 +196,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
+  <div class="modlabel" style="margin-top:22px">Upside Explorer</div>
   <details class="grp" open><summary><span>1 &middot; Cost &amp; efficiency</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">Industrialized construction and right-sized parking attack the single biggest barrier in this market: hard cost.</p>
@@ -329,7 +331,7 @@ body.gated{overflow:hidden}
       <span style="font-size:12px;color:#8a857a;font-family:var(--sans)">click to expand</span>
     </summary>
     <div style="margin-top:14px;font-size:13.5px;line-height:1.7;max-width:980px">
-      <p><strong>This is the companion to the base-case model.</strong> The <a href="model.html" style="color:var(--terra);font-weight:600">underwriting model</a> holds Phase One to a plain merchant pro forma and shows the honest result: a conventional developer building at honest Salem rents loses money, which is exactly why this corridor sits undeveloped. This page is the other half of the argument - the toolkit creative development teams use to close that gap, every lever separable and individually sized.</p>
+      <p><strong>This page holds both halves of the argument.</strong> The Base Case module at the top is a plain merchant pro forma: a conventional developer building at honest Salem rents loses money, which is exactly why this corridor sits undeveloped. The Upside Explorer below is the other half - the toolkit creative development teams use to close that gap, every lever separable and individually sized.</p>
       <p style="margin-top:10px"><strong>The waterfall is the whole story.</strong> It starts at the base-case floor and attributes the climb to five categories: cost &amp; efficiency, revenue &amp; placemaking, public subsidy, affordable / tax-credit equity, and financing structure. Because the levers interact, the decomposition is order-dependent (each category is added on top of the ones before it); the final all-in IRR is exact regardless of order.</p>
       <p style="margin-top:10px"><strong>Every lever is real and in use.</strong> LIHTC and HUD 221(d)(4) are the backbone of attainable housing finance. TIF, MUPTE / Vertical Housing abatement, SDC waivers, and capacity grants are standard public gap-funding tools. C-PACE, NMTC, Opportunity Zones, ground leases, industrialized construction, right-sized parking, on-site solar, and ancillary income are all levers experienced teams combine. None is a silver bullet; the thesis is that the <em>combination</em>, executed well, turns a -15% floor into an investable deal while keeping rents attainable.</p>
       <p style="margin-top:10px;color:#8a857a;font-size:12.5px">For discussion purposes only. This is a planning tool, not an offer of securities, and several levers (LIHTC allocation, HUD sizing, TIF eligibility, OZ treatment) are subject to program rules, third-party validation, and public approvals. After-tax figures are illustrative. Questions or a scenario worth keeping? Export it and send it to erik@nowcitylabs.com.</p>
