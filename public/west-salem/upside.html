@@ -18,9 +18,9 @@ header.bar{background:var(--ink-deep);color:#e9e5da;padding:18px 28px;display:fl
 header.bar h1{font-family:var(--serif);font-size:20px;color:var(--cream)}
 header.bar .tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#d9a26c}
 header.bar .right{margin-left:auto;font-size:12px;color:#a39d8f}
-.layout{display:grid;grid-template-columns:360px 1fr;min-height:calc(100vh - 114px)}
+.layout{display:grid;grid-template-columns:360px 1fr;min-height:calc(100vh - 156px)}
 @media(max-width:980px){.layout{grid-template-columns:1fr}}
-.panel{background:#fff;border-right:1px solid var(--line);padding:20px 18px 60px;overflow-y:auto;max-height:calc(100vh - 114px)}
+.panel{background:#fff;border-right:1px solid var(--line);padding:20px 18px 60px;overflow-y:auto;max-height:calc(100vh - 156px)}
 @media(max-width:980px){.panel{max-height:none}}
 details.grp{border:1px solid var(--line);border-radius:7px;margin-bottom:12px;overflow:hidden}
 details.grp>summary{cursor:pointer;list-style:none;padding:12px 14px;background:var(--cream2);font-family:var(--serif);font-size:13.5px;color:var(--green);display:flex;justify-content:space-between;align-items:center;gap:8px}
@@ -42,7 +42,7 @@ details.grp .body{padding:14px 14px 6px}
 button{font-family:var(--sans);font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:6px;border:1px solid var(--line);background:#fff;cursor:pointer}
 button.primary{background:var(--terra);border-color:var(--terra);color:#fff}
 button:hover{filter:brightness(.96)}
-.main{padding:24px 28px 80px;overflow-y:auto;max-height:calc(100vh - 114px)}
+.main{padding:24px 28px 80px;overflow-y:auto;max-height:calc(100vh - 156px)}
 @media(max-width:980px){.main{max-height:none}}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
 .kpi{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
@@ -151,6 +151,17 @@ body.gated{overflow:hidden}
   table.wf{font-size:12px}
   .ctl input[type=range]{height:26px}
 }
+
+/* sticky scenario bar */
+.scnbar{position:sticky;top:52px;z-index:90;background:#211e1a;border-bottom:1px solid #3d392f;padding:9px 28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.scnbar .sb-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#d9a26c}
+.scnbar .sb-btns{display:flex;gap:7px;flex-wrap:wrap}
+.sbtn{font-size:11.5px;font-weight:600;padding:6px 13px;border-radius:20px;border:1px solid #4a453a;background:#2b2823;color:#cfc9bd;cursor:pointer;white-space:nowrap;transition:background .2s,border-color .2s,color .2s}
+.sbtn:hover{border-color:#d9a26c;color:#fff}
+.sbtn.on{background:var(--terra);border-color:var(--terra);color:#fff}
+.scnbar .sb-read{margin-left:auto;font-size:12px;color:#cfc9bd;font-variant-numeric:tabular-nums;white-space:nowrap}
+.scnbar .sb-read strong{color:var(--cream);font-family:var(--serif);font-weight:700}
+@media(max-width:620px){.scnbar{padding:8px 16px;gap:9px}.scnbar .sb-read{margin-left:0;flex-basis:100%;order:3;text-align:right}}
 </style>
 </head>
 <body class="gated">
@@ -199,9 +210,20 @@ body.gated{overflow:hidden}
   <span class="right">Base case starts in the red &middot; stack the levers to make it pencil &middot; <a href="feasibility.html" style="color:#d9a26c">feasibility review</a> &middot; <a href="index.html" style="color:#d9a26c">back to site</a></span>
 </header>
 
+<div class="scnbar" id="scnbar">
+  <span class="sb-label">Scenario</span>
+  <div class="sb-btns">
+    <button class="sbtn" data-k="base" type="button">Base case</button>
+    <button class="sbtn" data-k="A" type="button">A &middot; Market-rate</button>
+    <button class="sbtn" data-k="B" type="button">B &middot; Attainable</button>
+    <button class="sbtn" data-k="C" type="button">C &middot; Catalytic</button>
+  </div>
+  <span class="sb-read" id="sbRead">-</span>
+</div>
+
 <div class="layout">
 <aside class="panel">
-  <p style="font-size:12px;color:#8a857a;line-height:1.6;margin-bottom:14px">The Base Case module sits at the top: the honest merchant pro forma at market Salem rents, which loses money. Below it is the Upside Explorer - every lever a creative team can use to close the gap. Start from one of the three worked scenarios on the right, then adjust anything; the waterfall attributes the climb to each category.</p>
+  <p style="font-size:12px;color:#8a857a;line-height:1.6;margin-bottom:14px">The Base Case module sits at the top: the honest merchant pro forma at market Salem rents, which loses money. Below it is the Upside Explorer - every lever a creative team can use to close the gap. Pick a scenario from the bar at the top of the page, then adjust anything; the waterfall attributes the climb to each category.</p>
 
   <div class="btns" style="margin-bottom:16px">
     <button id="bReset">Reset to base-case floor</button>
@@ -322,8 +344,13 @@ body.gated{overflow:hidden}
     </div>
   </div>
   <div class="scnwrap">
-    <div class="scnhead"><span class="scnlabel">Worked scenarios</span><span class="scnsub">Three defensible paths from the base-case floor to a deal that pencils. Each one moves the levers and the two base-case assumptions that genuinely differ by strategy - hold period and exit cap. Click to load one, adjust any lever, or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
+    <div class="scnhead"><span class="scnlabel">Worked scenarios</span><span class="scnsub">The honest base-case floor, and three defensible paths to a deal that pencils. Each path moves the levers and the two base-case assumptions that genuinely differ by strategy - hold period and exit cap. Click any card, or use the scenario bar pinned at the top of the page to toggle them as you scroll. Or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
     <div class="scnrow">
+      <div class="scn" data-k="base" role="button" tabindex="0">
+        <div class="scn-t">Base case &middot; the honest floor</div>
+        <div class="scn-d">A merchant developer building at market Salem rents on conventional debt - no subsidy, no incentives, no placemaking premium. This is what the deal returns on its own, and why the corridor has sat undeveloped. Every path below builds from here.</div>
+        <div class="scn-r" id="r_base">-</div>
+      </div>
       <div class="scn" data-k="A" role="button" tabindex="0">
         <div class="scn-t">A &middot; Market-Rate, Lightly Subsidized</div>
         <div class="scn-d">Industrialized cost savings, a district placemaking premium, on-site solar and ancillary income, plus standard public gap tools (TIF, SDC waivers, abatement, NMTC). No affordable sleeve, no agency debt - the path a private team can pursue on its own. Merchant build, sold ~2 years after stabilization.</div>
@@ -634,6 +661,7 @@ function recalc(){
   document.getElementById('status').innerHTML=w.length?'<div class="flag" style="border-color:#d99;background:#fdeeee;margin-top:16px">'+w.join(' ')+'</div>':'';
 
   drawWaterfall();drawSU(r);drawCF(r);
+  markScn(r);
   // bottom readout
   const cleared=nz(r.irr)>=0.15;
   const ro=document.getElementById('readout');
@@ -700,7 +728,7 @@ SLIDERS.forEach(k=>{
   const b=document.getElementById('t_'+k); if(!b)return;
   b.addEventListener('click',()=>{P[k]=P[k]>=1?0:1;b.classList.toggle('on',P[k]>=1);b.textContent=P[k]>=1?'On':'Off';recalc();});
 });
-document.getElementById('bReset').onclick=()=>{P={...BASE};sync();document.querySelectorAll('.scn').forEach(e=>e.classList.remove('on'));recalc();};
+document.getElementById('bReset').onclick=()=>{P={...BASE};sync();recalc();};
 document.getElementById('bExport').onclick=()=>{
   const r=run(P);
   const s=JSON.stringify({scenario:'edgewater-phase1-upside',exported:new Date().toISOString(),inputs:P,
@@ -717,6 +745,7 @@ document.getElementById('bImport').onclick=()=>{
   catch(e){alert('Could not parse scenario JSON');}
 };
 const SCN={
+ base:{inputs:{}},
  A:{inputs:{exitm:24,rcap:0.055,ccap:0.07,maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,distPrem:0.07,distCred:0.5,solarK:200,ancil:30,comrent:28,tif:6,grants:3,nmtc:2,abate:0.04}},
  B:{inputs:{exitm:48,rcap:0.0525,ccap:0.0675,maxSave:58,maxCred:0.5,parkCut:33,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:200,ancil:28,comrent:28,tif:6,grants:3,nmtc:2,abate:0.05,affShare:0.22,affDisc:0.25,lihtcEq:11,hudOn:1,cpace:5}},
  C:{inputs:{exitm:36,rcap:0.0525,ccap:0.0675,maxSave:55,maxCred:0.5,parkCut:30,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:180,ancil:25,comrent:27,tif:12,grants:6,nmtc:4,abate:0.06,affShare:0.15,affDisc:0.25,lihtcEq:8}}
@@ -725,14 +754,23 @@ function scnChip(k){const r=run({...BASE,...SCN[k].inputs});
   const eq=r.cashEq<1e6?'$0 cash equity':'$'+(r.cashEq/1e6).toFixed(0)+'M equity';
   const aff=r.affUnits>0?r.affUnits+' affordable':'market-rate';
   return '<strong>'+fmtP(nz(r.irr))+' IRR</strong> &middot; '+r.em.toFixed(2)+'x &middot; '+eq+' &middot; '+aff;}
-function applyScn(k){P={...BASE,...SCN[k].inputs};sync();
-  document.querySelectorAll('.scn').forEach(e=>e.classList.toggle('on',e.getAttribute('data-k')===k));recalc();}
+function applyScn(k){P={...BASE,...SCN[k].inputs};sync();recalc();}
+function activeKey(){const keys=[...SLIDERS,'hudOn','glOn','ozOn'];
+  for(const k in SCN){const tgt={...BASE,...SCN[k].inputs};
+    if(keys.every(x=>(+P[x]||0)===(+(tgt[x]??0)||0)))return k;}
+  return null;}
+function markScn(r){const ak=activeKey();
+  document.querySelectorAll('.scn').forEach(e=>e.classList.toggle('on',e.getAttribute('data-k')===ak));
+  document.querySelectorAll('.sbtn').forEach(e=>e.classList.toggle('on',e.getAttribute('data-k')===ak));
+  const sb=document.getElementById('sbRead');
+  if(sb)sb.innerHTML=(ak?'':'Custom &middot; ')+'<strong>'+(isNaN(r.irr)?'n/a':fmtP(r.irr))+' IRR</strong> &middot; '+r.em.toFixed(2)+'x EM';}
 document.querySelectorAll('.scn').forEach(e=>{const k=e.getAttribute('data-k');
   e.addEventListener('click',()=>applyScn(k));
   e.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();applyScn(k);}});
   const chip=document.getElementById('r_'+k); if(chip)chip.innerHTML=scnChip(k);});
+document.querySelectorAll('.sbtn').forEach(b=>{const k=b.getAttribute('data-k');b.addEventListener('click',()=>applyScn(k));});
 const _b2=document.getElementById('bReset2'); if(_b2)_b2.addEventListener('click',ev=>{ev.preventDefault();document.getElementById('bReset').click();});
-applyScn('A');
+applyScn('base');
 </script>
 </body>
 </html>
