@@ -155,7 +155,10 @@ body.gated{overflow:hidden}
 /* sticky scenario bar */
 .scnbar{position:sticky;top:52px;z-index:90;background:#211e1a;border-bottom:1px solid #3d392f;padding:9px 28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .scnbar .sb-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#d9a26c}
-.scnbar .sb-btns{display:flex;gap:7px;flex-wrap:wrap}
+.scnbar .sb-group{display:flex;align-items:center;gap:8px}
+.scnbar .sb-cap{font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#9a948a;white-space:nowrap}
+.scnbar .sb-btns{display:flex;gap:6px;flex-wrap:wrap}
+.scnbar .sbtn[data-k="base"],.scnbar .sbtn[data-k="A"],.scnbar .sbtn[data-k="B"],.scnbar .sbtn[data-k="C"],.scnbar .sbtn[data-k="D"],.scnbar .sbtn[data-k="E"],.scnbar .sbtn[data-k="F"],.scnbar .sbtn[data-k="G"]{min-width:34px;text-align:center}
 .sbtn{font-size:11.5px;font-weight:600;padding:6px 13px;border-radius:20px;border:1px solid #4a453a;background:#2b2823;color:#cfc9bd;cursor:pointer;white-space:nowrap;transition:background .2s,border-color .2s,color .2s}
 .sbtn:hover{border-color:#d9a26c;color:#fff}
 .sbtn.on{background:var(--terra);border-color:var(--terra);color:#fff}
@@ -211,12 +214,23 @@ body.gated{overflow:hidden}
 </header>
 
 <div class="scnbar" id="scnbar">
-  <span class="sb-label">Scenario</span>
-  <div class="sb-btns">
-    <button class="sbtn" data-k="base" type="button">Base case</button>
-    <button class="sbtn" data-k="A" type="button">A &middot; Market-rate</button>
-    <button class="sbtn" data-k="B" type="button">B &middot; Attainable</button>
-    <button class="sbtn" data-k="C" type="button">C &middot; Catalytic</button>
+  <div class="sb-group">
+    <span class="sb-cap">Capital</span>
+    <div class="sb-btns">
+      <button class="sbtn" data-k="base" type="button" title="Base case - the honest floor">Base</button>
+      <button class="sbtn" data-k="A" type="button" title="A - Market-rate, lightly subsidized">A</button>
+      <button class="sbtn" data-k="B" type="button" title="B - Attainable + tax-credit equity">B</button>
+      <button class="sbtn" data-k="C" type="button" title="C - Catalytic public partnership">C</button>
+    </div>
+  </div>
+  <div class="sb-group">
+    <span class="sb-cap">Rents &amp; program</span>
+    <div class="sb-btns">
+      <button class="sbtn" data-k="D" type="button" title="D - Demand-led (in-migration)">D</button>
+      <button class="sbtn" data-k="E" type="button" title="E - Trended rents">E</button>
+      <button class="sbtn" data-k="F" type="button" title="F - Strong lease-up">F</button>
+      <button class="sbtn" data-k="G" type="button" title="G - Family + co-living program">G</button>
+    </div>
   </div>
   <span class="sb-read" id="sbRead">-</span>
 </div>
@@ -236,7 +250,23 @@ body.gated{overflow:hidden}
       <div class="ctl"><label>Studio <span class="val" id="v_rStudio"></span></label><input type="range" id="rStudio" min="1.5" max="4" step="0.01"></div>
       <div class="ctl"><label>1 Bedroom <span class="val" id="v_r1br"></span></label><input type="range" id="r1br" min="1.5" max="4" step="0.01"></div>
       <div class="ctl"><label>2 Bedroom <span class="val" id="v_r2br"></span></label><input type="range" id="r2br" min="1.5" max="4" step="0.01"></div>
+      <div class="ctl"><label>3 Bedroom (family) <span class="val" id="v_r3br"></span></label><input type="range" id="r3br" min="1.5" max="4" step="0.01"></div>
+      <div class="ctl"><label>4 Bedroom (co-living) <span class="val" id="v_r4br"></span></label><input type="range" id="r4br" min="1.5" max="4" step="0.01"><div class="hint">Rented by the room, so it carries a higher $/SF than a family lease.</div></div>
       <div class="ctl"><label>Townhouse <span class="val" id="v_rth"></span></label><input type="range" id="rth" min="1.5" max="4" step="0.01"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Unit program (count) <span style="font-weight:400;font-size:11px;color:#8a857a">&middot; total <span id="unitTotal" style="color:var(--green);font-weight:600">-</span></span></h4>
+      <div class="ctl"><label>Studio units <span class="val" id="v_uStudio"></span></label><input type="range" id="uStudio" min="0" max="250" step="1"></div>
+      <div class="ctl"><label>1BR units <span class="val" id="v_u1br"></span></label><input type="range" id="u1br" min="0" max="250" step="1"></div>
+      <div class="ctl"><label>2BR units <span class="val" id="v_u2br"></span></label><input type="range" id="u2br" min="0" max="150" step="1"></div>
+      <div class="ctl"><label>3BR units (family) <span class="val" id="v_u3br"></span></label><input type="range" id="u3br" min="0" max="90" step="1"></div>
+      <div class="ctl"><label>4BR units (co-living) <span class="val" id="v_u4br"></span></label><input type="range" id="u4br" min="0" max="40" step="1"></div>
+      <div class="ctl"><label>Townhouse units <span class="val" id="v_uth"></span></label><input type="range" id="uth" min="0" max="30" step="1"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Unit sizes (SF)</h4>
+      <div class="ctl"><label>Studio <span class="val" id="v_sfStudio"></span></label><input type="range" id="sfStudio" min="400" max="650" step="10"></div>
+      <div class="ctl"><label>1BR <span class="val" id="v_sf1br"></span></label><input type="range" id="sf1br" min="500" max="800" step="10"></div>
+      <div class="ctl"><label>2BR <span class="val" id="v_sf2br"></span></label><input type="range" id="sf2br" min="750" max="1050" step="10"></div>
+      <div class="ctl"><label>3BR <span class="val" id="v_sf3br"></span></label><input type="range" id="sf3br" min="950" max="1350" step="10"></div>
+      <div class="ctl"><label>4BR <span class="val" id="v_sf4br"></span></label><input type="range" id="sf4br" min="1150" max="1600" step="10"></div>
+      <div class="ctl"><label>Townhouse <span class="val" id="v_sfth"></span></label><input type="range" id="sfth" min="1100" max="1600" step="10"></div>
       <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Operations</h4>
       <div class="ctl"><label>Stabilized occupancy <span class="val" id="v_occs"></span></label><input type="range" id="occs" min="0.85" max="0.98" step="0.005"></div>
       <div class="ctl"><label>Lease-up pace (pts/mo) <span class="val" id="v_pace"></span></label><input type="range" id="pace" min="0.02" max="0.10" step="0.005"></div>
@@ -269,7 +299,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp"><summary><span>2 &middot; Revenue &amp; placemaking</span><span class="chev">&#9654;</span></summary>
+  <details class="grp" open><summary><span>2 &middot; Revenue &amp; placemaking</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">District-scale placemaking, on-site energy, and ancillary income lift NOI without raising base rents beyond the market.</p>
       <div class="ctl"><label>District placemaking premium (max) <span class="val" id="v_distPrem"></span></label><input type="range" id="distPrem" min="0" max="0.2" step="0.01"><div class="hint">Rent premium earned as district phases deliver and the place matures.</div></div>
@@ -281,7 +311,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp"><summary><span>3 &middot; Public subsidy &amp; incentives</span><span class="chev">&#9654;</span></summary>
+  <details class="grp" open><summary><span>3 &middot; Public subsidy &amp; incentives</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">Gap funding and tax relief that public partners deploy for catalytic, attainable projects in priority corridors.</p>
       <div class="ctl"><label>TIF / urban renewal <span class="val" id="v_tif"></span></label><input type="range" id="tif" min="0" max="30" step="0.5"><div class="hint">Tax-increment reimbursement of eligible public infrastructure and site work ($M).</div></div>
@@ -291,7 +321,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp"><summary><span>4 &middot; Affordable &amp; tax-credit equity</span><span class="chev">&#9654;</span></summary>
+  <details class="grp" open><summary><span>4 &middot; Affordable &amp; tax-credit equity</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">An affordable sleeve brings 4% LIHTC equity into the stack. It trades some rent for a large, cheap, non-recourse layer of capital.</p>
       <div class="ctl"><label>Affordable unit share (LIHTC) <span class="val" id="v_affShare"></span></label><input type="range" id="affShare" min="0" max="0.5" step="0.025"></div>
@@ -300,7 +330,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp"><summary><span>5 &middot; Financing structure</span><span class="chev">&#9654;</span></summary>
+  <details class="grp" open><summary><span>5 &middot; Financing structure</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">Patient, low-cost, long-amortization capital and land structures that cut the equity check and the carry.</p>
       <div class="toggle"><span class="tl">HUD 221(d)(4)<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">40-yr am, high-LTC, non-recourse</span></span><button id="t_hudOn">Off</button></div>
@@ -314,7 +344,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp"><summary><span>6 &middot; Investor overlay (after-tax)</span><span class="chev">&#9654;</span></summary>
+  <details class="grp" open><summary><span>6 &middot; Investor overlay (after-tax)</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">Opportunity Zone treatment does not change project economics; it shelters the investor's exit gain. Shown as a separate after-tax readout.</p>
       <div class="toggle"><span class="tl">Opportunity Zone equity<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">tax-free appreciation on 10-yr hold</span></span><button id="t_ozOn">Off</button></div>
@@ -344,7 +374,7 @@ body.gated{overflow:hidden}
     </div>
   </div>
   <div class="scnwrap">
-    <div class="scnhead"><span class="scnlabel">Worked scenarios</span><span class="scnsub">The honest base-case floor, and three defensible paths to a deal that pencils. Each path moves the levers and the two base-case assumptions that genuinely differ by strategy - hold period and exit cap. Click any card, or use the scenario bar pinned at the top of the page to toggle them as you scroll. Or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
+    <div class="scnhead"><span class="scnlabel">Capital-structure paths</span><span class="scnsub">The honest base-case floor, and three defensible paths to a deal that pencils. Each path moves the levers and the two base-case assumptions that genuinely differ by strategy - hold period and exit cap. Click any card, or use the scenario bar pinned at the top of the page to toggle them as you scroll. Or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
     <div class="scnrow">
       <div class="scn" data-k="base" role="button" tabindex="0">
         <div class="scn-t">Base case &middot; the honest floor</div>
@@ -365,6 +395,29 @@ body.gated{overflow:hidden}
         <div class="scn-t">C &middot; Catalytic Public Partnership</div>
         <div class="scn-d">Leans on the West Salem Urban Renewal Area: a large TIF reimbursement, expanded grants, tax abatement and NMTC, with a modest affordable sleeve - the deal a city treats as a priority corridor. A ~3-year hold as placemaking matures and the exit cap firms.</div>
         <div class="scn-r" id="r_C">-</div>
+      </div>
+    </div>
+    <div class="scnhead" style="margin-top:26px"><span class="scnlabel">Rents &amp; program sensitivities</span><span class="scnsub">The same industrialized-cost base, asking what real demand and a richer unit mix do to the numbers - no placemaking fudge, just the rent line and the program moving.</span></div>
+    <div class="scnrow">
+      <div class="scn" data-k="D" role="button" tabindex="0">
+        <div class="scn-t">D &middot; Demand-led (in-migration)</div>
+        <div class="scn-d">Asks what genuine higher market rents do - renters relocating from pricier metros (Portland, the Bay Area) paying roughly 15% above today's Salem comps, sustained over the hold. This is the rent line moving on real demand, not a placemaking premium.</div>
+        <div class="scn-r" id="r_D">-</div>
+      </div>
+      <div class="scn" data-k="E" role="button" tabindex="0">
+        <div class="scn-t">E &middot; Trended rents</div>
+        <div class="scn-d">Starts at today's market rents but underwrites stronger rent growth (3.75%/yr) over a five-year hold. Isolates what the trend alone is worth, without raising day-one rents - and shows it helps but does not fully close the gap by itself.</div>
+        <div class="scn-r" id="r_E">-</div>
+      </div>
+      <div class="scn" data-k="F" role="button" tabindex="0">
+        <div class="scn-t">F &middot; Strong lease-up</div>
+        <div class="scn-d">Elevated rents from day one plus fast absorption - lease-up at 8.5 points per month to 96% occupancy - a merchant flip that captures strong initial demand rather than waiting out a slow ramp.</div>
+        <div class="scn-r" id="r_F">-</div>
+      </div>
+      <div class="scn" data-k="G" role="button" tabindex="0">
+        <div class="scn-t">G &middot; Family + co-living program</div>
+        <div class="scn-d">Reweights the program toward families and co-living: 40 three-bed and 14 four-bed units (rented by the room at a higher $/SF), on a light public stack with a small affordable sleeve. Shows how the richer, less land-efficient mix pencils.</div>
+        <div class="scn-r" id="r_G">-</div>
       </div>
     </div>
   </div>
@@ -426,8 +479,9 @@ PARKCOST=40000;
 
 // Base scenario = clean base case with EVERY lever off.
 const BASE={
- rStudio:2.60,r1br:2.25,r2br:2.00,rth:1.90,
- uStudio:180,u1br:150,u2br:85,uth:5,sfStudio:500,sf1br:640,sf2br:880,sfth:1300,
+ rStudio:2.60,r1br:2.25,r2br:2.00,r3br:1.90,r4br:2.60,rth:1.90,
+ uStudio:176,u1br:146,u2br:79,u3br:12,u4br:3,uth:4,
+ sfStudio:500,sf1br:640,sf2br:880,sf3br:1100,sf4br:1350,sfth:1300,
  occs:0.95,pace:0.05,opexr:0.30,rgrow:0.025,comrent:24,
  hcres:315,hccont:0.10,land:5,crate:0.07,prate:0.07,casheq:28,rcap:0.055,ccap:0.07,exitm:24,vdur:16,
  // cost & efficiency
@@ -450,7 +504,7 @@ const VIABLE={maxSave:70,maxCred:0.5,parkCut:40,greenSave:0.04,greenCred:0.5,
  affShare:0.20,affDisc:0.25,lihtcEq:10};
 
 let P={...BASE};
-const mixOf=p=>[{n:'Studio',u:p.uStudio,sf:p.sfStudio,k:'rStudio'},{n:'1BR',u:p.u1br,sf:p.sf1br,k:'r1br'},{n:'2BR',u:p.u2br,sf:p.sf2br,k:'r2br'},{n:'TH',u:p.uth,sf:p.sfth,k:'rth'}];
+const mixOf=p=>[{n:'Studio',u:p.uStudio,sf:p.sfStudio,k:'rStudio'},{n:'1BR',u:p.u1br,sf:p.sf1br,k:'r1br'},{n:'2BR',u:p.u2br,sf:p.sf2br,k:'r2br'},{n:'3BR',u:p.u3br,sf:p.sf3br,k:'r3br'},{n:'4BR co-living',u:p.u4br,sf:p.sf4br,k:'r4br'},{n:'TH',u:p.uth,sf:p.sfth,k:'rth'}];
 
 function run(p){
   const HUD=p.hudOn>=1;
@@ -606,11 +660,13 @@ function waterfall(p){
 // ===== UI =====
 const fmt$=x=>(x<0?'-$':'$')+(Math.abs(x)>=1e6?(Math.abs(x)/1e6).toFixed(1)+'M':Math.round(Math.abs(x)/1e3)+'K');
 const fmtP=x=>(100*x).toFixed(1)+'%';
-const SLIDERS=['rStudio','r1br','r2br','rth','occs','pace','opexr','rgrow','comrent','hcres','hccont','land','crate','prate','casheq','rcap','ccap','exitm','vdur','maxSave','maxCred','parkCut','greenSave','greenCred','distPrem','distCred','dRamp','solarK','ancil','tif','grants','nmtc','abate','affShare','affDisc','lihtcEq','hudRate','hudLTC','davis','cpace','cpaceRate','glRent'];
+const SLIDERS=['rStudio','r1br','r2br','r3br','r4br','rth','uStudio','u1br','u2br','u3br','u4br','uth','sfStudio','sf1br','sf2br','sf3br','sf4br','sfth','occs','pace','opexr','rgrow','comrent','hcres','hccont','land','crate','prate','casheq','rcap','ccap','exitm','vdur','maxSave','maxCred','parkCut','greenSave','greenCred','distPrem','distCred','dRamp','solarK','ancil','tif','grants','nmtc','abate','affShare','affDisc','lihtcEq','hudRate','hudLTC','davis','cpace','cpaceRate','glRent'];
 const PCT=['occs','pace','opexr','rgrow','hccont','crate','prate','rcap','ccap','maxCred','greenSave','greenCred','distPrem','distCred','abate','affShare','affDisc','hudRate','hudLTC','davis','cpaceRate'];
 const MUSD=['land','casheq','tif','grants','nmtc','lihtcEq','cpace'];
 function vlabel(k,v){
   if(PCT.includes(k))return fmtP(v);
+  if(k.charAt(0)==='u')return v+' units';
+  if(k.slice(0,2)==='sf')return v+' SF';
   if(MUSD.includes(k))return '$'+v+'M';
   if(k==='maxSave')return '$'+v+'/SF';
   if(k==='parkCut')return v+' spaces';
@@ -637,6 +693,7 @@ function delta(el,cur,b,fmt,goodUp=true){
 }
 function recalc(){
   const r=run(P);
+  const _ut=document.getElementById('unitTotal'); if(_ut)_ut.textContent=mixOf(P).reduce((s,m)=>s+(+m.u||0),0)+' units';
   document.getElementById('k_irr').textContent=isNaN(r.irr)?'n/a':fmtP(r.irr);
   document.getElementById('k_em').textContent=r.em.toFixed(2)+'x';
   document.getElementById('k_dscr').textContent=r.dscr.toFixed(2);
@@ -748,7 +805,11 @@ const SCN={
  base:{inputs:{}},
  A:{inputs:{exitm:24,rcap:0.055,ccap:0.07,maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,distPrem:0.07,distCred:0.5,solarK:200,ancil:30,comrent:28,tif:6,grants:3,nmtc:2,abate:0.04}},
  B:{inputs:{exitm:48,rcap:0.0525,ccap:0.0675,maxSave:58,maxCred:0.5,parkCut:33,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:200,ancil:28,comrent:28,tif:6,grants:3,nmtc:2,abate:0.05,affShare:0.22,affDisc:0.25,lihtcEq:11,hudOn:1,cpace:5}},
- C:{inputs:{exitm:36,rcap:0.0525,ccap:0.0675,maxSave:55,maxCred:0.5,parkCut:30,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:180,ancil:25,comrent:27,tif:12,grants:6,nmtc:4,abate:0.06,affShare:0.15,affDisc:0.25,lihtcEq:8}}
+ C:{inputs:{exitm:36,rcap:0.0525,ccap:0.0675,maxSave:55,maxCred:0.5,parkCut:30,greenSave:0.04,greenCred:0.5,distPrem:0.06,distCred:0.5,solarK:180,ancil:25,comrent:27,tif:12,grants:6,nmtc:4,abate:0.06,affShare:0.15,affDisc:0.25,lihtcEq:8}},
+ D:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:3.00,r1br:2.60,r2br:2.32,r3br:2.20,r4br:3.00,rth:2.20,distPrem:0.03,distCred:0.5,solarK:150}},
+ E:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:60,rcap:0.0525,ccap:0.07,ancil:25,comrent:27,rgrow:0.0375,distPrem:0.04,distCred:0.5,solarK:150}},
+ F:{inputs:{maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:2.95,r1br:2.55,r2br:2.28,r3br:2.15,r4br:2.95,rth:2.15,pace:0.085,occs:0.96,distPrem:0.02,distCred:0.5,solarK:120}},
+ G:{inputs:{uStudio:150,u1br:128,u2br:80,u3br:40,u4br:14,uth:8,r4br:2.95,r3br:1.95,maxSave:60,maxCred:0.5,parkCut:35,greenSave:0.04,greenCred:0.5,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,distPrem:0.05,distCred:0.5,solarK:200,tif:6,grants:3,abate:0.04,affShare:0.12,affDisc:0.25,lihtcEq:6}}
 };
 function scnChip(k){const r=run({...BASE,...SCN[k].inputs});
   const eq=r.cashEq<1e6?'$0 cash equity':'$'+(r.cashEq/1e6).toFixed(0)+'M equity';
