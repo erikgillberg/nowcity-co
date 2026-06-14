@@ -60,6 +60,12 @@ button:hover{filter:brightness(.96)}
 .card .sub{font-size:11.5px;color:#8a857a;margin-bottom:12px}
 .card canvas{max-height:300px}
 table.wf{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;margin-top:8px}
+table.dtab{width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums;margin-top:12px}
+table.dtab td{padding:6px 2px;border-bottom:1px solid rgba(0,0,0,.06)}
+table.dtab td:last-child{text-align:right;white-space:nowrap}
+table.dtab tr.h td{font-weight:700;color:var(--green);border-bottom:1.5px solid var(--line);text-transform:uppercase;font-size:10px;letter-spacing:.06em;padding-top:12px}
+table.dtab tr.tot td{font-family:var(--serif);color:var(--ink-deep);border-top:1.5px solid var(--line);border-bottom:none;font-size:13.5px;padding-top:8px}
+table.dtab td.neg{color:#b04a2f}
 table.wf th{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--terra);padding:7px 8px;border-bottom:2px solid var(--line);text-align:right}
 table.wf th:first-child{text-align:left}
 table.wf td{padding:7px 8px;text-align:right;border-bottom:1px solid rgba(0,0,0,.05)}
@@ -292,9 +298,12 @@ body.gated{overflow:hidden}
       <div class="ctl"><label>3BR <span class="val" id="v_sf3br"></span></label><input type="range" id="sf3br" min="950" max="1350" step="10"></div>
       <div class="ctl"><label>4BR <span class="val" id="v_sf4br"></span></label><input type="range" id="sf4br" min="1150" max="1600" step="10"></div>
       <div class="ctl"><label>Townhouse <span class="val" id="v_sfth"></span></label><input type="range" id="sfth" min="1100" max="1600" step="10"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Commercial leasing</h4>
+      <div class="ctl"><label>Retail NRA <span class="val" id="v_retSF"></span></label><input type="range" id="retSF" min="0" max="80000" step="500"><div class="hint">Ground-floor retail leasable area. Scales with the parcel when phasing.</div></div>
+      <div class="ctl"><label>Office / flex NRA <span class="val" id="v_offSF"></span></label><input type="range" id="offSF" min="0" max="40000" step="500"></div>
+      <div class="ctl"><label>Commercial rent <span class="val" id="v_comrent"></span></label><input type="range" id="comrent" min="18" max="45" step="0.5"><div class="hint">$/SF/yr NNN-equivalent across the commercial program.</div></div>
+      <div class="ctl"><label>Commercial stabilized vacancy <span class="val" id="v_comVac"></span></label><input type="range" id="comVac" min="0" max="0.25" step="0.01"><div class="hint">Additional vacancy haircut on commercial income. Tenant improvements and leasing commissions are carried inside the commercial hard cost.</div></div>
       <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Operations</h4>
-      <div class="ctl"><label>Stabilized occupancy <span class="val" id="v_occs"></span></label><input type="range" id="occs" min="0.85" max="0.98" step="0.005"></div>
-      <div class="ctl"><label>Lease-up pace (pts/mo) <span class="val" id="v_pace"></span></label><input type="range" id="pace" min="0.02" max="0.10" step="0.005"></div>
       <div class="ctl"><label>Residential opex (% of rents) <span class="val" id="v_opexr"></span></label><input type="range" id="opexr" min="0.2" max="0.45" step="0.005"></div>
       <div class="ctl"><label>Rent growth (annual) <span class="val" id="v_rgrow"></span></label><input type="range" id="rgrow" min="0" max="0.06" step="0.0025"></div>
       <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Costs &amp; capital</h4>
@@ -304,10 +313,13 @@ body.gated{overflow:hidden}
       <div class="ctl"><label>Construction loan rate <span class="val" id="v_crate"></span></label><input type="range" id="crate" min="0.05" max="0.10" step="0.0025"></div>
       <div class="ctl"><label>Perm loan rate <span class="val" id="v_prate"></span></label><input type="range" id="prate" min="0.05" max="0.09" step="0.0025"></div>
       <div class="ctl"><label>LP cash equity ($M) <span class="val" id="v_casheq"></span></label><input type="range" id="casheq" min="20" max="70" step="1"></div>
-      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Exit</h4>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Stabilization &amp; exit</h4>
+      <div class="ctl"><label>Stabilized occupancy <span class="val" id="v_occs"></span></label><input type="range" id="occs" min="0.85" max="0.98" step="0.005"><div class="hint">Residential occupancy at stabilization.</div></div>
+      <div class="ctl"><label>Lease-up pace (pts/mo) <span class="val" id="v_pace"></span></label><input type="range" id="pace" min="0.02" max="0.10" step="0.005"><div class="hint">Occupancy points gained per month during lease-up.</div></div>
       <div class="ctl"><label>Residential exit cap <span class="val" id="v_rcap"></span></label><input type="range" id="rcap" min="0.04" max="0.065" step="0.0025"></div>
       <div class="ctl"><label>Commercial exit cap <span class="val" id="v_ccap"></span></label><input type="range" id="ccap" min="0.055" max="0.085" step="0.0025"></div>
       <div class="ctl"><label>Exit month (from opening) <span class="val" id="v_exitm"></span></label><input type="range" id="exitm" min="18" max="120" step="1"></div>
+      <div class="ctl"><label>Cost of sale <span class="val" id="v_saleCost"></span></label><input type="range" id="saleCost" min="0" max="0.04" step="0.0025"><div class="hint">Brokerage, transfer, and closing costs at exit, as a share of gross sale price.</div></div>
       <div class="ctl"><label>Vertical duration (months) <span class="val" id="v_vdur"></span></label><input type="range" id="vdur" min="12" max="24" step="1"></div>
     </div>
   </details>
@@ -329,7 +341,6 @@ body.gated{overflow:hidden}
       <div class="ctl"><label>Premium ramp <span class="val" id="v_dRamp"></span></label><input type="range" id="dRamp" min="2" max="8" step="0.5"><div class="hint">Years from opening to full premium.</div></div>
       <div class="ctl"><label>Solar / energy income <span class="val" id="v_solarK"></span></label><input type="range" id="solarK" min="0" max="600" step="25"><div class="hint">Net rooftop / community-solar revenue and net-metering offset.</div></div>
       <div class="ctl"><label>Ancillary income <span class="val" id="v_ancil"></span></label><input type="range" id="ancil" min="0" max="120" step="5"><div class="hint">Per unit / month: storage, parking premium, fees, retail percentage rent.</div></div>
-      <div class="ctl"><label>Commercial rent <span class="val" id="v_comrent"></span></label><input type="range" id="comrent" min="18" max="45" step="0.5"><div class="hint">$/SF/yr on the 45,280 SF commercial program.</div></div>
     </div>
   </details>
 
@@ -465,8 +476,11 @@ body.gated{overflow:hidden}
       <canvas id="cWF"></canvas>
       <table class="wf" id="tWF"></table>
     </div>
-    <div class="card"><h4>Sources &amp; uses</h4><p class="sub">How the capital stack is filled at your current settings.</p><canvas id="cSU"></canvas></div>
-    <div class="card"><h4>Levered cash flow by month</h4><p class="sub">Equity out, then operations and exit.</p><canvas id="cCF"></canvas></div>
+    <div class="card"><h4>Sources &amp; uses</h4><p class="sub">How the capital stack is filled, and where it goes.</p><canvas id="cSU"></canvas><table class="dtab" id="tSU"></table></div>
+    <div class="card"><h4>Stabilized operating statement</h4><p class="sub">Forward 12-month NOI at exit, the income a buyer capitalizes.</p><table class="dtab" id="tOps"></table></div>
+    <div class="card"><h4>Return summary</h4><p class="sub">Levered returns to the equity at your current settings.</p><table class="dtab" id="tRet"></table></div>
+    <div class="card"><h4>Debt &amp; exit</h4><p class="sub">Senior financing and the sale waterfall.</p><table class="dtab" id="tDebt"></table></div>
+    <div class="card full"><h4>Levered cash flow</h4><p class="sub">Equity out during construction, operations through stabilization, then the exit. Monthly detail with an annual summary.</p><canvas id="cCF"></canvas><table class="dtab" id="tAnnual"></table></div>
   </div>
 
   <div class="flag" id="readout"></div>
@@ -524,7 +538,9 @@ const BASE={
  // investor overlay
  ozOn:0,
  // site & buildable envelope
- siteAcres:5.3,maxFAR:2.5,effRatio:0.82
+ siteAcres:5.3,maxFAR:2.5,effRatio:0.82,
+ // commercial leasing & exit
+ retSF:38513,offSF:6767,comVac:0,saleCost:0.01
 };
 
 let P={...BASE};
@@ -532,7 +548,7 @@ const mixOf=p=>[{n:'Studio',u:p.uStudio,sf:p.sfStudio,k:'rStudio'},{n:'1BR',u:p.
 
 function run(p){
   const HUD=p.hudOn>=1;
-  const PS=Math.max(0.1,(p.siteAcres||5.3)/5.3), RET=RETNRA*PS, OFF=OFFNRA*PS, amen=AMEN*PS, demo=DEMO*PS, sitew=SITEW*PS;
+  const PS=Math.max(0.1,(p.siteAcres||5.3)/5.3), RET=(p.retSF!=null?p.retSF:RETNRA)*PS, OFF=(p.offSF!=null?p.offSF:OFFNRA)*PS, amen=AMEN*PS, demo=DEMO*PS, sitew=SITEW*PS, cvac=1-(p.comVac||0);
   const crate=HUD?p.hudRate:p.crate, prate=HUD?p.hudRate:p.prate, amN=(HUD?40:30)*12;
   const VS=15, VE=15+p.vdur-1, OPEN=VE+1, REFI=HUD?OPEN+12:VE+18, EXIT=OPEN+p.exitm-1, N=EXIT+13;
   const MIX=mixOf(p);
@@ -590,14 +606,14 @@ function run(p){
         const r=prate/12;pmt=permOpen*r/(1-Math.pow(1+r,-amN));permBal=permOpen;}
       else if(i>REFI){permBal=permBal*(1+prate/12)-pmt;}
       const mo=i-OPEN;
-      let noi=0,noiR=0;
+      let noi=0,noiR=0,rowStmt=null;
       if(mo>=0){
         const g=Math.pow(1+p.rgrow,mo/12), cg=Math.pow(1+CGROW,mo/12);
         const oR=Math.min(p.occs,OCC0+p.pace*mo), oRet=Math.min(ROCCS,OCC0+p.pace*mo), oOff=Math.min(OOCCS,OCC0+p.pace*mo);
         const dp=1+p.distPrem*Math.min(1,mo/(p.dRamp*12));
         const resB=resAnnual/12*g*oR*dp, resO=resB*OI_R;
-        const retB=RET*p.comrent/12*cg*oRet, retO=retB*OI_C;
-        const offB=OFF*p.comrent/12*cg*oOff, offO=offB*OI_C;
+        const retB=RET*p.comrent/12*cg*oRet*cvac, retO=retB*OI_C;
+        const offB=OFF*p.comrent/12*cg*oOff*cvac, offO=offB*OI_C;
         const park=parkSpaces*PRENT*cg;
         const rev=resB+resO+retB+retO+offB+offO+park;
         const bad=rev*BAD, oxR=resB*opexEff, oxC=(retB+offB)*OPEX_C, oxP=parkSpaces*POPEX/12*Math.pow(1+POPG,mo/12);
@@ -607,8 +623,9 @@ function run(p){
         // is settled against proceeds (below) rather than capitalized into value here.
         noi=rev-bad-oxR-oxC-oxP+extraInc-groundRentM;
         noiR=resB+resO-(resB+resO)*BAD-oxR+extraInc-groundRentM;
+        rowStmt={rentRev:resB+retB+offB+park, othInc:resO+retO+offO+extraInc, credit:bad, opx:oxR+oxC+oxP, grnd:groundRentM, resNOIc:noiR, comNOIc:noi-noiR};
       }
-      rows.push({i,cost,ink,eq,draw,noi,noiR,noiO:noi-noiR,cashAdj:(mo>=0?-cpaceAssessM:0),permBal,pmtPaid:(i>REFI?pmt:0)});
+      rows.push({i,cost,ink,eq,draw,noi,noiR,noiO:noi-noiR,cashAdj:(mo>=0?-cpaceAssessM:0),permBal,pmtPaid:(i>REFI?pmt:0),stmt:rowStmt});
     }
     return {rows,cumEq,fees,intTot,permOpen,pmt,totalCost:prefin+fees+intTot};
   }
@@ -628,7 +645,7 @@ function run(p){
   const {rows,cumEq,permOpen,pmt}=s;
   let fwdR=0,fwdO=0;
   for(let i=EXIT+1;i<=EXIT+12;i++){fwdR+=rows[i].noiR;fwdO+=rows[i].noiO;}
-  const gross=fwdR/p.rcap+fwdO/p.ccap, net=gross*(1-TXN), payoff=rows[EXIT].permBal, proceeds=net-payoff-cpaceProceeds;
+  const gross=fwdR/p.rcap+fwdO/p.ccap, net=gross*(1-(p.saleCost!=null?p.saleCost:TXN)), payoff=rows[EXIT].permBal, proceeds=net-payoff-cpaceProceeds;
   const lev=[],dts=[];
   for(let i=0;i<=EXIT;i++){
     const mo=i-OPEN;
@@ -644,10 +661,23 @@ function run(p){
   const taxRate=0.25, taxable=Math.max(0,profit);
   const levTax=lev.slice(); levTax[levTax.length-1]-=taxable*taxRate;
   const irrAT_noOZ=xirr(levTax,dts), irrAT_OZ=irr;
+  // --- stabilized forward-12 operating statement (the exit-basis NOI) ---
+  let st={rentRev:0,othInc:0,credit:0,opx:0,grnd:0,resNOIc:0,comNOIc:0,noi:0};
+  for(let i=EXIT+1;i<=EXIT+12&&i<rows.length;i++){const rr=rows[i].stmt;if(rr){st.rentRev+=rr.rentRev;st.othInc+=rr.othInc;st.credit+=rr.credit;st.opx+=rr.opx;st.grnd+=rr.grnd;st.resNOIc+=rr.resNOIc;st.comNOIc+=rr.comNOIc;}st.noi+=rows[i].noi;}
+  const egi=st.rentRev+st.othInc-st.credit;
+  const opStmt={rentRev:st.rentRev,othInc:st.othInc,credit:st.credit,egi,opex:st.opx,ground:st.grnd,noi:st.noi,resNOI:st.resNOIc,comNOI:st.comNOIc};
+  // --- annual levered cash flow (grouped from project start) ---
+  const annualCF=[];for(let y=0;y*12<lev.length;y++){let c=0,me=Math.min(lev.length,(y+1)*12);for(let i=y*12;i<me;i++)c+=lev[i];annualCF.push(c);}
+  // --- sources & uses ---
+  const su={uses:{land:landAcq+landdev,hard,soft:soft+other,financing:s.fees+s.intTot,total:totalCost},
+    sources:{gpEquity:GP,lpEquity:p.casheq*1e6,lihtc:p.lihtcEq*1e6,inKind:inkTot,grantsSubsidy:GRANT+subsidy,cpace:cpaceProceeds,seniorLoan:permOpen}};
+  const debt={loan:permOpen,rate:HUD?p.hudRate:p.prate,ltc:permOpen/totalCost,refiMonth:REFI-OPEN,amYears:amN/12,dscr:pmt>0?(fwdR+fwdO)/(12*pmt):0,annualDS:pmt*12};
+  const exitV={gross,net,payoff:rows[EXIT].permBal,proceeds,exitMonth:EXIT-OPEN+1,capR:p.rcap,capC:p.ccap,saleCost:(p.saleCost!=null?p.saleCost:TXN)};
   return {lev,dts,profit,em:neg>0?pos/neg:0,irr,irrAT_noOZ,irrAT_OZ,totalCost,eqTot,cumEq,cashEq,
     yoc:(fwdR+fwdO)/totalCost,dscr:pmt>0?(fwdR+fwdO)/(12*pmt):0,ltc:permOpen/totalCost,
     net,proceeds,permOpen,rows,OPEN,EXIT,resAnnual,resNRA,
-    avgRent:resAnnual/12/Math.max(1,resUnits),resUnits,fwd:fwdR+fwdO,pool,
+    avgRent:resAnnual/12/Math.max(1,resUnits),resUnits,fwd:fwdR+fwdO,fwdR,fwdO,pool,
+    opStmt,annualCF,su,debt,exitV,retSFv:RET,offSFv:OFF,
     HUD,affUnits:p.affShare>0?Math.round(resUnits*p.affShare):0,subsidy,cpaceProceeds,lihtcEqV:p.lihtcEq*1e6};
 }
 function xirr(cf,dts){
@@ -686,8 +716,8 @@ function waterfall(p){
 // ===== UI =====
 const fmt$=x=>(x<0?'-$':'$')+(Math.abs(x)>=1e6?(Math.abs(x)/1e6).toFixed(1)+'M':Math.round(Math.abs(x)/1e3)+'K');
 const fmtP=x=>(100*x).toFixed(1)+'%';
-const SLIDERS=['rStudio','r1br','r2br','r3br','r4br','rth','uStudio','u1br','u2br','u3br','u4br','uth','sfStudio','sf1br','sf2br','sf3br','sf4br','sfth','occs','pace','opexr','rgrow','comrent','hcres','hccont','land','crate','prate','casheq','rcap','ccap','exitm','vdur','siteAcres','maxFAR','effRatio','maxSave','parkCut','greenSave','distPrem','dRamp','solarK','ancil','tif','grants','nmtc','abate','affShare','affDisc','lihtcEq','hudRate','hudLTC','davis','cpace','cpaceRate','glRent'];
-const PCT=['occs','pace','opexr','rgrow','effRatio','hccont','crate','prate','rcap','ccap','greenSave','distPrem','abate','affShare','affDisc','hudRate','hudLTC','davis','cpaceRate'];
+const SLIDERS=['rStudio','r1br','r2br','r3br','r4br','rth','uStudio','u1br','u2br','u3br','u4br','uth','sfStudio','sf1br','sf2br','sf3br','sf4br','sfth','occs','pace','opexr','rgrow','comrent','hcres','hccont','land','crate','prate','casheq','rcap','ccap','exitm','vdur','siteAcres','maxFAR','effRatio','retSF','offSF','comVac','saleCost','maxSave','parkCut','greenSave','distPrem','dRamp','solarK','ancil','tif','grants','nmtc','abate','affShare','affDisc','lihtcEq','hudRate','hudLTC','davis','cpace','cpaceRate','glRent'];
+const PCT=['occs','pace','opexr','rgrow','effRatio','comVac','saleCost','hccont','crate','prate','rcap','ccap','greenSave','distPrem','abate','affShare','affDisc','hudRate','hudLTC','davis','cpaceRate'];
 const MUSD=['land','casheq','tif','grants','nmtc','lihtcEq','cpace'];
 function vlabel(k,v){
   if(PCT.includes(k))return fmtP(v);
@@ -704,6 +734,7 @@ function vlabel(k,v){
   if(['comrent','hcres'].includes(k))return '$'+v;
   if(k==='siteAcres')return (+v).toFixed(1)+' ac';
   if(k==='maxFAR'||k==='farBuilt')return (+v).toFixed(2);
+  if(k==='retSF'||k==='offSF')return Math.round(v).toLocaleString()+' SF';
   if(k==='totalSF')return Math.round(v).toLocaleString()+' SF';
   return '$'+(+v).toFixed(2);
 }
@@ -722,7 +753,7 @@ function delta(el,cur,b,fmt,goodUp=true){
 }
 const COMNRA0=RETNRA+OFFNRA, ACRESF=43560, RESCOUNT=['uStudio','u1br','u2br','u3br','u4br','uth'];
 let envFAR=1.6, holdFAR=true;
-function comNRA(){return COMNRA0*Math.max(0.1,(+P.siteAcres||5.3)/5.3);}
+function comNRA(){return ((+P.retSF||0)+(+P.offSF||0))*Math.max(0.1,(+P.siteAcres||5.3)/5.3);}
 function holdFARscale(){const A=(+P.siteAcres||5.3)*ACRESF,eff=Math.max(0.5,+P.effRatio||0.82);scaleProgramTo(Math.max(0,envFAR*A*eff-comNRA()));}
 function setEff(v){P.effRatio=v;setSlider('effRatio',v,vlabel('effRatio',v));if(holdFAR)holdFARscale();recalc();}
 function envProgram(){
@@ -790,7 +821,7 @@ function recalc(){
   if(r.permOpen>FAC)w.push('Loan exceeds the $95M facility.');
   document.getElementById('status').innerHTML=w.length?'<div class="flag" style="border-color:#d99;background:#fdeeee;margin-top:16px">'+w.join(' ')+'</div>':'';
 
-  drawWaterfall();drawSU(r);drawCF(r);
+  drawWaterfall();drawSU(r);drawCF(r);drawOps(r);drawReturns(r);drawDebt(r);drawAnnual(r);
   markScn(r);
   updateEnvelope();
   // bottom readout
@@ -825,16 +856,64 @@ function drawWaterfall(){
   document.getElementById('tWF').innerHTML=h;
 }
 function drawSU(r){
+  const u=r.su.uses, so=r.su.sources;
   mk('cSU','bar',{labels:['Sources','Uses'],datasets:[
-    {label:'GP equity',data:[GP,0],backgroundColor:'#a8703f'},
-    {label:'LP cash equity',data:[r.cashEq,0],backgroundColor:'#c89a6a'},
-    {label:'In-kind',data:[r.eqTot-r.cumEq,0],backgroundColor:'#e0c9ab'},
-    {label:'LIHTC equity',data:[r.lihtcEqV,0],backgroundColor:'#7d9b8a'},
-    {label:'Grants & subsidy',data:[GRANT+r.subsidy,0],backgroundColor:'#8a9b7d'},
-    {label:'C-PACE',data:[r.cpaceProceeds,0],backgroundColor:'#b9c4a6'},
-    {label:'Perm / senior loan',data:[r.permOpen,0],backgroundColor:'#48593f'},
-    {label:'Total cost',data:[0,r.totalCost],backgroundColor:'#33312e'}]},
-    {plugins:{legend:{labels:{font:{family:'Inter',size:10},boxWidth:11}}},scales:{x:{stacked:true},y:{stacked:true,ticks:{callback:v=>fmt$(v)}}}});
+    {label:'Senior loan',data:[so.seniorLoan,0],backgroundColor:'#48593f'},
+    {label:'GP equity',data:[so.gpEquity,0],backgroundColor:'#a8703f'},
+    {label:'LP cash equity',data:[so.lpEquity,0],backgroundColor:'#c89a6a'},
+    {label:'LIHTC equity',data:[so.lihtc,0],backgroundColor:'#7d9b8a'},
+    {label:'Grants & subsidy',data:[so.grantsSubsidy,0],backgroundColor:'#8a9b7d'},
+    {label:'C-PACE',data:[so.cpace,0],backgroundColor:'#b9c4a6'},
+    {label:'In-kind',data:[so.inKind,0],backgroundColor:'#e0c9ab'},
+    {label:'Land & site',data:[0,u.land],backgroundColor:'#5a544c'},
+    {label:'Hard cost',data:[0,u.hard],backgroundColor:'#33312e'},
+    {label:'Soft cost',data:[0,u.soft],backgroundColor:'#6e6a61'},
+    {label:'Financing & carry',data:[0,u.financing],backgroundColor:'#9a948a'}]},
+    {plugins:{legend:{labels:{font:{family:'Inter',size:9},boxWidth:10}}},scales:{x:{stacked:true},y:{stacked:true,ticks:{callback:v=>fmt$(v)}}}});
+  const sTot=so.gpEquity+so.lpEquity+so.inKind+so.lihtc+so.grantsSubsidy+so.cpace+so.seniorLoan;
+  let h='<tr class="h"><td>Sources</td><td>'+fmt$(sTot)+'</td></tr>';
+  [['Senior loan',so.seniorLoan],['GP equity',so.gpEquity],['LP cash equity',so.lpEquity],['LIHTC equity',so.lihtc],['Grants & subsidy',so.grantsSubsidy],['C-PACE',so.cpace],['In-kind credit',so.inKind]].forEach(x=>{if(x[1]>1)h+='<tr><td>'+x[0]+'</td><td>'+fmt$(x[1])+'</td></tr>';});
+  h+='<tr class="h"><td>Uses</td><td>'+fmt$(u.total)+'</td></tr>';
+  [['Land & site',u.land],['Hard cost',u.hard],['Soft cost',u.soft],['Financing & carry',u.financing]].forEach(x=>{h+='<tr><td>'+x[0]+'</td><td>'+fmt$(x[1])+'</td></tr>';});
+  document.getElementById('tSU').innerHTML=h;
+}
+function drawOps(r){
+  const o=r.opStmt;const row=(k,v,c)=>'<tr'+(c?' class="'+c+'"':'')+'><td>'+k+'</td><td'+(v<0?' class="neg"':'')+'>'+fmt$(v)+'</td></tr>';
+  let h=row('Rental revenue',o.rentRev)+row('Other income',o.othInc)+row('Credit &amp; vacancy loss',-o.credit)
+    +row('Effective gross income',o.egi,'tot')+row('Operating expenses',-o.opex)
+    +(o.ground>1?row('Ground rent',-o.ground):'')+row('Net operating income',o.noi,'tot')
+    +'<tr><td>NOI margin</td><td>'+(100*o.noi/Math.max(1,o.egi)).toFixed(0)+'%</td></tr>'
+    +'<tr><td>Residential / commercial NOI</td><td>'+fmt$(o.resNOI)+' / '+fmt$(o.comNOI)+'</td></tr>'
+    +'<tr><td>Yield on cost (stabilized)</td><td>'+fmtP(r.yoc)+'</td></tr>';
+  document.getElementById('tOps').innerHTML=h;
+}
+function drawReturns(r){
+  const atIRR=P.ozOn>=1?r.irrAT_OZ:r.irrAT_noOZ;const row=(k,v)=>'<tr><td>'+k+'</td><td>'+v+'</td></tr>';
+  let h='<tr class="h"><td>Levered returns</td><td></td></tr>'
+    +row('IRR',isNaN(r.irr)?'n/a':fmtP(r.irr))+row('Equity multiple',r.em.toFixed(2)+'x')
+    +'<tr><td>Levered profit</td><td'+(r.profit<0?' class="neg"':'')+'>'+fmt$(r.profit)+'</td></tr>'
+    +row('Yield on cost (stab.)',fmtP(r.yoc))+row('After-tax IRR'+(P.ozOn>=1?' (OZ)':''),isNaN(atIRR)?'n/a':fmtP(atIRR))
+    +'<tr class="h"><td>Equity &amp; outcomes</td><td></td></tr>'
+    +row('Total equity',fmt$(r.eqTot))+row('LP cash equity',fmt$(r.cashEq))+row('Total project cost',fmt$(r.totalCost))
+    +row('Affordable homes',(r.affUnits||0)+' of '+r.resUnits);
+  document.getElementById('tRet').innerHTML=h;
+}
+function drawDebt(r){
+  const d=r.debt,e=r.exitV;const row=(k,v,c)=>'<tr'+(c?' class="'+c+'"':'')+'><td>'+k+'</td><td'+(typeof v==='number'&&v<0?' class="neg"':'')+'>'+(typeof v==='number'?fmt$(v):v)+'</td></tr>';
+  let h='<tr class="h"><td>Senior financing</td><td></td></tr>'
+    +row('Loan amount',d.loan)+'<tr><td>Loan-to-cost</td><td>'+fmtP(d.ltc)+'</td></tr>'
+    +'<tr><td>Rate / amortization</td><td>'+fmtP(d.rate)+' / '+d.amYears+'yr</td></tr>'
+    +row('Annual debt service',d.annualDS)+'<tr><td>Stabilized DSCR</td><td>'+d.dscr.toFixed(2)+(r.HUD?' (HUD)':'')+'</td></tr>'
+    +'<tr class="h"><td>Exit, month '+e.exitMonth+'</td><td></td></tr>'
+    +row('Gross sale value',e.gross)+row('Less cost of sale',-(e.gross-e.net))+row('Less loan payoff',-e.payoff)
+    +(r.cpaceProceeds>1?row('Less C-PACE assumed',-r.cpaceProceeds):'')+row('Net proceeds to equity',e.proceeds,'tot')
+    +'<tr><td>Exit cap (res / com)</td><td>'+fmtP(e.capR)+' / '+fmtP(e.capC)+'</td></tr>';
+  document.getElementById('tDebt').innerHTML=h;
+}
+function drawAnnual(r){
+  let h='<tr class="h"><td>Year</td><td>Levered cash flow</td></tr>';
+  r.annualCF.forEach((c,i)=>{h+='<tr><td>Year '+(i+1)+' &middot; '+(2026+i)+'</td><td'+(c<0?' class="neg"':'')+'>'+fmt$(c)+'</td></tr>';});
+  document.getElementById('tAnnual').innerHTML=h;
 }
 function drawCF(r){
   const mklab=r.lev.map((_,i)=>new Date(2026,3+i,1).toLocaleDateString('en-US',{month:'short',year:'2-digit'}));
