@@ -188,6 +188,19 @@ body.gated{overflow:hidden}
 .activehdr .ah-name{font-family:var(--serif);font-size:19px;color:var(--ink-deep);line-height:1.2}
 .activehdr .ah-desc{font-size:12.5px;color:#4a463f;line-height:1.5;margin-top:5px}
 .sclib .scnwrap{margin:0}
+.sclib .scnrow{display:flex;flex-direction:column;gap:7px}
+.sclib .scnhead{margin:0 0 7px}
+.sclib .scnhead[style]{margin-top:16px}
+.sclib .scnsub{display:none}
+.sclib .scn{padding:9px 11px}
+.sclib .scn .scn-d{display:none;margin-top:6px}
+.sclib .scn.on .scn-d,.sclib .scn:hover .scn-d{display:block}
+.dochdr{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);border-radius:8px;padding:13px 18px;margin-bottom:14px;flex-wrap:wrap}
+.dochdr .dh-title{font-family:var(--serif);font-size:16px;color:var(--ink-deep);line-height:1.25}
+.dochdr .dh-meta{font-size:10px;color:#8a857a;letter-spacing:.06em;margin-top:4px;text-transform:uppercase;font-weight:600}
+.dochdr .dh-btn{font-size:11.5px;font-weight:600;color:var(--green);background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:7px 13px;cursor:pointer;white-space:nowrap}
+.dochdr .dh-btn:hover{border-color:var(--terra)}
+.ctxbox{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:14px}
 #scntip{position:fixed;z-index:500;max-width:288px;background:#1f1d1a;color:#e9e5da;border:1px solid #4a453a;border-radius:8px;padding:11px 13px;font-size:12px;line-height:1.45;box-shadow:0 12px 30px rgba(0,0,0,.42);pointer-events:none;opacity:0;display:none}
 #scntip .tt-t{font-weight:700;color:#fff;margin-bottom:4px}
 #scntip .tt-r{margin-top:7px;color:#d9a26c;font-weight:600;font-variant-numeric:tabular-nums}
@@ -253,7 +266,6 @@ body.gated{overflow:hidden}
     <span class="sb-cap">Build &amp; capital</span>
     <div class="sb-btns">
       <button class="sbtn" data-k="base" type="button" title="Base - the honest floor (double-loaded)">Base</button>
-      <button class="sbtn" data-k="P" type="button" title="P - Point Access Block design move">P</button>
       <button class="sbtn" data-k="A" type="button" title="A - Market-rate on PAB">A</button>
       <button class="sbtn" data-k="B" type="button" title="B - Attainable + tax-credit equity">B</button>
       <button class="sbtn" data-k="C" type="button" title="C - Catalytic public partnership">C</button>
@@ -276,10 +288,10 @@ body.gated{overflow:hidden}
 <aside class="panel">
   <div class="whatis">
     <div class="wi-h">What is the Now City Upside Explorer?</div>
-    <p class="wi-p">A live model of one real neighborhood. It starts with an honest truth, that built the ordinary way this project loses money, then shows how each real move (a smarter building, public partnerships, affordable-housing finance) changes the result. Pick a scenario in the green bar above, and the numbers and charts on the right update instantly.</p>
+    <p class="wi-p">A live model of one real neighborhood. It starts with an honest truth, that built the ordinary way this project loses money, then shows how each real move (a smarter building, public partnerships, affordable-housing finance) changes the result. Pick a scenario from the dark bar above, and the numbers and charts on the right update instantly.</p>
     <details class="wi-more"><summary>How to read it</summary><div class="wi-md">
       <p><strong>The big chart</strong> on the right shows the return climbing from the red starting point, one kind of move at a time, so you can see what each one is worth.</p>
-      <p><strong>The scenarios</strong> are nine worked examples, from the plain base case to a fully optimized version with affordable homes. Pick one from the bar, hover a button to read what it does, then open any panel below to change the assumptions yourself.</p>
+      <p><strong>The scenarios</strong> are nine worked examples, from the plain base case to a fully optimized version with affordable homes. Pick one from the scenario bar, hover a button to read what it does, then open any panel below to change the assumptions yourself.</p>
       <p style="color:#8a857a;font-size:11.5px;margin-top:6px">A planning tool for discussion, not an offer of securities. Figures are estimates to be confirmed in diligence. Questions, or a scenario worth keeping? Export it below and email erik@nowcitylabs.com.</p>
     </div></details>
   </div>
@@ -291,17 +303,12 @@ body.gated{overflow:hidden}
   <details class="grp"><summary><span>Scenario library &middot; all nine</span><span class="chev">&#9654;</span></summary>
     <div class="body sclib">
   <div class="scnwrap">
-    <div class="scnhead"><span class="scnlabel">Build &amp; capital</span><span class="scnsub">The honest floor, the single-stair Point Access Block design move that transforms it, and three ways a team stacks capital on that efficient base. Click any card, or use the scenario bar pinned at the top of the page to toggle them as you scroll. Or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
+    <div class="scnhead"><span class="scnlabel">Build &amp; capital</span><span class="scnsub">The honest floor built the conventional way, then three ways a team builds and finances the same homes as a single-stair Point Access Block. Hover a button in the bar to read each one, or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
     <div class="scnrow">
       <div class="scn" data-k="base" role="button" tabindex="0">
         <div class="scn-t">Base &middot; the honest floor</div>
-        <div class="scn-d">A conventional double-loaded podium at market Salem rents, 82% efficient, no subsidy or design optimization. What the deal returns on its own, and why the corridor sits undeveloped. Every path builds from here.</div>
+        <div class="scn-d">The same homes built the conventional way: a double-loaded corridor podium at market Salem rents, no subsidy. This is what the deal returns on its own, and why the corridor sits undeveloped. Every other scenario is built as a single-stair Point Access Block, the jump from here to any of them is the value of the better building.</div>
         <div class="scn-r" id="r_base">-</div>
-      </div>
-      <div class="scn" data-k="P" role="button" tabindex="0">
-        <div class="scn-t">P &middot; Point Access Block</div>
-        <div class="scn-d">The same site and rents, rebuilt as a single-stair PAB: ~93% efficiency (vs 82%) fits 15% more homes in the same shell, slab-on-grade construction cuts hard cost, and dual-aspect units lease better. The design move alone clears the floor, before a dollar of subsidy.</div>
-        <div class="scn-r" id="r_P">-</div>
       </div>
       <div class="scn" data-k="A" role="button" tabindex="0">
         <div class="scn-t">A &middot; Market-rate on PAB</div>
@@ -341,22 +348,6 @@ body.gated{overflow:hidden}
         <div class="scn-d">Everything a sophisticated team stacks on PAB: industrialized cost, placemaking, solar, the public toolkit, and a 20% affordable sleeve. The credible ceiling, strong institutional returns and ~95 affordable homes at once.</div>
         <div class="scn-r" id="r_G">-</div>
       </div>
-    </div>
-  </div>
-    </div>
-  </details>
-
-  <details class="grp"><summary><span>Property &amp; site facts</span><span class="chev">&#9654;</span></summary>
-    <div class="body">
-  <div class="ctx">
-    <div class="ctx-row">
-      <div><span class="k">Project</span><span class="v">Edgewater - Now City West Salem, Phase One</span></div>
-      <div><span class="k">Address</span><span class="v">740 Bassett St NW, Salem, OR 97304</span></div>
-      <div><span class="k">Site</span><span class="v">5.29 acres (Phase 1)</span></div>
-      <div><span class="k">Setting</span><span class="v">West bank of the Willamette, across from downtown Salem</span></div>
-      <div><span class="k">Jurisdiction</span><span class="v">City of Salem &middot; West Salem Urban Renewal Area</span></div>
-      <div><span class="k">Zoning</span><span class="v">Mixed-Use (rezoned from industrial, 2022)</span></div>
-      <div><span class="k">Program</span><span class="v">~420 attainable homes + ground-floor commercial + parking</span></div>
     </div>
   </div>
     </div>
@@ -499,6 +490,22 @@ body.gated{overflow:hidden}
 </aside>
 
 <main class="main">
+  <div class="dochdr">
+    <div><div class="dh-title">Edgewater West Salem &middot; Phase One Underwriting Model</div>
+      <div class="dh-meta">Now City Upside Explorer &middot; v1.0 &middot; June 2026 &middot; Confidential</div></div>
+    <button class="dh-btn" id="ctxBtn" type="button">Property &amp; site facts</button>
+  </div>
+  <div class="ctxbox" id="ctxbox" hidden>
+    <div class="ctx"><div class="ctx-row">
+      <div><span class="k">Project</span><span class="v">Edgewater - Now City West Salem, Phase One</span></div>
+      <div><span class="k">Address</span><span class="v">740 Bassett St NW, Salem, OR 97304</span></div>
+      <div><span class="k">Site</span><span class="v">5.29 acres (Phase 1)</span></div>
+      <div><span class="k">Setting</span><span class="v">West bank of the Willamette, across from downtown Salem</span></div>
+      <div><span class="k">Jurisdiction</span><span class="v">City of Salem &middot; West Salem Urban Renewal Area</span></div>
+      <div><span class="k">Zoning</span><span class="v">Mixed-Use (rezoned from industrial, 2022)</span></div>
+      <div><span class="k">Program</span><span class="v">~420 attainable homes + ground-floor commercial + parking</span></div>
+    </div></div>
+  </div>
   <div class="activehdr" id="activehdr">
     <div class="ah-top"><span class="ah-tag">Now showing</span><span class="ah-chip" id="ahChip">-</span></div>
     <div class="ah-name" id="ahName">-</div>
@@ -997,7 +1004,7 @@ function buildExport(){
   const mix=mixOf(P).map(m=>({type:m.n,units:+P[m.k.replace(/^r/,'u').replace('uStudio','uStudio')]||0,sf:+m.sf||0,rentPSF:+P[m.k]||0,units2:m.u,nra:m.u*m.sf,rentMo:Math.round(m.sf*P[m.k])}));
   const um=mixOf(P).map(m=>({type:m.n,units:m.u,sizeSF:m.sf,rentPSF:+P[m.k],rentPerUnitMo:Math.round(m.sf*P[m.k]),nraSF:m.u*m.sf}));
   return {
-    meta:{tool:'Now City Upside Explorer',brand:'Now City',project:'Edgewater West Salem - Phase One',scenario:ak||'custom',exported:new Date().toISOString(),passcodeNote:'Planning model for stakeholder discussion. Not an offer of securities.'},
+    meta:{tool:'Now City Upside Explorer',brand:'Now City',model:'Edgewater West Salem - Phase One Underwriting Model',version:'v1.0',project:'Edgewater West Salem - Phase One',scenario:ak||'custom',exported:new Date().toISOString(),passcodeNote:'Planning model for stakeholder discussion. Not an offer of securities.'},
     envelope:{siteAcres:+P.siteAcres,maxFAR:+P.maxFAR,effRatio:+P.effRatio,residentialNRA:Math.round(r.resNRA),commercialNRA:Math.round(r.retSFv+r.offSFv),totalRentableSF:Math.round(r.resNRA+r.retSFv+r.offSFv),homes:r.resUnits,affordableHomes:r.affUnits},
     unitMix:um,
     returns:{leveredIRR:+(100*nz(r.irr)).toFixed(2),afterTaxIRR:+(100*nz(P.ozOn>=1?r.irrAT_OZ:r.irrAT_noOZ)).toFixed(2),equityMultiple:+r.em.toFixed(3),leveredProfit:Math.round(r.profit),yieldOnCost:+(100*r.yoc).toFixed(2),stabilizedDSCR:+r.dscr.toFixed(2),totalEquity:Math.round(r.eqTot),lpCashEquity:Math.round(r.cashEq),totalCost:Math.round(r.totalCost)},
@@ -1014,7 +1021,8 @@ document.getElementById('bExport').onclick=()=>{
   const s=JSON.stringify(buildExport(),null,1);
   navigator.clipboard&&navigator.clipboard.writeText(s);
   const b=new Blob([s],{type:'application/json'});const a=document.createElement('a');
-  a.href=URL.createObjectURL(b);a.download='ncue-scenario.json';a.click();
+  const ak=(typeof activeKey==='function'?activeKey():null)||'custom';
+  a.href=URL.createObjectURL(b);a.download='Edgewater-Phase1-NCUE-v1.0-'+ak+'-'+new Date().toISOString().slice(0,10)+'.json';a.click();
   document.getElementById('exportNote').textContent='Scenario copied and downloaded. Send the JSON to Claude (or use the Now City Upside Explorer skill) to rebuild it as a branded Excel model.';
 };
 document.getElementById('bImport').onclick=()=>{
@@ -1025,7 +1033,6 @@ document.getElementById('bImport').onclick=()=>{
 };
 const SCN={
  base:{inputs:{}},
- P:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:35,parkCut:20,distPrem:0.02,exitm:24,rcap:0.055,ccap:0.07}},
  A:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:36,parkCut:22,distPrem:0.03,solarK:120,ancil:22,comrent:27,tif:4,grants:2,abate:0.03,exitm:24,rcap:0.055,ccap:0.07}},
  B:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:38,parkCut:25,distPrem:0.03,solarK:150,ancil:22,comrent:27,abate:0.04,affShare:0.25,affDisc:0.25,lihtcEq:9,hudOn:1,cpace:5,exitm:48,rcap:0.0525,ccap:0.0675}},
  C:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:35,parkCut:22,distPrem:0.03,solarK:150,ancil:22,comrent:27,tif:7,grants:3,nmtc:2,abate:0.045,affShare:0.15,affDisc:0.25,lihtcEq:7,exitm:36,rcap:0.0525,ccap:0.0675}},
@@ -1076,6 +1083,8 @@ const _b2=document.getElementById('bReset2'); if(_b2)_b2.addEventListener('click
       let x=Math.min(rc.left,window.innerWidth-tw-12);tip.style.left=Math.max(8,x)+'px';tip.style.top=(rc.bottom+8)+'px';});
     b.addEventListener('mouseleave',()=>{tip.style.opacity='0';tip.style.display='none';});
   });})();
+(function(){const cb=document.getElementById('ctxBtn'),cx=document.getElementById('ctxbox');
+  if(cb&&cx)cb.addEventListener('click',()=>{cx.hidden=!cx.hidden;cb.style.borderColor=cx.hidden?'':'var(--terra)';cb.style.color=cx.hidden?'':'var(--terra)';});})();
 applyScn('base');
 </script>
 </body>
