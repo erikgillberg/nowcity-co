@@ -248,7 +248,8 @@ body.gated{overflow:hidden}
   <details class="grp" open><summary><span>Base case &middot; rents, mix, costs, exit</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:2px 0 10px">Site &amp; buildable envelope</h4>
-      <div class="ctl"><label>Site area <span class="val" id="v_siteAcres"></span></label><input type="range" id="siteAcres" min="1" max="25" step="0.1"><div class="hint">Phase 1 parcel. Land purchase price is set separately below.</div></div>
+      <div class="ctl"><label>Site area <span class="val" id="v_siteAcres"></span></label><input type="range" id="siteAcres" min="1" max="25" step="0.1"><div class="hint">Phase 1 is 5.3 acres. Drag down (e.g. 2.3 for Phase 1A) to resize the parcel. Land purchase price is set separately below.</div></div>
+      <div class="toggle"><span class="tl">Hold FAR when site area changes<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">On: program + unit counts scale to the new parcel at the same density. Off: program stays, FAR moves.</span></span><button id="t_holdFAR" class="on">On</button></div>
       <div class="ctl"><label>Zoning max FAR <span class="val" id="v_maxFAR"></span></label><input type="range" id="maxFAR" min="0.5" max="6" step="0.1"><div class="hint">Floor-area-ratio cap. The built program is flagged if it exceeds this.</div></div>
       <div class="ctl"><label>Building efficiency (rentable/gross) <span class="val" id="v_effRatio"></span></label><input type="range" id="effRatio" min="0.7" max="0.92" step="0.01"><div class="hint">Net rentable area as a share of gross floor area; the rest is circulation, walls, lobbies, mechanical.</div></div>
       <div class="ctl"><label>Total rentable SF (built) <span class="val" id="v_totalSF"></span></label><input type="range" id="totalSF" min="120000" max="520000" step="1000"><div class="hint">Drag to size the building; residential unit counts scale to match (unit sizes and commercial held fixed).</div></div>
@@ -702,6 +703,7 @@ function delta(el,cur,b,fmt,goodUp=true){
   e.className='d '+((d>0)===goodUp?'up':'dn');
 }
 const COMNRA=RETNRA+OFFNRA, ACRESF=43560, RESCOUNT=['uStudio','u1br','u2br','u3br','u4br','uth'];
+let envFAR=1.6, holdFAR=true;
 function envProgram(){
   const M=mixOf(P);
   const resNRA=M.reduce((a,m)=>a+(+m.u||0)*(+m.sf||0),0);
@@ -731,6 +733,7 @@ function updateEnvelope(){
   const e=envProgram();
   setSlider('totalSF',Math.round(e.totalRentable),Math.round(e.totalRentable).toLocaleString()+' SF');
   setSlider('farBuilt',e.builtFAR.toFixed(2),e.builtFAR.toFixed(2));
+  envFAR=e.builtFAR;
   const n=document.getElementById('envNote'); if(!n)return;
   const pct=Math.round(e.util*100), mf=(+P.maxFAR).toFixed(2);
   let msg,col;
@@ -826,6 +829,7 @@ function mk(id,type,data,opts){
 
 // wire sliders
 SLIDERS.forEach(k=>{
+  if(k==='siteAcres')return;
   const el=document.getElementById(k); if(!el)return;
   el.addEventListener('input',e=>{P[k]=+e.target.value||0;const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);recalc();});
 });
@@ -836,6 +840,13 @@ SLIDERS.forEach(k=>{
   const fr=document.getElementById('farBuilt');
   if(fr)fr.addEventListener('input',e=>{const A=(+P.siteAcres||0)*ACRESF,eff=+P.effRatio||0.82;
     scaleProgramTo(Math.max(0,(+e.target.value||0)*A*eff-COMNRA));recalc();});
+  const sa=document.getElementById('siteAcres');
+  if(sa)sa.addEventListener('input',e=>{const na=+e.target.value||0;P.siteAcres=na;
+    const lb=document.getElementById('v_siteAcres');if(lb)lb.textContent=vlabel('siteAcres',na);
+    if(holdFAR){const A=na*ACRESF,eff=+P.effRatio||0.82;scaleProgramTo(Math.max(0,envFAR*A*eff-COMNRA));}
+    recalc();});
+  const hf=document.getElementById('t_holdFAR');
+  if(hf)hf.addEventListener('click',()=>{holdFAR=!holdFAR;hf.classList.toggle('on',holdFAR);hf.textContent=holdFAR?'On':'Off';});
 })();
 // wire toggles
 ['hudOn','glOn','ozOn'].forEach(k=>{
