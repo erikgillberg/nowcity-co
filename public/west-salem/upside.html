@@ -247,7 +247,14 @@ body.gated{overflow:hidden}
   <div class="modlabel">Base Case</div>
   <details class="grp" open><summary><span>Base case &middot; rents, mix, costs, exit</span><span class="chev">&#9654;</span></summary>
     <div class="body">
-      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:2px 0 10px">Residential rents ($/SF/mo)</h4>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:2px 0 10px">Site &amp; buildable envelope</h4>
+      <div class="ctl"><label>Site area <span class="val" id="v_siteAcres"></span></label><input type="range" id="siteAcres" min="1" max="25" step="0.1"><div class="hint">Phase 1 parcel. Land purchase price is set separately below.</div></div>
+      <div class="ctl"><label>Zoning max FAR <span class="val" id="v_maxFAR"></span></label><input type="range" id="maxFAR" min="0.5" max="6" step="0.1"><div class="hint">Floor-area-ratio cap. The built program is flagged if it exceeds this.</div></div>
+      <div class="ctl"><label>Building efficiency (rentable/gross) <span class="val" id="v_effRatio"></span></label><input type="range" id="effRatio" min="0.7" max="0.92" step="0.01"><div class="hint">Net rentable area as a share of gross floor area; the rest is circulation, walls, lobbies, mechanical.</div></div>
+      <div class="ctl"><label>Total rentable SF (built) <span class="val" id="v_totalSF"></span></label><input type="range" id="totalSF" min="120000" max="520000" step="1000"><div class="hint">Drag to size the building; residential unit counts scale to match (unit sizes and commercial held fixed).</div></div>
+      <div class="ctl"><label>FAR (built) <span class="val" id="v_farBuilt"></span></label><input type="range" id="farBuilt" min="0.3" max="6" step="0.05"><div class="hint">Same envelope as total rentable SF, expressed as floor-area ratio. The two move together.</div></div>
+      <div id="envNote" class="hint" style="margin:8px 0 4px;line-height:1.5"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Residential rents ($/SF/mo)</h4>
       <div class="ctl"><label>Studio <span class="val" id="v_rStudio"></span></label><input type="range" id="rStudio" min="1.5" max="4" step="0.01"></div>
       <div class="ctl"><label>1 Bedroom <span class="val" id="v_r1br"></span></label><input type="range" id="r1br" min="1.5" max="4" step="0.01"></div>
       <div class="ctl"><label>2 Bedroom <span class="val" id="v_r2br"></span></label><input type="range" id="r2br" min="1.5" max="4" step="0.01"></div>
@@ -498,7 +505,9 @@ const BASE={
  // financing structure
  hudOn:0,hudRate:0.0575,hudLTC:0.87,davis:0.08,cpace:0,cpaceRate:0.065,glOn:0,glRent:0.35,
  // investor overlay
- ozOn:0
+ ozOn:0,
+ // site & buildable envelope
+ siteAcres:5.3,maxFAR:2.5,effRatio:0.82
 };
 
 let P={...BASE};
@@ -658,8 +667,8 @@ function waterfall(p){
 // ===== UI =====
 const fmt$=x=>(x<0?'-$':'$')+(Math.abs(x)>=1e6?(Math.abs(x)/1e6).toFixed(1)+'M':Math.round(Math.abs(x)/1e3)+'K');
 const fmtP=x=>(100*x).toFixed(1)+'%';
-const SLIDERS=['rStudio','r1br','r2br','r3br','r4br','rth','uStudio','u1br','u2br','u3br','u4br','uth','sfStudio','sf1br','sf2br','sf3br','sf4br','sfth','occs','pace','opexr','rgrow','comrent','hcres','hccont','land','crate','prate','casheq','rcap','ccap','exitm','vdur','maxSave','parkCut','greenSave','distPrem','dRamp','solarK','ancil','tif','grants','nmtc','abate','affShare','affDisc','lihtcEq','hudRate','hudLTC','davis','cpace','cpaceRate','glRent'];
-const PCT=['occs','pace','opexr','rgrow','hccont','crate','prate','rcap','ccap','greenSave','distPrem','abate','affShare','affDisc','hudRate','hudLTC','davis','cpaceRate'];
+const SLIDERS=['rStudio','r1br','r2br','r3br','r4br','rth','uStudio','u1br','u2br','u3br','u4br','uth','sfStudio','sf1br','sf2br','sf3br','sf4br','sfth','occs','pace','opexr','rgrow','comrent','hcres','hccont','land','crate','prate','casheq','rcap','ccap','exitm','vdur','siteAcres','maxFAR','effRatio','maxSave','parkCut','greenSave','distPrem','dRamp','solarK','ancil','tif','grants','nmtc','abate','affShare','affDisc','lihtcEq','hudRate','hudLTC','davis','cpace','cpaceRate','glRent'];
+const PCT=['occs','pace','opexr','rgrow','effRatio','hccont','crate','prate','rcap','ccap','greenSave','distPrem','abate','affShare','affDisc','hudRate','hudLTC','davis','cpaceRate'];
 const MUSD=['land','casheq','tif','grants','nmtc','lihtcEq','cpace'];
 function vlabel(k,v){
   if(PCT.includes(k))return fmtP(v);
@@ -674,6 +683,9 @@ function vlabel(k,v){
   if(k==='dRamp')return v+' yrs';
   if(['exitm','vdur'].includes(k))return v+' mo';
   if(['comrent','hcres'].includes(k))return '$'+v;
+  if(k==='siteAcres')return (+v).toFixed(1)+' ac';
+  if(k==='maxFAR'||k==='farBuilt')return (+v).toFixed(2);
+  if(k==='totalSF')return Math.round(v).toLocaleString()+' SF';
   return '$'+(+v).toFixed(2);
 }
 let charts={};
@@ -688,6 +700,44 @@ function delta(el,cur,b,fmt,goodUp=true){
   if(Math.abs(d)<1e-9){e.textContent='base';e.className='d';return;}
   e.textContent=(d>0?'+':'')+fmt(d)+' vs base';
   e.className='d '+((d>0)===goodUp?'up':'dn');
+}
+const COMNRA=RETNRA+OFFNRA, ACRESF=43560, RESCOUNT=['uStudio','u1br','u2br','u3br','u4br','uth'];
+function envProgram(){
+  const M=mixOf(P);
+  const resNRA=M.reduce((a,m)=>a+(+m.u||0)*(+m.sf||0),0);
+  const resUnits=M.reduce((a,m)=>a+(+m.u||0),0);
+  const totalRentable=resNRA+COMNRA;
+  const A=Math.max(1,(+P.siteAcres||0)*ACRESF);
+  const eff=Math.max(0.5,+P.effRatio||0.82);
+  const builtFAR=(totalRentable/eff)/A;
+  const util=builtFAR/Math.max(0.01,+P.maxFAR||1);
+  const du=resUnits/Math.max(0.01,+P.siteAcres||1);
+  return {resNRA,resUnits,totalRentable,builtFAR,util,du};
+}
+function setSlider(id,val,lab){const el=document.getElementById(id);if(el)el.value=val;const s=document.getElementById('v_'+id);if(s&&lab!=null)s.textContent=lab;}
+function scaleProgramTo(targetRes){
+  const cur=mixOf(P).reduce((a,m)=>a+(+m.u||0)*(+m.sf||0),0);
+  let f;
+  if(targetRes<=0){RESCOUNT.forEach(k=>P[k]=0);}
+  else{
+    if(cur<1){const bRes=mixOf(BASE).reduce((a,m)=>a+m.u*m.sf,0);f=targetRes/bRes;RESCOUNT.forEach(k=>P[k]=BASE[k]);}
+    else f=targetRes/cur;
+    RESCOUNT.forEach(k=>{const el=document.getElementById(k);const mx=el?(+el.max||1e9):1e9;
+      P[k]=Math.min(mx,Math.max(0,Math.round((+P[k]||0)*f)));});
+  }
+  RESCOUNT.forEach(k=>setSlider(k,P[k],vlabel(k,P[k])));
+}
+function updateEnvelope(){
+  const e=envProgram();
+  setSlider('totalSF',Math.round(e.totalRentable),Math.round(e.totalRentable).toLocaleString()+' SF');
+  setSlider('farBuilt',e.builtFAR.toFixed(2),e.builtFAR.toFixed(2));
+  const n=document.getElementById('envNote'); if(!n)return;
+  const pct=Math.round(e.util*100), mf=(+P.maxFAR).toFixed(2);
+  let msg,col;
+  if(e.util>1.001){col='#b04a2f';msg='<strong>Over the zoning cap.</strong> Built FAR '+e.builtFAR.toFixed(2)+' exceeds the '+mf+' max by '+Math.round((e.util-1)*100)+'% - you would need a variance, or fewer / smaller units.';}
+  else if(e.util<0.5){col='#9a7d2f';msg='<strong>Under-built.</strong> FAR '+e.builtFAR.toFixed(2)+' uses only '+pct+'% of the '+mf+' allowable; there may be density upside.';}
+  else{col='#3c7a3c';msg='<strong>Within the envelope.</strong> FAR '+e.builtFAR.toFixed(2)+' of '+mf+' max ('+pct+'%).';}
+  n.innerHTML='<span style="color:'+col+'">'+msg+'</span><br>'+Math.round(e.totalRentable).toLocaleString()+' rentable SF &middot; '+e.resUnits+' homes &middot; '+e.du.toFixed(0)+' du/acre';
 }
 function recalc(){
   const r=run(P);
@@ -717,6 +767,7 @@ function recalc(){
 
   drawWaterfall();drawSU(r);drawCF(r);
   markScn(r);
+  updateEnvelope();
   // bottom readout
   const cleared=nz(r.irr)>=0.15;
   const ro=document.getElementById('readout');
@@ -778,6 +829,14 @@ SLIDERS.forEach(k=>{
   const el=document.getElementById(k); if(!el)return;
   el.addEventListener('input',e=>{P[k]=+e.target.value||0;const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);recalc();});
 });
+// envelope driver sliders: rescale residential counts to hit a target
+(function(){
+  const t=document.getElementById('totalSF');
+  if(t)t.addEventListener('input',e=>{scaleProgramTo(Math.max(COMNRA,(+e.target.value||0))-COMNRA);recalc();});
+  const fr=document.getElementById('farBuilt');
+  if(fr)fr.addEventListener('input',e=>{const A=(+P.siteAcres||0)*ACRESF,eff=+P.effRatio||0.82;
+    scaleProgramTo(Math.max(0,(+e.target.value||0)*A*eff-COMNRA));recalc();});
+})();
 // wire toggles
 ['hudOn','glOn','ozOn'].forEach(k=>{
   const b=document.getElementById('t_'+k); if(!b)return;
