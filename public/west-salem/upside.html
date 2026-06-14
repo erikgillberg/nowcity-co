@@ -242,6 +242,7 @@ body.gated{overflow:hidden}
 
   <div class="btns" style="margin-bottom:16px">
     <button id="bReset">Reset to base-case floor</button>
+    <button id="toggleAll" type="button">Collapse all</button>
   </div>
 
   <div class="modlabel">Base Case</div>
@@ -899,6 +900,11 @@ document.querySelectorAll('.scn').forEach(e=>{const k=e.getAttribute('data-k');
   e.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();applyScn(k);}});
   const chip=document.getElementById('r_'+k); if(chip)chip.innerHTML=scnChip(k);});
 document.querySelectorAll('.sbtn').forEach(b=>{const k=b.getAttribute('data-k');b.addEventListener('click',()=>applyScn(k));});
+(function(){const tg=document.getElementById('toggleAll');if(!tg)return;
+  const grps=()=>document.querySelectorAll('aside.panel details.grp');
+  const refresh=()=>{const anyOpen=[...grps()].some(d=>d.open);tg.textContent=anyOpen?'Collapse all':'Expand all';};
+  tg.addEventListener('click',()=>{const anyOpen=[...grps()].some(d=>d.open);grps().forEach(d=>d.open=!anyOpen);refresh();});
+  grps().forEach(d=>d.addEventListener('toggle',refresh));refresh();})();
 const _b2=document.getElementById('bReset2'); if(_b2)_b2.addEventListener('click',ev=>{ev.preventDefault();document.getElementById('bReset').click();});
 applyScn('base');
 </script>
