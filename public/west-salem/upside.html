@@ -171,6 +171,12 @@ body.gated{overflow:hidden}
 .scnbar .sb-read{margin-left:auto;font-size:12px;color:#cfc9bd;font-variant-numeric:tabular-nums;white-space:nowrap}
 .scnbar .sb-read strong{color:var(--cream);font-family:var(--serif);font-weight:700}
 .whatis{background:#fff;border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:8px;margin-bottom:4px}
+.term{border-bottom:1px dotted var(--terra);cursor:help}
+#gtip{position:fixed;z-index:600;max-width:300px;background:#1f1d1a;color:#e9e5da;border:1px solid #4a453a;border-radius:7px;padding:9px 12px;font-size:12px;line-height:1.45;box-shadow:0 12px 30px rgba(0,0,0,.42);pointer-events:none;display:none;opacity:0}
+.gloss{font-size:12.5px}
+.gloss dt{font-weight:700;color:var(--green);margin-top:10px}
+.gloss dt:first-child{margin-top:0}
+.gloss dd{color:#4a463f;line-height:1.5;margin:2px 0 0}
 .whatis>summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:14.5px;color:var(--green);padding:13px 15px;display:flex;justify-content:space-between;align-items:center;gap:10px}
 .whatis>summary::-webkit-details-marker{display:none}
 .whatis>summary::after{content:"+";font-family:var(--sans);font-weight:700;color:var(--terra);font-size:18px;line-height:1}
@@ -284,13 +290,14 @@ body.gated{overflow:hidden}
 </div>
 
 <div id="scntip"></div>
+<div id="gtip"></div>
 <div class="layout">
 <aside class="panel">
   <details class="whatis">
     <summary>Upside Explorer: why, what &amp; how it works</summary>
     <div class="wi-body">
       <p class="wi-p"><strong>Why it exists.</strong> Built the ordinary way, many worthwhile projects lose money on paper, so they never get built. This tool shows, transparently, how a skilled team closes that gap with real, defensible moves rather than wishful assumptions.</p>
-      <p class="wi-p"><strong>What it is.</strong> A live financial model of a real project. It starts from the honest base case (what the project returns built conventionally, with nothing added) and lets you stack on each real move, a more efficient building, public partnerships, affordable-housing finance, and watch the return respond instantly.</p>
+      <p class="wi-p"><strong>What it is.</strong> A live financial model of a real ground-up multifamily project (it is built for rental schemes of roughly 100 homes and up). It starts from the honest base case (what the project returns built conventionally, with nothing added) and lets you stack on each real move, a more efficient building, public partnerships, affordable-housing finance, and watch the return respond instantly.</p>
       <p class="wi-p" style="margin-bottom:3px"><strong>How to use it.</strong></p>
       <ol class="wi-steps">
         <li>Pick a scenario from the dark bar at the top. The numbers and charts on the right update at once.</li>
@@ -318,7 +325,7 @@ body.gated{overflow:hidden}
       </div>
       <div class="scn" data-k="A" role="button" tabindex="0">
         <div class="scn-t">A &middot; Market-rate on PAB</div>
-        <div class="scn-d">PAB plus the levers a private team controls: placemaking, on-site solar, ancillary income, right-sized parking, and light public gap tools. No affordable sleeve, no agency debt, sold ~2 years after stabilization.</div>
+        <div class="scn-d">Point Access Block (PAB) plus the levers a private team controls: placemaking, on-site solar, ancillary income, right-sized parking, and light public gap tools. No affordable sleeve, no agency debt, sold ~2 years after stabilization.</div>
         <div class="scn-r" id="r_A">-</div>
       </div>
       <div class="scn" data-k="B" role="button" tabindex="0">
@@ -359,6 +366,43 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
+  <details class="grp"><summary><span>Glossary &middot; terms &amp; acronyms</span><span class="chev">&#9654;</span></summary>
+    <div class="body">
+      <dl class="gloss">
+        <dt>Point Access Block (PAB)</dt><dd>A multifamily building where apartments cluster around a single central core (one stair, one elevator) instead of lining a double-loaded corridor with two exit stairs. Enabled by recent single-stair code reform. It reaches ~90-95% floor efficiency (vs ~80-87% for a corridor) and gives most units windows on more than one side. Tradeoffs: more cores and elevators, smaller floor plates, and it is a newer form some lenders and reviewers are still learning.</dd>
+        <dt>Single-stair</dt><dd>A building served by one exit stairway per floor, allowed under recent code reform within size limits. It is what makes the Point Access Block form possible.</dd>
+        <dt>Double-loaded corridor</dt><dd>The conventional layout: a central hallway with apartments on both sides and two exit stairs. Loses 15-20% of the floor to circulation.</dd>
+        <dt>Slab-on-grade</dt><dd>A building that sits on a concrete slab poured on the ground, avoiding an expensive structural podium or underground parking.</dd>
+        <dt>Dual-aspect unit</dt><dd>An apartment with windows on two or more sides, giving cross-ventilation and daylight; a quality and rent advantage.</dd>
+        <dt>Base case (honest floor)</dt><dd>The project's return built conventionally with no levers applied. The negative starting point everything builds from.</dd>
+        <dt>Lever</dt><dd>One real, separable move a team can make (a cost saving, a public tool, a financing structure) that changes the return.</dd>
+        <dt>Waterfall</dt><dd>The bar chart that shows the return climbing from the floor, attributing each step to a category of moves.</dd>
+        <dt>Levered IRR</dt><dd>Internal Rate of Return: the annualized return on invested equity, accounting for the timing of cash in and out. "Levered" means after debt.</dd>
+        <dt>Equity multiple</dt><dd>Total cash returned divided by cash invested. 2.0x means you get back twice what you put in.</dd>
+        <dt>DSCR</dt><dd>Debt Service Coverage Ratio: net operating income divided by the annual loan payment. Lenders want it comfortably above 1.0x.</dd>
+        <dt>NOI</dt><dd>Net Operating Income: rental and other income after operating expenses, before debt and taxes. The number a buyer capitalizes.</dd>
+        <dt>EGI</dt><dd>Effective Gross Income: all income after vacancy and credit loss, before operating expenses.</dd>
+        <dt>Yield on cost</dt><dd>Stabilized NOI divided by total project cost; the unlevered return on the dollars spent.</dd>
+        <dt>Exit cap rate</dt><dd>The rate used to convert NOI into value at sale. A lower cap rate means a higher value.</dd>
+        <dt>FAR</dt><dd>Floor Area Ratio: total building floor area divided by land area; the zoning measure of how much you can build on a site.</dd>
+        <dt>NRA</dt><dd>Net Rentable Area: the leasable square footage that earns rent, excluding hallways, lobbies, and mechanical space.</dd>
+        <dt>Sources &amp; uses</dt><dd>The capital stack (debt, equity, subsidy) set against where it is spent (land, construction, soft costs).</dd>
+        <dt>Hard / soft cost</dt><dd>Hard cost is physical construction (labor and materials). Soft cost is design, fees, financing, and other non-construction costs.</dd>
+        <dt>LIHTC</dt><dd>Low-Income Housing Tax Credit: federal credits sold to investors to fund affordable rental housing; the backbone of US affordable-housing finance.</dd>
+        <dt>HUD 221(d)(4)</dt><dd>A federally insured construction-to-permanent loan with a 40-year term, high leverage, and non-recourse terms.</dd>
+        <dt>TIF</dt><dd>Tax Increment Financing: a public tool that reimburses eligible project costs from the future property-tax growth the project creates.</dd>
+        <dt>NMTC</dt><dd>New Markets Tax Credit: a federal credit that subsidizes commercial development in qualifying areas.</dd>
+        <dt>C-PACE</dt><dd>Long-term financing for energy and resiliency scope, repaid through a property assessment that stays with the building at sale.</dd>
+        <dt>MUPTE / Vertical Housing abatement</dt><dd>Oregon programs that reduce property tax for a set period to encourage dense, mixed-income housing.</dd>
+        <dt>Opportunity Zone</dt><dd>A federal program that defers and reduces capital-gains tax for long-term investment in designated areas.</dd>
+        <dt>Ground lease</dt><dd>Leasing the land rather than buying it, lowering upfront cost in exchange for ongoing rent.</dd>
+        <dt>Placemaking premium</dt><dd>The modest rent uplift a well-designed, amenity-rich place can earn as it matures.</dd>
+        <dt>Lease-up / stabilization</dt><dd>The period after opening when a building fills to its long-run occupancy.</dd>
+        <dt>Affordable sleeve</dt><dd>The share of homes set aside at restricted, below-market rents, often funded with LIHTC.</dd>
+      </dl>
+    </div>
+  </details>
+
   <div class="modlabel">Inputs &middot; adjust any assumption</div>
   <details class="grp"><summary><span>Base case &middot; rents, mix, costs, exit</span><span class="chev">&#9654;</span></summary>
     <div class="body">
@@ -372,7 +416,7 @@ body.gated{overflow:hidden}
           <button class="typo" data-eff="0.82" type="button">Double-loaded<span>80-87%</span></button>
           <button class="typo" data-eff="0.93" type="button">Point Access Block<span>90-95%</span></button>
         </div>
-        <div class="hint">Single-stair Point Access Block wraps units around one core, recovering hallway area. See the <a href="pab.html" style="color:var(--terra)">PAB design brief</a>.</div>
+        <div class="hint">A <span class="term" data-d="A multifamily building where apartments cluster around a single central core (one stair, one elevator) instead of a double-loaded corridor. ~90-95% efficient, dual-aspect units; tradeoffs are more cores/elevators and it is a newer form some lenders are still learning.">Point Access Block</span> (single-stair) wraps units around one core, recovering hallway area. Double-loaded is the conventional choice. See the <a href="pab.html" style="color:var(--terra)">Point Access Block design brief</a>.</div>
       </div>
       <div class="ctl"><label>Building efficiency (rentable/gross) <span class="val" id="v_effRatio"></span></label><input type="range" id="effRatio" min="0.7" max="0.95" step="0.01"><div class="hint">Net rentable as a share of gross floor area; the rest is circulation, walls, lobbies, mechanical. With hold-FAR on, raising efficiency adds leasable units in the same envelope.</div></div>
       <div class="ctl"><label>Total rentable SF (built) <span class="val" id="v_totalSF"></span></label><input type="range" id="totalSF" min="120000" max="520000" step="1000"><div class="hint">Drag to size the building; residential unit counts scale to match (unit sizes and commercial held fixed).</div></div>
@@ -498,7 +542,7 @@ body.gated{overflow:hidden}
 <main class="main">
   <div class="dochdr">
     <div><div class="dh-title">Edgewater West Salem &middot; Phase One Underwriting Model</div>
-      <div class="dh-meta">Now City Upside Explorer &middot; v1.0 &middot; June 2026 &middot; Confidential</div></div>
+      <div class="dh-meta">Now City Upside Explorer &middot; Multifamily, 100+ units &middot; v1.0 &middot; June 2026 &middot; Confidential</div></div>
     <button class="dh-btn" id="ctxBtn" type="button">Property &amp; site facts</button>
   </div>
   <div class="ctxbox" id="ctxbox" hidden>
@@ -518,12 +562,12 @@ body.gated{overflow:hidden}
     <div class="ah-desc" id="ahDesc"></div>
   </div>
   <div class="kpis">
-    <div class="kpi hero"><div class="l">Levered IRR</div><div class="v" id="k_irr">-</div><div class="d" id="d_irr"></div></div>
-    <div class="kpi"><div class="l">Equity Multiple</div><div class="v" id="k_em">-</div><div class="d" id="d_em"></div></div>
-    <div class="kpi"><div class="l">Stabilized DSCR</div><div class="v" id="k_dscr">-</div><div class="d" id="d_dscr"></div></div>
-    <div class="kpi"><div class="l">LP Cash Equity</div><div class="v" id="k_eq">-</div><div class="d" id="d_eq"></div></div>
-    <div class="kpi"><div class="l">Yield on Cost</div><div class="v" id="k_yoc">-</div><div class="d" id="d_yoc"></div></div>
-    <div class="kpi"><div class="l">After-tax IRR <span id="k_oztag" style="font-size:9px;color:#8a857a"></span></div><div class="v" id="k_irrat">-</div><div class="d" id="d_irrat"></div></div>
+    <div class="kpi hero"><div class="l"><span class="term" data-d="Internal Rate of Return on invested equity, after debt. The annualized return accounting for the timing of cash in and out.">Levered IRR</span></div><div class="v" id="k_irr">-</div><div class="d" id="d_irr"></div></div>
+    <div class="kpi"><div class="l"><span class="term" data-d="Total cash returned divided by cash invested. 2.0x means you get back twice what you put in.">Equity Multiple</span></div><div class="v" id="k_em">-</div><div class="d" id="d_em"></div></div>
+    <div class="kpi"><div class="l"><span class="term" data-d="Debt Service Coverage Ratio: net operating income divided by the annual loan payment, at stabilization. Lenders want it comfortably above 1.0x.">Stabilized DSCR</span></div><div class="v" id="k_dscr">-</div><div class="d" id="d_dscr"></div></div>
+    <div class="kpi"><div class="l"><span class="term" data-d="The cash equity the limited partners (outside investors) put in, after GP equity, tax-credit equity, subsidy, and debt.">LP Cash Equity</span></div><div class="v" id="k_eq">-</div><div class="d" id="d_eq"></div></div>
+    <div class="kpi"><div class="l"><span class="term" data-d="Stabilized NOI divided by total project cost; the unlevered return on the dollars spent. Compare it to the exit cap rate.">Yield on Cost</span></div><div class="v" id="k_yoc">-</div><div class="d" id="d_yoc"></div></div>
+    <div class="kpi"><div class="l"><span class="term" data-d="Levered IRR after federal income tax on the exit gain. With Opportunity Zone treatment the long-hold gain can be tax-free.">After-tax IRR</span> <span id="k_oztag" style="font-size:9px;color:#8a857a"></span></div><div class="v" id="k_irrat">-</div><div class="d" id="d_irrat"></div></div>
   </div>
   <div id="status"></div>
 
@@ -1091,6 +1135,12 @@ const _b2=document.getElementById('bReset2'); if(_b2)_b2.addEventListener('click
   });})();
 (function(){const cb=document.getElementById('ctxBtn'),cx=document.getElementById('ctxbox');
   if(cb&&cx)cb.addEventListener('click',()=>{cx.hidden=!cx.hidden;cb.style.borderColor=cx.hidden?'':'var(--terra)';cb.style.color=cx.hidden?'':'var(--terra)';});})();
+(function(){var t=document.getElementById('gtip');if(!t)return;
+  document.querySelectorAll('.term[data-d]').forEach(function(el){
+    el.addEventListener('mouseenter',function(){t.textContent=el.getAttribute('data-d');t.style.display='block';t.style.opacity='1';
+      var r=el.getBoundingClientRect();var w=Math.min(300,window.innerWidth-24);
+      t.style.left=Math.max(8,Math.min(r.left,window.innerWidth-w-12))+'px';t.style.top=(r.bottom+7)+'px';});
+    el.addEventListener('mouseleave',function(){t.style.opacity='0';t.style.display='none';});});})();
 applyScn('base');
 </script>
 </body>

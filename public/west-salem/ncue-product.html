@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Now City Upside Explorer</title>
-<meta name="description" content="An interactive underwriting tool that shows, one move at a time, how a project that loses money on paper becomes one that pencils, with every point of upside traced to a real, defensible move.">
+<meta name="description" content="An interactive underwriting tool for ground-up multifamily projects of roughly 100 units and up. It shows, one move at a time, how a project that loses money on paper becomes one that pencils, with every point of upside traced to a real, defensible move.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -122,6 +122,13 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
 .cta-band{background:var(--terra);color:#fff;text-align:center}
 .cta-band h2{color:#fff;font-size:clamp(26px,3.6vw,38px)}
 .cta-band p{color:#fbe9d8;max-width:620px;margin:14px auto 0}
+.term{border-bottom:1px dotted var(--terra);cursor:help}
+#gtip{position:fixed;z-index:600;max-width:300px;background:#1f1d1a;color:#e9e5da;border:1px solid #4a453a;border-radius:7px;padding:10px 13px;font-size:12.5px;line-height:1.45;box-shadow:0 14px 34px rgba(0,0,0,.4);pointer-events:none;display:none;opacity:0}
+.gloss{margin-top:40px;columns:2;column-gap:40px}
+.gloss .g{break-inside:avoid;margin-bottom:16px}
+.gloss .g dt{font-weight:700;color:var(--green);font-size:14px}
+.gloss .g dd{color:var(--ink2);font-size:13.5px;line-height:1.5;margin:3px 0 0}
+@media(max-width:760px){.gloss{columns:1}}
 .flips{margin-top:38px;display:flex;flex-direction:column;gap:13px}
 .flip{display:grid;grid-template-columns:1fr 38px 1fr;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:17px 22px}
 .flip .from{font-size:15px;color:#9a5a3f;font-style:italic}
@@ -139,7 +146,7 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
 <nav>
   <div class="wrap">
     <a class="brand" href="#">Now City <span>Upside Explorer</span></a>
-    <a class="cta" href="mailto:erik@nowcitylabs.com">Request a demo</a>
+    <div style="display:flex;align-items:center;gap:18px"><a href="#glossary" style="font-size:13px;font-weight:600;color:var(--ink2);text-decoration:none">Glossary</a><a class="cta" href="mailto:erik@nowcitylabs.com">Request a demo</a></div>
   </div>
 </nav>
 
@@ -157,6 +164,7 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
       <div class="s"><div class="n">50+ levers</div><div class="l">cost, revenue, public partnerships, affordable-housing finance, every real tool, separable and underwritten</div></div>
       <div class="s"><div class="n">8 scenarios</div><div class="l">worked examples from the honest floor to a fully optimized, attainable plan</div></div>
     </div>
+    <p style="margin-top:26px;font-size:13px;color:#9a948a">Built for ground-up multifamily rental projects of roughly 100 homes and up.</p>
   </div>
 </header>
 
@@ -173,7 +181,7 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
       <div class="inner">
         <div class="ctrls">
           <div class="cl">Layout typology</div>
-          <div class="typo">Point Access Block<small>93% efficiency &middot; slab-on-grade</small></div>
+          <div class="typo"><span class="term" data-d="A multifamily building where apartments cluster around a single central core (one stair, one elevator) instead of a double-loaded corridor. ~90-95% efficient with dual-aspect homes. Tradeoffs: more cores/elevators, a newer form some lenders are still learning.">Point Access Block</span><small>93% efficiency &middot; slab-on-grade</small></div>
           <div class="cl">Levers</div>
           <div class="sld"><div class="t"><span>Industrialized cost</span><span>$42/SF</span></div><div class="track"><i style="left:42%"></i></div></div>
           <div class="sld"><div class="t"><span>Placemaking premium</span><span>4.0%</span></div><div class="track"><i style="left:30%"></i></div></div>
@@ -271,7 +279,7 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
       <div class="mr"><div class="feat">Honest, comp-grounded base case<small>Rents, sizes, caps tied to achieved comps</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
       <div class="mr"><div class="feat">Full lever set with waterfall<small>50+ separable levers, decomposed climb</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
       <div class="mr"><div class="feat">Buildable envelope &amp; phasing<small>Site, FAR, efficiency, sub-phase scaling</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
-      <div class="mr"><div class="feat">Point Access Block typology<small>Building type tied to efficiency and cost</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
+      <div class="mr"><div class="feat">Point Access Block typology<small>Single-stair building type tied to efficiency and cost</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
       <div class="mr"><div class="feat">Investor dashboards<small>Operating statement, sources &amp; uses, debt, returns</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
       <div class="mr"><div class="feat">Branded Excel export<small>Industry-standard workbook with live formulas</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
       <div class="mr"><div class="feat">Eight worked scenarios<small>Honest floor to a fully optimized plan</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash">&middot;</span></div></div>
@@ -279,6 +287,39 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
       <div class="mr"><div class="feat">Project templating<small>Re-ground to a new market in hours</small></div><div><span class="dash">&middot;</span></div><div><span class="soon">Next</span></div></div>
       <div class="mr"><div class="feat">On-page LLM co-pilot<small>Ask the model in plain language, watch it answer</small></div><div><span class="dash">&middot;</span></div><div><span class="soon">Flagship</span></div></div>
       <div class="mr"><div class="feat">Agentic scenario optimizer<small>AI agents search the lever space for novel, defensible paths</small></div><div><span class="dash">&middot;</span></div><div><span class="soon">Flagship</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="glossary" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Glossary</div>
+    <h2 style="font-size:clamp(26px,3.4vw,36px);margin-top:12px">Plain-language definitions</h2>
+    <p class="lead" style="margin-top:14px">Every concept and acronym the tool uses, in one place. Hover any dotted term elsewhere on the page for the same definition.</p>
+    <div class="gloss">
+      <div class="g"><dt>Point Access Block (PAB)</dt><dd>A multifamily building where apartments cluster around a single central core (one stair, one elevator) instead of lining a double-loaded corridor with two exit stairs. Enabled by recent single-stair code reform. It reaches ~90-95% floor efficiency (vs ~80-87% for a corridor) and gives most units windows on more than one side. Tradeoffs: more cores and elevators, and it is a newer form some lenders and reviewers are still learning.</dd></div>
+      <div class="g"><dt>Double-loaded corridor</dt><dd>The conventional layout: a central hallway with apartments on both sides and two exit stairs. Loses 15-20% of the floor to circulation.</dd></div>
+      <div class="g"><dt>Slab-on-grade</dt><dd>A building that sits on a concrete slab poured on the ground, avoiding an expensive structural podium or underground parking.</dd></div>
+      <div class="g"><dt>Dual-aspect unit</dt><dd>An apartment with windows on two or more sides, giving cross-ventilation and daylight; a quality and rent advantage.</dd></div>
+      <div class="g"><dt>Base case (honest floor)</dt><dd>The project's return built conventionally with no levers applied. The starting point everything builds from.</dd></div>
+      <div class="g"><dt>Lever</dt><dd>One real, separable move a team can make (a cost saving, a public tool, a financing structure) that changes the return.</dd></div>
+      <div class="g"><dt>Waterfall</dt><dd>The bar chart that shows the return climbing from the floor, attributing each step to a category of moves.</dd></div>
+      <div class="g"><dt>Levered IRR</dt><dd>Internal Rate of Return on invested equity, after debt: the annualized return accounting for the timing of cash in and out.</dd></div>
+      <div class="g"><dt>Equity multiple</dt><dd>Total cash returned divided by cash invested. 2.0x means you get back twice what you put in.</dd></div>
+      <div class="g"><dt>DSCR</dt><dd>Debt Service Coverage Ratio: net operating income divided by the annual loan payment. Lenders want it comfortably above 1.0x.</dd></div>
+      <div class="g"><dt>NOI</dt><dd>Net Operating Income: income after operating expenses, before debt and taxes. The number a buyer capitalizes into value.</dd></div>
+      <div class="g"><dt>Yield on cost</dt><dd>Stabilized NOI divided by total project cost; the unlevered return on the dollars spent.</dd></div>
+      <div class="g"><dt>Exit cap rate</dt><dd>The rate used to convert NOI into value at sale. A lower cap rate means a higher value.</dd></div>
+      <div class="g"><dt>FAR</dt><dd>Floor Area Ratio: total building floor area divided by land area; the zoning measure of how much you can build.</dd></div>
+      <div class="g"><dt>Sources &amp; uses</dt><dd>The capital stack (debt, equity, subsidy) set against where it is spent (land, construction, soft costs).</dd></div>
+      <div class="g"><dt>LIHTC</dt><dd>Low-Income Housing Tax Credit: federal credits sold to investors to fund affordable rental housing; the backbone of US affordable-housing finance.</dd></div>
+      <div class="g"><dt>HUD 221(d)(4)</dt><dd>A federally insured construction-to-permanent loan with a 40-year term, high leverage, and non-recourse terms.</dd></div>
+      <div class="g"><dt>TIF</dt><dd>Tax Increment Financing: a public tool that reimburses eligible project costs from the future property-tax growth the project creates.</dd></div>
+      <div class="g"><dt>NMTC</dt><dd>New Markets Tax Credit: a federal credit that subsidizes commercial development in qualifying areas.</dd></div>
+      <div class="g"><dt>C-PACE</dt><dd>Long-term financing for energy and resiliency scope, repaid through a property assessment that stays with the building at sale.</dd></div>
+      <div class="g"><dt>Opportunity Zone</dt><dd>A federal program that defers and reduces capital-gains tax for long-term investment in designated areas.</dd></div>
+      <div class="g"><dt>Placemaking premium</dt><dd>The modest rent uplift a well-designed, amenity-rich place can earn as it matures.</dd></div>
+      <div class="g"><dt>Affordable sleeve</dt><dd>The share of homes set aside at restricted, below-market rents, often funded with LIHTC.</dd></div>
     </div>
   </div>
 </section>
@@ -300,5 +341,14 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
   </div>
 </footer>
 
+<div id="gtip"></div>
+<script>
+(function(){var t=document.getElementById("gtip");if(!t)return;
+ document.querySelectorAll(".term[data-d]").forEach(function(el){
+  el.addEventListener("mouseenter",function(){t.textContent=el.getAttribute("data-d");t.style.display="block";t.style.opacity="1";
+   var r=el.getBoundingClientRect();var w=Math.min(300,window.innerWidth-24);
+   t.style.left=Math.max(8,Math.min(r.left,window.innerWidth-w-12))+"px";t.style.top=(r.bottom+7)+"px";});
+  el.addEventListener("mouseleave",function(){t.style.opacity="0";t.style.display="none";});});})();
+</script>
 </body>
 </html>
