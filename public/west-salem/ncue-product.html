@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Now City Upside Explorer</title>
+<meta name="description" content="The underwriting tool that proves a new generation of regenerative, attainable districts can actually be financed and built.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#48593f;--green2:#3c4a35;--terra:#a8703f;--cream:#f4f1e9;--cream2:#ece8dc;--ink:#22211e;--ink2:#4a463f;--line:rgba(0,0,0,.1);--gold:#d9a26c;--serif:'Libre Baskerville',serif;--sans:'Inter',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;color:var(--ink)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--terra)}
+section{padding:78px 0}
+.btn{display:inline-block;background:var(--terra);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:13px 26px;border-radius:7px;transition:background .25s}
+.btn:hover{background:#915f33}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(244,241,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:60px;gap:18px}
+.brand{font-family:var(--serif);font-weight:700;font-size:17px;color:var(--green);text-decoration:none}
+.brand span{color:var(--terra)}
+nav a.cta{font-size:13px;font-weight:600;color:#fff;background:var(--green);padding:9px 16px;border-radius:6px;text-decoration:none}
+
+/* hero */
+.hero{background:linear-gradient(150deg,#3c4a35,#22211e);color:#fff;padding:96px 0 104px}
+.hero .eyebrow{color:var(--gold)}
+.hero h1{color:#fff;font-size:clamp(34px,5.2vw,58px);margin:16px 0 0}
+.hero p.sub{font-size:clamp(17px,2.2vw,21px);color:#d8d3c6;max-width:680px;margin:22px 0 0}
+.hero .cta-row{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.hero .stats{display:flex;gap:42px;flex-wrap:wrap;margin-top:54px;border-top:1px solid rgba(255,255,255,.16);padding-top:30px}
+.hero .stats .s .n{font-family:var(--serif);font-size:32px;color:#fff}
+.hero .stats .s .l{font-size:12.5px;color:#b7b1a4;margin-top:3px;max-width:190px}
+
+/* mockup */
+.mock{background:#fff;border-radius:12px;box-shadow:0 30px 60px rgba(0,0,0,.28);overflow:hidden;border:1px solid rgba(0,0,0,.08);margin-top:-64px}
+.mock .bar{background:#211e1a;display:flex;align-items:center;gap:8px;padding:9px 16px}
+.mock .bar .dot{width:11px;height:11px;border-radius:50%}
+.mock .bar .t{margin-left:12px;color:#cfc9bd;font-size:12px;font-weight:600}
+.mock .scnbar{background:#2b2823;display:flex;align-items:center;gap:8px;padding:9px 16px;flex-wrap:wrap;border-bottom:1px solid #3d392f}
+.mock .scap{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9a948a}
+.mock .pill{font-size:11px;font-weight:600;color:#cfc9bd;border:1px solid #4a453a;border-radius:20px;padding:5px 11px}
+.mock .pill.on{background:var(--terra);border-color:var(--terra);color:#fff}
+.mock .body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;padding:20px}
+.mock .kpi{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+.mock .kpi .l{font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:#6e6a61;font-weight:600}
+.mock .kpi .v{font-family:var(--serif);font-size:25px;color:var(--green);margin-top:5px}
+.mock .kpi.neg .v{color:var(--terra)}
+.mock .wf{grid-column:1/-1;background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px}
+.mock .wf .h{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:14px}
+.mock .wf .bars{display:flex;align-items:flex-end;gap:10px;height:118px}
+.mock .wf .col{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.mock .wf .col .bb{width:100%;border-radius:3px 3px 0 0}
+.mock .wf .col .cl{font-size:9px;color:#8a857a;text-align:center;line-height:1.1}
+@media(max-width:720px){.mock .body{grid-template-columns:1fr 1fr}}
+
+/* generic */
+.lead{font-size:18px;color:var(--ink2);max-width:760px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+@media(max-width:820px){.grid3,.grid2{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px}
+.card h3{font-size:19px;margin-bottom:9px}
+.card p{font-size:14.5px;color:var(--ink2)}
+.card .ic{width:38px;height:38px;border-radius:9px;background:var(--cream2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;color:var(--green);margin-bottom:14px}
+.alt{background:#fff}
+.dark{background:var(--green2);color:#fff}
+.dark h2,.dark h3{color:#fff}.dark .eyebrow{color:var(--gold)}.dark p{color:#cdc8bb}
+
+/* steps */
+.steps{counter-reset:st;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:42px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.steps .st{padding:26px 22px;border-right:1px solid var(--line);position:relative}
+.steps .st:last-child{border-right:none}
+.steps .st::before{counter-increment:st;content:"0" counter(st);font-family:var(--serif);font-size:22px;color:var(--terra);opacity:.8}
+.steps .st h3{font-size:16px;margin:8px 0 6px}
+.steps .st p{font-size:13px;color:var(--ink2)}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr}.steps .st:nth-child(2){border-right:none}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}.steps .st{border-right:none}}
+
+/* matrix */
+.matrix{margin-top:40px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.matrix .mh{display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--green);color:#fff}
+.matrix .mh div{padding:14px 18px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.matrix .mr{display:grid;grid-template-columns:1.6fr 1fr 1fr;border-top:1px solid var(--line)}
+.matrix .mr>div{padding:14px 18px;font-size:14px;display:flex;align-items:center;gap:8px}
+.matrix .mr .feat{font-weight:600;color:var(--ink);flex-direction:column;align-items:flex-start;gap:2px}
+.matrix .mr .feat small{font-weight:400;color:#8a857a;font-size:12px}
+.tick{color:#3c7a3c;font-weight:700}
+.soon{color:var(--terra);font-weight:600;font-size:12.5px}
+.dash{color:#bdb8ad}
+@media(max-width:680px){.matrix .mh,.matrix .mr{grid-template-columns:1fr .5fr .5fr}.matrix .mr>div,.matrix .mh div{padding:11px 12px;font-size:12.5px}}
+
+footer{background:#211e1a;color:#b7b1a4;padding:50px 0;font-size:13.5px}
+footer a{color:var(--gold);text-decoration:none}
+footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
+.cta-band{background:var(--terra);color:#fff;text-align:center}
+.cta-band h2{color:#fff;font-size:clamp(26px,3.6vw,38px)}
+.cta-band p{color:#fbe9d8;max-width:620px;margin:14px auto 0}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Now City <span>Upside Explorer</span></a>
+    <a class="cta" href="mailto:erik@nowcitylabs.com">Request a demo</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Now City Upside Explorer</div>
+    <h1>Prove the good district pencils.</h1>
+    <p class="sub">An underwriting tool that starts from an honest base case and shows, lever by lever, how a sophisticated team turns a project that loses money into institutional returns while keeping homes attainable. The argument for a new generation of districts, made transparent.</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:erik@nowcitylabs.com">Request a demo</a>
+      <a class="btn ghost" href="#how">See how it works</a>
+    </div>
+    <div class="stats">
+      <div class="s"><div class="n">-17% &rarr; +22%</div><div class="l">a failing base case to institutional returns, every point attributed to a named move</div></div>
+      <div class="s"><div class="n">50+ levers</div><div class="l">cost, revenue, subsidy, affordable, financing, all real tools, all separable</div></div>
+      <div class="s"><div class="n">9 scenarios</div><div class="l">a narrative from the honest floor to a full regenerative stack</div></div>
+    </div>
+  </div>
+</header>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="mock">
+      <div class="bar"><span class="dot" style="background:#e0686a"></span><span class="dot" style="background:#e6b35c"></span><span class="dot" style="background:#7bbf6a"></span><span class="t">Now City Upside Explorer &middot; Edgewater West Salem</span></div>
+      <div class="scnbar">
+        <span class="scap">Build &amp; capital</span>
+        <span class="pill">Base</span><span class="pill on">P</span><span class="pill">A</span><span class="pill">B</span><span class="pill">C</span>
+        <span class="scap" style="margin-left:10px">Rents &amp; program</span>
+        <span class="pill">D</span><span class="pill">E</span><span class="pill">F</span><span class="pill">G</span>
+        <span style="margin-left:auto;color:#cfc9bd;font-size:11px">PAB design &middot; <b style="color:#fff">+8.8% IRR</b></span>
+      </div>
+      <div class="body">
+        <div class="kpi"><div class="l">Levered IRR</div><div class="v">8.8%</div></div>
+        <div class="kpi"><div class="l">Equity multiple</div><div class="v">1.33x</div></div>
+        <div class="kpi"><div class="l">Stabilized DSCR</div><div class="v">1.06</div></div>
+        <div class="wf">
+          <div class="h">Upside build-up: IRR by lever category</div>
+          <div class="bars">
+            <div class="col"><div class="bb" style="height:22%;background:#a8703f"></div><div class="cl">Base<br>-17%</div></div>
+            <div class="col"><div class="bb" style="height:64%;background:#6c7d5e"></div><div class="cl">Building<br>type</div></div>
+            <div class="col"><div class="bb" style="height:74%;background:#5e7150"></div><div class="cl">Cost</div></div>
+            <div class="col"><div class="bb" style="height:82%;background:#557049"></div><div class="cl">Revenue</div></div>
+            <div class="col"><div class="bb" style="height:90%;background:#4c663f"></div><div class="cl">Subsidy</div></div>
+            <div class="col"><div class="bb" style="height:96%;background:#445c38"></div><div class="cl">Tax<br>credit</div></div>
+            <div class="col"><div class="bb" style="height:100%;background:#1f1d1a"></div><div class="cl">All-in<br>+22%</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">The Problem</div>
+    <h2 style="font-size:clamp(26px,3.4vw,36px);margin-top:12px;max-width:820px">Conventional underwriting says the good district does not pencil. It is wrong, and that error keeps corridors empty for decades.</h2>
+    <p class="lead" style="margin-top:20px">At honest, attainable rents, a conventional building on a conventional cost basis loses money. Capable teams close that gap every day, with a stack of moves that stay invisible to the investors, public partners, and communities whose support a project needs. The Now City Upside Explorer makes that case visible, credible, and interactive, so the people who decide whether a district gets built can see exactly how it works.</p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">How It Works</div>
+    <h2 style="font-size:clamp(26px,3.4vw,36px);margin-top:12px">From the honest floor to the deal that gets built</h2>
+    <div class="steps">
+      <div class="st"><h3>Start honest</h3><p>The base case earns nothing it cannot cite. Rents, unit sizes, and caps are grounded to achieved local comps. The floor is allowed to be negative.</p></div>
+      <div class="st"><h3>Pull real levers</h3><p>Building type, industrialized cost, placemaking, public tools, tax-credit equity, agency debt. Each is a separable, underwritten number, not a fudge.</p></div>
+      <div class="st"><h3>Read the build-up</h3><p>A waterfall attributes every point of the climb to a named category, so the result is legible, not asserted. Toggle nine worked scenarios.</p></div>
+      <div class="st"><h3>Export &amp; share</h3><p>Send a scenario to anyone, or rebuild it as a branded, industry-standard Excel model with live formulas. One source of truth for every stakeholder.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="eyebrow">Who It Is For</div>
+    <h2 style="font-size:clamp(26px,3.4vw,36px);margin-top:12px">One model, read in every stakeholder's language</h2>
+    <div class="grid2">
+      <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><div class="ic">$</div><h3>Developers &amp; sponsors</h3><p>Find the lever combination that makes an attainable project pencil, and present a defensible return without overclaiming.</p></div>
+      <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><div class="ic">%</div><h3>Investors &amp; lenders</h3><p>See the honest floor first, then a transparent, decomposable climb, with DSCR, sources and uses, and a stabilized operating statement.</p></div>
+      <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><div class="ic">&#9632;</div><h3>Cities &amp; public partners</h3><p>Quantify exactly what a TIF, an abatement, or a grant unlocks, in affordable homes, tax base, and catalytic investment.</p></div>
+      <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><div class="ic">&#9650;</div><h3>Communities</h3><p>Understand, in plain terms, why a daylit, attainable, low-carbon district is financially possible, and what it takes to deliver it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Capabilities</div>
+    <h2 style="font-size:clamp(26px,3.4vw,36px);margin-top:12px">What it does today, and where it is going</h2>
+    <p class="lead" style="margin-top:16px">Built and live now, with a roadmap aimed squarely at the mission: accelerating the transition to regenerative, resilient, and equitable neighborhoods and cities.</p>
+    <div class="matrix">
+      <div class="mh"><div>Capability</div><div>Available now</div><div>Roadmap</div></div>
+      <div class="mr"><div class="feat">Honest, comp-grounded base case<small>Rents, sizes, caps tied to achieved comps</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash"><span class="dash">&mdash;</span>middot;</span></div></div>
+      <div class="mr"><div class="feat">Full lever set with waterfall<small>50+ separable levers, decomposed climb</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash"><span class="dash">&mdash;</span>middot;</span></div></div>
+      <div class="mr"><div class="feat">Buildable envelope &amp; phasing<small>Site, FAR, efficiency, sub-phase scaling</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash"><span class="dash">&mdash;</span>middot;</span></div></div>
+      <div class="mr"><div class="feat">Point Access Block typology<small>Building type tied to efficiency and cost</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash"><span class="dash">&mdash;</span>middot;</span></div></div>
+      <div class="mr"><div class="feat">Investor dashboards<small>Operating statement, sources &amp; uses, debt, returns</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash"><span class="dash">&mdash;</span>middot;</span></div></div>
+      <div class="mr"><div class="feat">Branded Excel export<small>Industry-standard workbook with live formulas</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash"><span class="dash">&mdash;</span>middot;</span></div></div>
+      <div class="mr"><div class="feat">Nine worked scenarios<small>Floor to full regenerative stack</small></div><div><span class="tick">&#10003;</span></div><div><span class="dash"><span class="dash">&mdash;</span>middot;</span></div></div>
+      <div class="mr"><div class="feat">Outcomes dashboard<small>Affordable homes, carbon, jobs, tax base alongside IRR</small></div><div><span class="dash"><span class="dash">&mdash;</span>middot;</span></div><div><span class="soon">Next</span></div></div>
+      <div class="mr"><div class="feat">Project templating<small>Re-ground to a new market in hours</small></div><div><span class="dash"><span class="dash">&mdash;</span>middot;</span></div><div><span class="soon">Next</span></div></div>
+      <div class="mr"><div class="feat">On-page LLM co-pilot<small>Ask the model in plain language, watch it answer</small></div><div><span class="dash"><span class="dash">&mdash;</span>middot;</span></div><div><span class="soon">Flagship</span></div></div>
+      <div class="mr"><div class="feat">Agentic scenario optimizer<small>AI agents search the lever space for novel, defensible paths</small></div><div><span class="dash"><span class="dash">&mdash;</span>middot;</span></div><div><span class="soon">Flagship</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>It is possible to build districts like this. At scale.</h2>
+    <p>The barrier was never good design or good intent. It was the underwriting. The Now City Upside Explorer is how we change what stakeholders believe is possible, with evidence, in the open.</p>
+    <div style="margin-top:28px"><a class="btn ghost" style="border-color:#fff" href="mailto:erik@nowcitylabs.com">Request a demo</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="bm">Now City Upside Explorer</div>
+    <p>A Now City product, in service of regenerative, resilient, and equitable neighborhoods and cities.</p>
+    <p style="margin-top:12px"><a href="mailto:erik@nowcitylabs.com">erik@nowcitylabs.com</a></p>
+    <p style="margin-top:14px;font-size:11.5px;color:#7a756b">A planning and discussion tool, not an offer of securities or a substitute for formal underwriting. Figures shown are illustrative.</p>
+  </div>
+</footer>
+
+</body>
+</html>
