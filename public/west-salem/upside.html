@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Financial Model - Edgewater</title>
+<title>Now City Upside Explorer - Edgewater</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -164,6 +164,12 @@ body.gated{overflow:hidden}
 .sbtn.on{background:var(--terra);border-color:var(--terra);color:#fff}
 .scnbar .sb-read{margin-left:auto;font-size:12px;color:#cfc9bd;font-variant-numeric:tabular-nums;white-space:nowrap}
 .scnbar .sb-read strong{color:var(--cream);font-family:var(--serif);font-weight:700}
+.typorow{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.typo{flex:1;min-width:96px;display:flex;flex-direction:column;align-items:flex-start;gap:1px;font-size:11px;font-weight:600;padding:7px 9px;border:1px solid var(--line);border-radius:6px;background:#fff;cursor:pointer;line-height:1.2;text-align:left}
+.typo span{font-weight:400;font-size:10px;color:#8a857a}
+.typo:hover{border-color:var(--terra)}
+.typo.on{background:var(--green);border-color:var(--green);color:#fff}
+.typo.on span{color:#d7e0cf}
 @media(max-width:620px){.scnbar{padding:8px 16px;gap:9px}.scnbar .sb-read{margin-left:0;flex-basis:100%;order:3;text-align:right}}
 </style>
 </head>
@@ -188,7 +194,7 @@ body.gated{overflow:hidden}
           <li><a href="activation.html">Activation Plan</a></li>
           <li><a href="om.html">Investment Summary</a></li>
           <li class="dd-head">Underwriting</li>
-          <li><a href="upside.html">Financial Model</a></li>
+          <li><a href="upside.html">Upside Explorer</a></li>
           <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
           <li class="dd-head">Research &amp; Precedents</li>
           <li><a href="research.html">District Economic Development</a></li>
@@ -209,16 +215,17 @@ body.gated{overflow:hidden}
 </nav>
 <header class="bar">
   <span class="tag">Edgewater · Internal</span>
-  <h1>Financial Model</h1>
+  <h1>Now City Upside Explorer</h1>
   <span class="right">Base case starts in the red &middot; stack the levers to make it pencil &middot; <a href="feasibility.html" style="color:#d9a26c">feasibility review</a> &middot; <a href="index.html" style="color:#d9a26c">back to site</a></span>
 </header>
 
 <div class="scnbar" id="scnbar">
   <div class="sb-group">
-    <span class="sb-cap">Capital</span>
+    <span class="sb-cap">Build &amp; capital</span>
     <div class="sb-btns">
-      <button class="sbtn" data-k="base" type="button" title="Base case - the honest floor">Base</button>
-      <button class="sbtn" data-k="A" type="button" title="A - Market-rate, lightly subsidized">A</button>
+      <button class="sbtn" data-k="base" type="button" title="Base - the honest floor (double-loaded)">Base</button>
+      <button class="sbtn" data-k="P" type="button" title="P - Point Access Block design move">P</button>
+      <button class="sbtn" data-k="A" type="button" title="A - Market-rate on PAB">A</button>
       <button class="sbtn" data-k="B" type="button" title="B - Attainable + tax-credit equity">B</button>
       <button class="sbtn" data-k="C" type="button" title="C - Catalytic public partnership">C</button>
     </div>
@@ -227,10 +234,9 @@ body.gated{overflow:hidden}
     <span class="sb-cap">Rents &amp; program</span>
     <div class="sb-btns">
       <button class="sbtn" data-k="D" type="button" title="D - Demand-led (in-migration)">D</button>
-      <button class="sbtn" data-k="E" type="button" title="E - Trended rents">E</button>
-      <button class="sbtn" data-k="F" type="button" title="F - Strong lease-up">F</button>
-      <button class="sbtn" data-k="G" type="button" title="G - Family + co-living program">G</button>
-      <button class="sbtn" data-k="H" type="button" title="H - Micro-forward (Portland model)">H</button>
+      <button class="sbtn" data-k="E" type="button" title="E - Micro-forward (Portland model)">E</button>
+      <button class="sbtn" data-k="F" type="button" title="F - Family + co-living">F</button>
+      <button class="sbtn" data-k="G" type="button" title="G - Full regenerative stack">G</button>
     </div>
   </div>
   <span class="sb-read" id="sbRead">-</span>
@@ -238,7 +244,7 @@ body.gated{overflow:hidden}
 
 <div class="layout">
 <aside class="panel">
-  <p style="font-size:12px;color:#8a857a;line-height:1.6;margin-bottom:14px">The Base Case module sits at the top: the honest merchant pro forma at market Salem rents, which loses money. Below it is the Upside Explorer - every lever a creative team can use to close the gap. Pick a scenario from the bar at the top of the page, then adjust anything; the waterfall attributes the climb to each category.</p>
+  <p style="font-size:12px;color:#8a857a;line-height:1.6;margin-bottom:14px">The Base Case module sits at the top: the honest merchant pro forma at market Salem rents, which loses money. Start with the building itself, the Point Access Block typology in the site envelope is the foundational move, then layer the levers below. Pick a scenario from the bar at the top of the page, then adjust anything; the waterfall attributes the climb to each category.</p>
 
   <div class="btns" style="margin-bottom:16px">
     <button id="bReset">Reset to base-case floor</button>
@@ -252,7 +258,15 @@ body.gated{overflow:hidden}
       <div class="ctl"><label>Site area <span class="val" id="v_siteAcres"></span></label><input type="range" id="siteAcres" min="1" max="25" step="0.1"><div class="hint">Phase 1 is 5.3 acres. Drag down (e.g. 2.3 for Phase 1A) to resize the parcel. Land purchase price is set separately below.</div></div>
       <div class="toggle"><span class="tl">Hold FAR when site area changes<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">On: program + unit counts scale to the new parcel at the same density. Off: program stays, FAR moves.</span></span><button id="t_holdFAR" class="on">On</button></div>
       <div class="ctl"><label>Zoning max FAR <span class="val" id="v_maxFAR"></span></label><input type="range" id="maxFAR" min="0.5" max="6" step="0.1"><div class="hint">Floor-area-ratio cap. The built program is flagged if it exceeds this.</div></div>
-      <div class="ctl"><label>Building efficiency (rentable/gross) <span class="val" id="v_effRatio"></span></label><input type="range" id="effRatio" min="0.7" max="0.92" step="0.01"><div class="hint">Net rentable area as a share of gross floor area; the rest is circulation, walls, lobbies, mechanical.</div></div>
+      <div class="ctl"><label>Layout typology <span style="font-weight:400;font-size:11px;color:#8a857a">sets efficiency</span></label>
+        <div class="typorow">
+          <button class="typo" data-eff="0.75" type="button">Single-loaded<span>70-80%</span></button>
+          <button class="typo" data-eff="0.82" type="button">Double-loaded<span>80-87%</span></button>
+          <button class="typo" data-eff="0.93" type="button">Point Access Block<span>90-95%</span></button>
+        </div>
+        <div class="hint">Single-stair Point Access Block wraps units around one core, recovering hallway area. See the <a href="pab.html" style="color:var(--terra)">PAB design brief</a>.</div>
+      </div>
+      <div class="ctl"><label>Building efficiency (rentable/gross) <span class="val" id="v_effRatio"></span></label><input type="range" id="effRatio" min="0.7" max="0.95" step="0.01"><div class="hint">Net rentable as a share of gross floor area; the rest is circulation, walls, lobbies, mechanical. With hold-FAR on, raising efficiency adds leasable units in the same envelope.</div></div>
       <div class="ctl"><label>Total rentable SF (built) <span class="val" id="v_totalSF"></span></label><input type="range" id="totalSF" min="120000" max="520000" step="1000"><div class="hint">Drag to size the building; residential unit counts scale to match (unit sizes and commercial held fixed).</div></div>
       <div class="ctl"><label>FAR (built) <span class="val" id="v_farBuilt"></span></label><input type="range" id="farBuilt" min="0.3" max="6" step="0.05"><div class="hint">Same envelope as total rentable SF, expressed as floor-area ratio. The two move together.</div></div>
       <div id="envNote" class="hint" style="margin:8px 0 4px;line-height:1.5"></div>
@@ -297,7 +311,7 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <div class="modlabel" style="margin-top:22px">Upside Explorer</div>
+  <div class="modlabel" style="margin-top:22px">The levers</div>
   <details class="grp" open><summary><span>1 &middot; Cost &amp; efficiency</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <p class="glabel">Industrialized construction and right-sized parking attack the single biggest barrier in this market: hard cost.</p>
@@ -381,55 +395,55 @@ body.gated{overflow:hidden}
     </div>
   </div>
   <div class="scnwrap">
-    <div class="scnhead"><span class="scnlabel">Capital-structure paths</span><span class="scnsub">The honest base-case floor, and three defensible paths to a deal that pencils. Each path moves the levers and the two base-case assumptions that genuinely differ by strategy - hold period and exit cap. Click any card, or use the scenario bar pinned at the top of the page to toggle them as you scroll. Or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
+    <div class="scnhead"><span class="scnlabel">Build &amp; capital</span><span class="scnsub">The honest floor, the single-stair Point Access Block design move that transforms it, and three ways a team stacks capital on that efficient base. Click any card, or use the scenario bar pinned at the top of the page to toggle them as you scroll. Or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
     <div class="scnrow">
       <div class="scn" data-k="base" role="button" tabindex="0">
-        <div class="scn-t">Base case &middot; the honest floor</div>
-        <div class="scn-d">A merchant developer building at market Salem rents on conventional debt - no subsidy, no incentives, no placemaking premium. This is what the deal returns on its own, and why the corridor has sat undeveloped. Every path below builds from here.</div>
+        <div class="scn-t">Base &middot; the honest floor</div>
+        <div class="scn-d">A conventional double-loaded podium at market Salem rents, 82% efficient, no subsidy or design optimization. What the deal returns on its own, and why the corridor sits undeveloped. Every path builds from here.</div>
         <div class="scn-r" id="r_base">-</div>
       </div>
+      <div class="scn" data-k="P" role="button" tabindex="0">
+        <div class="scn-t">P &middot; Point Access Block</div>
+        <div class="scn-d">The same site and rents, rebuilt as a single-stair PAB: ~93% efficiency (vs 82%) fits 15% more homes in the same shell, slab-on-grade construction cuts hard cost, and dual-aspect units lease better. The design move alone clears the floor, before a dollar of subsidy.</div>
+        <div class="scn-r" id="r_P">-</div>
+      </div>
       <div class="scn" data-k="A" role="button" tabindex="0">
-        <div class="scn-t">A &middot; Market-Rate, Lightly Subsidized</div>
-        <div class="scn-d">Industrialized cost savings, a district placemaking premium, on-site solar and ancillary income, plus standard public gap tools (TIF, SDC waivers, abatement, NMTC). No affordable sleeve, no agency debt - the path a private team can pursue on its own. Merchant build, sold ~2 years after stabilization.</div>
+        <div class="scn-t">A &middot; Market-rate on PAB</div>
+        <div class="scn-d">PAB plus the levers a private team controls: placemaking, on-site solar, ancillary income, right-sized parking, and light public gap tools. No affordable sleeve, no agency debt, sold ~2 years after stabilization.</div>
         <div class="scn-r" id="r_A">-</div>
       </div>
       <div class="scn" data-k="B" role="button" tabindex="0">
-        <div class="scn-t">B &middot; Attainable + Tax-Credit Equity</div>
-        <div class="scn-d">Adds a 22% LIHTC affordable sleeve, FHA/HUD 221(d)(4) agency debt, and C-PACE on the green scope. Trades headline return for near-zero cash equity, ~90 affordable homes, and non-recourse risk. Held ~4 years on long-term agency debt, with the exit cap trading a touch tighter.</div>
+        <div class="scn-t">B &middot; Attainable + tax-credit equity</div>
+        <div class="scn-d">PAB with a 25% LIHTC affordable sleeve, FHA/HUD agency debt, and C-PACE. Trades headline return for ~120 affordable homes and near-zero cash equity, held long on non-recourse debt.</div>
         <div class="scn-r" id="r_B">-</div>
       </div>
       <div class="scn" data-k="C" role="button" tabindex="0">
-        <div class="scn-t">C &middot; Catalytic Public Partnership</div>
-        <div class="scn-d">Leans on the West Salem Urban Renewal Area: a large TIF reimbursement, expanded grants, tax abatement and NMTC, with a modest affordable sleeve - the deal a city treats as a priority corridor. A ~3-year hold as placemaking matures and the exit cap firms.</div>
+        <div class="scn-t">C &middot; Catalytic public partnership</div>
+        <div class="scn-d">PAB leaning on the West Salem Urban Renewal Area: TIF, grants, NMTC, abatement and a modest affordable sleeve, the deal a city treats as a priority corridor.</div>
         <div class="scn-r" id="r_C">-</div>
       </div>
     </div>
-    <div class="scnhead" style="margin-top:26px"><span class="scnlabel">Rents &amp; program sensitivities</span><span class="scnsub">The same industrialized-cost base, asking what real demand and a richer unit mix do to the numbers - no placemaking fudge, just the rent line and the program moving.</span></div>
+    <div class="scnhead" style="margin-top:26px"><span class="scnlabel">Rents &amp; program</span><span class="scnsub">All on the PAB base, asking what real demand and a different unit mix do, and what a fully-optimized regenerative stack can reach while keeping homes attainable.</span></div>
     <div class="scnrow">
       <div class="scn" data-k="D" role="button" tabindex="0">
         <div class="scn-t">D &middot; Demand-led (in-migration)</div>
-        <div class="scn-d">Asks what genuine higher market rents do - renters relocating from pricier metros (Portland, the Bay Area) paying roughly 15% above the grounded Salem comps, sustained over the hold. This is the rent line moving on real demand, not a placemaking premium.</div>
+        <div class="scn-d">PAB with rents ~10% above the grounded Salem comps, renters relocating from pricier metros (Portland, the Bay Area). Tests what genuine demand does on the efficient base, no placemaking fudge.</div>
         <div class="scn-r" id="r_D">-</div>
       </div>
       <div class="scn" data-k="E" role="button" tabindex="0">
-        <div class="scn-t">E &middot; Trended rents</div>
-        <div class="scn-d">Starts at today's market rents but underwrites stronger rent growth (3.75%/yr) over a five-year hold. Isolates what the trend alone is worth, without raising day-one rents - and shows it helps but does not fully close the gap by itself.</div>
+        <div class="scn-t">E &middot; Micro-forward (Portland model)</div>
+        <div class="scn-d">PAB at its most land-efficient: 250 studios averaging ~410 SF, the deepest parking cut for no-car renters. The densest, most attainable program the comps support.</div>
         <div class="scn-r" id="r_E">-</div>
       </div>
       <div class="scn" data-k="F" role="button" tabindex="0">
-        <div class="scn-t">F &middot; Strong lease-up</div>
-        <div class="scn-d">Elevated rents from day one plus fast absorption - lease-up at 8.5 points per month to 96% occupancy - a merchant flip that captures strong initial demand rather than waiting out a slow ramp.</div>
+        <div class="scn-t">F &middot; Family + co-living</div>
+        <div class="scn-d">PAB reweighted to families and co-living: 46 three-bed and 16 four-bed units (rented by the room), with a small affordable sleeve. The richer, less land-efficient mix on the efficient base.</div>
         <div class="scn-r" id="r_F">-</div>
       </div>
       <div class="scn" data-k="G" role="button" tabindex="0">
-        <div class="scn-t">G &middot; Family + co-living program</div>
-        <div class="scn-d">Reweights the program toward families and co-living: 40 three-bed and 14 four-bed units (rented by the room at a higher $/SF), on a light public stack with a small affordable sleeve. Shows how the richer, less land-efficient mix pencils.</div>
+        <div class="scn-t">G &middot; Full regenerative stack</div>
+        <div class="scn-d">Everything a sophisticated team stacks on PAB: industrialized cost, placemaking, solar, the public toolkit, and a 20% affordable sleeve. The credible ceiling, strong institutional returns and ~95 affordable homes at once.</div>
         <div class="scn-r" id="r_G">-</div>
-      </div>
-      <div class="scn" data-k="H" role="button" tabindex="0">
-        <div class="scn-t">H &middot; Micro-forward (Portland model)</div>
-        <div class="scn-d">Leans into the small-efficient thesis the comps validate: 215 studios averaging ~410 SF, the deepest parking cut (no-car renters), placemaking and a light public stack. The most land-efficient program, and the strongest floor-to-pencil swing in the set.</div>
-        <div class="scn-r" id="r_H">-</div>
       </div>
     </div>
   </div>
@@ -464,7 +478,7 @@ body.gated{overflow:hidden}
     <div style="margin-top:14px;font-size:13.5px;line-height:1.7;max-width:980px">
       <p><strong>This page holds both halves of the argument.</strong> The Base Case module at the top is a plain merchant pro forma: a conventional developer building at honest Salem rents loses money, which is exactly why this corridor sits undeveloped. The Upside Explorer below is the other half - the toolkit creative development teams use to close that gap, every lever separable and individually sized.</p>
       <p style="margin-top:10px"><strong>The waterfall is the whole story.</strong> It starts at the base-case floor and attributes the climb to five categories: cost &amp; efficiency, revenue &amp; placemaking, public subsidy, affordable / tax-credit equity, and financing structure. Because the levers interact, the decomposition is order-dependent (each category is added on top of the ones before it); the final all-in IRR is exact regardless of order.</p>
-      <p style="margin-top:10px"><strong>Every lever is real and in use.</strong> LIHTC and HUD 221(d)(4) are the backbone of attainable housing finance. TIF, MUPTE / Vertical Housing abatement, SDC waivers, and capacity grants are standard public gap-funding tools. C-PACE, NMTC, Opportunity Zones, ground leases, industrialized construction, right-sized parking, on-site solar, and ancillary income are all levers experienced teams combine. None is a silver bullet; the thesis is that the <em>combination</em>, executed well, turns a -15% floor into an investable deal while keeping rents attainable.</p>
+      <p style="margin-top:10px"><strong>Every lever is real and in use.</strong> LIHTC and HUD 221(d)(4) are the backbone of attainable housing finance. TIF, MUPTE / Vertical Housing abatement, SDC waivers, and capacity grants are standard public gap-funding tools. C-PACE, NMTC, Opportunity Zones, ground leases, industrialized construction, right-sized parking, on-site solar, and ancillary income are all levers experienced teams combine. The foundational move is the building itself: a single-stair Point Access Block lifts efficiency from ~82% to ~93% and shifts construction from a concrete podium to slab-on-grade, which alone clears most of the gap. None of the financing levers is a silver bullet; the thesis is that the <em>combination</em>, executed well, turns a roughly -17% floor into an investable deal while keeping rents attainable.</p>
       <p style="margin-top:10px;color:#8a857a;font-size:12.5px">For discussion purposes only. This is a planning tool, not an offer of securities, and several levers (LIHTC allocation, HUD sizing, TIF eligibility, OZ treatment) are subject to program rules, third-party validation, and public approvals. After-tax figures are illustrative. Questions or a scenario worth keeping? Export it and send it to erik@nowcitylabs.com.</p>
     </div>
   </details>
@@ -517,6 +531,7 @@ const mixOf=p=>[{n:'Studio',u:p.uStudio,sf:p.sfStudio,k:'rStudio'},{n:'1BR',u:p.
 
 function run(p){
   const HUD=p.hudOn>=1;
+  const PS=Math.max(0.1,(p.siteAcres||5.3)/5.3), RET=RETNRA*PS, OFF=OFFNRA*PS, amen=AMEN*PS, demo=DEMO*PS, sitew=SITEW*PS;
   const crate=HUD?p.hudRate:p.crate, prate=HUD?p.hudRate:p.prate, amN=(HUD?40:30)*12;
   const VS=15, VE=15+p.vdur-1, OPEN=VE+1, REFI=HUD?OPEN+12:VE+18, EXIT=OPEN+p.exitm-1, N=EXIT+13;
   const MIX=mixOf(p);
@@ -524,12 +539,13 @@ function run(p){
   const resUnits=MIX.reduce((s,m)=>s+m.u,0);
   const affFactor=(p.affShare>0)?(1-p.affShare*p.affDisc):1;
   const resAnnual=MIX.reduce((s,m)=>s+m.u*m.sf*p[m.k]*12,0)*affFactor;
-  const landdev=DEMO+SITEW;
+  const landdev=demo+sitew;
   const hcresEff=Math.max(50,p.hcres-p.maxSave);
   const opexEff=Math.max(0.05,p.opexr-p.greenSave-p.abate);
   const parkSpaces=Math.max(0,PSP-p.parkCut);
   const parkSave=p.parkCut*PARKCOST;
-  const hard=Math.max(1e6,(resNRA*hcresEff*(HUD?1+p.davis:1)+(RETNRA+OFFNRA)*HCCOM+AMEN-parkSave)*(1+p.hccont));
+  const effAdj=0.82/Math.max(0.5,p.effRatio||0.82);
+  const hard=Math.max(1e6,(resNRA*hcresEff*effAdj*(HUD?1+p.davis:1)+(RET+OFF)*HCCOM+amen-parkSave)*(1+p.hccont));
   const sbase=hard*0.09+(landdev+hard)*0.02;
   const fee3=0.03*(landdev+hard+sbase), scont=0.03*(sbase+fee3), soft=sbase+fee3+scont;
   const other=hard*0.01005;
@@ -579,8 +595,8 @@ function run(p){
         const oR=Math.min(p.occs,OCC0+p.pace*mo), oRet=Math.min(ROCCS,OCC0+p.pace*mo), oOff=Math.min(OOCCS,OCC0+p.pace*mo);
         const dp=1+p.distPrem*Math.min(1,mo/(p.dRamp*12));
         const resB=resAnnual/12*g*oR*dp, resO=resB*OI_R;
-        const retB=RETNRA*p.comrent/12*cg*oRet, retO=retB*OI_C;
-        const offB=OFFNRA*p.comrent/12*cg*oOff, offO=offB*OI_C;
+        const retB=RET*p.comrent/12*cg*oRet, retO=retB*OI_C;
+        const offB=OFF*p.comrent/12*cg*oOff, offO=offB*OI_C;
         const park=parkSpaces*PRENT*cg;
         const rev=resB+resO+retB+retO+offB+offO+park;
         const bad=rev*BAD, oxR=resB*opexEff, oxC=(retB+offB)*OPEX_C, oxP=parkSpaces*POPEX/12*Math.pow(1+POPG,mo/12);
@@ -703,13 +719,16 @@ function delta(el,cur,b,fmt,goodUp=true){
   e.textContent=(d>0?'+':'')+fmt(d)+' vs base';
   e.className='d '+((d>0)===goodUp?'up':'dn');
 }
-const COMNRA=RETNRA+OFFNRA, ACRESF=43560, RESCOUNT=['uStudio','u1br','u2br','u3br','u4br','uth'];
+const COMNRA0=RETNRA+OFFNRA, ACRESF=43560, RESCOUNT=['uStudio','u1br','u2br','u3br','u4br','uth'];
 let envFAR=1.6, holdFAR=true;
+function comNRA(){return COMNRA0*Math.max(0.1,(+P.siteAcres||5.3)/5.3);}
+function holdFARscale(){const A=(+P.siteAcres||5.3)*ACRESF,eff=Math.max(0.5,+P.effRatio||0.82);scaleProgramTo(Math.max(0,envFAR*A*eff-comNRA()));}
+function setEff(v){P.effRatio=v;setSlider('effRatio',v,vlabel('effRatio',v));if(holdFAR)holdFARscale();recalc();}
 function envProgram(){
   const M=mixOf(P);
   const resNRA=M.reduce((a,m)=>a+(+m.u||0)*(+m.sf||0),0);
   const resUnits=M.reduce((a,m)=>a+(+m.u||0),0);
-  const totalRentable=resNRA+COMNRA;
+  const totalRentable=resNRA+comNRA();
   const A=Math.max(1,(+P.siteAcres||0)*ACRESF);
   const eff=Math.max(0.5,+P.effRatio||0.82);
   const builtFAR=(totalRentable/eff)/A;
@@ -735,6 +754,7 @@ function updateEnvelope(){
   setSlider('totalSF',Math.round(e.totalRentable),Math.round(e.totalRentable).toLocaleString()+' SF');
   setSlider('farBuilt',e.builtFAR.toFixed(2),e.builtFAR.toFixed(2));
   envFAR=e.builtFAR;
+  document.querySelectorAll('.typo').forEach(btn=>btn.classList.toggle('on',Math.abs((+btn.dataset.eff)-(+P.effRatio||0))<0.005));
   const n=document.getElementById('envNote'); if(!n)return;
   const pct=Math.round(e.util*100), mf=(+P.maxFAR).toFixed(2);
   let msg,col;
@@ -830,22 +850,26 @@ function mk(id,type,data,opts){
 
 // wire sliders
 SLIDERS.forEach(k=>{
-  if(k==='siteAcres')return;
+  if(k==='siteAcres'||k==='effRatio')return;
   const el=document.getElementById(k); if(!el)return;
   el.addEventListener('input',e=>{P[k]=+e.target.value||0;const s=document.getElementById('v_'+k);if(s)s.textContent=vlabel(k,P[k]);recalc();});
 });
 // envelope driver sliders: rescale residential counts to hit a target
 (function(){
   const t=document.getElementById('totalSF');
-  if(t)t.addEventListener('input',e=>{scaleProgramTo(Math.max(COMNRA,(+e.target.value||0))-COMNRA);recalc();});
+  if(t)t.addEventListener('input',e=>{scaleProgramTo(Math.max(comNRA(),(+e.target.value||0))-comNRA());recalc();});
   const fr=document.getElementById('farBuilt');
   if(fr)fr.addEventListener('input',e=>{const A=(+P.siteAcres||0)*ACRESF,eff=+P.effRatio||0.82;
-    scaleProgramTo(Math.max(0,(+e.target.value||0)*A*eff-COMNRA));recalc();});
+    scaleProgramTo(Math.max(0,(+e.target.value||0)*A*eff-comNRA()));recalc();});
   const sa=document.getElementById('siteAcres');
   if(sa)sa.addEventListener('input',e=>{const na=+e.target.value||0;P.siteAcres=na;
     const lb=document.getElementById('v_siteAcres');if(lb)lb.textContent=vlabel('siteAcres',na);
-    if(holdFAR){const A=na*ACRESF,eff=+P.effRatio||0.82;scaleProgramTo(Math.max(0,envFAR*A*eff-COMNRA));}
-    recalc();});
+    if(holdFAR)holdFARscale();recalc();});
+  const ef=document.getElementById('effRatio');
+  if(ef)ef.addEventListener('input',e=>{P.effRatio=+e.target.value||0.82;
+    const lb=document.getElementById('v_effRatio');if(lb)lb.textContent=vlabel('effRatio',P.effRatio);
+    if(holdFAR)holdFARscale();recalc();});
+  document.querySelectorAll('.typo').forEach(btn=>btn.addEventListener('click',()=>setEff(+btn.dataset.eff)));
   const hf=document.getElementById('t_holdFAR');
   if(hf)hf.addEventListener('click',()=>{holdFAR=!holdFAR;hf.classList.toggle('on',holdFAR);hf.textContent=holdFAR?'On':'Off';});
 })();
@@ -872,14 +896,14 @@ document.getElementById('bImport').onclick=()=>{
 };
 const SCN={
  base:{inputs:{}},
- A:{inputs:{exitm:24,rcap:0.055,ccap:0.07,maxSave:30,parkCut:35,greenSave:0.02,distPrem:0.035,solarK:200,ancil:30,comrent:28,tif:6,grants:3,nmtc:2,abate:0.04}},
- B:{inputs:{exitm:48,rcap:0.0525,ccap:0.0675,maxSave:29,parkCut:33,greenSave:0.02,distPrem:0.03,solarK:200,ancil:28,comrent:28,tif:6,grants:3,nmtc:2,abate:0.05,affShare:0.22,affDisc:0.25,lihtcEq:11,hudOn:1,cpace:5}},
- C:{inputs:{exitm:36,rcap:0.0525,ccap:0.0675,maxSave:28,parkCut:30,greenSave:0.02,distPrem:0.03,solarK:180,ancil:25,comrent:27,tif:12,grants:6,nmtc:4,abate:0.06,affShare:0.15,affDisc:0.25,lihtcEq:8}},
- D:{inputs:{maxSave:30,parkCut:35,greenSave:0.02,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:3.20,r1br:2.42,r2br:2.16,r3br:1.98,r4br:2.93,rth:2.05,distPrem:0.015,solarK:150}},
- E:{inputs:{maxSave:30,parkCut:35,greenSave:0.02,exitm:60,rcap:0.0525,ccap:0.07,ancil:25,comrent:27,rgrow:0.0375,distPrem:0.02,solarK:150}},
- F:{inputs:{maxSave:30,parkCut:35,greenSave:0.02,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,rStudio:3.11,r1br:2.35,r2br:2.11,r3br:1.93,r4br:2.86,rth:2.00,pace:0.085,occs:0.96,distPrem:0.01,solarK:120}},
- G:{inputs:{uStudio:150,u1br:128,u2br:80,u3br:40,u4br:14,uth:8,r4br:2.62,r3br:1.78,maxSave:30,parkCut:35,greenSave:0.02,exitm:24,rcap:0.055,ccap:0.07,ancil:25,comrent:27,distPrem:0.025,solarK:200,tif:6,grants:3,abate:0.04,affShare:0.12,affDisc:0.25,lihtcEq:6}},
- H:{inputs:{uStudio:215,u1br:128,u2br:64,u3br:9,u4br:2,uth:2,sfStudio:410,sf1br:640,sf2br:890,sf3br:1150,sf4br:1380,sfth:1280,rStudio:2.92,r1br:2.14,r2br:1.90,r3br:1.74,r4br:2.62,rth:1.80,maxSave:30,parkCut:75,greenSave:0.02,exitm:24,rcap:0.055,ccap:0.07,distPrem:0.025,solarK:200,ancil:35,comrent:27,tif:6,grants:3,abate:0.04}}
+ P:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:35,parkCut:20,distPrem:0.02,exitm:24,rcap:0.055,ccap:0.07}},
+ A:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:36,parkCut:22,distPrem:0.03,solarK:120,ancil:22,comrent:27,tif:4,grants:2,abate:0.03,exitm:24,rcap:0.055,ccap:0.07}},
+ B:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:38,parkCut:25,distPrem:0.03,solarK:150,ancil:22,comrent:27,abate:0.04,affShare:0.25,affDisc:0.25,lihtcEq:9,hudOn:1,cpace:5,exitm:48,rcap:0.0525,ccap:0.0675}},
+ C:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:35,parkCut:22,distPrem:0.03,solarK:150,ancil:22,comrent:27,tif:7,grants:3,nmtc:2,abate:0.045,affShare:0.15,affDisc:0.25,lihtcEq:7,exitm:36,rcap:0.0525,ccap:0.0675}},
+ D:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:35,parkCut:20,distPrem:0.02,solarK:120,ancil:22,comrent:27,rStudio:3.05,r1br:2.31,r2br:2.07,r3br:1.89,r4br:2.81,rth:1.96,exitm:24,rcap:0.055,ccap:0.07}},
+ E:{inputs:{effRatio:0.93,uStudio:250,u1br:150,u2br:74,u3br:10,u4br:2,uth:2,sfStudio:410,sf1br:640,sf2br:890,sf3br:1150,sf4br:1380,sfth:1280,rStudio:2.92,r1br:2.14,r2br:1.90,r3br:1.74,r4br:2.62,rth:1.80,maxSave:35,parkCut:55,distPrem:0.03,solarK:150,ancil:28,comrent:27,abate:0.03,exitm:24,rcap:0.055,ccap:0.07}},
+ F:{inputs:{effRatio:0.93,uStudio:170,u1br:150,u2br:92,u3br:46,u4br:16,uth:9,r4br:2.62,r3br:1.78,maxSave:38,parkCut:25,distPrem:0.03,solarK:150,ancil:22,comrent:27,abate:0.04,affShare:0.12,affDisc:0.25,lihtcEq:5,exitm:24,rcap:0.055,ccap:0.07}},
+ G:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:42,parkCut:30,distPrem:0.04,solarK:250,ancil:30,comrent:28,tif:7,grants:4,nmtc:2,abate:0.045,affShare:0.20,affDisc:0.25,lihtcEq:10,exitm:36,rcap:0.0525,ccap:0.0675}}
 };
 function scnChip(k){const r=run({...BASE,...SCN[k].inputs});
   const eq=r.cashEq<1e6?'$0 cash equity':'$'+(r.cashEq/1e6).toFixed(0)+'M equity';
