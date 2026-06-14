@@ -286,6 +286,12 @@ body.gated{overflow:hidden}
       <button class="sbtn" data-k="G" type="button" title="G - Full regenerative stack">G</button>
     </div>
   </div>
+  <div class="sb-group">
+    <span class="sb-cap">Reference</span>
+    <div class="sb-btns">
+      <button class="sbtn" data-k="IS" type="button" title="IS - the Investment Summary basis">IS</button>
+    </div>
+  </div>
   <span class="sb-read" id="sbRead">-</span>
 </div>
 
@@ -360,6 +366,14 @@ body.gated{overflow:hidden}
         <div class="scn-t">G &middot; Full regenerative stack</div>
         <div class="scn-d">Everything a sophisticated team stacks on PAB: industrialized cost, placemaking, solar, the public toolkit, and a 20% affordable sleeve. The credible ceiling, strong institutional returns and ~95 affordable homes at once.</div>
         <div class="scn-r" id="r_G">-</div>
+      </div>
+    </div>
+    <div class="scnhead" style="margin-top:16px"><span class="scnlabel">Reference</span><span class="scnsub">Ties the explorer to the formal underwriting.</span></div>
+    <div class="scnrow">
+      <div class="scn" data-k="IS" role="button" tabindex="0">
+        <div class="scn-t">IS &middot; Investment Summary basis</div>
+        <div class="scn-d">The Phase One program as presented in the Investment Summary: 400 homes, ~279,000 SF, conventional (double-loaded) delivery at trended rents, structured parking, about $150M all-in and ~$9.4M stabilized NOI. The figure below is the return on a straight merchant sale. The Investment Summary's 20.3% IRR comes from a Year-4 recapitalization that returns capital to investors early, a structure this sale-based tool does not yet model.</div>
+        <div class="scn-r" id="r_IS">-</div>
       </div>
     </div>
   </div>
@@ -1089,7 +1103,8 @@ const SCN={
  D:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:35,parkCut:20,distPrem:0.02,solarK:120,ancil:22,comrent:27,rStudio:3.05,r1br:2.31,r2br:2.07,r3br:1.89,r4br:2.81,rth:1.96,exitm:24,rcap:0.055,ccap:0.07}},
  E:{inputs:{effRatio:0.93,uStudio:250,u1br:150,u2br:74,u3br:10,u4br:2,uth:2,sfStudio:410,sf1br:640,sf2br:890,sf3br:1150,sf4br:1380,sfth:1280,rStudio:2.92,r1br:2.14,r2br:1.90,r3br:1.74,r4br:2.62,rth:1.80,maxSave:35,parkCut:55,distPrem:0.03,solarK:150,ancil:28,comrent:27,abate:0.03,exitm:24,rcap:0.055,ccap:0.07}},
  F:{inputs:{effRatio:0.93,uStudio:170,u1br:150,u2br:92,u3br:46,u4br:16,uth:9,r4br:2.62,r3br:1.78,maxSave:38,parkCut:25,distPrem:0.03,solarK:150,ancil:22,comrent:27,abate:0.04,affShare:0.12,affDisc:0.25,lihtcEq:5,exitm:24,rcap:0.055,ccap:0.07}},
- G:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:42,parkCut:30,distPrem:0.04,solarK:250,ancil:30,comrent:28,tif:7,grants:4,nmtc:2,abate:0.045,affShare:0.20,affDisc:0.25,lihtcEq:10,exitm:36,rcap:0.0525,ccap:0.0675}}
+ G:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,maxSave:42,parkCut:30,distPrem:0.04,solarK:250,ancil:30,comrent:28,tif:7,grants:4,nmtc:2,abate:0.045,affShare:0.20,affDisc:0.25,lihtcEq:10,exitm:36,rcap:0.0525,ccap:0.0675}},
+ IS:{inputs:{effRatio:0.82,uStudio:120,u1br:148,u2br:97,u3br:28,u4br:4,uth:3,sfStudio:490,sf1br:630,sf2br:885,sf3br:1130,sf4br:1360,sfth:1280,retSF:22000,offSF:18000,comrent:30,rStudio:3.35,r1br:2.55,r2br:2.28,r3br:2.08,r4br:3.10,rth:2.15,rgrow:0.035,occs:0.95,parkCut:0,distPrem:0.04,solarK:120,ancil:25,exitm:30,rcap:0.0525,ccap:0.0675}}
 };
 function scnChip(k){const r=run({...BASE,...SCN[k].inputs});
   const eq=r.cashEq<1e6?'$0 cash equity':'$'+(r.cashEq/1e6).toFixed(0)+'M equity';
