@@ -76,8 +76,11 @@ table.dtab td:last-child{text-align:right;white-space:nowrap}
 table.dtab tr.h td{font-weight:700;color:var(--green);border-bottom:1.5px solid var(--line);text-transform:uppercase;font-size:10px;letter-spacing:.06em;padding-top:12px}
 table.dtab tr.tot td{font-family:var(--serif);color:var(--ink-deep);border-top:1.5px solid var(--line);border-bottom:none;font-size:13.5px;padding-top:8px}
 table.dtab td.neg{color:#b04a2f}
-#tSU td:not(:first-child){text-align:right;white-space:nowrap}
-#tSU td:nth-child(n+3){color:#6e6a61;font-size:11px}
+#tSU td:not(:first-child),#tBudget td:not(:first-child){text-align:right;white-space:nowrap}
+#tSU td:nth-child(n+3),#tBudget td:nth-child(n+3){color:#6e6a61;font-size:11px}
+.oview{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px 20px;margin-top:8px}
+.ovi .ovl{font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:#8a857a;margin-bottom:3px}
+.ovi .ovv{font-size:14px;color:var(--ink-deep);font-weight:500;font-variant-numeric:tabular-nums;line-height:1.3}
 table.dtab tr.sh td{font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:#8a857a;border-bottom:1px solid var(--line);padding-bottom:5px}
 table.dtab tr.sh td:not(:first-child){text-align:right}
 .senstoggle{display:flex;gap:6px;margin-bottom:10px}
@@ -622,12 +625,18 @@ body.gated{overflow:hidden}
   </div>
   <div class="grid2" style="margin-top:12px">
     <div class="card full">
+      <h4 class="cardtog">Overview &middot; property snapshot<span class="cchev">&#9660;</span></h4>
+      <p class="sub">The program and project at a glance, live with your current settings.</p>
+      <div id="tOview"></div>
+    </div>
+    <div class="card full">
       <h4 class="cardtog">Upside build-up: IRR by lever category<span class="cchev">&#9660;</span></h4>
       <p class="sub">Each bar is a full re-run of the engine. Starting from the red base case, levers are switched on one category at a time at your current settings. The final bar is the all-in levered IRR.</p>
       <canvas id="cWF"></canvas>
       <table class="wf" id="tWF"></table>
     </div>
     <div class="card"><h4 class="cardtog">Sources &amp; uses<span class="cchev">&#9660;</span></h4><p class="sub">How the capital stack is filled, and where it goes.</p><canvas id="cSU"></canvas><table class="dtab" id="tSU"></table></div>
+    <div class="card"><h4 class="cardtog">Development budget<span class="cchev">&#9660;</span></h4><p class="sub">Standard cost categories with per-unit, per-GSF, and share of total.</p><table class="dtab" id="tBudget"></table></div>
     <div class="card"><h4 class="cardtog">Stabilized operating statement<span class="cchev">&#9660;</span></h4><p class="sub">Forward 12-month NOI at exit, the income a buyer capitalizes.</p><table class="dtab" id="tOps"></table></div>
     <div class="card"><h4 class="cardtog">Return summary<span class="cchev">&#9660;</span></h4><p class="sub">Levered returns to the equity at your current settings.</p><table class="dtab" id="tRet"></table></div>
     <div class="card"><h4 class="cardtog">Debt &amp; exit<span class="cchev">&#9660;</span></h4><p class="sub">Senior financing and the sale waterfall.</p><table class="dtab" id="tDebt"></table></div>
@@ -817,7 +826,13 @@ function run(p){
     sources:{gpEquity:GP,lpEquity:p.casheq*1e6,lihtc:p.lihtcEq*1e6,inKind:inkTot,grantsSubsidy:GRANT+subsidy,cpace:cpaceProceeds,seniorLoan:permOpen}};
   const debt={loan:permOpen,rate:HUD?p.hudRate:p.prate,ltc:permOpen/totalCost,refiMonth:REFI-OPEN,amYears:amN/12,dscr:pmt>0?(fwdR+fwdO)/(12*pmt):0,annualDS:pmt*12};
   const exitV={gross,net,payoff:rows[EXIT].permBal,proceeds,exitMonth:EXIT-OPEN+1,capR:p.rcap,capC:p.ccap,saleCost:(p.saleCost!=null?p.saleCost:TXN)};
-  return {lev,dts,profit,em:neg>0?pos/neg:0,irr,irrAT_noOZ,irrAT_OZ,totalCost,eqTot,cumEq,cashEq,
+  const hardBase=hard/(1+p.hccont);
+  const budget={
+    landPurchase:(p.glOn?0:p.land*1e6),entitlement:ENT,permits:PERM,demo,sitework:sitew,
+    construction:hardBase,contingency:hard-hardBase,
+    softBase:sbase,devFee:fee3,softContingency:scont,other,
+    loanFees:s.fees,interestReserve:s.intTot};
+  return {lev,dts,profit,em:neg>0?pos/neg:0,irr,irrAT_noOZ,irrAT_OZ,totalCost,eqTot,cumEq,cashEq,budget,parkSpaces,
     yoc:(fwdR+fwdO)/totalCost,dscr:pmt>0?(fwdR+fwdO)/(12*pmt):0,ltc:permOpen/totalCost,
     net,proceeds,permOpen,rows,OPEN,EXIT,resAnnual,resNRA,
     avgRent:resAnnual/12/Math.max(1,resUnits),resUnits,fwd:fwdR+fwdO,fwdR,fwdO,pool,
@@ -965,7 +980,7 @@ function recalc(){
   if(r.permOpen>FAC)w.push('Loan exceeds the $95M facility.');
   document.getElementById('status').innerHTML=w.length?'<div class="flag" style="border-color:#d99;background:#fdeeee;margin-top:16px">'+w.join(' ')+'</div>':'';
 
-  drawWaterfall();drawSU(r);drawCF(r);drawOps(r);drawReturns(r);drawDebt(r);drawAnnual(r);drawSens();
+  drawOverview(r);drawWaterfall();drawSU(r);drawBudget(r);drawCF(r);drawOps(r);drawReturns(r);drawDebt(r);drawAnnual(r);drawSens();
   markScn(r);
   updateEnvelope();
   // bottom readout
@@ -978,6 +993,48 @@ function recalc(){
     +(P.affShare>0?' with <strong>'+r.affUnits+'</strong> affordable units':'')
     +'. Base-case floor: '+fmtP(base.irr)+'. '
     +(cleared?'The lever stack closes the '+((nz(r.irr)-nz(base.irr))*100).toFixed(0)+'-point gap.':'Keep stacking - you need about '+((0.15-nz(r.irr))*100).toFixed(0)+' more points.');
+}
+function drawOverview(r){
+  const ac=+P.siteAcres||5.3, lotSF=ac*43560, eff=Math.max(0.5,+P.effRatio||0.82);
+  const com=(r.retSFv||0)+(r.offSFv||0), nra=r.resNRA+com, gsf=r.resNRA/eff+com;
+  const avgSize=r.resNRA/Math.max(1,r.resUnits), parkRatio=r.parkSpaces/Math.max(1,r.resUnits);
+  const builtFAR=gsf/Math.max(1,lotSF), dens=r.resUnits/Math.max(0.01,ac);
+  const mixStr=mixOf(P).filter(x=>x.u>0).map(x=>x.u+' '+x.n).join(' &middot; ')||'-';
+  const item=(l,v)=>'<div class="ovi"><div class="ovl">'+l+'</div><div class="ovv">'+v+'</div></div>';
+  let h='<div class="oview">';
+  h+=item('Lot size',ac.toFixed(2)+' ac &middot; '+Math.round(lotSF).toLocaleString()+' SF');
+  h+=item('Residential units',r.resUnits+(r.affUnits>0?' ('+r.affUnits+' aff.)':''));
+  h+=item('Unit mix',mixStr);
+  h+=item('Avg unit size',Math.round(avgSize).toLocaleString()+' SF');
+  h+=item('Net rentable area',Math.round(nra).toLocaleString()+' SF');
+  h+=item('Commercial NRA','Retail '+Math.round(r.retSFv).toLocaleString()+' &middot; Office '+Math.round(r.offSFv).toLocaleString());
+  h+=item('Gross building area',Math.round(gsf).toLocaleString()+' SF');
+  h+=item('Building efficiency',(eff*100).toFixed(0)+'%');
+  h+=item('Parking',r.parkSpaces+' &middot; '+parkRatio.toFixed(2)+'/unit');
+  h+=item('FAR (built / max)',builtFAR.toFixed(2)+' / '+(+P.maxFAR||0).toFixed(1));
+  h+=item('Density',dens.toFixed(0)+' units/ac');
+  h+=item('Total project cost',fmt$(r.totalCost));
+  h+=item('Cost / unit','$'+Math.round(r.totalCost/Math.max(1,r.resUnits)/1e3)+'k');
+  h+=item('Cost / GSF','$'+Math.round(r.totalCost/Math.max(1,gsf)));
+  h+='</div>';
+  document.getElementById('tOview').innerHTML=h;
+}
+function drawBudget(r){
+  const b=r.budget,units=Math.max(1,r.resUnits),eff=Math.max(0.5,+P.effRatio||0.82);
+  const gsf=Math.max(1,r.resNRA/eff+(r.retSFv||0)+(r.offSFv||0)),tot=r.totalCost;
+  const pu=v=>'$'+Math.round(v/units/1e3)+'k',pg=v=>'$'+Math.round(v/gsf),pct=v=>(100*v/tot).toFixed(0)+'%';
+  const row=(l,v)=>'<tr><td>'+l+'</td><td>'+fmt$(v)+'</td><td>'+pg(v)+'</td><td>'+pu(v)+'</td><td>'+pct(v)+'</td></tr>';
+  const grp=(l,v)=>'<tr class="h"><td>'+l+'</td><td>'+fmt$(v)+'</td><td>'+pg(v)+'</td><td>'+pu(v)+'</td><td>'+pct(v)+'</td></tr>';
+  const land=b.landPurchase+b.entitlement+b.permits+b.demo+b.sitework,hardT=b.construction+b.contingency,softT=b.softBase+b.devFee+b.softContingency,finT=b.loanFees+b.interestReserve;
+  let h='<tr class="sh"><td>Line item</td><td>Amount</td><td>/GSF</td><td>/Unit</td><td>%</td></tr>';
+  h+=grp('Land &amp; acquisition',land);
+  h+=row('Land purchase',b.landPurchase)+row('Entitlement',b.entitlement)+row('Permits &amp; fees',b.permits)+row('Demolition',b.demo)+row('Site work',b.sitework);
+  h+=grp('Hard costs',hardT)+row('Construction',b.construction)+row('Contingency',b.contingency);
+  h+=grp('Soft costs',softT)+row('Design, PM &amp; legal',b.softBase)+row('Developer fee',b.devFee)+row('Soft contingency',b.softContingency);
+  h+=grp('Other (pre-opening &amp; FF&amp;E)',b.other);
+  h+=grp('Financing',finT)+row('Loan fees',b.loanFees)+row('Interest reserve',b.interestReserve);
+  h+='<tr class="tot"><td>Total development cost</td><td>'+fmt$(tot)+'</td><td>'+pg(tot)+'</td><td>'+pu(tot)+'</td><td>100%</td></tr>';
+  document.getElementById('tBudget').innerHTML=h;
 }
 let sensMetric='irr';
 function sensCell(v){
