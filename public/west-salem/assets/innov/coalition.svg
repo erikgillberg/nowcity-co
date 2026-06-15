@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 600" font-family="Inter, Arial, sans-serif" role="img" aria-label="Diagram: a neutral district nonprofit convenes university, government, industry, and community around the Edgewater district">
+  <defs>
+    <radialGradient id="hub" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#5a6c4e"/>
+      <stop offset="100%" stop-color="#3c4a34"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#211f1c" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <!-- connectors -->
+  <g stroke="#c9c3b4" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round">
+    <line x1="460" y1="300" x2="460" y2="120"/>
+    <line x1="460" y1="300" x2="735" y2="300"/>
+    <line x1="460" y1="300" x2="460" y2="480"/>
+    <line x1="460" y1="300" x2="185" y2="300"/>
+  </g>
+
+  <!-- center hub -->
+  <circle cx="460" cy="300" r="104" fill="url(#hub)" filter="url(#soft)"/>
+  <text x="460" y="276" text-anchor="middle" fill="#f4f1e9" font-size="15" font-weight="700" letter-spacing="0.5">A neutral</text>
+  <text x="460" y="297" text-anchor="middle" fill="#f4f1e9" font-size="15" font-weight="700" letter-spacing="0.5">district trust</text>
+  <text x="460" y="324" text-anchor="middle" fill="#d9cdb6" font-size="11.5">holds the mission,</text>
+  <text x="460" y="340" text-anchor="middle" fill="#d9cdb6" font-size="11.5">convenes the table</text>
+
+  <!-- University (top, green) -->
+  <g filter="url(#soft)">
+    <circle cx="460" cy="92" r="74" fill="#48593f"/>
+  </g>
+  <text x="460" y="78" text-anchor="middle" fill="#f4f1e9" font-size="14.5" font-weight="700">University</text>
+  <text x="460" y="98" text-anchor="middle" fill="#dce4d2" font-size="10.5">Research, talent,</text>
+  <text x="460" y="112" text-anchor="middle" fill="#dce4d2" font-size="10.5">spinouts, legitimacy</text>
+
+  <!-- Industry (right, green-soft) -->
+  <g filter="url(#soft)">
+    <circle cx="772" cy="300" r="74" fill="#6c7d5e"/>
+  </g>
+  <text x="772" y="286" text-anchor="middle" fill="#f4f1e9" font-size="14.5" font-weight="700">Industry</text>
+  <text x="772" y="306" text-anchor="middle" fill="#eef1e8" font-size="10.5">Anchor tenancy,</text>
+  <text x="772" y="320" text-anchor="middle" fill="#eef1e8" font-size="10.5">demand, jobs</text>
+
+  <!-- Community (bottom, gold) -->
+  <g filter="url(#soft)">
+    <circle cx="460" cy="508" r="74" fill="#c08a4a"/>
+  </g>
+  <text x="460" y="494" text-anchor="middle" fill="#fff7ec" font-size="14.5" font-weight="700">Community</text>
+  <text x="460" y="514" text-anchor="middle" fill="#fbeeda" font-size="10.5">Belonging, equity,</text>
+  <text x="460" y="528" text-anchor="middle" fill="#fbeeda" font-size="10.5">a workforce at home</text>
+
+  <!-- Government (left, terra) -->
+  <g filter="url(#soft)">
+    <circle cx="148" cy="300" r="74" fill="#a8703f"/>
+  </g>
+  <text x="148" y="286" text-anchor="middle" fill="#fff7ec" font-size="14.5" font-weight="700">Government</text>
+  <text x="148" y="306" text-anchor="middle" fill="#fbeeda" font-size="10.5">Land, zoning,</text>
+  <text x="148" y="320" text-anchor="middle" fill="#fbeeda" font-size="10.5">patient public capital</text>
+</svg>

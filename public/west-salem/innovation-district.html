@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Edgewater Innovation District - Now City West Salem</title>
+<meta name="description" content="An applied-technology innovation district taking shape on the West Salem riverfront: a maker and venture community modeled on Newlab in the Brooklyn Navy Yard, built the way the world's great districts were built, by a coalition of university, government, industry, and community.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=5">
+<script defer src="assets/nav.js?v=1"></script>
+<style>
+.specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:22px;margin-top:6px}
+.spec .num{font-family:var(--serif);font-size:clamp(24px,3vw,34px);color:var(--green);line-height:1.05}
+.dark .spec .num{color:var(--cream)}
+.spec .lbl{font-size:12px;color:#6e6a61;margin-top:6px;line-height:1.4}
+.dark .spec .lbl{color:#a39d8f}
+.seq{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:30px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seq .step{padding:22px 18px;border-right:1px solid var(--line)}
+.seq .step:last-child{border-right:none}
+.seq .step .n{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+.seq .step .t{font-family:var(--serif);font-size:16px;color:var(--ink-deep);margin:8px 0 8px}
+.seq .step p{font-size:12.5px;color:#6e6a61;line-height:1.55}
+@media(max-width:900px){.seq{grid-template-columns:1fr 1fr 1fr}.seq .step:nth-child(3){border-right:none}}
+@media(max-width:560px){.seq{grid-template-columns:1fr}.seq .step{border-right:none;border-bottom:1px solid var(--line)}.seq .step:last-child{border-bottom:none}}
+.who{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}
+.who th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:700;padding:0 12px 10px;border-bottom:2px solid var(--line)}
+.who td{padding:11px 12px;border-bottom:1px solid rgba(0,0,0,.06);vertical-align:top;line-height:1.5;color:#4a463f}
+.who td:first-child{font-weight:600;color:var(--ink-deep);white-space:nowrap}
+.who td:nth-child(2){font-weight:600;color:var(--green);white-space:nowrap}
+@media(max-width:640px){.who td:first-child,.who td:nth-child(2){white-space:normal}.who,.who th{font-size:12.5px}}
+.precard .pl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-soft);margin-bottom:8px}
+.precard h4{font-size:16.5px;margin-bottom:6px}
+.precard .take{font-size:13px;color:#6e6a61;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.dark .precard .take{border-color:rgba(255,255,255,.12);color:#b7b1a4}
+.feat{display:grid;grid-template-columns:1.35fr 1fr;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-top:8px}
+.feat .lhs{padding:34px 36px}
+.feat .rhs{background:var(--green);color:var(--cream);padding:34px 30px;display:flex;flex-direction:column;justify-content:center}
+.feat .rhs .fnum{font-family:var(--serif);font-size:30px;line-height:1.05}
+.feat .rhs .flbl{font-size:12px;color:#cdd5c2;margin:5px 0 20px}
+.feat .rhs .flbl:last-child{margin-bottom:0}
+.feat .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra)}
+@media(max-width:760px){.feat{grid-template-columns:1fr}}
+.mapwrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:8px;background:#eef0e6}
+.mapwrap img{width:100%;display:block}
+.coalfig{max-width:620px;margin:8px auto 0;display:block;width:100%}
+</style>
+</head>
+<body class="gated">
+
+<!-- PASSCODE GATE -->
+<div id="gate">
+  <div class="panel">
+    <div class="eyebrow" style="color:#d9a26c">Edgewater West Salem</div>
+    <h1 class="serif">Private<br>Preview</h1>
+    <p>This site is shared with project stakeholders for discussion purposes. Enter the access code to continue.</p>
+    <form id="gateform">
+      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+      <div class="err" id="gateerr"></div>
+    </form>
+    <p style="margin-top:22px;font-size:12.5px">Need access? Contact <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Edgewater West Salem<span class="brand-sub"> &middot; A Now City Neighborhood</span></a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="dd"><a href="plan.html" class="active">District Plan</a>
+        <ul class="ddm">
+          <li><a href="district.html">District Vision</a></li>
+          <li><a href="plan.html">Business Plan</a></li>
+          <li><a href="activation.html">Activation Plan</a></li>
+          <li><a href="om.html">Investment Summary</a></li>
+          <li class="dd-head">Underwriting</li>
+          <li><a href="upside.html">Upside Explorer</a></li>
+          <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
+          <li><a href="assets/docs/market-feasibility-study-2025.pdf" target="_blank" rel="noopener">Market Feasibility Study (2025)</a></li>
+          <li class="dd-head">Research &amp; Precedents</li>
+          <li><a href="research.html">District Economic Development</a></li>
+          <li><a href="mobility-research.html">District Mobility</a></li>
+          <li><a href="pab.html">Single-Stair / Point Access Block</a></li>
+          <li><a href="uli-tap.html">ULI Salem TAP (2022)</a></li>
+          <li class="dd-head">Concepts</li>
+          <li><a href="innovation-district.html">Innovation District</a></li>
+          <li><a href="mobility-concepts.html">Salem Mobility Concepts</a></li>
+          <li><a href="whoosh.html">Whoosh by Swyft Cities</a></li>
+          <li class="dd-head">West Salem Activation</li>
+          <li><a href="activation.html#market">Retail Activation</a></li>
+          <li><a href="activation.html#scandi">Housing Activation</a></li>
+        </ul>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#idea">The Idea</a>
+    <a href="#model">The Model</a>
+    <a href="#playbook">How They Are Built</a>
+    <a href="#cases">Case Studies</a>
+    <a href="#corridor">The Corridor</a>
+    <a href="#coalition">The Coalition</a>
+    <a href="#anchor">The Anchor</a>
+    <a href="#begin">Where We Begin</a>
+  </div>
+</div>
+
+<header class="hero short" id="top">
+  <div class="bg" style="background-image:url('assets/mp-05.jpg')"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="eyebrow">District Plan &middot; Innovation District</div>
+    <h1>Where the next<br>economy is made</h1>
+    <p class="sub">An applied-technology district taking shape on the Willamette riverfront, built the way the world's great districts are built: by a coalition.</p>
+    <div class="meta">A Now City initiative &middot; In the spirit of Newlab at the Brooklyn Navy Yard &middot; West Salem, Oregon</div>
+  </div>
+</header>
+
+<!-- THE IDEA -->
+<section id="idea">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Idea</div>
+      <h2>An innovation district taking shape on the river</h2>
+      <p class="lead">Edgewater is a place where people will live, work, and make things side by side. At its heart sits an innovation district: a working community where founders, engineers, researchers, and makers build applied technology in the open, on a real riverfront, among the neighbors who live there. Now City is convening it, and the path is well understood. The world's most admired districts share a common origin story, and this page tells that story, then shows how Salem writes its own chapter.</p>
+    </div>
+    <p class="bigquote rv" style="margin-top:18px">Great districts are built by coalitions: a university, a government, an industry, and a community, brought together around one shared place and held by a neutral trust.</p>
+    <div class="note rv" style="margin-top:26px">Now City is assembling that coalition now, with universities, enterprise, government, philanthropy, and the West Salem community. The sections below lay out the model, the precedents, and the sequence Salem can follow.</div>
+  </div>
+</section>
+
+<!-- THE MODEL: NEWLAB -->
+<section id="model" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Model</div>
+      <h2>Newlab, inside the Brooklyn Navy Yard</h2>
+      <p class="lead">The clearest picture of what Edgewater becomes is Newlab: a venture and maker community for hard technology, housed in one rehabilitated industrial building inside a much larger working campus. It gives hardware founders three things that are hard to find alone, infrastructure to prototype, real projects to pilot, and a pathway to capital, and it sits inside a city-owned industrial yard run for jobs and belonging. That nested shape, a curated maker building inside a mission-run campus, is exactly the shape Edgewater takes.</p>
+    </div>
+    <div class="duo rv">
+      <figure><img src="assets/props/bowtruss-int1.jpg" alt="Adaptive-reuse industrial maker building interior" loading="lazy"><figcaption>The maker building as a type: raw, high-bay, adaptive reuse</figcaption></figure>
+      <figure><img src="assets/props/bowtruss-int2.jpg" alt="High-bay workshop and prototyping floor reference" loading="lazy"><figcaption>Shared shops and prototyping that lift every company inside</figcaption></figure>
+    </div>
+    <div class="grid g3 rv" style="margin-top:34px">
+      <div class="card on-alt">
+        <h4>What Newlab is</h4>
+        <p style="font-size:14px">Founded in 2016 by David Belt and Scott Cohen, modeled on the MIT Media Lab, inside Building 128, an 1899 Navy machine shop reborn as roughly 84,000 square feet of studios, labs, and a full fabrication shop, metal, wood, 3D printing, electronics, and CNC.</p>
+      </div>
+      <div class="card on-alt">
+        <h4>How it was built</h4>
+        <p style="font-size:14px">A public landlord owned and rehabbed the shell; a private operator brought the vision and the curation. The roughly $82.8M Building 128 project drew $25M of New Markets Tax Credits alongside historic tax credits, federal, state, and city grants, and private capital. A coalition built it.</p>
+      </div>
+      <div class="card on-alt">
+        <h4>Why it compounds</h4>
+        <p style="font-size:14px">Shared tools, a curated community, and real-world pilots build on each other. Newlab reports more than 300 member startups and over 1,000 members across its locations, and has opened a second hub at Michigan Central in Detroit with Ford. The model travels.</p>
+      </div>
+    </div>
+    <div class="note rv">The figures we cite for Newlab and the Brooklyn Navy Yard come from those organizations and the New Markets Tax Credit Coalition. The Building 128 capital stack ($25M of New Markets Tax Credits within a roughly $82.8M project) is documented; member counts are as the organizations report them.</div>
+  </div>
+</section>
+
+<!-- HOW THEY ARE BUILT: THE PLAYBOOK -->
+<section id="playbook">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">How These Districts Are Built</div>
+      <h2>The coalition is the building block</h2>
+      <p class="lead">Look closely at the world's great innovation districts and the same structure appears again and again. Four partners come together, a university, a government, an industry, and a community, and a neutral entity holds the mission so that no single party has to own it. This is the well-tested pattern often called the triple helix, with the community as a fourth strand. The diagram below is the shape; the case studies that follow are the proof.</p>
+    </div>
+    <figure class="figure-block rv" style="margin-top:30px;background:#f4f1e9;border:1px solid var(--line)">
+      <img src="assets/innov/coalition.svg" alt="Diagram: a neutral district trust convenes university, government, industry, and community" class="coalfig" loading="lazy">
+    </figure>
+    <p class="fig-cap rv">Each partner brings something the others cannot. A neutral trust, a foundation or nonprofit, holds the mission and convenes the table.</p>
+    <div class="grid g4 rv" style="margin-top:32px">
+      <div class="card"><h4>University</h4><p style="font-size:14px">Research, talent, spinouts, and the credibility that draws the others to the table.</p></div>
+      <div class="card"><h4>Government</h4><p style="font-size:14px">Land, zoning, redevelopment and tax-increment tools, and patient public capital.</p></div>
+      <div class="card"><h4>Industry</h4><p style="font-size:14px">Anchor tenancy, real demand, jobs, and private investment alongside the public stack.</p></div>
+      <div class="card"><h4>Community</h4><p style="font-size:14px">Belonging and shared prosperity, seated from the start so the district lifts the neighbors around it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Case Studies</div>
+      <h2>Coalitions that built districts</h2>
+      <p class="lead">These places began the same way Edgewater begins: a champion convened partners, a neutral entity was formed, an anchor and a public tool arrived together, and a community was kept close. The closest match to West Salem is the first one.</p>
+    </div>
+
+    <!-- FEATURED: CORTEX -->
+    <div class="feat rv">
+      <div class="lhs">
+        <div class="tag">Closest to us &middot; St. Louis, USA</div>
+        <h3 class="serif" style="font-size:24px;margin:8px 0 12px">Cortex Innovation Community</h3>
+        <p style="font-size:14.5px;color:#4a463f">Five anchor institutions, Washington University, BJC HealthCare, Saint Louis University, the University of Missouri-St. Louis, and the Missouri Botanical Garden, came together in 2002 after a university chancellor visited Kendall Square and brought his peers along to see it. They pooled roughly $29 million, formed a single nonprofit master developer, and paired it with Missouri's redevelopment and tax-increment financing powers to transform a brownfield into a district. The lesson for Salem is direct: a handful of anchors, modest pooled equity, one neutral nonprofit, and a public financing tool are enough to begin.</p>
+      </div>
+      <div class="rhs">
+        <div class="fnum">200 acres</div>
+        <div class="flbl">district built from a brownfield</div>
+        <div class="fnum">425+</div>
+        <div class="flbl">companies on campus today</div>
+        <div class="fnum">~$29M</div>
+        <div class="flbl">anchor equity that started it</div>
+        <div style="font-size:11px;color:#b9c2ad;margin-top:8px">Company count as reported by Cortex</div>
+      </div>
+    </div>
+
+    <h3 class="serif rv" style="font-size:19px;margin:46px 0 6px;color:var(--ink-deep)">From around the world</h3>
+    <div class="grid g3 rv">
+      <div class="card on-alt">
+        <div class="pl">Eindhoven, Netherlands</div>
+        <h4>Brainport</h4>
+        <p style="font-size:13.5px">A mayor, a university president, and a chamber-of-commerce president convened a standing partnership and held it in the Brainport Foundation. The region became home to ASML, one of the world's most valuable technology companies.</p>
+        <div class="take"><strong>Lesson:</strong> form the coalition before the real estate.</div>
+      </div>
+      <div class="card on-alt">
+        <div class="pl">Stockholm, Sweden</div>
+        <h4>Kista &middot; Electrum Foundation</h4>
+        <p style="font-size:13.5px">The City of Stockholm and Ericsson created a neutral foundation in 1985; its first act was a single shared building that put KTH university labs next to companies under one roof.</p>
+        <div class="take"><strong>Lesson:</strong> a neutral foundation plus one shared building creates the collisions.</div>
+      </div>
+      <div class="card on-alt">
+        <div class="pl">Leuven, Belgium</div>
+        <h4>imec &middot; KU Leuven</h4>
+        <p style="font-size:13.5px">In 1984 the Flemish government funded a neutral research institute spun out of KU Leuven. Because no single company owns it, the world's rival chipmakers all fund it and use it.</p>
+        <div class="take"><strong>Lesson:</strong> a shared, neutral facility does what no one company will.</div>
+      </div>
+      <div class="card on-alt">
+        <div class="pl">Medell&iacute;n, Colombia</div>
+        <h4>Ruta N</h4>
+        <p style="font-size:13.5px">The city and its publicly owned utility created an innovation corporation funded by utility dividends, and seated citizens as a full partner. The district became central to the city's celebrated transformation.</p>
+        <div class="take"><strong>Lesson:</strong> a local revenue engine and a seated community make a district an equity project.</div>
+      </div>
+      <div class="card on-alt">
+        <div class="pl">Berlin, Germany</div>
+        <h4>Adlershof Science City</h4>
+        <p style="font-size:13.5px">The State of Berlin relocated Humboldt University's science faculties physically onto the site, then grew a science city of around 1,000 companies and 16 research institutes around them.</p>
+        <div class="take"><strong>Lesson:</strong> real faculty, labs, and students on site turn a project into a science city.</div>
+      </div>
+      <div class="card on-alt">
+        <div class="pl">Barcelona, Spain</div>
+        <h4>22@Barcelona</h4>
+        <p style="font-size:13.5px">The city rezoned 200 hectares of old industrial Poblenou for knowledge work and recycled the value uplift into public infrastructure, drawing three universities and 1,400-plus firms.</p>
+        <div class="take"><strong>Lesson:</strong> zoning can be a financing tool, and the community belongs in the plan from day one.</div>
+      </div>
+      <div class="card on-alt">
+        <div class="pl">Cambridge, UK</div>
+        <h4>Cambridge Science Park</h4>
+        <p style="font-size:13.5px">In 1970 a Cambridge college committed its own land and endowment on a multi-decade horizon, seeding a cluster that now spans thousands of knowledge companies.</p>
+        <div class="take"><strong>Lesson:</strong> a patient landowner with a long horizon incubates a cluster.</div>
+      </div>
+      <div class="card on-alt">
+        <div class="pl">Singapore</div>
+        <h4>One-North</h4>
+        <p style="font-size:13.5px">The state developer built the district and moved national research institutes in first, beside the National University, giving the place day-one gravity.</p>
+        <div class="take"><strong>Lesson:</strong> an anchor research tenant creates instant gravity.</div>
+      </div>
+    </div>
+
+    <h3 class="serif rv" style="font-size:19px;margin:40px 0 6px;color:var(--ink-deep)">And across the United States</h3>
+    <div class="grid g3 rv">
+      <div class="card on-alt">
+        <div class="pl">North Carolina</div>
+        <h4>Research Triangle Park</h4>
+        <p style="font-size:13.5px">Duke, UNC, and NC State, with the governor and business leaders, placed the district in a neutral private nonprofit, chosen deliberately so rival universities could cooperate and the effort could move at private speed.</p>
+        <div class="take"><strong>Lesson:</strong> a neutral nonprofit lets competitors collaborate and moves fast.</div>
+      </div>
+      <div class="card on-alt">
+        <div class="pl">Cambridge, MA</div>
+        <h4>Kendall Square &middot; MIT</h4>
+        <p style="font-size:13.5px">MIT acted as a deliberate developer of land it had long held, winning a city upzoning and building one of the densest innovation clusters in the world next to its own campus.</p>
+        <div class="take"><strong>Lesson:</strong> give a university a real stake and it behaves like an owner.</div>
+      </div>
+      <div class="card on-alt">
+        <div class="pl">Philadelphia</div>
+        <h4>uCity Square</h4>
+        <p style="font-size:13.5px">A university-backed nonprofit joined a specialist developer and an institutional capital partner in a joint venture, splitting mission from execution cleanly.</p>
+        <div class="take"><strong>Lesson:</strong> a mission nonprofit plus a specialist developer is a proven pairing, the role Now City plays here.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CORRIDOR / WHY HERE -->
+<section id="corridor">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Why Here</div>
+      <h2>Salem sits in a living innovation corridor</h2>
+      <p class="lead">Edgewater gives a real and growing Willamette Valley corridor a front door on the river. Oregon State University anchors the research end in Corvallis; the Silicon Forest and a fast-growing mass-timber economy anchor the north; and Salem itself already hosts a world-first advanced-manufacturing plant. The district connects to momentum that is already here.</p>
+    </div>
+    <div class="mapwrap rv">
+      <img src="assets/innov/corridor.svg" alt="Map of the Willamette Valley innovation corridor from Corvallis through Salem to Portland" loading="lazy">
+    </div>
+    <div class="grid g3 rv" style="margin-top:34px">
+      <div class="card">
+        <h4>A world-first anchor, in Salem</h4>
+        <p style="font-size:14px">Agility Robotics' RoboFab in Salem is described as the world's first purpose-built humanoid-robot factory, around 70,000 SF, designed to scale beyond 10,000 robots a year and 500-plus jobs. The company, an Oregon State spinout, closed a $400M round in March 2025.</p>
+      </div>
+      <div class="card">
+        <h4>Two federal Tech Hubs</h4>
+        <p style="font-size:14px">Oregon State leads two federally designated Tech Hubs, in semiconductors and in mass timber, among the few universities in the country to hold two. The research engine for an applied district sits 35 miles south.</p>
+      </div>
+      <div class="card">
+        <h4>A clean-construction economy</h4>
+        <p style="font-size:14px">Oregon's mass-timber sector, the OSU and University of Oregon TallWood Design Institute, and the Port of Portland's timber manufacturing campus show a region turning industrial waterfronts into clean-construction innovation. Edgewater joins that map.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE COALITION FOR WEST SALEM -->
+<section id="coalition" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Coalition</div>
+      <h2>Who builds it with us</h2>
+      <p class="lead">Every role in the playbook has a strong Oregon partner ready to fill it. The table maps each strand of the coalition to the institution best placed to play it, and why that fit is credible today.</p>
+    </div>
+    <div class="rv" style="overflow-x:auto">
+      <table class="who">
+        <thead><tr><th>Role in the playbook</th><th>Best-fit partner</th><th>Why it fits</th></tr></thead>
+        <tbody>
+          <tr><td>Research anchor</td><td>Oregon State University</td><td>Two federal Tech Hubs (semiconductors and mass timber) and the Agility Robotics lineage, mass timber especially suited to an adaptive-reuse maker building</td></tr>
+          <tr><td>In-town university</td><td>Willamette University</td><td>An academic, talent, and entrepreneurship presence in Salem itself, and civic legitimacy at the table</td></tr>
+          <tr><td>Workforce &amp; training</td><td>Chemeketa Community College</td><td>Applied skills and the Small Business Development Center, the pipeline that fills the jobs the district creates</td></tr>
+          <tr><td>Government &amp; land</td><td>City of Salem &amp; Urban Renewal Agency</td><td>The Riverfront-Downtown Urban Renewal Area, Salem's own value-capture and tax-increment tool</td></tr>
+          <tr><td>State</td><td>Business Oregon</td><td>State incentives and the channel that aligns the district with the OSU-led federal Tech Hubs</td></tr>
+          <tr><td>Regional convener</td><td>SEDCOR</td><td>The Mid-Willamette Valley's public-private economic-development table, already linking employers, training, and capital</td></tr>
+          <tr><td>Anchor employer</td><td>Salem Health and regional employers</td><td>A large anchor institution able to take founding tenancy, in the role health systems played at Cortex</td></tr>
+          <tr><td>Community</td><td>West Salem neighborhoods &amp; tribal partners</td><td>Seated from the start so the district and its homes lift the people already here</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE WE BEGIN: SEQUENCE -->
+<section id="begin">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Where We Begin</div>
+      <h2>The first five moves</h2>
+      <p class="lead">The precedents agree on the sequence. Start with a credible champion, see a working district together, form the neutral trust, land the anchor and the public tool as a pair, and prove it with one building. Each step makes the next one easier.</p>
+    </div>
+    <div class="seq rv">
+      <div class="step"><div class="n">Move 1</div><div class="t">Convene a champion</div><p>Bring an Oregon State and a Willamette leader to co-convene, so the effort reads as a research and civic initiative from day one.</p></div>
+      <div class="step"><div class="n">Move 2</div><div class="t">See it together</div><p>Take the City, the universities, the State, and an anchor employer to a working district, Newlab and Cortex, to align on one shared model.</p></div>
+      <div class="step"><div class="n">Move 3</div><div class="t">Form the trust</div><p>Charter a neutral district nonprofit that all can join and the community sits on, alongside Now City as the developer.</p></div>
+      <div class="step"><div class="n">Move 4</div><div class="t">Pair anchor &amp; tool</div><p>Land an anchor presence in the maker building together with the Riverfront-Downtown urban-renewal financing.</p></div>
+      <div class="step"><div class="n">Move 5</div><div class="t">Build the proof</div><p>Open the bow-truss maker building and its founding cohort, the first visible win that draws the rest.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE ANCHOR -->
+<section id="anchor" class="dark">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Anchor &middot; Our Building 128</div>
+      <h2>Edgewater already has its maker building</h2>
+      <p class="lead">The 400 Patterson campus is three 40,000 SF bow-truss warehouses on the riverfront, the kind of raw, high-bay industrial structure that maker districts are built inside. The Activation Plan already brings these back to life as live-work and innovation space under a patient operating-to-property structure. The Innovation District gives that move its purpose: the bow-truss campus becomes the curated maker and venture building at the district's heart, with shared fabrication, demonstration space, and a pipeline of founders.</p>
+    </div>
+    <div class="specgrid rv">
+      <div class="spec"><div class="num">3 bldgs</div><div class="lbl">40,000 SF bow-truss warehouses, our adaptive-reuse anchor</div></div>
+      <div class="spec"><div class="num">~120k SF</div><div class="lbl">of high-bay space for shops, studios, labs, and demonstration</div></div>
+      <div class="spec"><div class="num">~22 ac</div><div class="lbl">riverfront district around it, the working campus, not just the building</div></div>
+      <div class="spec"><div class="num">On the river</div><div class="lbl">a real neighborhood as a living testbed for new technology</div></div>
+    </div>
+    <div class="grid g2 rv" style="margin-top:38px">
+      <div class="card on-alt">
+        <h4>Adaptive reuse is the authentic move</h4>
+        <p style="font-size:14.5px">Newlab, Michigan Central, and Greentown Labs all began in old industrial buildings. The story is genuine and it is tax-advantaged: an industrial rehab can draw historic and New Markets tax credits, exactly as Building 128 did. The bow-truss campus lets Edgewater tell the same true story on the Willamette.</p>
+      </div>
+      <div class="card on-alt">
+        <h4>The district is the living lab</h4>
+        <p style="font-size:14.5px">Because the maker building sits inside a new mixed-use neighborhood, founders can pilot in the wild, in streets, homes, energy, water, food, and mobility systems that real residents use. Detroit filled its building in months once a designated testing zone opened. Edgewater offers the same: a place to deploy, not only to prototype.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+  <div class="wrap rv">
+    <div class="eyebrow">Join Us</div>
+    <h2 class="serif" style="color:var(--ink-deep)">Let's build it<br>together.</h2>
+    <p class="muted" style="max-width:620px;margin:0 auto;color:#4a463f">See the whole plan in the <a href="district.html" style="color:var(--terra);text-decoration:none">District Vision</a>, the near-term moves in the <a href="activation.html" style="color:var(--terra);text-decoration:none">Activation Plan</a>, or the mobility cluster in the <a href="mobility-concepts.html" style="color:var(--terra);text-decoration:none">Salem Mobility Concepts</a>.</p>
+    <div class="contacts">
+      <a href="mailto:erik@nowcitylabs.com" style="color:var(--terra)">erik@nowcitylabs.com · +1 818 312 0491</a>
+      <a href="mailto:ritchie@nowcitylabs.com" style="color:var(--terra)">ritchie@nowcitylabs.com · +1 718 916 1106</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>©2026 Now City Inc. All Rights Reserved.</div>
+    <div>Conceptual, for discussion. The Edgewater Innovation District is a Now City initiative in formation. Precedent figures are as reported by the cited organizations and their economic-development bodies. Subject to feasibility, partners, and approvals.</div>
+  </div>
+</footer>
+
+<a href="#top" class="toplink" id="toplink" aria-label="Back to top">↑</a>
+<script>
+const nav=document.getElementById('nav');const sub=document.getElementById('subnav');const tl=document.getElementById('toplink');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.5);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+<script>
+(function(){
+const HASH='aad5d67e3ddeda88953d6714e4569a4399b3201023dae82d5931a6c376de96d4';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('ws-ok')==='1'||sessionStorage.getItem('ws-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
