@@ -296,17 +296,11 @@ body.gated{overflow:hidden}
 </header>
 
 <div class="scnbar" id="scnbar">
-  <span class="sb-live">Live scenarios</span>
-  <div class="sb-group">
-    <span class="sb-cap">The deal today</span>
-    <div class="sb-btns">
-      <button class="sbtn" data-k="live" type="button" title="Live Case - the current Investment Summary underwriting">Live Case</button>
-    </div>
-  </div>
+  <span class="sb-live">Scenarios</span>
   <div class="sb-group">
     <span class="sb-cap">The floor</span>
     <div class="sb-btns">
-      <button class="sbtn" data-k="base" type="button" title="Base - the honest floor, conventional build, grounded rents, no levers">Base</button>
+      <button class="sbtn" data-k="base" type="button" title="Base Case - the honest floor, conventional build, grounded rents, no levers">Base Case</button>
     </div>
   </div>
   <div class="sb-group">
@@ -324,6 +318,12 @@ body.gated{overflow:hidden}
     <span class="sb-cap">Stack it up</span>
     <div class="sb-btns">
       <button class="sbtn" data-k="G" type="button" title="Full Stack - every value-creating lever at once">Full Stack</button>
+    </div>
+  </div>
+  <div class="sb-group">
+    <span class="sb-cap">The deal today</span>
+    <div class="sb-btns">
+      <button class="sbtn" data-k="live" type="button" title="Live Case - the Investment Summary program at feasibility-aligned rents">Live Case</button>
     </div>
   </div>
   <span class="sb-read" id="sbRead">-</span>
@@ -356,19 +356,10 @@ body.gated{overflow:hidden}
   <details class="grp"><summary><span>Scenario library &middot; all nine</span><span class="chev">&#9654;</span></summary>
     <div class="body sclib">
   <div class="scnwrap">
-    <div class="scnhead"><span class="scnlabel">The deal today</span><span class="scnsub">The current Phase One underwriting, the page opens here.</span></div>
-    <div class="scnrow">
-      <div class="scn" data-k="live" role="button" tabindex="0">
-        <div class="scn-t">Live Case &middot; the current underwriting</div>
-        <div class="scn-d">The Phase One program as presented in the Investment Summary: 400 homes, ~279,000 SF, conventional (double-loaded) delivery at trended rents, structured parking, about $149M all-in and ~$9.6M stabilized NOI. The figure shown is the return on a straight merchant sale. The Investment Summary's 20.3% IRR comes from a Year-4 recapitalization that returns capital to investors early, a structure this sale-based tool does not yet model.</div>
-        <div class="scn-warn">Warning: the Live Case is not supported by the latest feasibility analysis. See the Feasibility Review.</div>
-        <div class="scn-r" id="r_live">-</div>
-      </div>
-    </div>
-    <div class="scnhead" style="margin-top:16px"><span class="scnlabel">The honest floor</span><span class="scnsub">What the deal returns built the ordinary way, before any intervention. <button id="bReset2" class="linkbtn" type="button">Reset to the floor</button>.</span></div>
+    <div class="scnhead"><span class="scnlabel">The honest floor</span><span class="scnsub">What the deal returns built the ordinary way, before any intervention. The page opens here. <button id="bReset2" class="linkbtn" type="button">Reset to the floor</button>.</span></div>
     <div class="scnrow">
       <div class="scn" data-k="base" role="button" tabindex="0">
-        <div class="scn-t">Base &middot; the honest floor</div>
+        <div class="scn-t">Base Case &middot; the honest floor</div>
         <div class="scn-d">The deal built the ordinary way: a conventional double-loaded podium of 420 attainable homes at grounded Salem rents, no subsidy, no special financing. This is what the project returns on its own, and why the corridor sits undeveloped. Every lever below starts here.</div>
         <div class="scn-r" id="r_base">-</div>
       </div>
@@ -412,6 +403,14 @@ body.gated{overflow:hidden}
         <div class="scn-t">Full Stack &middot; everything at once</div>
         <div class="scn-d">The better building, the lower cost basis, the revenue premium, the full public toolkit, and a 20% affordable sleeve, together. The credible ceiling: a strong institutional return with ~97 affordable homes at the same time.</div>
         <div class="scn-r" id="r_G">-</div>
+      </div>
+    </div>
+    <div class="scnhead" style="margin-top:26px"><span class="scnlabel">The deal today</span><span class="scnsub">For reference: the Investment Summary program at the rents the team now expects to achieve.</span></div>
+    <div class="scnrow">
+      <div class="scn" data-k="live" role="button" tabindex="0">
+        <div class="scn-t">Live Case &middot; the Investment Summary, grounded</div>
+        <div class="scn-d">The Investment Summary program, 400 homes and ~279,000 SF, built the conventional way, now carried at the feasibility-aligned rents the team expects to actually achieve (roughly $2.5/SF blended, down from the Investment Summary's ~$3.0). At those grounded rents and today's construction costs, the conventional deal returns roughly 9% on a straight sale, real but below an institutional hurdle. That gap is exactly what the interventions to the left are for.</div>
+        <div class="scn-r" id="r_live">-</div>
       </div>
     </div>
   </div>
@@ -1268,7 +1267,7 @@ const SCN={
  E:{inputs:{affShare:0.20,affDisc:0.25,lihtcEq:10}},
  F:{inputs:{hudOn:1,davis:0.08,cpace:5}},
  G:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:273,parkCut:30,greenSave:0.03,distPrem:0.05,solarK:250,ancil:30,tif:8,grants:4,nmtc:2,abate:0.045,affShare:0.20,affDisc:0.25,lihtcEq:10}},
-  live:{inputs:{effRatio:0.82,uStudio:20,u1br:240,u2br:135,u3br:0,u4br:0,uth:5,sfStudio:400,sf1br:588,sf2br:915,sf3br:1150,sf4br:1400,sfth:1292,retSF:22000,offSF:18000,comrent:32,rStudio:3.08,r1br:2.99,r2br:2.98,r3br:1.72,r4br:2.55,rth:3.18,rgrow:0.03,occs:0.95,parkCut:0,distPrem:0,solarK:0,ancil:0,exitm:30,rcap:0.05,ccap:0.07,casheq:40.45,inkRate:0}}
+  live:{inputs:{effRatio:0.82,uStudio:20,u1br:240,u2br:135,u3br:0,u4br:0,uth:5,sfStudio:400,sf1br:588,sf2br:915,sf3br:1150,sf4br:1400,sfth:1292,retSF:22000,offSF:18000,comrent:32,rStudio:2.82,r1br:2.81,r2br:2.22,r3br:1.72,r4br:2.55,rth:2.14,rgrow:0.03,occs:0.95,parkCut:0,distPrem:0,solarK:0,ancil:0,exitm:30,rcap:0.05,ccap:0.07,casheq:40.45,inkRate:0}}
 };
 function scnChip(k){const r=run({...BASE,...SCN[k].inputs});
   const eq=r.cashEq<1e6?'$0 cash equity':'$'+(r.cashEq/1e6).toFixed(0)+'M equity';
@@ -1281,7 +1280,7 @@ function activeKey(){const keys=[...SLIDERS,'hudOn','glOn','ozOn'];
   return null;}
 function scnMeta(k){const c=document.querySelector('.scn[data-k="'+k+'"]');if(!c)return null;
   return {t:c.querySelector('.scn-t').textContent,d:c.querySelector('.scn-d').textContent,r:(document.getElementById('r_'+k)||{}).innerHTML||''};}
-const SCNWARN={live:'Warning: the Live Case is not supported by the latest feasibility analysis. It reflects the Investment Summary as written; the levered scenarios (Base and beyond) reflect the current, grounded underwriting.'};
+const SCNWARN={};
 function updActiveHdr(r,ak){const nm=document.getElementById('ahName'),ds=document.getElementById('ahDesc'),ch=document.getElementById('ahChip'),w=document.getElementById('ahWarn');
   if(w){const wt=SCNWARN[ak];if(wt){w.textContent=wt;w.hidden=false;}else{w.hidden=true;}}
   let t,d; if(ak){const m=scnMeta(ak); t=m?m.t:ak; d=m?m.d:'';}
@@ -1344,7 +1343,7 @@ const _b2=document.getElementById('bReset2'); if(_b2)_b2.addEventListener('click
       var r=el.getBoundingClientRect();var w=Math.min(300,window.innerWidth-24);
       t.style.left=Math.max(8,Math.min(r.left,window.innerWidth-w-12))+'px';t.style.top=(r.bottom+7)+'px';});
     el.addEventListener('mouseleave',function(){t.style.opacity='0';t.style.display='none';});});})();
-applyScn('live');
+applyScn('base');
 </script>
 </body>
 </html>
