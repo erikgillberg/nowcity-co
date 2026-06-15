@@ -300,25 +300,30 @@ body.gated{overflow:hidden}
   <div class="sb-group">
     <span class="sb-cap">The deal today</span>
     <div class="sb-btns">
-      <button class="sbtn" data-k="live" type="button" title="Live Case - the current underwriting">Live Case</button>
+      <button class="sbtn" data-k="live" type="button" title="Live Case - the current Investment Summary underwriting">Live Case</button>
     </div>
   </div>
   <div class="sb-group">
-    <span class="sb-cap">Build &amp; capital</span>
+    <span class="sb-cap">The floor</span>
     <div class="sb-btns">
-      <button class="sbtn" data-k="base" type="button" title="Base - the honest floor (double-loaded)">Base</button>
-      <button class="sbtn" data-k="A" type="button" title="A - Market-rate on PAB">A</button>
-      <button class="sbtn" data-k="B" type="button" title="B - Attainable + tax-credit equity">B</button>
-      <button class="sbtn" data-k="C" type="button" title="C - Catalytic public partnership">C</button>
+      <button class="sbtn" data-k="base" type="button" title="Base - the honest floor, conventional build, grounded rents, no levers">Base</button>
     </div>
   </div>
   <div class="sb-group">
-    <span class="sb-cap">Rents &amp; program</span>
+    <span class="sb-cap">One lever at a time</span>
     <div class="sb-btns">
-      <button class="sbtn" data-k="D" type="button" title="D - Demand-led (in-migration)">D</button>
-      <button class="sbtn" data-k="E" type="button" title="E - Micro-forward (Portland model)">E</button>
-      <button class="sbtn" data-k="F" type="button" title="F - Family + co-living">F</button>
-      <button class="sbtn" data-k="G" type="button" title="G - Full regenerative stack">G</button>
+      <button class="sbtn" data-k="A" type="button" title="Building - a single-stair Point Access Block">Building</button>
+      <button class="sbtn" data-k="B" type="button" title="Construction cost - industrialized build, right-sized parking">Cost</button>
+      <button class="sbtn" data-k="C" type="button" title="Revenue & placemaking - district premium, solar, ancillary income">Revenue</button>
+      <button class="sbtn" data-k="D" type="button" title="Public subsidy & incentives - TIF, grants, NMTC, abatement">Public</button>
+      <button class="sbtn" data-k="E" type="button" title="Affordable + tax-credit equity - a 20% LIHTC sleeve">Affordable</button>
+      <button class="sbtn" data-k="F" type="button" title="Finance structure - HUD 221(d)(4) and C-PACE">Finance</button>
+    </div>
+  </div>
+  <div class="sb-group">
+    <span class="sb-cap">Stack it up</span>
+    <div class="sb-btns">
+      <button class="sbtn" data-k="G" type="button" title="Full Stack - every value-creating lever at once">Full Stack</button>
     </div>
   </div>
   <span class="sb-read" id="sbRead">-</span>
@@ -360,49 +365,52 @@ body.gated{overflow:hidden}
         <div class="scn-r" id="r_live">-</div>
       </div>
     </div>
-    <div class="scnhead" style="margin-top:16px"><span class="scnlabel">Build &amp; capital</span><span class="scnsub">The honest floor built the conventional way, then three ways a team builds and finances the same homes as a single-stair Point Access Block. Hover a button in the bar to read each one, or <button id="bReset2" class="linkbtn" type="button">reset to the base-case floor</button>.</span></div>
+    <div class="scnhead" style="margin-top:16px"><span class="scnlabel">The honest floor</span><span class="scnsub">What the deal returns built the ordinary way, before any intervention. <button id="bReset2" class="linkbtn" type="button">Reset to the floor</button>.</span></div>
     <div class="scnrow">
       <div class="scn" data-k="base" role="button" tabindex="0">
         <div class="scn-t">Base &middot; the honest floor</div>
-        <div class="scn-d">The same homes built the conventional way: a double-loaded corridor podium at market Salem rents, no subsidy. This is what the deal returns on its own, and why the corridor sits undeveloped. Every other scenario is built as a single-stair Point Access Block, the jump from here to any of them is the value of the better building.</div>
+        <div class="scn-d">The deal built the ordinary way: a conventional double-loaded podium of 420 attainable homes at grounded Salem rents, no subsidy, no special financing. This is what the project returns on its own, and why the corridor sits undeveloped. Every lever below starts here.</div>
         <div class="scn-r" id="r_base">-</div>
       </div>
+    </div>
+    <div class="scnhead" style="margin-top:26px"><span class="scnlabel">One lever at a time</span><span class="scnsub">Each scenario starts from the floor and turns on a single category of intervention, so you can see exactly what each one is worth on its own. None clears a 15% hurdle alone.</span></div>
+    <div class="scnrow">
       <div class="scn" data-k="A" role="button" tabindex="0">
-        <div class="scn-t">A &middot; Market-rate on PAB</div>
-        <div class="scn-d">Point Access Block (PAB) plus the levers a private team controls: placemaking, on-site solar, ancillary income, right-sized parking, and light public gap tools. No affordable sleeve, no agency debt, sold ~2 years after stabilization.</div>
+        <div class="scn-t">Building &middot; a better building</div>
+        <div class="scn-d">Switch the conventional podium to a single-stair Point Access Block. The same envelope now holds ~484 homes instead of 420 by recovering double-loaded hallway area, and most units gain a second exposure. Nothing else changes. The single biggest design move a team controls.</div>
         <div class="scn-r" id="r_A">-</div>
       </div>
       <div class="scn" data-k="B" role="button" tabindex="0">
-        <div class="scn-t">B &middot; Attainable + tax-credit equity</div>
-        <div class="scn-d">PAB with a 25% LIHTC affordable sleeve, FHA/HUD agency debt, and C-PACE. Trades headline return for ~120 affordable homes and near-zero cash equity, held long on non-recourse debt.</div>
+        <div class="scn-t">Construction cost &middot; build it for less</div>
+        <div class="scn-d">Hold the conventional program but bring construction to an industrialized, slab-on-grade basis (about $273/SF) and right-size structured parking. The cost lever alone lifts the floor to roughly breakeven.</div>
         <div class="scn-r" id="r_B">-</div>
       </div>
       <div class="scn" data-k="C" role="button" tabindex="0">
-        <div class="scn-t">C &middot; Catalytic public partnership</div>
-        <div class="scn-d">PAB leaning on the West Salem Urban Renewal Area: TIF, grants, NMTC, abatement and a modest affordable sleeve, the deal a city treats as a priority corridor.</div>
+        <div class="scn-t">Revenue &amp; placemaking &middot; earn more per home</div>
+        <div class="scn-d">A maturing, amenity-rich district earns a modest rent premium, with on-site solar income and ancillary revenue (storage, parking, fees) on top, anchored to what comparable districts have actually achieved.</div>
         <div class="scn-r" id="r_C">-</div>
       </div>
-    </div>
-    <div class="scnhead" style="margin-top:26px"><span class="scnlabel">Rents &amp; program</span><span class="scnsub">All on the PAB base, asking what real demand and a different unit mix do, and what a fully-optimized regenerative stack can reach while keeping homes attainable.</span></div>
-    <div class="scnrow">
       <div class="scn" data-k="D" role="button" tabindex="0">
-        <div class="scn-t">D &middot; Demand-led (in-migration)</div>
-        <div class="scn-d">PAB with rents ~10% above the grounded Salem comps, renters relocating from pricier metros (Portland, the Bay Area). Tests what genuine demand does on the efficient base, no placemaking fudge.</div>
+        <div class="scn-t">Public subsidy &amp; incentives &middot; the public toolkit</div>
+        <div class="scn-d">What the West Salem Urban Renewal Area can bring to a priority corridor: tax-increment financing, capacity and infrastructure grants, New Markets Tax Credits, and a property-tax abatement. Gap funding alone is the single largest mover from the floor.</div>
         <div class="scn-r" id="r_D">-</div>
       </div>
       <div class="scn" data-k="E" role="button" tabindex="0">
-        <div class="scn-t">E &middot; Micro-forward (Portland model)</div>
-        <div class="scn-d">PAB at its most land-efficient: 250 studios averaging ~410 SF, the deepest parking cut for no-car renters. The densest, most attainable program the comps support.</div>
+        <div class="scn-t">Affordable + tax-credit equity &middot; trade rent for cheap capital</div>
+        <div class="scn-d">Set aside ~20% of homes as affordable to bring 4% LIHTC equity into the stack. It barely moves the headline return, and that is the point: it is not a return play. It delivers ~84 affordable homes and a large layer of cheap, non-recourse capital that de-risks the deal.</div>
         <div class="scn-r" id="r_E">-</div>
       </div>
       <div class="scn" data-k="F" role="button" tabindex="0">
-        <div class="scn-t">F &middot; Family + co-living</div>
-        <div class="scn-d">PAB reweighted to families and co-living: 46 three-bed and 16 four-bed units (rented by the room), with a small affordable sleeve. The richer, less land-efficient mix on the efficient base.</div>
+        <div class="scn-t">Finance structure &middot; de-risk, not boost</div>
+        <div class="scn-d">Swap conventional debt for a HUD 221(d)(4) loan (40-year, non-recourse) plus C-PACE. Watch the return: it barely moves and the equity check actually rises, because HUD sizes the loan to coverage and brings prevailing-wage (Davis-Bacon) cost. Financing structure buys safety and a stronger DSCR (here about 1.20), not a higher return.</div>
         <div class="scn-r" id="r_F">-</div>
       </div>
+    </div>
+    <div class="scnhead" style="margin-top:26px"><span class="scnlabel">Stack it up</span><span class="scnsub">Put the value-creating levers together. No single move clears the hurdle; stacked, they reach a credible institutional return while keeping homes attainable.</span></div>
+    <div class="scnrow">
       <div class="scn" data-k="G" role="button" tabindex="0">
-        <div class="scn-t">G &middot; Full regenerative stack</div>
-        <div class="scn-d">Everything a sophisticated team stacks on PAB: industrialized cost, placemaking, solar, the public toolkit, and a 20% affordable sleeve. The credible ceiling, strong institutional returns and ~95 affordable homes at once.</div>
+        <div class="scn-t">Full Stack &middot; everything at once</div>
+        <div class="scn-d">The better building, the lower cost basis, the revenue premium, the full public toolkit, and a 20% affordable sleeve, together. The credible ceiling: a strong institutional return with ~97 affordable homes at the same time.</div>
         <div class="scn-r" id="r_G">-</div>
       </div>
     </div>
@@ -1253,13 +1261,13 @@ document.getElementById('bImport').onclick=()=>{
 };
 const SCN={
  base:{inputs:{}},
- A:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:279,parkCut:22,distPrem:0.03,solarK:120,ancil:22,comrent:27,tif:4,grants:2,abate:0.03,exitm:24,rcap:0.055,ccap:0.07}},
- B:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:277,parkCut:25,distPrem:0.03,solarK:150,ancil:22,comrent:27,abate:0.04,affShare:0.25,affDisc:0.25,lihtcEq:9,hudOn:1,davis:0.08,cpace:5,exitm:48,rcap:0.0525,ccap:0.0675}},
- C:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:280,parkCut:22,distPrem:0.03,solarK:150,ancil:22,comrent:27,tif:7,grants:3,nmtc:2,abate:0.045,affShare:0.15,affDisc:0.25,lihtcEq:7,exitm:36,rcap:0.0525,ccap:0.0675}},
- D:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:280,parkCut:20,distPrem:0.02,solarK:120,ancil:22,comrent:27,rStudio:3.05,r1br:2.31,r2br:2.07,r3br:1.89,r4br:2.81,rth:1.96,exitm:24,rcap:0.055,ccap:0.07}},
- E:{inputs:{effRatio:0.93,uStudio:250,u1br:150,u2br:74,u3br:10,u4br:2,uth:2,sfStudio:410,sf1br:640,sf2br:890,sf3br:1150,sf4br:1380,sfth:1280,rStudio:2.92,r1br:2.14,r2br:1.90,r3br:1.74,r4br:2.62,rth:1.80,hcres:280,parkCut:55,distPrem:0.03,solarK:150,ancil:28,comrent:27,abate:0.03,exitm:24,rcap:0.055,ccap:0.07}},
- F:{inputs:{effRatio:0.93,uStudio:170,u1br:150,u2br:92,u3br:46,u4br:16,uth:9,r4br:2.62,r3br:1.78,hcres:277,parkCut:25,distPrem:0.03,solarK:150,ancil:22,comrent:27,abate:0.04,affShare:0.12,affDisc:0.25,lihtcEq:5,exitm:24,rcap:0.055,ccap:0.07}},
- G:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:273,parkCut:30,distPrem:0.04,solarK:250,ancil:30,comrent:28,tif:7,grants:4,nmtc:2,abate:0.045,affShare:0.20,affDisc:0.25,lihtcEq:10,exitm:36,rcap:0.0525,ccap:0.0675}},
+ A:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3}},
+ B:{inputs:{hcres:273,parkCut:30}},
+ C:{inputs:{distPrem:0.06,dRamp:5,solarK:250,ancil:30}},
+ D:{inputs:{tif:10,grants:4,nmtc:2,abate:0.045}},
+ E:{inputs:{affShare:0.20,affDisc:0.25,lihtcEq:10}},
+ F:{inputs:{hudOn:1,davis:0.08,cpace:5}},
+ G:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:273,parkCut:30,greenSave:0.03,distPrem:0.05,solarK:250,ancil:30,tif:8,grants:4,nmtc:2,abate:0.045,affShare:0.20,affDisc:0.25,lihtcEq:10}},
   live:{inputs:{effRatio:0.82,uStudio:20,u1br:240,u2br:135,u3br:0,u4br:0,uth:5,sfStudio:400,sf1br:588,sf2br:915,sf3br:1150,sf4br:1400,sfth:1292,retSF:22000,offSF:18000,comrent:32,rStudio:3.08,r1br:2.99,r2br:2.98,r3br:1.72,r4br:2.55,rth:3.18,rgrow:0.03,occs:0.95,parkCut:0,distPrem:0,solarK:0,ancil:0,exitm:30,rcap:0.05,ccap:0.07,casheq:40.45,inkRate:0}}
 };
 function scnChip(k){const r=run({...BASE,...SCN[k].inputs});
