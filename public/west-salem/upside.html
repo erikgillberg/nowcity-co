@@ -59,6 +59,15 @@ button:hover{filter:brightness(.96)}
 .card h4{font-family:var(--serif);font-size:15px;color:var(--green);margin-bottom:4px}
 .card .sub{font-size:11.5px;color:#8a857a;margin-bottom:12px}
 .card canvas{max-height:300px}
+.card h4.cardtog{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;user-select:none}
+.card h4.cardtog .cchev{font-size:10px;color:#8a857a;transition:transform .15s;flex:none}
+.card.collapsed h4.cardtog .cchev{transform:rotate(-90deg)}
+.card.collapsed .sub,.card.collapsed canvas,.card.collapsed table{display:none}
+.card.collapsed h4.cardtog{margin-bottom:0}
+.dashbar{display:flex;justify-content:space-between;align-items:center;margin:22px 0 0}
+.dashbar .dl{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#d9a26c}
+.dashbar button{font-size:12px;padding:6px 13px;border:1px solid var(--line);background:#fff;border-radius:5px;cursor:pointer;color:var(--green);font-family:var(--sans)}
+.dashbar button:hover{background:var(--cream2)}
 table.wf{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;margin-top:8px}
 table.dtab{width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums;margin-top:12px}
 table.dtab td{padding:6px 2px;border-bottom:1px solid rgba(0,0,0,.06)}
@@ -594,18 +603,22 @@ body.gated{overflow:hidden}
   </div>
   <div id="status"></div>
 
-  <div class="grid2">
+  <div class="dashbar">
+    <span class="dl">Dashboards</span>
+    <button id="dashToggle" type="button">Collapse all</button>
+  </div>
+  <div class="grid2" style="margin-top:12px">
     <div class="card full">
-      <h4>Upside build-up: IRR by lever category</h4>
+      <h4 class="cardtog">Upside build-up: IRR by lever category<span class="cchev">&#9660;</span></h4>
       <p class="sub">Each bar is a full re-run of the engine. Starting from the red base case, levers are switched on one category at a time at your current settings. The final bar is the all-in levered IRR.</p>
       <canvas id="cWF"></canvas>
       <table class="wf" id="tWF"></table>
     </div>
-    <div class="card"><h4>Sources &amp; uses</h4><p class="sub">How the capital stack is filled, and where it goes.</p><canvas id="cSU"></canvas><table class="dtab" id="tSU"></table></div>
-    <div class="card"><h4>Stabilized operating statement</h4><p class="sub">Forward 12-month NOI at exit, the income a buyer capitalizes.</p><table class="dtab" id="tOps"></table></div>
-    <div class="card"><h4>Return summary</h4><p class="sub">Levered returns to the equity at your current settings.</p><table class="dtab" id="tRet"></table></div>
-    <div class="card"><h4>Debt &amp; exit</h4><p class="sub">Senior financing and the sale waterfall.</p><table class="dtab" id="tDebt"></table></div>
-    <div class="card full"><h4>Levered cash flow</h4><p class="sub">Equity out during construction, operations through stabilization, then the exit. Monthly detail with an annual summary.</p><canvas id="cCF"></canvas><table class="dtab" id="tAnnual"></table></div>
+    <div class="card"><h4 class="cardtog">Sources &amp; uses<span class="cchev">&#9660;</span></h4><p class="sub">How the capital stack is filled, and where it goes.</p><canvas id="cSU"></canvas><table class="dtab" id="tSU"></table></div>
+    <div class="card"><h4 class="cardtog">Stabilized operating statement<span class="cchev">&#9660;</span></h4><p class="sub">Forward 12-month NOI at exit, the income a buyer capitalizes.</p><table class="dtab" id="tOps"></table></div>
+    <div class="card"><h4 class="cardtog">Return summary<span class="cchev">&#9660;</span></h4><p class="sub">Levered returns to the equity at your current settings.</p><table class="dtab" id="tRet"></table></div>
+    <div class="card"><h4 class="cardtog">Debt &amp; exit<span class="cchev">&#9660;</span></h4><p class="sub">Senior financing and the sale waterfall.</p><table class="dtab" id="tDebt"></table></div>
+    <div class="card full"><h4 class="cardtog">Levered cash flow<span class="cchev">&#9660;</span></h4><p class="sub">Equity out during construction, operations through stabilization, then the exit. Monthly detail with an annual summary.</p><canvas id="cCF"></canvas><table class="dtab" id="tAnnual"></table></div>
   </div>
 
   <div class="flag" id="readout"></div>
@@ -1149,6 +1162,21 @@ document.querySelectorAll('.sbtn').forEach(b=>{const k=b.getAttribute('data-k');
   const refresh=()=>{const anyOpen=[...grps()].some(d=>d.open);tg.textContent=anyOpen?'Collapse all':'Expand all';};
   tg.addEventListener('click',()=>{const anyOpen=[...grps()].some(d=>d.open);grps().forEach(d=>d.open=!anyOpen);refresh();});
   grps().forEach(d=>d.addEventListener('toggle',refresh));refresh();})();
+
+// ===== collapsible output dashboards (collapse / expand all) =====
+(function(){
+  const cards=()=>document.querySelectorAll('main .card');
+  const dt=document.getElementById('dashToggle');
+  function resizeIn(card){card.querySelectorAll('canvas').forEach(cv=>{if(charts[cv.id])charts[cv.id].resize();});}
+  function refresh(){if(!dt)return;const anyOpen=[...cards()].some(c=>!c.classList.contains('collapsed'));dt.textContent=anyOpen?'Collapse all':'Expand all';}
+  cards().forEach(card=>{const h=card.querySelector('h4.cardtog');if(!h)return;
+    h.addEventListener('click',()=>{const wasOpen=!card.classList.contains('collapsed');card.classList.toggle('collapsed');
+      if(wasOpen===false)requestAnimationFrame(()=>resizeIn(card));refresh();});});
+  if(dt)dt.addEventListener('click',()=>{const anyOpen=[...cards()].some(c=>!c.classList.contains('collapsed'));
+    cards().forEach(c=>c.classList.toggle('collapsed',anyOpen));
+    if(!anyOpen)requestAnimationFrame(()=>cards().forEach(c=>resizeIn(c)));refresh();});
+  refresh();
+})();
 const _b2=document.getElementById('bReset2'); if(_b2)_b2.addEventListener('click',ev=>{ev.preventDefault();document.getElementById('bReset').click();});
 (function(){const tip=document.getElementById('scntip');if(!tip)return;
   document.querySelectorAll('.sbtn').forEach(b=>{const k=b.getAttribute('data-k');b.removeAttribute('title');
