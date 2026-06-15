@@ -503,7 +503,7 @@ body.gated{overflow:hidden}
       <div class="ctl"><label>Amenity &amp; common areas ($M) <span class="val" id="v_amenCost"></span></label><input type="range" id="amenCost" min="0" max="10" step="0.1"></div>
       <div class="ctl"><label>Hard cost contingency <span class="val" id="v_hccont"></span></label><input type="range" id="hccont" min="0.05" max="0.15" step="0.005"></div>
       <div class="ctl"><label>Parking cost per space ($k) <span class="val" id="v_parkCostK"></span></label><input type="range" id="parkCostK" min="20" max="80" step="2.5"><div class="hint">Cost of a structured space; sets the saving when parking is reduced (in Area Schedule).</div></div>
-      <div class="ctl"><label>Davis-Bacon hard-cost premium <span class="val" id="v_davis"></span></label><input type="range" id="davis" min="0" max="0.15" step="0.005"><div class="hint">Prevailing-wage premium that comes with HUD / public money. Applies when HUD financing (in Sources of Funds) is on.</div></div>
+      <div class="ctl"><label>Davis-Bacon hard-cost premium <span class="val" id="v_davis"></span></label><input type="range" id="davis" min="0" max="0.15" step="0.005"><div class="hint">Prevailing-wage premium that comes with HUD / public money. Zero by default; turning HUD on (in Sources of Funds) applies the standard 8%. Adjust here once HUD is on.</div></div>
       <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Soft costs</h4>
       <div class="ctl"><label>Soft cost rate (% of hard) <span class="val" id="v_softRate"></span></label><input type="range" id="softRate" min="0.05" max="0.18" step="0.005"><div class="hint">Design, consultants, and project management as a share of hard cost. A developer fee and a soft-cost contingency are added on top.</div></div>
       <div class="ctl"><label>Developer fee (%) <span class="val" id="v_devFeeRate"></span></label><input type="range" id="devFeeRate" min="0" max="0.06" step="0.0025"></div>
@@ -702,7 +702,7 @@ const BASE={
  // affordable / tax-credit equity
  affShare:0,affDisc:0.25,lihtcEq:0,
  // financing structure
- hudOn:0,hudRate:0.0575,hudLTC:0.87,davis:0.08,cpace:0,cpaceRate:0.065,glOn:0,glRent:0.35,
+ hudOn:0,hudRate:0.0575,hudLTC:0.87,davis:0,cpace:0,cpaceRate:0.065,glOn:0,glRent:0.35,
  // investor overlay
  ozOn:0,
  // site & buildable envelope
@@ -1214,7 +1214,9 @@ SLIDERS.forEach(k=>{
 // wire toggles
 ['hudOn','glOn','ozOn'].forEach(k=>{
   const b=document.getElementById('t_'+k); if(!b)return;
-  b.addEventListener('click',()=>{P[k]=P[k]>=1?0:1;b.classList.toggle('on',P[k]>=1);b.textContent=P[k]>=1?'On':'Off';recalc();});
+  b.addEventListener('click',()=>{P[k]=P[k]>=1?0:1;b.classList.toggle('on',P[k]>=1);b.textContent=P[k]>=1?'On':'Off';
+    if(k==='hudOn'){P.davis=P.hudOn>=1?0.08:0;setSlider('davis',P.davis,vlabel('davis',P.davis));}
+    recalc();});
 });
 document.getElementById('bReset').onclick=()=>{P={...BASE};sync();recalc();};
 function buildExport(){
@@ -1252,7 +1254,7 @@ document.getElementById('bImport').onclick=()=>{
 const SCN={
  base:{inputs:{}},
  A:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:279,parkCut:22,distPrem:0.03,solarK:120,ancil:22,comrent:27,tif:4,grants:2,abate:0.03,exitm:24,rcap:0.055,ccap:0.07}},
- B:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:277,parkCut:25,distPrem:0.03,solarK:150,ancil:22,comrent:27,abate:0.04,affShare:0.25,affDisc:0.25,lihtcEq:9,hudOn:1,cpace:5,exitm:48,rcap:0.0525,ccap:0.0675}},
+ B:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:277,parkCut:25,distPrem:0.03,solarK:150,ancil:22,comrent:27,abate:0.04,affShare:0.25,affDisc:0.25,lihtcEq:9,hudOn:1,davis:0.08,cpace:5,exitm:48,rcap:0.0525,ccap:0.0675}},
  C:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:280,parkCut:22,distPrem:0.03,solarK:150,ancil:22,comrent:27,tif:7,grants:3,nmtc:2,abate:0.045,affShare:0.15,affDisc:0.25,lihtcEq:7,exitm:36,rcap:0.0525,ccap:0.0675}},
  D:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:280,parkCut:20,distPrem:0.02,solarK:120,ancil:22,comrent:27,rStudio:3.05,r1br:2.31,r2br:2.07,r3br:1.89,r4br:2.81,rth:1.96,exitm:24,rcap:0.055,ccap:0.07}},
  E:{inputs:{effRatio:0.93,uStudio:250,u1br:150,u2br:74,u3br:10,u4br:2,uth:2,sfStudio:410,sf1br:640,sf2br:890,sf3br:1150,sf4br:1380,sfth:1280,rStudio:2.92,r1br:2.14,r2br:1.90,r3br:1.74,r4br:2.62,rth:1.80,hcres:280,parkCut:55,distPrem:0.03,solarK:150,ancil:28,comrent:27,abate:0.03,exitm:24,rcap:0.055,ccap:0.07}},
