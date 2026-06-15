@@ -251,6 +251,7 @@ body.gated{overflow:hidden}
           <li><a href="pab.html">Single-Stair / Point Access Block</a></li>
           <li><a href="uli-tap.html">ULI Salem TAP (2022)</a></li>
           <li class="dd-head">Concepts</li>
+          <li><a href="innovation-district.html">Innovation District</a></li>
           <li><a href="mobility-concepts.html">Salem Mobility Concepts</a></li>
           <li><a href="whoosh.html">Whoosh by Swyft Cities</a></li>
           <li class="dd-head">West Salem Activation</li>
@@ -421,8 +422,9 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <div class="modlabel">Inputs &middot; adjust any assumption</div>
-  <details class="grp"><summary><span>Base case &middot; rents, mix, costs, exit</span><span class="chev">&#9654;</span></summary>
+  <div class="modlabel">Assumptions &middot; standard pro forma sections</div>
+
+  <details class="grp"><summary><span>Area Schedule</span><span class="chev">&#9654;</span></summary>
     <div class="body">
       <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:2px 0 10px">Site &amp; buildable envelope</h4>
       <div class="ctl"><label>Site area <span class="val" id="v_siteAcres"></span></label><input type="range" id="siteAcres" min="1" max="25" step="0.1"><div class="hint">Phase 1 is 5.3 acres. Drag down (e.g. 2.3 for Phase 1A) to resize the parcel. Land purchase price is set separately below.</div></div>
@@ -440,13 +442,6 @@ body.gated{overflow:hidden}
       <div class="ctl"><label>Total rentable SF (built) <span class="val" id="v_totalSF"></span></label><input type="range" id="totalSF" min="120000" max="520000" step="1000"><div class="hint">Drag to size the building; residential unit counts scale to match (unit sizes and commercial held fixed).</div></div>
       <div class="ctl"><label>FAR (built) <span class="val" id="v_farBuilt"></span></label><input type="range" id="farBuilt" min="0.3" max="6" step="0.05"><div class="hint">Same envelope as total rentable SF, expressed as floor-area ratio. The two move together.</div></div>
       <div id="envNote" class="hint" style="margin:8px 0 4px;line-height:1.5"></div>
-      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Residential rents ($/SF/mo)</h4>
-      <div class="ctl"><label>Studio <span class="val" id="v_rStudio"></span></label><input type="range" id="rStudio" min="1.5" max="4" step="0.01"></div>
-      <div class="ctl"><label>1 Bedroom <span class="val" id="v_r1br"></span></label><input type="range" id="r1br" min="1.5" max="4" step="0.01"></div>
-      <div class="ctl"><label>2 Bedroom <span class="val" id="v_r2br"></span></label><input type="range" id="r2br" min="1.5" max="4" step="0.01"></div>
-      <div class="ctl"><label>3 Bedroom (family) <span class="val" id="v_r3br"></span></label><input type="range" id="r3br" min="1.5" max="4" step="0.01"></div>
-      <div class="ctl"><label>4 Bedroom (co-living) <span class="val" id="v_r4br"></span></label><input type="range" id="r4br" min="1.5" max="4" step="0.01"><div class="hint">Rented by the room, so it carries a higher $/SF than a family lease.</div></div>
-      <div class="ctl"><label>Townhouse <span class="val" id="v_rth"></span></label><input type="range" id="rth" min="1.5" max="4" step="0.01"></div>
       <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Unit program (count) <span style="font-weight:400;font-size:11px;color:#8a857a">&middot; total <span id="unitTotal" style="color:var(--green);font-weight:600">-</span></span></h4>
       <div class="ctl"><label>Studio units <span class="val" id="v_uStudio"></span></label><input type="range" id="uStudio" min="0" max="250" step="1"></div>
       <div class="ctl"><label>1BR units <span class="val" id="v_u1br"></span></label><input type="range" id="u1br" min="0" max="250" step="1"></div>
@@ -461,44 +456,48 @@ body.gated{overflow:hidden}
       <div class="ctl"><label>3BR <span class="val" id="v_sf3br"></span></label><input type="range" id="sf3br" min="950" max="1350" step="10"></div>
       <div class="ctl"><label>4BR <span class="val" id="v_sf4br"></span></label><input type="range" id="sf4br" min="1150" max="1600" step="10"></div>
       <div class="ctl"><label>Townhouse <span class="val" id="v_sfth"></span></label><input type="range" id="sfth" min="1100" max="1600" step="10"></div>
-      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Commercial leasing</h4>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Commercial area</h4>
       <div class="ctl"><label>Retail NRA <span class="val" id="v_retSF"></span></label><input type="range" id="retSF" min="0" max="80000" step="500"><div class="hint">Ground-floor retail leasable area. Scales with the parcel when phasing.</div></div>
       <div class="ctl"><label>Office / flex NRA <span class="val" id="v_offSF"></span></label><input type="range" id="offSF" min="0" max="40000" step="500"></div>
-      <div class="ctl"><label>Commercial rent <span class="val" id="v_comrent"></span></label><input type="range" id="comrent" min="18" max="45" step="0.5"><div class="hint">$/SF/yr NNN-equivalent across the commercial program.</div></div>
-      <div class="ctl"><label>Commercial stabilized vacancy <span class="val" id="v_comVac"></span></label><input type="range" id="comVac" min="0" max="0.25" step="0.01"><div class="hint">Additional vacancy haircut on commercial income. Tenant improvements and leasing commissions are carried inside the commercial hard cost.</div></div>
-      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Operations</h4>
-      <div class="ctl"><label>Residential opex (% of rents) <span class="val" id="v_opexr"></span></label><input type="range" id="opexr" min="0.2" max="0.45" step="0.005"></div>
-      <div class="ctl"><label>Rent growth (annual) <span class="val" id="v_rgrow"></span></label><input type="range" id="rgrow" min="0" max="0.06" step="0.0025"></div>
-      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Costs &amp; capital</h4>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Parking</h4>
+      <div class="ctl"><label>Structured spaces removed <span class="val" id="v_parkCut"></span></label><input type="range" id="parkCut" min="0" max="150" step="5"><div class="hint">Reduced parking ratio (transit, shared, unbundled). ~$40k/space saved, parking income falls too.</div></div>
+    </div>
+  </details>
+
+  <details class="grp"><summary><span>Development Costs</span><span class="chev">&#9654;</span></summary>
+    <div class="body">
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:2px 0 10px">Land</h4>
+      <div class="ctl"><label>Land purchase ($M) <span class="val" id="v_land"></span></label><input type="range" id="land" min="2" max="10" step="0.25"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Hard costs</h4>
       <div class="ctl"><label>Residential hard cost ($/SF) <span class="val" id="v_hcres"></span></label><input type="range" id="hcres" min="250" max="400" step="5"></div>
       <div class="ctl"><label>Hard cost contingency <span class="val" id="v_hccont"></span></label><input type="range" id="hccont" min="0.05" max="0.15" step="0.005"></div>
-      <div class="ctl"><label>Land purchase ($M) <span class="val" id="v_land"></span></label><input type="range" id="land" min="2" max="10" step="0.25"></div>
-      <div class="ctl"><label>Construction loan rate <span class="val" id="v_crate"></span></label><input type="range" id="crate" min="0.05" max="0.10" step="0.0025"></div>
-      <div class="ctl"><label>Perm loan rate <span class="val" id="v_prate"></span></label><input type="range" id="prate" min="0.05" max="0.09" step="0.0025"></div>
-      <div class="ctl"><label>LP cash equity ($M) <span class="val" id="v_casheq"></span></label><input type="range" id="casheq" min="20" max="70" step="1"></div>
-      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Stabilization &amp; exit</h4>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Cost adjustments</h4>
+      <p class="glabel">Industrialized construction attacks the single biggest barrier in this market: hard cost.</p>
+      <div class="ctl"><label>Maxumal cost savings, underwritten ($/SF) <span class="val" id="v_maxSave"></span></label><input type="range" id="maxSave" min="0" max="115" step="1"><div class="hint">The $/SF saving you actually carry. Maxumal’s full claim is ~$115/SF; underwrite less until a GMP bid or built comp proves it. (Base case carries $0.)</div></div>
+      <div class="ctl"><label>Davis-Bacon hard-cost premium <span class="val" id="v_davis"></span></label><input type="range" id="davis" min="0" max="0.15" step="0.005"><div class="hint">Prevailing-wage premium that comes with HUD / public money. Applies when HUD financing (in Sources of Funds) is on.</div></div>
+    </div>
+  </details>
+
+  <details class="grp"><summary><span>Operating Details</span><span class="chev">&#9654;</span></summary>
+    <div class="body">
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:2px 0 10px">Residential rents ($/SF/mo)</h4>
+      <div class="ctl"><label>Studio <span class="val" id="v_rStudio"></span></label><input type="range" id="rStudio" min="1.5" max="4" step="0.01"></div>
+      <div class="ctl"><label>1 Bedroom <span class="val" id="v_r1br"></span></label><input type="range" id="r1br" min="1.5" max="4" step="0.01"></div>
+      <div class="ctl"><label>2 Bedroom <span class="val" id="v_r2br"></span></label><input type="range" id="r2br" min="1.5" max="4" step="0.01"></div>
+      <div class="ctl"><label>3 Bedroom (family) <span class="val" id="v_r3br"></span></label><input type="range" id="r3br" min="1.5" max="4" step="0.01"></div>
+      <div class="ctl"><label>4 Bedroom (co-living) <span class="val" id="v_r4br"></span></label><input type="range" id="r4br" min="1.5" max="4" step="0.01"><div class="hint">Rented by the room, so it carries a higher $/SF than a family lease.</div></div>
+      <div class="ctl"><label>Townhouse <span class="val" id="v_rth"></span></label><input type="range" id="rth" min="1.5" max="4" step="0.01"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Commercial income</h4>
+      <div class="ctl"><label>Commercial rent <span class="val" id="v_comrent"></span></label><input type="range" id="comrent" min="18" max="45" step="0.5"><div class="hint">$/SF/yr NNN-equivalent across the commercial program.</div></div>
+      <div class="ctl"><label>Commercial stabilized vacancy <span class="val" id="v_comVac"></span></label><input type="range" id="comVac" min="0" max="0.25" step="0.01"><div class="hint">Additional vacancy haircut on commercial income. Tenant improvements and leasing commissions are carried inside the commercial hard cost.</div></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Operating expenses &amp; growth</h4>
+      <div class="ctl"><label>Residential opex (% of rents) <span class="val" id="v_opexr"></span></label><input type="range" id="opexr" min="0.2" max="0.45" step="0.005"></div>
+      <div class="ctl"><label>Rent growth (annual) <span class="val" id="v_rgrow"></span></label><input type="range" id="rgrow" min="0" max="0.06" step="0.0025"></div>
+      <div class="ctl"><label>Green opex savings, underwritten <span class="val" id="v_greenSave"></span></label><input type="range" id="greenSave" min="0" max="0.08" step="0.005"><div class="hint">Operating-cost points you carry from efficient systems. Hold conservative until metered in operation.</div></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Lease-up &amp; stabilization</h4>
       <div class="ctl"><label>Stabilized occupancy <span class="val" id="v_occs"></span></label><input type="range" id="occs" min="0.85" max="0.98" step="0.005"><div class="hint">Residential occupancy at stabilization.</div></div>
       <div class="ctl"><label>Lease-up pace (pts/mo) <span class="val" id="v_pace"></span></label><input type="range" id="pace" min="0.02" max="0.10" step="0.005"><div class="hint">Occupancy points gained per month during lease-up.</div></div>
-      <div class="ctl"><label>Residential exit cap <span class="val" id="v_rcap"></span></label><input type="range" id="rcap" min="0.04" max="0.065" step="0.0025"></div>
-      <div class="ctl"><label>Commercial exit cap <span class="val" id="v_ccap"></span></label><input type="range" id="ccap" min="0.055" max="0.085" step="0.0025"></div>
-      <div class="ctl"><label>Exit month (from opening) <span class="val" id="v_exitm"></span></label><input type="range" id="exitm" min="18" max="120" step="1"></div>
-      <div class="ctl"><label>Cost of sale <span class="val" id="v_saleCost"></span></label><input type="range" id="saleCost" min="0" max="0.04" step="0.0025"><div class="hint">Brokerage, transfer, and closing costs at exit, as a share of gross sale price.</div></div>
-      <div class="ctl"><label>Vertical duration (months) <span class="val" id="v_vdur"></span></label><input type="range" id="vdur" min="12" max="24" step="1"></div>
-    </div>
-  </details>
-
-  <div class="modlabel" style="margin-top:22px">The levers</div>
-  <details class="grp"><summary><span>1 &middot; Cost &amp; efficiency</span><span class="chev">&#9654;</span></summary>
-    <div class="body">
-      <p class="glabel">Industrialized construction and right-sized parking attack the single biggest barrier in this market: hard cost.</p>
-      <div class="ctl"><label>Maxumal cost savings, underwritten ($/SF) <span class="val" id="v_maxSave"></span></label><input type="range" id="maxSave" min="0" max="115" step="1"><div class="hint">The $/SF saving you actually carry. Maxumal’s full claim is ~$115/SF; underwrite less until a GMP bid or built comp proves it. (Base case carries $0.)</div></div>
-      <div class="ctl"><label>Structured spaces removed <span class="val" id="v_parkCut"></span></label><input type="range" id="parkCut" min="0" max="150" step="5"><div class="hint">Reduced parking ratio (transit, shared, unbundled). ~$40k/space saved, parking income falls too.</div></div>
-      <div class="ctl"><label>Green opex savings, underwritten <span class="val" id="v_greenSave"></span></label><input type="range" id="greenSave" min="0" max="0.08" step="0.005"><div class="hint">Operating-cost points you carry from efficient systems. Hold conservative until metered in operation.</div></div>
-    </div>
-  </details>
-
-  <details class="grp"><summary><span>2 &middot; Revenue &amp; placemaking</span><span class="chev">&#9654;</span></summary>
-    <div class="body">
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Other income &amp; placemaking</h4>
       <p class="glabel">District-scale placemaking, on-site energy, and ancillary income lift NOI without raising base rents beyond the market.</p>
       <div class="ctl"><label>District placemaking premium, underwritten <span class="val" id="v_distPrem"></span></label><input type="range" id="distPrem" min="0" max="0.15" step="0.005"><div class="hint">Rent premium you carry as the district matures, anchored to comparable districts that achieved one. Ramps in over the years set below. (Base case carries 0.)</div></div>
       <div class="ctl"><label>Premium ramp <span class="val" id="v_dRamp"></span></label><input type="range" id="dRamp" min="2" max="8" step="0.5"><div class="hint">Years from opening to full premium.</div></div>
@@ -507,32 +506,29 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp"><summary><span>3 &middot; Public subsidy &amp; incentives</span><span class="chev">&#9654;</span></summary>
+  <details class="grp"><summary><span>Sources of Funds</span><span class="chev">&#9654;</span></summary>
     <div class="body">
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:2px 0 10px">Senior debt</h4>
+      <div class="ctl"><label>Construction loan rate <span class="val" id="v_crate"></span></label><input type="range" id="crate" min="0.05" max="0.10" step="0.0025"></div>
+      <div class="ctl"><label>Perm loan rate <span class="val" id="v_prate"></span></label><input type="range" id="prate" min="0.05" max="0.09" step="0.0025"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Equity</h4>
+      <div class="ctl"><label>LP cash equity ($M) <span class="val" id="v_casheq"></span></label><input type="range" id="casheq" min="20" max="70" step="1"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Public subsidy &amp; incentives</h4>
       <p class="glabel">Gap funding and tax relief that public partners deploy for catalytic, attainable projects in priority corridors.</p>
       <div class="ctl"><label>TIF / urban renewal <span class="val" id="v_tif"></span></label><input type="range" id="tif" min="0" max="30" step="0.5"><div class="hint">Tax-increment reimbursement of eligible public infrastructure and site work ($M).</div></div>
       <div class="ctl"><label>Grants &amp; fee / SDC waivers <span class="val" id="v_grants"></span></label><input type="range" id="grants" min="0" max="20" step="0.5"><div class="hint">State / local capacity and infrastructure grants, system-development-charge relief ($M). On top of the $1M already in the base case.</div></div>
       <div class="ctl"><label>NMTC subsidy <span class="val" id="v_nmtc"></span></label><input type="range" id="nmtc" min="0" max="12" step="0.5"><div class="hint">Net New Markets Tax Credit benefit on the commercial component ($M).</div></div>
       <div class="ctl"><label>Property-tax abatement <span class="val" id="v_abate"></span></label><input type="range" id="abate" min="0" max="0.08" step="0.005"><div class="hint">Opex points cut by Oregon MUPTE / Vertical Housing abatement during the hold.</div></div>
-    </div>
-  </details>
-
-  <details class="grp"><summary><span>4 &middot; Affordable &amp; tax-credit equity</span><span class="chev">&#9654;</span></summary>
-    <div class="body">
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Affordable &amp; tax-credit equity</h4>
       <p class="glabel">An affordable sleeve brings 4% LIHTC equity into the stack. It trades some rent for a large, cheap, non-recourse layer of capital.</p>
       <div class="ctl"><label>Affordable unit share (LIHTC) <span class="val" id="v_affShare"></span></label><input type="range" id="affShare" min="0" max="0.5" step="0.025"></div>
       <div class="ctl"><label>Affordable rent discount vs market <span class="val" id="v_affDisc"></span></label><input type="range" id="affDisc" min="0.1" max="0.5" step="0.025"></div>
       <div class="ctl"><label>LIHTC credit equity <span class="val" id="v_lihtcEq"></span></label><input type="range" id="lihtcEq" min="0" max="30" step="0.5"><div class="hint">Syndicated 4% credit equity entering the stack ahead of debt ($M).</div></div>
-    </div>
-  </details>
-
-  <details class="grp"><summary><span>5 &middot; Financing structure</span><span class="chev">&#9654;</span></summary>
-    <div class="body">
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Financing structure</h4>
       <p class="glabel">Patient, low-cost, long-amortization capital and land structures that cut the equity check and the carry.</p>
       <div class="toggle"><span class="tl">HUD 221(d)(4)<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">40-yr am, high-LTC, non-recourse</span></span><button id="t_hudOn">Off</button></div>
       <div class="ctl"><label>HUD all-in rate (incl. MIP) <span class="val" id="v_hudRate"></span></label><input type="range" id="hudRate" min="0.05" max="0.08" step="0.00125"></div>
       <div class="ctl"><label>HUD loan-to-cost cap <span class="val" id="v_hudLTC"></span></label><input type="range" id="hudLTC" min="0.75" max="0.90" step="0.005"><div class="hint">HUD sizes the loan on the lesser of this cap and DSCR. In this low-NOI deal DSCR governs, so the cap only bites in stronger-income cases.</div></div>
-      <div class="ctl"><label>Davis-Bacon hard-cost premium <span class="val" id="v_davis"></span></label><input type="range" id="davis" min="0" max="0.15" step="0.005"><div class="hint">Prevailing-wage premium that comes with HUD / public money.</div></div>
       <div class="ctl"><label>C-PACE financing <span class="val" id="v_cpace"></span></label><input type="range" id="cpace" min="0" max="20" step="0.5"><div class="hint">Long-term assessment on energy / resiliency scope ($M). Replaces equity; stays with the building at sale.</div></div>
       <div class="ctl"><label>C-PACE rate <span class="val" id="v_cpaceRate"></span></label><input type="range" id="cpaceRate" min="0.05" max="0.085" step="0.0025"></div>
       <div class="toggle"><span class="tl">Ground lease the land<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">no land purchase; pay ground rent</span></span><button id="t_glOn">Off</button></div>
@@ -540,8 +536,16 @@ body.gated{overflow:hidden}
     </div>
   </details>
 
-  <details class="grp"><summary><span>6 &middot; Investor overlay (after-tax)</span><span class="chev">&#9654;</span></summary>
+  <details class="grp"><summary><span>Project Returns</span><span class="chev">&#9654;</span></summary>
     <div class="body">
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:2px 0 10px">Exit pricing</h4>
+      <div class="ctl"><label>Residential exit cap <span class="val" id="v_rcap"></span></label><input type="range" id="rcap" min="0.04" max="0.065" step="0.0025"></div>
+      <div class="ctl"><label>Commercial exit cap <span class="val" id="v_ccap"></span></label><input type="range" id="ccap" min="0.055" max="0.085" step="0.0025"></div>
+      <div class="ctl"><label>Cost of sale <span class="val" id="v_saleCost"></span></label><input type="range" id="saleCost" min="0" max="0.04" step="0.0025"><div class="hint">Brokerage, transfer, and closing costs at exit, as a share of gross sale price.</div></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Timing &amp; hold</h4>
+      <div class="ctl"><label>Vertical duration (months) <span class="val" id="v_vdur"></span></label><input type="range" id="vdur" min="12" max="24" step="1"></div>
+      <div class="ctl"><label>Exit month (from opening) <span class="val" id="v_exitm"></span></label><input type="range" id="exitm" min="18" max="120" step="1"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Investor overlay (after-tax)</h4>
       <p class="glabel">Opportunity Zone treatment does not change project economics; it shelters the investor's exit gain. Shown as a separate after-tax readout.</p>
       <div class="toggle"><span class="tl">Opportunity Zone equity<br><span style="font-weight:400;font-size:10.5px;color:#8a857a">tax-free appreciation on 10-yr hold</span></span><button id="t_ozOn">Off</button></div>
       <p class="note" style="margin-top:0">Illustrative only. Assumes a qualifying 10-year hold; exit gain modeled as free of federal capital-gains tax. Non-OZ comparison taxes the gain at an assumed 25%.</p>
