@@ -193,6 +193,8 @@ body.gated{overflow:hidden}
 .activehdr .ah-chip{font-size:12px;font-weight:600;color:var(--green);font-variant-numeric:tabular-nums}
 .activehdr .ah-name{font-family:var(--serif);font-size:19px;color:var(--ink-deep);line-height:1.2}
 .activehdr .ah-desc{font-size:12.5px;color:#4a463f;line-height:1.5;margin-top:5px}
+.activehdr .ah-warn{margin-top:9px;font-size:12.5px;font-weight:700;color:#c0392b;background:#fdecea;border:1px solid #f5b7b1;border-radius:6px;padding:9px 12px;line-height:1.4}
+.scn-warn{margin-top:7px;font-size:11.5px;font-weight:700;color:#c0392b;background:#fdecea;border:1px solid #f5b7b1;border-radius:6px;padding:7px 9px;line-height:1.4}
 .sclib .scnwrap{margin:0}
 .sclib .scnrow{display:flex;flex-direction:column;gap:7px}
 .sclib .scnhead{margin:0 0 7px}
@@ -242,6 +244,7 @@ body.gated{overflow:hidden}
           <li class="dd-head">Underwriting</li>
           <li><a href="upside.html">Upside Explorer</a></li>
           <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
+          <li><a href="assets/docs/market-feasibility-study-2025.pdf" target="_blank" rel="noopener">Market Feasibility Study (2025)</a></li>
           <li class="dd-head">Research &amp; Precedents</li>
           <li><a href="research.html">District Economic Development</a></li>
           <li><a href="mobility-research.html">District Mobility</a></li>
@@ -327,6 +330,7 @@ body.gated{overflow:hidden}
       <div class="scn" data-k="live" role="button" tabindex="0">
         <div class="scn-t">Live Case &middot; the current underwriting</div>
         <div class="scn-d">The Phase One program as presented in the Investment Summary: 400 homes, ~279,000 SF, conventional (double-loaded) delivery at trended rents, structured parking, about $150M all-in and ~$9.4M stabilized NOI. The figure shown is the return on a straight merchant sale. The Investment Summary's 20.3% IRR comes from a Year-4 recapitalization that returns capital to investors early, a structure this sale-based tool does not yet model.</div>
+        <div class="scn-warn">Warning: the Live Case is not supported by the latest feasibility analysis. See the Feasibility Review.</div>
         <div class="scn-r" id="r_live">-</div>
       </div>
     </div>
@@ -574,6 +578,7 @@ body.gated{overflow:hidden}
     <div class="ah-top"><span class="ah-tag">Now showing</span><span class="ah-chip" id="ahChip">-</span></div>
     <div class="ah-name" id="ahName">-</div>
     <div class="ah-desc" id="ahDesc"></div>
+    <div class="ah-warn" id="ahWarn" hidden></div>
   </div>
   <div class="kpis">
     <div class="kpi hero"><div class="l"><span class="term" data-d="Internal Rate of Return on invested equity, after debt. The annualized return accounting for the timing of cash in and out.">Levered IRR</span></div><div class="v" id="k_irr">-</div><div class="d" id="d_irr"></div></div>
@@ -1117,7 +1122,9 @@ function activeKey(){const keys=[...SLIDERS,'hudOn','glOn','ozOn'];
   return null;}
 function scnMeta(k){const c=document.querySelector('.scn[data-k="'+k+'"]');if(!c)return null;
   return {t:c.querySelector('.scn-t').textContent,d:c.querySelector('.scn-d').textContent,r:(document.getElementById('r_'+k)||{}).innerHTML||''};}
-function updActiveHdr(r,ak){const nm=document.getElementById('ahName'),ds=document.getElementById('ahDesc'),ch=document.getElementById('ahChip');
+const SCNWARN={live:'Warning: the Live Case is not supported by the latest feasibility analysis. It reflects the Investment Summary as written; the levered scenarios (Base and beyond) reflect the current, grounded underwriting.'};
+function updActiveHdr(r,ak){const nm=document.getElementById('ahName'),ds=document.getElementById('ahDesc'),ch=document.getElementById('ahChip'),w=document.getElementById('ahWarn');
+  if(w){const wt=SCNWARN[ak];if(wt){w.textContent=wt;w.hidden=false;}else{w.hidden=true;}}
   let t,d; if(ak){const m=scnMeta(ak); t=m?m.t:ak; d=m?m.d:'';}
   else{t='Custom mix';d='You have adjusted the levers away from a named scenario. Pick one from the bar above, or hit Reset, to return to a worked example.';}
   if(nm)nm.textContent=t; if(ds)ds.textContent=d;
