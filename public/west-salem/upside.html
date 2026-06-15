@@ -1229,12 +1229,16 @@ document.querySelectorAll('.sbtn').forEach(b=>{const k=b.getAttribute('data-k');
   const dt=document.getElementById('dashToggle');
   function resizeIn(card){card.querySelectorAll('canvas').forEach(cv=>{if(charts[cv.id])charts[cv.id].resize();});}
   function refresh(){if(!dt)return;const anyOpen=[...cards()].some(c=>!c.classList.contains('collapsed'));dt.textContent=anyOpen?'Collapse all':'Expand all';}
+  // hide/show every child except the header directly in JS, so collapse never depends on a CSS selector
+  function setCollapsed(card,state){
+    card.classList.toggle('collapsed',state);
+    [...card.children].forEach(ch=>{if(ch.matches('h4.cardtog'))return;ch.style.display=state?'none':'';});
+    if(!state)requestAnimationFrame(()=>resizeIn(card));
+  }
   cards().forEach(card=>{const h=card.querySelector('h4.cardtog');if(!h)return;
-    h.addEventListener('click',()=>{const wasOpen=!card.classList.contains('collapsed');card.classList.toggle('collapsed');
-      if(wasOpen===false)requestAnimationFrame(()=>resizeIn(card));refresh();});});
+    h.addEventListener('click',()=>{setCollapsed(card,!card.classList.contains('collapsed'));refresh();});});
   if(dt)dt.addEventListener('click',()=>{const anyOpen=[...cards()].some(c=>!c.classList.contains('collapsed'));
-    cards().forEach(c=>c.classList.toggle('collapsed',anyOpen));
-    if(!anyOpen)requestAnimationFrame(()=>cards().forEach(c=>resizeIn(c)));refresh();});
+    cards().forEach(c=>setCollapsed(c,anyOpen));refresh();});
   refresh();
 })();
 (function(){const bi=document.getElementById('sensIRR'),be=document.getElementById('sensEM');if(!bi||!be)return;
