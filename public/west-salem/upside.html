@@ -52,7 +52,8 @@ button:hover{filter:brightness(.96)}
 .kpi .d.up{color:#3c7a3c}.kpi .d.dn{color:#b04a2f}
 .kpi.hero{background:var(--green);border-color:var(--green)}
 .kpi.hero .l{color:#cdd5c3}.kpi.hero .v{color:#fff}.kpi.hero .d{color:#e3e9dc}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px;align-items:start}
+.card.collapsed{padding-top:14px;padding-bottom:14px}
 @media(max-width:1200px){.grid2{grid-template-columns:1fr}}
 .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px}
 .card.full{grid-column:1/-1}
@@ -75,6 +76,18 @@ table.dtab td:last-child{text-align:right;white-space:nowrap}
 table.dtab tr.h td{font-weight:700;color:var(--green);border-bottom:1.5px solid var(--line);text-transform:uppercase;font-size:10px;letter-spacing:.06em;padding-top:12px}
 table.dtab tr.tot td{font-family:var(--serif);color:var(--ink-deep);border-top:1.5px solid var(--line);border-bottom:none;font-size:13.5px;padding-top:8px}
 table.dtab td.neg{color:#b04a2f}
+#tSU td:not(:first-child){text-align:right;white-space:nowrap}
+#tSU td:nth-child(n+3){color:#6e6a61;font-size:11px}
+table.dtab tr.sh td{font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:#8a857a;border-bottom:1px solid var(--line);padding-bottom:5px}
+table.dtab tr.sh td:not(:first-child){text-align:right}
+.senstoggle{display:flex;gap:6px;margin-bottom:10px}
+.senstoggle button{font-size:11.5px;padding:5px 11px;border:1px solid var(--line);background:#fff;border-radius:5px;cursor:pointer;color:#6e6a61;font-family:var(--sans)}
+.senstoggle button.on{background:var(--green);color:#fff;border-color:var(--green)}
+table.senstab{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums;text-align:center;margin-top:4px}
+table.senstab th{background:var(--cream2);color:var(--green);font-weight:600;padding:7px 4px;font-family:var(--sans);font-size:11.5px}
+table.senstab th.cnr{text-align:left;line-height:1.35}
+table.senstab th.cnr span{font-weight:400;color:#8a857a;font-size:9.5px}
+table.senstab td{padding:9px 4px;border:1px solid #fff;font-weight:500}
 table.wf th{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--terra);padding:7px 8px;border-bottom:2px solid var(--line);text-align:right}
 table.wf th:first-child{text-align:left}
 table.wf td{padding:7px 8px;text-align:right;border-bottom:1px solid rgba(0,0,0,.05)}
@@ -618,6 +631,11 @@ body.gated{overflow:hidden}
     <div class="card"><h4 class="cardtog">Stabilized operating statement<span class="cchev">&#9660;</span></h4><p class="sub">Forward 12-month NOI at exit, the income a buyer capitalizes.</p><table class="dtab" id="tOps"></table></div>
     <div class="card"><h4 class="cardtog">Return summary<span class="cchev">&#9660;</span></h4><p class="sub">Levered returns to the equity at your current settings.</p><table class="dtab" id="tRet"></table></div>
     <div class="card"><h4 class="cardtog">Debt &amp; exit<span class="cchev">&#9660;</span></h4><p class="sub">Senior financing and the sale waterfall.</p><table class="dtab" id="tDebt"></table></div>
+    <div class="card full"><h4 class="cardtog">Sensitivity: exit cap rate &times; hard cost<span class="cchev">&#9660;</span></h4>
+      <p class="sub">Each cell is a full re-run of the model. Rows vary the residential exit cap rate; columns vary residential hard cost ($/SF). The bordered cell is your current case.</p>
+      <div class="senstoggle"><button id="sensIRR" class="on" type="button">Levered IRR</button><button id="sensEM" type="button">Equity multiple</button></div>
+      <div id="tSens"></div>
+    </div>
     <div class="card full"><h4 class="cardtog">Levered cash flow<span class="cchev">&#9660;</span></h4><p class="sub">Equity out during construction, operations through stabilization, then the exit. Monthly detail with an annual summary.</p><canvas id="cCF"></canvas><table class="dtab" id="tAnnual"></table></div>
   </div>
 
@@ -947,7 +965,7 @@ function recalc(){
   if(r.permOpen>FAC)w.push('Loan exceeds the $95M facility.');
   document.getElementById('status').innerHTML=w.length?'<div class="flag" style="border-color:#d99;background:#fdeeee;margin-top:16px">'+w.join(' ')+'</div>':'';
 
-  drawWaterfall();drawSU(r);drawCF(r);drawOps(r);drawReturns(r);drawDebt(r);drawAnnual(r);
+  drawWaterfall();drawSU(r);drawCF(r);drawOps(r);drawReturns(r);drawDebt(r);drawAnnual(r);drawSens();
   markScn(r);
   updateEnvelope();
   // bottom readout
@@ -960,6 +978,41 @@ function recalc(){
     +(P.affShare>0?' with <strong>'+r.affUnits+'</strong> affordable units':'')
     +'. Base-case floor: '+fmtP(base.irr)+'. '
     +(cleared?'The lever stack closes the '+((nz(r.irr)-nz(base.irr))*100).toFixed(0)+'-point gap.':'Keep stacking - you need about '+((0.15-nz(r.irr))*100).toFixed(0)+' more points.');
+}
+let sensMetric='irr';
+function sensCell(v){
+  if(sensMetric==='irr'){
+    if(isNaN(v))return{t:'n/a',bg:'#ededea',fg:'#8a857a'};
+    let bg='#e7b9a3';
+    if(v>=0.20)bg='#2f7d4f';else if(v>=0.15)bg='#6fae7e';else if(v>=0.10)bg='#bcd6b0';else if(v>=0.05)bg='#e7e2b0';else if(v>=0)bg='#f0d9b8';
+    return{t:fmtP(v),bg,fg:v>=0.15?'#fff':'#33312e'};
+  }
+  if(isNaN(v)||v<=0)return{t:'n/a',bg:'#ededea',fg:'#8a857a'};
+  let bg='#e7b9a3';
+  if(v>=2.2)bg='#2f7d4f';else if(v>=1.8)bg='#6fae7e';else if(v>=1.4)bg='#bcd6b0';else if(v>=1.1)bg='#e7e2b0';else if(v>=1.0)bg='#f0d9b8';
+  return{t:v.toFixed(2)+'x',bg,fg:v>=1.8?'#fff':'#33312e'};
+}
+function drawSens(){
+  const cc=x=>Math.min(0.065,Math.max(0.04,Math.round(x*10000)/10000));
+  const ch=x=>Math.min(400,Math.max(250,Math.round(x)));
+  const caps=[-0.005,-0.0025,0,0.0025,0.005].map(d=>cc((+P.rcap||0.055)+d));
+  const hcs=[-30,-15,0,15,30].map(d=>ch((+P.hcres||315)+d));
+  const curCap=cc(+P.rcap||0.055),curHc=ch(+P.hcres||315);
+  let h='<table class="senstab"><tr><th class="cnr">'+(sensMetric==='irr'?'Levered IRR':'Equity mult.')+'<br><span>exit cap down, hard $/SF across</span></th>';
+  hcs.forEach(hc=>h+='<th>$'+hc+'</th>');
+  h+='</tr>';
+  caps.forEach(cap=>{
+    h+='<tr><th>'+(cap*100).toFixed(2)+'%</th>';
+    hcs.forEach(hc=>{
+      const rr=run({...P,rcap:cap,hcres:hc});
+      const c=sensCell(sensMetric==='irr'?rr.irr:rr.em);
+      const cur=(cap===curCap&&hc===curHc);
+      h+='<td style="background:'+c.bg+';color:'+c.fg+(cur?';outline:2px solid #1f1d1a;outline-offset:-2px;font-weight:700':'')+'">'+c.t+'</td>';
+    });
+    h+='</tr>';
+  });
+  h+='</table>';
+  document.getElementById('tSens').innerHTML=h;
 }
 function drawWaterfall(){
   const steps=waterfall(P);
@@ -997,10 +1050,17 @@ function drawSU(r){
     {label:'Financing & carry',data:[0,u.financing],backgroundColor:'#9a948a'}]},
     {plugins:{legend:{labels:{font:{family:'Inter',size:9},boxWidth:10}}},scales:{x:{stacked:true},y:{stacked:true,ticks:{callback:v=>fmt$(v)}}}});
   const sTot=so.gpEquity+so.lpEquity+so.inKind+so.lihtc+so.grantsSubsidy+so.cpace+so.seniorLoan;
-  let h='<tr class="h"><td>Sources</td><td>'+fmt$(sTot)+'</td></tr>';
-  [['Senior loan',so.seniorLoan],['GP equity',so.gpEquity],['LP cash equity',so.lpEquity],['LIHTC equity',so.lihtc],['Grants & subsidy',so.grantsSubsidy],['C-PACE',so.cpace],['In-kind credit',so.inKind]].forEach(x=>{if(x[1]>1)h+='<tr><td>'+x[0]+'</td><td>'+fmt$(x[1])+'</td></tr>';});
-  h+='<tr class="h"><td>Uses</td><td>'+fmt$(u.total)+'</td></tr>';
-  [['Land & site',u.land],['Hard cost',u.hard],['Soft cost',u.soft],['Financing & carry',u.financing]].forEach(x=>{h+='<tr><td>'+x[0]+'</td><td>'+fmt$(x[1])+'</td></tr>';});
+  const units=Math.max(1,r.resUnits);
+  const gsf=Math.max(1,r.resNRA/Math.max(0.5,P.effRatio||0.82)+(r.retSFv||0)+(r.offSFv||0));
+  const pu=v=>'$'+Math.round(v/units/1e3)+'k';
+  const pg=v=>'$'+Math.round(v/gsf);
+  const pct=(v,t)=>t>0?(100*v/t).toFixed(0)+'%':'-';
+  const rowSU=(lbl,v,t)=>'<tr><td>'+lbl+'</td><td>'+fmt$(v)+'</td><td>'+pg(v)+'</td><td>'+pu(v)+'</td><td>'+pct(v,t)+'</td></tr>';
+  let h='<tr class="sh"><td>Item</td><td>Amount</td><td>/GSF</td><td>/Unit</td><td>%</td></tr>';
+  h+='<tr class="h"><td>Sources</td><td>'+fmt$(sTot)+'</td><td>'+pg(sTot)+'</td><td>'+pu(sTot)+'</td><td>100%</td></tr>';
+  [['Senior loan',so.seniorLoan],['GP equity',so.gpEquity],['LP cash equity',so.lpEquity],['LIHTC equity',so.lihtc],['Grants & subsidy',so.grantsSubsidy],['C-PACE',so.cpace],['In-kind credit',so.inKind]].forEach(x=>{if(x[1]>1)h+=rowSU(x[0],x[1],sTot);});
+  h+='<tr class="h"><td>Uses</td><td>'+fmt$(u.total)+'</td><td>'+pg(u.total)+'</td><td>'+pu(u.total)+'</td><td>100%</td></tr>';
+  [['Land & site',u.land],['Hard cost',u.hard],['Soft cost',u.soft],['Financing & carry',u.financing]].forEach(x=>{h+=rowSU(x[0],x[1],u.total);});
   document.getElementById('tSU').innerHTML=h;
 }
 function drawOps(r){
@@ -1177,6 +1237,9 @@ document.querySelectorAll('.sbtn').forEach(b=>{const k=b.getAttribute('data-k');
     if(!anyOpen)requestAnimationFrame(()=>cards().forEach(c=>resizeIn(c)));refresh();});
   refresh();
 })();
+(function(){const bi=document.getElementById('sensIRR'),be=document.getElementById('sensEM');if(!bi||!be)return;
+  bi.addEventListener('click',()=>{sensMetric='irr';bi.classList.add('on');be.classList.remove('on');drawSens();});
+  be.addEventListener('click',()=>{sensMetric='em';be.classList.add('on');bi.classList.remove('on');drawSens();});})();
 const _b2=document.getElementById('bReset2'); if(_b2)_b2.addEventListener('click',ev=>{ev.preventDefault();document.getElementById('bReset').click();});
 (function(){const tip=document.getElementById('scntip');if(!tip)return;
   document.querySelectorAll('.sbtn').forEach(b=>{const k=b.getAttribute('data-k');b.removeAttribute('title');
