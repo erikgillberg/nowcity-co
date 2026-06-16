@@ -632,10 +632,11 @@ body.gated{overflow:hidden}
   </div>
   <div class="kpis">
     <div class="kpi hero"><div class="l"><span class="term" data-d="Internal Rate of Return on invested equity, after debt. The annualized return accounting for the timing of cash in and out.">Levered IRR</span></div><div class="v" id="k_irr">-</div><div class="d" id="d_irr"></div></div>
+    <div class="kpi hero"><div class="l"><span class="term" data-d="Total levered profit to equity over the hold: all operating distributions plus net sale proceeds, less the cash equity invested.">Net Profit</span></div><div class="v" id="k_profit">-</div><div class="d" id="d_profit"></div></div>
+    <div class="kpi"><div class="l"><span class="term" data-d="Stabilized NOI divided by total project cost; the unlevered return on the dollars spent. Compare it to the exit cap rate.">Yield on Cost</span></div><div class="v" id="k_yoc">-</div><div class="d" id="d_yoc"></div></div>
     <div class="kpi"><div class="l"><span class="term" data-d="Total cash returned divided by cash invested. 2.0x means you get back twice what you put in.">Equity Multiple</span></div><div class="v" id="k_em">-</div><div class="d" id="d_em"></div></div>
     <div class="kpi"><div class="l"><span class="term" data-d="Debt Service Coverage Ratio: net operating income divided by the annual loan payment, at stabilization. Lenders want it comfortably above 1.0x.">Stabilized DSCR</span></div><div class="v" id="k_dscr">-</div><div class="d" id="d_dscr"></div></div>
-    <div class="kpi"><div class="l"><span class="term" data-d="The cash equity the limited partners (outside investors) put in, after GP equity, tax-credit equity, subsidy, and debt.">LP Cash Equity</span></div><div class="v" id="k_eq">-</div><div class="d" id="d_eq"></div></div>
-    <div class="kpi"><div class="l"><span class="term" data-d="Stabilized NOI divided by total project cost; the unlevered return on the dollars spent. Compare it to the exit cap rate.">Yield on Cost</span></div><div class="v" id="k_yoc">-</div><div class="d" id="d_yoc"></div></div>
+    <div class="kpi"><div class="l"><span class="term" data-d="The cash equity the limited partners (outside investors) put in, after GP equity, tax-credit equity, subsidy, and debt. The detail line shows loan-to-cost: the share of total project cost carried by senior debt.">LP Cash Equity</span></div><div class="v" id="k_eq">-</div><div class="d" id="d_eq"></div></div>
     <div class="kpi"><div class="l"><span class="term" data-d="Levered IRR after federal income tax on the exit gain. With Opportunity Zone treatment the long-hold gain can be tax-free.">After-tax IRR</span> <span id="k_oztag" style="font-size:9px;color:#8a857a"></span></div><div class="v" id="k_irrat">-</div><div class="d" id="d_irrat"></div></div>
   </div>
   <div id="status"></div>
@@ -987,6 +988,7 @@ function recalc(){
   document.getElementById('k_em').textContent=r.em.toFixed(2)+'x';
   document.getElementById('k_dscr').textContent=r.dscr.toFixed(2);
   document.getElementById('k_eq').textContent=fmt$(r.cashEq);
+  document.getElementById('k_profit').textContent=fmt$(r.profit);
   document.getElementById('k_yoc').textContent=fmtP(r.yoc);
   const atIRR=P.ozOn>=1?r.irrAT_OZ:r.irrAT_noOZ;
   document.getElementById('k_irrat').textContent=isNaN(atIRR)?'n/a':fmtP(atIRR);
@@ -994,7 +996,8 @@ function recalc(){
   delta('d_irr',nz(r.irr),nz(base.irr),x=>(100*x).toFixed(1)+'pts');
   delta('d_em',r.em,base.em,x=>x.toFixed(2)+'x');
   delta('d_dscr',r.dscr,base.dscr,x=>x.toFixed(2));
-  delta('d_eq',r.cashEq,base.cashEq,fmt$,false);
+  delta('d_profit',r.profit,base.profit,fmt$);
+  {const de=document.getElementById('d_eq');de.textContent=fmtP(r.ltc)+' loan-to-cost';de.className='d';}
   delta('d_yoc',r.yoc,base.yoc,x=>(100*x).toFixed(2)+'pts');
   const atBase=base.irrAT_noOZ;
   delta('d_irrat',nz(atIRR),nz(atBase),x=>(100*x).toFixed(1)+'pts');
