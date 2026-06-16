@@ -1366,10 +1366,14 @@ applyScn('base');
   document.querySelectorAll('.card.collapsed').forEach(function(c){c.classList.remove('collapsed');[].forEach.call(c.children,function(ch){if(!ch.matches('h4.cardtog'))ch.style.display='';});});
   // hide the lever-decomposition card (not meaningful for a single fixed case)
   document.querySelectorAll('.card h4.cardtog').forEach(function(h){if(/Upside build-up/.test(h.textContent)){var card=h.closest('.card'); if(card) card.style.display='none';}});
-  // report height to the parent so the iframe can auto-size (charts render async)
-  var ph=function(){try{parent.postMessage({ncEmbedHeight:document.documentElement.scrollHeight},'*');}catch(e){}};
-  window.addEventListener('load',ph); window.addEventListener('resize',ph);
+  // report CONTENT height to the parent (NOT documentElement.scrollHeight, which floors to the
+  // iframe viewport and runs away as the parent grows the frame). Measure .main and never listen
+  // to window resize (the parent's height change fires it, creating the feedback loop).
+  var measure=function(){var m=document.querySelector('.main');return m?Math.ceil(m.getBoundingClientRect().bottom)+8:document.body.scrollHeight;};
+  var ph=function(){try{parent.postMessage({ncEmbedHeight:measure()},'*');}catch(e){}};
+  window.addEventListener('load',ph);
   [250,800,1600,3000].forEach(function(ms){setTimeout(ph,ms);});
+  if(window.ResizeObserver){var _m=document.querySelector('.main'); if(_m) new ResizeObserver(ph).observe(_m);}
 })();
 </script>
 </body>

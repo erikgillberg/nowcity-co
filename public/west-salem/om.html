@@ -234,7 +234,7 @@ details.fin .inner{padding:0 24px 24px}
     <div class="rv" style="margin-top:44px">
       <h3 class="serif" style="font-size:20px;margin-bottom:6px">Phase 1 underwriting, live</h3>
       <p class="muted" style="font-size:14px;margin-bottom:16px">The Live Case from the Now City Upside Explorer: program, capital stack, operating statement, returns, and cash flow at the current feasibility-aligned assumptions.</p>
-      <iframe id="liveFrame" src="upside.html?embed=live" title="Phase 1 Live Case dashboards" loading="lazy" scrolling="no" style="width:100%;height:1700px;border:1px solid var(--line);border-radius:12px;background:#fff;display:block"></iframe>
+      <iframe id="liveFrame" src="upside.html?embed=live" title="Phase 1 Live Case dashboards" loading="lazy" scrolling="no" style="width:100%;height:3300px;border:1px solid var(--line);border-radius:12px;background:#fff;display:block"></iframe>
       <p class="muted rv" style="font-size:13.5px;margin-top:14px">Live from the <a href="upside.html" style="color:var(--terra)">Now City Upside Explorer</a>; open the full interactive model to move rents, costs, cap rates, lease-up, and financing, and to compare the lever scenarios. The 12.55% headline reflects the modeled Year-4 recapitalization; a straight sale runs roughly 11%.</p>
     </div>
   </div>
@@ -523,7 +523,7 @@ document.getElementById('gateform').addEventListener('submit',async function(e){
 })();
 </script>
 <script>
-window.addEventListener('message',function(e){if(e&&e.data&&e.data.ncEmbedHeight){var fr=document.getElementById('liveFrame');if(fr)fr.style.height=(e.data.ncEmbedHeight+24)+'px';}});
+window.addEventListener('message',function(e){if(e&&e.data&&e.data.ncEmbedHeight){var fr=document.getElementById('liveFrame');var h=e.data.ncEmbedHeight;if(fr&&h>200&&h<20000)fr.style.height=h+'px';}});
 </script>
 </body>
 </html>
