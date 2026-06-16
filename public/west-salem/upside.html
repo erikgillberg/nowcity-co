@@ -409,7 +409,7 @@ body.gated{overflow:hidden}
     <div class="scnrow">
       <div class="scn" data-k="live" role="button" tabindex="0">
         <div class="scn-t">Live Case &middot; the Investment Summary, grounded</div>
-        <div class="scn-d">The Investment Summary program, 400 homes and ~279,000 SF, built the conventional way, now carried at the feasibility-aligned rents the team expects to actually achieve (roughly $2.5/SF blended, down from the Investment Summary's ~$3.0). At those grounded rents and today's construction costs, the conventional deal returns roughly 9% on a straight sale, real but below an institutional hurdle. That gap is exactly what the interventions to the left are for.</div>
+        <div class="scn-d">The Investment Summary program, 400 homes and ~279,000 SF, built the conventional way and carried at the developer's June 2026 underwriting: feasibility-aligned rents the team expects to achieve (about $2.5/SF blended, down from the Investment Summary's ~$3.0), permits funded at the $4M the developer flagged as realistic, and an $8.4M lease-up reserve to carry the building to stabilization. At those terms the conventional deal returns roughly 11% on a straight sale here, in line with the pro forma's 12.55% levered IRR and 1.45x equity multiple once its Year-4 recapitalization is counted. Real, and below an institutional hurdle. That gap is exactly what the interventions to the left are for.</div>
         <div class="scn-r" id="r_live">-</div>
       </div>
     </div>
@@ -514,6 +514,8 @@ body.gated{overflow:hidden}
       <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Soft costs</h4>
       <div class="ctl"><label>Soft cost rate (% of hard) <span class="val" id="v_softRate"></span></label><input type="range" id="softRate" min="0.05" max="0.18" step="0.005"><div class="hint">Design, consultants, and project management as a share of hard cost. A developer fee and a soft-cost contingency are added on top.</div></div>
       <div class="ctl"><label>Developer fee (%) <span class="val" id="v_devFeeRate"></span></label><input type="range" id="devFeeRate" min="0" max="0.06" step="0.0025"></div>
+      <h4 style="font-family:var(--serif);font-size:13px;color:var(--green);margin:16px 0 10px">Reserves</h4>
+      <div class="ctl"><label>Lease-up reserve ($M) <span class="val" id="v_leaseRes"></span></label><input type="range" id="leaseRes" min="0" max="15" step="0.1"><div class="hint">Capital set aside to carry operating costs and debt service through lease-up. Funded into the stack like a cost; it lowers the levered return while de-risking the opening.</div></div>
     </div>
   </details>
 
@@ -697,7 +699,7 @@ const BASE={
  occs:0.95,pace:0.05,opexr:0.30,rgrow:0.025,comrent:24,
  hcres:315,hccont:0.10,land:5,crate:0.07,prate:0.07,casheq:28,rcap:0.055,ccap:0.07,exitm:24,vdur:16,
  // development-cost detail (live-editable)
- entCost:2.5,permCost:0.8,demoCost:0.5,siteCost:2.1,hccom:160,amenCost:3.868,parkCostK:40,softRate:0.09,devFeeRate:0.03,
+ entCost:2.5,permCost:0.8,demoCost:0.5,siteCost:2.1,hccom:160,amenCost:3.868,parkCostK:40,softRate:0.09,devFeeRate:0.03,leaseRes:0,
  // capitalization & operating detail (live-editable)
  gpEq:8.3,baseGrant:1.0,badDebt:0.01,comOpex:0.24,inkRate:0.03,
  // cost & efficiency
@@ -741,9 +743,10 @@ function run(p){
   const sbase=hard*p.softRate+(landdev+hard)*0.02;
   const fee3=p.devFeeRate*(landdev+hard+sbase), scont=0.03*(sbase+fee3), soft=sbase+fee3+scont;
   const other=hard*0.01005;
+  const leaseRes=(p.leaseRes||0)*1e6;
   const inkTot=p.inkRate*(hard+soft+other);
   const landAcq=(p.glOn?0:p.land*1e6)+p.entCost*1e6+p.permCost*1e6;
-  const prefin=landAcq+landdev+hard+soft+other;
+  const prefin=landAcq+landdev+hard+soft+other+leaseRes;
   const subsidy=(p.tif+p.grants+p.nmtc)*1e6;
   const cpaceProceeds=p.cpace*1e6;
   const groundRentM=p.glOn?p.glRent*1e6/12:0;
@@ -765,6 +768,7 @@ function run(p){
       if(i>=9&&i<=11)cost+=p.permCost*1e6/3;
       if(i===12)cost+=p.demoCost*1e6;
       if(i===13||i===14)cost+=p.siteCost*1e6/2;
+      if(i===OPEN&&leaseRes>0)cost+=leaseRes;
       let hso=0;
       if(i>=VS&&i<=VE){hso+=hard/p.vdur+soft*(1-SOFTEARLY)/p.vdur+other/p.vdur;}
       if(i<VS)hso+=soft*SOFTEARLY/VS;
@@ -852,7 +856,7 @@ function run(p){
   const budget={
     landPurchase:(p.glOn?0:p.land*1e6),entitlement:p.entCost*1e6,permits:p.permCost*1e6,demo,sitework:sitew,
     construction:hardBase,contingency:hard-hardBase,
-    softBase:sbase,devFee:fee3,softContingency:scont,other,
+    softBase:sbase,devFee:fee3,softContingency:scont,other,leaseReserve:leaseRes,
     loanFees:s.fees,interestReserve:s.intTot};
   return {lev,dts,profit,em:neg>0?pos/neg:0,irr,irrAT_noOZ,irrAT_OZ,totalCost,eqTot,cumEq,cashEq,budget,parkSpaces,
     yoc:(fwdR+fwdO)/totalCost,dscr:pmt>0?(fwdR+fwdO)/(12*pmt):0,ltc:permOpen/totalCost,
@@ -897,9 +901,9 @@ function waterfall(p){
 // ===== UI =====
 const fmt$=x=>(x<0?'-$':'$')+(Math.abs(x)>=1e6?(Math.abs(x)/1e6).toFixed(1)+'M':Math.round(Math.abs(x)/1e3)+'K');
 const fmtP=x=>(100*x).toFixed(1)+'%';
-const SLIDERS=['rStudio','r1br','r2br','r3br','r4br','rth','uStudio','u1br','u2br','u3br','u4br','uth','sfStudio','sf1br','sf2br','sf3br','sf4br','sfth','occs','pace','opexr','rgrow','comrent','hcres','hccont','land','crate','prate','casheq','rcap','ccap','exitm','vdur','siteAcres','maxFAR','effRatio','retSF','offSF','comVac','saleCost','parkCut','greenSave','distPrem','dRamp','solarK','ancil','tif','grants','nmtc','abate','affShare','affDisc','lihtcEq','hudRate','hudLTC','davis','cpace','cpaceRate','glRent','entCost','permCost','demoCost','siteCost','hccom','amenCost','parkCostK','softRate','devFeeRate','gpEq','baseGrant','badDebt','comOpex','inkRate'];
+const SLIDERS=['rStudio','r1br','r2br','r3br','r4br','rth','uStudio','u1br','u2br','u3br','u4br','uth','sfStudio','sf1br','sf2br','sf3br','sf4br','sfth','occs','pace','opexr','rgrow','comrent','hcres','hccont','land','crate','prate','casheq','rcap','ccap','exitm','vdur','siteAcres','maxFAR','effRatio','retSF','offSF','comVac','saleCost','parkCut','greenSave','distPrem','dRamp','solarK','ancil','tif','grants','nmtc','abate','affShare','affDisc','lihtcEq','hudRate','hudLTC','davis','cpace','cpaceRate','glRent','entCost','permCost','demoCost','siteCost','hccom','amenCost','parkCostK','softRate','devFeeRate','gpEq','baseGrant','badDebt','comOpex','inkRate','leaseRes'];
 const PCT=['occs','pace','opexr','rgrow','effRatio','comVac','saleCost','hccont','crate','prate','rcap','ccap','greenSave','distPrem','abate','affShare','affDisc','hudRate','hudLTC','davis','cpaceRate','softRate','devFeeRate','badDebt','comOpex','inkRate'];
-const MUSD=['land','casheq','tif','grants','nmtc','lihtcEq','cpace','entCost','permCost','demoCost','siteCost','amenCost','gpEq','baseGrant'];
+const MUSD=['land','casheq','tif','grants','nmtc','lihtcEq','cpace','entCost','permCost','demoCost','siteCost','amenCost','gpEq','baseGrant','leaseRes'];
 function vlabel(k,v){
   if(PCT.includes(k))return fmtP(v);
   if(k.charAt(0)==='u')return v+' units';
@@ -1053,7 +1057,7 @@ function drawBudget(r){
   h+=row('Land purchase',b.landPurchase)+row('Entitlement',b.entitlement)+row('Permits &amp; fees',b.permits)+row('Demolition',b.demo)+row('Site work',b.sitework);
   h+=grp('Hard costs',hardT)+row('Construction',b.construction)+row('Contingency',b.contingency);
   h+=grp('Soft costs',softT)+row('Design, PM &amp; legal',b.softBase)+row('Developer fee',b.devFee)+row('Soft contingency',b.softContingency);
-  h+=grp('Other (pre-opening &amp; FF&amp;E)',b.other);
+  h+=grp('Other &amp; reserves',b.other+b.leaseReserve)+row('Pre-opening &amp; FF&amp;E',b.other)+row('Lease-up reserve',b.leaseReserve);
   h+=grp('Financing',finT)+row('Loan fees',b.loanFees)+row('Interest reserve',b.interestReserve);
   h+='<tr class="tot"><td>Total development cost</td><td>'+fmt$(tot)+'</td><td>'+pg(tot)+'</td><td>'+pu(tot)+'</td><td>100%</td></tr>';
   document.getElementById('tBudget').innerHTML=h;
@@ -1267,7 +1271,7 @@ const SCN={
  E:{inputs:{affShare:0.20,affDisc:0.25,lihtcEq:10}},
  F:{inputs:{hudOn:1,davis:0.08,cpace:5}},
  G:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:273,parkCut:30,greenSave:0.03,distPrem:0.05,solarK:250,ancil:30,tif:8,grants:4,nmtc:2,abate:0.045,affShare:0.20,affDisc:0.25,lihtcEq:10}},
-  live:{inputs:{effRatio:0.82,uStudio:20,u1br:240,u2br:135,u3br:0,u4br:0,uth:5,sfStudio:400,sf1br:588,sf2br:915,sf3br:1150,sf4br:1400,sfth:1292,retSF:22000,offSF:18000,comrent:32,rStudio:2.82,r1br:2.81,r2br:2.22,r3br:1.72,r4br:2.55,rth:2.14,rgrow:0.03,occs:0.95,parkCut:0,distPrem:0,solarK:0,ancil:0,exitm:30,rcap:0.05,ccap:0.07,casheq:40.45,inkRate:0}}
+  live:{inputs:{effRatio:0.82,uStudio:20,u1br:240,u2br:135,u3br:0,u4br:0,uth:5,sfStudio:400,sf1br:588,sf2br:915,sf3br:1150,sf4br:1400,sfth:1292,retSF:22000,offSF:18000,comrent:32,rStudio:2.84,r1br:2.83,r2br:2.24,r3br:1.72,r4br:2.55,rth:2.32,rgrow:0.03,occs:0.95,parkCut:0,distPrem:0,solarK:0,ancil:0,hcres:275,permCost:4.0,gpEq:16.35,leaseRes:8.4,exitm:30,rcap:0.05,ccap:0.07,casheq:32.19,inkRate:0}}
 };
 function scnChip(k){const r=run({...BASE,...SCN[k].inputs});
   const eq=r.cashEq<1e6?'$0 cash equity':'$'+(r.cashEq/1e6).toFixed(0)+'M equity';
