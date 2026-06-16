@@ -68,6 +68,19 @@
 .mapwrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:8px;background:#eef0e6}
 .mapwrap img{width:100%;display:block}
 .coalfig{max-width:620px;margin:8px auto 0;display:block;width:100%}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:8px}
+.split .col-tx .lead{margin-top:4px}
+.imgcard{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:block;background:#fff}
+.dark .imgcard{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.03)}
+.imgcard img{width:100%;display:block}
+.imgcard figcaption{font-size:12.5px;color:#8a857a;padding:9px 13px 11px;background:#fff}
+.alt .imgcard figcaption{background:var(--cream)}
+@media(max-width:780px){.split{grid-template-columns:1fr;gap:24px}}
+.thesis .ic{display:block;width:22px;height:22px;color:var(--terra);margin-bottom:11px}
+.thesis .ic svg{width:22px;height:22px;display:block}
+.card .cic{display:block;width:26px;height:26px;color:var(--terra);margin-bottom:13px}
+.dark .card .cic{color:#d9a26c}
+.card .cic svg{width:26px;height:26px;display:block}
 </style>
 </head>
 <body class="gated">
@@ -155,11 +168,11 @@
       <p class="lead">This is a proposal. Salem already has the ingredients of a great innovation district: one of the country's deepest technology economies, one of the world's most productive farm valleys, a world-first robotics plant, and a landmark maker building ready to fill. What it has not yet had is a plan to bring them together. Here is that plan in brief, why it fits Salem, what it is, how the world builds these, when it can begin, and what it could mean.</p>
     </div>
     <div class="thesis rv">
-      <div class="ti"><a class="tl" href="#corridor">Why</a><div class="td">Salem sits on the Silicon Forest corridor and in the Willamette farm valley, with Agility Robotics already here. The ingredients exist; what is missing is a place to gather them.</div></div>
-      <div class="ti"><a class="tl" href="#mix">What</a><div class="td">A maker and venture district across five reinforcing fields, wellness, mobility, the built environment, AI and robotics, and ag-tech, in the spirit of Newlab at the Brooklyn Navy Yard, set inside a 22-acre West Salem neighborhood of roughly 480 homes.</div></div>
-      <div class="ti"><a class="tl" href="#playbook">How</a><div class="td">The proven coalition playbook: a university, government, industry, and community, held by a neutral trust, anchored by the bow-truss campus and urban-renewal financing.</div></div>
-      <div class="ti"><a class="tl" href="#begin">When</a><div class="td">A clear five-move sequence: convene a champion, see a working district together, form the trust, land the anchor and the public tool, then build the first proof.</div></div>
-      <div class="ti"><a class="tl" href="#impact">Benefits</a><div class="td">Jobs that keep Oregon's talent home, business attracted and kept, founders and small firms supported, a growing tax base, and a bridge to the rural valley.</div></div>
+      <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.8 8.2l-2 5.6-5.6 2 2-5.6z"/></svg></span><a class="tl" href="#corridor">Why</a><div class="td">Salem sits on the Silicon Forest corridor and in the Willamette farm valley, with Agility Robotics already here. The ingredients exist; what is missing is a place to gather them.</div></div>
+      <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9l8-5 8 5v11"/><path d="M3 20h18"/><path d="M9.5 20v-5h5v5"/></svg></span><a class="tl" href="#mix">What</a><div class="td">A maker and venture district across five reinforcing fields, wellness, mobility, the built environment, AI and robotics, and ag-tech, in the spirit of Newlab at the Brooklyn Navy Yard, set inside a 22-acre West Salem neighborhood of roughly 480 homes.</div></div>
+      <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M12 7.2L5.8 16M12 7.2L18.2 16M7.2 18h9.6"/></svg></span><a class="tl" href="#playbook">How</a><div class="td">The proven coalition playbook: a university, government, industry, and community, held by a neutral trust, anchored by the bow-truss campus and urban-renewal financing.</div></div>
+      <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><a class="tl" href="#begin">When</a><div class="td">A clear five-move sequence: convene a champion, see a working district together, form the trust, land the anchor and the public tool, then build the first proof.</div></div>
+      <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"/><path d="M12 13c0-3.3 2.7-5.5 6.5-5.5C18.5 11 15.8 13 12 13z"/><path d="M12 14.5C12 11.7 9.7 9.7 6.5 9.7 6.5 12.8 8.8 14.5 12 14.5z"/></svg></span><a class="tl" href="#impact">Benefits</a><div class="td">Jobs that keep Oregon's talent home, business attracted and kept, founders and small firms supported, a growing tax base, and a bridge to the rural valley.</div></div>
     </div>
     <div class="note rv" style="margin-top:26px">The sections that follow make the case in full: the ecosystem Salem sits in, the model, the precedents that prove it, the coalition that can build it, and what it could mean for the region.</div>
   </div>
@@ -202,27 +215,27 @@
     </div>
     <div class="grid g3 rv" style="margin-top:34px">
       <div class="card on-alt">
-        <h4>Wellness &amp; longevity</h4>
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20S4.5 15 4.5 9.8A4 4 0 0 1 12 7.4 4 4 0 0 1 19.5 9.8C19.5 15 12 20 12 20z"/></svg></span><h4>Wellness &amp; longevity</h4>
         <p style="font-size:14px">Salem Health anchors a regional care economy, and an aging Oregon makes healthy aging, medical devices, and bio-health real and growing markets. This field draws on the valley's food for nutrition, on robotics for care, and on healthy buildings for the places people live well longer.</p>
       </div>
       <div class="card on-alt">
-        <h4>Mobility</h4>
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M6 8v3a5 5 0 0 0 5 5h5"/></svg></span><h4>Mobility</h4>
         <p style="font-size:14px">Salem's river crossings and its place on the I-5 corridor make movement a daily design problem worth solving in public. Our District Mobility work, paired with Oregon's robotics talent, turns the neighborhood into a testbed for how people and goods move between a city and its farms.</p>
       </div>
       <div class="card on-alt">
-        <h4>Built environment</h4>
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-4 8 4v13"/><path d="M4 12h16M4 16.5h16M12 4.5v16.5"/></svg></span><h4>Built environment</h4>
         <p style="font-size:14px">Oregon's mass-timber Tech Hub and the OSU and University of Oregon TallWood Design Institute put clean construction on Salem's doorstep, and the bow-truss campus is the first proof. It links to the valley for bio-based materials and to wellness for buildings that keep people healthy.</p>
       </div>
       <div class="card on-alt">
-        <h4>AI &amp; robotics</h4>
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/></svg></span><h4>AI &amp; robotics</h4>
         <p style="font-size:14px">Agility Robotics' RoboFab, the world's first humanoid-robot factory, and Oregon State's robotics lineage make this the connective layer. The same tools that build robots can read a field, guide a harvest, assist a nurse, and run a building, so this field multiplies every other one.</p>
       </div>
       <div class="card on-alt">
-        <h4>Ag &amp; food tech</h4>
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-8 6-13 16-13 0 10-7 14-13 14"/><path d="M8 17c2.5-3.5 5.5-6 9-7.5"/></svg></span><h4>Ag &amp; food tech</h4>
         <p style="font-size:14px">One of the most diverse farm valleys on earth sits minutes away, with OSU precision-ag research and the Food Innovation Center model behind it. It feeds wellness with nutrition, draws on robotics for the field, and carries the district's gains out to the rural communities who farm.</p>
       </div>
       <div class="card on-alt" style="background:rgba(216,162,108,.12);border-color:rgba(216,162,108,.45)">
-        <h4 style="color:#e8b785">Why together compounds</h4>
+        <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="4.6"/><circle cx="15" cy="12" r="4.6"/></svg></span><h4 style="color:#e8b785">Why together compounds</h4>
         <p style="font-size:14px">An ag robot and a care robot can share an engineering team. A healthy building and a mass-timber lab can share a supply chain. Co-locating these fields in one maker building and one testbed neighborhood is what turns five strong sectors into one compounding ecosystem.</p>
       </div>
     </div>
@@ -300,15 +313,15 @@
 <!-- HOW THEY ARE BUILT: THE PLAYBOOK -->
 <section id="playbook">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">How These Districts Are Built</div>
-      <h2>The coalition is the building block</h2>
-      <p class="lead">Look closely at the world's great innovation districts and the same structure appears again and again. Four partners come together, a university, a government, an industry, and a community, and a neutral entity holds the mission so that no single party has to own it. This is the well-tested pattern often called the triple helix, with the community as a fourth strand. The diagram below is the shape; the case studies that follow are the proof.</p>
+    <div class="split rv">
+      <div class="col-tx">
+        <div class="eyebrow">How These Districts Are Built</div>
+        <h2>The coalition is the building block</h2>
+        <p class="lead">Look closely at the world's great innovation districts and the same structure appears again and again. Four partners come together, a university, a government, an industry, and a community, and a neutral entity holds the mission so that no single party has to own it. This is the well-tested pattern often called the triple helix, with the community as a fourth strand.</p>
+        <p style="font-size:14.5px;color:#6e6a61;margin-top:16px">Each partner brings what the others cannot: the university its research and talent, government its land and patient capital, industry its anchor demand and jobs, and the community its workforce and sense of home. The case studies that follow are the proof.</p>
+      </div>
+      <figure class="col-img imgcard"><img src="assets/innov/stewardship-model.png" alt="Innovation district stewardship model: a neutral district trust at the center holds the mission and convenes university, government, industry, and community" loading="lazy"></figure>
     </div>
-    <figure class="figure-block rv" style="margin-top:30px;background:#f4f1e9;border:1px solid var(--line)">
-      <img src="assets/innov/stewardship-model.png" alt="Innovation district stewardship model: a neutral district trust at the center holds the mission and convenes university, government, industry, and community" class="coalfig" loading="lazy">
-    </figure>
-    <p class="fig-cap rv">The stewardship model: a neutral district trust holds the mission and convenes the four partners, so no single party has to own the table. Each brings what the others cannot: the university its research and talent, government its land and patient capital, industry its anchor demand and jobs, and the community its workforce and sense of home.</p>
   </div>
 </section>
 
@@ -322,9 +335,9 @@
     </div>
 
     <!-- FEATURED: CORTEX -->
-    <figure class="photo half rv"><img src="assets/innov/photos/cortex.jpg" alt="Aerial of the Cortex Innovation Community district in St. Louis" loading="lazy"><figcaption>Cortex Innovation Community, St. Louis: 200 acres of former brownfield, now a district of 406 companies. Photo: Cortex.</figcaption></figure>
-    <div class="feat rv" style="margin-top:18px">
+    <div class="feat rv">
       <div class="lhs">
+        <figure class="photo" style="margin:0 0 22px"><img src="assets/innov/photos/cortex.jpg" alt="Aerial of the Cortex Innovation Community district in St. Louis" loading="lazy"><figcaption>Cortex Innovation Community, St. Louis: 200 acres of former brownfield, now a district of 406 companies. Photo: Cortex.</figcaption></figure>
         <div class="tag">Closest to us &middot; St. Louis, USA</div>
         <h3 class="serif" style="font-size:24px;margin:8px 0 12px">Cortex Innovation Community</h3>
         <p style="font-size:14.5px;color:#4a463f">Five anchor institutions, Washington University, BJC HealthCare, Saint Louis University, the University of Missouri-St. Louis, and the Missouri Botanical Garden, came together in 2002 after a university chancellor visited Kendall Square and brought his peers along to see it. They pooled roughly $29 million, formed a single nonprofit master developer, and paired it with Missouri's redevelopment and tax-increment financing powers to transform a brownfield into a district. The lesson for Salem is direct: a handful of anchors, modest pooled equity, one neutral nonprofit, and a public financing tool are enough to begin.</p>
@@ -419,8 +432,13 @@
       </div>
     </div>
 
-    <h3 class="serif rv" style="font-size:19px;margin:40px 0 10px;color:var(--ink-deep)">And across the United States</h3>
-    <figure class="photo half rv" style="margin-bottom:22px"><img src="assets/innov/photos/rtp.jpg" alt="Research Triangle Park, North Carolina" loading="lazy"><figcaption>Research Triangle Park, North Carolina: the original multi-university research park, 7,000 acres and 55,000 jobs, the model the US cases build on.</figcaption></figure>
+    <div class="split rv" style="margin:46px 0 28px">
+      <div class="col-tx">
+        <h3 class="serif" style="font-size:21px;margin:0 0 12px;color:var(--ink-deep)">And across the United States</h3>
+        <p style="font-size:14.5px;color:#4a463f;line-height:1.7">The American model began at Research Triangle Park: three universities, a governor, and business leaders placing a district in a neutral nonprofit so rival schools could cooperate and the work could move at private speed. The cases that follow refine the same idea, from a university acting like an owner to a mission nonprofit paired with a specialist developer.</p>
+      </div>
+      <figure class="col-img imgcard"><img src="assets/innov/photos/rtp.jpg" alt="Research Triangle Park, North Carolina" loading="lazy"><figcaption>Research Triangle Park, North Carolina: the original multi-university research park, 7,000 acres and 55,000 jobs, the model the US cases build on.</figcaption></figure>
+    </div>
     <div class="grid g3 rv">
       <div class="card on-alt">
         <div class="pl">North Carolina</div>
