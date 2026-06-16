@@ -244,6 +244,11 @@ body.gated{overflow:hidden}
 .typo.on{background:var(--green);border-color:var(--green);color:#fff}
 .typo.on span{color:#d7e0cf}
 @media(max-width:620px){.scnbar{padding:8px 16px;gap:9px}.scnbar .sb-read{margin-left:0;flex-basis:100%;order:3;text-align:right}}
+/* Embed mode (om.html Phase 1 iframe): show only the Live Case dashboards */
+body.embed #wsnav,body.embed .scnbar,body.embed .panel,body.embed .dochdr,body.embed .ctxbox,body.embed .activehdr,body.embed #status,body.embed .dashbar{display:none!important}
+body.embed{background:#fff}
+body.embed .layout{grid-template-columns:1fr;min-height:0}
+body.embed .main{max-height:none;overflow:visible;padding:14px 16px 26px}
 </style>
 </head>
 <body class="gated">
@@ -1351,6 +1356,21 @@ const _b2=document.getElementById('bReset2'); if(_b2)_b2.addEventListener('click
       t.style.left=Math.max(8,Math.min(r.left,window.innerWidth-w-12))+'px';t.style.top=(r.bottom+7)+'px';});
     el.addEventListener('mouseleave',function(){t.style.opacity='0';t.style.display='none';});});})();
 applyScn('base');
+/* ===== Embed mode: ?embed=live renders only the Live Case dashboards for iframing ===== */
+(function(){
+  var q=new URLSearchParams(location.search); if(!q.has('embed')) return;
+  document.body.classList.add('embed');
+  document.body.classList.remove('gated'); var _g=document.getElementById('gate'); if(_g) _g.style.display='none';
+  var scn=q.get('embed')||'live'; if(SCN[scn]) applyScn(scn);
+  // ensure every dashboard card is expanded
+  document.querySelectorAll('.card.collapsed').forEach(function(c){c.classList.remove('collapsed');[].forEach.call(c.children,function(ch){if(!ch.matches('h4.cardtog'))ch.style.display='';});});
+  // hide the lever-decomposition card (not meaningful for a single fixed case)
+  document.querySelectorAll('.card h4.cardtog').forEach(function(h){if(/Upside build-up/.test(h.textContent)){var card=h.closest('.card'); if(card) card.style.display='none';}});
+  // report height to the parent so the iframe can auto-size (charts render async)
+  var ph=function(){try{parent.postMessage({ncEmbedHeight:document.documentElement.scrollHeight},'*');}catch(e){}};
+  window.addEventListener('load',ph); window.addEventListener('resize',ph);
+  [250,800,1600,3000].forEach(function(ms){setTimeout(ph,ms);});
+})();
 </script>
 </body>
 </html>
