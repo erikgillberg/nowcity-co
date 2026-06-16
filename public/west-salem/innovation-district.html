@@ -46,6 +46,8 @@
 .photo img{width:100%;display:block}
 .photo figcaption{font-size:12.5px;color:#8a857a;padding:9px 12px 11px;background:#fff}
 .on-alt.photo figcaption,.alt .photo figcaption{background:var(--cream)}
+.card .cardimg{margin:-18px -18px 14px;border-radius:7px 7px 0 0;overflow:hidden;display:block}
+.card .cardimg img{width:100%;height:152px;object-fit:cover;display:block}
 .feat{display:grid;grid-template-columns:1.35fr 1fr;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-top:8px}
 .feat .lhs{padding:34px 36px}
 .feat .rhs{background:var(--green);color:var(--cream);padding:34px 30px;display:flex;flex-direction:column;justify-content:center}
@@ -231,9 +233,9 @@
     </div>
 
     <h3 class="serif rv" style="font-size:19px;margin:46px 0 10px;color:var(--ink-deep)">From around the world</h3>
-    <figure class="photo rv" style="margin-bottom:22px"><img src="assets/innov/photos/brainport.jpg" alt="Brainport Eindhoven at dusk with the Philips tower" loading="lazy"><figcaption>Brainport Eindhoven: a triple-helix region born from industrial crisis, now home to ASML and roughly 40% of all Dutch R&amp;D.</figcaption></figure>
     <div class="grid g3 rv">
       <div class="card on-alt">
+        <div class="cardimg"><img src="assets/innov/photos/brainport.jpg" alt="Brainport Eindhoven at dusk" loading="lazy"></div>
         <div class="pl">Eindhoven, Netherlands</div>
         <h4>Brainport</h4>
         <p style="font-size:13.5px">A mayor, a university president, and a chamber-of-commerce president convened a standing partnership and held it in the Brainport Foundation. The region became home to ASML, one of the world's most valuable technology companies.</p>
@@ -242,6 +244,7 @@
         <a class="prelink" href="https://brainporteindhoven.com/int/" target="_blank" rel="noopener">Visit &#8599;</a>
       </div>
       <div class="card on-alt">
+        <div class="cardimg"><img src="assets/innov/photos/kista.jpg" alt="Kista Science City, Stockholm" loading="lazy"></div>
         <div class="pl">Stockholm, Sweden</div>
         <h4>Kista &middot; Electrum Foundation</h4>
         <p style="font-size:13.5px">The City of Stockholm and Ericsson created a neutral foundation in 1985; its first act was a single shared building that put KTH university labs next to companies under one roof.</p>
@@ -250,6 +253,7 @@
         <a class="prelink" href="https://kistasciencecity.com/" target="_blank" rel="noopener">Visit &#8599;</a>
       </div>
       <div class="card on-alt">
+        <div class="cardimg"><img src="assets/innov/photos/imec.jpg" alt="The imec campus in Leuven" loading="lazy"></div>
         <div class="pl">Leuven, Belgium</div>
         <h4>imec &middot; KU Leuven</h4>
         <p style="font-size:13.5px">In 1984 the Flemish government funded a neutral research institute spun out of KU Leuven. Because no single company owns it, the world's rival chipmakers all fund it and use it.</p>
@@ -258,6 +262,7 @@
         <a class="prelink" href="https://www.imec-int.com/en" target="_blank" rel="noopener">Visit &#8599;</a>
       </div>
       <div class="card on-alt">
+        <div class="cardimg"><img src="assets/innov/photos/ruta.jpg" alt="Ruta N in Medellín" loading="lazy"></div>
         <div class="pl">Medell&iacute;n, Colombia</div>
         <h4>Ruta N</h4>
         <p style="font-size:13.5px">The city and its publicly owned utility created an innovation corporation funded by utility dividends, and seated citizens as a full partner. The district became central to the city's celebrated transformation.</p>
@@ -266,6 +271,7 @@
         <a class="prelink" href="https://rutanmedellin.org/en/" target="_blank" rel="noopener">Visit &#8599;</a>
       </div>
       <div class="card on-alt">
+        <div class="cardimg"><img src="assets/innov/photos/adlershof.jpg" alt="Adlershof Science City, Berlin" loading="lazy"></div>
         <div class="pl">Berlin, Germany</div>
         <h4>Adlershof Science City</h4>
         <p style="font-size:13.5px">The State of Berlin relocated Humboldt University's science faculties physically onto the site, then grew a science city of around 1,000 companies and 16 research institutes around them.</p>
@@ -274,6 +280,7 @@
         <a class="prelink" href="https://www.adlershof.de/en/" target="_blank" rel="noopener">Visit &#8599;</a>
       </div>
       <div class="card on-alt">
+        <div class="cardimg"><img src="assets/innov/photos/barcelona.jpg" alt="Poblenou, the 22@Barcelona district" loading="lazy"></div>
         <div class="pl">Barcelona, Spain</div>
         <h4>22@Barcelona</h4>
         <p style="font-size:13.5px">The city rezoned 200 hectares of old industrial Poblenou for knowledge work and recycled the value uplift into public infrastructure, drawing three universities and 1,400-plus firms.</p>
@@ -282,6 +289,7 @@
         <a class="prelink" href="https://en.wikipedia.org/wiki/22@" target="_blank" rel="noopener">Visit &#8599;</a>
       </div>
       <div class="card on-alt">
+        <div class="cardimg"><img src="assets/innov/photos/cambridge.jpg" alt="A Cambridge science park" loading="lazy"></div>
         <div class="pl">Cambridge, UK</div>
         <h4>Cambridge Science Park</h4>
         <p style="font-size:13.5px">In 1970 a Cambridge college committed its own land and endowment on a multi-decade horizon, seeding a cluster that now spans thousands of knowledge companies.</p>
@@ -290,6 +298,7 @@
         <a class="prelink" href="https://www.cambridgesciencepark.co.uk/" target="_blank" rel="noopener">Visit &#8599;</a>
       </div>
       <div class="card on-alt">
+        <div class="cardimg"><img src="assets/innov/photos/onenorth.jpg" alt="One-North, Singapore" loading="lazy"></div>
         <div class="pl">Singapore</div>
         <h4>One-North</h4>
         <p style="font-size:13.5px">The state developer built the district and moved national research institutes in first, beside the National University, giving the place day-one gravity.</p>
@@ -299,7 +308,8 @@
       </div>
     </div>
 
-    <h3 class="serif rv" style="font-size:19px;margin:40px 0 6px;color:var(--ink-deep)">And across the United States</h3>
+    <h3 class="serif rv" style="font-size:19px;margin:40px 0 10px;color:var(--ink-deep)">And across the United States</h3>
+    <figure class="photo rv" style="margin-bottom:22px"><img src="assets/innov/photos/rtp.jpg" alt="Research Triangle Park, North Carolina" loading="lazy"><figcaption>Research Triangle Park, North Carolina: the original multi-university research park, 7,000 acres and 55,000 jobs, the model the US cases build on.</figcaption></figure>
     <div class="grid g3 rv">
       <div class="card on-alt">
         <div class="pl">North Carolina</div>
@@ -370,6 +380,7 @@
         <p style="font-size:14px">Oregon's mass-timber sector, the OSU and University of Oregon TallWood Design Institute, and the Port of Portland's timber manufacturing campus show a region turning industrial waterfronts into clean-construction innovation. Edgewater joins that map.</p>
       </div>
     </div>
+    <figure class="photo rv" style="margin-top:26px"><img src="assets/innov/photos/agility.jpg" alt="A Digit humanoid robot carrying a tote inside Agility Robotics' Salem factory" loading="lazy"><figcaption>Agility Robotics' Digit at work in Salem: an Oregon State spinout building humanoid robots at RoboFab, the world-first anchor already on the corridor.</figcaption></figure>
   </div>
 </section>
 
