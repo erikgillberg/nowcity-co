@@ -15,7 +15,7 @@ const fig={
   netProfit:      M1(d.netProfit),
   leaseUpReserve: M1(d.leaseUpReserve),
   stabilizedNOI:  '$'+(d.stabilizedNOI/1e6).toFixed(2)+'M',
-  leveredIRR:     (d.leveredIRR_recap*100).toFixed(2)+'%',
+  leveredIRR:     (d.leveredIRR*100).toFixed(1)+'%',
   equityMultiple: d.equityMultiple.toFixed(2)+'x',
 };
 const PAGES=['om.html'];
