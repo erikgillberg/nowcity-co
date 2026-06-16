@@ -727,7 +727,8 @@ const BASE={
 };
 
 let P={...BASE};
-const mixOf=p=>[{n:'Studio',u:p.uStudio,sf:p.sfStudio,k:'rStudio'},{n:'1BR',u:p.u1br,sf:p.sf1br,k:'r1br'},{n:'2BR',u:p.u2br,sf:p.sf2br,k:'r2br'},{n:'3BR',u:p.u3br,sf:p.sf3br,k:'r3br'},{n:'4BR co-living',u:p.u4br,sf:p.sf4br,k:'r4br'},{n:'TH',u:p.uth,sf:p.sfth,k:'rth'}];
+const MIXDEF=['Studio','1BR','2BR','3BR','4BR co-living','TH'];
+const mixOf=p=>{const L=Array.isArray(p.mixLabels)?p.mixLabels:MIXDEF;return [{n:L[0],u:p.uStudio,sf:p.sfStudio,k:'rStudio'},{n:L[1],u:p.u1br,sf:p.sf1br,k:'r1br'},{n:L[2],u:p.u2br,sf:p.sf2br,k:'r2br'},{n:L[3],u:p.u3br,sf:p.sf3br,k:'r3br'},{n:L[4],u:p.u4br,sf:p.sf4br,k:'r4br'},{n:L[5],u:p.uth,sf:p.sfth,k:'rth'}];};
 
 function run(p){
   const HUD=p.hudOn>=1;
@@ -1279,7 +1280,7 @@ const SCN={
  E:{inputs:{affShare:0.20,affDisc:0.25,lihtcEq:10}},
  F:{inputs:{hudOn:1,davis:0.08,cpace:5}},
  G:{inputs:{effRatio:0.93,uStudio:219,u1br:162,u2br:84,u3br:13,u4br:3,uth:3,hcres:273,parkCut:30,greenSave:0.03,distPrem:0.05,solarK:250,ancil:30,tif:8,grants:4,nmtc:2,abate:0.045,affShare:0.20,affDisc:0.25,lihtcEq:10}},
-  live:{inputs:{effRatio:0.82,uStudio:20,u1br:240,u2br:135,u3br:0,u4br:0,uth:5,sfStudio:400,sf1br:588,sf2br:915,sf3br:1150,sf4br:1400,sfth:1292,retSF:22000,offSF:18000,comrent:32,rStudio:2.84,r1br:2.83,r2br:2.24,r3br:1.72,r4br:2.55,rth:2.32,rgrow:0.03,occs:0.95,parkCut:0,distPrem:0,solarK:0,ancil:0,hcres:275,permCost:4.0,gpEq:16.35,leaseRes:8.4,exitm:30,rcap:0.05,ccap:0.07,casheq:32.19,inkRate:0}}
+  live:{inputs:{effRatio:0.82,uStudio:20,u1br:40,u2br:160,u3br:40,u4br:135,uth:5,sfStudio:400,sf1br:525,sf2br:575,sf3br:700,sf4br:915,sfth:1292,mixLabels:['Studio','Jr 1BR','1BR','1BR + Office','2BR','3BR Townhome'],retSF:22000,offSF:18000,comrent:32,rStudio:2.84,r1br:2.84,r2br:2.84,r3br:2.79,r4br:2.24,rth:2.32,rgrow:0.03,occs:0.95,parkCut:0,distPrem:0,solarK:0,ancil:0,hcres:275,permCost:4.0,gpEq:16.35,leaseRes:8.4,exitm:30,rcap:0.05,ccap:0.07,casheq:32.19,inkRate:0}}
 };
 function scnChip(k){const r=run({...BASE,...SCN[k].inputs});
   const eq=r.cashEq<1e6?'$0 cash equity':'$'+(r.cashEq/1e6).toFixed(0)+'M equity';
