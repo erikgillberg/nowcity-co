@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=5">
+<link rel="stylesheet" href="assets/site.css?v=6">
 <script defer src="assets/nav.js?v=1"></script>
 <style>
 .fintable{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
@@ -49,11 +49,7 @@ details.fin[open] summary::after{content:'–'}
 details.fin .inner{padding:0 24px 24px}
 .toplink{position:fixed;right:22px;bottom:22px;z-index:90;width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;opacity:0;pointer-events:none;transition:opacity .3s;box-shadow:0 4px 14px rgba(0,0,0,.25)}
 .toplink.show{opacity:1;pointer-events:auto}
-.statcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:16px;margin-top:8px}
-.statcards .stat{background:var(--cream-2);border:1px solid var(--line);border-top:3px solid var(--terra);border-radius:9px;padding:20px 18px 17px}
-.statcards .stat .num{font-size:clamp(25px,2.6vw,32px);line-height:1.06}
-.statcards .stat .lbl{margin-top:9px;font-size:12.5px}
-.dark .statcards .stat{background:rgba(255,255,255,.045);border-color:#3d392f;border-top-color:#d9a26c}
+.statcards{margin-top:8px}
 </style>
 </head>
 <body class="gated">
@@ -143,7 +139,7 @@ details.fin .inner{padding:0 24px 24px}
     </div>
     <div class="rv">
       <h3 class="serif" style="font-size:21px;margin-bottom:22px">The district at completion</h3>
-      <div class="stats statcards">
+      <div class="stats statcards c6">
         <div class="stat"><div class="num">~22 AC</div><div class="lbl">West Salem district, four phases</div></div>
         <div class="stat"><div class="num">1,000</div><div class="lbl">Attainable, healthy, beautiful apartments, townhomes &amp; condos</div></div>
         
@@ -156,7 +152,7 @@ details.fin .inner{padding:0 24px 24px}
     <div class="rv" style="margin-top:56px">
       <h3 class="serif" style="font-size:21px;margin-bottom:6px">District Baseline Financials</h3>
       <p class="muted" style="font-size:14px;margin-bottom:24px">~22-acre district, aligned with the <a href="district-value.html" style="color:var(--terra)">District Value Creation</a> basis (June 2026)</p>
-      <div class="stats statcards">
+      <div class="stats statcards c6">
         <div class="stat"><div class="num">~22 AC</div><div class="lbl">West Salem district, four phases</div></div>
         <div class="stat"><div class="num">$32M</div><div class="lbl">Initial land basis</div></div>
         <div class="stat"><div class="num">$72 to 94M</div><div class="lbl">Platform-creation capital: land, entitlement &amp; infrastructure</div></div>
@@ -251,7 +247,7 @@ details.fin .inner{padding:0 24px 24px}
         <a class="card on-alt" href="plan.html#phase4" style="text-decoration:none"><h4>Phase 4 &middot; 3.9 AC</h4><h3 style="font-size:16.5px">Riverview Penthouses &amp; Multifamily</h3><p class="muted" style="font-size:13px">809 Edgewater St NW</p></a>
       </div>
     </div>
-    <div class="stats statcards rv" style="margin-top:50px">
+    <div class="stats statcards c5 rv" style="margin-top:50px">
       <div class="stat"><div class="num">400</div><div class="lbl">Units &middot; ~279,000 SF NRA</div></div>
       <div class="stat"><div class="num">22,000 SF</div><div class="lbl">Experiential retail</div></div>
       <div class="stat"><div class="num">18,000 SF</div><div class="lbl">Innovation flex office</div></div>

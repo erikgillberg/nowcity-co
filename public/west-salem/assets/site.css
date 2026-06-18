@@ -63,6 +63,15 @@ nav.scrolled .navlinks a.active,nav.solid .navlinks a.active{color:var(--ink-dee
 .dark .stat .num{color:var(--cream)}
 .stat .lbl{font-size:13.5px;margin-top:8px;color:#6e6a61;line-height:1.45}
 .dark .stat .lbl{color:#a39d8f}
+/* stat cards: polished tile treatment, count-aware columns, orphan-free responsive */
+.statcards{gap:16px;grid-template-columns:repeat(3,1fr)}
+.statcards.c4{grid-template-columns:repeat(4,1fr)}
+.statcards .stat{background:var(--cream-2);border:1px solid var(--line);border-top:3px solid var(--terra);border-radius:9px;padding:20px 18px 17px}
+.statcards .stat .num{font-size:clamp(23px,2.4vw,30px);line-height:1.08}
+.statcards .stat .lbl{margin-top:9px;font-size:12.5px}
+.dark .statcards .stat{background:rgba(255,255,255,.045);border-color:#3d392f;border-top-color:#d9a26c}
+@media(max-width:860px){.statcards.c4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.statcards,.statcards.c4{grid-template-columns:1fr}}
 
 /* cards & grids */
 .grid{display:grid;gap:26px}
