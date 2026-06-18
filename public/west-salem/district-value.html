@@ -21,7 +21,7 @@
 @media(max-width:900px){.stage{grid-template-columns:1fr 1fr}.stage .s{border-bottom:1px solid var(--line)}}
 @media(max-width:560px){.stage{grid-template-columns:1fr}}
 
-.comps{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px;min-width:760px}
+.comps{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;min-width:1000px}
 .comps th{text-align:left;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);padding:0 12px 11px;border-bottom:2px solid var(--line);vertical-align:bottom}
 .comps th.r,.comps td.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .comps td{padding:12px;border-bottom:1px solid rgba(0,0,0,.07);vertical-align:top;line-height:1.45;color:#4a463f}
@@ -30,6 +30,15 @@
 .comps tr.us td{background:rgba(60,74,52,.07)}
 .comps tr.us td.proj{color:var(--green)}
 .tscroll{overflow-x:auto;margin-top:8px;border-radius:8px}
+.comps tr.us td.tot{font-weight:700}
+
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+@media(max-width:760px){.twocol{grid-template-columns:1fr}}
+.fundcard h4{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.fund{width:100%;border-collapse:collapse;font-size:14px}
+.fund td{padding:10px 2px;border-bottom:1px solid rgba(0,0,0,.08);color:#4a463f}
+.fund td.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600;color:var(--ink-deep)}
+.fund tr.tot td{border-bottom:none;border-top:2px solid var(--line);font-weight:700;color:var(--green);padding-top:12px}
 
 .cases2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
 @media(max-width:760px){.cases2{grid-template-columns:1fr}}
@@ -95,6 +104,7 @@
     <a href="#thesis">The Thesis</a>
     <a href="#mechanism">The Mechanism</a>
     <a href="#comps">The Comps</a>
+    <a href="#infrastructure">Infrastructure</a>
     <a href="#cases">The Cases</a>
     <a href="#edgewater">For Edgewater</a>
   </div>
@@ -125,7 +135,7 @@
       </div>
       <div class="card">
         <h4>A modest unlock</h4>
-        <p style="font-size:14.5px">The planning, entitlement, and early infrastructure spend is small next to the value it releases. This is the highest-leverage capital in the whole project, and the hardest to access later.</p>
+        <p style="font-size:14.5px">The platform-creation capital is small next to the value it releases, and its largest line, infrastructure, is mostly funded by public and project sources. The developer equity at risk is the highest-leverage capital in the project, and the hardest to access later.</p>
       </div>
       <div class="card">
         <h4>A platform, then a buildout</h4>
@@ -150,7 +160,7 @@
       <div class="s"><div class="n">04</div><div class="t">Platform value</div><p>The entitled, master-planned district now trades at a large step-up over its raw-land basis.</p></div>
       <div class="s"><div class="n">05</div><div class="t">Phased buildout</div><p>Deliver vertical product in phases, with recurring liquidity windows, against the unlocked opportunity.</p></div>
     </div>
-    <div class="note rv">The earliest capital, funding control, assembly, and entitlement, is the smallest dollar amount and the largest source of value creation. It is also a position rarely open to outside capital, because it is taken before the district visibly exists.</div>
+    <div class="note rv">The earliest equity, funding control, assembly, and entitlement, is the largest source of value creation, while the heaviest cash line, infrastructure, is mostly carried by public and project sources. It is also a position rarely open to outside capital, because it is taken before the district visibly exists.</div>
   </div>
 </section>
 
@@ -160,7 +170,7 @@
     <div class="sec-head rv">
       <div class="eyebrow">The Comps</div>
       <h2>Seven districts, one curve</h2>
-      <p class="lead">Comparable mixed-use and innovation districts, ordered by acreage. Read across a row to see a modest land basis and planning spend convert into a large platform value and a far larger buildout opportunity. Figures are illustrative, drawn from public reporting for the comparables and from Now City planning estimates for Edgewater.</p>
+      <p class="lead">Comparable mixed-use and innovation districts, ordered by acreage. Read across a row to see the land basis, planning and entitlement spend, and infrastructure investment add up to the total platform-creation capital, which a district then converts into a large platform value and a far larger buildout opportunity. Infrastructure is broken out because it is the largest line, and, as the next section shows, the one most often carried by public and project sources rather than developer equity. Figures are illustrative, drawn from public reporting for the comparables and from Now City planning estimates for Edgewater.</p>
     </div>
     <div class="tscroll rv">
       <table class="comps">
@@ -168,9 +178,11 @@
           <tr>
             <th>District</th>
             <th class="r">Acres</th>
-            <th class="r">Land / platform basis</th>
-            <th class="r">Planning, entitlement &amp; infrastructure</th>
-            <th class="r">Platform value after formation</th>
+            <th class="r">Initial land basis</th>
+            <th class="r">Planning &amp; entitlements</th>
+            <th class="r">Infrastructure investment</th>
+            <th class="r">Total platform-creation capital</th>
+            <th class="r">Platform value after entitlement &amp; infrastructure</th>
             <th class="r">Full-buildout opportunity</th>
           </tr>
         </thead>
@@ -180,14 +192,18 @@
             <td class="r">22</td>
             <td class="r">$32M</td>
             <td class="r">$5M to 8M</td>
-            <td class="r">$70M to 120M</td>
-            <td class="r">~$650M cost<br>$850M to 1.0B+ value</td>
+            <td class="r">$35M to 55M</td>
+            <td class="r tot">$72M to 94M</td>
+            <td class="r">$120M to 180M</td>
+            <td class="r">~$650M cost<br>$800M to 1.0B+ value</td>
           </tr>
           <tr>
             <td class="proj">Mission Rock <span>San Francisco, CA</span></td>
             <td class="r">28</td>
             <td class="r">~$100M to 200M</td>
-            <td class="r">~$380M</td>
+            <td class="r">~$50M to 100M</td>
+            <td class="r">~$300M to 400M</td>
+            <td class="r">~$450M to 700M</td>
             <td class="r">~$750M to 1.2B</td>
             <td class="r">~$2.5B</td>
           </tr>
@@ -195,7 +211,9 @@
             <td class="proj">The Yards <span>Washington, DC</span></td>
             <td class="r">48</td>
             <td class="r">~$50M to 100M</td>
+            <td class="r">~$30M to 60M</td>
             <td class="r">~$100M to 200M</td>
+            <td class="r">~$180M to 360M</td>
             <td class="r">~$400M to 700M</td>
             <td class="r">~$2.0B</td>
           </tr>
@@ -203,7 +221,9 @@
             <td class="proj">Harborplace <span>Baltimore, MD</span></td>
             <td class="r">20</td>
             <td class="r">~$50M to 100M</td>
-            <td class="r">~$50M to 150M</td>
+            <td class="r">~$25M to 50M</td>
+            <td class="r">~$50M to 100M</td>
+            <td class="r">~$125M to 250M</td>
             <td class="r">~$250M to 500M</td>
             <td class="r">~$900M+</td>
           </tr>
@@ -211,7 +231,9 @@
             <td class="proj">195 District <span>Providence, RI</span></td>
             <td class="r">26</td>
             <td class="r">~$20M to 50M</td>
+            <td class="r">~$20M to 40M</td>
             <td class="r">~$50M to 100M</td>
+            <td class="r">~$90M to 190M</td>
             <td class="r">~$150M to 300M</td>
             <td class="r">~$830M+</td>
           </tr>
@@ -219,7 +241,9 @@
             <td class="proj">Port Eastside <span>East Hartford, CT</span></td>
             <td class="r">30+</td>
             <td class="r">~$30M to 60M</td>
-            <td class="r">~$50M to 100M</td>
+            <td class="r">~$20M to 40M</td>
+            <td class="r">~$75M to 125M</td>
+            <td class="r">~$125M to 225M</td>
             <td class="r">~$200M to 400M</td>
             <td class="r">~$840M+</td>
           </tr>
@@ -227,19 +251,59 @@
             <td class="proj">Cortex <span>St. Louis, MO</span></td>
             <td class="r">200</td>
             <td class="r">&lt;$100M</td>
-            <td class="r">~$200M+</td>
+            <td class="r">~$50M to 100M</td>
+            <td class="r">~$100M to 250M</td>
+            <td class="r">~$200M to 450M</td>
             <td class="r">~$500M+</td>
             <td class="r">$1.3B+ invested</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="note rv">Edgewater enters at the smallest land basis and the smallest planning spend in the set, which is the point: the value-creation work is still ahead, and the position is still open. Comparable figures are approximate and reflect different eras, geographies, and accounting; they are directional, not like-for-like.</div>
+    <div class="note rv">Edgewater enters at the smallest land basis and the smallest total platform-creation capital in the set, which is the point: the value-creation work is still ahead, and the position is still open. Comparable figures are approximate and reflect different eras, geographies, and accounting; they are directional, not like-for-like.</div>
+  </div>
+</section>
+
+<!-- INFRASTRUCTURE -->
+<section id="infrastructure" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Infrastructure</div>
+      <h2>The largest line, and who funds it</h2>
+      <p class="lead">Infrastructure, roads, utilities, grading, and the public realm, is usually the biggest component of platform-creation capital. Across these districts it is rarely carried by developer equity alone. It is funded through a public-private stack: public participation, urban renewal and tax-increment financing, state grants, infrastructure debt, and contributions from the vertical projects the infrastructure makes possible. The developer and GP equity share is a minority of the total, which is what keeps the equity at risk small relative to the value created.</p>
+    </div>
+    <div class="twocol rv">
+      <div class="card fundcard">
+        <h4>Typical infrastructure funding mix</h4>
+        <table class="fund">
+          <tbody>
+            <tr><td>Public participation</td><td class="r">25% to 50%</td></tr>
+            <tr><td>Urban renewal / TIF</td><td class="r">20% to 40%</td></tr>
+            <tr><td>Developer equity</td><td class="r">10% to 25%</td></tr>
+            <tr><td>Infrastructure debt</td><td class="r">10% to 25%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card fundcard">
+        <h4>Illustrative Edgewater program (~$45M)</h4>
+        <table class="fund">
+          <tbody>
+            <tr><td>Urban renewal / TIF</td><td class="r">$12M</td></tr>
+            <tr><td>Public grants / state programs</td><td class="r">$5M</td></tr>
+            <tr><td>Infrastructure debt</td><td class="r">$10M</td></tr>
+            <tr><td>Vertical project contributions</td><td class="r">$10M</td></tr>
+            <tr><td>Developer / GP equity</td><td class="r">$8M</td></tr>
+            <tr class="tot"><td>Total</td><td class="r">$45M</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="note rv">In the illustrative ~$45M Edgewater program, developer and GP equity carries roughly $8M, under a fifth, with public sources (TIF plus grants) at about $17M, infrastructure debt at $10M, and contributions from the vertical projects at $10M. Edgewater sits within the Riverfront-Downtown Urban Renewal Area, which supports the tax-increment component. Illustrative planning-level estimates for discussion, subject to public approvals and final structuring.</div>
   </div>
 </section>
 
 <!-- CASES -->
-<section id="cases" class="alt">
+<section id="cases">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Cases</div>
@@ -288,7 +352,7 @@
 </section>
 
 <!-- FOR EDGEWATER -->
-<section id="edgewater">
+<section id="edgewater" class="alt">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">For Edgewater</div>
@@ -297,11 +361,11 @@
     </div>
     <div class="statband rv">
       <div><div class="sv">22 ac</div><div class="sl">a contiguous district in Oregon's capital, assembled in phases</div></div>
-      <div><div class="sv">$5M to 8M</div><div class="sl">planning and entitlement that unlocks the platform value, the smallest spend in the set</div></div>
-      <div><div class="sv">$70M to 120M</div><div class="sl">estimated platform value once assembled and entitled, on a $32M basis</div></div>
-      <div><div class="sv">$850M to<br>1.0B+</div><div class="sl">estimated value at full, phased buildout over roughly a decade</div></div>
+      <div><div class="sv">$72M to 94M</div><div class="sl">total platform-creation capital, land basis, entitlement, and infrastructure, the smallest in the set</div></div>
+      <div><div class="sv">$120M to 180M</div><div class="sl">illustrative platform value once entitled and serviced, on a $32M land basis</div></div>
+      <div><div class="sv">$800M to<br>1.0B+</div><div class="sl">estimated value at full, phased buildout over roughly a decade</div></div>
     </div>
-    <div class="note rv">Illustrative, planning-level estimates for discussion, not a forecast or an offer. Edgewater figures are Now City planning estimates and exclude certain infrastructure investments; comparable figures are drawn from public reporting and vary in era and method. See the <a href="om.html" style="color:var(--terra)">Investment Summary</a> for the Phase One underwriting and the <a href="innovation-district.html" style="color:var(--terra)">Innovation District</a> for the vision.</div>
+    <div class="note rv">Illustrative, planning-level estimates for discussion, not a forecast or an offer. The infrastructure share of platform-creation capital is largely carried by public and project sources, so developer and GP equity at risk is a minority of the total (see <a href="#infrastructure" style="color:var(--terra)">Infrastructure</a>). Comparable figures are drawn from public reporting and vary in era and method. See the <a href="om.html" style="color:var(--terra)">Investment Summary</a> for the Phase One underwriting and the <a href="innovation-district.html" style="color:var(--terra)">Innovation District</a> for the vision.</div>
   </div>
 </section>
 
