@@ -11,6 +11,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css?v=6">
 <script defer src="assets/nav.js?v=1"></script>
+<style>
+/* subnav pop + scroll highlight */
+#subnav .wrap{gap:6px}
+#subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
+#subnav a:hover{color:var(--terra);background:rgba(168,112,63,.08)}
+#subnav a.active{color:#fff;background:var(--terra);border-color:var(--terra)}
+/* shared value: fixed 3 columns */
+.sv3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+@media(max-width:900px){.sv3{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.sv3{grid-template-columns:1fr}}
+</style>
 </head>
 <body class="gated">
 
@@ -36,9 +47,9 @@
       <li><a href="index.html">Home</a></li>
       <li class="dd"><a href="plan.html" class="active">District Plan</a>
         <ul class="ddm">
+          <li><a href="plan.html">Business Plan</a></li>
           <li><a href="district.html">District Vision</a></li>
           <li><a href="innovation-district.html">Innovation District</a></li>
-          <li><a href="plan.html">Business Plan</a></li>
           <li><a href="activation.html">Activation Plan</a></li>
           <li><a href="om.html">Investment Summary</a></li>
           <li class="dd-head">Underwriting</li>
@@ -67,6 +78,7 @@
 <div class="subnav" id="subnav">
   <div class="wrap">
     <a href="#vision">Vision</a>
+    <a href="#sharedvalue">Shared Value</a>
     <a href="#masterplan">Masterplan</a>
     <a href="#strategy">Strategy</a>
     <a href="#phase0">Phase 0</a>
@@ -111,6 +123,74 @@
   
     <div class="note rv">The district parcels sit within the City of Salem's designated <strong>West Salem Opportunity Zone</strong> (<a href="https://www.cityofsalem.net/business/land-use-zoning/development-maps/opportunity-zone" style="color:var(--terra)">City of Salem</a>), one of four OZs in the city. Under the One Big Beautiful Bill Act, Opportunity Zones are now permanent, with updated designations taking effect January 1, 2027 (<a href="https://www.irs.gov/newsroom/treasury-irs-provide-guidance-to-states-for-nominating-census-tracts-as-qualified-opportunity-zones-under-the-one-big-beautiful-bill" style="color:var(--terra)">IRS</a>). The project structure is QOF/QOZB-compatible for OZ-eligible investors, but the plan does not depend on OZ funding.</div>
 </div>
+</section>
+
+<!-- SHARED VALUE -->
+<section id="sharedvalue">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Shared Value</div>
+      <h2>Built to return value to everyone with a stake in West Salem</h2>
+      <p class="lead">A district is only worth building if it is worth building for the people around it. Edgewater is designed so its financial success and its public benefit move together: the same assembly, activation, and development that create investor returns also create housing, jobs, tax base, learning, and a healthier riverfront.</p>
+    </div>
+    <div class="sv3 rv">
+      <div class="card ">
+        <h4>Community &amp; Residents</h4>
+        <ul class="tick" style="font-size:14px">
+          <li>Attainable homes priced to local incomes, not to a luxury ceiling</li>
+          <li>Daily needs, green space, and gathering places within a short walk</li>
+          <li>A public riverfront that belongs to the whole city</li>
+          <li>Interim activation that opens the site to neighbors before vertical construction</li>
+        </ul>
+      </div>
+      <div class="card ">
+        <h4>City &amp; State</h4>
+        <ul class="tick" style="font-size:14px">
+          <li>Expanded long-term tax base from underused industrial land</li>
+          <li>New housing supply aligned with statewide production goals</li>
+          <li>Riverfront activation and stronger west&ndash;east connectivity</li>
+          <li>Growth phased to absorption, protecting local control and fiscal discipline</li>
+        </ul>
+      </div>
+      <div class="card ">
+        <h4>Academia &amp; Workforce</h4>
+        <ul class="tick" style="font-size:14px">
+          <li>Innovation and maker space for university, student, and startup programs</li>
+          <li>Internship, research, and talent-retention pathways in the Willamette Valley</li>
+          <li>A real-world testbed for construction, mobility, food, and climate innovation</li>
+          <li>Skilled construction and operating jobs across the build-out</li>
+        </ul>
+      </div>
+      <div class="card ">
+        <h4>Corporate &amp; Investors</h4>
+        <ul class="tick" style="font-size:14px">
+          <li>Flexible workspace and experiential retail in a differentiated district</li>
+          <li>A durable, mission-aligned asset rather than a single-transaction build</li>
+          <li>Opportunity Zone&ndash;compatible structure for eligible capital</li>
+          <li>Returns underwritten to execution the team controls, not to market speculation</li>
+        </ul>
+      </div>
+      <div class="card ">
+        <h4>Environment &amp; Climate</h4>
+        <ul class="tick" style="font-size:14px">
+          <li>District-scale green infrastructure for energy, water, and mobility</li>
+          <li>Industrialized construction that reduces waste and embodied carbon</li>
+          <li>Restored riverfront ecology and expanded public green space</li>
+          <li>Resilience built into everyday civic life, not bolted on</li>
+        </ul>
+      </div>
+      <div class="card ">
+        <h4>Future Generations</h4>
+        <ul class="tick" style="font-size:14px">
+          <li>A neighborhood designed for caregiving, childhood, aging, and independence</li>
+          <li>Long-term stewardship structures over short-term extraction</li>
+          <li>A replicable model for mid-sized cities seeking durable, humane growth</li>
+          <li>Value that compounds locally, and stays in place</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note rv">The community and regional alignment story, with the places themselves, lives on <a href="district.html#salem" style="color:var(--terra)">District Vision &rarr; For Salem &amp; Oregon</a>.</div>
+  </div>
 </section>
 
 <!-- MASTERPLAN -->
@@ -847,6 +927,9 @@
 const nav=document.getElementById('nav');
 const sub=document.getElementById('subnav');addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.6);const tl=document.getElementById('toplink');if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+const subLinks=[...document.querySelectorAll('#subnav a')];const spyIds=subLinks.map(a=>a.getAttribute('href').slice(1));
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;subLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
+spyIds.forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
 <script>
