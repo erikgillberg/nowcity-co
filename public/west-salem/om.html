@@ -62,6 +62,19 @@ details.fin .inner{padding:0 24px 24px}
 @media(max-width:900px){.sv3{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.sv3{grid-template-columns:1fr}}
 </style>
+<style>
+.vflow{max-width:640px;margin:44px auto 0}
+.vstep{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 24px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.vstep .vnum{font-family:var(--serif);font-size:26px;color:var(--green);line-height:1.2}
+.vstep .vlbl{font-size:13.5px;color:var(--ink);margin-top:4px}
+.vstep.seed{border-color:var(--terra);border-width:2px}
+.vstep.seed .vnum{color:var(--terra)}
+.vstep .seedgrid{display:flex;gap:0;justify-content:center;flex-wrap:wrap}
+.vstep .seedgrid > div{padding:0 20px}
+.vstep .seedgrid > div + div{border-left:1px solid var(--line)}
+.varrow{text-align:center;color:var(--terra);font-size:22px;line-height:1;margin:9px 0}
+@media(max-width:520px){.vstep .seedgrid > div + div{border-left:none;border-top:1px solid var(--line);margin-top:10px;padding-top:10px}}
+</style>
 </head>
 <body class="gated">
 
@@ -161,9 +174,30 @@ details.fin .inner{padding:0 24px 24px}
         <div class="stat"><div class="num">100,000 SF</div><div class="lbl">Green + civic space</div></div>
       </div>
     </div>
-    <div class="rv" style="margin-top:40px">
-      <p class="lead" style="font-size:17px">On the district scale, an initial <strong>$32M</strong> land basis is projected to reach an estimated <strong>$800M to $1.0B+</strong> at buildout, phased over roughly a decade on about <strong>$650M</strong> of total investment. The full value-creation basis, platform-creation capital, and district returns live on <a href="district-value.html" style="color:var(--terra)">District Value Creation</a> and in the <a href="plan.html#capital" style="color:var(--terra)">Business Plan</a>. District-scale rolling exit windows (Y4 / Y6 / Y8, optional Y10+ OZ hold) are in <a href="#financials" style="color:var(--terra)">Exit &amp; Liquidity</a> below.</p>
+    <div class="sec-head rv" style="margin:56px 0 0">
+      <div class="eyebrow">District Financials</div>
+      <h2 style="font-size:clamp(24px,3.5vw,34px)">A small amount of catalytic capital, unlocking district-scale value</h2>
+      <p class="lead">The district's economics are built on assembly and value creation: modest platform capital secures the land and funds the work that turns a fragmented 22-acre corridor into an entitled, shovel-ready development pipeline.</p>
     </div>
+    <div class="vflow rv">
+      <div class="vstep seed">
+        <div class="vnum">$30M + $20M</div>
+        <div class="vlbl"><strong>Platform Capital</strong></div>
+        <div class="seedgrid" style="margin-top:10px">
+          <div><div style="font-size:18px;font-family:var(--serif);color:var(--terra)">$30M</div><div style="font-size:12px;color:#8a857a">Land basis</div></div>
+          <div><div style="font-size:18px;font-family:var(--serif);color:var(--terra)">$20M</div><div style="font-size:12px;color:#8a857a">Working capital</div></div>
+        </div>
+      </div>
+      <div class="varrow">&#9660;</div>
+      <div class="vstep"><div class="vnum" style="font-size:19px">Assembly &amp; Value Creation</div><div class="vlbl">Control, entitle, and activate the full 22-acre district</div></div>
+      <div class="varrow">&#9660;</div>
+      <div class="vstep"><div class="vnum">~$650M</div><div class="vlbl">Development pipeline unlocked across four phases</div></div>
+      <div class="varrow">&#9660;</div>
+      <div class="vstep"><div class="vnum">~$1.0B</div><div class="vlbl">Stabilized asset value at completion</div></div>
+      <div class="varrow">&#9660;</div>
+      <div class="vstep"><div class="vnum" style="font-size:19px">Multiple Exits</div><div class="vlbl">Rolling recapitalizations and phase-level dispositions, Y4 / Y6 / Y8, with optional Year 10+ Opportunity Zone hold</div></div>
+    </div>
+    <p class="muted rv" style="font-size:13px;text-align:center;max-width:640px;margin:16px auto 0">Illustrative district-scale figures, company underwriting (June 2026). Build-out is targeted complete across all four phases in Year 8, with the final phase stabilizing ahead of Year 10, so the district earns income years before it is finished. Phase-level economics are detailed by phase below and in the underwriting model.</p>
     <div class="note rv">This summary is aligned with the <a href="plan.html" style="color:var(--terra)">Phased Development Business Plan</a>, which details site control, interim activation, capital formation, and the four district phases.</div>
   </div>
 </section>
