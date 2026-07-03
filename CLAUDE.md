@@ -1,11 +1,28 @@
 # nowcity.co — site-specific rules
 
 This site is the **Now City Inc. corporate parent**. It is NOT the
-neighborhood brand (nowcity.life) and NOT the B2B services brand
-(nowcitylabs.com). Audiences here: investors, civic partners,
-journalists, recruits, anyone Googling the company.
+neighborhood brand (nowcity.life). As of July 2026 it ALSO hosts the
+**Now City Labs services offering** (nowcitylabs.com was retired and
+301-redirects here). Audiences here: investors, civic partners,
+journalists, recruits, landowners/operators looking for dev services,
+anyone Googling the company.
 
 Read the ecosystem-level rules in `../CLAUDE.md` before this file.
+
+## Services section (folded-in Now City Labs)
+
+- One top-level **Services** nav item (dropdown) with three children:
+  **The Stack** (`/stack`), **How We Work** (`/services`), and
+  **Outcomes** (`/outcomes`, the interactive comparison island).
+- B2B-facing but written in nowcity.co's corporate voice, not the old
+  Labs voice. Refer to the arm as "Now City" or "our services arm,"
+  not heavily as a separate "Now City Labs" brand.
+- The homepage hero leads with the positioning: **unlock hidden value
+  through adaptive reuse + ground-up construction to create walkable,
+  green, mixed-use districts.** Keep that thread consistent.
+- Gateway-call / contact CTAs route to `/contact`. Note: `/contact`
+  still lists `team@nowcitylabs.com` (a working mailbox); swap to a
+  nowcity.co address once one exists.
 
 ## Voice
 
