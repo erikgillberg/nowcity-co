@@ -67,9 +67,9 @@ export default {
         // Display: serif for headings (Canela isn't self-hostable without license;
         // Playfair Display and Libre Baskerville are fallbacks per Brand Bible)
         display: [
+          'Fraunces',
           'Canela',
           'Playfair Display',
-          'Libre Baskerville',
           'Georgia',
           'serif',
         ],

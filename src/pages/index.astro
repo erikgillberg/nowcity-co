@@ -3,63 +3,134 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 
 import heroVision from '../assets/brand/hero-vision.jpg';
-import buildingBlock from '../assets/brand/building-block.jpg';
 import tiltShift from '../assets/brand/tiltshift-tnd-1.jpg';
 
 const title = 'Now City Inc.';
 const description =
-  'Now City Inc. is a regenerative neighborhood developer and operator. We work on the West Coast through a platform of brands serving residents, landowners, and capital.';
+  'Now City Inc. is a regenerative developer and operator. Through adaptive reuse and ground-up construction, we turn underused sites into walkable, green, mixed-use districts across the West Coast.';
+
+const brands = [
+  {
+    idx: '01',
+    audience: 'For residents',
+    name: 'Now City Neighborhoods',
+    blurb:
+      'The places we build, designed for the parts of life that happen every day. Future residents follow along here.',
+    href: 'https://nowcity.life',
+    cta: 'nowcity.life',
+  },
+  {
+    idx: '02',
+    audience: 'For landowners and operators',
+    name: 'Now City Labs',
+    blurb:
+      'Pre-development intelligence and integrated execution services for landowners, operators, and municipalities.',
+    href: '/services',
+    cta: 'Explore services',
+  },
+  {
+    idx: '03',
+    audience: 'For cities and civic partners',
+    name: 'Urban Reboot',
+    blurb:
+      'A nonprofit that catalyzes mission-aligned capital and structures public-private partnerships for mixed-income, mixed-use neighborhoods.',
+    href: 'https://urbanreboot.org',
+    cta: 'urbanreboot.org',
+  },
+];
 ---
 
 <Layout title={title} description={description}>
-  {/* ============================================================ */}
-  {/* SECTION 1 — HERO                                             */}
-  {/* ============================================================ */}
-  <section class="pt-12 md:pt-20">
+  {/* ===================== HERO ===================== */}
+  <section class="relative overflow-hidden pt-12 md:pt-20">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute right-0 -top-16 select-none font-display leading-none text-forest-700/[0.055]"
+      style="font-size:clamp(13rem,24vw,22rem);"
+    >
+      +
+    </div>
+
     <div class="container-wide">
-      <div class="max-w-4xl">
-        <p class="eyebrow">Now City Inc.</p>
-        <h1 class="mt-5 font-display text-display-xl text-forest-700">
-          We unlock the value hidden in overlooked land.
-        </h1>
-        <p class="lede mt-8 max-w-3xl">
-          Now City Inc. is a regenerative developer and operator. Through
-          adaptive reuse and ground-up construction, we turn underused
-          sites into walkable, green, mixed-use districts across the
-          West Coast.
-        </p>
+      <div class="relative grid gap-10 md:grid-cols-12 md:gap-12">
+        <div class="md:col-span-8" data-reveal>
+          <div class="flex items-center gap-2">
+            <span class="font-display text-lg leading-none text-copper-400">+</span>
+            <p class="eyebrow">Now City Inc.</p>
+          </div>
+          <h1 class="mt-6 font-display text-display-xl font-medium text-forest-700">
+            We unlock the value <span class="italic text-copper-400">hidden</span> in overlooked land.
+          </h1>
+          <p class="lede mt-8 max-w-2xl">
+            Now City Inc. is a regenerative developer and operator.
+            Through adaptive reuse and ground-up construction, we turn
+            underused sites into walkable, green, mixed-use districts
+            across the West Coast.
+          </p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="/services" class="btn-primary">See our services</a>
+            <a href="/outcomes" class="btn-outline">Compare outcomes</a>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 md:pt-3" data-reveal>
+          <div class="space-y-7 md:border-l md:border-stone-200 md:pl-8">
+            <div>
+              <div class="h-0.5 w-6 bg-copper-400" aria-hidden="true"></div>
+              <p class="mt-3 font-display text-lg text-forest-700">Adaptive reuse</p>
+              <p class="mt-1 text-sm leading-relaxed text-stone-600">
+                Value hiding in what is already built.
+              </p>
+            </div>
+            <div>
+              <div class="h-0.5 w-6 bg-copper-400" aria-hidden="true"></div>
+              <p class="mt-3 font-display text-lg text-forest-700">Ground-up</p>
+              <p class="mt-1 text-sm leading-relaxed text-stone-600">
+                Whole districts, not single assets.
+              </p>
+            </div>
+            <div>
+              <div class="h-0.5 w-6 bg-copper-400" aria-hidden="true"></div>
+              <p class="mt-3 font-display text-lg text-forest-700">West Coast</p>
+              <p class="mt-1 text-sm leading-relaxed text-stone-600">
+                California and the Pacific Northwest.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="mt-14 overflow-hidden rounded-md shadow-sm">
-        <Image
-          src={heroVision}
-          alt="An active mixed-use street with plant-clad buildings, a market, café tables, a bike lane, and people of all ages walking and gathering."
-          widths={[800, 1200, 1800]}
-          sizes="(min-width: 1024px) 1100px, 100vw"
-          class="h-auto w-full object-cover"
-          loading="eager"
-        />
-        <p class="mt-3 text-xs italic text-stone-500">
-          Concept rendering. Walkable mixed-use district, Pacific
-          Northwest typology.
+      <div class="mt-16" data-reveal>
+        <div class="h-px w-full bg-copper-400/40" aria-hidden="true"></div>
+        <div class="mt-6 overflow-hidden rounded-sm shadow-sm">
+          <Image
+            src={heroVision}
+            alt="An active mixed-use street with plant-clad buildings, a market, café tables, a bike lane, and people of all ages walking and gathering."
+            widths={[800, 1200, 1800]}
+            sizes="(min-width: 1024px) 1100px, 100vw"
+            class="h-auto w-full object-cover"
+            loading="eager"
+          />
+        </div>
+        <p class="mt-3 font-display text-sm italic text-stone-500">
+          Concept rendering. Walkable mixed-use district, Pacific Northwest typology.
         </p>
       </div>
     </div>
   </section>
 
-  {/* ============================================================ */}
-  {/* SECTION 2 — A DIFFERENT KIND OF REAL ESTATE COMPANY          */}
-  {/* ============================================================ */}
+  {/* ===================== WHAT WE DO ===================== */}
   <section class="mt-section py-section">
     <div class="container-wide">
       <div class="grid gap-12 md:grid-cols-12 md:gap-16">
-        <div class="md:col-span-5">
-          <p class="eyebrow">What we do</p>
+        <div class="md:col-span-5" data-reveal>
+          <div class="h-0.5 w-10 bg-copper-400" aria-hidden="true"></div>
+          <p class="eyebrow mt-5">What we do</p>
           <h2 class="mt-5 font-display text-display-lg text-forest-700">
             A different kind of real estate company.
           </h2>
         </div>
-        <div class="md:col-span-7">
+        <div class="md:col-span-7" data-reveal>
           <div class="prose-body">
             <p>
               Most development optimizes for a single asset, a single
@@ -68,7 +139,7 @@ const description =
             </p>
             <p>
               Now City Inc. is a vertically integrated developer and
-              operator. We find the hidden value in underused land and
+              operator. We find the value hiding in underused land and
               buildings, then release it through adaptive reuse and
               ground-up construction, designed and built with a
               systems-led approach to urbanism. We steward the result
@@ -85,12 +156,62 @@ const description =
     </div>
   </section>
 
-  {/* ============================================================ */}
-  {/* SECTION 3 — THREE BRANDS                                     */}
-  {/* ============================================================ */}
+  {/* ===================== THE DIFFERENCE, MEASURED ===================== */}
+  <section class="bg-forest-800 py-section text-cream" data-reveal>
+    <div class="container-wide">
+      <div class="flex flex-wrap items-baseline justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <span class="font-display text-xl leading-none text-copper-300" aria-hidden="true">+</span>
+          <p class="text-xs font-medium uppercase tracking-[0.2em] text-sage-300">
+            The difference, measured
+          </p>
+        </div>
+        <p class="text-sm text-sage-200">vs. a traditional equivalent</p>
+      </div>
+
+      <div class="mt-12 grid gap-10 sm:grid-cols-3">
+        <div class="border-t border-copper-400/50 pt-5">
+          <p class="font-display text-5xl leading-none text-cream">
+            +300<span class="text-2xl text-copper-300"> to 500 bps</span>
+          </p>
+          <p class="mt-4 text-sm leading-relaxed text-sage-200">
+            Higher financial ROI over the full hold.
+          </p>
+        </div>
+        <div class="border-t border-copper-400/50 pt-5">
+          <p class="font-display text-5xl leading-none text-cream">
+            6<span class="text-2xl text-copper-300"> to 18 mo faster</span>
+          </p>
+          <p class="mt-4 text-sm leading-relaxed text-sage-200">
+            To shovel-ready, where projects usually bleed money.
+          </p>
+        </div>
+        <div class="border-t border-copper-400/50 pt-5">
+          <p class="font-display text-5xl leading-none text-cream">
+            ~40<span class="text-2xl text-copper-300"> % lower</span>
+          </p>
+          <p class="mt-4 text-sm leading-relaxed text-sage-200">
+            Lifecycle carbon, embodied plus operational.
+          </p>
+        </div>
+      </div>
+
+      <p class="mt-12">
+        <a
+          href="/outcomes"
+          class="inline-flex items-center gap-2 text-sm font-medium text-cream underline decoration-copper-400 decoration-2 underline-offset-4 hover:text-copper-300"
+        >
+          See how we measure it, metric by metric
+          <span aria-hidden="true">→</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  {/* ===================== OUR BRANDS (editorial index) ===================== */}
   <section class="py-section bg-cream-50">
     <div class="container-wide">
-      <div class="max-w-3xl">
+      <div class="max-w-3xl" data-reveal>
         <p class="eyebrow">Our brands</p>
         <h2 class="mt-5 font-display text-display-lg text-forest-700">
           Three doors. One company.
@@ -101,73 +222,42 @@ const description =
         </p>
       </div>
 
-      <div class="mt-12 grid gap-6 md:grid-cols-3">
-        <article class="rounded-2xl bg-cream p-8 ring-1 ring-stone-100">
-          <p class="text-xs font-medium uppercase tracking-[0.18em] text-stone-500">
-            For residents
-          </p>
-          <h3 class="mt-4 font-display text-2xl text-forest-700">
-            Now City Neighborhoods
-          </h3>
-          <p class="prose-body mt-3 text-base">
-            The places we build, designed for the parts of life that
-            happen every day. Future residents follow along here.
-          </p>
-          <p class="mt-6">
-            <a href="https://nowcity.life" class="text-sm font-medium">
-              nowcity.life →
-            </a>
-          </p>
-        </article>
-
-        <article class="rounded-2xl bg-cream p-8 ring-1 ring-stone-100">
-          <p class="text-xs font-medium uppercase tracking-[0.18em] text-stone-500">
-            For landowners and operators
-          </p>
-          <h3 class="mt-4 font-display text-2xl text-forest-700">
-            Now City Labs
-          </h3>
-          <p class="prose-body mt-3 text-base">
-            Pre-development intelligence and integrated execution
-            services for landowners, operators, and municipalities.
-          </p>
-          <p class="mt-6">
-            <a href="/services" class="text-sm font-medium">
-              Explore services →
-            </a>
-          </p>
-        </article>
-
-        <article class="rounded-2xl bg-cream p-8 ring-1 ring-stone-100">
-          <p class="text-xs font-medium uppercase tracking-[0.18em] text-stone-500">
-            For cities and civic partners
-          </p>
-          <h3 class="mt-4 font-display text-2xl text-forest-700">
-            Urban Reboot
-          </h3>
-          <p class="prose-body mt-3 text-base">
-            A nonprofit that catalyzes mission-aligned capital and
-            structures public-private partnerships for mixed-income,
-            mixed-use neighborhoods.
-          </p>
-          <p class="mt-6">
-            <a href="https://urbanreboot.org" class="text-sm font-medium">
-              urbanreboot.org →
-            </a>
-          </p>
-        </article>
+      <div class="mt-14 border-t border-stone-200" data-reveal>
+        {brands.map((b) => (
+          <a
+            href={b.href}
+            class="group grid items-baseline gap-3 border-b border-stone-200 py-8 no-underline transition-colors hover:bg-cream md:grid-cols-12 md:gap-8 md:py-10"
+          >
+            <div class="md:col-span-1">
+              <span class="font-display text-2xl text-copper-400">{b.idx}</span>
+            </div>
+            <div class="md:col-span-3">
+              <p class="text-xs font-medium uppercase tracking-[0.18em] text-stone-500">
+                {b.audience}
+              </p>
+              <h3 class="mt-2 font-display text-2xl text-forest-700">{b.name}</h3>
+            </div>
+            <div class="md:col-span-6">
+              <p class="prose-body text-base">{b.blurb}</p>
+            </div>
+            <div class="md:col-span-2 md:text-right">
+              <span class="text-sm font-medium text-forest-700 transition-colors group-hover:text-copper-400">
+                {b.cta} <span aria-hidden="true">→</span>
+              </span>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  {/* ============================================================ */}
-  {/* SECTION 4 — THE STACK                                        */}
-  {/* ============================================================ */}
+  {/* ===================== THE STACK ===================== */}
   <section class="py-section">
     <div class="container-wide">
       <div class="grid gap-12 md:grid-cols-12 md:gap-16">
-        <div class="md:col-span-5">
-          <p class="eyebrow">How we build</p>
+        <div class="md:col-span-5" data-reveal>
+          <div class="h-0.5 w-10 bg-copper-400" aria-hidden="true"></div>
+          <p class="eyebrow mt-5">How we build</p>
           <h2 class="mt-5 font-display text-display-lg text-forest-700">
             Four layers. One integrated stack.
           </h2>
@@ -176,63 +266,65 @@ const description =
             treat them as one system, designed together, financed
             together, built together, operated together.
           </p>
+          <p class="prose-body mt-8 text-base">
+            <a
+              href="/stack"
+              class="font-medium text-forest-700 underline decoration-copper-400 decoration-2 underline-offset-4 hover:text-copper-400"
+            >
+              See the full stack →
+            </a>
+          </p>
         </div>
-        <div class="md:col-span-7">
+        <div class="md:col-span-7" data-reveal>
           <ol class="grid gap-y-10 sm:grid-cols-2 sm:gap-x-10">
             <li>
-              <div class="h-px w-10 bg-copper-400" aria-hidden="true"></div>
-              <p class="eyebrow mt-3">01 / Industrialized construction</p>
-              <p class="prose-body mt-3 text-base">
+              <p class="font-display text-3xl text-copper-400">01</p>
+              <p class="mt-2 font-display text-lg text-forest-700">Industrialized construction</p>
+              <p class="prose-body mt-2 text-base">
                 Off-site fabrication, kit-of-parts assembly, healthy
                 materials. Better quality, less waste, faster delivery.
               </p>
             </li>
             <li>
-              <div class="h-px w-10 bg-copper-400" aria-hidden="true"></div>
-              <p class="eyebrow mt-3">02 / Green infrastructure</p>
-              <p class="prose-body mt-3 text-base">
+              <p class="font-display text-3xl text-copper-400">02</p>
+              <p class="mt-2 font-display text-lg text-forest-700">Green infrastructure</p>
+              <p class="prose-body mt-2 text-base">
                 Energy, water, mobility, and ecology, sized at the
                 district scale. Lower capex and opex; resilience as a
                 byproduct.
               </p>
             </li>
             <li>
-              <div class="h-px w-10 bg-copper-400" aria-hidden="true"></div>
-              <p class="eyebrow mt-3">03 / Regenerative placemaking</p>
-              <p class="prose-body mt-3 text-base">
+              <p class="font-display text-3xl text-copper-400">03</p>
+              <p class="mt-2 font-display text-lg text-forest-700">Regenerative placemaking</p>
+              <p class="prose-body mt-2 text-base">
                 Walkable streets, civic gathering, local economic
                 development, community programming. Places people
                 actually want to be.
               </p>
             </li>
             <li>
-              <div class="h-px w-10 bg-copper-400" aria-hidden="true"></div>
-              <p class="eyebrow mt-3">04 / Innovative finance</p>
-              <p class="prose-body mt-3 text-base">
+              <p class="font-display text-3xl text-copper-400">04</p>
+              <p class="mt-2 font-display text-lg text-forest-700">Innovative finance</p>
+              <p class="prose-body mt-2 text-base">
                 Capital structures designed for long-term stewardship,
                 not short-term exit. Aligned ownership across residents,
                 operators, and investors.
               </p>
             </li>
           </ol>
-          <p class="prose-body mt-10 text-base">
-            <a href="/stack" class="font-medium">
-              See the full stack →
-            </a>
-          </p>
         </div>
       </div>
     </div>
   </section>
 
-  {/* ============================================================ */}
-  {/* SECTION 5 — WHERE WE ARE                                     */}
-  {/* ============================================================ */}
+  {/* ===================== WHERE WE ARE ===================== */}
   <section class="py-section bg-cream-50">
     <div class="container-wide">
       <div class="grid gap-12 md:grid-cols-2 md:items-center md:gap-16">
-        <div>
-          <p class="eyebrow">Where we are</p>
+        <div data-reveal>
+          <div class="h-0.5 w-10 bg-copper-400" aria-hidden="true"></div>
+          <p class="eyebrow mt-5">Where we are</p>
           <h2 class="mt-5 font-display text-display-lg text-forest-700">
             Building on the West Coast.
           </h2>
@@ -247,7 +339,7 @@ const description =
             and capital, to grow with.
           </p>
         </div>
-        <div class="overflow-hidden rounded-md shadow-sm">
+        <div class="overflow-hidden rounded-sm shadow-sm" data-reveal>
           <Image
             src={tiltShift}
             alt="A tilt-shift view down a tree-lined main street with residential balconies, sidewalk cafés, umbrellas, and people walking the central pedestrian spine."
@@ -260,64 +352,54 @@ const description =
     </div>
   </section>
 
-  {/* ============================================================ */}
-  {/* SECTION 6 — GET INVOLVED                                     */}
-  {/* ============================================================ */}
+  {/* ===================== GET INVOLVED ===================== */}
   <section class="py-section">
     <div class="container-wide">
-      <div class="max-w-3xl">
+      <div class="max-w-3xl" data-reveal>
         <p class="eyebrow">Get involved</p>
         <h2 class="mt-5 font-display text-display-lg text-forest-700">
           Patient ambitions need patient partners.
         </h2>
       </div>
 
-      <div class="mt-12 grid gap-6 md:grid-cols-3">
-        <article class="rounded-2xl bg-cream-50 p-8 ring-1 ring-stone-100">
-          <h3 class="font-display text-xl text-forest-700">
-            Landowners and operators
-          </h3>
+      <div class="mt-12 grid gap-8 md:grid-cols-3" data-reveal>
+        <div class="border-t-2 border-forest-700 pt-6">
+          <h3 class="font-display text-xl text-forest-700">Landowners and operators</h3>
           <p class="prose-body mt-3 text-base">
             If you hold a site that wants to become a district, our
             services arm starts with a conversation.
           </p>
           <p class="mt-6">
-            <a href="/services" class="text-sm font-medium">
+            <a href="/services" class="text-sm font-medium text-forest-700 hover:text-copper-400">
               Explore services →
             </a>
           </p>
-        </article>
-
-        <article class="rounded-2xl bg-cream-50 p-8 ring-1 ring-stone-100">
-          <h3 class="font-display text-xl text-forest-700">
-            Investors and platform partners
-          </h3>
+        </div>
+        <div class="border-t-2 border-forest-700 pt-6">
+          <h3 class="font-display text-xl text-forest-700">Investors and platform partners</h3>
           <p class="prose-body mt-3 text-base">
             We are building Now City Inc. as a platform for the next
             generation of real assets. Express interest, and we will be
             in touch when there is something to talk about.
           </p>
           <p class="mt-6">
-            <a href="/investment" class="text-sm font-medium">
+            <a href="/investment" class="text-sm font-medium text-forest-700 hover:text-copper-400">
               Investment overview →
             </a>
           </p>
-        </article>
-
-        <article class="rounded-2xl bg-cream-50 p-8 ring-1 ring-stone-100">
-          <h3 class="font-display text-xl text-forest-700">
-            Future residents and the curious
-          </h3>
+        </div>
+        <div class="border-t-2 border-forest-700 pt-6">
+          <h3 class="font-display text-xl text-forest-700">Future residents and the curious</h3>
           <p class="prose-body mt-3 text-base">
             Tell us where you would want a Now City neighborhood. We pay
             attention.
           </p>
           <p class="mt-6">
-            <a href="https://nowcity.life" class="text-sm font-medium">
+            <a href="https://nowcity.life" class="text-sm font-medium text-forest-700 hover:text-copper-400">
               nowcity.life →
             </a>
           </p>
-        </article>
+        </div>
       </div>
     </div>
   </section>
