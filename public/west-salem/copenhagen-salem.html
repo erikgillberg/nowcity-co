@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="assets/nowcity-favicon-white.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Copenhagen Comparison - Now City West Salem</title>
+<meta name="description" content="A data-first, deliberately skeptical case study: how Copenhagen and Denmark transformed a near-bankrupt, polluted, shrinking industrial capital into the city that now tops global livability rankings, how much of that is national policy versus local choice, and whether a mid-size US state capital like Salem could realistically move along the same curve.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=6">
+<script defer src="assets/nav.js?v=1"></script>
+<style>
+/* stat cards with sources */
+.statband{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:8px}
+.statband .stat{background:var(--cream-2);border:1px solid var(--line);border-top:3px solid var(--terra);border-radius:8px;padding:22px 20px 18px;display:flex;flex-direction:column}
+.statband .sv{font-family:var(--serif);font-size:clamp(26px,3.2vw,37px);color:var(--green);line-height:1.04}
+.statband .sv .per{font-size:.44em;color:#8a857a;font-family:var(--sans);font-weight:600;letter-spacing:.02em}
+.statband .sl{font-size:13px;color:#4a463f;margin-top:11px;line-height:1.48}
+.statband .src{font-size:11px;color:#8a857a;font-style:italic;margin-top:12px;padding-top:11px;border-top:1px solid rgba(0,0,0,.08)}
+.srclink{color:var(--terra);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+/* comparison + scoreboard tables */
+.cmp{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px;min-width:640px}
+.cmp th{text-align:left;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);padding:0 12px 11px;border-bottom:2px solid var(--line);vertical-align:bottom}
+.cmp td{padding:12px;border-bottom:1px solid rgba(0,0,0,.07);vertical-align:top;line-height:1.5;color:#4a463f}
+.cmp td.dim{font-weight:600;color:var(--ink-deep);white-space:nowrap}
+.tscroll{overflow-x:auto;margin-top:8px;border-radius:8px}
+/* ranking list */
+.rank{list-style:none;margin:14px 0 0;padding:0;counter-reset:r}
+.rank li{display:flex;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid rgba(0,0,0,.07);font-size:14px;color:#4a463f}
+.rank li .pos{font-family:var(--serif);font-size:15px;color:var(--terra);min-width:26px}
+.rank li .sc{margin-left:auto;font-variant-numeric:tabular-nums;color:#8a857a;font-size:12.5px;white-space:nowrap}
+.rank li.us{background:rgba(60,74,52,.06)}
+/* weight bars */
+.wts{margin-top:14px}
+.wts .w{display:grid;grid-template-columns:190px 1fr 46px;align-items:center;gap:12px;margin:9px 0;font-size:13.5px;color:#4a463f}
+.wts .w .bar{height:9px;background:var(--cream-2);border-radius:5px;overflow:hidden}
+.wts .w .bar i{display:block;height:100%;background:var(--terra)}
+.wts .w .p{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-deep);font-weight:600}
+@media(max-width:560px){.wts .w{grid-template-columns:140px 1fr 40px}}
+/* sources */
+.srcs{columns:2;column-gap:34px;font-size:12.5px;color:#6e6a61;line-height:1.5;margin-top:8px}
+.srcs p{margin:0 0 10px;break-inside:avoid}
+.srcs a{color:var(--terra);text-decoration:none}
+@media(max-width:680px){.srcs{columns:1}}
+</style>
+</head>
+<body class="gated">
+
+<!-- PASSCODE GATE -->
+<div id="gate">
+  <div class="panel">
+    <div class="eyebrow" style="color:#d9a26c">Edgewater West Salem</div>
+    <h1 class="serif">Private<br>Preview</h1>
+    <p>This site is shared with project stakeholders for discussion purposes. Enter the access code to continue.</p>
+    <form id="gateform">
+      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+      <div class="err" id="gateerr"></div>
+    </form>
+    <p style="margin-top:22px;font-size:12.5px">Need access? Contact <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Edgewater West Salem<span class="brand-sub"> &middot; A Now City Neighborhood</span></a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="dd"><a href="plan.html" class="active">District Plan</a>
+        <ul class="ddm">
+          <li><a href="plan.html">Business Plan</a></li>
+          <li><a href="district.html">District Vision</a></li>
+          <li><a href="innovation-district.html">Innovation District</a></li>
+          <li><a href="activation.html">Activation Plan</a></li>
+          <li><a href="om.html">Investment Summary</a></li>
+          <li class="dd-head">Underwriting</li>
+          <li><a href="upside.html">Upside Explorer</a></li>
+          <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
+          <li><a href="assets/docs/market-feasibility-study-2025.pdf" target="_blank" rel="noopener">Market Feasibility Study (2025)</a></li>
+          <li class="dd-head">Research &amp; Precedents</li>
+          <li><a href="research.html">District Economic Development</a></li>
+          <li><a href="district-value.html">District Value Creation</a></li>
+          <li><a href="mobility-research.html">District Mobility</a></li>
+          <li><a href="pab.html">Single-Stair / Point Access Block</a></li>
+          <li><a href="uli-tap.html">ULI Salem TAP (2022)</a></li>
+          <li><a href="copenhagen-salem.html">The Copenhagen Comparison</a></li>
+          <li class="dd-head">Concepts</li>
+          <li><a href="mobility-concepts.html">Salem Mobility Concepts</a></li>
+          <li><a href="whoosh.html">Whoosh by Swyft Cities</a></li>
+          <li class="dd-head">West Salem Activation</li>
+          <li><a href="activation.html#market">Retail Activation</a></li>
+          <li><a href="activation.html#scandi">Housing Activation</a></li>
+        </ul>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#question">The Question</a>
+    <a href="#before">The 'Before'</a>
+    <a href="#levers">The Levers</a>
+    <a href="#scoreboard">The Scoreboard</a>
+    <a href="#usgap">The US Gap</a>
+    <a href="#salem">Salem &amp; Oregon</a>
+    <a href="#verdict">The Verdict</a>
+    <a href="#sources">Sources</a>
+  </div>
+</div>
+
+<header class="hero short" id="top">
+  <div class="bg" style="background-image:url('assets/mp-11.jpg')"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="eyebrow">Research &middot; Field Notes</div>
+    <h1>The Copenhagen<br>Comparison</h1>
+    <p class="sub">Denmark rebuilt a near-bankrupt, polluted, shrinking capital into the city that now tops the world's livability rankings. How much of that is transferable to Salem, and how much is not?</p>
+    <div class="meta">A crisis-to-livability case study &middot; What Oregon already shares &middot; An honest verdict</div>
+  </div>
+</header>
+
+<!-- 1 THE QUESTION -->
+<section id="question">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Question</div>
+      <h2>A transformation, not a birthright</h2>
+      <p class="lead">Copenhagen is routinely named the most livable city in the world, and in June 2025 it took the top spot on the Economist Intelligence Unit's Global Liveability Index outright. That reputation is recent and hard-won. Forty years ago Copenhagen was a shrinking, near-insolvent industrial city with roughly one in six workers unemployed and a harbour too dirty to swim in. This page asks a narrow, testable question: what did Denmark actually do, how much of it was national policy rather than local choice, and could a mid-size US state capital like Salem realistically move along the same curve, or even compete for the title. It is written to be data-first and deliberately skeptical, and it tries to separate what a city can influence from what it cannot.</p>
+    </div>
+    <div class="grid g3 rv">
+      <div class="card">
+        <h4>A trajectory, not a trait</h4>
+        <p style="font-size:14.5px">Copenhagen's livability was built from a low point over four decades and many governments. Treating it as an inherent Scandinavian trait misses the deliberate, contested policy work that produced it, which is the part other places can study.</p>
+      </div>
+      <div class="card">
+        <h4>National versus local</h4>
+        <p style="font-size:14.5px">Much of what lifts Danish cities in the rankings, universal healthcare, a strong safety net, low gun prevalence, a national energy system, is set in national law. A city cannot legislate those. Separating them from local levers is the whole analysis.</p>
+      </div>
+      <div class="card">
+        <h4>The honest test</h4>
+        <p style="font-size:14.5px">"Most livable city in the world" is a specific claim measured by specific indices with known biases. Taking the question seriously means understanding how the scoreboard works, and where it flatters or penalizes, before answering.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 THE BEFORE -->
+<section id="before" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The 'Before'</div>
+      <h2>Copenhagen in the 1980s was a city in decline</h2>
+      <p class="lead">The starting point is what makes the story useful. Through the 1970s and 1980s Denmark ran a national economic crisis, and Copenhagen itself was losing people, jobs, and solvency. The turnaround began in the early-to-mid 1990s, which means the livable city of today is roughly a single generation of sustained choices, not an ancient inheritance.</p>
+    </div>
+    <div class="statband rv">
+      <div class="stat"><div class="sv">-39.5<span class="per">%</span></div><div class="sl">Fall in the Municipality of Copenhagen's population, from a 1950 peak of 768,105 to a 1992 trough of 464,566, before recovery began.</div><div class="src">Statistics Denmark, via Copenhagen Municipality population series</div></div>
+      <div class="stat"><div class="sv">~17.5<span class="per">%</span></div><div class="sl">City unemployment in the mid-to-late 1980s, alongside a municipal budget verging on bankruptcy (an annual deficit near $750M and debt over DKK 10bn).</div><div class="src">Andersen, "Crisis in the Resurgent City," IJURR 2010</div></div>
+      <div class="stat"><div class="sv">1996</div><div class="sl">Closure of Burmeister &amp; Wain shipbuilding, once Denmark's largest workplace with more than 10,000 workers, capping decades of deindustrialization.</div><div class="src">Burmeister &amp; Wain company history</div></div>
+      <div class="stat"><div class="sv">1995</div><div class="sl">The inner harbour still had 93 overflow channels discharging wastewater directly into the water; swimming and fishing were prohibited until the late-1990s cleanup.</div><div class="src">State of Green, Copenhagen harbour</div></div>
+    </div>
+    <div class="note rv">The national backdrop was equally grim: Denmark's current-account deficit exceeded 8% of GDP in 1982, inflation topped 12% in 1980, and the krone was devalued four times between 1979 and 1982 before a 1982 change of government ended devaluation and imposed austerity, including the 1986 "kartoffelkur" (potato cure) that made household borrowing sharply more expensive. Sources: IMF; Danmarks Nationalbank; Britannica. One qualifier worth keeping: part of Copenhagen's measured population loss reflects families moving to rail-corridor suburbs under the 1947 Finger Plan, not pure depopulation of the metro.</div>
+  </div>
+</section>
+
+<!-- 3 THE LEVERS -->
+<section id="levers">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Levers</div>
+      <h2>What actually changed</h2>
+      <p class="lead">The transformation was not one policy but three reinforcing systems, built over decades: how the city moves, how it makes energy and a living, and how the country distributes security. The measurable outcomes are strong, and one high-profile target was missed, which is included here rather than omitted.</p>
+    </div>
+
+    <h3 class="serif rv" style="font-size:20px;color:var(--ink-deep);margin:14px 0 4px">Urban form &amp; mobility</h3>
+    <div class="statband rv">
+      <div class="stat"><div class="sv">49<span class="per">%</span></div><div class="sl">Peak share of trips to work or study made by bicycle (2018). Cycling in the inner city rose 137% since 1970 while motor traffic fell 32%.</div><div class="src">City of Copenhagen, Bicycle Account 2022</div></div>
+      <div class="stat"><div class="sv">388<span class="per">km</span></div><div class="sl">Segregated cycle track in the city, part of a regional network of cycle "superhighways"; Copenhageners own 745,800 bicycles, more than five times as many as cars.</div><div class="src">City of Copenhagen, Bicycle Account 2022</div></div>
+      <div class="stat"><div class="sv">2002</div><div class="sl">First harbour bath opened at Islands Brygge after the harbour was cleaned enough to swim; the same year the driverless Metro opened, extended by the City Circle Line in 2019.</div><div class="src">State of Green; Copenhagen Metro</div></div>
+    </div>
+    <div class="note rv">The public-realm turn is older and deliberate: the central spine Str&oslash;get was pedestrianized in 1962 and the car-free network grew from about 15,800 m&sup2; to roughly 100,000 m&sup2;, tracked over decades by Jan Gehl's public-life survey method ("Life Between Buildings," 1971). Regional growth has been channelled along rail since the 1947 Finger Plan, which remains legally binding today.</div>
+
+    <h3 class="serif rv" style="font-size:20px;color:var(--ink-deep);margin:34px 0 4px">Green economy &amp; energy</h3>
+    <div class="statband rv">
+      <div class="stat"><div class="sv">~58<span class="per">%</span></div><div class="sl">Share of Denmark's electricity from wind in 2024, the highest of any country. Denmark built the world's first offshore wind farm (Vindeby) in 1991.</div><div class="src">Ember; Our World in Data</div></div>
+      <div class="stat"><div class="sv">~64.5<span class="per">%</span></div><div class="sl">Danish households on district heating, mostly from high-efficiency combined heat-and-power; above 95% of heat demand in the largest cities.</div><div class="src">State of Green; Danish District Heating Association</div></div>
+      <div class="stat"><div class="sv">~3.0<span class="per">% of GDP</span></div><div class="sl">Danish R&amp;D spending (2023), above the EU average. Novo Nordisk's market value briefly exceeded Denmark's entire GDP in 2024.</div><div class="src">Eurostat/World Bank; Fortune</div></div>
+    </div>
+    <div class="note rv"><strong>The counter-example, kept in on purpose.</strong> In 2012 Copenhagen pledged to become the world's first carbon-neutral capital by 2025. In August 2022 the city abandoned that target after its waste-to-energy plant was ruled ineligible for national carbon-capture funding, leaving a shortfall of roughly 430,000 tonnes of CO&sub2;; officials suggested neutrality might instead arrive in 2026-2028. Ambitious municipal climate targets are easier to announce than to hit, and honest comparison has to say so. Source: Climate Home News, 2022.</div>
+
+    <h3 class="serif rv" style="font-size:20px;color:var(--ink-deep);margin:34px 0 4px">Welfare, work &amp; trust</h3>
+    <div class="statband rv">
+      <div class="stat"><div class="sv">45.2<span class="per">% of GDP</span></div><div class="sl">Danish tax-to-GDP ratio in 2024, the highest in the OECD, funding universal healthcare and tuition-free university with a student stipend.</div><div class="src">OECD Revenue Statistics 2025</div></div>
+      <div class="stat"><div class="sv">74<span class="per">%</span></div><div class="sl">Share of Danes who say most people can be trusted, among the highest measured anywhere, a foundation for the "flexicurity" labour model.</div><div class="src">OECD Trust Survey (2022 data)</div></div>
+      <div class="stat"><div class="sv">No. 2</div><div class="sl">Denmark's rank in the World Happiness Report 2025 (behind Finland), a position in the global top three it has held for over a decade.</div><div class="src">World Happiness Report 2025</div></div>
+    </div>
+    <div class="note rv">"Flexicurity" pairs easy hiring and firing with generous unemployment insurance and the OECD's heaviest spending on active retraining, roughly 2% of GDP. It is a national settlement, not a municipal program, which is exactly why it matters for the Salem comparison: it is one of the biggest reasons Danish cities score well, and one of the least transferable to a US city.</div>
+  </div>
+</section>
+
+<!-- 4 THE SCOREBOARD -->
+<section id="scoreboard" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Scoreboard</div>
+      <h2>How the title is actually awarded</h2>
+      <p class="lead">"Most livable" is not a fact but a score, produced by a handful of commercial indices with specific weights, methods, and biases. Understanding the instrument is necessary before trusting the reading. The best known is the Economist Intelligence Unit's Global Liveability Index, which ranks 173 cities on 30 indicators, 26 of them subjective analyst judgments, grouped into five weighted categories.</p>
+    </div>
+    <div class="grid g2 rv" style="align-items:start">
+      <div class="card">
+        <h4>EIU category weights</h4>
+        <div class="wts">
+          <div class="w"><span>Culture &amp; environment</span><span class="bar"><i style="width:100%"></i></span><span class="p">25%</span></div>
+          <div class="w"><span>Stability</span><span class="bar"><i style="width:100%"></i></span><span class="p">25%</span></div>
+          <div class="w"><span>Infrastructure</span><span class="bar"><i style="width:80%"></i></span><span class="p">20%</span></div>
+          <div class="w"><span>Healthcare</span><span class="bar"><i style="width:80%"></i></span><span class="p">20%</span></div>
+          <div class="w"><span>Education</span><span class="bar"><i style="width:40%"></i></span><span class="p">10%</span></div>
+        </div>
+        <p style="font-size:12.5px;color:#6e6a61;margin-top:14px">Stability and healthcare together carry 45% of the score, and both are largely functions of national policy. Source: EIU methodology, via Wikipedia and The Conversation.</p>
+      </div>
+      <div class="card">
+        <h4>EIU top 10 &mdash; 2025</h4>
+        <ol class="rank">
+          <li><span class="pos">1</span> Copenhagen <span class="sc">98.0</span></li>
+          <li><span class="pos">2</span> Vienna &amp; Zurich (tie) <span class="sc">97.1</span></li>
+          <li><span class="pos">4</span> Melbourne <span class="sc">97.0</span></li>
+          <li><span class="pos">5</span> Geneva <span class="sc">96.8</span></li>
+          <li><span class="pos">6</span> Sydney <span class="sc">96.6</span></li>
+          <li><span class="pos">7</span> Osaka &amp; Auckland (tie) <span class="sc">96.0</span></li>
+          <li><span class="pos">9</span> Adelaide <span class="sc">95.9</span></li>
+          <li><span class="pos">10</span> Vancouver <span class="sc">95.8</span></li>
+        </ol>
+        <p style="font-size:12.5px;color:#6e6a61;margin-top:10px">Copenhagen took first in June 2025, ending Vienna's three-year run; it had been second for several years. Source: EIU 2025.</p>
+      </div>
+    </div>
+    <div class="note rv">Two other indices tell a similar story with different lenses. <strong>Monocle</strong>'s Quality of Life survey, which weights softer factors like community, green space and being able to get a meal after 10pm, has named Copenhagen its top city five times. <strong>Mercer</strong>'s Quality of Living ranking, built explicitly to set expatriate relocation pay and indexed to New York = 100, placed Copenhagen 4th in 2024 behind Zurich, Vienna and Geneva. All three are dominated by wealthy, mid-sized European cities.</div>
+    <div class="sec-head rv" style="margin-top:36px">
+      <h2 style="font-size:clamp(21px,3vw,28px)">What the rankings do not measure</h2>
+      <p class="lead">These indices are useful but partial, and their biases run in a consistent direction. Taking the "most livable" title at face value means ignoring what the instrument was built for.</p>
+    </div>
+    <div class="grid g3 rv">
+      <div class="card"><h4>Built for expats, not residents</h4><p style="font-size:14.5px">The EIU and Mercer indices exist largely to set corporate relocation and hardship pay. They score what matters to a transferred executive, and 26 of the EIU's 30 indicators are subjective analyst ratings behind a paywall.</p></div>
+      <div class="card"><h4>They omit affordability</h4><p style="font-size:14.5px">Housing cost, walkability, commute times and transit in outer suburbs are largely absent, and education is rated on private-school availability, though most residents use public schools. A "livable" city can still be unaffordable to live in.</p></div>
+      <div class="card"><h4>They favour a certain city</h4><p style="font-size:14.5px">Winners cluster as mid-sized, wealthy, Western cities; the density, diversity and "big-city problems" of major hubs are penalized, and city-level scores hide sharp inequality within a city. Critics from Forbes to ISGlobal have made this point for years.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 THE US GAP -->
+<section id="usgap">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The US Gap</div>
+      <h2>Why no American city cracks the top ten</h2>
+      <p class="lead">This is the crux for Salem, and it is not about wealth or ambition. The United States is a rich country whose cities systematically rank below their economic weight on these indices, and the reasons trace to national conditions a city government cannot change on its own.</p>
+    </div>
+    <div class="grid g2 rv" style="align-items:start">
+      <div class="card">
+        <h4>Highest-ranked US cities, EIU 2025</h4>
+        <ol class="rank">
+          <li class="us"><span class="pos">23</span> Honolulu <span class="sc">top US city</span></li>
+          <li class="us"><span class="pos">29</span> Atlanta <span class="sc"></span></li>
+          <li class="us"><span class="pos">30</span> Pittsburgh <span class="sc"></span></li>
+          <li class="us"><span class="pos">34</span> Seattle <span class="sc"></span></li>
+          <li class="us"><span class="pos">38</span> Washington, D.C. <span class="sc"></span></li>
+        </ol>
+        <p style="font-size:12.5px;color:#6e6a61;margin-top:10px">No US metro ranked reached the global top 20. Source: EIU 2025 via CNBC.</p>
+      </div>
+      <div class="card">
+        <h4>The drag is stability and health, not schools</h4>
+        <p style="font-size:14.5px">EIU's own commentary notes US cities post the <strong>highest education scores</strong> yet the <strong>lowest stability scores</strong>, tied to social unrest and gun violence, and score around <strong>58 of 100 on healthcare</strong> against 95-100 for Vienna, Zurich and Copenhagen, reflecting cost and access rather than clinical quality.</p>
+      </div>
+    </div>
+    <div class="statband rv">
+      <div class="stat"><div class="sv">~6&times;</div><div class="sl">US homicide rate (~6.3 per 100,000 in 2022) versus Denmark's (~1.0 per 100,000). The US recorded more than 48,000 firearm deaths in 2022.</div><div class="src">CDC; Statista</div></div>
+      <div class="stat"><div class="sv">~27M</div><div class="sl">People uninsured in the US, the only OECD country without universal health coverage. In Denmark all registered residents are covered.</div><div class="src">Commonwealth Fund; KFF</div></div>
+      <div class="stat"><div class="sv">National</div><div class="sl">Where these levers sit. Healthcare, the safety net, gun policy and much of the energy system are set in national law, outside a city's control.</div><div class="src">Structural context</div></div>
+    </div>
+    <div class="note rv">The uncomfortable implication is direct: the categories that most separate the top-ten cities from American ones, stability and healthcare, are 45% of the EIU score and are overwhelmingly national. A US city could optimize everything within its own authority and still be capped by conditions set in Washington, not City Hall.</div>
+  </div>
+</section>
+
+<!-- 6 SALEM & OREGON -->
+<section id="salem" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Salem &amp; Oregon</div>
+      <h2>What Oregon already shares with Denmark</h2>
+      <p class="lead">Set the ranking aside and the parallels are more interesting than they first appear. Oregon is, by American standards, unusually Danish in one respect that matters enormously to livability: it plans. Alongside a comparable climate, a productive rural-urban landscape and a clean-energy mandate, the state has the closest thing in the US to European land-use discipline.</p>
+    </div>
+    <div class="tscroll rv">
+      <table class="cmp">
+        <thead><tr><th style="width:22%">Dimension</th><th>Copenhagen / Denmark</th><th>Salem / Oregon</th></tr></thead>
+        <tbody>
+          <tr><td class="dim">Planning discipline</td><td>Finger Plan (1947) channels growth along rail with protected green wedges; still legally binding.</td><td>Senate Bill 100 (1973) created statewide planning goals and mandatory Urban Growth Boundaries around every city, the first system of its kind in the US.</td></tr>
+          <tr><td class="dim">Climate &amp; land</td><td>~55.7&deg;N, cool maritime; a productive agricultural country.</td><td>Willamette Valley ~45&deg;N, cool maritime; premier US cool-climate wine region, ~99% of US hazelnuts, the "grass-seed capital of the world."</td></tr>
+          <tr><td class="dim">Cycling / transit</td><td>~49% of commute trips by bike; driverless Metro; regional rail.</td><td>Portland, the in-state leader, has the highest big-city US bike commute share (~5-6%) plus MAX light rail and an elected regional government, still about a tenth of Copenhagen.</td></tr>
+          <tr><td class="dim">Clean energy</td><td>~58% wind electricity; near-universal district heating.</td><td>~42% hydropower today; HB 2021 mandates 100% clean electricity by 2040, tied for the fastest US timeline.</td></tr>
+          <tr><td class="dim">Role &amp; scale</td><td>National capital; metro ~1.3 million.</td><td>State capital; city ~180,000, metro ~443,000.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note rv">Salem's own conditions are those of a working mid-size capital, not a showcase: median household income roughly $75,000-80,000, a median home price near $425,000 after housing costs rose sharply over the past decade, and a record homeless count of 2,154 across Marion and Polk counties in the last completed tally. These are stated plainly because livability is measured at the bottom of the distribution as much as the top, and this is the real starting line. Sources: US Census/ACS; Salem Reporter; PSU Population Research Center.</div>
+  </div>
+</section>
+
+<!-- 7 THE GAPS -->
+<section id="gaps">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Gaps</div>
+      <h2>What does not close locally</h2>
+      <p class="lead">Honesty requires naming the limits as clearly as the parallels. Two gaps between Salem and the Copenhagen story cannot be closed by any amount of good local planning, and pretending otherwise is the bias this page is trying to avoid.</p>
+    </div>
+    <div class="grid g2 rv">
+      <div class="card">
+        <h4>Levers a city and region can pull</h4>
+        <p style="font-size:14.5px">Land-use and zoning, urban growth boundaries, density and mixed use, the cycling and transit network, the public realm, riverfront reclamation, tree canopy and parks, local climate and building policy, and the long-horizon discipline to hold a plan across decades. Copenhagen's most visible wins, the bikes, the harbour baths, the walkable core, the rail-oriented districts, live here.</p>
+      </div>
+      <div class="card">
+        <h4>The national moat it cannot</h4>
+        <p style="font-size:14.5px">Universal healthcare, the strength of the safety net, the flexicurity labour settlement, gun policy and violent-crime rates, and much of the energy and tax system. These carry roughly half the weight in the livability indices and are set in national law. No US city can legislate them, which is why even America's best-run cities are capped.</p>
+      </div>
+    </div>
+    <div class="note rv">There is also a scale gap. The indices rank wealthy, mid-to-large metros, and the "most livable" winners are national capitals and major regional centres. A 180,000-person state capital is not competing in the same weight class as a 1.3-million metro national capital, regardless of how well it is run. That does not make the comparison useless; it makes the honest question a different one.</div>
+  </div>
+</section>
+
+<!-- 8 THE VERDICT -->
+<section id="verdict" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Verdict</div>
+      <h2>Could Salem be the most livable city in the world?</h2>
+      <p class="lead">On the indices as they are actually built, realistically, no. Those rankings reward universal healthcare, low violence and the scale of a wealthy European capital, they were designed to set expat relocation pay rather than to describe resident life, and the categories that most separate their winners from American cities are set in national policy, not city planning. A US mid-size city topping them would require a different country, not a better comprehensive plan. Stated without hedging: "world's most livable" is not a credible near- or medium-term target for Salem, and any pitch that implies otherwise is selling a ranking it does not understand.</p>
+    </div>
+    <p class="lead rv" style="max-width:820px">But that is the less useful question, and the Copenhagen story answers a better one. A shrinking, broke, polluted industrial city chose, over forty years and across many governments, to rebuild around people, water, transit and long-horizon planning, and it worked. The lesson is about trajectory and agency, not about winning an index. On that measure Salem starts with genuine advantages Copenhagen lacked in 1980, a disciplined statewide land-use framework, a clean-electricity mandate, a productive valley and a river, and with real disadvantages it cannot fix alone. A defensible, honest ceiling is not "the most livable city in the world," but plausibly one of the more livable mid-size cities in the United States, and a national leader on the specific dimensions a city actually controls: walkable mixed-use districts, cycling and transit, riverfront access, and housing built to local incomes. That is an aspiration worth stating precisely because it does not require overstating.</p>
+    <div class="note rv">This is the thinking behind a district built around walkability, mixed use, a reclaimed riverfront and phased, long-horizon development rather than a single building. It is offered here as analysis, not as a promise that any one project changes a city's global standing. See the <a href="district-value.html" style="color:var(--terra)">District Value Creation</a> and <a href="research.html" style="color:var(--terra)">Economic Development</a> research for the local mechanics.</div>
+  </div>
+</section>
+
+<!-- 9 SOURCES -->
+<section id="sources">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Sources &amp; Method</div>
+      <h2>Where the numbers come from</h2>
+      <p class="lead">This is a research synthesis, not a forecast. Figures are drawn from public reporting and official statistics; years vary and some Copenhagen mobility data is affected by the 2020-2021 pandemic. Where sources conflict, the more conservative or more comparable figure is used, and disputed points are flagged in the text.</p>
+    </div>
+    <div class="srcs rv">
+      <p><strong>Copenhagen "before":</strong> Statistics Denmark municipal population series; H. T. Andersen, "Crisis in the Resurgent City? The Rise of Copenhagen," <a href="https://www.ijurr.org/article/crisis-in-the-resurgent-city-the-rise-of-copenhagen/">IJURR</a> (2010); <a href="https://stateofgreen.com/en/news/the-copenhagen-harbour-from-cesspool-to-bustling-recreational-and-sustainable-city-area/">State of Green</a>, Copenhagen harbour; Burmeister &amp; Wain company history.</p>
+      <p><strong>National crisis:</strong> IMF country history; Danmarks <a href="https://www.nationalbanken.dk/media/ehnesws0/monetary-history-denmark-web.pdf">Nationalbank</a> monetary history; <a href="https://www.britannica.com/place/Denmark/Postwar-Denmark-1945-c-1990">Britannica</a>.</p>
+      <p><strong>Mobility &amp; urban form:</strong> City of Copenhagen, <a href="https://kk.sites.itera.dk/apps/kk_pub2/pdf/2420_d4db2492337f.pdf">Bicycle Account 2022</a>; <a href="https://en.wikipedia.org/wiki/Finger_Plan">Finger Plan</a>; <a href="https://www.pps.org/places/strooget-district">Str&oslash;get</a>; Jan Gehl, "Life Between Buildings" (1971); Copenhagen Metro / <a href="https://en.wikipedia.org/wiki/City_Circle_Line">City Circle Line</a>.</p>
+      <p><strong>Energy &amp; economy:</strong> <a href="https://ourworldindata.org/data-insights/denmarks-electricity-has-a-larger-share-of-wind-power-than-any-other-country">Ember / Our World in Data</a> (wind); <a href="https://dbdh.org/all-about-district-energy/district-heating-in-denmark/">Danish District Heating Association</a>; <a href="https://en.wikipedia.org/wiki/Vindeby_Offshore_Wind_Farm">Vindeby</a>; <a href="https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS?locations=DK">World Bank</a> (R&amp;D); <a href="https://fortune.com/europe/2024/05/01/novo-nordisk-market-value-570-billion-bigger-than-danish-denmark-economy/">Fortune</a> (Novo Nordisk); <a href="https://www.climatechangenews.com/2022/09/16/copenhagens-failure-to-meet-2025-net-zero-target-casts-doubt-on-other-city-pledges/">Climate Home News</a> (2025 target abandoned).</p>
+      <p><strong>Welfare &amp; wellbeing:</strong> <a href="https://www.oecd.org/tax/revenue-statistics-denmark.pdf">OECD Revenue Statistics 2025</a>; <a href="https://www.star.dk/en/about-the-danish-agency-for-labour-market-and-recruitment/flexicurity">Danish Agency for Labour Market</a> (flexicurity); OECD Trust Survey; <a href="https://www.worldhappiness.report/">World Happiness Report 2025</a>.</p>
+      <p><strong>Rankings &amp; methodology:</strong> <a href="https://en.wikipedia.org/wiki/Global_Liveability_Index">EIU Global Liveability Index</a> (2024-2025); <a href="https://www.cnbc.com/2025/06/19/economist-intelligence-unit-2025-most-livable-cities-in-the-world.html">CNBC</a>; <a href="https://theconversation.com/the-worlds-most-liveable-city-title-isnt-a-measure-of-the-things-most-of-us-actually-care-about-101525">The Conversation</a> (critique); <a href="https://www.bloomberg.com/news/articles/2020-03-05/the-problem-with-vienna-s-lofty-livability-ranking">Bloomberg CityLab</a> / ISGlobal; Monocle; Mercer.</p>
+      <p><strong>Salem &amp; Oregon:</strong> US <a href="https://www.census.gov/quickfacts/fact/table/salemcityoregon/POP815223">Census / ACS</a>; PSU Population Research Center; <a href="https://www.oregonencyclopedia.org/articles/senate_bill_100/">Oregon Encyclopedia</a> (SB 100) and <a href="https://www.oregon.gov/lcd/op/pages/history.aspx">Oregon DLCD</a>; <a href="https://www.oregon.gov/deq/ghgp/pages/clean-energy-targets.aspx">Oregon DEQ</a> (HB 2021); <a href="https://bikeportland.org/2019/09/26/us-census-portland-bike-commuting-hits-lowest-rate-in-12-years-305326">Census/PBOT</a> (Portland cycling); <a href="https://www.salemreporter.com/2024/03/08/what-to-know-about-salems-housing-markets-in-2024/">Salem Reporter</a> (housing).</p>
+      <p><strong>US structural:</strong> <a href="https://www.cdc.gov/firearm-violence/data-research/facts-stats/index.html">CDC</a> (firearm deaths); <a href="https://www.cdc.gov/mmwr/volumes/72/wr/mm7242a4.htm">CDC MMWR</a> (homicide); <a href="https://www.commonwealthfund.org/publications/issue-briefs/2026/may/us-health-care-global-perspective-2026">Commonwealth Fund</a> and KFF (health coverage).</p>
+    </div>
+  </div>
+</section>
+
+<!-- TAKEAWAY -->
+<section id="contact" class="dark cta" style="border-top:1px solid #3d392f">
+  <div class="wrap rv">
+    <div class="eyebrow">The Takeaway</div>
+    <h2 class="serif">Trajectory is<br>a choice.</h2>
+    <p class="muted" style="max-width:640px;margin:0 auto">Copenhagen did not inherit its livability; it rebuilt toward it from a low point, over decades, using levers a city controls. The honest question for Salem is not whether it can win a global ranking, but how far it can move along the same curve. See the <a href="research.html" style="color:#d9a26c;text-decoration:none">Economic Development</a> and <a href="district-value.html" style="color:#d9a26c;text-decoration:none">District Value Creation</a> research, or learn more at <a href="https://nowcity.co" style="color:#d9a26c;text-decoration:none">nowcity.co</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>&copy;2026 Now City Inc. All Rights Reserved.</div>
+    <div>For discussion purposes only. Research synthesis; figures are drawn from public reporting and official statistics and are approximate.</div>
+  </div>
+</footer>
+
+<a href="#top" class="toplink" id="toplink" aria-label="Back to top">&uarr;</a>
+<script>
+const nav=document.getElementById('nav');const sub=document.getElementById('subnav');const tl=document.getElementById('toplink');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.5);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+<script>
+(function(){
+const HASH='aad5d67e3ddeda88953d6714e4569a4399b3201023dae82d5931a6c376de96d4';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('ws-ok')==='1'||sessionStorage.getItem('ws-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
