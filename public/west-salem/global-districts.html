@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="assets/nowcity-favicon-white.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global District Developments - Edgewater West Salem</title>
+<meta name="description" content="A private scan of walkable, regenerative district projects worldwide: the demand and velocity behind the Edgewater thesis.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=6">
+<script defer src="assets/nav.js?v=1"></script>
+<style>
+/* subnav pop + scroll highlight */
+#subnav .wrap{gap:6px}
+#subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
+#subnav a:hover{color:var(--terra);background:rgba(168,112,63,.08)}
+#subnav a.active{color:#fff;background:var(--terra);border-color:var(--terra)}
+.newsgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;margin-top:26px}
+.news{background:#2b2823;border:1px solid #3d392f;border-radius:10px;padding:24px 24px 20px;display:flex;flex-direction:column}
+.news .ntop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.news .ntag{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d9a26c;border:1px solid rgba(217,162,108,.45);border-radius:14px;padding:4px 10px}
+.news .nsrc{font-size:11.5px;color:#8f897c}
+.news h3{font-family:var(--serif);font-size:18px;color:var(--cream);line-height:1.3;margin-bottom:10px}
+.news p{font-size:13.5px;line-height:1.6;color:#d8d2c4;flex:1}
+.news .nsig{background:rgba(217,162,108,.08);border-left:3px solid #d9a26c;border-radius:0 6px 6px 0;padding:10px 13px;font-size:12.5px;color:#e8e2d6;margin:13px 0;line-height:1.5}
+.news .nsig span{display:block;font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#d9a26c;margin-bottom:4px}
+.news .nlink{font-size:12.5px;color:#d9a26c;text-decoration:none}
+.livnote{background:rgba(217,162,108,.08);border:1px solid rgba(217,162,108,.35);border-radius:8px;padding:14px 18px;font-size:13px;color:#c9c2b2;margin-top:34px}
+</style>
+</head>
+<body class="gated">
+
+<!-- PASSCODE GATE -->
+<div id="gate">
+  <div class="panel">
+    <div class="eyebrow" style="color:#d9a26c">Edgewater West Salem</div>
+    <h1 class="serif">Private<br>Preview</h1>
+    <p>This site is shared with project stakeholders for discussion purposes. Enter the access code to continue.</p>
+    <form id="gateform">
+      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+      <div class="err" id="gateerr"></div>
+    </form>
+    <p style="margin-top:22px;font-size:12.5px">Need access? Contact <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Edgewater West Salem<span class="brand-sub"> &middot; A Now City Neighborhood</span></a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="dd"><a href="plan.html">District Plan</a>
+        <ul class="ddm">
+          <li><a href="plan.html">Business Plan</a></li>
+          <li><a href="district.html">District Vision</a></li>
+          <li><a href="innovation-district.html">Innovation District</a></li>
+          <li><a href="activation.html">Activation Plan</a></li>
+          <li><a href="coalition-building.html">Coalition Building</a></li>
+          <li><a href="partners.html">Partner Strategy</a></li>
+          <li><a href="design-engineering.html">Design &amp; Engineering</a></li>
+          <li><a href="odc.html" style="padding-left:32px">&rsaquo; Understanding the ODC</a></li>
+          <li><a href="proposal-held.html" style="padding-left:32px">&rsaquo; Held Proposal</a></li>
+          <li><a href="proposal-cannon.html" style="padding-left:32px">&rsaquo; CannonDesign Proposal</a></li>
+          <li><a href="om.html">Investment Summary</a></li>
+          <li class="dd-head">Underwriting</li>
+          <li><a href="about-upside.html">Upside Explorer</a></li>
+          <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
+          <li><a href="assets/docs/market-feasibility-study-2025.pdf" target="_blank" rel="noopener">Market Feasibility Study (2025)</a></li>
+          <li class="dd-head">Research &amp; Precedents</li>
+          <li><a href="research.html">District Economic Development</a></li>
+          <li><a href="district-value.html">District Value Creation</a></li>
+          <li><a href="global-districts.html" class="active">Global District Developments</a></li>
+          <li><a href="mobility-research.html">District Mobility</a></li>
+          <li><a href="pab.html">Single-Stair / Point Access Block</a></li>
+          <li><a href="uli-tap.html">ULI Salem TAP (2022)</a></li>
+          <li><a href="copenhagen-salem.html">The Copenhagen Comparison</a></li>
+          <li class="dd-head">Concepts</li>
+          <li><a href="mobility-concepts.html">Salem Mobility Concepts</a></li>
+          <li><a href="whoosh.html">Whoosh by Swyft Cities</a></li>
+          <li class="dd-head">West Salem Activation</li>
+          <li><a href="activation.html#market">Retail Activation</a></li>
+          <li><a href="activation.html#scandi">Housing Activation</a></li>
+        </ul>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#signals">The Signal</a>
+    <a href="#europe">Europe &amp; UK</a>
+    <a href="#america">North America</a>
+    <a href="#capital">Capital &amp; Policy</a>
+  </div>
+</div>
+
+<header class="hero short" id="top">
+  <div class="bg" style="background-image:url('assets/oregon/riverfront-park.jpg')"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="eyebrow">Research &amp; Precedents &middot; Living Scan</div>
+    <h1>Global District<br>Developments</h1>
+    <p class="sub">What cities and capital are building right now: the worldwide demand and velocity behind walkable, regenerative districts.</p>
+  </div>
+</header>
+
+<section class="dark" id="signals">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Signal</div>
+      <h2>Edgewater rides a wave, not a niche</h2>
+      <p class="lead">Every month, more cities commit to landscape-led, car-light, mixed-use districts, and more capital follows them. This page is a running scan of that movement: public demand data, groundbreakings, masterplans, and market research from around the world, curated for Edgewater stakeholders. The pattern across all of it is the same pattern Edgewater is built on: housing, innovation space, and public realm designed together, on underused urban land, near water.</p>
+    </div>
+    <div class="statcards c4 rv">
+      <div class="stat"><div class="num">90%+</div><div class="lbl">of Manchester consultation respondents backed a car-light, park-centered district plan (2026)</div></div>
+      <div class="stat"><div class="num">$20B</div><div class="lbl">of walkable mixed-use centers approved in one US suburban county alone (Fairfax, VA)</div></div>
+      <div class="stat"><div class="num">11 blocks</div><div class="lbl">of downtown Houston going permanently car-free for 2026</div></div>
+      <div class="stat"><div class="num">1,700+</div><div class="lbl">investors and developers behind ULI/PwC&rsquo;s Emerging Trends 2026 consensus</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="europe" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Europe &amp; United Kingdom</div>
+      <h2>Public mandates for regenerative districts</h2>
+    </div>
+    <div class="newsgrid">
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">Manchester, UK</span><span class="nsrc">Smart Cities World &middot; Jul 2026</span></div>
+        <h3>The public backs a park-centered city district</h3>
+        <p>More than 90% of consultation respondents supported Manchester&rsquo;s Water Street Strategic Regeneration Framework: a landscape-led neighborhood around a new city-centre park on the River Medlock, with at least 20% affordable housing, enhanced walking and cycling connections, and a largely car-free, zero-carbon design. Council approval was expected July 8, with developer solicitation to follow.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>A riverfront district with Edgewater&rsquo;s exact program just won overwhelming public support in a major Western city. The demand is measured, not assumed.</div>
+        <a class="nlink" href="https://www.smartcitiesworld.net/planning-and-redevelopment/public-backs-transformational-regeneration-for-manchester-12984" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">Lisbon, Portugal</span><span class="nsrc">ArchDaily / MVRDV + OODA &middot; 2026</span></div>
+        <h3>A 28-hectare riverfront masterplan for fragmented industrial land</h3>
+        <p>MVRDV and OODA unveiled the Marvila Masterplan: 1,400 homes plus public facilities, commercial space, and services on a vacant, fragmented 28-hectare stretch of Lisbon&rsquo;s riverfront between Marvila and Beato.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>The same starting condition as West Salem&rsquo;s corridor (fragmented, underused riverfront land) is being answered with the same move: a unifying district framework.</div>
+        <a class="nlink" href="https://www.archdaily.com/tag/urban-regeneration" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">Copenhagen, Denmark</span><span class="nsrc">Henning Larsen / ArchDaily &middot; Ongoing</span></div>
+        <h3>F&aelig;lledby: an all-timber district designed around nature</h3>
+        <p>Copenhagen&rsquo;s F&aelig;lledby is an all-timber neighborhood that preserves the site&rsquo;s microclimate and fauna, integrating green space and even bird and bat habitat into building facades: mass timber urbanism at district scale, under construction rather than theoretical.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>Mass timber neighborhoods are being delivered today; Edgewater&rsquo;s delivery thesis has working precedents.</div>
+        <a class="nlink" href="https://www.archdaily.com/tag/regeneration" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">European Union</span><span class="nsrc">New European Bauhaus / Horizon Europe &middot; 2025-26</span></div>
+        <h3>Public funding now targets regenerative neighborhoods by name</h3>
+        <p>The New European Bauhaus runs dedicated calls for applying regenerative design to the built environment at neighbourhood scale, while the ReGreeneration Horizon project (with C40, Arup, and Placemaking Europe) works with cities on regenerative, green, neighborhood-scale design.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>Regenerative district-making has crossed from movement language into public funding programs and institutional practice.</div>
+        <a class="nlink" href="https://new-european-bauhaus.europa.eu/calls-proposals/applying-regenerative-design-built-environment-neighbourhoods_en" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="america" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">North America</div>
+      <h2>Groundbreakings and master plans, coast to coast</h2>
+    </div>
+    <div class="newsgrid">
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">Houston, TX</span><span class="nsrc">Greater Houston Partnership &middot; 2025-26</span></div>
+        <h3>Downtown Houston goes walkable: 11 car-free blocks plus a 10-block warehouse district</h3>
+        <p>&ldquo;More Space: Main Street 2.0&rdquo; is converting 11 blocks of Houston&rsquo;s central business district into a permanent pedestrian promenade ahead of the 2026 World Cup, while the East Blocks project converts East Downtown warehouses into a walkable 10-block mixed-use district.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>Even America&rsquo;s most car-oriented big city is repositioning its core around walkability, and using an activation catalyst to move fast.</div>
+        <a class="nlink" href="https://d9.houston.org/news/new-project-transform-downtown-houston-walkable-destination" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">Detroit, MI</span><span class="nsrc">Detroit City News &middot; May 2026</span></div>
+        <h3>Innovation center, riverfront greenway, and a rebuilt core converge</h3>
+        <p>Detroit&rsquo;s 2026 milestones include the Hudson&rsquo;s site plaza opening, the first phase of the Detroit Center for Innovation with the University of Michigan, and Joe Louis Greenway expansions linking downtown to the riverfront, dozens of projects moving in one coordinated direction.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>University-anchored innovation space plus riverfront public realm is the formula majors are betting on; Edgewater applies it at neighborhood scale.</div>
+        <a class="nlink" href="https://detroitcitynews.com/2026/05/14/downtown-detroit-development-2026-expansion/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">South Bend, IN</span><span class="nsrc">University of Notre Dame &middot; 2026</span></div>
+        <h3>A city, a university, and a developer launch an innovation hub with public financing</h3>
+        <p>South Bend&rsquo;s Redevelopment Commission pledged support through an Innovation Development District bond for Colfax Corner, a 202,000 SF research and innovation hub led by developer Ancora with Notre Dame. Vertical construction begins summer 2026.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>The Edgewater coalition playbook, city + university + developer + public financing tool, executing right now in a mid-size market.</div>
+        <a class="nlink" href="https://news.nd.edu/news/south-bend-ancora-notre-dame-launch-colfax-corner-project-to-advance-downtown-innovation-district-and-drive-high-skill-jobs/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">St. Petersburg, FL</span><span class="nsrc">St. Pete Rising &middot; 2026</span></div>
+        <h3>A 560-acre waterfront innovation district re-masterplans for growth</h3>
+        <p>St. Petersburg&rsquo;s Innovation District, 560 acres on the southeastern edge of downtown, is finalizing a new master plan with zoning updates to enable larger mixed-use development around its waterfront research anchors.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>Waterfront innovation districts are maturing into their second planning cycles; the model has staying power.</div>
+        <a class="nlink" href="https://stpeterising.com/home/st-pete-innovation-district-unveils-new-master-plan-shaping-future-waterfront-growth" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">Missouri</span><span class="nsrc">First Alert 4 &middot; May 2026</span></div>
+        <h3>State legislation advances to power downtown innovation districts</h3>
+        <p>The Missouri Senate advanced a major Innovation District bill designed to reshape downtown development, adding a state-level financing and governance tool for exactly this district type.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>Statehouses are building tailwinds for innovation districts; Oregon conversations (Business Oregon, the Salem delegation) have national company.</div>
+        <a class="nlink" href="https://www.firstalert4.com/2026/05/14/missouri-senate-advances-major-innovation-district-bill-that-could-reshape-downtown-development/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">National</span><span class="nsrc">Forbes &middot; Apr 2026</span></div>
+        <h3>Innovation districts increasingly drawn to water</h3>
+        <p>Forbes reports a national pattern: innovation districts are gravitating to waterfronts, where research anchors, talent, and placemaking compound each other.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>Edgewater&rsquo;s riverfront-plus-innovation pairing sits squarely on the national trend line.</div>
+        <a class="nlink" href="https://www.forbes.com/sites/jeffsteele/2026/04/20/innovation-districts-increasingly-drawn-to-water/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">San Marcos, CA</span><span class="nsrc">Broadpoint / North City &middot; Ongoing</span></div>
+        <h3>A carless-by-design university village enters phase two</h3>
+        <p>North City, across from Cal State San Marcos, was designed from day one as a dense, walkable, car-optional village of homes, restaurants, offices, and a rail station, now expanding in its second construction phase.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>Car-light districts of thousands of homes are leasing and expanding in mid-size West Coast markets, not just global capitals.</div>
+        <a class="nlink" href="https://servingsandiegocounty.com/walkable-car-less-neighborhood-north-county-san-diego/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="capital" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Capital &amp; Policy</div>
+      <h2>Where the money says it wants to live</h2>
+    </div>
+    <div class="newsgrid">
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">US &amp; Canada</span><span class="nsrc">ULI / PwC Emerging Trends 2026 &middot; Oct 2025</span></div>
+        <h3>1,700+ investors converge on place, mix, and walkability</h3>
+        <p>The 47th Emerging Trends in Real Estate, built on insights from 1,700+ investors, developers, and lenders, tracks the repositioning of retail into mixed-use town centers and the migration of walkable density and placemaking into the suburbs as core investment themes.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>The investor consensus Edgewater underwrites toward is documented annually by the industry&rsquo;s own flagship research.</div>
+        <a class="nlink" href="https://americas.uli.org/pwc-uli-report-reveals-2026-real-state-trends/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">Fairfax County, VA</span><span class="nsrc">Urban Land Magazine &middot; Ongoing</span></div>
+        <h3>$20 billion of walkable centers approved in one suburban county</h3>
+        <p>Over the past decade Fairfax County approved more than $20 billion in higher-density, walkable, mixed-use centers replacing malls, strip retail, and office parks, connected by foot, bike, bus, and transit.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>A single county&rsquo;s pipeline for this product type is thirty times Edgewater&rsquo;s entire district cost. The demand pool is deep.</div>
+        <a class="nlink" href="https://urbanland.uli.org/inside-uli/enduring-appeal-suburbs-2" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+      <div class="news rv">
+        <div class="ntop"><span class="ntag">National</span><span class="nsrc">Urban Land Magazine &middot; 2025-26</span></div>
+        <h3>Creative placemaking shown to lift returns, not just spirits</h3>
+        <p>ULI&rsquo;s placemaking research, drawing on its Advisory Services casework, documents how arts- and culture-led placemaking revitalizes districts and boosts developer returns on investment.</p>
+        <div class="nsig"><span>Signal for Edgewater</span>Edgewater&rsquo;s activation-first strategy (market, arts, riverfront programming) is the documented ROI path, not a soft cost.</div>
+        <a class="nlink" href="https://urbanland.uli.org/economy-markets-trends/new-uli-report-highlights-models-for-creative-placemaking" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="livnote rv">A living scan, updated as the field moves. Entries summarize publicly available reporting for private stakeholder review; follow the source links for full coverage. Suggest additions: <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a>.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>©2026 Now City Inc. All Rights Reserved.</div>
+    <div>A living document. For discussion purposes only. Subject to change pending site control and due diligence.</div>
+  </div>
+</footer>
+
+<a href="#top" class="toplink" id="toplink" aria-label="Back to top">↑</a>
+<script>
+const nav=document.getElementById('nav');const tl=document.getElementById('toplink');const sub=document.getElementById('subnav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.6);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const subLinks=[...document.querySelectorAll('#subnav a')];const spyIds=subLinks.map(a=>a.getAttribute('href').slice(1));
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;subLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
+spyIds.forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+
+</script>
+<script>
+(function(){
+const HASH='aad5d67e3ddeda88953d6714e4569a4399b3201023dae82d5931a6c376de96d4';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('ws-ok')==='1'||sessionStorage.getItem('ws-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
