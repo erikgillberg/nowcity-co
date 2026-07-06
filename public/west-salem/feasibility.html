@@ -23,6 +23,11 @@
 .scen td{padding:8px 10px;border-bottom:1px solid rgba(0,0,0,.06);text-align:right}
 .scen tr.hl td{background:rgba(72,89,63,.08);font-weight:600}
 .table-scroll{overflow-x:auto}
+/* subnav pop + scroll highlight */
+#subnav .wrap{gap:6px}
+#subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
+#subnav a:hover{color:var(--terra);background:rgba(168,112,63,.08)}
+#subnav a.active{color:#fff;background:var(--terra);border-color:var(--terra)}
 </style>
 </head>
 <body class="gated">
@@ -81,6 +86,17 @@
     </ul>
   </div>
 </nav>
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#summary">Summary</a>
+    <a href="#audit">Audit</a>
+    <a href="#market">Market</a>
+    <a href="#sizes">Unit Sizes</a>
+    <a href="#scenarios">Numbers</a>
+    <a href="#recs">Recommendations</a>
+  </div>
+</div>
+
 
 <header class="hero short" id="top">
   <div class="bg" style="background-image:url('assets/oregon/salem-river-aerial.jpg')"></div><div class="shade"></div>
@@ -240,9 +256,14 @@
 
 <script>
 const nav=document.getElementById('nav');
-addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40)},{passive:true});
+const sub=document.getElementById('subnav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.6)},{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const subLinks=[...document.querySelectorAll('#subnav a')];const spyIds=subLinks.map(a=>a.getAttribute('href').slice(1));
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;subLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
+spyIds.forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+
 </script>
 <script>
 (function(){
