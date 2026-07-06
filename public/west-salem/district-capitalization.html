@@ -47,8 +47,15 @@
 .tl2 .tt{font-family:var(--serif);font-size:14.5px;color:var(--cream);margin:6px 0 6px;line-height:1.3}
 .tl2 p{font-size:11.5px;color:#b7b0a3;line-height:1.55;margin:0}
 @media(max-width:900px){.tl2{grid-template-columns:1fr}}
-.numflow{max-width:840px;margin:30px auto 0;text-align:center;font-size:14.5px;color:#d8d2c4;line-height:1.7}
-.numflow b{color:#d9a26c}
+.vflow{display:flex;align-items:stretch;justify-content:center;gap:0;margin:34px auto 0;max-width:1040px}
+.vflow .vn{flex:1;background:#2b2823;border:1px solid #3d392f;border-top:3px solid #d9a26c;border-radius:9px;padding:18px 14px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.vflow .vn .n{font-family:var(--serif);font-size:clamp(18px,2vw,26px);color:var(--cream);line-height:1.1}
+.vflow .vn .l{font-size:11px;color:#b7b0a3;margin-top:7px;line-height:1.45;letter-spacing:.02em}
+.vflow .vn.final{background:rgba(217,162,108,.12);border-color:#d9a26c}
+.vflow .va{display:flex;align-items:center;padding:0 6px;color:#d9a26c;font-size:20px;flex:0 0 auto}
+.vflow .va::after{content:"\2192"}
+@media(max-width:860px){.vflow{flex-direction:column;max-width:420px}.vflow .va{justify-content:center;padding:6px 0}.vflow .va::after{content:"\2193"}}
+.numflow{max-width:840px;margin:22px auto 0;text-align:center;font-size:13px;color:#b7b0a3;line-height:1.7}
 .gantt{margin-top:30px;border:1px solid #3d392f;border-radius:10px;padding:22px 20px 14px;background:#221f1a;overflow-x:auto}
 .gantt .gaxis{display:grid;grid-template-columns:150px 1fr;margin-bottom:8px}
 .gantt .gaxis .yrs{position:relative;height:16px;font-size:9.5px;color:#8f897c}
@@ -241,7 +248,18 @@
       <div class="stat"><div class="num">100,000+ SF</div><div class="lbl">Sports, recreation &amp; wellness</div></div>
       <div class="stat"><div class="num">Y4 / Y6 / Y8</div><div class="lbl">Rolling recapitalizations that return capital while the district is held long-term</div></div>
     </div>
-    <div class="numflow rv">The flow in one line: <b>$15M</b> predevelopment campaign &rarr; a controlled, entitled district &rarr; <b>~$34M</b> land close &rarr; <b>~$650M</b> phased development pipeline &rarr; <b>~$1.0B</b> stabilized value, held long-term and recapitalized on a rolling basis. Full detail lives in the <a href="plan.html" style="color:#d9a26c">Business Plan</a> and <a href="om.html" style="color:#d9a26c">Investment Summary</a>; live underwriting in the <a href="about-upside.html" style="color:#d9a26c">Upside Explorer</a>.</div>
+    <div class="vflow rv">
+      <div class="vn"><div class="n">$15M</div><div class="l">Predevelopment campaign<br>two vehicles, raising now</div></div>
+      <div class="va"></div>
+      <div class="vn"><div class="n">Entitled</div><div class="l">A controlled, entitled,<br>shovel-ready district</div></div>
+      <div class="va"></div>
+      <div class="vn"><div class="n">~$34M</div><div class="l">Land close<br>incl. $5M sponsor contribution</div></div>
+      <div class="va"></div>
+      <div class="vn"><div class="n">~$650M</div><div class="l">Development pipeline<br>across four phases</div></div>
+      <div class="va"></div>
+      <div class="vn final"><div class="n">~$1.0B</div><div class="l">Stabilized value, held long-term<br>recapitalized Y4 &middot; Y6 &middot; Y8</div></div>
+    </div>
+    <div class="numflow rv">Full detail in the <a href="plan.html" style="color:#d9a26c">Business Plan</a> and <a href="om.html" style="color:#d9a26c">Investment Summary</a>; live underwriting in the <a href="about-upside.html" style="color:#d9a26c">Upside Explorer</a>.</div>
   </div>
 </section>
 
