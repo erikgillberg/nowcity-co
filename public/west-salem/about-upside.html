@@ -17,44 +17,54 @@
 .launch:hover{background:#e4b585}
 .sublink{display:block;margin-top:18px;font-size:13.5px}
 .sublink a{color:#d9a26c;text-decoration:none;border-bottom:1px solid rgba(217,162,108,.4);padding-bottom:1px}
-/* dashboard preview (adapted from product page) */
-.mocklink{display:block;text-decoration:none;margin-top:38px}
-.mock{background:#fff;border-radius:12px;box-shadow:0 30px 60px rgba(0,0,0,.38);overflow:hidden;border:1px solid rgba(0,0,0,.08);transition:transform .25s}
+/* dashboard preview (dark, mirrors the live app) */
+.compact-hero{min-height:52vh}
+.compact-hero .wrap{padding-bottom:56px;padding-top:130px}
+.compact-hero h1{font-size:clamp(38px,5.4vw,64px)}
+.mocklink{display:block;text-decoration:none;margin-top:0}
+.mock{background:#181613;border:1px solid #3d392f;border-radius:12px;box-shadow:0 30px 60px rgba(0,0,0,.5);overflow:hidden;text-align:left;transition:transform .25s}
 .mocklink:hover .mock{transform:translateY(-4px)}
-.mock .bar{background:#211e1a;display:flex;align-items:center;gap:8px;padding:9px 16px}
-.mock .bar .dot{width:11px;height:11px;border-radius:50%}
-.mock .bar .t{margin-left:12px;color:#cfc9bd;font-size:12px;font-weight:600}
-.mock .scnbar{background:#2b2823;display:flex;align-items:center;gap:8px;padding:9px 16px;flex-wrap:wrap;border-bottom:1px solid #3d392f}
-.mock .scap{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9a948a}
-.mock .pill{font-size:11px;font-weight:600;color:#cfc9bd;border:1px solid #4a453a;border-radius:20px;padding:5px 11px}
-.mock .pill.on{background:var(--terra);border-color:var(--terra);color:#fff}
-.mock .inner{display:grid;grid-template-columns:188px 1fr}
-.mock .ctrls{background:#faf8f3;border-right:1px solid var(--line);padding:14px 14px 16px;text-align:left}
-.mock .ctrls .cl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a948a;margin:10px 0 7px}
-.mock .ctrls .cl:first-child{margin-top:0}
-.mock .typo{display:flex;flex-direction:column;gap:4px;font-size:10.5px;font-weight:600;color:#fff;background:var(--green);border-radius:5px;padding:6px 8px}
-.mock .typo small{font-weight:400;color:#d7e0cf;font-size:9px}
-.mock .sld{margin:9px 0}
-.mock .sld .t{display:flex;justify-content:space-between;font-size:10px;color:#6e6a61;margin-bottom:3px}
-.mock .sld .track{height:4px;border-radius:3px;background:#e3ddcf;position:relative}
-.mock .sld .track i{position:absolute;top:-3px;width:10px;height:10px;border-radius:50%;background:var(--terra)}
-.mock .res{padding:18px 20px;text-align:left}
-.mock .ahline{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:var(--cream);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:7px;padding:9px 13px;margin-bottom:13px;font-size:13px}
-.mock .ahline .tg{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9a948a}
-.mock .ahline b{font-family:var(--serif);color:var(--ink);font-weight:700}
-.mock .ahline .ch{margin-left:auto;font-size:11.5px;font-weight:600;color:var(--green)}
-.mock .krow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.mock .kpi{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
-.mock .kpi .l{font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:#6e6a61;font-weight:600}
-.mock .kpi .v{font-family:var(--serif);font-size:25px;color:var(--green);margin-top:5px}
-.mock .wf{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin-top:14px}
-.mock .wf .h{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:14px}
-.mock .wf .bars{display:flex;align-items:flex-end;gap:10px;height:118px}
-.mock .wf .col{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
-.mock .wf .col .bb{width:100%;border-radius:3px 3px 0 0}
-.mock .wf .col .cl{font-size:9px;color:#8a857a;text-align:center;line-height:1.1}
+.mock .abar{display:flex;align-items:center;justify-content:space-between;background:#211e1a;border-bottom:1px solid #34302a;padding:10px 16px}
+.mock .abar .side{font-size:11px;color:#8f897c;font-weight:600}
+.mock .abar .ttl{font-family:var(--serif);font-size:15px;color:#e9e4d8}
+.mock .abar .ttl sup{font-size:9px}
+.mock .cols{display:grid;grid-template-columns:172px 1fr 196px}
+.mock .colL{border-right:1px solid #2c2923;padding:12px}
+.mock .colR{border-left:1px solid #2c2923;padding:12px}
+.mock .ghead{border-radius:8px;padding:10px 12px;font-family:var(--serif);font-size:14.5px;color:#f2ede1;margin-bottom:12px}
+.mock .ghead.lev{background:linear-gradient(90deg,#33584d,#35507c)}
+.mock .ghead.agt{background:linear-gradient(90deg,#4c3d78,#31547a)}
+.mock .lv{display:flex;align-items:center;justify-content:space-between;padding:11px 10px;border-bottom:1px solid #262320;font-family:var(--serif);font-size:13.5px;color:#ddd6c8;border-left:3px solid transparent}
+.mock .lv span{color:#6e685c;font-size:11px}
+.mock .lv.b1{border-left-color:#5a7fae}.mock .lv.b2{border-left-color:#c08a4a}.mock .lv.b3{border-left-color:#6f9660}.mock .lv.b4{border-left-color:#c9b455}.mock .lv.b5{border-left-color:#8a6fae}.mock .lv.b6{border-left-color:#b05f5a}
+.mock .colC{padding:14px 18px}
+.mock .deal{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:linear-gradient(90deg,#7a4e28,#5e4470);border-radius:9px;padding:10px 14px;margin-bottom:14px}
+.mock .deal .dtag{background:rgba(0,0,0,.35);color:#f0e6d6;font-size:10px;font-weight:700;letter-spacing:.1em;border-radius:5px;padding:4px 8px}
+.mock .deal .dname{font-family:var(--serif);font-size:16px;color:#fff}
+.mock .deal .dloc{font-size:11.5px;color:#e3d9ce}
+.mock .deal .dfacts{margin-left:auto;font-size:11px;color:#f0e6d6;border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:4px 11px}
+.mock .sclbl{font-family:var(--serif);font-size:14px;color:#e9e4d8;margin:2px 0 8px}
+.mock .scn{display:flex;flex-wrap:wrap;gap:7px}
+.mock .sc{font-size:11px;font-weight:600;color:#cfc9bd;border:1px solid #4a453a;border-radius:18px;padding:6px 12px}
+.mock .sc.on{background:#e0a06a;border-color:#e0a06a;color:#241d13}
+.mock .scnote{font-size:10.5px;color:#8f897c;margin-top:9px;line-height:1.5}
+.mock .krow{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:14px}
+.mock .kpi{background:#211e19;border:1px solid #34302a;border-radius:8px;padding:11px 12px}
+.mock .kpi .l{font-size:8.5px;letter-spacing:.09em;text-transform:uppercase;color:#8f897c;font-weight:700}
+.mock .kpi .v{font-family:var(--serif);font-size:21px;color:#efe9dc;margin-top:5px}
+.mock .warn{border-radius:7px;padding:8px 12px;font-size:11px;margin-top:9px}
+.mock .warn.amber{background:rgba(198,146,61,.12);border:1px solid rgba(198,146,61,.5);color:#dfb877}
+.mock .warn.red{background:rgba(190,84,74,.12);border:1px solid rgba(190,84,74,.5);color:#d98d84}
+.mock .fleetlbl{font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#8f897c;margin:12px 0 7px}
+.mock .runrow{display:flex;align-items:center;justify-content:space-between;font-family:var(--serif);font-size:13px;color:#ddd6c8;padding:10px 4px;border-bottom:1px solid #262320}
+.mock .runrow span{color:#6e685c}
+.mock .agent{display:flex;gap:8px;align-items:flex-start;background:#221f2b;border:1px solid #3a3550;border-radius:8px;padding:8px 10px;margin-bottom:7px}
+.mock .agent .an{font-size:11px;font-weight:600;color:#cfc6e8}
+.mock .agent .ad{font-size:9.5px;color:#8b8499;margin-top:2px;line-height:1.35}
+.mock .agent.anchor{background:#1f242b;border-color:#35414d}
+.mock .agent.anchor .an{color:#b9cbd8}.mock .agent.anchor .ad{color:#7f8f9b}
 .mockcap{font-size:13px;color:#b7b0a3;margin-top:16px}
-@media(max-width:720px){.mock .inner{grid-template-columns:1fr}.mock .ctrls{display:none}.mock .krow{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){.mock .cols{grid-template-columns:1fr}.mock .colL,.mock .colR{display:none}.mock .krow{grid-template-columns:repeat(2,1fr)}}
 .chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
 .chip{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#d9a26c;border:1px solid rgba(217,162,108,.45);border-radius:999px;padding:8px 16px}
 </style>
@@ -116,12 +126,13 @@
   </div>
 </nav>
 
-<header class="hero short" id="top">
+<header class="hero short compact-hero" id="top">
   <div class="bg" style="background-image:url('assets/props/courtyard-dusk.jpg')"></div><div class="shade"></div>
   <div class="wrap">
     <div class="eyebrow">Underwriting</div>
-    <h1>Upside<br>Explorer</h1>
+    <h1>Upside Explorer</h1>
     <p class="sub">Expert human and AI systems in a collaborative pro forma, helping us deliver better places.</p>
+    <a class="launch" href="upside.html" style="margin-top:22px">Launch Upside Explorer</a>
   </div>
 </header>
 
@@ -129,52 +140,63 @@
   <div class="wrap rv" style="text-align:center;max-width:920px;margin:0 auto">
     <div class="eyebrow">The Tool</div>
     <h2 class="serif">See the deal the way we do.</h2>
-    <p class="muted" style="font-size:16.5px;line-height:1.7;margin-top:8px">We built a product for this. The Upside Explorer pairs expert human judgment with a team of AI agents on one live, collaborative pro forma: the math is fixed and runs the same way every time, the agents only propose assumptions, and every number traces to its source. We use it to unlock hidden value, compress timelines, and create better outcomes for complex mixed-use projects like Edgewater.</p>
+    
     <a class="mocklink" href="upside.html" aria-label="Launch the Upside Explorer">
     <div class="mock">
-      <div class="bar"><span class="dot" style="background:#e0686a"></span><span class="dot" style="background:#e6b35c"></span><span class="dot" style="background:#7bbf6a"></span><span class="t">Now City Upside Explorer &middot; Edgewater West Salem &middot; Phase One</span></div>
-      <div class="scnbar">
-        <span class="scap">Live scenarios</span>
-        <span class="pill">Base</span><span class="pill">A</span><span class="pill">B</span><span class="pill">C</span>
-        <span class="pill">D</span><span class="pill">E</span><span class="pill">F</span><span class="pill on">G</span>
-        <span style="margin-left:auto;color:#cfc9bd;font-size:11px">Full regenerative stack &middot; <b style="color:#fff">+22.2% IRR &middot; 97 affordable homes</b></span>
-      </div>
-      <div class="inner">
-        <div class="ctrls">
-          <div class="cl">Layout typology</div>
-          <div class="typo">Point Access Block<small>93% efficiency &middot; slab-on-grade</small></div>
-          <div class="cl">Levers</div>
-          <div class="sld"><div class="t"><span>Industrialized cost</span><span>$42/SF</span></div><div class="track"><i style="left:42%"></i></div></div>
-          <div class="sld"><div class="t"><span>Placemaking premium</span><span>4.0%</span></div><div class="track"><i style="left:30%"></i></div></div>
-          <div class="sld"><div class="t"><span>TIF / urban renewal</span><span>$7M</span></div><div class="track"><i style="left:35%"></i></div></div>
-          <div class="sld"><div class="t"><span>Affordable share</span><span>20%</span></div><div class="track"><i style="left:40%"></i></div></div>
-          <div class="sld"><div class="t"><span>LIHTC equity</span><span>$10M</span></div><div class="track"><i style="left:33%"></i></div></div>
+      <div class="abar"><span class="side">&lsaquo; Hide levers</span><span class="ttl">Now City Upside Explorer<sup>&trade;</sup></span><span class="side">NowCityAI &middot; Hide agents &rsaquo;</span></div>
+      <div class="cols">
+        <div class="colL">
+          <div class="ghead lev">&#9878; Levers</div>
+          <div class="lv b1">Program <span>&rsaquo;</span></div>
+          <div class="lv b2">Cost <span>&rsaquo;</span></div>
+          <div class="lv b3">Revenue <span>&rsaquo;</span></div>
+          <div class="lv b4">Operations <span>&rsaquo;</span></div>
+          <div class="lv b5">Capital Stack <span>&rsaquo;</span></div>
+          <div class="lv b6">Risk &amp; Returns <span>&rsaquo;</span></div>
         </div>
-        <div class="res">
-          <div class="ahline"><span class="tg">Now showing</span> <b>G &middot; Full regenerative stack</b> <span class="ch">+22.2% IRR &middot; 2.27x &middot; 97 affordable</span></div>
+        <div class="colC">
+          <div class="deal"><span class="dtag">DEAL</span><span class="dname">Edgewater, Phase One</span><span class="dloc">Salem, Oregon &middot; Multifamily + retail</span><span class="dfacts">Property &amp; site facts &rsaquo;</span></div>
+          <div class="sclbl">Scenarios</div>
+          <div class="scn">
+            <span class="sc on">Honest floor (as-is, conventional)</span>
+            <span class="sc">Base case (as underwritten)</span>
+            <span class="sc">Downside (base stressed)</span>
+            <span class="sc">Upside 1 - building efficiency</span>
+            <span class="sc">Upside 2 - + industrialized construction</span>
+            <span class="sc">Upside 3 - + revenue &amp; placemaking</span>
+            <span class="sc">Upside 4 - + public subsidy</span>
+            <span class="sc">Upside 5 - + affordable / tax-credit</span>
+            <span class="sc">Upside 6 - + HUD financing</span>
+            <span class="sc">Upside - full regenerative stack</span>
+          </div>
+          <div class="scnote">Honest floor, base case (as underwritten), a downside stress, then the upside stack. The math is real; every assumption is yours to interrogate.</div>
           <div class="krow">
-            <div class="kpi"><div class="l">Levered IRR</div><div class="v">22.2%</div></div>
-            <div class="kpi"><div class="l">Equity multiple</div><div class="v">2.27x</div></div>
-            <div class="kpi"><div class="l">Stabilized DSCR</div><div class="v">1.74</div></div>
-            <div class="kpi"><div class="l">Affordable homes</div><div class="v">97</div></div>
+            <div class="kpi"><div class="l">Levered IRR</div><div class="v">1.0%</div></div>
+            <div class="kpi"><div class="l">DSCR</div><div class="v">0.94</div></div>
+            <div class="kpi"><div class="l">Equity Multiple</div><div class="v">1.03&times;</div></div>
+            <div class="kpi"><div class="l">Yield on Cost</div><div class="v">5.4%</div></div>
+            <div class="kpi"><div class="l">Net Profit</div><div class="v">$1.3M</div></div>
           </div>
-          <div class="wf">
-            <div class="h">Upside build-up: IRR by lever category</div>
-            <div class="bars">
-              <div class="col"><div class="bb" style="height:20%;background:#a8703f"></div><div class="cl">Base<br>-17%</div></div>
-              <div class="col"><div class="bb" style="height:56%;background:#6c7d5e"></div><div class="cl">Building<br>type</div></div>
-              <div class="col"><div class="bb" style="height:68%;background:#5e7150"></div><div class="cl">Cost</div></div>
-              <div class="col"><div class="bb" style="height:80%;background:#557049"></div><div class="cl">Revenue</div></div>
-              <div class="col"><div class="bb" style="height:90%;background:#4c663f"></div><div class="cl">Public<br>subsidy</div></div>
-              <div class="col"><div class="bb" style="height:96%;background:#445c38"></div><div class="cl">Tax<br>credit</div></div>
-              <div class="col"><div class="bb" style="height:100%;background:#1f1d1a"></div><div class="cl">All-in<br>+22%</div></div>
-            </div>
-          </div>
+          <div class="warn amber">&#9888; Conventional DSCR 0.94 is below the 1.20 floor.</div>
+          <div class="warn red">&#9888; Loan exceeds the $95M facility.</div>
+        </div>
+        <div class="colR">
+          <div class="ghead agt">&#10022; Upside Agents</div>
+          <div class="runrow">Run Local Agents <span>&rsaquo;</span></div>
+          <div class="runrow">Run Live Agents <span>&rsaquo;</span></div>
+          <div class="fleetlbl">Anchor</div>
+          <div class="agent anchor"><div><div class="an">&#9875; Anchor &middot; Feasibility</div><div class="ad">holds the feasibility baseline, flags drift</div></div></div>
+          <div class="fleetlbl">Composers</div>
+          <div class="agent"><div><div class="an">Program</div><div class="ad">what gets built and how it fits</div></div></div>
+          <div class="agent"><div><div class="an">Cost</div><div class="ad">what it costs to deliver</div></div></div>
+          <div class="agent"><div><div class="an">Revenue</div><div class="ad">what the market will pay</div></div></div>
+          <div class="agent"><div><div class="an">Capital Stack</div><div class="ad">debt, subsidy, tax-credit equity</div></div></div>
         </div>
       </div>
     </div>
     </a>
-    <div class="mockcap">A preview of the live model. This is what opens when you launch: the actual Edgewater Phase One pro forma, interactive, with every assumption yours to change.</div>
+    <div class="mockcap">This is what opens when you launch: the live Edgewater Phase One pro forma, shown here at the honest floor, with the levers, scenarios, and agent fleet ready to work.</div>
+    <p class="muted" style="font-size:16.5px;line-height:1.7;margin-top:34px">We built a product for this. The Upside Explorer pairs expert human judgment with a team of AI agents on one live, collaborative pro forma: the math is fixed and runs the same way every time, the agents only propose assumptions, and every number traces to its source. We use it to unlock hidden value, compress timelines, and create better outcomes for complex mixed-use projects like Edgewater.</p>
     <p class="muted" style="font-size:16.5px;line-height:1.7;margin-top:34px"><strong style="color:var(--cream)">Try it and tell us what you think.</strong> Play with the Edgewater Phase One pro forma assumptions: change the building type, the costs, the capital stack, and watch the district answer.</p>
     <a class="launch" href="upside.html">Launch Upside Explorer</a>
     <span class="sublink">Upside Explorer is a Now City Labs product &middot; <a href="https://nowcity.ai/upside-explorer" target="_blank" rel="noopener">read the product story &rarr;</a></span>
