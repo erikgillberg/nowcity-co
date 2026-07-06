@@ -12,6 +12,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css?v=6">
 <script defer src="assets/nav.js?v=1"></script>
+<style>
+/* subnav pop + scroll highlight */
+#subnav .wrap{gap:6px}
+#subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
+#subnav a:hover{color:var(--terra);background:rgba(168,112,63,.08)}
+#subnav a.active{color:#fff;background:var(--terra);border-color:var(--terra)}
+</style>
 </head>
 <body class="gated">
 
@@ -72,6 +79,15 @@
     </ul>
   </div>
 </nav>
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#team">Leadership</a>
+    <a href="#advisors">Advisors</a>
+    <a href="#value">Value Add</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
 
 <header class="hero short" id="top">
   <div class="bg" style="background-image:url('assets/props/community-table.jpg')"></div><div class="shade"></div>
@@ -89,7 +105,7 @@
       <h2>Built around the work in front of us</h2>
       <p class="lead">Now City operates as a district strategy and systems integrator, supported by a growing bench of development, construction, infrastructure, and operating partners. This model allows Phase 1 and early district phases to be executed by experienced local and regional teams with direct market knowledge, while Now City maintains continuity of vision, performance standards, and long-term district control. As the platform scales, execution capacity scales with it - through joint ventures, operating partnerships, and institutional collaborators aligned with district-level outcomes.</p>
     </div>
-    <h3 class="serif rv" style="font-size:21px;color:var(--cream);margin-bottom:24px">Leadership</h3>
+    <h3 class="serif rv" id="leadership" style="font-size:21px;color:var(--cream);margin-bottom:24px">Leadership</h3>
     <div class="team rv">
       <div class="member">
         <img src="assets/team-erik.jpg" alt="Erik Gillberg" loading="lazy">
@@ -102,7 +118,7 @@
         <p>Ritchie leads design, development, and operations. B.Architecture from Carnegie Mellon, MS in Architecture and Urban Design from Columbia, MBA candidate at Johns Hopkins. Previously a mobility planner at Lyft in New York, where he led bike-share expansion, and later supported capital raise and development of a 1,000-unit multifamily mixed-use project in NYC.</p>
       </div>
     </div>
-    <h3 class="serif rv" style="font-size:21px;color:var(--cream);margin:54px 0 8px">Senior Advisors</h3>
+    <h3 class="serif rv" id="advisors" style="font-size:21px;color:var(--cream);margin:54px 0 8px">Senior Advisors</h3>
     <p class="muted rv" style="font-size:14px;margin-bottom:24px">We work with senior advisors whose expertise is directly load-bearing for the work.</p>
     <div class="team rv" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
       <div class="member">
@@ -118,7 +134,7 @@
     </div>
 
     <div style="margin-top:64px" class="rv">
-      <h3 class="serif" style="font-size:22px;color:var(--cream);margin-bottom:6px">Value Add Strategies: How We Deliver More Without Spending More</h3>
+      <h3 class="serif" id="value" style="font-size:22px;color:var(--cream);margin-bottom:6px">Value Add Strategies: How We Deliver More Without Spending More</h3>
       <p class="muted" style="font-size:14px;margin-bottom:24px">AI-native development, advanced modeling, data intelligence, automation, and modern delivery methods reduce design friction, compress timelines, lower soft costs, and provide the reporting backbone institutional capital now requires.</p>
       <div class="grid g4">
         <div class="card"><h4>Regenerative Placemaking</h4><p style="font-size:14px">Wellness, prosperity, and ecology data-driven community design.</p></div>
@@ -152,10 +168,14 @@
 
 <a href="#top" class="toplink" id="toplink" aria-label="Back to top">↑</a>
 <script>
-const nav=document.getElementById('nav');const tl=document.getElementById('toplink');
-addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const nav=document.getElementById('nav');const tl=document.getElementById('toplink');const sub=document.getElementById('subnav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.6);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const subLinks=[...document.querySelectorAll('#subnav a')];const spyIds=subLinks.map(a=>a.getAttribute('href').slice(1));
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;subLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
+spyIds.forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+
 </script>
 <script>
 (function(){

@@ -40,6 +40,11 @@
 .backbar{margin-top:48px;text-align:center}
 .backbar a{color:#d9a26c;text-decoration:none;border-bottom:1px solid rgba(217,162,108,.4);padding-bottom:1px;font-size:14px}
 @media(max-width:760px){.rostbl{display:block;overflow-x:auto}}
+/* subnav pop + scroll highlight */
+#subnav .wrap{gap:6px}
+#subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
+#subnav a:hover{color:var(--terra);background:rgba(168,112,63,.08)}
+#subnav a.active{color:#fff;background:var(--terra);border-color:var(--terra)}
 </style>
 </head>
 <body class="gated">
@@ -101,6 +106,17 @@
     </ul>
   </div>
 </nav>
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#letter">Cover Letter</a>
+    <a href="#teamsec">The Team</a>
+    <a href="#exp">Experience</a>
+    <a href="#approach">Approach</a>
+    <a href="#phasing">Phasing</a>
+    <a href="#timber">Mass Timber</a>
+  </div>
+</div>
+
 
 <header class="hero short" id="top">
   <div class="bg" style="background-image:url('assets/props/loft-2.jpg')"></div><div class="shade"></div>
@@ -117,7 +133,7 @@
       <div class="docnote">Converted from the original PDF proposal for web reading. Lightly condensed: figures, resumes, and the fee schedule are omitted here and available in the original document on request.</div>
 
       <div class="fig"><img src="assets/proposals/cannon/p1.jpg" alt="Proposal cover: A Living Innovation District." loading="lazy"><div class="figcap">Proposal cover: A Living Innovation District.</div></div>
-      <h3 class="dsec">Cover Letter</h3>
+      <h3 class="dsec" id="letter">Cover Letter</h3>
       <div class="dsub">To the Now City Team</div>
       <div class="letter">
         <p>It is our pleasure to present our team&rsquo;s proposal to serve as Owner&rsquo;s Design Consultant for the Now City development in West Salem. The vision you have shared is an inspiration! We applaud your ambition to develop a comprehensive roadmap that leverages innovative design and development strategies to address global challenges, complemented by your commitment to implementing these solutions in a manner that strengthens the local community.</p>
@@ -127,7 +143,7 @@
         <div class="sig">Lisa Petterson, AIA, LC, LEED AP<span>Principal-in-Charge, CannonDesign &middot; 621 SW Columbia St, Portland, OR</span></div>
       </div>
 
-      <h3 class="dsec">The Team</h3>
+      <h3 class="dsec" id="teamsec">The Team</h3>
       <div class="dsub">Single Firm, Multi-Office Prime + Specialist Bench</div>
       <p><strong style="color:#f0ebe0">CannonDesign (Prime)</strong>: architecture, urban planning, interiors, lighting, smart city/IT. 1,500+ employees firmwide, 50 in the Pacific Northwest, with a 50-year Portland practice. Project leadership: Lisa Petterson (Principal-in-Charge), Eric Ridenour (Project Manager/Planner, point of contact), Ashwin Toney (Lead Designer), David Webb (Project Architect), Kevin Nyhoff (Regional Design Director), Eric Corey Freed (Sustainability Lead).</p>
       <div class="fig"><img src="assets/proposals/cannon/p6.jpg" alt="Team introduction and organization: the Portland core team and consultant bench." loading="lazy"><div class="figcap">Team introduction and organization: the Portland core team and consultant bench.</div></div>
@@ -146,7 +162,7 @@
       </table>
       <div class="fig"><img src="assets/proposals/cannon/p7.jpg" alt="CannonDesign by the numbers: 1,500+ designers firmwide, 50 in the Pacific Northwest, 50 years in Portland." loading="lazy"><div class="figcap">CannonDesign by the numbers: 1,500+ designers firmwide, 50 in the Pacific Northwest, 50 years in Portland.</div></div>
 
-      <h3 class="dsec">Relevant Experience</h3>
+      <h3 class="dsec" id="exp">Relevant Experience</h3>
       <div class="dsub">A Team Proven Together at District Scale</div>
       <div class="figgrid">
         <div class="fig"><img src="assets/proposals/cannon/p12.jpg" alt="OSU-Cascades: the team&rsquo;s defining shared project." loading="lazy"><div class="figcap">OSU-Cascades: the team&rsquo;s defining shared project.</div></div>
@@ -158,7 +174,7 @@
         <div class="fig"><img src="assets/proposals/cannon/p19.jpg" alt="Moody Yards: mixed-use district work." loading="lazy"><div class="figcap">Moody Yards: mixed-use district work.</div></div>
       </div>
 
-      <h3 class="dsec">Approach</h3>
+      <h3 class="dsec" id="approach">Approach</h3>
       <div class="dsub">Living-Centered Design, Applied to the Ten District Principles</div>
       <p>&ldquo;We love your vision! Principles-based projects like this are why we all do this work.&rdquo; The approach narrative opens there and stays personal throughout. The team reads a central theme of <em>connecting</em> across the ten district principles: quality of life, belonging, mobility, inclusion and culture supported by an ethic of connecting people; regeneration, resilience, circular systems and high-performance buildings connecting human and natural systems, scaling beyond the building or block to act as a pilot for the West Salem neighborhood.</p>
       <p>They also engage the delivery model directly: recognizing the value proposition of an ODC team refining vision, planning, and early design, paired with the efficiency of design-build, and flagging district systems as the place requiring the most thoughtful integration so the design-build teams are set up for success. Their stated management philosophy: <strong style="color:#f0ebe0">embrace the complex, but don&rsquo;t let it become complicated.</strong> An in-house smart building technology practice (The Clarient Group, whose work spans American Dream and Central Park Tower) stands ready for the district&rsquo;s physical-digital layer.</p>
@@ -169,7 +185,7 @@
       <p><strong style="color:#f0ebe0">Systems before buildings.</strong> The OSU-Cascades sequence (district energy study first, then infrastructure, then buildings that plug in) is the working model for Edgewater: settle the energy, water, and mobility frameworks early so every phase inherits performance rather than retrofitting it.</p>
 
 
-      <h3 class="dsec">Phasing, Schedule &amp; Management</h3>
+      <h3 class="dsec" id="phasing">Phasing, Schedule &amp; Management</h3>
       <div class="dsub">Structured for the Hybrid Delivery Model</div>
       <p>The proposal lays out a phased work plan from visioning and criteria development through schematic design, transportation impact study, and the handoff into design-build procurement, with a schedule built around entitlement-critical milestones.</p>
       <div class="figgrid">
@@ -177,7 +193,7 @@
         <div class="fig"><img src="assets/proposals/cannon/p36.jpg" alt="Project schedule: visioning through design-build handoff." loading="lazy"><div class="figcap">Project schedule: visioning through design-build handoff.</div></div>
       </div>
 
-      <h3 class="dsec">Mass Timber &amp; Prefabrication Depth</h3>
+      <h3 class="dsec" id="timber">Mass Timber &amp; Prefabrication Depth</h3>
       <div class="dsub">A Portfolio, Not a Position</div>
       <p>The appendices carry an unusual depth of built mass timber and prefabrication evidence, including a proprietary Mass Timber Optimizer tool, a Pacific Northwest project set, and modular systems experience from stackable housing to California&rsquo;s first full CLT building. For a district whose delivery thesis is industrialized construction, this is the bench behind the masterplan and systems scope.</p>
       <div class="figgrid">

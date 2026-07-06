@@ -40,6 +40,11 @@
 .backbar{margin-top:48px;text-align:center}
 .backbar a{color:#d9a26c;text-decoration:none;border-bottom:1px solid rgba(217,162,108,.4);padding-bottom:1px;font-size:14px}
 @media(max-width:760px){.rostbl{display:block;overflow-x:auto}}
+/* subnav pop + scroll highlight */
+#subnav .wrap{gap:6px}
+#subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
+#subnav a:hover{color:var(--terra);background:rgba(168,112,63,.08)}
+#subnav a.active{color:#fff;background:var(--terra);border-color:var(--terra)}
 </style>
 </head>
 <body class="gated">
@@ -101,6 +106,18 @@
     </ul>
   </div>
 </nav>
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#letter">Cover Letter</a>
+    <a href="#teamsec">The Team</a>
+    <a href="#exp">Experience</a>
+    <a href="#approach">Approach</a>
+    <a href="#cost">Cost</a>
+    <a href="#phasing">Phasing</a>
+    <a href="#rainsweet">RainSweet Study</a>
+  </div>
+</div>
+
 
 <header class="hero short" id="top">
   <div class="bg" style="background-image:url('assets/props/loft-1.jpg')"></div><div class="shade"></div>
@@ -116,7 +133,7 @@
     <div class="doc rv">
       <div class="docnote">Converted from the original PDF proposal for web reading. Lightly condensed: figures, resumes, and the fee schedule are omitted here and available in the original document on request.</div>
 
-      <h3 class="dsec" style="margin-top:0;padding-top:0;border-top:none">Cover Letter</h3>
+      <h3 class="dsec" id="letter" style="margin-top:0;padding-top:0;border-top:none">Cover Letter</h3>
       <div class="dsub">January 14, 2026 &middot; To the Now City Team</div>
       <div class="letter">
         <p>Held Architecture is excited to submit this proposal to serve as the Owner&rsquo;s Design Consultant (ODC) for the transformative Now City West Salem District, a 5.29-acre Phase 1 mixed-use innovation neighborhood that sets the foundation for a larger regenerative urban ecosystem in Salem, Oregon. We share Now City&rsquo;s bold vision of a tech-forward, wellness-oriented district where housing, innovation infrastructure (including the AI Innovation Hub), nature, mobility, and community life integrate seamlessly, leveraging the site&rsquo;s Opportunity Zone advantages and rezoning momentum.</p>
@@ -126,7 +143,7 @@
         <div class="sig">Kristina Held, AIA, LEED AP BD+C, CPHC<span>President, HELD Architecture, PC &middot; kristina@heldarch.com &middot; Oregon license ARF-14718</span></div>
       </div>
 
-      <h3 class="dsec">The Team</h3>
+      <h3 class="dsec" id="teamsec">The Team</h3>
       <div class="dsub">Prime + Four Specialty Consultants &middot; All Oregon Licensed</div>
       <p><strong style="color:#f0ebe0">Held Architecture (Prime, WBE &amp; SBE)</strong> leads with sustainable, human-centered architecture rooted in Passive House principles and regenerative design: efficient envelopes, airtight and prefabricated construction, biophilic integration, and high-performance buildings that connect people, communities, and the environment. Kristina Held (Principal-in-Charge, Project Architect, Passive House expert) brings over 20 years of experience and recognized Passive House advocacy; Shams Alkorwi serves as Project Manager.</p>
       <div class="fig"><img src="assets/proposals/held/p5.jpg" alt="Team organization: Held Architecture as prime ODC with AKS, IMEG, Lango Hansen, and MRGC Group." loading="lazy"><div class="figcap">Team organization: Held Architecture as prime ODC with AKS, IMEG, Lango Hansen, and MRGC Group.</div></div>
@@ -138,7 +155,7 @@
         <tr><td>MRGC Group</td><td>Cost estimating</td><td>National construction manager, 20+ years. Bottom-up, quantity-based cost modeling with market-validated pricing, aligned to Passive House, mass timber, prefabrication, and low-carbon strategies so performance goals are cost-tested rather than deferred.</td></tr>
       </table>
 
-      <h3 class="dsec">Relevant Experience</h3>
+      <h3 class="dsec" id="exp">Relevant Experience</h3>
       <div class="dsub">Selected Projects Across the Coalition</div>
       <div class="figgrid">
         <div class="fig"><img src="assets/proposals/held/p9.jpg" alt="The Cannery, Willamette riverfront: mass timber, geothermal, native landscape. Held and AKS entitled this site together." loading="lazy"><div class="figcap">The Cannery, Willamette riverfront: mass timber, geothermal, native landscape. Held and AKS entitled this site together.</div></div>
@@ -155,7 +172,7 @@
         <div class="fig"><img src="assets/proposals/held/p14.jpg" alt="Pester PAC Automation USA Headquarters." loading="lazy"><div class="figcap">Pester PAC Automation USA Headquarters.</div></div>
       </div>
 
-      <h3 class="dsec">Approach</h3>
+      <h3 class="dsec" id="approach">Approach</h3>
       <div class="dsub">Aligned With Now City&rsquo;s Ten Core Principles</div>
       <p>Held, with IMEG, AKS, and Lango Hansen, approaches West Salem as a regenerative, tech-forward urban ecosystem: a 5.29-acre Phase 1 that scales thoughtfully to 20+ acres. Drawing on the market feasibility work, the team emphasizes inclusive, high-performance spaces aligned with MU-III zoning and Opportunity Zone incentives.</p>
       <p><strong style="color:#f0ebe0">Entitlement-first sequencing.</strong> The team&rsquo;s key lesson from delivering Salem entitlements: civil design must run nearly to design development to secure city approval, while architecture and engineering advance to a 50% DD handoff for design-build procurement. Owner&rsquo;s Project Requirements carry design intent illustrations, performance specifications, and parametric criteria equivalent to 50-60% design development, so quality survives the handoff.</p>
@@ -164,16 +181,16 @@
       <div class="fig"><img src="assets/proposals/held/p26.jpg" alt="Concept diagrams: block design and scale studies for the Phase 1 parcel." loading="lazy"><div class="figcap">Concept diagrams: block design and scale studies for the Phase 1 parcel.</div></div>
 
 
-      <h3 class="dsec">Cost Management Strategy</h3>
+      <h3 class="dsec" id="cost">Cost Management Strategy</h3>
       <div class="dsub">Firm Fixed Price Earlier, Innovation Protected</div>
       <p>Held commits to rigorous, transparent, proactive cost management designed for the hybrid delivery method: a firm fixed price achieved at roughly 50% design completeness, with safeguards against scope creep, value erosion, and change-order inflation. Bottom-up estimates land at two primary milestones: a schematic design estimate incorporating site-specific factors (MU-III zoning, Opportunity Zone incentives, stormwater, geotechnical) benchmarked against the feasibility study, and an OPR-milestone estimate that locks the baseline before design-build procurement.</p>
       <p>Estimator Bill Breunig (MRGC Group, formerly managing $500M+ at Plaza Construction) supports bid normalization once the OPR package goes to design-build RFP: reviewing and normalizing competitive proposals for apples-to-apples comparison, adjusting for alternates, contingencies, escalation, and risk allocation. Trade-offs are documented transparently so regeneration, wellness, and low-carbon performance are never silently value-engineered away.</p>
 
-      <h3 class="dsec">Phasing &amp; Future-Proofing</h3>
+      <h3 class="dsec" id="phasing">Phasing &amp; Future-Proofing</h3>
       <div class="dsub">5.29 Acres First, Built as the District&rsquo;s Base</div>
       <p>The strategy treats Phase 1 as the district&rsquo;s base: core infrastructure first (utilities, low-impact stormwater via AKS, multimodal streets, the open space framework with Lango Hansen), then the 350+ multifamily units, ~40,000 SF of experiential retail, and the 15,000 SF AI Innovation Hub as integrated high-performance buildings using Passive House strategies, efficient envelopes, prefabrication, and mass timber. Visible, activating elements (covered outdoor rooms, walkable paths, third-place retail) come early to catalyze community engagement and economic momentum, with adaptability built in for market, technology, demographic, and climate shifts as the district scales toward 20+ acres.</p>
 
-      <h3 class="dsec">Included: RainSweet Conceptual PreDesign Study</h3>
+      <h3 class="dsec" id="rainsweet">Included: RainSweet Conceptual PreDesign Study</h3>
       <div class="dsub">A Site-Specific Climate &amp; Massing Study, Delivered With the Proposal</div>
       <p>Beyond the required submission, the Held team included a 37-page conceptual predesign study of the Phase 1 parcel: sun and wind behavior across the seasons, facade-by-facade glazing ratios and shading strategy, toplighting, and outdoor space placement. It is the clearest signal in either proposal of a team already designing the site rather than describing a process.</p>
       <div class="figgrid">
