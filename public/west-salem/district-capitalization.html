@@ -47,6 +47,26 @@
 .tl2 .tt{font-family:var(--serif);font-size:14.5px;color:var(--cream);margin:6px 0 6px;line-height:1.3}
 .tl2 p{font-size:11.5px;color:#b7b0a3;line-height:1.55;margin:0}
 @media(max-width:900px){.tl2{grid-template-columns:1fr}}
+.numflow{max-width:840px;margin:30px auto 0;text-align:center;font-size:14.5px;color:#d8d2c4;line-height:1.7}
+.numflow b{color:#d9a26c}
+.gantt{margin-top:30px;border:1px solid #3d392f;border-radius:10px;padding:22px 20px 14px;background:#221f1a;overflow-x:auto}
+.gantt .gaxis{display:grid;grid-template-columns:150px 1fr;margin-bottom:8px}
+.gantt .gaxis .yrs{position:relative;height:16px;font-size:9.5px;color:#8f897c}
+.gantt .gaxis .yrs span{position:absolute;transform:translateX(-50%)}
+.grow{display:grid;grid-template-columns:150px 1fr;align-items:center;margin-bottom:9px}
+.grow .glbl{font-size:11.5px;color:#d8d2c4;padding-right:12px;line-height:1.3}
+.gtrack{position:relative;height:24px;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(10% - 1px),#2e2b25 calc(10% - 1px),#2e2b25 10%)}
+.gbar{position:absolute;top:4px;height:16px;border-radius:4px}
+.gbar.raise{background:#c08a4a}
+.gbar.pre{background:#8a6a3f}
+.gbar.build{background:#5e7150}
+.gbar.stab{background:rgba(94,113,80,.45);border:1px dashed #5e7150}
+.gdia{position:absolute;top:5px;width:13px;height:13px;background:#e8b264;transform:rotate(45deg) translateX(-50%);transform-origin:left center;border:1px solid #1e1c18;box-shadow:0 0 0 2px rgba(232,178,100,.35)}
+.gdia.oz{background:#9db08a}
+.glegend{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px;padding-left:150px;font-size:11px;color:#b7b0a3}
+.glegend i{display:inline-block;width:14px;height:9px;border-radius:3px;margin-right:6px;vertical-align:middle}
+.glegend .di{display:inline-block;width:10px;height:10px;background:#e8b264;transform:rotate(45deg);margin-right:7px;vertical-align:middle}
+@media(max-width:700px){.grow,.gantt .gaxis{grid-template-columns:110px 1fr}.glegend{padding-left:0}}
 .flexbox{background:rgba(217,162,108,.07);border-left:3px solid #d9a26c;border-radius:0 8px 8px 0;padding:22px 24px;margin-top:34px;font-size:15px;color:#e8e2d6;line-height:1.7}
 </style>
 </head>
@@ -114,6 +134,7 @@
   <div class="wrap">
     <a href="#reframe">The Strategy</a>
     <a href="#structure">The Structure</a>
+    <a href="#numbers">The Numbers</a>
     <a href="#stakeholders">Where You Come In</a>
     <a href="#timeline">Timeline</a>
     <a href="#flex">How We Work</a>
@@ -200,6 +221,30 @@
   </div>
 </section>
 
+
+<section class="dark" id="numbers" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The District in Numbers</div>
+      <h2>Modest catalytic capital, district-scale value</h2>
+      <p class="lead">The economics come from the Business Plan&rsquo;s core arithmetic: a small amount of early, patient capital controls and entitles the whole district, unlocking a development pipeline and stabilized value many multiples larger.</p>
+    </div>
+    <div class="statcards c4 rv">
+      <div class="stat"><div class="num">~$49M</div><div class="lbl">Total platform capital: the $15M campaign plus the ~$34M land close</div></div>
+      <div class="stat"><div class="num">~$650M</div><div class="lbl">Development pipeline unlocked across four phases</div></div>
+      <div class="stat"><div class="num">~$1.0B</div><div class="lbl">Stabilized asset value at district completion</div></div>
+      <div class="stat"><div class="num">Year 8</div><div class="lbl">Target build-out, with rolling stabilization earning income years earlier</div></div>
+    </div>
+    <div class="statcards c4 rv" style="margin-top:16px">
+      <div class="stat"><div class="num">1,000</div><div class="lbl">Residential units across four phases</div></div>
+      <div class="stat"><div class="num">~95,000 SF</div><div class="lbl">Retail, dining &amp; flex workspace</div></div>
+      <div class="stat"><div class="num">100,000+ SF</div><div class="lbl">Sports, recreation &amp; wellness</div></div>
+      <div class="stat"><div class="num">Y4 / Y6 / Y8</div><div class="lbl">Rolling recapitalizations that return capital while the district is held long-term</div></div>
+    </div>
+    <div class="numflow rv">The flow in one line: <b>$15M</b> predevelopment campaign &rarr; a controlled, entitled district &rarr; <b>~$34M</b> land close &rarr; <b>~$650M</b> phased development pipeline &rarr; <b>~$1.0B</b> stabilized value, held long-term and recapitalized on a rolling basis. Full detail lives in the <a href="plan.html" style="color:#d9a26c">Business Plan</a> and <a href="om.html" style="color:#d9a26c">Investment Summary</a>; live underwriting in the <a href="about-upside.html" style="color:#d9a26c">Upside Explorer</a>.</div>
+  </div>
+</section>
+
 <section class="dark" id="stakeholders" style="border-top:1px solid #3d392f">
   <div class="wrap">
     <div class="sec-head rv">
@@ -253,8 +298,27 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Sequence</div>
-      <h2>When each door opens</h2>
+      <h2>When each door opens, and when capital comes back</h2>
     </div>
+    <div class="gantt rv">
+      <div class="gaxis"><div></div><div class="yrs"><span style="left:0%">Y0</span><span style="left:10%">Y1</span><span style="left:20%">Y2</span><span style="left:30%">Y3</span><span style="left:40%">Y4</span><span style="left:50%">Y5</span><span style="left:60%">Y6</span><span style="left:70%">Y7</span><span style="left:80%">Y8</span><span style="left:90%">Y9</span><span style="left:100%">Y10</span></div></div>
+      <div class="grow"><div class="glbl">Phase One Campaign<br><span style="color:#8f897c;font-size:10px">$15M dual raise</span></div><div class="gtrack"><div class="gbar raise" style="left:0.0%;width:10.0%"></div><div class="gdia " style="left:20.0%"></div></div></div>
+      <div class="grow"><div class="glbl">Predevelopment &amp; entitlement</div><div class="gtrack"><div class="gbar pre" style="left:0.0%;width:20.0%"></div></div></div>
+      <div class="grow"><div class="glbl">Land close<br><span style="color:#8f897c;font-size:10px">~$34M Land SPV &middot; Fund exit window</span></div><div class="gtrack"><div class="gdia " style="left:20.0%"></div></div></div>
+      <div class="grow"><div class="glbl">Phase 1<br><span style="color:#8f897c;font-size:10px">&asymp;$185M project capital</span></div><div class="gtrack"><div class="gbar build" style="left:20.0%;width:20.0%"></div><div class="gbar stab" style="left:40.0%;width:10.0%"></div><div class="gdia " style="left:40.0%"></div></div></div>
+      <div class="grow"><div class="glbl">Phase 2</div><div class="gtrack"><div class="gbar build" style="left:32.0%;width:23.0%"></div><div class="gbar stab" style="left:55.0%;width:10.0%"></div><div class="gdia " style="left:60.0%"></div></div></div>
+      <div class="grow"><div class="glbl">Phase 3</div><div class="gtrack"><div class="gbar build" style="left:46.0%;width:24.0%"></div><div class="gbar stab" style="left:70.0%;width:10.0%"></div></div></div>
+      <div class="grow"><div class="glbl">Phase 4</div><div class="gtrack"><div class="gbar build" style="left:60.0%;width:20.0%"></div><div class="gbar stab" style="left:80.0%;width:15.0%"></div><div class="gdia " style="left:80.0%"></div></div></div>
+      <div class="grow"><div class="glbl">Long-term hold<br><span style="color:#8f897c;font-size:10px">Opportunity Zone horizon</span></div><div class="gtrack"><div class="gbar stab" style="left:80.0%;width:20.0%"></div><div class="gdia oz" style="left:100.0%"></div></div></div>
+      <div class="glegend">
+        <span><i style="background:#c08a4a"></i>Capital raise</span>
+        <span><i style="background:#8a6a3f"></i>Predevelopment</span>
+        <span><i style="background:#5e7150"></i>Construction</span>
+        <span><i style="background:rgba(94,113,80,.45);border:1px dashed #5e7150"></i>Lease-up / stabilization</span>
+        <span><span class="di"></span>Capital event: exit, recap, or conversion</span>
+      </div>
+    </div>
+    <p class="muted rv" style="font-size:12.5px;margin-top:14px;text-align:center">Illustrative sequence from company underwriting (June 2026). Diamonds mark the moments capital comes back: the fund exit window at land close, and rolling recapitalizations targeted at years 4, 6, and 8, with the Year 10+ Opportunity Zone hold for investors who want the full benefit.</p>
     <div class="tl2 rv">
       <div><div class="ph">Now</div><div class="tt">Dual raise</div><p>Platform ($3M) and District Fund ($12M) raise simultaneously; predevelopment work begins immediately.</p></div>
       <div><div class="ph">Next</div><div class="tt">Control &amp; entitle</div><p>Site control, entitlements, engineering, infrastructure planning; supportive capital applications run in parallel.</p></div>
