@@ -61,23 +61,6 @@ export default {
         },
         // Now City Inc. wordmark colors — used ONLY for the wordmark itself
         // and never for body type or UI. Forest is still the primary headline color.
-        sky: {
-          DEFAULT: '#7fb5d6',
-          soft: '#c8dfea',
-          deep: '#33597a',
-          ink: '#274a68',
-        },
-        teal: {
-          DEFAULT: '#2e8a96',
-          deep: '#226872',
-        },
-        sun: {
-          DEFAULT: '#e9b45c',
-          deep: '#dfa53f',
-        },
-        coral: {
-          DEFAULT: '#d97e5a',
-        },
         wordmark: {
           green: '#5A847E',
           mint: '#83C5BE',
