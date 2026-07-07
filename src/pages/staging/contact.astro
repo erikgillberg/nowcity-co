@@ -1,0 +1,33 @@
+---
+import Staging from '../../layouts/StagingLayout.astro';
+import hero from '../../assets/watercolors/interior-living.jpg';
+---
+<Staging title="Contact" compact
+  eyebrow="Contact"
+  heading="Get in touch."
+  sub="We read every message. The right path depends on what brings you here."
+  heroImg={hero} heroAlt="Watercolor: a bright living room opening to trees">
+
+  <section>
+    <div class="wrap">
+      <div class="cards" style="margin-top:0;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+        <div class="card" data-reveal><div class="tx"><h3>Landowners and operators</h3><p>If you steward a site large enough to become a district, our services arm runs structured pre-development engagements.</p><p style="margin-top:14px"><a href="/staging/services/" style="color:var(--teal);font-weight:600">Explore services →</a></p></div></div>
+        <div class="card" data-reveal><div class="tx"><h3>Capital partners</h3><p>For platform-level investment, project-level co-investment, or strategic partnership conversations, see our Investment overview.</p><p style="margin-top:14px"><a href="/staging/investment/" style="color:var(--teal);font-weight:600">Investment →</a></p></div></div>
+        <div class="card" data-reveal><div class="tx"><h3>Cities and civic partners</h3><p>Public-private partnerships, planning collaborations, and mission-aligned early-stage work run directly through our services arm.</p><p style="margin-top:14px"><a href="/staging/services/" style="color:var(--teal);font-weight:600">Explore services →</a></p></div></div>
+        <div class="card" data-reveal><div class="tx"><h3>Future residents and the curious</h3><p>Tell us where you would want a Now City neighborhood. We pay attention.</p><p style="margin-top:14px"><a href="https://nowcity.life" style="color:var(--teal);font-weight:600">nowcity.life →</a></p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="darksec" style="padding:72px 0">
+    <div class="wrap" style="text-align:center">
+      <p class="eyebrow" data-reveal>For everything else</p>
+      <h2 style="margin-top:14px" data-reveal>Reach us directly.</h2>
+      <p class="lede" style="margin:16px auto 0" data-reveal>Press, recruiting, advisor introductions, or anything we did not anticipate.</p>
+      <div class="btns" style="justify-content:center;margin-top:26px" data-reveal>
+        <a class="btn sun" href="mailto:team@nowcitylabs.com">team@nowcitylabs.com</a>
+      </div>
+      <p style="margin-top:26px;font-size:13.5px" data-reveal>Now City Inc. · 101 Cooper Street, Santa Cruz, CA 95060</p>
+    </div>
+  </section>
+</Staging>

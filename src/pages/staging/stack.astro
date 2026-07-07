@@ -1,0 +1,66 @@
+---
+import Staging from '../../layouts/StagingLayout.astro';
+import hero from '../../assets/watercolors/green-bridge.jpg';
+import { Image } from 'astro:assets';
+import wcMob from '../../assets/watercolors/mobility-street.jpg';
+import { capabilities } from '../../data_staging.mjs';
+---
+<Staging title="The Stack" compact
+  eyebrow="The Now City Stack"
+  heading="Four layers. One coordinated system."
+  sub="Most projects do not struggle because the ideas are flawed. They struggle because the systems needed to support them are not aligned or sequenced. The Stack solves that."
+  heroImg={hero} heroAlt="Watercolor: a green pedestrian bridge arcing through a planted district">
+
+  <section>
+    <div class="wrap">
+      <div class="cards" style="margin-top:0">
+        {capabilities.map((c) => (
+          <div class="card" data-reveal>
+            <div class="tx">
+              <p class="eyebrow">{c.eyebrow}</p>
+              <h3 style="margin-top:8px">{c.title}</h3><p class="muted" style="font-size:12.5px;margin-top:2px">{c.subtitle}</p>
+              <p>{c.blurb}</p>
+              {Array.isArray(c.lines) && (
+                <ul style="margin:12px 0 0 18px;font-size:13.5px;color:var(--ink-soft);display:grid;gap:6px">
+                  {c.lines.map((i) => <li>{i}</li>)}
+                </ul>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="wcband to-dark" style={`background-image:url(${wcMob.src})`} role="img" aria-label="Watercolor: a street with a small electric shuttle and micromobility"></div>
+
+  <section class="darksec">
+    <div class="wrap duo">
+      <div data-reveal>
+        <hr class="rule" />
+        <p class="eyebrow">Tech strategy</p>
+        <h2 style="margin-top:16px">Right tech. Right time.</h2>
+      </div>
+      <div class="prose" data-reveal>
+        <p>We are outcome-driven and tech-agnostic. Many projects pick technology too early, too late, or under vendor pressure, and end up with systems no one uses, tools that do not integrate, and operations that fail after handover.</p>
+        <p>We do the opposite. Technology decisions come only after the program, systems logic, and operating model are clear.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:26px;font-size:13.5px">
+          <div style="border-left:3px solid var(--sun);padding-left:14px"><b style="color:#f4efe2">Operating model first.</b><br/>What the place must enable.</div>
+          <div style="border-left:3px solid var(--sun);padding-left:14px"><b style="color:#f4efe2">Interoperable.</b><br/>Systems must speak to each other.</div>
+          <div style="border-left:3px solid var(--sun);padding-left:14px"><b style="color:#f4efe2">Pilot before scale.</b><br/>One block before district rollout.</div>
+          <div style="border-left:3px solid var(--sun);padding-left:14px"><b style="color:#f4efe2">Built for handover.</b><br/>No black-box systems.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="text-align:center">
+      <h2 data-reveal>Coordinated capability, applied to a specific site.</h2>
+      <p class="lede" style="margin:18px auto 0" data-reveal>The Stack only matters when it is grounded in a real project. Let us talk about yours.</p>
+      <div class="btns" style="justify-content:center;margin-top:28px" data-reveal>
+        <a href="/staging/contact/" class="btn sky">Schedule a gateway call</a>
+      </div>
+    </div>
+  </section>
+</Staging>

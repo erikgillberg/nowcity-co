@@ -1,0 +1,75 @@
+---
+import Staging from '../../layouts/StagingLayout.astro';
+import { Image } from 'astro:assets';
+import hero from '../../assets/watercolors/plaza-flowers.jpg';
+import wcAtrium from '../../assets/watercolors/interior-atrium.jpg';
+import { values } from '../../data_staging.mjs';
+---
+<Staging title="Team" compact
+  eyebrow="Team"
+  heading="Built around the work in front of us."
+  sub="Founders and senior advisors. We hire carefully and bring partners in for the right moment in the right project."
+  heroImg={hero} heroAlt="Watercolor: a flower-filled neighborhood plaza">
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Leadership</p>
+      <h2 style="margin-top:16px" data-reveal>The team.</h2>
+      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr))">
+        <div class="card" data-reveal><div class="tx">
+          <h3>Erik Gillberg</h3><p class="eyebrow" style="margin-top:4px">Co-founder &amp; CEO</p>
+          <p>Erik is a systems thinker focused on aligning capital, design, and operations into development that is financially viable, operationally sound, and grounded in care. He brings 30 years of property operations and 20 years in technology, business development, and startup leadership.</p>
+        </div></div>
+        <div class="card" data-reveal><div class="tx">
+          <h3>Ritchie Ju</h3><p class="eyebrow" style="margin-top:4px">Co-founder &amp; COO</p>
+          <p>Ritchie leads design, development, and operations. B.Architecture from Carnegie Mellon, MS in Architecture and Urban Design from Columbia, MBA candidate at Johns Hopkins. Previously a mobility planner at Lyft in New York, where he led bike-share expansion. Growing up between New York and Beijing gave him a lifelong conviction about what vibrant, walkable districts do for quality of life.</p>
+        </div></div>
+      </div>
+      <p class="eyebrow" style="margin-top:56px" data-reveal>Advisors</p>
+      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr))">
+        <div class="card" data-reveal><div class="tx">
+          <h3>Michael H. Shuman</h3><p class="eyebrow" style="margin-top:4px">Local economies</p>
+          <p>Economist, attorney, and one of the architects of the 2012 JOBS Act. Adjunct Professor at Bard Business School and author of <em>Put Your Money Where Your Life Is</em>. He advises Now City on community-rooted ownership, local capital formation, and finance models that keep wealth in place.</p>
+        </div></div>
+        <div class="card" data-reveal><div class="tx">
+          <h3>Neal Payton</h3><p class="eyebrow" style="margin-top:4px">Urban planning &amp; design</p>
+          <p>Neal, FAIA, FCNU, directs the western U.S. urban and architectural design practice at Torti Gallas. His work focuses on master plans, form-based codes, and the public realm. He advises Now City on urbanism, master planning, and entitlement strategy.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="darksec">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>How we show up</p>
+      <h2 style="margin-top:16px" data-reveal>Six values.</h2>
+      <p class="lede" style="margin-top:14px" data-reveal>Our values drive our design process and our decisions. They help us find the people who want to build this with us.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:rgba(233,180,92,.25);border:1px solid rgba(233,180,92,.25);border-radius:12px;overflow:hidden;margin-top:38px" data-reveal>
+        {values.map((v) => (
+          <div style="background:var(--ink-deep);padding:26px 24px">
+            <h3 style="color:#f4efe2;font-size:17px">{v.name ?? v.title}</h3>
+            <p style="font-size:13.5px;margin-top:8px;line-height:1.6">{v.blurb ?? v.description ?? v.body ?? ''}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top:22px;font-family:var(--serif);font-style:italic;font-size:14.5px" data-reveal>"Beliefs divide us. Values unite us." — Jeff Rasley</p>
+    </div>
+  </section>
+
+  <div class="wcband from-dark" style={`background-image:url(${wcAtrium.src})`} role="img" aria-label="Watercolor: a plant-filled shared atrium"></div>
+
+  <section>
+    <div class="wrap duo">
+      <div data-reveal>
+        <hr class="rule" />
+        <p class="eyebrow">Join us</p>
+        <h2 style="margin-top:16px">Help us build it.</h2>
+      </div>
+      <div class="prose" data-reveal>
+        <p>We are designers, developers, and operators who care deeply about people and ecosystems. We are building toward a future where humanity has figured out how to live well without breaking the home world. We could use your help.</p>
+        <p>We hire carefully across development, urban design, capital, operations, and engineering. Strong candidates with experience in walkable urbanism, district-scale infrastructure, public-private partnerships, or institutional capital are welcome to introduce themselves. Interns and project-based collaborators are welcome too.</p>
+        <p style="margin-top:22px"><a class="btn sky" href="mailto:team@nowcitylabs.com">Drop us a line</a></p>
+      </div>
+    </div>
+  </section>
+</Staging>

@@ -1,0 +1,76 @@
+---
+import Staging from '../../layouts/StagingLayout.astro';
+import { Image } from 'astro:assets';
+import hero from '../../assets/watercolors/garden-pavilion.jpg';
+import wcFarm from '../../assets/watercolors/farm-rows.jpg';
+import wcForest from '../../assets/watercolors/forest-canopy.jpg';
+---
+<Staging title="Approach" compact
+  eyebrow="Approach"
+  heading="An urbanism for the way people actually live."
+  sub="We design and operate neighborhoods as integrated systems. Walkable, regenerative, and built to improve with time, not depreciate against it."
+  heroImg={hero} heroAlt="Watercolor: a garden path curving toward timber pavilions">
+
+  <section>
+    <div class="wrap duo">
+      <div data-reveal>
+        <hr class="rule" />
+        <p class="eyebrow">A discipline of integration</p>
+        <h2 style="margin-top:16px">Urbanism, not just development.</h2>
+      </div>
+      <div class="prose" data-reveal>
+        <p>Most real estate work treats a project as a set of parallel concerns. Buildings on one track, infrastructure on another, public realm on a third, finance on a fourth. Each gets optimized in isolation, sometimes in tension with the others.</p>
+        <p>Urbanism is the discipline of integrating those concerns into a single coherent place. Streets, blocks, buildings, landscape, mobility, energy, water, governance, and culture, all designed together so the whole performs better than the sum of its parts.</p>
+        <p>Our approach is grounded in the urbanist tradition (walkability, human scale, mixed use, public space) and extended with systems thinking, regenerative design, and integrated capital. The goal is not just to build well. The goal is to build places that keep getting better.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--paper-2);border-top:1px solid var(--line)">
+    <div class="wrap duo">
+      <div data-reveal>
+        <hr class="rule" />
+        <p class="eyebrow">First principle</p>
+        <h2 style="margin-top:16px">The land and the systems determine the plan.</h2>
+        <div style="margin-top:28px;border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgba(51,89,122,.14)">
+          <Image src={wcFarm} alt="Watercolor: rows of urban farm beds between homes" widths={[700,1000]} sizes="440px" />
+        </div>
+      </div>
+      <div class="prose" data-reveal>
+        <p>Most development inverts this. A pro forma sets a unit count or a square-footage target, designers reverse-engineer a building program to fit, and engineering follows once the shape is locked.</p>
+        <p>We start the other way. Hydrology, ecology, climate, microclimate, soil, mobility patterns, and existing community fabric tell us what the site can carry and what it wants to become. Systems analysis tells us how energy, water, materials, and movement should flow.</p>
+        <p>From those findings, the plan emerges. The pro forma is built once the systems are designed, not before.</p>
+        <p>This sequence costs more in pre-development time. It pays for itself many times over in entitlement speed, engineering cost, infrastructure efficiency, community alignment, and long-term operating performance.</p>
+        <p>It is also why we exist. Most development teams cannot afford to do this rigorously. We are organized around it.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wcband to-dark" style={`background-image:url(${wcForest.src})`} role="img" aria-label="Watercolor: treehouse structures in a forest canopy"></div>
+
+  <section class="darksec">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>The Stack</p>
+      <h2 style="margin-top:16px" data-reveal>Four layers, designed together.</h2>
+      <p class="lede" style="margin-top:14px" data-reveal>The Now City Stack is four delivery layers we coordinate as one system. Each is a discipline. Together they produce better neighborhoods at lower lifecycle cost.</p>
+      <div class="statgrid" data-reveal>
+        <div><div class="n">01</div><div class="l"><b style="color:#f4efe2">Industrialized construction.</b> Off-site fabrication, kit-of-parts assembly, mass timber and healthy materials. Factory and site coordinated from day one.</div></div>
+        <div><div class="n">02</div><div class="l"><b style="color:#f4efe2">Green infrastructure.</b> Energy, water, mobility, and ecology sized at the district scale. Lower capex and opex; resilience as a byproduct.</div></div>
+        <div><div class="n">03</div><div class="l"><b style="color:#f4efe2">Regenerative placemaking.</b> Walkable streets, civic gathering, local economic development, community programming.</div></div>
+        <div><div class="n">04</div><div class="l"><b style="color:#f4efe2">Innovative finance.</b> Capital structures designed for long-term stewardship, with aligned ownership across residents, operators, and investors.</div></div>
+      </div>
+      <p style="margin-top:28px" data-reveal><a href="/staging/stack/" class="btn sun">Explore the Stack</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="text-align:center">
+      <p class="eyebrow" data-reveal>Early-stage civic work</p>
+      <h2 style="margin-top:16px" data-reveal>Cities and landowners: start before the deal exists.</h2>
+      <p class="lede" style="margin:18px auto 0" data-reveal>Our services arm provides the capacity-building, feasibility, and partnership-structuring support that cities and landowners need before a deal exists, the early-stage work that municipalities often cannot resource alone.</p>
+      <div class="btns" style="justify-content:center;margin-top:28px" data-reveal>
+        <a href="/staging/services/" class="btn sky">Explore services</a>
+      </div>
+    </div>
+  </section>
+</Staging>

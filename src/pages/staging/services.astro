@@ -1,0 +1,77 @@
+---
+import Staging from '../../layouts/StagingLayout.astro';
+import { Image } from 'astro:assets';
+import hero from '../../assets/watercolors/interior-workspace.jpg';
+import wcCommons from '../../assets/watercolors/commons-day.jpg';
+import { phases } from '../../data_staging.mjs';
+---
+<Staging title="Services" compact
+  eyebrow="Services"
+  heading="Strategic advisory for large-scale sites."
+  sub="We guide landholders through visioning, feasibility, planning, capital structure, and delivery, creating value that lasts."
+  heroImg={hero} heroAlt="Watercolor: a timber-framed workspace filled with plants and daylight">
+
+  <div slot="hero-extra" class="btns" style="margin-top:28px">
+    <a href="/staging/contact/" class="btn sun">Schedule a gateway call</a>
+  </div>
+
+  <section>
+    <div class="wrap duo">
+      <div data-reveal>
+        <hr class="rule" />
+        <p class="eyebrow">The problem we solve</p>
+        <h2 style="margin-top:16px">The traditional process is the risk.</h2>
+      </div>
+      <div class="prose" data-reveal>
+        <p>Most development follows a familiar pattern: set a density or revenue target, draw a design to match, then spend years fighting entitlements, redesign, engineering rework, and community pushback. Distinctiveness gets value-engineered out.</p>
+        <p>That is why so many projects overrun budgets, stall in entitlements, lose their identity in value engineering, and underperform in absorption and resale. The traditional process is itself the source of risk, cost, and delay.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="darksec">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>A better way</p>
+      <h2 style="margin-top:16px" data-reveal>Start with the land and the systems.</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(233,180,92,.25);border:1px solid rgba(233,180,92,.25);border-radius:12px;overflow:hidden;margin-top:38px;font-size:14.5px" data-reveal>
+        <div style="background:#241f1a;padding:24px"><div style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8f887a;margin-bottom:14px">Traditional</div>
+          <p>Pro-forma determines the plan</p><p style="margin-top:8px">Utilities and infrastructure sized independently</p><p style="margin-top:8px">Community and agency engagement comes late</p><p style="margin-top:8px">Identity is applied at the end</p><p style="margin-top:8px">Project ends at construction</p></div>
+        <div style="background:var(--ink-deep);padding:24px"><div style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sun);margin-bottom:14px">Now City</div>
+          <p>Land and systems determine the plan</p><p style="margin-top:8px">Integrated system flows reduce cap-ex and op-ex</p><p style="margin-top:8px">Alignment is built in early</p><p style="margin-top:8px">Identity emerges through systems, materials, and landscape</p><p style="margin-top:8px">We design for long-term performance and stewardship</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--paper-2)">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Engagement framework</p>
+      <h2 style="margin-top:16px" data-reveal>Four phases. Clear fees. Earned together.</h2>
+      <p class="lede" style="margin-top:14px" data-reveal>Each phase has a defined output, measurable value, and a fee logic that aligns our incentive with yours. We only move to the next phase when the work we have already done warrants it.</p>
+      <div data-reveal>
+      <table class="tbl">
+        <tr><th>Phase</th><th>Output</th><th>Value</th><th>Fee</th></tr>
+        {phases.map((p) => (
+          <tr><td>{p.number} · {p.title}</td><td>{p.output}</td><td>{p.value}</td><td>{p.fee}</td></tr>
+        ))}
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="wcband" style={`background-image:url(${wcCommons.src})`} role="img" aria-label="Watercolor: a neighborhood commons on a sunny day"></div>
+
+  <section>
+    <div class="wrap duo">
+      <div data-reveal>
+        <hr class="rule" />
+        <p class="eyebrow">Who we serve</p>
+        <h2 style="margin-top:16px">Landholders with sites large enough to become neighborhoods.</h2>
+      </div>
+      <div class="prose" data-reveal>
+        <p>Family holdings, institutional campuses, waterfront reuse, edge-urban sites, multi-parcel assemblages. You have the land. We provide the pathway.</p>
+        <p>If your goal is a single building or a simple subdivision, you might want a different partner. If your goal is a place with meaning, resilience, and long-term value, we should talk.</p>
+        <p style="margin-top:24px"><a href="/staging/contact/" class="btn sky">Schedule a 30-minute gateway call</a></p>
+      </div>
+    </div>
+  </section>
+</Staging>

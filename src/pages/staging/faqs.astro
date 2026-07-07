@@ -1,0 +1,29 @@
+---
+import Staging from '../../layouts/StagingLayout.astro';
+import hero from '../../assets/watercolors/wc-street.jpg';
+import { faqGroups } from '../../data_staging.mjs';
+---
+<Staging title="FAQs" compact
+  eyebrow="FAQs"
+  heading="Questions, answered plainly."
+  sub="What people ask us about the company, the model, and how to work with us."
+  heroImg={hero} heroAlt="Watercolor: a blossoming shopping street with string lights">
+
+  <section>
+    <div class="wrap" style="max-width:880px">
+      {faqGroups.map((g) => (
+        <div style="margin-bottom:52px" data-reveal>
+          <p class="eyebrow">{g.heading}</p>
+          <div style="margin-top:10px">
+            {g.items.map((f) => (
+              <details class="faq">
+                <summary>{f.q}</summary>
+                {f.a.map((p) => <p>{p}</p>)}
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Staging>

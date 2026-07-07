@@ -1,0 +1,60 @@
+---
+import Staging from '../../layouts/StagingLayout.astro';
+import { Image } from 'astro:assets';
+import hero from '../../assets/watercolors/lagoon-district.jpg';
+import wcBrick from '../../assets/watercolors/street-brick.jpg';
+---
+<Staging title="Investment" compact
+  eyebrow="Investment"
+  heading="Building a platform for the next generation of real assets."
+  sub="Now City Inc. develops, operates, and stewards regenerative neighborhoods on the West Coast. We are building the team, methodology, and capital model to do this at scale."
+  heroImg={hero} heroAlt="Watercolor: homes gathered around a blue neighborhood lagoon">
+
+  <section>
+    <div class="wrap duo">
+      <div data-reveal>
+        <hr class="rule" />
+        <p class="eyebrow">Why real assets</p>
+        <h2 style="margin-top:16px">The right kind of asset for the next decade.</h2>
+      </div>
+      <div class="prose" data-reveal>
+        <p>Capital is shifting toward real assets. Physical assets that hold intrinsic value, generate inflation-hedged income, and align with long-term institutional mandates. Real estate, infrastructure, and natural capital sit at the center of that shift.</p>
+        <p>Now City operates at the intersection of all three. A regenerative neighborhood combines housing and mixed-use real estate, district-scale infrastructure, and integrated natural systems. Bundled at the neighborhood scale, those categories produce a diversified, durable real-asset profile.</p>
+        <p>Institutional capital increasingly seeks exactly this combination: stable, inflation-aware, climate-aligned, and impact-credible.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="darksec">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Our model</p>
+      <h2 style="margin-top:16px" data-reveal>Vertically integrated. Designed for stewardship.</h2>
+      <p class="lede" style="margin-top:14px" data-reveal>Most real estate platforms specialize in one part of the value chain. We integrate across: acquiring land, leading pre-development with our integrated stack, developing with capital and construction partners, and operating the resulting neighborhoods over decades.</p>
+      <div class="statgrid" data-reveal>
+        <div><div class="n">01</div><div class="l"><b style="color:#f4efe2">Development.</b> Site selection, entitlement, and integrated design generate value before construction begins. The pro forma follows the systems, not the other way around.</div></div>
+        <div><div class="n">02</div><div class="l"><b style="color:#f4efe2">Operations.</b> Stabilized neighborhoods generate durable cash flow from rent, ground leases, and service revenue, with lower lifecycle risk than typical portfolios.</div></div>
+        <div><div class="n">03</div><div class="l"><b style="color:#f4efe2">Platform.</b> Methodology, tools, and data improve every project. Services revenue and NowCity.ai software complement the core engine, and every district makes the next one cheaper to underwrite.</div></div>
+      </div>
+      <p style="margin-top:26px;font-size:15px" data-reveal>Capital structures are designed for long-term stewardship. We seek partners with patient mandates: institutional LPs, family offices, mission-aligned investors, and selective project-level co-investors.</p>
+    </div>
+  </section>
+
+  <div class="wcband from-dark" style={`background-image:url(${wcBrick.src})`} role="img" aria-label="Watercolor: a brick main street full of shoppers"></div>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Outcomes</p>
+      <h2 style="margin-top:16px" data-reveal>A model designed to perform on every dimension that matters.</h2>
+      <p class="lede" style="margin-top:14px" data-reveal>Financial, social, and ecological outcomes are not separately optimized. They emerge together from the same systems-led approach.</p>
+      <div class="cards">
+        <div class="card" data-reveal><div class="tx"><div class="icon-row"><svg class="icon" viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-7"/></svg><h3>Financial</h3></div><p>Lower lifecycle risk through systems-led design. Stabilized operating margins from district-scale infrastructure. Insurance and resilience advantages.</p></div></div>
+        <div class="card" data-reveal><div class="tx"><div class="icon-row"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 20c.7-4 3-6 7-6s6.3 2 7 6"/></svg><h3>Resident</h3></div><p>Walkable daily life. Lower household transportation cost. Measurable health and wellbeing gains from design that supports everyday activity.</p></div></div>
+        <div class="card" data-reveal><div class="tx"><div class="icon-row"><svg class="icon" viewBox="0 0 24 24"><path d="M6 20c6-1 10-5 12-14-7 1-12 5-12 14z"/></svg><h3>Ecological</h3></div><p>Net-positive site outcomes. Stormwater management. Habitat and canopy restoration woven into the urban fabric.</p></div></div>
+      </div>
+      <div class="btns" style="margin-top:34px" data-reveal>
+        <a href="/staging/contact/" class="btn sky">Start a conversation</a>
+        <a href="/staging/faqs/" class="btn ghost">Investor FAQs</a>
+      </div>
+    </div>
+  </section>
+</Staging>
