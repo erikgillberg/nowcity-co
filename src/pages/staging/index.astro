@@ -1,0 +1,248 @@
+---
+import { Image } from 'astro:assets';
+import heroVision from '../../assets/brand/hero-vision.jpg';
+import wcStreet from '../../assets/watercolors/wc-street.jpg';
+import wcMarket from '../../assets/watercolors/wc-market.jpg';
+import wcGarden from '../../assets/watercolors/wc-garden.jpg';
+import wcA from '../../assets/watercolors/wc-a.jpg';
+import wcB from '../../assets/watercolors/wc-b.jpg';
+import wcC from '../../assets/watercolors/wc-c.jpg';
+
+const title = 'Now City — Staging Preview';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>{title}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#f7f2e6;--paper-2:#fdfaf2;--ink:#2a2723;--ink-soft:#57503f;--ink-mut:#8a8272;
+  --sky:#7fb5d6;--sky-soft:#c8dfea;--sky-deep:#33597a;--teal:#2e8a96;
+  --leaf:#7fa05a;--moss:#46583d;--sun:#e9b45c;--coral:#d97e5a;--blossom:#e5a8a1;
+  --serif:'Libre Baskerville',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+section{padding:96px 0}
+.eyebrow{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--teal)}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.12;letter-spacing:-.012em}
+.lede{font-size:19px;color:var(--ink-soft);line-height:1.65}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:.18s}
+.btn.sky{background:var(--sky-deep);color:#f2f7fa}.btn.sky:hover{background:#274souligne}
+.btn.sky:hover{background:#274a68;transform:translateY(-1px)}
+.btn.sun{background:var(--sun);color:#3d2f14}.btn.sun:hover{background:#dfa53f;transform:translateY(-1px)}
+.btn.ghost{border:1.5px solid var(--sky-deep);color:var(--sky-deep)}.btn.ghost:hover{background:var(--sky-deep);color:#fff}
+
+/* staging banner */
+.stagebar{background:var(--sky-deep);color:#dcebf5;text-align:center;font-size:12.5px;padding:9px 16px;letter-spacing:.06em}
+.stagebar b{color:#fff}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto;padding:22px 26px}
+nav .mark{font-family:var(--serif);font-weight:700;font-size:20px}
+nav .mark span{color:var(--teal)}
+nav ul{display:flex;gap:28px;list-style:none;font-size:14.5px;font-weight:500;color:var(--ink-soft)}
+nav ul a:hover{color:var(--teal)}
+
+/* hero */
+.hero{position:relative;padding:64px 0 0}
+.hero .paint{position:absolute;inset:0;background:
+  radial-gradient(60% 48% at 18% 8%,rgba(127,181,214,.35),transparent 70%),
+  radial-gradient(52% 40% at 85% 12%,rgba(229,168,161,.28),transparent 70%),
+  radial-gradient(46% 42% at 70% 60%,rgba(127,160,90,.16),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(40px,6vw,70px);max-width:850px}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero .lede{max-width:640px;margin-top:26px;font-size:20px}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.heroimg{position:relative;margin-top:58px;border-radius:18px 18px 0 0;overflow:hidden;box-shadow:0 40px 80px rgba(51,89,122,.25)}
+.heroimg img{width:100%;height:auto;display:block}
+.heroimg .cap{position:absolute;left:0;right:0;bottom:0;padding:18px 24px;background:linear-gradient(transparent,rgba(26,32,38,.72));color:#f0ece1;font-family:var(--serif);font-style:italic;font-size:14.5px}
+
+/* watercolor band divider */
+.wcband{height:170px;background-size:cover;background-position:center 30%;position:relative}
+.wcband::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(247,242,230,.92),rgba(247,242,230,0) 30%,rgba(247,242,230,0) 70%,rgba(247,242,230,.92))}
+
+/* mission */
+.mission{background:var(--paper-2)}
+.mission h2{font-size:clamp(30px,4vw,44px)}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:44px}
+.pillar{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 4px rgba(42,39,35,.06),0 18px 44px rgba(51,89,122,.10);transition:transform .25s}
+.pillar:hover{transform:translateY(-5px)}
+.pillar .ph{height:190px;overflow:hidden}
+.pillar .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pillar .tx{padding:26px 26px 30px}
+.pillar h3{font-size:22px}
+.pillar .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:12px}
+.pillar p{font-size:14.5px;color:var(--ink-soft);margin-top:10px;line-height:1.68}
+
+/* story */
+.story h2{font-size:clamp(30px,4vw,44px);max-width:720px}
+.scenes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px;margin-top:44px}
+.scene{position:relative;border-radius:16px;overflow:hidden;min-height:420px;display:flex;align-items:flex-end;box-shadow:0 18px 44px rgba(42,39,35,.14)}
+.scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.scene .tx{position:relative;padding:26px;background:linear-gradient(transparent,rgba(26,32,38,.78) 55%);color:#f6f2e7;width:100%}
+.scene h3{color:#fff;font-size:21px}
+.scene p{font-size:14px;margin-top:8px;color:#e8e2d2;line-height:1.6}
+.scene .t{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sun)}
+
+/* systems */
+.systems{background:linear-gradient(180deg,var(--sky-soft) 0%,var(--paper) 100%)}
+.systems h2{font-size:clamp(30px,4vw,44px)}
+.sysgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:40px}
+.sys{background:rgba(255,255,255,.85);backdrop-filter:blur(4px);border-radius:14px;padding:26px;border-top:4px solid var(--teal)}
+.sys:nth-child(2){border-top-color:var(--leaf)}
+.sys:nth-child(3){border-top-color:var(--sun)}
+.sys:nth-child(4){border-top-color:var(--coral)}
+.sys h3{font-size:18px}
+.sys p{font-size:14px;color:var(--ink-soft);margin-top:9px;line-height:1.65}
+
+/* doors */
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+@media(max-width:760px){.doors{grid-template-columns:1fr}}
+.door{position:relative;border-radius:18px;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;box-shadow:0 18px 50px rgba(42,39,35,.16)}
+.door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.door:hover img{transform:scale(1.04)}
+.door .tx{position:relative;width:100%;padding:30px;background:linear-gradient(transparent,rgba(26,32,38,.82) 60%);color:#fff}
+.door .t{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sky)}
+.door h3{color:#fff;font-size:26px;margin-top:6px}
+.door p{font-size:14.5px;color:#e4ded0;margin-top:8px}
+.door .go{display:inline-block;margin-top:14px;font-weight:600;font-size:14.5px;color:var(--sun)}
+
+/* join */
+.join{text-align:center;background:var(--paper-2)}
+.join h2{font-size:clamp(32px,4.6vw,50px)}
+.join .lede{max-width:620px;margin:20px auto 0}
+
+footer{padding:44px 0 60px;text-align:center;font-size:13px;color:var(--ink-mut)}
+</style>
+</head>
+<body>
+<div class="stagebar"><b>Staging preview</b> · a new-life direction for nowcity.co · not linked from navigation</div>
+<nav>
+  <div class="mark">Now<span>City</span></div>
+  <ul>
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#story">A Day Here</a></li>
+    <li><a href="#systems">How It Works</a></li>
+    <li><a href="#join">Join</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="paint"></div>
+  <div class="wrap">
+    <p class="eyebrow">Now City</p>
+    <h1>Shaping tomorrow&rsquo;s urban living, <em>today</em>.</h1>
+    <p class="lede">Zero-waste, all-electric neighborhoods designed for happiness, health, and a thriving planet. We build walkable, green districts where sustainable living is effortless and community is the default.</p>
+    <div class="btns">
+      <a class="btn sky" href="#story">Explore the vision</a>
+      <a class="btn sun" href="#join">Join our community</a>
+    </div>
+    <div class="heroimg">
+      <Image src={heroVision} alt="A vibrant walkable mixed-use street: plant-clad buildings, a market, café tables, a bike lane, people of all ages." widths={[900,1400,2000]} sizes="(min-width:1120px) 1120px, 100vw" loading="eager" />
+      <div class="cap">The vision, hand-crafted: a Now City street, Pacific Northwest typology.</div>
+    </div>
+  </div>
+</header>
+
+<section class="mission" id="mission">
+  <div class="wrap">
+    <p class="eyebrow">Our Mission</p>
+    <h2>Designed for everyday vitality.</h2>
+    <p class="lede" style="max-width:720px;margin-top:18px">Now City&rsquo;s mission is to accelerate the transition to regenerative, resilient, and equitable communities and cities.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="ph"><Image src={wcGarden} alt="Watercolor of a garden street with planted beds and neighbors" widths={[600,900]} sizes="420px" /></div>
+        <div class="tx"><span class="tag" style="background:#e6efdc;color:#46583d">Regeneration</span>
+          <p>Restore the natural systems that sustain daily life (clean air, water, soil, and food), improving personal health while rebuilding ecological function at the neighborhood and district scale.</p></div>
+      </div>
+      <div class="pillar">
+        <div class="ph"><Image src={wcMarket} alt="Watercolor of a timber market hall filled with produce and people" widths={[600,900]} sizes="420px" /></div>
+        <div class="tx"><span class="tag" style="background:#dcebf5;color:#33597a">Resilience</span>
+          <p>Homes, mobility, energy, food, and social systems are designed to perform under stress (climate and economic disruption), strengthening household security and community-wide stability.</p></div>
+      </div>
+      <div class="pillar">
+        <div class="ph"><Image src={wcStreet} alt="Watercolor of a blossoming shopping street with string lights" widths={[600,900]} sizes="420px" /></div>
+        <div class="tx"><span class="tag" style="background:#fbe9d8;color:#a85b32">Equity</span>
+          <p>Designing around the realities of caregiving, childhood, aging, mobility independence, and access to opportunity improves daily life for individuals while creating more stable, connected, and inclusive communities for all.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wcband" style={`background-image:url(${wcA.src})`}></div>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <p class="eyebrow">A Day in a Now City Neighborhood</p>
+    <h2>Imagine a place where the best part of the city is your block.</h2>
+    <div class="scenes">
+      <div class="scene"><Image src={wcMarket} alt="" widths={[700,1000]} sizes="480px" />
+        <div class="tx"><span class="t">Morning</span><h3>The market, two minutes away</h3><p>Coffee, farm produce, neighbors by default. The daily errand becomes the daily pleasure.</p></div></div>
+      <div class="scene"><Image src={wcGarden} alt="" widths={[700,1000]} sizes="480px" />
+        <div class="tx"><span class="t">Afternoon</span><h3>Streets that grow food and friendships</h3><p>Garden beds, shared tables, kids in sight. The street is the amenity.</p></div></div>
+      <div class="scene"><Image src={wcStreet} alt="" widths={[700,1000]} sizes="480px" />
+        <div class="tx"><span class="t">Evening</span><h3>String lights, open doors</h3><p>Retail that spills onto the sidewalk, culture within a short walk, home just upstairs.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="systems" id="systems">
+  <div class="wrap">
+    <p class="eyebrow">How It Works</p>
+    <h2>Beautiful on the surface. Engineered underneath.</h2>
+    <p class="lede" style="max-width:700px;margin-top:16px">Every Now City neighborhood pairs biophilic design with hard systems thinking, so the place that feels alive also performs.</p>
+    <div class="sysgrid">
+      <div class="sys"><h3>Zero-waste &amp; all-electric</h3><p>Circular resource systems: water reuse, composting, renewable generation and storage, designed in from day one.</p></div>
+      <div class="sys"><h3>Green infrastructure</h3><p>Energy, water, mobility, and ecology sized at the district scale. Lower bills, higher resilience.</p></div>
+      <div class="sys"><h3>Neighborhood OS</h3><p>Technology that quietly runs the place: shared mobility, resource monitoring, community programming, one interface.</p></div>
+      <div class="sys"><h3>Attainable by design</h3><p>Efficient buildings and layered capital keep homes priced for real incomes, not luxury ceilings.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="wcband" style={`background-image:url(${wcB.src})`}></div>
+
+<section id="doors">
+  <div class="wrap">
+    <p class="eyebrow">Two Ways In</p>
+    <h2 style="font-size:clamp(30px,4vw,44px)">Live it, or build it with us.</h2>
+    <div class="doors">
+      <a class="door" href="https://nowcity.life">
+        <Image src={wcC} alt="" widths={[800,1200]} sizes="560px" />
+        <div class="tx"><span class="t">For future residents &amp; local business</span><h3>Now City Neighborhoods</h3><p>Follow along, join events, and be first in line for homes and storefronts in our districts.</p><span class="go">nowcity.life &rarr;</span></div>
+      </a>
+      <a class="door" href="/investment">
+        <Image src={wcA} alt="" widths={[800,1200]} sizes="560px" />
+        <div class="tx"><span class="t">For investors &amp; partners</span><h3>Invest in the future of urban living</h3><p>Sustainable, profitable, future-proof: districts underwritten in the open with our own tools.</p><span class="go">Investor relations &rarr;</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap">
+    <p class="eyebrow">Be Part of the Change</p>
+    <h2>Ready to feel alive where you live?</h2>
+    <p class="lede">Our first district is underway. Register your interest, follow the work, and be the first to know when doors open, for homes, storefronts, and investment.</p>
+    <div class="btns" style="justify-content:center;display:flex;gap:14px;flex-wrap:wrap;margin-top:30px">
+      <a class="btn sky" href="mailto:erik@nowcitylabs.com?subject=Now%20City%20-%20Keep%20me%20posted">Stay updated</a>
+      <a class="btn ghost" href="/contact">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Staging preview &middot; watercolor visualizations and street rendering by the Now City team &middot; &copy; 2026 Now City Inc.
+</footer>
+</body>
+</html>
