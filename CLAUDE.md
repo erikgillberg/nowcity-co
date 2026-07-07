@@ -10,6 +10,15 @@ anyone Googling the company.
 Read the ecosystem-level rules in `../CLAUDE.md` before this file.
 
 
+## Confidentiality — the first district
+
+**Never name Edgewater, West Salem, or Salem as the location of our
+first district anywhere on public ecosystem sites** (nowcity.co,
+nowcity.life, nowcity.ai). Land assembly is in progress; the project
+is disclosed only behind the passcode-gated project site. Speak of
+"our first district" without identifying it. This rule lifts only when
+Erik says so explicitly.
+
 ## Brand system (System B — the editorial system) — DO NOT REGRESS
 
 As of July 2026 this site runs the shared Now City editorial system,
@@ -40,9 +49,11 @@ the same foundation as the West Salem district site and nowcity.ai:
 
 ## Services section (folded-in Now City Labs)
 
-- One top-level **Services** nav item (dropdown) with three children:
-  **The Stack** (`/stack`), **How We Work** (`/services`), and
-  **Outcomes** (`/outcomes`, the interactive comparison island).
+- One top-level **Services** nav item (dropdown) with two children:
+  **The Stack** (`/stack`) and **How We Work** (`/services`).
+  (The old `/outcomes` comparison page was removed July 2026 as too
+  aspirational; do not recreate it. The approach page carries the
+  outcomes narrative.)
 - B2B-facing but written in nowcity.co's corporate voice, not the old
   Labs voice. Refer to the arm as "Now City" or "our services arm,"
   not heavily as a separate "Now City Labs" brand.
