@@ -4,6 +4,16 @@ import { Image } from 'astro:assets';
 
 import heroVision from '../assets/brand/hero-vision.jpg';
 import tiltShift from '../assets/brand/tiltshift-tnd-1.jpg';
+import wcMain from '../assets/watercolors/street-mainstreet.jpg';
+import wcWork from '../assets/watercolors/interior-workspace.jpg';
+import wcBoard from '../assets/watercolors/greenway-boardwalk.jpg';
+import wcRoofs from '../assets/watercolors/aerial-greenroofs.jpg';
+import wcPath from '../assets/watercolors/park-path.jpg';
+import wcEve from '../assets/watercolors/commons-evening.jpg';
+import wcMkt from '../assets/watercolors/street-market.jpg';
+import wcNight from '../assets/watercolors/plaza-night.jpg';
+import wcVillage from '../assets/watercolors/village-green.jpg';
+import wcGondola from '../assets/watercolors/street-gondola.jpg';
 
 const title = 'Now City Inc.';
 const description =
@@ -18,6 +28,7 @@ const brands = [
       'The places we build, designed for the parts of life that happen every day. Future residents follow along here.',
     href: 'https://nowcity.life',
     cta: 'nowcity.life',
+    img: 'mkt',
   },
   {
     idx: '02',
@@ -27,6 +38,7 @@ const brands = [
       'Pre-development intelligence and integrated execution services for landowners, operators, and municipalities.',
     href: '/services',
     cta: 'Explore services',
+    img: 'work',
   },
   {
     idx: '03',
@@ -36,77 +48,64 @@ const brands = [
       'Collaborative underwriting software built by Now City: live models the whole team can drive together, with every number traced to its source.',
     href: 'https://nowcity.ai',
     cta: 'nowcity.ai',
+    img: 'night',
   },
 ];
+const brandImgs = { mkt: wcMkt, work: wcWork, night: wcNight };
 ---
 
 <Layout title={title} description={description}>
-  {/* ===================== HERO ===================== */}
-  <section class="relative overflow-hidden pt-12 md:pt-20">
-    <div class="container-wide">
-      <div class="relative grid gap-10 md:grid-cols-12 md:gap-12">
-        <div class="md:col-span-8" data-reveal>
-          <p class="eyebrow">Now City Inc.</p>
-          <h1 class="mt-6 font-display text-display-xl font-medium text-forest-700">
-            We unlock the value <span class="italic text-copper-400">hidden</span> in overlooked land.
-          </h1>
-          <p class="lede mt-8 max-w-2xl">
-            Now City Inc. is a regenerative developer and operator.
-            Through adaptive reuse and ground-up construction, we turn
-            underused sites into walkable, green, mixed-use districts
-            across the West Coast.
-          </p>
-          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a href="/services" class="btn-primary">See our services</a>
-            <a href="/approach" class="btn-outline">Our approach</a>
-          </div>
-        </div>
-
-        <div class="md:col-span-4 md:pt-3" data-reveal>
-          <div class="space-y-7 md:border-l md:border-stone-200 md:pl-8">
-            <div>
-              <div class="h-0.5 w-6 bg-copper-400" aria-hidden="true"></div>
-              <p class="mt-3 font-display text-lg text-forest-700">Adaptive reuse</p>
-              <p class="mt-1 text-sm leading-relaxed text-stone-600">
-                Value hiding in what is already built.
-              </p>
-            </div>
-            <div>
-              <div class="h-0.5 w-6 bg-copper-400" aria-hidden="true"></div>
-              <p class="mt-3 font-display text-lg text-forest-700">Ground-up</p>
-              <p class="mt-1 text-sm leading-relaxed text-stone-600">
-                Whole districts, not single assets.
-              </p>
-            </div>
-            <div>
-              <div class="h-0.5 w-6 bg-copper-400" aria-hidden="true"></div>
-              <p class="mt-3 font-display text-lg text-forest-700">West Coast</p>
-              <p class="mt-1 text-sm leading-relaxed text-stone-600">
-                California and the Pacific Northwest.
-              </p>
-            </div>
-          </div>
-        </div>
+  {/* ===================== HERO (full-bleed) ===================== */}
+  <section class="relative flex min-h-[86vh] items-end overflow-hidden">
+    <Image
+      src={heroVision}
+      alt="An active mixed-use street with plant-clad buildings, a market, café tables, a bike lane, and people of all ages walking and gathering."
+      widths={[1000, 1600, 2400]}
+      sizes="100vw"
+      class="absolute inset-0 h-full w-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(28,26,23,.18) 0%,rgba(28,26,23,0) 34%,rgba(28,26,23,.78) 100%)" aria-hidden="true"></div>
+    <div class="container-wide relative pb-16 pt-40 md:pb-20">
+      <p class="eyebrow-onimg">Now City Inc.</p>
+      <h1 class="mt-5 max-w-3xl font-display text-display-xl font-medium text-cream-50" style="text-shadow:0 2px 24px rgba(20,18,16,.45)">
+        Cities designed for <span class="italic text-sun">everyday vitality</span>.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-cream-100/95 md:text-xl" style="text-shadow:0 1px 12px rgba(20,18,16,.5)">
+        Now City Inc. is a regenerative developer and operator. Through
+        adaptive reuse and ground-up construction, we turn underused sites
+        into walkable, green, mixed-use districts across the West Coast.
+      </p>
+      <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+        <a href="/services" class="btn bg-sun text-forest-900 hover:bg-sun-deep">See our services</a>
+        <a href="/approach" class="btn border border-cream-100/70 text-cream-50 hover:bg-cream-50 hover:text-forest-800">Our approach</a>
       </div>
+      <p class="mt-10 font-display text-sm italic text-cream-100/80">The vision, hand-crafted: a Now City street, Pacific Northwest typology.</p>
+    </div>
+  </section>
 
-      <div class="mt-16" data-reveal>
-        <div class="h-px w-full bg-copper-400/40" aria-hidden="true"></div>
-        <div class="mt-6 overflow-hidden rounded-sm shadow-sm">
-          <Image
-            src={heroVision}
-            alt="An active mixed-use street with plant-clad buildings, a market, café tables, a bike lane, and people of all ages walking and gathering."
-            widths={[800, 1200, 1800]}
-            sizes="(min-width: 1024px) 1100px, 100vw"
-            class="h-auto w-full object-cover"
-            loading="eager"
-          />
-        </div>
-        <p class="mt-3 font-display text-sm italic text-stone-500">
-          Concept rendering. Walkable mixed-use district, Pacific Northwest typology.
-        </p>
+  {/* three ways of working — icon strip */}
+  <section class="border-b border-stone-200 bg-cream-50 py-12">
+    <div class="container-wide grid gap-8 sm:grid-cols-3">
+      <div class="flex items-start gap-4" data-reveal>
+        <svg class="icon mt-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20c8 0 12-4 14-12M8 20c0-6 4-10 12-12M4 12c3 0 5-1 7-3"/></svg>
+        <div><p class="font-display text-lg text-forest-800">Adaptive reuse</p>
+        <p class="mt-1 text-sm leading-relaxed text-stone-600">Value hiding in what is already built.</p></div>
+      </div>
+      <div class="flex items-start gap-4" data-reveal>
+        <svg class="icon mt-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M6 21V9l6-5 6 5v12M10 21v-5h4v5M9 12h.01M15 12h.01"/></svg>
+        <div><p class="font-display text-lg text-forest-800">Ground-up districts</p>
+        <p class="mt-1 text-sm leading-relaxed text-stone-600">Whole neighborhoods, not single assets.</p></div>
+      </div>
+      <div class="flex items-start gap-4" data-reveal>
+        <svg class="icon mt-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-4-4-7-7.6-7-11a7 7 0 1 1 14 0c0 3.4-3 7-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <div><p class="font-display text-lg text-forest-800">West Coast</p>
+        <p class="mt-1 text-sm leading-relaxed text-stone-600">California and the Pacific Northwest.</p></div>
       </div>
     </div>
   </section>
+
+  <div class="wcband" style={`background-image:url(${wcVillage.src})`} role="img" aria-label="Watercolor: a village green with homes and gardens"></div>
 
   {/* ===================== WHAT WE DO ===================== */}
   <section class="mt-section py-section">
@@ -118,6 +117,9 @@ const brands = [
           <h2 class="mt-5 font-display text-display-lg text-forest-700">
             A different kind of real estate company.
           </h2>
+          <div class="mt-8 overflow-hidden rounded-xl shadow-lg" data-reveal>
+            <Image src={wcMain} alt="Watercolor: a lively brick main street under a blue sky, cafés and balconies full of people" widths={[700,1100]} sizes="(min-width:768px) 460px, 100vw" class="h-auto w-full" />
+          </div>
         </div>
         <div class="md:col-span-7" data-reveal>
           <div class="prose-body">
@@ -144,6 +146,8 @@ const brands = [
       </div>
     </div>
   </section>
+
+  <div class="wcband to-dark" style={`background-image:url(${wcEve.src})`} role="img" aria-label="Watercolor: a neighborhood commons at dusk"></div>
 
   {/* ===================== THE DIFFERENCE, MEASURED ===================== */}
   <section class="bg-forest-800 py-section text-cream" data-reveal>
@@ -200,36 +204,50 @@ const brands = [
           regenerative, resilient, and equitable communities and cities.
         </p>
       </div>
-      <div class="mt-12 grid gap-10 md:grid-cols-3">
-        <div data-reveal>
-          <div class="h-0.5 w-8 bg-copper-400" aria-hidden="true"></div>
-          <h3 class="mt-4 font-display text-xl text-forest-800">Regeneration</h3>
-          <p class="prose-body mt-3 text-base">
-            Restore the natural systems that sustain daily life (clean
-            air, water, soil, and food), improving personal health while
-            rebuilding ecological function at the neighborhood and
-            district scale.
-          </p>
+      <div class="mt-12 grid gap-8 md:grid-cols-3">
+        <div class="overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-stone-200/60 transition-transform hover:-translate-y-1" data-reveal>
+          <div class="h-44 overflow-hidden"><Image src={wcBoard} alt="Watercolor: a boardwalk winding through restored riverbank wetlands" widths={[600,900]} sizes="400px" class="h-full w-full object-cover" /></div>
+          <div class="p-7">
+            <div class="flex items-center gap-3">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21C7 17 4 13 4 9a8 8 0 0 1 16 0c0 4-3 8-8 12z" opacity="0"/><path d="M6 20c6-1 10-5 12-14-7 1-12 5-12 14zM6 20c2-3 5-6 8-8"/></svg>
+              <h3 class="font-display text-xl text-forest-800">Regeneration</h3>
+            </div>
+            <p class="prose-body mt-3 text-base">
+              Restore the natural systems that sustain daily life (clean air,
+              water, soil, and food), improving personal health while
+              rebuilding ecological function at the neighborhood and district
+              scale.
+            </p>
+          </div>
         </div>
-        <div data-reveal>
-          <div class="h-0.5 w-8 bg-copper-400" aria-hidden="true"></div>
-          <h3 class="mt-4 font-display text-xl text-forest-800">Resilience</h3>
-          <p class="prose-body mt-3 text-base">
-            Homes, mobility, energy, food, and social systems are
-            designed to perform under stress (climate and economic
-            disruption), strengthening household security and
-            community-wide stability.
-          </p>
+        <div class="overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-stone-200/60 transition-transform hover:-translate-y-1" data-reveal>
+          <div class="h-44 overflow-hidden"><Image src={wcRoofs} alt="Watercolor: apartment blocks with green roofs and solar panels" widths={[600,900]} sizes="400px" class="h-full w-full object-cover" /></div>
+          <div class="p-7">
+            <div class="flex items-center gap-3">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+              <h3 class="font-display text-xl text-forest-800">Resilience</h3>
+            </div>
+            <p class="prose-body mt-3 text-base">
+              Homes, mobility, energy, food, and social systems are designed
+              to perform under stress (climate and economic disruption),
+              strengthening household security and community-wide stability.
+            </p>
+          </div>
         </div>
-        <div data-reveal>
-          <div class="h-0.5 w-8 bg-copper-400" aria-hidden="true"></div>
-          <h3 class="mt-4 font-display text-xl text-forest-800">Equity</h3>
-          <p class="prose-body mt-3 text-base">
-            Designing around the realities of caregiving, childhood,
-            aging, mobility independence, and access to opportunity
-            improves daily life for individuals while creating more
-            stable, connected, and inclusive communities for all.
-          </p>
+        <div class="overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-stone-200/60 transition-transform hover:-translate-y-1" data-reveal>
+          <div class="h-44 overflow-hidden"><Image src={wcPath} alt="Watercolor: a shaded park path with people of all ages" widths={[600,900]} sizes="400px" class="h-full w-full object-cover" /></div>
+          <div class="p-7">
+            <div class="flex items-center gap-3">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="7" r="2.6"/><circle cx="16" cy="7" r="2.6"/><path d="M3.5 20c.5-4 2-6 4.5-6s4 2 4.5 6M11.5 20c.5-4 2-6 4.5-6s4 2 4.5 6"/></svg>
+              <h3 class="font-display text-xl text-forest-800">Equity</h3>
+            </div>
+            <p class="prose-body mt-3 text-base">
+              Designing around the realities of caregiving, childhood, aging,
+              mobility independence, and access to opportunity improves daily
+              life for individuals while creating more stable, connected, and
+              inclusive communities for all.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -249,26 +267,16 @@ const brands = [
         </p>
       </div>
 
-      <div class="mt-14 border-t border-stone-200" data-reveal>
+      <div class="mt-14 grid gap-8 md:grid-cols-3" data-reveal>
         {brands.map((b) => (
-          <a
-            href={b.href}
-            class="group grid items-baseline gap-3 border-b border-stone-200 py-8 no-underline transition-colors hover:bg-cream md:grid-cols-12 md:gap-8 md:py-10"
-          >
-            <div class="md:col-span-1">
-              <span class="font-display text-2xl text-copper-400">{b.idx}</span>
-            </div>
-            <div class="md:col-span-3">
-              <p class="text-xs font-medium uppercase tracking-[0.18em] text-stone-500">
-                {b.audience}
-              </p>
-              <h3 class="mt-2 font-display text-2xl text-forest-700">{b.name}</h3>
-            </div>
-            <div class="md:col-span-6">
-              <p class="prose-body text-base">{b.blurb}</p>
-            </div>
-            <div class="md:col-span-2 md:text-right">
-              <span class="text-sm font-medium text-forest-700 transition-colors group-hover:text-copper-400">
+          <a href={b.href} class="group relative flex min-h-[380px] items-end overflow-hidden rounded-2xl no-underline shadow-lg">
+            <Image src={brandImgs[b.img]} alt="" widths={[700,1000]} sizes="(min-width:768px) 400px, 100vw" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(28,26,23,0) 30%,rgba(28,26,23,.82) 100%)" aria-hidden="true"></div>
+            <div class="relative w-full p-7">
+              <p class="eyebrow-onimg">{b.audience}</p>
+              <h3 class="mt-2 font-display text-2xl text-cream-50">{b.name}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-cream-100/90">{b.blurb}</p>
+              <span class="mt-4 inline-block text-sm font-semibold text-sun transition-colors group-hover:text-sun-deep">
                 {b.cta} <span aria-hidden="true">→</span>
               </span>
             </div>
@@ -344,6 +352,8 @@ const brands = [
       </div>
     </div>
   </section>
+
+  <div class="wcband" style={`background-image:url(${wcGondola.src})`} role="img" aria-label="Watercolor: a street with cable-car gondolas overhead"></div>
 
   {/* ===================== WHERE WE ARE ===================== */}
   <section class="py-section bg-cream-50">
