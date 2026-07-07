@@ -4,57 +4,60 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand Bible palette — shared across the Now City ecosystem
+        // Now City editorial palette (System B) — the shared brand foundation.
+        // Source of truth: the West Salem site and nowcity.ai brand.css
+        // (cream/ink/terra/green + Libre Baskerville/Inter). Do NOT reintroduce
+        // the old forest/stone corporate palette or Playfair/Fraunces display fonts.
         forest: {
-          DEFAULT: '#1F3A34',
-          50: '#EEF4F2',
-          100: '#D7E3DF',
-          200: '#AFC7BF',
-          300: '#87AB9F',
-          400: '#5F8F7F',
-          500: '#3C6C5E',
-          600: '#2F5448',
-          700: '#1F3A34', // brand primary
-          800: '#152823',
-          900: '#0B1613',
+          DEFAULT: '#46583d',
+          50: '#f0f2ec',
+          100: '#dde3d4',
+          200: '#c2ccb2',
+          300: '#a3b18d',
+          400: '#82936c',
+          500: '#5d7050',
+          600: '#3a4a32',
+          700: '#46583d', // brand primary
+          800: '#1c1a17',
+          900: '#141210',
         },
         stone: {
-          DEFAULT: '#6E736E',
-          100: '#E4E5E3',
-          200: '#C7C9C6',
-          300: '#ABAEAA',
-          400: '#8A8E89',
-          500: '#6E736E', // brand secondary
-          600: '#565A56',
-          700: '#3F423F',
-          800: '#292B29',
-          900: '#141514',
+          DEFAULT: '#857f73',
+          100: '#eae5da',
+          200: '#ddd6c8',
+          300: '#c5beae',
+          400: '#a39d8f',
+          500: '#857f73', // brand secondary
+          600: '#6b665c',
+          700: '#4f4a42',
+          800: '#33302a',
+          900: '#1c1a17',
         },
         cream: {
-          DEFAULT: '#F6F4EE',
-          50: '#FBFAF6',
-          100: '#F6F4EE', // brand canvas
-          200: '#EDE9DC',
-          300: '#D9D2BA',
+          DEFAULT: '#f4f1e9',
+          50: '#fbf9f4',
+          100: '#f4f1e9', // brand canvas
+          200: '#ece8dc',
+          300: '#ddd4bd',
         },
         copper: {
-          DEFAULT: '#B87333',
-          50: '#FAF1E7',
-          100: '#F0D8B8',
-          200: '#E1B17F',
-          300: '#D08A4E',
-          400: '#B87333', // accent
-          500: '#945B28',
-          600: '#6F441E',
+          DEFAULT: '#a8703f',
+          50: '#f7efe3',
+          100: '#eed9bd',
+          200: '#dcb183',
+          300: '#c28f5c',
+          400: '#a8703f', // accent
+          500: '#8c5a31',
+          600: '#6d4526',
         },
         sage: {
-          DEFAULT: '#A6B8A4',
-          50: '#F0F4EF',
-          100: '#DDE6DC',
-          200: '#C2D0C1',
-          300: '#A6B8A4', // accent
-          400: '#849B82',
-          500: '#637E61',
+          DEFAULT: '#cfc8b8',
+          50: '#f4f1e9',
+          100: '#e5dfd2',
+          200: '#cfc8b8',
+          300: '#cfc8b8', // accent
+          400: '#b7b0a3',
+          500: '#8f897c',
         },
         // Now City Inc. wordmark colors — used ONLY for the wordmark itself
         // and never for body type or UI. Forest is still the primary headline color.
@@ -64,12 +67,9 @@ export default {
         },
       },
       fontFamily: {
-        // Display: serif for headings (Canela isn't self-hostable without license;
-        // Playfair Display and Libre Baskerville are fallbacks per Brand Bible)
+        // Display: Libre Baskerville, the ecosystem serif (matches West Salem + nowcity.ai)
         display: [
-          'Fraunces',
-          'Canela',
-          'Playfair Display',
+          'Libre Baskerville',
           'Georgia',
           'serif',
         ],
@@ -81,10 +81,8 @@ export default {
           'system-ui',
           'sans-serif',
         ],
-        // Brand-specific: Outfit, used for the wordmark and short brand labels
-        // (e.g., section eyebrows). Body and headlines stay on Inter and Canela.
+        // Eyebrows/labels: Inter (Outfit remains only inside the wordmark SVG)
         brand: [
-          'Outfit',
           'Inter',
           'system-ui',
           'sans-serif',

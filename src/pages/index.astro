@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 
-import heroVision from '../assets/brand/hero-vision.jpg';
+import heroVision from '../assets/brand/hero-district.jpg';
 import tiltShift from '../assets/brand/tiltshift-tnd-1.jpg';
 
 const title = 'Now City Inc.';
@@ -30,12 +30,12 @@ const brands = [
   },
   {
     idx: '03',
-    audience: 'For cities and civic partners',
-    name: 'Urban Reboot',
+    audience: 'For deal teams and capital partners',
+    name: 'NowCity.ai',
     blurb:
-      'A nonprofit that catalyzes mission-aligned capital and structures public-private partnerships for mixed-income, mixed-use neighborhoods.',
-    href: 'https://urbanreboot.org',
-    cta: 'urbanreboot.org',
+      'Collaborative underwriting software built by Now City: live models the whole team can drive together, with every number traced to its source.',
+    href: 'https://nowcity.ai',
+    cta: 'nowcity.ai',
   },
 ];
 ---
@@ -43,21 +43,10 @@ const brands = [
 <Layout title={title} description={description}>
   {/* ===================== HERO ===================== */}
   <section class="relative overflow-hidden pt-12 md:pt-20">
-    <div
-      aria-hidden="true"
-      class="pointer-events-none absolute right-0 -top-16 select-none font-display leading-none text-forest-700/[0.055]"
-      style="font-size:clamp(13rem,24vw,22rem);"
-    >
-      +
-    </div>
-
     <div class="container-wide">
       <div class="relative grid gap-10 md:grid-cols-12 md:gap-12">
         <div class="md:col-span-8" data-reveal>
-          <div class="flex items-center gap-2">
-            <span class="font-display text-lg leading-none text-copper-400">+</span>
-            <p class="eyebrow">Now City Inc.</p>
-          </div>
+          <p class="eyebrow">Now City Inc.</p>
           <h1 class="mt-6 font-display text-display-xl font-medium text-forest-700">
             We unlock the value <span class="italic text-copper-400">hidden</span> in overlooked land.
           </h1>
@@ -105,7 +94,7 @@ const brands = [
         <div class="mt-6 overflow-hidden rounded-sm shadow-sm">
           <Image
             src={heroVision}
-            alt="An active mixed-use street with plant-clad buildings, a market, café tables, a bike lane, and people of all ages walking and gathering."
+            alt="Aerial view of the Willamette River at Salem, Oregon, with the West Salem riverfront in the foreground."
             widths={[800, 1200, 1800]}
             sizes="(min-width: 1024px) 1100px, 100vw"
             class="h-auto w-full object-cover"
@@ -113,7 +102,7 @@ const brands = [
           />
         </div>
         <p class="mt-3 font-display text-sm italic text-stone-500">
-          Concept rendering. Walkable mixed-use district, Pacific Northwest typology.
+          The Willamette at Salem, Oregon. Home of Edgewater West Salem, our first district.
         </p>
       </div>
     </div>
@@ -161,7 +150,6 @@ const brands = [
     <div class="container-wide">
       <div class="flex flex-wrap items-baseline justify-between gap-4">
         <div class="flex items-center gap-3">
-          <span class="font-display text-xl leading-none text-copper-300" aria-hidden="true">+</span>
           <p class="text-xs font-medium uppercase tracking-[0.2em] text-sage-300">
             The difference, measured
           </p>

@@ -9,6 +9,35 @@ anyone Googling the company.
 
 Read the ecosystem-level rules in `../CLAUDE.md` before this file.
 
+
+## Brand system (System B — the editorial system) — DO NOT REGRESS
+
+As of July 2026 this site runs the shared Now City editorial system,
+the same foundation as the West Salem district site and nowcity.ai:
+
+- **Type:** Libre Baskerville (display serif) + Inter (body/labels).
+  Outfit appears ONLY inside the wordmark SVG. Never reintroduce
+  Playfair Display, Fraunces, or Canela.
+- **Palette:** cream #f4f1e9 canvas, warm ink #1c1a17/#33302a text,
+  terra #a8703f accent (the `copper` scale), green #46583d for primary
+  buttons (the `forest` scale). Dark bands use ink-deep, not cold green.
+  The Tailwind token NAMES (forest/stone/cream/copper/sage) are legacy;
+  their VALUES are the editorial palette. Do not restore the old
+  forest #1F3A34 / stone-gray values.
+- **Photography over decoration:** real places (the Willamette, the
+  districts) over concept renders, abstract glyphs, or decorative "+"
+  marks. If a section feels like a generic SaaS layout, it is wrong.
+- **Register:** most restrained voice in the ecosystem. Patient,
+  ambitious, grounded. "Building for the long now."
+- **Ecosystem:** nowcity.co = corporate parent + services arm;
+  nowcity.life = neighborhoods (warm register, same system);
+  nowcity.ai = software products; west-salem (in public/) = the
+  Edgewater project site. Differentiate by register and photography,
+  never by a different type or color system.
+- **Urban Reboot no longer exists anywhere in the ecosystem.** Do not
+  reference it. Early-stage civic/feasibility work = the services arm;
+  software = NowCity.ai.
+
 ## Services section (folded-in Now City Labs)
 
 - One top-level **Services** nav item (dropdown) with three children:

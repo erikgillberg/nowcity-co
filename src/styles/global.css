@@ -1,7 +1,7 @@
 /* ---------- Fonts ---------- */
-/* Inter for body + Playfair Display as Canela fallback + Outfit for the
-   wordmark and short brand labels. */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@400;500;600;700&display=swap');
+/* Libre Baskerville (display) + Inter (body): the Now City editorial system,
+   shared with the West Salem site and nowcity.ai. Outfit loads only for the wordmark. */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -29,7 +29,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display text-forest-700;
+    @apply font-display text-forest-800;
     text-wrap: balance;
   }
 
