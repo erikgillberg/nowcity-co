@@ -15,6 +15,7 @@ const model = [
   { t:'Operations', d:'Stabilized neighborhoods generate durable cash flow from rent, ground leases, and service revenue, with lower lifecycle risk than typical real estate portfolios.' },
   { t:'Platform', d:'Methodology, tools, and data improve every project. Services revenue and NowCity.ai software complement the core development engine, and every district makes the next one cheaper to underwrite.' },
 ];
+const outIconsInv = ['<svg viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="5" ry="3"/><path d="M4 7v5c0 1.7 2.2 3 5 3"/><ellipse cx="15" cy="14" rx="5" ry="3"/><path d="M10 14.3v2.7c0 1.7 2.2 3 5 3s5-1.3 5-3v-3"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>','<svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17.5" cy="9.5" r="2.1"/><path d="M15.6 20c0-2.1 1.5-3.6 3.9-3.6"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 20c0-8 6-15 16-16C18 12 12 20 4 20Z"/><path d="M4 20c3-6 7-9 12-10"/></svg>'];
 ---
 <PreviewLayout title="Investment" active="investment">
   <header class="hero short" id="top">
@@ -76,8 +77,8 @@ const model = [
         <p class="lead">Financial, social, and ecological outcomes are not separately optimized. They emerge together from the same systems-led approach.</p>
       </div>
       <div class="stats statcards c4 rv">
-        {outcomes.map((o) => (
-          <div class="stat"><div class="num">{o.k}</div><div class="lbl">{o.d}</div></div>
+        {outcomes.map((o, i) => (
+          <div class="stat"><span class="pv-icon" set:html={outIconsInv[i]}></span><div class="num">{o.k}</div><div class="lbl">{o.d}</div></div>
         ))}
       </div>
     </div>

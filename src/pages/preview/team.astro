@@ -15,6 +15,7 @@ const values = [
   { number: '05', name: 'Build Trust', body: 'Trust is how a team, a neighborhood, and a partnership stay coordinated. Transparency builds it, even when transparency feels uncomfortable. We choose it anyway.' },
   { number: '06', name: 'Begin Regeneration', body: 'Sustainable holds the line. Regenerative makes things better than we found them. We are not interested in defending the status quo. We are interested in repair, renewal, and growth.' },
 ];
+const valIcons = ['<svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.6-4.6"/></svg>','<svg viewBox="0 0 24 24"><path d="M12 3l1.7 5.1L19 10l-5.3 1.9L12 17l-1.7-5.1L5 10l5.3-1.9L12 3Z"/></svg>','<svg viewBox="0 0 24 24"><path d="M3 19l6-11 4 6 2-3 6 8H3Z"/></svg>','<svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17.5" cy="9.5" r="2.1"/><path d="M15.6 20c0-2.1 1.5-3.6 3.9-3.6"/></svg>','<svg viewBox="0 0 24 24"><path d="M3 10l4-2 5 1 5-1 4 2"/><path d="M12 9l-2.6 2.6a1.5 1.5 0 0 0 2.2 2.2L13.8 15l2.2 2.2"/><path d="M7 12l2.6 2.6"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 20c0-8 6-15 16-16C18 12 12 20 4 20Z"/><path d="M4 20c3-6 7-9 12-10"/></svg>'];
 ---
 <PreviewLayout title="Team" active="team">
   <header class="hero short" id="top">
@@ -96,8 +97,8 @@ const values = [
       <div class="figure-block rv"><img src={plazaFlowers.src} alt="A sunlit community commons with people gathering, gardens, and shade trees." loading="lazy" /><div class="fig-cap">A place people can call their own. The commons is where a neighborhood becomes a community. Concept rendering.</div></div>
       <blockquote class="note rv" style="font-style:italic;font-size:18px">Beliefs divide us. Values unite us.<br><span style="font-style:normal;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--terra)">Jeff Rasley</span></blockquote>
       <div class="grid g2 rv">
-        {values.map((v) => (
-          <div class="card on-alt"><div class="serif" style="font-size:22px;color:var(--terra);line-height:1">{v.number}</div><h3 style="margin-top:10px">{v.name}</h3><p style="font-size:14.5px;line-height:1.65;color:#4a463f">{v.body}</p></div>
+        {values.map((v, i) => (
+          <div class="card on-alt"><span class="pv-icon" set:html={valIcons[i]}></span><h3 style="margin-top:10px">{v.name}</h3><p style="font-size:14.5px;line-height:1.65;color:#4a463f">{v.body}</p></div>
         ))}
       </div>
     </div>

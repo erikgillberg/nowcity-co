@@ -9,6 +9,7 @@ const paths = [
   { label:'Cities and civic partners', body:'Public-private partnerships, planning collaborations, and early work we believe in all begin with a conversation through our services team.', href:'/preview/services', cta:'Explore services' },
   { label:'Future residents and the curious', body:'Tell us where you would want a Now City neighborhood. We pay attention.', href:'https://nowcity.life', cta:'nowcity.life' },
 ];
+const pathIcons = ['<svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9"/><path d="M17.5 12v3.5"/><path d="M20.5 12v2.5"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 16l5-5 3.5 3.5L20 7"/><path d="M15 7h5v5"/></svg>','<svg viewBox="0 0 24 24"><path d="M12 20S4 15 4 9.5A4 4 0 0 1 12 7a4 4 0 0 1 8 2.5C20 15 12 20 12 20Z"/></svg>','<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.6 9.4l-2 5.2-5.2 2 2-5.2 5.2-2Z"/></svg>'];
 ---
 <PreviewLayout title="Contact" active="contact">
   <header class="hero short" id="top">
@@ -30,8 +31,9 @@ const paths = [
         <p class="lead">Wherever you are coming from, an investor, a landowner, a city, a future resident, or simply curious, there is a way in. Each door opens a real conversation with the people who can help.</p>
       </div>
       <div class="grid g2 g-2up rv">
-        {paths.map((p) => (
+        {paths.map((p, i) => (
           <div class="card">
+            <span class="pv-icon" set:html={pathIcons[i]}></span>
             <h4>Path</h4>
             <h3>{p.label}</h3>
             <p style="font-size:14.5px;line-height:1.65;color:#4a463f">{p.body}</p>
