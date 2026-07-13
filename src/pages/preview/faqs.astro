@@ -163,14 +163,14 @@ const faqJsonLd = {
           <div class="eyebrow">{`Group 0${gi + 1}`}</div>
           <h2>{group.heading}</h2>
         </div>
-        <div class="grid g2 rv" style="align-items:start">
+        <div class="faqlist rv">
           {group.items.map((item) => (
-            <div class="card">
-              <h3 style="font-size:18px">{item.q}</h3>
-              {item.a.map((para) => (
-                <p style="font-size:14.5px;line-height:1.7;color:#4a463f">{para}</p>
-              ))}
-            </div>
+            <details class="faq">
+              <summary>{item.q}</summary>
+              <div class="faq-a">
+                {item.a.map((para) => (<p>{para}</p>))}
+              </div>
+            </details>
           ))}
         </div>
         {gi === 1 && (

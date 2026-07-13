@@ -35,6 +35,16 @@ const nav = [
   .pv-icon{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:rgba(168,112,63,.10);color:var(--terra);margin-bottom:16px}
   .pv-icon svg{width:23px;height:23px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
   .dark .pv-icon{background:rgba(217,162,108,.16);color:#d9a26c}
+  .faqlist{max-width:880px}
+  .faq{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;padding:19px 44px 19px 0;position:relative;font-family:var(--serif);font-size:18px;color:var(--ink-deep);line-height:1.45}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';position:absolute;right:4px;top:15px;font-size:24px;font-weight:400;color:var(--terra);font-family:var(--sans);line-height:1;transition:transform .2s}
+  .faq[open] summary::after{content:'\2212'}
+  .faq summary:hover{color:var(--terra)}
+  .faq-a{padding:0 44px 22px 0}
+  .faq-a p{font-size:14.5px;line-height:1.7;color:#4a463f}
+  .faq-a p + p{margin-top:11px}
 </style>
 </head>
 <body>
