@@ -29,12 +29,12 @@ const nav = [
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/west-salem/assets/site.css?v=6" />
-<style>
+<style is:global>
   .g-2up{grid-template-columns:repeat(2,minmax(0,1fr))!important}
   @media(max-width:640px){.g-2up{grid-template-columns:1fr!important}}
-  .pv-icon{display:inline-flex;width:36px;height:36px;color:var(--terra);margin-bottom:14px}
-  .pv-icon svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
-  .dark .pv-icon,.on-alt .pv-icon{color:var(--terra)}
+  .pv-icon{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:rgba(168,112,63,.10);color:var(--terra);margin-bottom:16px}
+  .pv-icon svg{width:23px;height:23px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .dark .pv-icon{background:rgba(217,162,108,.16);color:#d9a26c}
 </style>
 </head>
 <body>
