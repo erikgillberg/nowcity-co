@@ -29,6 +29,13 @@ const nav = [
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/west-salem/assets/site.css?v=6" />
+<style>
+  .g-2up{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  @media(max-width:640px){.g-2up{grid-template-columns:1fr!important}}
+  .pv-icon{display:inline-flex;width:36px;height:36px;color:var(--terra);margin-bottom:14px}
+  .pv-icon svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .dark .pv-icon,.on-alt .pv-icon{color:var(--terra)}
+</style>
 </head>
 <body>
 <nav id="nav">
@@ -66,10 +73,21 @@ const nav = [
 </section>
 
 <footer>
+  <div class="wrap" style="padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid #2b2823;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+    <div style="max-width:440px">
+      <div class="eyebrow" style="color:#e8c79d;margin-bottom:7px">Stay in the loop</div>
+      <div style="color:#cfc9bd;font-size:14.5px;line-height:1.55">Follow the work as it unfolds. Occasional updates on Now City, the neighborhoods, and the ideas behind them. No noise.</div>
+    </div>
+    <form action="https://nowcitylabs.us19.list-manage.com/subscribe/post?u=88bfb2c8f34fdd20e85cce03f&amp;id=9c44948c78&amp;f_id=0098bbe7f0" method="post" target="_blank" novalidate style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;min-width:290px">
+      <input type="email" name="EMAIL" required placeholder="you@email.com" aria-label="Email address" style="flex:1;min-width:210px;padding:12px 14px;border:1px solid #4a453a;border-radius:8px;background:#2b2823;color:#e9e5da;font-size:15px" />
+      <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_88bfb2c8f34fdd20e85cce03f_9c44948c78" tabindex="-1" value="" /></div>
+      <button type="submit" name="subscribe" style="padding:12px 22px;border:none;border-radius:8px;background:var(--terra);color:#fff;font-weight:600;font-size:14px;letter-spacing:.03em;cursor:pointer;white-space:nowrap">Get updates</button>
+    </form>
+  </div>
   <div class="wrap" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;align-items:start">
     <div>
       <div class="serif" style="font-size:17px;color:#bdb7a8">Now City Inc.</div>
-      <p style="margin-top:10px;max-width:300px;line-height:1.6">A regenerative developer and operator. Building walkable, green districts on the West Coast for the long now.</p>
+      <p style="margin-top:10px;max-width:320px;line-height:1.6">Housing, work, play, food, wellness, and mobility in one connected daily life. The best of the past and the future. Now.</p>
     </div>
     <div>
       <div class="eyebrow" style="color:#e8c79d;margin-bottom:10px">Our Brands</div>
