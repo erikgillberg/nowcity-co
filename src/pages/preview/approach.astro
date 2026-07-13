@@ -37,6 +37,9 @@ const outcomes = [
   { t:'Property value', d:'Walkable, well-programmed urbanism trades at a durable premium. The premium tends to grow with neighborhood maturity.' },
 ];
 const layerIcons = ['<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9.4h16"/><path d="M4 14.6h16"/><path d="M9.4 4v16"/><path d="M14.6 4v16"/></svg>','<svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.2a6 6 0 0 1-12 0C6 9.2 12 3 12 3Z"/><path d="M9.4 12.6c1.7.2 2.9-.7 3.6-2.4"/></svg>','<svg viewBox="0 0 24 24"><path d="M12 21v-6"/><path d="M12 15c-3.6 0-6-2.6-6-6a6 6 0 0 1 12 0c0 3.4-2.4 6-6 6Z"/></svg>','<svg viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="5" ry="3"/><path d="M4 7v5c0 1.7 2.2 3 5 3"/><ellipse cx="15" cy="14" rx="5" ry="3"/><path d="M10 14.3v2.7c0 1.7 2.2 3 5 3s5-1.3 5-3v-3"/></svg>'];
+const phaseIcons = ['<svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.6-4.6"/></svg>','<svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.3"/><circle cx="18" cy="7" r="2.3"/><circle cx="12" cy="17" r="2.3"/><path d="M7.8 8.5l2.7 6.4M16.2 8.5l-2.7 6.4M8.3 7h7.4"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="13.5" y="8" width="3" height="9"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 14c0 3 3.2 5 8 5s8-2 8-5"/><path d="M12 13.5V7.5"/><path d="M12 9.5C10 9.5 9 8.1 9 6.5c1.8 0 3 1 3 3Z"/><path d="M12 9.5c0-1.7 1.2-3 3-3 0 1.6-1 3-3 3Z"/></svg>'];
+const prinIcons = ['<svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>','<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>','<svg viewBox="0 0 24 24"><circle cx="13" cy="4.6" r="1.9"/><path d="M13.4 8l-2 4.1 3 1.7L15.4 19"/><path d="M11.4 12.1l-3 1L7 17.2"/><path d="M13.7 9.5l3.1 1.1"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 20c0-8 6-15 16-16C18 12 12 20 4 20Z"/><path d="M4 20c3-6 7-9 12-10"/></svg>','<svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.3"/><circle cx="18" cy="7" r="2.3"/><circle cx="12" cy="17" r="2.3"/><path d="M7.8 8.5l2.7 6.4M16.2 8.5l-2.7 6.4M8.3 7h7.4"/></svg>','<svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 1 7 4"/><path d="M19.5 3.5V8H15"/><path d="M18.5 15A8 8 0 0 1 5 14"/><path d="M4.5 19.5V15H9"/></svg>','<svg viewBox="0 0 24 24"><path d="M12 21v-6"/><path d="M12 15c-3.6 0-6-2.6-6-6a6 6 0 0 1 12 0c0 3.4-2.4 6-6 6Z"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 9h13l-3.5-3.5"/><path d="M20 15H7l3.5 3.5"/></svg>','<svg viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M17.5 2.5v4.5H13"/></svg>','<svg viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="5" ry="3"/><path d="M4 7v5c0 1.7 2.2 3 5 3"/><ellipse cx="15" cy="14" rx="5" ry="3"/><path d="M10 14.3v2.7c0 1.7 2.2 3 5 3s5-1.3 5-3v-3"/></svg>'];
+const outIcons = ['<svg viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.1"/><circle cx="18" cy="16" r="3.1"/><path d="M6 16l4.5-6.5H15l-3 6.5"/><path d="M10.5 9.5L9 6.5H6.5"/></svg>','<svg viewBox="0 0 24 24"><path d="M7.5 15a3.6 3.6 0 0 1 .4-7.2A4.6 4.6 0 0 1 17 9a3.3 3.3 0 0 1-.2 6H7.5Z"/><path d="M12 11.3v4"/><path d="M10.2 13.5L12 15.3l1.8-1.8"/></svg>','<svg viewBox="0 0 24 24"><path d="M12 20S4 15 4 9.5A4 4 0 0 1 12 7a4 4 0 0 1 8 2.5C20 15 12 20 12 20Z"/></svg>','<svg viewBox="0 0 24 24"><path d="M4.5 9l1-4.2h13l1 4.2"/><path d="M5.5 9v10h13V9"/><path d="M10 19v-5h4v5"/></svg>','<svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 16l5-5 3.5 3.5L20 7"/><path d="M15 7h5v5"/></svg>'];
 ---
 <PreviewLayout title="Approach" active="approach" description="How Now City Inc. builds regenerative urbanism. The four-layer stack, the four-phase process, and ten guiding principles for designing places that improve over time.">
   <header class="hero short" id="top">
@@ -142,8 +145,9 @@ const layerIcons = ['<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" heigh
         <div class="step"><span class="n">04</span><span>Execution &amp; stewardship</span></div>
       </div>
       <div class="grid g4 rv" style="margin-top:36px">
-        {phases.map((p) => (
+        {phases.map((p, i) => (
           <div class="card">
+            <span class="pv-icon" set:html={phaseIcons[i]}></span>
             <h4>{p.n}</h4>
             <h3 style="margin-top:6px;font-size:19px">{p.t}</h3>
             <p style="font-size:14.5px;line-height:1.65;color:#4a463f">{p.d}</p>
@@ -169,10 +173,10 @@ const layerIcons = ['<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" heigh
         <p class="lead">Our design framework has ten principles that translate the stack into site-specific decisions. Each is a question we ask of every site, every block, every building.</p>
       </div>
       <div class="grid g3 rv">
-        {principles.map((p) => (
+        {principles.map((p, i) => (
           <div class="card">
-            <div class="serif" style="font-size:22px;color:var(--terra);line-height:1">{p.n}</div>
-            <h3 style="margin-top:10px">{p.t}</h3>
+            <span class="pv-icon" set:html={prinIcons[i]}></span>
+            <h3 style="margin-top:2px">{p.t}</h3>
             <p style="font-size:14.5px;line-height:1.65">{p.d}</p>
           </div>
         ))}
@@ -198,8 +202,8 @@ const layerIcons = ['<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" heigh
           <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">Our model is built to do well across these dimensions from day one, then keep getting better through stewardship.</p>
         </div>
         <div class="grid g2" style="gap:18px">
-          {outcomes.map((o) => (
-            <div class="card"><h4>{o.t}</h4><p style="font-size:14px;line-height:1.6;color:#4a463f">{o.d}</p></div>
+          {outcomes.map((o, i) => (
+            <div class="card"><span class="pv-icon" set:html={outIcons[i]}></span><h4>{o.t}</h4><p style="font-size:14px;line-height:1.6;color:#4a463f">{o.d}</p></div>
           ))}
         </div>
       </div>
