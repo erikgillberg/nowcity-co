@@ -69,6 +69,7 @@ const techPrinciples = [
   { n: '03', t: 'Pilot before scale', d: 'One block before district rollout.' },
   { n: '04', t: 'Built for handover', d: 'No black-box systems.' },
 ];
+const capIcons = ['<svg viewBox="0 0 24 24"><path d="M12 3l1.7 5.1L19 10l-5.3 1.9L12 17l-1.7-5.1L5 10l5.3-1.9L12 3Z"/></svg>','<svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.3"/><circle cx="18" cy="7" r="2.3"/><circle cx="12" cy="17" r="2.3"/><path d="M7.8 8.5l2.7 6.4M16.2 8.5l-2.7 6.4M8.3 7h7.4"/></svg>','<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.6 9.4l-2 5.2-5.2 2 2-5.2 5.2-2Z"/></svg>','<svg viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="5" ry="3"/><path d="M4 7v5c0 1.7 2.2 3 5 3"/><ellipse cx="15" cy="14" rx="5" ry="3"/><path d="M10 14.3v2.7c0 1.7 2.2 3 5 3s5-1.3 5-3v-3"/></svg>'];
 ---
 <PreviewLayout title="The Stack" active="services">
   <header class="hero short" id="top">
@@ -90,9 +91,9 @@ const techPrinciples = [
         <p class="lead">Intelligence, Systems, Services, and Capital, applied to the single challenge of getting regenerative projects built.</p>
       </div>
       <div class="grid g2 g-2up rv">
-        {capabilities.map((c) => (
+        {capabilities.map((c, i) => (
           <div class="card">
-            <div class="serif" style="font-size:26px;color:var(--terra);line-height:1">{c.num}</div>
+            <span class="pv-icon" set:html={capIcons[i]}></span>
             <div class="eyebrow" style="margin:10px 0 4px">{c.eyebrow}</div>
             <h3>{c.title}</h3>
             <h4>{c.subtitle}</h4>
