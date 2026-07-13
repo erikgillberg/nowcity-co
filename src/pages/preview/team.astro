@@ -1,6 +1,7 @@
 ---
 import PreviewLayout from '../../layouts/PreviewLayout.astro';
-import heroVision from '../../assets/brand/hero-vision.jpg';
+import commonsEvening from '../../assets/watercolors/commons-evening.jpg';
+import plazaFlowers from '../../assets/watercolors/plaza-flowers.jpg';
 import erik from '../../assets/team/erik.jpg';
 import ritchie from '../../assets/team/ritchie.jpg';
 import shuman from '../../assets/team/shuman.jpg';
@@ -17,7 +18,7 @@ const values = [
 ---
 <PreviewLayout title="Team" active="team">
   <header class="hero short" id="top">
-    <div class="bg" style={`background-image:url(${heroVision.src})`}></div><div class="shade"></div>
+    <div class="bg" style={`background-image:url(${commonsEvening.src})`}></div><div class="shade"></div>
     <div class="wrap">
       <div class="eyebrow">Team</div>
       <h1>Built around the work<br>in front of us.</h1>
@@ -58,7 +59,7 @@ const values = [
       <div class="sec-head rv">
         <div class="eyebrow">Advisors</div>
         <h2>Senior advisors.</h2>
-        <p class="lead">We work with senior advisors whose expertise is directly load-bearing for the work.</p>
+        <p class="lead">We work with senior advisors whose expertise is directly essential to the work, building on the craft of the community builders and industry veterans who came before us.</p>
       </div>
     </div>
   </section>
@@ -92,6 +93,7 @@ const values = [
         <h2>Six values.</h2>
         <p class="lead">Our values drive our design process and our decisions. They help us find the people who want to build this with us.</p>
       </div>
+      <div class="figure-block rv"><img src={plazaFlowers.src} alt="A sunlit community commons with people gathering, gardens, and shade trees." loading="lazy" /><div class="fig-cap">A place people can call their own. The commons is where a neighborhood becomes a community. Concept rendering.</div></div>
       <blockquote class="note rv" style="font-style:italic;font-size:18px">Beliefs divide us. Values unite us.<br><span style="font-style:normal;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--terra)">Jeff Rasley</span></blockquote>
       <div class="grid g2 rv">
         {values.map((v) => (

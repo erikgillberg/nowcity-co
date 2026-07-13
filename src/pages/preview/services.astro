@@ -1,7 +1,8 @@
 ---
 import PreviewLayout from '../../layouts/PreviewLayout.astro';
-import heroImg from '../../assets/brand/building-block.jpg';
-import tiltShift from '../../assets/brand/tiltshift-tnd.jpg';
+import heroImg from '../../assets/brand/gardening.jpg';
+import mobilityStreet from '../../assets/watercolors/mobility-street.jpg';
+import marketShop from '../../assets/watercolors/market-shop.jpg';
 
 const phases = [
   {
@@ -20,7 +21,7 @@ const phases = [
     value: 'Lower capital and operating costs, stronger identity, and smoother entitlements because the physical and operational systems reinforce each other from day one.',
     fee: 'Fixed plus milestone fees',
     blurb:
-      'We design the physical and operational systems so uses reinforce one another, reducing waste and unlocking shared value across the program.',
+      'We design the physical and operational systems so uses reinforce one another, reducing waste and helping communities create shared value across the program.',
   },
   {
     number: '03',
@@ -60,9 +61,12 @@ const phases = [
         <div class="eyebrow">The problem we solve</div>
         <h2>The traditional process is the risk.</h2>
       </div>
-      <div class="grid g2 rv" style="align-items:start">
-        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Most development follows a familiar pattern: set a density or revenue target, draw a design to match, then spend years fighting entitlements, redesign, engineering rework, and community pushback. Distinctiveness gets value-engineered out.</p>
-        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">That is why so many projects overrun budgets, stall in entitlements, lose their identity in value engineering, and underperform in absorption and resale. The traditional process is itself the source of risk, cost, and delay.</p>
+      <div class="grid g2 rv" style="align-items:center;gap:40px">
+        <div>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Most development follows a familiar pattern: set a density or revenue target, draw a design to match, then spend years fighting entitlements, redesign, engineering rework, and community pushback. Distinctiveness gets value-engineered out.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">That is why so many projects overrun budgets, stall in entitlements, lose their identity in value engineering, and underperform in absorption and resale. The traditional process is itself the source of risk, cost, and delay.</p>
+        </div>
+        <div class="figure-block rv" style="margin-top:0"><img src={marketShop.src} alt="Ground-floor shopfronts and a lively sidewalk market with people gathering, produce stalls, and cafe seating." loading="lazy" /><div class="fig-cap">Ground-floor life and a local economy worth walking to. Concept rendering.</div></div>
       </div>
     </div>
   </section>
@@ -132,9 +136,9 @@ const phases = [
           <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Family holdings, institutional campuses, waterfront reuse, edge-urban sites, multi-parcel assemblages. You have the land. We provide the pathway.</p>
           <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">If your goal is a single building or a simple subdivision, you might want a different partner. If your goal is a place with meaning, resilience, and long-term value, we should talk.</p>
         </div>
-        <div class="figure-block" style="margin-top:0">
-          <img src={tiltShift.src} alt="A tilt-shift view of a walkable mixed-use district with tree-lined streets and civic gathering space." loading="lazy" />
-          <div class="fig-cap">Concept rendering. Large-scale site reimagined as a walkable, systems-led district.</div>
+        <div class="figure-block rv" style="margin-top:0">
+          <img src={mobilityStreet.src} alt="A calm, walkable neighborhood street with people on foot and bikes, wide sidewalks, street trees, and low traffic." loading="lazy" />
+          <div class="fig-cap">A walkable street where getting around on foot is the easy choice. Concept rendering.</div>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 ---
 import PreviewLayout from '../../layouts/PreviewLayout.astro';
-import gardening from '../../assets/brand/gardening.jpg';
+import greenwayBoardwalk from '../../assets/watercolors/greenway-boardwalk.jpg';
+import parkPath from '../../assets/watercolors/park-path.jpg';
 
 interface FaqItem {
   q: string;
@@ -29,7 +30,7 @@ const groups: FaqGroup[] = [
       {
         q: 'Where do you develop?',
         a: [
-          'California and the Pacific Northwest. We focus on the West Coast because land use frameworks, climate adaptation needs, and policy momentum align with our model. We do not currently develop outside the U.S. West Coast.',
+          'The West Coast, from the Pacific Northwest to the tip of Baja California. We focus on the West Coast because land use frameworks, climate adaptation needs, and policy momentum align with our model. We do not currently develop outside the U.S. West Coast.',
         ],
       },
       {
@@ -146,7 +147,7 @@ const faqJsonLd = {
 ---
 <PreviewLayout title="FAQs" active="faqs">
   <header class="hero short" id="top">
-    <div class="bg" style={`background-image:url(${gardening.src})`}></div><div class="shade"></div>
+    <div class="bg" style={`background-image:url(${greenwayBoardwalk.src})`}></div><div class="shade"></div>
     <div class="wrap">
       <div class="eyebrow">FAQs</div>
       <h1>Frequently asked questions.</h1>
@@ -172,6 +173,9 @@ const faqJsonLd = {
             </div>
           ))}
         </div>
+        {gi === 1 && (
+          <div class="figure-block rv" style="margin-top:32px"><img src={parkPath.src} alt="A quiet planted path winding between homes and greenery." loading="lazy" /><div class="fig-cap">Places designed for the everyday walk, not just the arrival. Concept rendering.</div></div>
+        )}
       </div>
     </section>
   ))}

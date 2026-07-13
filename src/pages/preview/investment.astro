@@ -1,6 +1,7 @@
 ---
 import PreviewLayout from '../../layouts/PreviewLayout.astro';
-import heroValley from '../../assets/brand/hero-valley.jpg';
+import heroValley from '../../assets/brand/tiltshift-tnd.jpg';
+import interiorWorkspace from '../../assets/watercolors/interior-workspace.jpg';
 import urbanConnectivity from '../../assets/brand/urban-connectivity.jpg';
 
 const outcomes = [
@@ -20,7 +21,7 @@ const model = [
     <div class="bg" style={`background-image:url(${heroValley.src})`}></div><div class="shade"></div>
     <div class="wrap">
       <div class="eyebrow">Investment</div>
-      <h1>Building a platform for the<br>next generation of real assets.</h1>
+      <h1>Building a platform for<br>the next generation of real assets.</h1>
       <p class="sub">Now City Inc. develops, operates, and stewards regenerative neighborhoods on the West Coast. We are building the team, methodology, and capital model to do this at scale.</p>
       <div class="meta">For institutional, family-office &amp; platform investors &middot; Patient capital &middot; First homes 2029</div>
     </div>
@@ -32,11 +33,14 @@ const model = [
       <div class="sec-head rv">
         <div class="eyebrow">Why real assets</div>
         <h2>The right kind of asset for the next decade.</h2>
-        <p class="lead">Capital is shifting toward real assets. Physical assets that hold intrinsic value, generate inflation-hedged income, and align with long-term institutional mandates. Real estate, infrastructure, and natural capital sit at the center of that shift.</p>
+        <p class="lead">Capital is shifting toward real assets, the physical things that hold intrinsic value, produce income that holds up against inflation, and match long-term institutional mandates. Real estate, infrastructure, and natural capital sit at the center of that shift.</p>
       </div>
-      <div class="grid g2 rv" style="align-items:start">
-        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Now City operates at the intersection of all three. A regenerative neighborhood combines housing and mixed-use real estate, district-scale infrastructure, and integrated natural systems. Bundled at the neighborhood scale, those categories produce a diversified, durable real-asset profile.</p>
-        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Institutional capital increasingly seeks exactly this combination: stable, inflation-aware, climate-aligned, and impact-credible.</p>
+      <div class="grid g2 rv" style="align-items:center;gap:40px">
+        <div>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Now City operates at the intersection of all three. A regenerative neighborhood combines housing and mixed-use real estate, district-scale infrastructure, and integrated natural systems. At the neighborhood scale, those pieces add up to a diversified, durable base of real assets.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">It is the combination institutional capital increasingly looks for: stable, resilient to inflation, aligned with the climate transition, and credible on impact.</p>
+        </div>
+        <div class="figure-block" style="margin-top:0"><img src={interiorWorkspace.src} alt="A light-filled shared workspace with timber, greenery, and daylight." loading="lazy" /><div class="fig-cap">Ground-floor workspace in a Now City neighborhood. Concept rendering.</div></div>
       </div>
     </div>
   </section>
@@ -85,8 +89,8 @@ const model = [
       <div class="grid g2 rv" style="align-items:center;gap:44px">
         <div>
           <div class="eyebrow">Pipeline</div>
-          <h2 style="font-size:clamp(28px,3.6vw,40px);margin:14px 0 18px;color:var(--ink-deep)">California and the Pacific Northwest.</h2>
-          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">We focus on the West Coast, where land use frameworks, climate adaptation needs, and policy momentum align with our model.</p>
+          <h2 style="font-size:clamp(28px,3.6vw,40px);margin:14px 0 18px;color:var(--ink-deep)">The West Coast, Pacific Northwest to Baja California.</h2>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">We focus on the West Coast, from the Pacific Northwest to the tip of Baja California, where land use frameworks, climate adaptation needs, and policy momentum align with our model.</p>
           <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">Sites are at varying stages of pre-development, entitlement, and capital structuring. We do not disclose specific sites publicly. Active partners receive site-level information under appropriate confidentiality.</p>
           <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">First homes are scheduled for 2029. Multiple sites are positioned to follow.</p>
         </div>

@@ -1,11 +1,12 @@
 ---
 import PreviewLayout from '../../layouts/PreviewLayout.astro';
-import heroImg from '../../assets/brand/tiltshift-tnd.jpg';
+import heroImg from '../../assets/watercolors/village-green.jpg';
+import streetBrick from '../../assets/watercolors/street-brick.jpg';
 
 const paths = [
-  { label:'Landowners and operators', body:'If you steward a site large enough to become a district, our services arm runs structured pre-development engagements.', href:'/preview/services', cta:'Explore services' },
-  { label:'Capital partners', body:'For platform-level investment, project-level co-investment, or strategic partnership conversations, see our Investment overview.', href:'/preview/investment', cta:'Investment' },
-  { label:'Cities and civic partners', body:'Public-private partnerships, planning collaborations, and mission-aligned early-stage work run directly through our services arm.', href:'/preview/services', cta:'Explore services' },
+  { label:'Landowners and operators', body:'If you steward a site that could grow into a district, we would love to hear about it. Our services team walks it with you, one honest step at a time.', href:'/preview/services', cta:'Explore services' },
+  { label:'Capital partners', body:'Whether you are drawn to backing the platform, co-investing in a project, or simply starting a partnership conversation, our Investment overview is a good place to begin.', href:'/preview/investment', cta:'Investment' },
+  { label:'Cities and civic partners', body:'Public-private partnerships, planning collaborations, and early work we believe in all begin with a conversation through our services team.', href:'/preview/services', cta:'Explore services' },
   { label:'Future residents and the curious', body:'Tell us where you would want a Now City neighborhood. We pay attention.', href:'https://nowcity.life', cta:'nowcity.life' },
 ];
 ---
@@ -15,7 +16,7 @@ const paths = [
     <div class="wrap">
       <div class="eyebrow">Contact</div>
       <h1>Get in touch.</h1>
-      <p class="sub">We read every message. The right path depends on what brings you here.</p>
+      <p class="sub">We read every message, and we would genuinely love to hear from you, whether you are an investor, a landowner, a city, a future resident, or simply curious about what we are building.</p>
       <div class="meta">General inquiries &middot; Services &middot; Partnerships &middot; Investment</div>
     </div>
   </header>
@@ -26,7 +27,7 @@ const paths = [
       <div class="sec-head rv">
         <div class="eyebrow">Where to start</div>
         <h2>Four doors in.</h2>
-        <p class="lead">The right path depends on what brings you here. Each one starts a conversation with the right part of the company.</p>
+        <p class="lead">Wherever you are coming from, an investor, a landowner, a city, a future resident, or simply curious, there is a way in. Each door opens a real conversation with the people who can help.</p>
       </div>
       <div class="grid g2 rv">
         {paths.map((p) => (
@@ -63,6 +64,7 @@ const paths = [
           </p>
         </div>
       </div>
+      <div class="figure-block rv" style="margin-top:36px"><img src={streetBrick.src} alt="A warm brick main street in soft daylight, with storefronts, trees, and people walking." loading="lazy" /><div class="fig-cap">The kind of street we hope you will one day walk with us. Concept rendering.</div></div>
     </div>
   </section>
 </PreviewLayout>

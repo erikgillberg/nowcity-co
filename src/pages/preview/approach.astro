@@ -1,7 +1,8 @@
 ---
 import PreviewLayout from '../../layouts/PreviewLayout.astro';
-import heroDistrict from '../../assets/brand/hero-district.jpg';
 import buildingBlock from '../../assets/brand/building-block.jpg';
+import interiorAtrium from '../../assets/watercolors/interior-atrium.jpg';
+import commonsDay from '../../assets/watercolors/commons-day.jpg';
 
 const layers = [
   { n:'01', t:'Industrialized construction', h:'Build better, faster, with less waste.', d:'Off-site fabrication, kit-of-parts assembly, mass timber and other healthy materials. We coordinate factory and site from day one to compress schedules, reduce embodied carbon, and improve build quality. The neighborhood becomes a system that can be assembled, not a project to be improvised on a job site.' },
@@ -38,7 +39,7 @@ const outcomes = [
 ---
 <PreviewLayout title="Approach" active="approach" description="How Now City Inc. builds regenerative urbanism. The four-layer stack, the four-phase process, and ten guiding principles for designing places that improve over time.">
   <header class="hero short" id="top">
-    <div class="bg" style={`background-image:url(${heroDistrict.src})`}></div><div class="shade"></div>
+    <div class="bg" style={`background-image:url(${buildingBlock.src})`}></div><div class="shade"></div>
     <div class="wrap">
       <div class="eyebrow">Approach</div>
       <h1>An urbanism for the way<br>people actually live.</h1>
@@ -151,6 +152,13 @@ const outcomes = [
     </div>
   </section>
 
+  <!-- FEELS LIKE HOME -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="figure-block rv" style="margin-top:0;max-width:820px;margin-left:auto;margin-right:auto"><img src={interiorAtrium.src} alt="A light-filled interior atrium with warm timber, plants, and people gathered in soft daylight." loading="lazy" /><div class="fig-cap">All of this integration is in service of one thing: places that feel like home, where everyday life is easy and people want to stay. Concept rendering.</div></div>
+    </div>
+  </section>
+
   <!-- TEN GUIDING PRINCIPLES -->
   <section class="dark">
     <div class="wrap">
@@ -171,6 +179,13 @@ const outcomes = [
     </div>
   </section>
 
+  <!-- SHARED SPACE -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="figure-block rv" style="margin-top:0;max-width:820px;margin-left:auto;margin-right:auto"><img src={commonsDay.src} alt="A shared neighborhood commons in daylight, with people gathering, seating, trees, and open ground-floor space." loading="lazy" /><div class="fig-cap">Shared space is where a neighborhood becomes a community: a commons that belongs to everyone who lives here. Concept rendering.</div></div>
+    </div>
+  </section>
+
   <!-- OUTCOMES -->
   <section>
     <div class="wrap">
@@ -179,7 +194,7 @@ const outcomes = [
           <div class="eyebrow">Why it matters</div>
           <h2 style="font-size:clamp(28px,3.6vw,40px);margin:14px 0 18px;color:var(--ink-deep)">Outcomes that compound.</h2>
           <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Walkable, mixed-use, regenerative neighborhoods perform better on the metrics that matter to cities, residents, and capital. The body of urbanism research is clear, and decades of comparable projects bear it out.</p>
-          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">Our model is engineered to perform across these dimensions from day one, then improve through stewardship.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">Our model is built to do well across these dimensions from day one, then keep getting better through stewardship.</p>
         </div>
         <div class="grid g2" style="gap:18px">
           {outcomes.map((o) => (
@@ -200,7 +215,7 @@ const outcomes = [
       <div class="grid g3 rv">
         <div class="card on-alt" style="border-top:3px solid var(--terra)">
           <h3>For landowners and operators</h3>
-          <p style="font-size:14.5px;line-height:1.65;color:#4a463f">Our services arm offers the methodology described above as a structured engagement.</p>
+          <p style="font-size:14.5px;line-height:1.65;color:#4a463f">Our services arm offers the approach described above as a hands-on engagement, start to finish.</p>
           <p style="margin-top:14px"><a href="https://nowcitylabs.com" style="color:var(--terra);font-weight:600;font-size:13.5px">nowcitylabs.com &rarr;</a></p>
         </div>
         <div class="card on-alt" style="border-top:3px solid var(--terra)">

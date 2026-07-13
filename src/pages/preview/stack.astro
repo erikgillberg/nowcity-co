@@ -1,7 +1,8 @@
 ---
 import PreviewLayout from '../../layouts/PreviewLayout.astro';
-import heroConnectivity from '../../assets/brand/urban-connectivity.jpg';
-import buildingBlock from '../../assets/brand/building-block.jpg';
+import heroAerial from '../../assets/watercolors/aerial-greenroofs.jpg';
+import greenBridge from '../../assets/watercolors/green-bridge.jpg';
+import forestCanopy from '../../assets/watercolors/forest-canopy.jpg';
 
 const capabilities = [
   {
@@ -27,7 +28,7 @@ const capabilities = [
       'The Now City Stack is a repeatable four-phase engagement framework that aligns land, systems, and program before the pro-forma locks in.',
     lines: [
       'Carrying Capacity & Opportunity Discovery',
-      'Systems & Program Synergy Design',
+      'Systems & Program Coordination',
       'Pro-Forma & Capital Structuring',
       'Development Execution & Stewardship',
     ],
@@ -71,7 +72,7 @@ const techPrinciples = [
 ---
 <PreviewLayout title="The Stack" active="services">
   <header class="hero short" id="top">
-    <div class="bg" style={`background-image:url(${heroConnectivity.src})`}></div><div class="shade"></div>
+    <div class="bg" style={`background-image:url(${heroAerial.src})`}></div><div class="shade"></div>
     <div class="wrap">
       <div class="eyebrow">The Now City Stack</div>
       <h1>Four layers.<br>One coordinated system.</h1>
@@ -101,6 +102,10 @@ const techPrinciples = [
             </ul>
           </div>
         ))}
+      </div>
+      <div class="figure-block rv" style="margin-top:0">
+        <img src={forestCanopy.src} alt="A forest canopy woven into the fabric of a walkable district." loading="lazy" />
+        <div class="fig-cap">Ecology and natural systems carried through the plan, so a district gives more back to the land than it takes. Concept rendering.</div>
       </div>
     </div>
   </section>
@@ -137,9 +142,9 @@ const techPrinciples = [
           <p style="font-size:16.5px;line-height:1.75;color:#4a463f">The Stack only matters when it is grounded in a real project. Let us talk about yours.</p>
           <p style="margin-top:18px"><a href="/preview/contact" style="color:var(--terra);font-weight:600;font-size:13.5px">Schedule a gateway call &rarr;</a></p>
         </div>
-        <div class="figure-block" style="margin-top:0">
-          <img src={buildingBlock.src} alt="A kit-of-parts building block, the unit of assembly behind a Now City district." loading="lazy" />
-          <div class="fig-cap">The Stack, from intelligence through capital, applied block by block.</div>
+        <div class="figure-block rv" style="margin-top:0">
+          <img src={greenBridge.src} alt="A planted pedestrian bridge threading green infrastructure through a district." loading="lazy" />
+          <div class="fig-cap">Green infrastructure, energy, water, mobility, and ecology, sized to serve the whole district. Concept rendering.</div>
         </div>
       </div>
     </div>
