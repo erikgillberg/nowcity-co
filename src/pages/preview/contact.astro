@@ -1,0 +1,68 @@
+---
+import PreviewLayout from '../../layouts/PreviewLayout.astro';
+import heroImg from '../../assets/brand/tiltshift-tnd.jpg';
+
+const paths = [
+  { label:'Landowners and operators', body:'If you steward a site large enough to become a district, our services arm runs structured pre-development engagements.', href:'/preview/services', cta:'Explore services' },
+  { label:'Capital partners', body:'For platform-level investment, project-level co-investment, or strategic partnership conversations, see our Investment overview.', href:'/preview/investment', cta:'Investment' },
+  { label:'Cities and civic partners', body:'Public-private partnerships, planning collaborations, and mission-aligned early-stage work run directly through our services arm.', href:'/preview/services', cta:'Explore services' },
+  { label:'Future residents and the curious', body:'Tell us where you would want a Now City neighborhood. We pay attention.', href:'https://nowcity.life', cta:'nowcity.life' },
+];
+---
+<PreviewLayout title="Contact" active="contact">
+  <header class="hero short" id="top">
+    <div class="bg" style={`background-image:url(${heroImg.src})`}></div><div class="shade"></div>
+    <div class="wrap">
+      <div class="eyebrow">Contact</div>
+      <h1>Get in touch.</h1>
+      <p class="sub">We read every message. The right path depends on what brings you here.</p>
+      <div class="meta">General inquiries &middot; Services &middot; Partnerships &middot; Investment</div>
+    </div>
+  </header>
+
+  <!-- PATHS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Where to start</div>
+        <h2>Four doors in.</h2>
+        <p class="lead">The right path depends on what brings you here. Each one starts a conversation with the right part of the company.</p>
+      </div>
+      <div class="grid g2 rv">
+        {paths.map((p) => (
+          <div class="card">
+            <h4>Path</h4>
+            <h3>{p.label}</h3>
+            <p style="font-size:14.5px;line-height:1.65;color:#4a463f">{p.body}</p>
+            <p style="margin-top:14px"><a href={p.href} style="color:var(--terra);font-weight:600;font-size:13.5px">{p.cta} &rarr;</a></p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECT CONTACT -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">For everything else</div>
+        <h2>Reach us directly.</h2>
+        <p class="lead">Press, recruiting, advisor introductions, or anything we did not anticipate above:</p>
+      </div>
+      <div class="grid g2 rv">
+        <div class="card on-alt">
+          <h4>Email</h4>
+          <h3><a href="mailto:team@nowcitylabs.com" style="color:var(--terra)">team@nowcitylabs.com</a></h3>
+        </div>
+        <div class="card on-alt">
+          <h4>Mailing address</h4>
+          <p style="font-size:16.5px;line-height:1.7;color:#4a463f">
+            Now City Inc.<br />
+            101 Cooper Street<br />
+            Santa Cruz, CA 95060
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PreviewLayout>

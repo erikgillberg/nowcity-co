@@ -1,0 +1,156 @@
+---
+import PreviewLayout from '../../layouts/PreviewLayout.astro';
+import heroImg from '../../assets/brand/building-block.jpg';
+import tiltShift from '../../assets/brand/tiltshift-tnd.jpg';
+
+const phases = [
+  {
+    number: '01',
+    title: 'Carrying Capacity & Opportunity Discovery',
+    output: 'Carrying Capacity Map & Opportunity Framework',
+    value: 'Reduces speculative risk. Clarifies realistic and compelling development paths before significant capital is at risk.',
+    fee: 'Fixed discovery fee',
+    blurb:
+      'We assess land, water, energy, ecology, utilities, mobility, and cultural context to understand what the site actually supports, its real potential and real limitations.',
+  },
+  {
+    number: '02',
+    title: 'Systems & Program Synergy Design',
+    output: 'Systems-aligned development program: buildings, public realm, amenities, flows',
+    value: 'Lower capital and operating costs, stronger identity, and smoother entitlements because the physical and operational systems reinforce each other from day one.',
+    fee: 'Fixed plus milestone fees',
+    blurb:
+      'We design the physical and operational systems so uses reinforce one another, reducing waste and unlocking shared value across the program.',
+  },
+  {
+    number: '03',
+    title: 'Pro-Forma & Capital Structuring',
+    output: 'Multi-scenario pro-forma plus capital-stack strategy',
+    value: 'Financial feasibility that matches real-world conditions and long-horizon returns, not pro-formas built to justify an already-chosen plan.',
+    fee: 'Fixed plus success fee',
+    blurb:
+      'We model pro-formas based on the systems-aligned program, not the other way around. And we structure capital to match the actual shape of the project.',
+  },
+  {
+    number: '04',
+    title: 'Development Execution & Stewardship',
+    output: 'Entitlements, contracting, construction oversight, leasing, activation, stewardship',
+    value: 'Faster delivery, fewer surprises, protected identity, and durable long-term asset value.',
+    fee: 'Development management fee or GP participation',
+    blurb:
+      'We can serve as your development manager or co-developer, delivering the project and maintaining integrity over time.',
+  },
+];
+---
+<PreviewLayout title="Services" description="Strategic advisory and owner representation for large-scale sites. A four-phase engagement framework, from carrying-capacity discovery through stewardship." active="services">
+  <header class="hero short" id="top">
+    <div class="bg" style={`background-image:url(${heroImg.src})`}></div><div class="shade"></div>
+    <div class="wrap">
+      <div class="eyebrow">Services</div>
+      <h1>Strategic advisory<br>for large-scale sites.</h1>
+      <p class="sub">We guide landholders through visioning, feasibility, planning, capital structure, and delivery, creating value that lasts.</p>
+      <div class="meta">Strategic advisory &amp; owner representation &middot; Four-phase engagement &middot; Discovery through stewardship</div>
+    </div>
+  </header>
+
+  <!-- THE PROBLEM WE SOLVE -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">The problem we solve</div>
+        <h2>The traditional process is the risk.</h2>
+      </div>
+      <div class="grid g2 rv" style="align-items:start">
+        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Most development follows a familiar pattern: set a density or revenue target, draw a design to match, then spend years fighting entitlements, redesign, engineering rework, and community pushback. Distinctiveness gets value-engineered out.</p>
+        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">That is why so many projects overrun budgets, stall in entitlements, lose their identity in value engineering, and underperform in absorption and resale. The traditional process is itself the source of risk, cost, and delay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- A BETTER WAY -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">A better way</div>
+        <h2>Start with the land and the systems.</h2>
+      </div>
+      <div class="grid g2 rv">
+        <div class="card on-alt">
+          <h4>Traditional</h4>
+          <ul class="tick">
+            <li>Pro-forma determines the plan</li>
+            <li>Utilities and infrastructure sized independently</li>
+            <li>Community and agency engagement comes late</li>
+            <li>Identity is applied at the end</li>
+            <li>Project ends at construction</li>
+          </ul>
+        </div>
+        <div class="card on-alt" style="border-top:3px solid var(--terra)">
+          <h4>Now City</h4>
+          <ul class="tick">
+            <li>Land and systems determine the plan</li>
+            <li>Integrated system flows reduce cap-ex and op-ex</li>
+            <li>Alignment is built in early</li>
+            <li>Identity emerges through systems, materials, and landscape</li>
+            <li>We design for long-term performance and stewardship</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT FRAMEWORK -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Engagement framework</div>
+        <h2>Four phases. Clear fees. Earned together.</h2>
+        <p class="lead">Each phase has a defined output, measurable value, and a fee logic that aligns our incentive with yours. We only move to the next phase when the work we have already done warrants it.</p>
+      </div>
+      <div class="grid g2 rv">
+        {phases.map((p) => (
+          <div class="card">
+            <div class="serif" style="font-size:26px;color:var(--terra);line-height:1">{p.number}</div>
+            <h3 style="margin-top:10px">{p.title}</h3>
+            <p style="font-size:14.5px;line-height:1.65;color:#4a463f">{p.blurb}</p>
+            <div style="margin-top:16px"><h4>Output</h4><p style="font-size:14px;line-height:1.6;color:#4a463f">{p.output}</p></div>
+            <div style="margin-top:12px"><h4>Value</h4><p style="font-size:14px;line-height:1.6;color:#4a463f">{p.value}</p></div>
+            <div style="margin-top:12px"><h4>Fee</h4><p style="font-size:14px;line-height:1.6;color:#4a463f">{p.fee}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="grid g2 rv" style="align-items:center;gap:44px">
+        <div>
+          <div class="eyebrow">Who we serve</div>
+          <h2 style="font-size:clamp(28px,3.6vw,40px);margin:14px 0 18px;color:var(--ink-deep)">Landholders with sites large enough to become neighborhoods.</h2>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Family holdings, institutional campuses, waterfront reuse, edge-urban sites, multi-parcel assemblages. You have the land. We provide the pathway.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">If your goal is a single building or a simple subdivision, you might want a different partner. If your goal is a place with meaning, resilience, and long-term value, we should talk.</p>
+        </div>
+        <div class="figure-block" style="margin-top:0">
+          <img src={tiltShift.src} alt="A tilt-shift view of a walkable mixed-use district with tree-lined streets and civic gathering space." loading="lazy" />
+          <div class="fig-cap">Concept rendering. Large-scale site reimagined as a walkable, systems-led district.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / GATEWAY CALL -->
+  <section class="dark">
+    <div class="wrap rv">
+      <div class="eyebrow">Ready to explore your site's potential?</div>
+      <h2 class="serif">Schedule a 30-minute gateway call.</h2>
+      <p class="muted" style="max-width:640px">In half an hour we will review your site context, share our place-scale opportunity framework, and identify whether your project qualifies for the next phase.</p>
+      <p class="muted" style="max-width:640px;margin-top:14px">We take on a select number of engagements each quarter to ensure quality and alignment.</p>
+      <div class="contacts">
+        <a href="/preview/contact">Get in touch &rarr;</a>
+        <a href="/preview/approach">See how we work &rarr;</a>
+      </div>
+    </div>
+  </section>
+</PreviewLayout>

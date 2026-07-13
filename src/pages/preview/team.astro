@@ -1,0 +1,120 @@
+---
+import PreviewLayout from '../../layouts/PreviewLayout.astro';
+import heroVision from '../../assets/brand/hero-vision.jpg';
+import erik from '../../assets/team/erik.jpg';
+import ritchie from '../../assets/team/ritchie.jpg';
+import shuman from '../../assets/team/shuman.jpg';
+import payton from '../../assets/team/payton.jpg';
+
+const values = [
+  { number: '01', name: 'Cultivate Curiosity', body: "We ask big questions. Where are the healthiest, happiest people and places in the world, and what can we learn from them? How do we build and live better, everywhere? How do we move faster on climate, equity, and resilience? We chase the answers." },
+  { number: '02', name: 'Catalyze Creativity', body: 'Creativity is imagination in action. It is how we learn, grow, and solve problems. We need it running at full strength to design better places and figure out what nobody else has figured out yet.' },
+  { number: '03', name: 'Be Courageous', body: 'Walk a mile in someone else’s shoes. Face the hard internal and external challenges. Choose to act for the good of the whole. Build and live in new ways that are better for people and planet.' },
+  { number: '04', name: 'Develop Diversity', body: 'Because it is the right thing, and because it works. Diverse communities of people, species, and ideas are healthier, more resilient, more alive. We design for it, hire for it, build for it.' },
+  { number: '05', name: 'Build Trust', body: 'Trust is how a team, a neighborhood, and a partnership stay coordinated. Transparency builds it, even when transparency feels uncomfortable. We choose it anyway.' },
+  { number: '06', name: 'Begin Regeneration', body: 'Sustainable holds the line. Regenerative makes things better than we found them. We are not interested in defending the status quo. We are interested in repair, renewal, and growth.' },
+];
+---
+<PreviewLayout title="Team" active="team">
+  <header class="hero short" id="top">
+    <div class="bg" style={`background-image:url(${heroVision.src})`}></div><div class="shade"></div>
+    <div class="wrap">
+      <div class="eyebrow">Team</div>
+      <h1>Built around the work<br>in front of us.</h1>
+      <p class="sub">Founders and senior advisors. We hire carefully and bring partners in for the right moment in the right project.</p>
+      <div class="meta">Founders &middot; Head of legal &middot; Senior advisors</div>
+    </div>
+  </header>
+
+  <!-- LEADERSHIP -->
+  <section class="dark">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Leadership</div>
+        <h2>The team.</h2>
+      </div>
+      <div class="team rv">
+        <div class="member">
+          <img src={erik.src} alt="Portrait of Erik Gillberg, co-founder and CEO of Now City Inc." />
+          <h3>Erik Gillberg</h3>
+          <div class="role">Co-founder &amp; CEO</div>
+          <p>Erik is a systems thinker focused on aligning capital, design, and operations into development that is financially viable, operationally sound, and grounded in care. He brings 30 years of property operations and 20 years in technology, business development, and startup leadership.</p>
+          <p style="margin-top:12px"><a href="https://www.linkedin.com/in/erikgillberg/">LinkedIn &rarr;</a></p>
+        </div>
+        <div class="member">
+          <img src={ritchie.src} alt="Portrait of Ritchie Ju, co-founder and COO of Now City Inc." />
+          <h3>Ritchie Ju</h3>
+          <div class="role">Co-founder &amp; COO</div>
+          <p>Ritchie leads design, development, and operations. B.Architecture from Carnegie Mellon, MS in Architecture and Urban Design from Columbia, MBA candidate at Johns Hopkins. Previously a mobility planner at Lyft in New York, where he led bike-share expansion.</p>
+          <p style="margin-top:12px"><a href="https://www.linkedin.com/in/ritchie-ju-616059124/">LinkedIn &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVISORS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Advisors</div>
+        <h2>Senior advisors.</h2>
+        <p class="lead">We work with senior advisors whose expertise is directly load-bearing for the work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="team rv">
+        <div class="member">
+          <img src={shuman.src} alt="Portrait of Michael H. Shuman, advisor on local economies." />
+          <h3>Michael H. Shuman</h3>
+          <div class="role">Local economies</div>
+          <p>Michael is an economist, attorney, and one of the architects of the 2012 JOBS Act. Adjunct Professor at Bard Business School. Author of Put Your Money Where Your Life Is, The Local Economy Solution, and others. He advises Now City on community-rooted ownership, local capital formation, and finance models that keep wealth in place.</p>
+          <p style="margin-top:12px"><a href="https://www.linkedin.com/in/mishuman/">LinkedIn &rarr;</a></p>
+        </div>
+        <div class="member">
+          <img src={payton.src} alt="Portrait of Neal Payton, advisor on urban planning and design." />
+          <h3>Neal Payton</h3>
+          <div class="role">Urban planning &amp; design</div>
+          <p>Neal, FAIA, FCNU, directs the western U.S. urban and architectural design practice at Torti Gallas. His work focuses on master plans, form-based codes, and the public realm, especially the revitalization of declining urban centers, brownfields, and aging suburbs. He advises Now City on urbanism, master planning, and entitlement strategy.</p>
+          <p style="margin-top:12px"><a href="https://www.linkedin.com/in/neal-i-payton-faia-fcnu-675a934/">LinkedIn &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">How we show up</div>
+        <h2>Six values.</h2>
+        <p class="lead">Our values drive our design process and our decisions. They help us find the people who want to build this with us.</p>
+      </div>
+      <blockquote class="note rv" style="font-style:italic;font-size:18px">Beliefs divide us. Values unite us.<br><span style="font-style:normal;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--terra)">Jeff Rasley</span></blockquote>
+      <div class="grid g2 rv">
+        {values.map((v) => (
+          <div class="card on-alt"><div class="serif" style="font-size:22px;color:var(--terra);line-height:1">{v.number}</div><h3 style="margin-top:10px">{v.name}</h3><p style="font-size:14.5px;line-height:1.65;color:#4a463f">{v.body}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN US -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Join us</div>
+        <h2>Help us build it.</h2>
+      </div>
+      <div class="grid g2 rv" style="align-items:start">
+        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">We are designers, developers, and operators who care deeply about people and ecosystems. We are building toward a future where humanity has figured out how to live well without breaking the home world. We could use your help.</p>
+        <div>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">We hire carefully across development, urban design, capital, operations, and engineering. Strong candidates with experience in walkable urbanism, district-scale infrastructure, public-private partnerships, or institutional capital are welcome to introduce themselves. Interns and project-based collaborators are welcome too.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">Drop us a line at <a href="mailto:team@nowcitylabs.com" style="color:var(--terra)">team@nowcitylabs.com</a> or via the <a href="/preview/contact" style="color:var(--terra)">Contact page</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PreviewLayout>

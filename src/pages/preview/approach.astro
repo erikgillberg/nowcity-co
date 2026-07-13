@@ -1,0 +1,219 @@
+---
+import PreviewLayout from '../../layouts/PreviewLayout.astro';
+import heroDistrict from '../../assets/brand/hero-district.jpg';
+import buildingBlock from '../../assets/brand/building-block.jpg';
+
+const layers = [
+  { n:'01', t:'Industrialized construction', h:'Build better, faster, with less waste.', d:'Off-site fabrication, kit-of-parts assembly, mass timber and other healthy materials. We coordinate factory and site from day one to compress schedules, reduce embodied carbon, and improve build quality. The neighborhood becomes a system that can be assembled, not a project to be improvised on a job site.' },
+  { n:'02', t:'Green infrastructure', h:'Energy, water, mobility, ecology.', d:'District-scale systems for power, heating and cooling, water and stormwater, mobility, and natural infrastructure. Sized at the right scale, these systems lower capex per unit, reduce opex, and produce resilience as a byproduct. Landscape is treated as performing infrastructure, not decoration.' },
+  { n:'03', t:'Regenerative placemaking', h:'Streets, public realm, and the daily routine.', d:'Walkable streets, civic gathering, ground-floor activation, local economic development, and community programming. Designed to make daily life delightful and to support small, place-rooted business. Places people want to be, not just places they have to live.' },
+  { n:'04', t:'Innovative finance', h:'Capital aligned with stewardship.', d:'Capital structures designed for long-term ownership and shared value, not short-term exit. Mixed-income housing financed on a level that pencils. Public-private partnerships structured so cities, residents, operators, and investors share risk and upside in patient proportion.' },
+];
+const phases = [
+  { n:'Phase 01', t:'Carrying capacity and opportunity discovery.', d:'Site analysis. Hydrology, ecology, climate, soils, mobility, fabric, and policy. What the land can carry and what it wants to become.' },
+  { n:'Phase 02', t:'Systems and program synergy design.', d:'Coordinated design of energy, water, mobility, ecology, and program. The systems and the use mix shape each other, simultaneously.' },
+  { n:'Phase 03', t:'Pro forma and capital structuring.', d:'The pro forma is built around the system, not before it. Capital is sourced and structured to match the long-term stewardship model.' },
+  { n:'Phase 04', t:'Execution and stewardship.', d:'Construction, lease-up, and operations. Continuous improvement informed by data and resident feedback. Stewardship is the longest phase, by design.' },
+];
+const principles = [
+  { n:'01', t:'Place-Based', d:'Every site is a one-of-one. Rigorous site analysis on hydrology, ecology, climate, microclimate, soil, mobility, and existing community fabric shapes the plan. The site speaks first.' },
+  { n:'02', t:'Compact', d:'Walkable density unlocks the rest. We design for the 15-minute neighborhood, with daily needs reachable on foot. Compactness is what makes ecology, mobility, and economy work together.' },
+  { n:'03', t:'People-Centric', d:'Streets designed for people first, vehicles second. Active mobility, traffic-calmed corridors, and a public realm structured around the pedestrian experience.' },
+  { n:'04', t:'Healthy Environment', d:'Daily exposure to nature, clean air, natural light, and quiet. Biophilic streetscapes, abundant green space, and food access designed in. Health is an urbanism output, not an amenity.' },
+  { n:'05', t:'Decentralized Systems', d:'Energy, water, food, and mobility produced and managed at the district scale. Lower lifecycle cost, lower carbon, and meaningful resilience when central systems falter.' },
+  { n:'06', t:'Circular Economy', d:'Reduce, reuse, regenerate. Healthy materials specified for end-of-life recovery. Waste, water, and nutrient flows designed as loops, not streams to be dumped.' },
+  { n:'07', t:'Ecologically Rooted', d:'Landscape as living infrastructure. Stormwater management, biodiversity, urban canopy, and habitat restoration designed alongside buildings, never as an afterthought.' },
+  { n:'08', t:'Adaptive by Design', d:'Buildings and public space that flex with changing needs over decades. Modular structure, reconfigurable layouts, and flexible programming. Built to evolve, not to depreciate.' },
+  { n:'09', t:'Successful Feedback Loops', d:'Community input at every stage, before and after construction. Operations data once stabilized. Continuous improvement, not one-time delivery.' },
+  { n:'10', t:'Innovative Finance', d:'Capital structured for long-term stewardship and mixed-income housing. Aligned ownership across residents, operators, and investors. Finance as a design discipline.' },
+];
+const outcomes = [
+  { t:'Mobility', d:'Lower vehicle miles traveled, shorter commutes, more trips by foot and bike.' },
+  { t:'Carbon', d:'Lower embodied and operational carbon. District energy and biophilic infrastructure compound the savings.' },
+  { t:'Health', d:'Higher daily activity, lower air pollution exposure, better mental health from green space and social connection.' },
+  { t:'Economy', d:'Stronger small-business survival rates, deeper local spending, more diversified tax base for cities.' },
+  { t:'Resilience', d:'Decentralized infrastructure performs in emergencies. Lower insurance risk profile over time.' },
+  { t:'Property value', d:'Walkable, well-programmed urbanism trades at a durable premium. The premium tends to grow with neighborhood maturity.' },
+];
+---
+<PreviewLayout title="Approach" active="approach" description="How Now City Inc. builds regenerative urbanism. The four-layer stack, the four-phase process, and ten guiding principles for designing places that improve over time.">
+  <header class="hero short" id="top">
+    <div class="bg" style={`background-image:url(${heroDistrict.src})`}></div><div class="shade"></div>
+    <div class="wrap">
+      <div class="eyebrow">Approach</div>
+      <h1>An urbanism for the way<br>people actually live.</h1>
+      <p class="sub">We design and operate neighborhoods as integrated systems. Walkable, regenerative, and built to improve with time, not depreciate against it.</p>
+      <div class="meta">The Stack &middot; The Process &middot; Ten guiding principles</div>
+    </div>
+  </header>
+
+  <!-- WHY URBANISM -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">A discipline of integration</div>
+        <h2>Urbanism, not just development.</h2>
+      </div>
+      <div class="grid g2 rv" style="align-items:start">
+        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Most real estate work treats a project as a set of parallel concerns. Buildings on one track, infrastructure on another, public realm on a third, finance on a fourth. Each gets optimized in isolation, sometimes in tension with the others.</p>
+        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Urbanism is the discipline of integrating those concerns into a single coherent place. Streets, blocks, buildings, landscape, mobility, energy, water, governance, and culture, all designed together so the whole performs better than the sum of its parts.</p>
+      </div>
+      <p class="bigquote rv">Our approach is grounded in the urbanist tradition (walkability, human scale, mixed use, public space) and extended with systems thinking, regenerative design, and integrated capital. The goal is not just to build well. The goal is to build places that keep getting better.</p>
+    </div>
+  </section>
+
+  <!-- LAND AND SYSTEMS -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">First principle</div>
+        <h2>The land and the systems determine the plan.</h2>
+        <p class="lead">Most development inverts this. A pro forma sets a unit count or a square-footage target, designers reverse-engineer a building program to fit, and engineering follows once the shape is locked.</p>
+      </div>
+      <div class="grid g2 rv" style="align-items:start">
+        <div class="card on-alt">
+          <p style="font-size:15px;line-height:1.7;color:#4a463f">We start the other way. Hydrology, ecology, climate, microclimate, soil, mobility patterns, and existing community fabric tell us what the site can carry and what it wants to become. Systems analysis tells us how energy, water, materials, and movement should flow.</p>
+          <p style="font-size:15px;line-height:1.7;color:#4a463f;margin-top:14px">From those findings, the plan emerges. The pro forma is built once the systems are designed, not before.</p>
+        </div>
+        <div class="card on-alt">
+          <p style="font-size:15px;line-height:1.7;color:#4a463f">This sequence costs more in pre-development time. It pays for itself many times over in entitlement speed, engineering cost, infrastructure efficiency, community alignment, and long-term operating performance.</p>
+          <p style="font-size:15px;line-height:1.7;color:#4a463f;margin-top:14px">It is also why we exist. Most development teams cannot afford to do this rigorously. We are organized around it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE STACK -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">The Stack</div>
+        <h2>Four layers, designed together.</h2>
+        <p class="lead">The Now City Stack is four delivery layers we coordinate as one system. Each is a discipline. Together they produce better neighborhoods at lower lifecycle cost.</p>
+      </div>
+      <div class="grid g2 rv">
+        {layers.map((l) => (
+          <div class="card">
+            <div class="serif" style="font-size:26px;color:var(--terra);line-height:1">{l.n}</div>
+            <h4 style="margin-top:12px">{l.t}</h4>
+            <h3 style="margin-top:6px">{l.h}</h3>
+            <p style="font-size:14.5px;line-height:1.65;color:#4a463f">{l.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOOD AS THE UNIT -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="grid g2 rv" style="align-items:center;gap:44px">
+        <div>
+          <div class="eyebrow">Neighborhood as the unit</div>
+          <h2 style="font-size:clamp(28px,3.6vw,40px);margin:14px 0 18px;color:var(--ink-deep)">One neighborhood is a system. A network of neighborhoods is a city.</h2>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">We design at the neighborhood scale (roughly 1,000 to 10,000 people) because it is the smallest unit at which walkability, community, ecology, and infrastructure can all work together. It is also the largest unit one team can hold coherently in mind.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">Done well, each neighborhood is a building block in a broader regional system. Connected, distributed, and resilient by design.</p>
+        </div>
+        <div class="figure-block" style="margin-top:0">
+          <img src={buildingBlock.src} alt="Conceptual diagram. On the left, a single neighborhood drawn as an integrated unit with infrastructure layers visible underneath. On the right, multiple neighborhoods networked together by green corridors and mobility links." loading="lazy" />
+          <div class="fig-cap">Conceptual diagram. The neighborhood as an integrated unit, networked into a regional system.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROCESS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">The Process</div>
+        <h2>From land to long-term stewardship.</h2>
+        <p class="lead">Our engagement framework runs in four phases. Each is a discrete body of work with its own deliverables. The sequence matters.</p>
+      </div>
+      <div class="flow rv">
+        <div class="step"><span class="n">01</span><span>Carrying capacity</span></div>
+        <div class="arrow">&rarr;</div>
+        <div class="step"><span class="n">02</span><span>Systems &amp; program</span></div>
+        <div class="arrow">&rarr;</div>
+        <div class="step"><span class="n">03</span><span>Pro forma &amp; capital</span></div>
+        <div class="arrow">&rarr;</div>
+        <div class="step"><span class="n">04</span><span>Execution &amp; stewardship</span></div>
+      </div>
+      <div class="grid g4 rv" style="margin-top:36px">
+        {phases.map((p) => (
+          <div class="card">
+            <h4>{p.n}</h4>
+            <h3 style="margin-top:6px;font-size:19px">{p.t}</h3>
+            <p style="font-size:14.5px;line-height:1.65;color:#4a463f">{p.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TEN GUIDING PRINCIPLES -->
+  <section class="dark">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Ten guiding principles</div>
+        <h2>The principles behind every project.</h2>
+        <p class="lead">Our design framework has ten principles that translate the stack into site-specific decisions. Each is a question we ask of every site, every block, every building.</p>
+      </div>
+      <div class="grid g3 rv">
+        {principles.map((p) => (
+          <div class="card">
+            <div class="serif" style="font-size:22px;color:var(--terra);line-height:1">{p.n}</div>
+            <h3 style="margin-top:10px">{p.t}</h3>
+            <p style="font-size:14.5px;line-height:1.65">{p.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section>
+    <div class="wrap">
+      <div class="grid g2 rv" style="align-items:start;gap:44px">
+        <div>
+          <div class="eyebrow">Why it matters</div>
+          <h2 style="font-size:clamp(28px,3.6vw,40px);margin:14px 0 18px;color:var(--ink-deep)">Outcomes that compound.</h2>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Walkable, mixed-use, regenerative neighborhoods perform better on the metrics that matter to cities, residents, and capital. The body of urbanism research is clear, and decades of comparable projects bear it out.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">Our model is engineered to perform across these dimensions from day one, then improve through stewardship.</p>
+        </div>
+        <div class="grid g2" style="gap:18px">
+          {outcomes.map((o) => (
+            <div class="card"><h4>{o.t}</h4><p style="font-size:14px;line-height:1.6;color:#4a463f">{o.d}</p></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOFT CTA -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Work with us</div>
+        <h2>If you steward a site, a city, or capital that wants to build this way, talk to us.</h2>
+      </div>
+      <div class="grid g3 rv">
+        <div class="card on-alt" style="border-top:3px solid var(--terra)">
+          <h3>For landowners and operators</h3>
+          <p style="font-size:14.5px;line-height:1.65;color:#4a463f">Our services arm offers the methodology described above as a structured engagement.</p>
+          <p style="margin-top:14px"><a href="https://nowcitylabs.com" style="color:var(--terra);font-weight:600;font-size:13.5px">nowcitylabs.com &rarr;</a></p>
+        </div>
+        <div class="card on-alt" style="border-top:3px solid var(--terra)">
+          <h3>Early-stage civic work</h3>
+          <p style="font-size:14.5px;line-height:1.65;color:#4a463f">Our services arm provides the capacity-building, feasibility, and partnership-structuring support that cities and landowners need before a deal exists, the early-stage work that municipalities often cannot resource alone.</p>
+          <p style="margin-top:14px"><a href="/preview/services" style="color:var(--terra);font-weight:600;font-size:13.5px">Explore services &rarr;</a></p>
+        </div>
+        <div class="card on-alt" style="border-top:3px solid var(--terra)">
+          <h3>For capital partners</h3>
+          <p style="font-size:14.5px;line-height:1.65;color:#4a463f">Patient mandates, aligned incentives, long-term stewardship. Investment overview and interest form.</p>
+          <p style="margin-top:14px"><a href="/preview/investment" style="color:var(--terra);font-weight:600;font-size:13.5px">Investment &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PreviewLayout>

@@ -1,0 +1,131 @@
+---
+import PreviewLayout from '../../layouts/PreviewLayout.astro';
+import heroVision from '../../assets/brand/hero-vision.jpg';
+import tiltShift from '../../assets/brand/tiltshift-tnd-1.jpg';
+
+const brands = [
+  { idx:'01', audience:'For residents', name:'Now City Neighborhoods', blurb:'The places we build, designed for the parts of life that happen every day. Future residents follow along here.', href:'https://nowcity.life', cta:'nowcity.life' },
+  { idx:'02', audience:'For landowners and operators', name:'Now City Labs', blurb:'Pre-development intelligence and integrated execution services for landowners, operators, and municipalities.', href:'/preview/services', cta:'Explore services' },
+  { idx:'03', audience:'For deal teams and capital partners', name:'NowCity.ai', blurb:'Collaborative underwriting software built by Now City: live models the whole team can drive together, with every number traced to its source.', href:'https://nowcity.ai', cta:'nowcity.ai' },
+];
+const layers = [
+  { n:'01', t:'Industrialized construction', d:'Off-site fabrication, kit-of-parts assembly, healthy materials. Better quality, less waste, faster delivery.' },
+  { n:'02', t:'Green infrastructure', d:'Energy, water, mobility, and ecology, sized at the district scale. Lower capex and opex; resilience as a byproduct.' },
+  { n:'03', t:'Regenerative placemaking', d:'Walkable streets, civic gathering, local economic development, community programming. Places people actually want to be.' },
+  { n:'04', t:'Innovative finance', d:'Capital structures designed for long-term stewardship, not short-term exit. Aligned ownership across residents, operators, and investors.' },
+];
+---
+<PreviewLayout title="Now City Inc." active="">
+  <header class="hero" id="top">
+    <div class="bg" style={`background-image:url(${heroVision.src})`}></div><div class="shade"></div>
+    <div class="wrap">
+      <div class="eyebrow">Now City Inc.</div>
+      <h1>We unlock the value<br>hidden in overlooked land.</h1>
+      <p class="sub">A regenerative developer and operator. Through adaptive reuse and ground-up construction, we turn underused sites into walkable, green, mixed-use districts across the West Coast.</p>
+      <div class="meta">Regenerative developer &amp; operator &middot; California &amp; the Pacific Northwest &middot; First homes 2029</div>
+    </div>
+  </header>
+
+  <!-- WHAT WE DO -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">What we do</div>
+        <h2>A different kind of real estate company.</h2>
+        <p class="lead">Most development optimizes for a single asset, a single capital structure, and a single transaction. We optimize for a place over decades.</p>
+      </div>
+      <div class="grid g2 rv" style="align-items:start">
+        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Now City Inc. is a vertically integrated developer and operator. We find the value hiding in underused land and buildings, then release it through adaptive reuse and ground-up construction, designed and built with a systems-led approach to urbanism. We steward the result long after construction. Our model treats a district as a coordinated system rather than a portfolio of buildings.</p>
+        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">The result: better outcomes for residents, lower lifecycle risk for capital, more resilient places for cities. We work where land use, climate, and policy momentum align, and we plan on a horizon measured in decades, not deals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Our mission</div>
+        <h2>Designed for everyday vitality.</h2>
+        <p class="lead">Now City's mission is to accelerate the transition to regenerative, resilient, and equitable communities and cities.</p>
+      </div>
+      <div class="grid g3 rv">
+        <div class="card"><h4>Regeneration</h4><p style="font-size:14.5px;line-height:1.65">Restore the natural systems that sustain daily life, clean air, water, soil, and food, improving personal health while rebuilding ecological function at the neighborhood and district scale.</p></div>
+        <div class="card"><h4>Resilience</h4><p style="font-size:14.5px;line-height:1.65">Homes, mobility, energy, food, and social systems are designed to perform under stress, climate and economic disruption, strengthening household security and community-wide stability.</p></div>
+        <div class="card"><h4>Equity</h4><p style="font-size:14.5px;line-height:1.65">Designing around the realities of caregiving, childhood, aging, mobility independence, and access to opportunity improves daily life while creating more stable, connected, and inclusive communities for all.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR BRANDS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Our brands</div>
+        <h2>Three doors. One company.</h2>
+        <p class="lead">Now City Inc. is the parent of three brands. Each serves a distinct audience in the same regenerative urbanism.</p>
+      </div>
+      <div class="grid g3 rv">
+        {brands.map((b) => (
+          <a href={b.href} class="card" style="text-decoration:none;display:block">
+            <div class="serif" style="font-size:22px;color:var(--terra)">{b.idx}</div>
+            <div class="eyebrow" style="margin:10px 0 6px">{b.audience}</div>
+            <h3>{b.name}</h3>
+            <p style="font-size:14.5px;line-height:1.65;color:#4a463f">{b.blurb}</p>
+            <div style="margin-top:14px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--terra)">{b.cta} &rarr;</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- THE STACK -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">How we build</div>
+        <h2>Four layers. One integrated stack.</h2>
+        <p class="lead">Most development sequences these as separate concerns. We treat them as one system, designed together, financed together, built together, operated together.</p>
+      </div>
+      <div class="grid g2 rv">
+        {layers.map((l) => (
+          <div class="card on-alt"><div class="serif" style="font-size:26px;color:var(--terra);line-height:1">{l.n}</div><h3 style="margin-top:10px">{l.t}</h3><p style="font-size:14.5px;line-height:1.65;color:#4a463f">{l.d}</p></div>
+        ))}
+      </div>
+      <div class="note rv">These four layers are the operating system behind every Now City district. See <a href="/preview/stack" style="color:var(--terra)">the full stack</a> for how they are designed, financed, and delivered together.</div>
+    </div>
+  </section>
+
+  <!-- WHERE WE ARE -->
+  <section>
+    <div class="wrap">
+      <div class="grid g2 rv" style="align-items:center;gap:44px">
+        <div>
+          <div class="eyebrow">Where we are</div>
+          <h2 style="font-size:clamp(28px,3.6vw,40px);margin:14px 0 18px;color:var(--ink-deep)">Building on the West Coast.</h2>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">We focus on California and the Pacific Northwest, where land use, climate, and policy momentum align. Our pipeline is in active development, and first homes are scheduled for 2029.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">Now City Inc. is a young company with a long time horizon. We are looking for the right partners, landowners, civic, and capital, to grow with.</p>
+        </div>
+        <div class="figure-block" style="margin-top:0">
+          <img src={tiltShift.src} alt="A tilt-shift view down a tree-lined main street with residential balconies, sidewalk cafes, umbrellas, and people walking the central pedestrian spine." loading="lazy" />
+          <div class="fig-cap">Concept rendering. Walkable mixed-use main street, Pacific Northwest typology.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET INVOLVED -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Get involved</div>
+        <h2>Patient ambitions need patient partners.</h2>
+      </div>
+      <div class="grid g3 rv">
+        <div class="card on-alt" style="border-top:3px solid var(--terra)"><h3>Landowners and operators</h3><p style="font-size:14.5px;line-height:1.65;color:#4a463f">If you hold a site that wants to become a district, our services arm starts with a conversation.</p><p style="margin-top:14px"><a href="/preview/services" style="color:var(--terra);font-weight:600;font-size:13.5px">Explore services &rarr;</a></p></div>
+        <div class="card on-alt" style="border-top:3px solid var(--terra)"><h3>Investors and platform partners</h3><p style="font-size:14.5px;line-height:1.65;color:#4a463f">We are building Now City Inc. as a platform for the next generation of real assets. Express interest, and we will be in touch when there is something to talk about.</p><p style="margin-top:14px"><a href="/preview/investment" style="color:var(--terra);font-weight:600;font-size:13.5px">Investment overview &rarr;</a></p></div>
+        <div class="card on-alt" style="border-top:3px solid var(--terra)"><h3>Future residents and the curious</h3><p style="font-size:14.5px;line-height:1.65;color:#4a463f">Tell us where you would want a Now City neighborhood. We pay attention.</p><p style="margin-top:14px"><a href="https://nowcity.life" style="color:var(--terra);font-weight:600;font-size:13.5px">nowcity.life &rarr;</a></p></div>
+      </div>
+    </div>
+  </section>
+</PreviewLayout>

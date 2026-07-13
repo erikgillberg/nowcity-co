@@ -1,0 +1,104 @@
+---
+// Preview layout: the Edgewater editorial framework applied to the main site.
+// Self-contained (links the west-salem site.css, no Tailwind), noindex.
+interface Props { title: string; description?: string; active?: string; }
+const { title, description = 'Now City Inc. is a regenerative developer and operator, turning underused sites into walkable, green, mixed-use districts across the West Coast.', active = '' } = Astro.props;
+const fullTitle = title === 'Now City Inc.' ? title : `${title} · Now City Inc.`;
+const nav = [
+  { href: '/preview/approach', label: 'Approach', key: 'approach' },
+  { href: '/preview/services', label: 'Services', key: 'services', children: [
+    { href: '/preview/stack', label: 'The Stack' },
+    { href: '/preview/services', label: 'How We Work' },
+  ] },
+  { href: '/preview/investment', label: 'Investment', key: 'investment' },
+  { href: '/preview/faqs', label: 'FAQs', key: 'faqs' },
+  { href: '/preview/team', label: 'Team', key: 'team' },
+  { href: '/preview/contact', label: 'Contact', key: 'contact' },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/west-salem/assets/site.css?v=6" />
+</head>
+<body>
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="/preview/">Now City<span class="brand-sub"> &middot; Regenerative districts</span></a>
+    <ul class="navlinks">
+      {nav.map((item) => (
+        item.children ? (
+          <li class="dd"><a href={item.href} class={active===item.key ? 'active' : ''}>{item.label}</a>
+            <ul class="ddm">
+              {item.children.map((c) => (<li><a href={c.href}>{c.label}</a></li>))}
+            </ul>
+          </li>
+        ) : (
+          <li><a href={item.href} class={active===item.key ? 'active' : ''}>{item.label}</a></li>
+        )
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<slot />
+
+<!-- CTA -->
+<section class="dark cta" id="interest">
+  <div class="wrap rv">
+    <div class="eyebrow">For investors and platform partners</div>
+    <h2 class="serif">A non-binding indication of<br>interest is the start of a conversation.</h2>
+    <p class="muted" style="max-width:600px;margin:0 auto">We are building Now City as a platform for the next generation of real assets. Tell us where you fit, and we will be in touch when there is something to talk about.</p>
+    <div class="contacts">
+      <a href="/preview/investment">Investment overview &rarr;</a>
+      <a href="mailto:team@nowcitylabs.com">team@nowcitylabs.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;align-items:start">
+    <div>
+      <div class="serif" style="font-size:17px;color:#bdb7a8">Now City Inc.</div>
+      <p style="margin-top:10px;max-width:300px;line-height:1.6">A regenerative developer and operator. Building walkable, green districts on the West Coast for the long now.</p>
+    </div>
+    <div>
+      <div class="eyebrow" style="color:#e8c79d;margin-bottom:10px">Our Brands</div>
+      <div style="line-height:1.9"><a href="https://nowcity.life">Now City Neighborhoods</a> &middot; residents<br><a href="/preview/services">Now City Labs</a> &middot; landowners &amp; operators<br><a href="https://nowcity.ai">NowCity.ai</a> &middot; deal teams &amp; capital</div>
+    </div>
+    <div>
+      <div class="eyebrow" style="color:#e8c79d;margin-bottom:10px">Visit</div>
+      <div style="line-height:1.9">101 Cooper Street<br>Santa Cruz, CA 95060<br><a href="/preview/contact">Contact</a></div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:26px;padding-top:18px;border-top:1px solid #2b2823;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+    <div>&copy; 2026 Now City Inc. All rights reserved.</div>
+    <div>Preview &middot; editorial redesign for review</div>
+  </div>
+</footer>
+
+<a href="#top" class="toplink" id="toplink" aria-label="Back to top">&uarr;</a>
+<script>
+  const nav=document.getElementById('nav');const tl=document.getElementById('toplink');
+  function onScroll(){nav.classList.toggle('scrolled',scrollY>40);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  // mobile hamburger (mirror west-salem nav.js behavior)
+  (function(){var w=nav.querySelector('.wrap');var links=nav.querySelector('.navlinks');if(!w||!links)return;
+    var b=document.createElement('button');b.className='navtoggle';b.setAttribute('aria-label','Menu');b.innerHTML='<span></span><span></span><span></span>';w.appendChild(b);
+    b.addEventListener('click',function(){nav.classList.toggle('navopen')});
+    Array.prototype.forEach.call(links.querySelectorAll('.dd>a'),function(a){a.addEventListener('click',function(e){if(window.matchMedia('(max-width:860px)').matches){e.preventDefault();a.parentNode.classList.toggle('open')}})});
+  })();
+</script>
+</body>
+</html>

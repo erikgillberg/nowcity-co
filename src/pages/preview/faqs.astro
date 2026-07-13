@@ -1,0 +1,194 @@
+---
+import PreviewLayout from '../../layouts/PreviewLayout.astro';
+import gardening from '../../assets/brand/gardening.jpg';
+
+interface FaqItem {
+  q: string;
+  a: string[];
+}
+
+interface FaqGroup {
+  heading: string;
+  items: FaqItem[];
+}
+
+const groups: FaqGroup[] = [
+  {
+    heading: 'The company and the brands',
+    items: [
+      {
+        q: 'What is Now City Inc., and how does it relate to Now City Labs, NowCity.ai, and Now City Neighborhoods?',
+        a: [
+          'Now City Inc. is the parent company. We are a regenerative neighborhood developer and operator working on the West Coast.',
+          'Now City Neighborhoods is our consumer-facing brand at nowcity.life. It is the brand under which we develop, market, and operate the neighborhoods themselves. Future residents follow along there.',
+          'Now City Labs is our B2B services and intelligence arm at nowcitylabs.com. We offer the same methodology used in our own projects to landowners, operators, and municipalities as a structured engagement.',
+          'NowCity.ai is our software arm. It builds the collaborative underwriting tools we use on our own districts, beginning with the Upside Explorer, and makes them available to sponsors, deal teams, and capital partners.',
+          'Same world. Three doors. One company.',
+        ],
+      },
+      {
+        q: 'Where do you develop?',
+        a: [
+          'California and the Pacific Northwest. We focus on the West Coast because land use frameworks, climate adaptation needs, and policy momentum align with our model. We do not currently develop outside the U.S. West Coast.',
+        ],
+      },
+      {
+        q: 'What stage is the company at?',
+        a: [
+          'Now City Inc. is an early-stage company with a long time horizon. We are well-organized for the work in front of us, with founders, head of legal, and a small advisor bench in place. Our pipeline is in active pre-development, and first homes are scheduled for 2029.',
+        ],
+      },
+      {
+        q: 'Why "Now City"?',
+        a: [
+          'Cities take decades to build, but the people who live in them experience them every day, now. Our work is to shorten the distance between long-term place-making and the daily quality of life that residents feel from day one. The "now" is a commitment to that immediacy.',
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'How we work',
+    items: [
+      {
+        q: 'How is Now City different from a traditional developer?',
+        a: [
+          'We start with the land and the systems, then design the program and capital around them. Most development inverts that order. We also operate and steward the neighborhoods we build, rather than exiting at stabilization. And we bring four delivery layers (industrialized construction, green infrastructure, regenerative placemaking, innovative finance) under one team rather than treating them as parallel work streams.',
+        ],
+      },
+      {
+        q: 'What is a typical project size and timeline?',
+        a: [
+          'Our work is at the neighborhood scale, roughly 1,000 to 10,000 residents. Site sizes vary, from compact infill assemblages of a few acres to larger edge-urban or campus-redevelopment opportunities. Pre-development typically runs 18 to 36 months. From site control to first occupancy is generally 4 to 6 years, depending on entitlements and capital.',
+        ],
+      },
+      {
+        q: 'How do you handle community engagement and public-private partnerships?',
+        a: [
+          'Community engagement starts in pre-development, before a plan is locked, and continues through stewardship. Our urbanism is responsive to local fabric and to civic priorities, not imposed onto them.',
+          'On public-private partnerships, we work where municipalities want to partner on shared outcomes (housing, walkability, climate adaptation, fiscal performance) and where the deal structure aligns long-term incentives.',
+          'That early-stage work runs through our services arm, which can hold scoped, low-commitment engagements with cities and landowners: feasibility, capacity-building, and partnership structuring, before any development entity exists. Once a partnership is structured, work moves through standard developer and city channels.',
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'Capital and ownership',
+    items: [
+      {
+        q: 'How are Now City projects financed?',
+        a: [
+          'Projects combine equity and debt sourced from institutional, family-office, and mission-aligned partners, alongside public-sector tools where they apply (LIHTC, MFTE, tax-increment, public infrastructure financing, philanthropic capital, and others). We structure capital around the long-term operating model rather than a short-term exit.',
+        ],
+      },
+      {
+        q: 'Is Now City a real estate fund? Where are your investment vehicles?',
+        a: [
+          'Now City Inc. is not a fund. It is an operating company. We expect to use a variety of project-level vehicles over time, structured deal by deal with our capital partners. If you are interested in conversations about platform-level investment in Now City Inc. or project-level co-investment, see our Investment page for the interest form.',
+        ],
+      },
+      {
+        q: 'Where do tokenization and digital ownership fit in your model?',
+        a: [
+          'We expect that real-asset ownership will eventually trade with the transparency, liquidity, and accessibility of public securities, while preserving the durable value characteristics of physical assets. We are designing our governance, data infrastructure, and ownership architecture so the platform can integrate with digital frameworks as they mature and as regulation catches up.',
+          'We do not currently offer tokenized securities or any digital ownership instrument.',
+        ],
+      },
+      {
+        q: 'How does the early-stage, catalytic work get funded?',
+        a: [
+          'Project by project, with capital matched to the work. Early feasibility and structuring are funded through scoped service engagements and, where a project serves public goals, supportive capital: philanthropic grants, public planning funds, and tools like tax increment financing.',
+          'The goal is catalytic: every early dollar is meant to unlock more capital from sources that would otherwise sit on the sidelines.',
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'Working with Now City',
+    items: [
+      {
+        q: 'I hold land that might be a fit. How do I start a conversation?',
+        a: [
+          'The fastest path is our services arm at nowcitylabs.com. We start with a short framing call, then a structured pre-development engagement if there is a fit.',
+        ],
+      },
+      {
+        q: 'Are you hiring?',
+        a: [
+          'We hire selectively as the work demands it, across development, urban design, capital, operations, and engineering. Strong candidates with experience in walkable urbanism, district-scale infrastructure, public-private partnerships, or institutional capital are always welcome to introduce themselves.',
+          'Reach out via the Contact page.',
+        ],
+      },
+      {
+        q: 'How can I follow what you are building?',
+        a: [
+          'Now City Neighborhoods at nowcity.life is the consumer-facing channel where future residents and the curious follow along. There is a short signup form on that site.',
+        ],
+      },
+    ],
+  },
+];
+
+// Build FAQPage JSON-LD for Google rich results.
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: groups.flatMap((g) =>
+    g.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a.join(' '),
+      },
+    }))
+  ),
+};
+---
+<PreviewLayout title="FAQs" active="faqs">
+  <header class="hero short" id="top">
+    <div class="bg" style={`background-image:url(${gardening.src})`}></div><div class="shade"></div>
+    <div class="wrap">
+      <div class="eyebrow">FAQs</div>
+      <h1>Frequently asked questions.</h1>
+      <p class="sub">Cross-cutting answers for planners, investors, partners, and the curious public.</p>
+      <div class="meta">The company &amp; the brands &middot; How we work &middot; Capital &amp; ownership &middot; Working with Now City</div>
+    </div>
+  </header>
+
+  {groups.map((group, gi) => (
+    <section class={gi % 2 === 1 ? 'alt' : undefined}>
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div class="eyebrow">{`Group 0${gi + 1}`}</div>
+          <h2>{group.heading}</h2>
+        </div>
+        <div class="grid g2 rv" style="align-items:start">
+          {group.items.map((item) => (
+            <div class="card">
+              <h3 style="font-size:18px">{item.q}</h3>
+              {item.a.map((para) => (
+                <p style="font-size:14.5px;line-height:1.7;color:#4a463f">{para}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Still have questions?</div>
+        <h2>Get in touch.</h2>
+      </div>
+      <p class="rv" style="font-size:16.5px;line-height:1.75;color:#4a463f;max-width:680px">
+        For general inquiries, reach us via the <a href="/preview/contact" style="color:var(--terra)">Contact page</a>.
+        For services or development conversations, start at <a href="https://nowcitylabs.com" style="color:var(--terra)">nowcitylabs.com</a>.
+        For investor and platform-partner conversations, see the <a href="/preview/investment" style="color:var(--terra)">Investment page</a>.
+      </p>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+</PreviewLayout>
