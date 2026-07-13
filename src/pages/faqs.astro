@@ -1,9 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-const title = 'FAQs';
-const description =
-  'Common questions about Now City Inc., our brands, our model, and how to work with us.';
+import PreviewLayout from '../layouts/PreviewLayout.astro';
+import greenwayBoardwalk from '../assets/watercolors/greenway-boardwalk.jpg';
+import parkPath from '../assets/watercolors/park-path.jpg';
 
 interface FaqItem {
   q: string;
@@ -24,7 +22,7 @@ const groups: FaqGroup[] = [
         a: [
           'Now City Inc. is the parent company. We are a regenerative neighborhood developer and operator working on the West Coast.',
           'Now City Neighborhoods is our consumer-facing brand at nowcity.life. It is the brand under which we develop, market, and operate the neighborhoods themselves. Future residents follow along there.',
-          'Now City Labs is our B2B services and intelligence arm at nowcitylabs.com. We offer the same methodology used in our own projects to landowners, operators, and municipalities as a structured engagement.',
+          'Now City Labs is our B2B services and intelligence arm. We offer the same methodology used in our own projects to landowners, operators, and municipalities as a structured engagement.',
           'NowCity.ai is our software arm. It builds the collaborative underwriting tools we use on our own districts, beginning with the Upside Explorer, and makes them available to sponsors, deal teams, and capital partners.',
           'Same world. Three doors. One company.',
         ],
@@ -32,7 +30,7 @@ const groups: FaqGroup[] = [
       {
         q: 'Where do you develop?',
         a: [
-          'California and the Pacific Northwest. We focus on the West Coast because land use frameworks, climate adaptation needs, and policy momentum align with our model. We do not currently develop outside the U.S. West Coast.',
+          'The West Coast, from the Pacific Northwest to the tip of Baja California. We focus on the West Coast because land use frameworks, climate adaptation needs, and policy momentum align with our model. We do not currently develop outside the U.S. West Coast.',
         ],
       },
       {
@@ -111,7 +109,7 @@ const groups: FaqGroup[] = [
       {
         q: 'I hold land that might be a fit. How do I start a conversation?',
         a: [
-          'The fastest path is our services arm at nowcitylabs.com. We start with a short framing call, then a structured pre-development engagement if there is a fit.',
+          'The fastest path is our services arm. We start with a short framing call, then a structured pre-development engagement if there is a fit.',
         ],
       },
       {
@@ -147,96 +145,54 @@ const faqJsonLd = {
   ),
 };
 ---
-
-<Layout title={title} description={description}>
-  <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
-  </Fragment>
-
-  {/* ============================================================ */}
-  {/* SECTION 1 — HERO                                             */}
-  {/* ============================================================ */}
-  <section class="pt-12 md:pt-20">
-    <div class="container-narrow">
-      <p class="eyebrow">FAQs</p>
-      <h1 class="mt-5 font-display text-display-xl text-forest-700">
-        Frequently asked questions.
-      </h1>
-      <p class="lede mt-8">
-        Cross-cutting answers for planners, investors, partners, and
-        the curious public. Click any question to expand.
-      </p>
+<PreviewLayout title="FAQs" active="faqs">
+  <header class="hero short" id="top">
+    <div class="bg" style={`background-image:url(${greenwayBoardwalk.src})`}></div><div class="shade"></div>
+    <div class="wrap">
+      <div class="eyebrow">FAQs</div>
+      <h1>Frequently asked questions.</h1>
+      <p class="sub">Cross-cutting answers for planners, investors, partners, and the curious public.</p>
+      <div class="meta">The company &amp; the brands &middot; How we work &middot; Capital &amp; ownership &middot; Working with Now City</div>
     </div>
-  </section>
+  </header>
 
-  {/* ============================================================ */}
-  {/* SECTION 2 — FAQ GROUPS                                       */}
-  {/* ============================================================ */}
-  <section class="py-section">
-    <div class="container-narrow">
-      <div class="grid gap-16">
-        {groups.map((group, gi) => (
-          <div>
-            <p class="eyebrow">{`Group 0${gi + 1}`}</p>
-            <h2 class="mt-3 font-display text-display-md text-forest-700">
-              {group.heading}
-            </h2>
-
-            <div class="mt-8 divide-y divide-stone-100 border-y border-stone-100">
-              {group.items.map((item) => (
-                <details class="group faq-item">
-                  <summary class="flex cursor-pointer list-none items-start justify-between gap-6 py-6">
-                    <span class="font-display text-lg leading-snug text-forest-700 md:text-xl">
-                      {item.q}
-                    </span>
-                    <span
-                      class="mt-1 flex h-7 w-7 flex-none items-center justify-center rounded-full border border-stone-200 text-stone-500 transition-transform group-open:rotate-45 group-open:border-forest-700/30 group-open:text-forest-700"
-                      aria-hidden="true"
-                    >
-                      <svg viewBox="0 0 16 16" class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-                        <path d="M8 2 V14 M2 8 H14" />
-                      </svg>
-                    </span>
-                  </summary>
-                  <div class="prose-body pb-6 pr-12 text-base">
-                    {item.a.map((para) => (
-                      <p>{para}</p>
-                    ))}
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        ))}
+  {groups.map((group, gi) => (
+    <section class={gi % 2 === 1 ? 'alt' : undefined}>
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div class="eyebrow">{`Group 0${gi + 1}`}</div>
+          <h2>{group.heading}</h2>
+        </div>
+        <div class="faqlist rv">
+          {group.items.map((item) => (
+            <details class="faq">
+              <summary>{item.q}</summary>
+              <div class="faq-a">
+                {item.a.map((para) => (<p>{para}</p>))}
+              </div>
+            </details>
+          ))}
+        </div>
+        {gi === 1 && (
+          <div class="figure-block rv" style="margin-top:32px"><img src={parkPath.src} alt="A quiet planted path winding between homes and greenery." loading="lazy" /><div class="fig-cap">Places designed for the everyday walk, not just the arrival. Concept rendering.</div></div>
+        )}
       </div>
-    </div>
-  </section>
+    </section>
+  ))}
 
-  {/* ============================================================ */}
-  {/* SECTION 3 — STILL HAVE QUESTIONS                             */}
-  {/* ============================================================ */}
-  <section class="py-section bg-cream-50">
-    <div class="container-narrow">
-      <p class="eyebrow">Still have questions?</p>
-      <h2 class="mt-5 font-display text-display-md text-forest-700">
-        Get in touch.
-      </h2>
-      <p class="prose-body mt-6">
-        For general inquiries, reach us via the <a href="/contact">Contact page</a>.
-        For services or development conversations, start at <a href="https://nowcitylabs.com">nowcitylabs.com</a>.
-        For investor and platform-partner conversations, see the <a href="/investment">Investment page</a>.
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Still have questions?</div>
+        <h2>Get in touch.</h2>
+      </div>
+      <p class="rv" style="font-size:16.5px;line-height:1.75;color:#4a463f;max-width:680px">
+        For general inquiries, reach us via the <a href="/contact" style="color:var(--terra)">Contact page</a>.
+        For services or development conversations, see the <a href="/services" style="color:var(--terra)">Services page</a>.
+        For investor and platform-partner conversations, see the <a href="/investment" style="color:var(--terra)">Investment page</a>.
       </p>
     </div>
   </section>
-</Layout>
 
-<style>
-  /* Hide the default disclosure triangle in WebKit browsers. */
-  details.faq-item summary::-webkit-details-marker {
-    display: none;
-  }
-  /* Hide for Firefox too. */
-  details.faq-item > summary {
-    list-style: none;
-  }
-</style>
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+</PreviewLayout>

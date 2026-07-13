@@ -5,15 +5,15 @@ interface Props { title: string; description?: string; active?: string; }
 const { title, description = 'Now City Inc. is a regenerative developer and operator, turning underused sites into walkable, green, mixed-use districts across the West Coast.', active = '' } = Astro.props;
 const fullTitle = title === 'Now City Inc.' ? title : `${title} · Now City Inc.`;
 const nav = [
-  { href: '/preview/approach', label: 'Approach', key: 'approach' },
-  { href: '/preview/services', label: 'Services', key: 'services', children: [
-    { href: '/preview/stack', label: 'The Stack' },
-    { href: '/preview/services', label: 'How We Work' },
+  { href: '/approach', label: 'Approach', key: 'approach' },
+  { href: '/services', label: 'Services', key: 'services', children: [
+    { href: '/stack', label: 'The Stack' },
+    { href: '/services', label: 'How We Work' },
   ] },
-  { href: '/preview/investment', label: 'Investment', key: 'investment' },
-  { href: '/preview/faqs', label: 'FAQs', key: 'faqs' },
-  { href: '/preview/team', label: 'Team', key: 'team' },
-  { href: '/preview/contact', label: 'Contact', key: 'contact' },
+  { href: '/investment', label: 'Investment', key: 'investment' },
+  { href: '/faqs', label: 'FAQs', key: 'faqs' },
+  { href: '/team', label: 'Team', key: 'team' },
+  { href: '/contact', label: 'Contact', key: 'contact' },
 ];
 ---
 <!doctype html>
@@ -23,7 +23,11 @@ const nav = [
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
-<meta name="robots" content="noindex, nofollow" />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url.href} />
+<link rel="canonical" href={Astro.url.href} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,7 +54,7 @@ const nav = [
 <body>
 <nav id="nav">
   <div class="wrap">
-    <a class="brand" href="/preview/">Now City<span class="brand-sub"> &middot; Regenerative districts</span></a>
+    <a class="brand" href="/">Now City<span class="brand-sub"> &middot; Regenerative districts</span></a>
     <ul class="navlinks">
       {nav.map((item) => (
         item.children ? (
@@ -76,7 +80,7 @@ const nav = [
     <h2 class="serif">Let's build better<br>places, together.</h2>
     <p class="muted" style="max-width:620px;margin:0 auto">If any of this resonates, we would love to hear from you, whether you are an investor, a landowner, a city, a future resident, or simply curious. No commitment, just the start of a conversation.</p>
     <div class="contacts">
-      <a href="/preview/investment">Investment overview &rarr;</a>
+      <a href="/investment">Investment overview &rarr;</a>
       <a href="mailto:team@nowcitylabs.com">team@nowcitylabs.com</a>
     </div>
   </div>
@@ -101,11 +105,11 @@ const nav = [
     </div>
     <div>
       <div class="eyebrow" style="color:#e8c79d;margin-bottom:10px">Our Brands</div>
-      <div style="line-height:1.9"><a href="https://nowcity.life">Now City Neighborhoods</a> &middot; residents<br><a href="/preview/services">Now City Labs</a> &middot; landowners &amp; operators<br><a href="https://nowcity.ai">NowCity.ai</a> &middot; deal teams &amp; capital</div>
+      <div style="line-height:1.9"><a href="https://nowcity.life">Now City Neighborhoods</a> &middot; residents<br><a href="/services">Now City Labs</a> &middot; landowners &amp; operators<br><a href="https://nowcity.ai">NowCity.ai</a> &middot; deal teams &amp; capital</div>
     </div>
     <div>
       <div class="eyebrow" style="color:#e8c79d;margin-bottom:10px">Visit</div>
-      <div style="line-height:1.9">101 Cooper Street<br>Santa Cruz, CA 95060<br><a href="/preview/contact">Contact</a></div>
+      <div style="line-height:1.9">101 Cooper Street<br>Santa Cruz, CA 95060<br><a href="/contact">Contact</a></div>
     </div>
   </div>
   <div class="wrap" style="margin-top:26px;padding-top:18px;border-top:1px solid #2b2823;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">

@@ -1,461 +1,230 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-
+import PreviewLayout from '../layouts/PreviewLayout.astro';
+import heroValley from '../assets/brand/tiltshift-tnd.jpg';
+import interiorWorkspace from '../assets/watercolors/interior-workspace.jpg';
 import urbanConnectivity from '../assets/brand/urban-connectivity.jpg';
 
-const title = 'Investment';
-const description =
-  'Now City Inc. is building a platform for the next generation of real assets. We are exploring conversations with institutional, family-office, and platform investors aligned with patient capital and regenerative outcomes.';
+const outcomes = [
+  { k:'Financial', d:'Lower lifecycle risk through systems-led design. Stabilized operating margins from district-scale infrastructure. Insurance and resilience advantages.' },
+  { k:'Resident', d:'Walkable daily life. Lower household transportation cost. Measurable health and wellbeing benefits from biophilic urbanism.' },
+  { k:'Civic', d:'Tax base, local employment, attainable mixed-income housing. Predictable, well-aligned public-private partnerships.' },
+  { k:'Ecological', d:'Net-positive site outcomes. Stormwater management. Habitat restoration. Embodied and operational carbon reduction.' },
+];
+const model = [
+  { t:'Development', d:'Site selection, entitlement, and integrated design generate value before construction begins. The pro forma follows the systems, not the other way around.' },
+  { t:'Operations', d:'Stabilized neighborhoods generate durable cash flow from rent, ground leases, and service revenue, with lower lifecycle risk than typical real estate portfolios.' },
+  { t:'Platform', d:'Methodology, tools, and data improve every project. Services revenue and NowCity.ai software complement the core development engine, and every district makes the next one cheaper to underwrite.' },
+];
+const outIconsInv = ['<svg viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="5" ry="3"/><path d="M4 7v5c0 1.7 2.2 3 5 3"/><ellipse cx="15" cy="14" rx="5" ry="3"/><path d="M10 14.3v2.7c0 1.7 2.2 3 5 3s5-1.3 5-3v-3"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>','<svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17.5" cy="9.5" r="2.1"/><path d="M15.6 20c0-2.1 1.5-3.6 3.9-3.6"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 20c0-8 6-15 16-16C18 12 12 20 4 20Z"/><path d="M4 20c3-6 7-9 12-10"/></svg>'];
 ---
-
-<Layout title={title} description={description}>
-  {/* ============================================================ */}
-  {/* SECTION 1 — HERO                                             */}
-  {/* ============================================================ */}
-  <section class="pt-12 md:pt-20">
-    <div class="container-wide">
-      <div class="max-w-4xl">
-        <p class="eyebrow">Investment</p>
-        <h1 class="mt-5 font-display text-display-xl text-forest-700">
-          Building a platform for the next generation of real assets.
-        </h1>
-        <p class="lede mt-8 max-w-3xl">
-          Now City Inc. develops, operates, and stewards regenerative
-          neighborhoods on the West Coast. We are building the team,
-          methodology, and capital model to do this at scale.
-        </p>
-      </div>
+<PreviewLayout title="Investment" active="investment">
+  <header class="hero short" id="top">
+    <div class="bg" style={`background-image:url(${heroValley.src})`}></div><div class="shade"></div>
+    <div class="wrap">
+      <div class="eyebrow">Investment</div>
+      <h1>Building a platform for<br>the next generation of real assets.</h1>
+      <p class="sub">Now City Inc. develops, operates, and stewards regenerative neighborhoods on the West Coast. We are building the team, methodology, and capital model to do this at scale.</p>
+      <div class="meta">For institutional, family-office &amp; platform investors &middot; Patient capital &middot; First homes 2029</div>
     </div>
-  </section>
+  </header>
 
-  {/* ============================================================ */}
-  {/* SECTION 2 — REAL ASSETS THESIS                               */}
-  {/* ============================================================ */}
-  <section class="mt-section py-section">
-    <div class="container-wide">
-      <div class="grid gap-12 md:grid-cols-12 md:gap-16">
-        <div class="md:col-span-5">
-          <p class="eyebrow">Why real assets</p>
-          <h2 class="mt-5 font-display text-display-lg text-forest-700">
-            The right kind of asset for the next decade.
-          </h2>
-        </div>
-        <div class="md:col-span-7">
-          <div class="prose-body">
-            <p>
-              Capital is shifting toward real assets. Physical assets
-              that hold intrinsic value, generate inflation-hedged
-              income, and align with long-term institutional mandates.
-              Real estate, infrastructure, and natural capital sit at
-              the center of that shift.
-            </p>
-            <p>
-              Now City operates at the intersection of all three. A
-              regenerative neighborhood combines housing and mixed-use
-              real estate, district-scale infrastructure, and
-              integrated natural systems. Bundled at the neighborhood
-              scale, those categories produce a diversified, durable
-              real-asset profile.
-            </p>
-            <p>
-              Institutional capital increasingly seeks exactly this
-              combination: stable, inflation-aware, climate-aligned,
-              and impact-credible.
-            </p>
-          </div>
-        </div>
+  <!-- WHY REAL ASSETS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Why real assets</div>
+        <h2>The right kind of asset for the next decade.</h2>
+        <p class="lead">Capital is shifting toward real assets, the physical things that hold intrinsic value, produce income that holds up against inflation, and match long-term institutional mandates. Real estate, infrastructure, and natural capital sit at the center of that shift.</p>
       </div>
-    </div>
-  </section>
-
-  {/* ============================================================ */}
-  {/* SECTION 3 — THE MODEL                                        */}
-  {/* ============================================================ */}
-  <section class="py-section bg-cream-50">
-    <div class="container-wide">
-      <div class="grid gap-12 md:grid-cols-12 md:gap-16 md:items-start">
-        <div class="md:col-span-5">
-          <p class="eyebrow">Our model</p>
-          <h2 class="mt-5 font-display text-display-lg text-forest-700">
-            Vertically integrated. Designed for stewardship.
-          </h2>
-          <p class="prose-body mt-8">
-            Most real estate platforms specialize in one part of the
-            value chain. We integrate across.
-          </p>
-          <p class="prose-body mt-5">
-            Now City Inc. acquires land, leads pre-development with our
-            integrated stack, develops in partnership with capital and
-            construction partners, and operates and stewards the
-            resulting neighborhoods over decades.
-          </p>
-        </div>
-        <div class="md:col-span-7">
-          <ol class="grid gap-8">
-            <li>
-              <div class="h-px w-10 bg-copper-400" aria-hidden="true"></div>
-              <p class="eyebrow mt-3">01 / Development</p>
-              <p class="prose-body mt-3 text-base">
-                Site selection, entitlement, and integrated design
-                generate value before construction begins. The pro
-                forma follows the systems, not the other way around.
-              </p>
-            </li>
-            <li>
-              <div class="h-px w-10 bg-copper-400" aria-hidden="true"></div>
-              <p class="eyebrow mt-3">02 / Operations</p>
-              <p class="prose-body mt-3 text-base">
-                Stabilized neighborhoods generate durable cash flow
-                from rent, ground leases, and service revenue, with
-                lower lifecycle risk than typical real estate
-                portfolios.
-              </p>
-            </li>
-            <li>
-              <div class="h-px w-10 bg-copper-400" aria-hidden="true"></div>
-              <p class="eyebrow mt-3">03 / Platform</p>
-              <p class="prose-body mt-3 text-base">
-                Methodology, tools, and data improve every project.
-                Services revenue and NowCity.ai software complement
-                the core development engine, and every district makes
-                the next one cheaper to underwrite.
-              </p>
-            </li>
-          </ol>
-          <p class="prose-body mt-10 text-base">
-            Capital structures are designed for long-term stewardship.
-            We seek partners with patient mandates: institutional LPs,
-            family offices, mission-aligned investors, and selective
-            project-level co-investors.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  {/* ============================================================ */}
-  {/* SECTION 4 — OUTCOMES                                         */}
-  {/* ============================================================ */}
-  <section class="py-section">
-    <div class="container-wide">
-      <div class="max-w-3xl">
-        <p class="eyebrow">Outcomes</p>
-        <h2 class="mt-5 font-display text-display-lg text-forest-700">
-          A model designed to perform on every dimension that matters.
-        </h2>
-        <p class="lede mt-6">
-          Financial, social, and ecological outcomes are not separately
-          optimized. They emerge together from the same systems-led
-          approach.
-        </p>
-      </div>
-
-      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <article class="rounded-2xl bg-cream-50 p-8 ring-1 ring-stone-100">
-          <p class="text-xs font-medium uppercase tracking-[0.18em] text-stone-500">
-            Financial
-          </p>
-          <p class="prose-body mt-4 text-base">
-            Lower lifecycle risk through systems-led design. Stabilized
-            operating margins from district-scale infrastructure.
-            Insurance and resilience advantages.
-          </p>
-        </article>
-        <article class="rounded-2xl bg-cream-50 p-8 ring-1 ring-stone-100">
-          <p class="text-xs font-medium uppercase tracking-[0.18em] text-stone-500">
-            Resident
-          </p>
-          <p class="prose-body mt-4 text-base">
-            Walkable daily life. Lower household transportation cost.
-            Measurable health and wellbeing benefits from biophilic
-            urbanism.
-          </p>
-        </article>
-        <article class="rounded-2xl bg-cream-50 p-8 ring-1 ring-stone-100">
-          <p class="text-xs font-medium uppercase tracking-[0.18em] text-stone-500">
-            Civic
-          </p>
-          <p class="prose-body mt-4 text-base">
-            Tax base, local employment, attainable mixed-income
-            housing. Predictable, well-aligned public-private
-            partnerships.
-          </p>
-        </article>
-        <article class="rounded-2xl bg-cream-50 p-8 ring-1 ring-stone-100">
-          <p class="text-xs font-medium uppercase tracking-[0.18em] text-stone-500">
-            Ecological
-          </p>
-          <p class="prose-body mt-4 text-base">
-            Net-positive site outcomes. Stormwater management. Habitat
-            restoration. Embodied and operational carbon reduction.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  {/* ============================================================ */}
-  {/* SECTION 5 — PIPELINE                                         */}
-  {/* ============================================================ */}
-  <section class="py-section bg-cream-50">
-    <div class="container-wide">
-      <div class="grid gap-12 md:grid-cols-2 md:items-center md:gap-16">
+      <div class="grid g2 rv" style="align-items:center;gap:40px">
         <div>
-          <p class="eyebrow">Pipeline</p>
-          <h2 class="mt-5 font-display text-display-lg text-forest-700">
-            California and the Pacific Northwest.
-          </h2>
-          <p class="prose-body mt-8">
-            We focus on the West Coast, where land use frameworks,
-            climate adaptation needs, and policy momentum align with
-            our model.
-          </p>
-          <p class="prose-body mt-5">
-            Sites are at varying stages of pre-development,
-            entitlement, and capital structuring. We do not disclose
-            specific sites publicly. Active partners receive
-            site-level information under appropriate confidentiality.
-          </p>
-          <p class="prose-body mt-5">
-            First homes are scheduled for 2029. Multiple sites are
-            positioned to follow.
-          </p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Now City operates at the intersection of all three. A regenerative neighborhood combines housing and mixed-use real estate, district-scale infrastructure, and integrated natural systems. At the neighborhood scale, those pieces add up to a diversified, durable base of real assets.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">It is the combination institutional capital increasingly looks for: stable, resilient to inflation, aligned with the climate transition, and credible on impact.</p>
         </div>
-        <div class="overflow-hidden rounded-md shadow-sm">
-          <Image
-            src={urbanConnectivity}
-            alt="A tilt-shift aerial view of a walkable mixed-density neighborhood, surrounded by mature trees, gardens, and connected open space."
-            widths={[600, 900, 1400]}
-            sizes="(min-width: 768px) 50vw, 100vw"
-            class="h-auto w-full object-cover"
-          />
+        <div class="figure-block" style="margin-top:0"><img src={interiorWorkspace.src} alt="A light-filled shared workspace with timber, greenery, and daylight." loading="lazy" /><div class="fig-cap">Ground-floor workspace in a Now City neighborhood. Concept rendering.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR MODEL -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Our model</div>
+        <h2>Vertically integrated. Designed for stewardship.</h2>
+        <p class="lead">Most real estate platforms specialize in one part of the value chain. We integrate across.</p>
+      </div>
+      <div class="grid g2 rv" style="align-items:start">
+        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Now City Inc. acquires land, leads pre-development with our integrated stack, develops in partnership with capital and construction partners, and operates and stewards the resulting neighborhoods over decades.</p>
+        <div>
+          <ol class="numlist">
+            {model.map((m) => (
+              <li><strong>{m.t}.</strong> {m.d}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
+      <div class="note rv">Capital structures are designed for long-term stewardship. We seek partners with patient mandates: institutional LPs, family offices, mission-aligned investors, and selective project-level co-investors.</div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES (measured, dark) -->
+  <section class="dark">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Outcomes</div>
+        <h2>A model designed to perform on every dimension that matters.</h2>
+        <p class="lead">Financial, social, and ecological outcomes are not separately optimized. They emerge together from the same systems-led approach.</p>
+      </div>
+      <div class="stats statcards c4 rv">
+        {outcomes.map((o, i) => (
+          <div class="stat"><span class="pv-icon" set:html={outIconsInv[i]}></span><div class="num">{o.k}</div><div class="lbl">{o.d}</div></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section>
+    <div class="wrap">
+      <div class="grid g2 rv" style="align-items:center;gap:44px">
+        <div>
+          <div class="eyebrow">Pipeline</div>
+          <h2 style="font-size:clamp(28px,3.6vw,40px);margin:14px 0 18px;color:var(--ink-deep)">The West Coast, Pacific Northwest to Baja California.</h2>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">We focus on the West Coast, from the Pacific Northwest to the tip of Baja California, where land use frameworks, climate adaptation needs, and policy momentum align with our model.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">Sites are at varying stages of pre-development, entitlement, and capital structuring. We do not disclose specific sites publicly. Active partners receive site-level information under appropriate confidentiality.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">First homes are scheduled for 2029. Multiple sites are positioned to follow.</p>
+        </div>
+        <div class="figure-block" style="margin-top:0">
+          <img src={urbanConnectivity.src} alt="A tilt-shift aerial view of a walkable mixed-density neighborhood, surrounded by mature trees, gardens, and connected open space." loading="lazy" />
+          <div class="fig-cap">Concept rendering. Walkable mixed-density neighborhood, West Coast typology.</div>
         </div>
       </div>
     </div>
   </section>
 
-  {/* ============================================================ */}
-  {/* SECTION 6 — FUTURE OF OWNERSHIP                              */}
-  {/* ============================================================ */}
-  <section class="py-section">
-    <div class="container-wide">
-      <div class="grid gap-12 md:grid-cols-12 md:gap-16">
-        <div class="md:col-span-5">
-          <p class="eyebrow">Future of ownership</p>
-          <h2 class="mt-5 font-display text-display-lg text-forest-700">
-            Designed for what real-asset ownership becomes next.
-          </h2>
-        </div>
-        <div class="md:col-span-7">
-          <div class="prose-body">
-            <p>
-              Real-asset ownership is evolving. Tokenization,
-              fractional ownership, and digital secondary markets will
-              eventually allow real estate to trade with the
-              transparency, liquidity, and accessibility of public
-              securities, while preserving the durable value
-              characteristics of physical assets.
-            </p>
-            <p>
-              Now City develops with this future in mind. We design our
-              governance, data infrastructure, and ownership
-              architecture to integrate with digital asset frameworks
-              as those frameworks mature and as regulation catches up.
-            </p>
-            <p>
-              We do not currently offer tokenized securities or any
-              digital ownership instrument. The work today is to build
-              a platform whose ownership layer can evolve with the
-              market, on a clean regulatory footing, when the time is
-              right.
-            </p>
-          </div>
-        </div>
+  <!-- FUTURE OF OWNERSHIP -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Future of ownership</div>
+        <h2>Designed for what real-asset ownership becomes next.</h2>
       </div>
+      <div class="grid g2 rv" style="align-items:start">
+        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Real-asset ownership is evolving. Tokenization, fractional ownership, and digital secondary markets will eventually allow real estate to trade with the transparency, liquidity, and accessibility of public securities, while preserving the durable value characteristics of physical assets.</p>
+        <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Now City develops with this future in mind. We design our governance, data infrastructure, and ownership architecture to integrate with digital asset frameworks as those frameworks mature and as regulation catches up.</p>
+      </div>
+      <div class="note rv">We do not currently offer tokenized securities or any digital ownership instrument. The work today is to build a platform whose ownership layer can evolve with the market, on a clean regulatory footing, when the time is right.</div>
     </div>
   </section>
 
-  {/* ============================================================ */}
-  {/* SECTION 7 — INTEREST FORM                                    */}
-  {/* ============================================================ */}
-  <section id="interest" class="py-section bg-cream-50">
-    <div class="container-narrow">
-      <div class="max-w-3xl">
-        <p class="eyebrow">Stay in the loop</p>
-        <h2 class="mt-5 font-display text-display-lg text-forest-700">
-          If this is interesting, tell us.
-        </h2>
-        <p class="prose-body mt-6">
-          Complete our investor interest form and we will send you
-          materials and a link to our calendar.
-        </p>
+  <!-- INTEREST FORM -->
+  <section id="interest">
+    <div class="wrap" style="max-width:760px">
+      <div class="sec-head rv">
+        <div class="eyebrow">Stay in the loop</div>
+        <h2>If this is interesting, tell us.</h2>
+        <p class="lead">Complete our investor interest form and we will send you materials and a link to our calendar.</p>
       </div>
 
-      {/*
-        Mailchimp endpoint for the "Now City Inc. — Investor Interest"
+      <!--
+        Mailchimp endpoint for the "Now City Inc. Investor Interest"
         audience (us19, list id 9c44948c78). Distinct from the NCN
         audience used on nowcity.life.
         Disclaimer text below is verbatim from Brianna and MUST NOT be
         edited without her review. It establishes the regulatory
         posture for this entire page.
-      */}
+      -->
       <form
         action="https://nowcitylabs.us19.list-manage.com/subscribe/post?u=88bfb2c8f34fdd20e85cce03f&amp;id=9c44948c78&amp;f_id=0098bbe7f0"
         method="post"
         target="_blank"
         novalidate
-        class="mt-10 grid gap-5 rounded-2xl bg-cream p-8 ring-1 ring-stone-100 md:p-10"
+        class="card rv"
+        style="display:grid;gap:18px;text-align:left"
       >
         <div>
-          <label for="FNAME" class="block text-sm font-medium text-forest-800">
-            Name <span class="text-copper-400">*</span>
-          </label>
-          <input
-            id="FNAME"
-            name="FNAME"
-            type="text"
-            required
-            autocomplete="name"
-            class="mt-2 w-full rounded-md border border-stone-200 bg-white px-4 py-3 text-base text-forest-800 placeholder:text-stone-400 focus:border-forest-700 focus:outline-none focus:ring-2 focus:ring-forest-700/20"
-          />
+          <label for="FNAME" style="display:block;font-size:13.5px;font-weight:600;color:var(--ink-deep);margin-bottom:6px">Name <span style="color:var(--terra)">*</span></label>
+          <input id="FNAME" name="FNAME" type="text" required autocomplete="name" style="width:100%;box-sizing:border-box;padding:11px 13px;font-size:15px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink-deep)" />
         </div>
 
         <div>
-          <label for="EMAIL" class="block text-sm font-medium text-forest-800">
-            Email <span class="text-copper-400">*</span>
-          </label>
-          <input
-            id="EMAIL"
-            name="EMAIL"
-            type="email"
-            required
-            autocomplete="email"
-            class="mt-2 w-full rounded-md border border-stone-200 bg-white px-4 py-3 text-base text-forest-800 placeholder:text-stone-400 focus:border-forest-700 focus:outline-none focus:ring-2 focus:ring-forest-700/20"
-          />
+          <label for="EMAIL" style="display:block;font-size:13.5px;font-weight:600;color:var(--ink-deep);margin-bottom:6px">Email <span style="color:var(--terra)">*</span></label>
+          <input id="EMAIL" name="EMAIL" type="email" required autocomplete="email" style="width:100%;box-sizing:border-box;padding:11px 13px;font-size:15px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink-deep)" />
         </div>
 
         <div>
-          <label for="ORG" class="block text-sm font-medium text-forest-800">
-            Firm or organization <span class="text-stone-400">(optional)</span>
-          </label>
-          <input
-            id="ORG"
-            name="ORG"
-            type="text"
-            autocomplete="organization"
-            class="mt-2 w-full rounded-md border border-stone-200 bg-white px-4 py-3 text-base text-forest-800 placeholder:text-stone-400 focus:border-forest-700 focus:outline-none focus:ring-2 focus:ring-forest-700/20"
-          />
+          <label for="ORG" style="display:block;font-size:13.5px;font-weight:600;color:var(--ink-deep);margin-bottom:6px">Firm or organization <span style="color:#8a8578">(optional)</span></label>
+          <input id="ORG" name="ORG" type="text" autocomplete="organization" style="width:100%;box-sizing:border-box;padding:11px 13px;font-size:15px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink-deep)" />
         </div>
 
-        <fieldset>
-          <legend class="block text-sm font-medium text-forest-800">
-            How would you describe yourself?
-          </legend>
-          <div class="mt-3 grid gap-2 sm:grid-cols-2">
-            <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="radio" name="group[181122]" value="1" class="accent-forest-700" />
-              Individual investor
+        <fieldset style="border:none;padding:0;margin:0">
+          <legend style="font-size:13.5px;font-weight:600;color:var(--ink-deep);padding:0;margin-bottom:10px">How would you describe yourself?</legend>
+          <div class="grid g2" style="gap:9px">
+            <label style="display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:14px;color:var(--ink-deep);border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer">
+              <input type="radio" name="group[181122]" value="1" style="accent-color:var(--terra)" /> Individual investor
             </label>
-            <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="radio" name="group[181122]" value="2" class="accent-forest-700" />
-              Family office
+            <label style="display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:14px;color:var(--ink-deep);border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer">
+              <input type="radio" name="group[181122]" value="2" style="accent-color:var(--terra)" /> Family office
             </label>
-            <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="radio" name="group[181122]" value="4" class="accent-forest-700" />
-              Institutional
+            <label style="display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:14px;color:var(--ink-deep);border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer">
+              <input type="radio" name="group[181122]" value="4" style="accent-color:var(--terra)" /> Institutional
             </label>
-            <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="radio" name="group[181122]" value="8" class="accent-forest-700" />
-              Foundation or impact
+            <label style="display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:14px;color:var(--ink-deep);border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer">
+              <input type="radio" name="group[181122]" value="8" style="accent-color:var(--terra)" /> Foundation or impact
             </label>
-            <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5 sm:col-span-2">
-              <input type="radio" name="group[181122]" value="16" class="accent-forest-700" />
-              Something else
+            <label style="display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:14px;color:var(--ink-deep);border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer;grid-column:1 / -1">
+              <input type="radio" name="group[181122]" value="16" style="accent-color:var(--terra)" /> Something else
             </label>
           </div>
         </fieldset>
 
-        <fieldset>
-          <legend class="block text-sm font-medium text-forest-800">
-            What kinds of opportunities interest you?
-          </legend>
-          <p class="mt-1 text-xs text-stone-500">Optional. Pick anything that fits.</p>
-          <div class="mt-3 grid gap-2">
-            <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="checkbox" name="group[181123][32]" class="accent-forest-700" />
-              Platform-level investment in Now City Inc.
+        <fieldset style="border:none;padding:0;margin:0">
+          <legend style="font-size:13.5px;font-weight:600;color:var(--ink-deep);padding:0;margin-bottom:4px">What kinds of opportunities interest you?</legend>
+          <p style="font-size:12.5px;color:#8a8578;margin:0 0 10px">Optional. Pick anything that fits.</p>
+          <div style="display:grid;gap:9px">
+            <label style="display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:14px;color:var(--ink-deep);border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer">
+              <input type="checkbox" name="group[181123][32]" style="accent-color:var(--terra)" /> Platform-level investment in Now City Inc.
             </label>
-            <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="checkbox" name="group[181123][64]" class="accent-forest-700" />
-              Project-level co-investment
+            <label style="display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:14px;color:var(--ink-deep);border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer">
+              <input type="checkbox" name="group[181123][64]" style="accent-color:var(--terra)" /> Project-level co-investment
             </label>
-            <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="checkbox" name="group[181123][128]" class="accent-forest-700" />
-              Strategic partnerships and joint ventures
+            <label style="display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:14px;color:var(--ink-deep);border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer">
+              <input type="checkbox" name="group[181123][128]" style="accent-color:var(--terra)" /> Strategic partnerships and joint ventures
             </label>
-            <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="checkbox" name="group[181123][256]" class="accent-forest-700" />
-              Philanthropic and mission-aligned capital
+            <label style="display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:14px;color:var(--ink-deep);border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer">
+              <input type="checkbox" name="group[181123][256]" style="accent-color:var(--terra)" /> Philanthropic and mission-aligned capital
             </label>
-            <label class="flex cursor-pointer items-center gap-2 rounded-md border border-stone-200 bg-white px-4 py-3 text-sm text-forest-800 hover:border-forest-700/40 has-[:checked]:border-forest-700 has-[:checked]:bg-forest-700/5">
-              <input type="checkbox" name="group[181123][512]" class="accent-forest-700" />
-              General curiosity
+            <label style="display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:14px;color:var(--ink-deep);border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer">
+              <input type="checkbox" name="group[181123][512]" style="accent-color:var(--terra)" /> General curiosity
             </label>
           </div>
         </fieldset>
 
         <div>
-          <label for="REFERRAL" class="block text-sm font-medium text-forest-800">
-            How did you hear about us? <span class="text-stone-400">(optional)</span>
-          </label>
-          <input
-            id="REFERRAL"
-            name="REFERRAL"
-            type="text"
-            class="mt-2 w-full rounded-md border border-stone-200 bg-white px-4 py-3 text-base text-forest-800 placeholder:text-stone-400 focus:border-forest-700 focus:outline-none focus:ring-2 focus:ring-forest-700/20"
-          />
+          <label for="REFERRAL" style="display:block;font-size:13.5px;font-weight:600;color:var(--ink-deep);margin-bottom:6px">How did you hear about us? <span style="color:#8a8578">(optional)</span></label>
+          <input id="REFERRAL" name="REFERRAL" type="text" style="width:100%;box-sizing:border-box;padding:11px 13px;font-size:15px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink-deep)" />
         </div>
 
         <div>
-          <label for="NOTES" class="block text-sm font-medium text-forest-800">
-            Anything you'd like to share? <span class="text-stone-400">(optional)</span>
-          </label>
-          <textarea
-            id="NOTES"
-            name="NOTES"
-            rows="4"
-            class="mt-2 w-full rounded-md border border-stone-200 bg-white px-4 py-3 text-base text-forest-800 placeholder:text-stone-400 focus:border-forest-700 focus:outline-none focus:ring-2 focus:ring-forest-700/20"
-          ></textarea>
+          <label for="NOTES" style="display:block;font-size:13.5px;font-weight:600;color:var(--ink-deep);margin-bottom:6px">Anything you'd like to share? <span style="color:#8a8578">(optional)</span></label>
+          <textarea id="NOTES" name="NOTES" rows="4" style="width:100%;box-sizing:border-box;padding:11px 13px;font-size:15px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink-deep)"></textarea>
         </div>
 
-        <div class="rounded-md border border-stone-200 bg-cream-50 p-5 text-xs leading-relaxed text-stone-600">
-          <p class="font-medium text-forest-800">Disclaimer</p>
-          <p class="mt-2">
-            This form is not an offer of securities or a general
-            solicitation. Now City, Inc. is considering an offering of
-            securities exempt from registration under the Securities
-            Act, but has not determined a specific exemption it intends
-            to rely upon. No money or other consideration is being
-            solicited, and if sent, will not be accepted. No sales will
-            be made or commitments to purchase accepted until NowCity,
-            Inc. determines the exemption from registration to rely
-            upon and meets all requirements. Your indication of
-            interest by filling out this form is non-binding.
-          </p>
+        <div style="border:1px solid var(--line);background:var(--cream-2);border-radius:7px;padding:16px;font-size:12.5px;line-height:1.7;color:#6a655c">
+          <p style="font-weight:600;color:var(--ink-deep);margin:0 0 8px">Disclaimer</p>
+          <p style="margin:0">This form is not an offer of securities or a general solicitation. Now City, Inc. is considering an offering of securities exempt from registration under the Securities Act, but has not determined a specific exemption it intends to rely upon. No money or other consideration is being solicited, and if sent, will not be accepted. No sales will be made or commitments to purchase accepted until NowCity, Inc. determines the exemption from registration to rely upon and meets all requirements. Your indication of interest by filling out this form is non-binding.</p>
         </div>
 
-        {/* Mailchimp anti-bot honeypot. Hidden field; bots fill it, humans don't. */}
+        <!-- Mailchimp anti-bot honeypot. Hidden field; bots fill it, humans don't. -->
         <div style="position:absolute;left:-5000px" aria-hidden="true">
           <input type="text" name="b_88bfb2c8f34fdd20e85cce03f_9c44948c78" tabindex="-1" value="" />
         </div>
 
-        <div class="mt-2">
-          <button type="submit" class="btn-primary">
-            Submit interest
-          </button>
+        <div>
+          <button type="submit" style="border:none;border-radius:6px;background:var(--terra);color:#fff;font-weight:600;font-size:15px;letter-spacing:.06em;padding:14px 26px;cursor:pointer">Submit interest</button>
         </div>
       </form>
     </div>
   </section>
-</Layout>
+</PreviewLayout>

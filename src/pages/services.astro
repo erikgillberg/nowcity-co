@@ -1,9 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-const title = 'Services';
-const description =
-  'Strategic advisory and owner representation for large-scale sites. A four-phase engagement framework, from carrying-capacity discovery through stewardship.';
+import PreviewLayout from '../layouts/PreviewLayout.astro';
+import heroImg from '../assets/brand/gardening.jpg';
+import mobilityStreet from '../assets/watercolors/mobility-street.jpg';
+import marketShop from '../assets/watercolors/market-shop.jpg';
 
 const phases = [
   {
@@ -22,7 +21,7 @@ const phases = [
     value: 'Lower capital and operating costs, stronger identity, and smoother entitlements because the physical and operational systems reinforce each other from day one.',
     fee: 'Fixed plus milestone fees',
     blurb:
-      'We design the physical and operational systems so uses reinforce one another, reducing waste and unlocking shared value across the program.',
+      'We design the physical and operational systems so uses reinforce one another, reducing waste and helping communities create shared value across the program.',
   },
   {
     number: '03',
@@ -43,65 +42,47 @@ const phases = [
       'We can serve as your development manager or co-developer, delivering the project and maintaining integrity over time.',
   },
 ];
+const phaseIcons = ['<svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.6-4.6"/></svg>','<svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.3"/><circle cx="18" cy="7" r="2.3"/><circle cx="12" cy="17" r="2.3"/><path d="M7.8 8.5l2.7 6.4M16.2 8.5l-2.7 6.4M8.3 7h7.4"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="13.5" y="8" width="3" height="9"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 14c0 3 3.2 5 8 5s8-2 8-5"/><path d="M12 13.5V7.5"/><path d="M12 9.5C10 9.5 9 8.1 9 6.5c1.8 0 3 1 3 3Z"/><path d="M12 9.5c0-1.7 1.2-3 3-3 0 1.6-1 3-3 3Z"/></svg>'];
 ---
+<PreviewLayout title="Services" description="Strategic advisory and owner representation for large-scale sites. A four-phase engagement framework, from carrying-capacity discovery through stewardship." active="services">
+  <header class="hero short" id="top">
+    <div class="bg" style={`background-image:url(${heroImg.src})`}></div><div class="shade"></div>
+    <div class="wrap">
+      <div class="eyebrow">Services</div>
+      <h1>Strategic advisory<br>for large-scale sites.</h1>
+      <p class="sub">We guide landholders through visioning, feasibility, planning, capital structure, and delivery, creating value that lasts.</p>
+      <div class="meta">Strategic advisory &amp; owner representation &middot; Four-phase engagement &middot; Discovery through stewardship</div>
+    </div>
+  </header>
 
-<Layout title={title} description={description}>
-  <section class="pt-12 pb-16 md:pt-20">
-    <div class="container-wide">
-      <div class="max-w-3xl">
-        <div class="eyebrow mb-6">Services</div>
-        <h1 class="font-display text-display-xl text-forest-700">
-          Strategic advisory for large-scale sites.
-        </h1>
-        <p class="lede mt-8 text-stone-700">
-          We guide landholders through visioning, feasibility, planning,
-          capital structure, and delivery, creating value that lasts.
-        </p>
-        <div class="mt-10">
-          <a href="#contact" class="btn-primary">Schedule a gateway call</a>
+  <!-- THE PROBLEM WE SOLVE -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">The problem we solve</div>
+        <h2>The traditional process is the risk.</h2>
+      </div>
+      <div class="grid g2 rv" style="align-items:center;gap:40px">
+        <div>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Most development follows a familiar pattern: set a density or revenue target, draw a design to match, then spend years fighting entitlements, redesign, engineering rework, and community pushback. Distinctiveness gets value-engineered out.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">That is why so many projects overrun budgets, stall in entitlements, lose their identity in value engineering, and underperform in absorption and resale. The traditional process is itself the source of risk, cost, and delay.</p>
         </div>
+        <div class="figure-block rv" style="margin-top:0"><img src={marketShop.src} alt="Ground-floor shopfronts and a lively sidewalk market with people gathering, produce stalls, and cafe seating." loading="lazy" /><div class="fig-cap">Ground-floor life and a local economy worth walking to. Concept rendering.</div></div>
       </div>
     </div>
   </section>
 
-  {/* Why traditional falls short */}
-  <section class="border-y border-forest-700/10 bg-cream-50 py-section">
-    <div class="container-wide grid gap-12 md:grid-cols-12">
-      <div class="md:col-span-5">
-        <div class="eyebrow mb-4">The problem we solve</div>
-        <h2 class="font-display text-display-md text-forest-700">
-          The traditional process is the risk.
-        </h2>
+  <!-- A BETTER WAY -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">A better way</div>
+        <h2>Start with the land and the systems.</h2>
       </div>
-      <div class="md:col-span-7">
-        <p class="prose-body">
-          Most development follows a familiar pattern: set a density or
-          revenue target, draw a design to match, then spend years
-          fighting entitlements, redesign, engineering rework, and
-          community pushback. Distinctiveness gets value-engineered out.
-        </p>
-        <p class="prose-body mt-5">
-          That is why so many projects overrun budgets, stall in entitlements,
-          lose their identity in value engineering, and underperform in
-          absorption and resale. The traditional process is itself the
-          source of risk, cost, and delay.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  {/* We flip the order */}
-  <section class="py-section">
-    <div class="container-wide">
-      <div class="mb-12">
-        <div class="eyebrow mb-4">A better way</div>
-        <h2 class="font-display text-display-md text-forest-700">Start with the land and the systems.</h2>
-      </div>
-
-      <div class="grid gap-4 md:grid-cols-2">
-        <div class="rounded-2xl border border-stone-300 bg-white p-8">
-          <div class="eyebrow mb-4 text-stone-500">Traditional</div>
-          <ul class="space-y-3 text-stone-600">
+      <div class="grid g2 rv">
+        <div class="card on-alt">
+          <h4>Traditional</h4>
+          <ul class="tick">
             <li>Pro-forma determines the plan</li>
             <li>Utilities and infrastructure sized independently</li>
             <li>Community and agency engagement comes late</li>
@@ -109,9 +90,9 @@ const phases = [
             <li>Project ends at construction</li>
           </ul>
         </div>
-        <div class="rounded-2xl border border-forest-700 bg-forest-700 p-8 text-cream">
-          <div class="eyebrow mb-4 text-copper-200">Now City</div>
-          <ul class="space-y-3 text-cream/90">
+        <div class="card on-alt" style="border-top:3px solid var(--terra)">
+          <h4>Now City</h4>
+          <ul class="tick">
             <li>Land and systems determine the plan</li>
             <li>Integrated system flows reduce cap-ex and op-ex</li>
             <li>Alignment is built in early</li>
@@ -123,97 +104,58 @@ const phases = [
     </div>
   </section>
 
-  {/* Engagement framework */}
-  <section class="bg-cream-50 py-section">
-    <div class="container-wide">
-      <div class="mb-12 max-w-3xl">
-        <div class="eyebrow mb-4">Engagement framework</div>
-        <h2 class="font-display text-display-md text-forest-700">Four phases. Clear fees. Earned together.</h2>
-        <p class="prose-body mt-6">
-          Each phase has a defined output, measurable value, and a fee
-          logic that aligns our incentive with yours. We only move to the
-          next phase when the work we have already done warrants it.
-        </p>
+  <!-- ENGAGEMENT FRAMEWORK -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Engagement framework</div>
+        <h2>Four phases. Clear fees. Earned together.</h2>
+        <p class="lead">Each phase has a defined output, measurable value, and a fee logic that aligns our incentive with yours. We only move to the next phase when the work we have already done warrants it.</p>
       </div>
-
-      <div class="space-y-6">
-        {phases.map((p) => (
-          <article class="rounded-2xl border border-forest-700/10 bg-white p-8 md:p-10">
-            <div class="grid gap-8 md:grid-cols-12">
-              <div class="md:col-span-3">
-                <div class="font-display text-5xl text-copper-400">{p.number}</div>
-                <div class="mt-3 font-display text-xl leading-tight text-forest-700">{p.title}</div>
-              </div>
-              <div class="md:col-span-9">
-                <p class="prose-body">{p.blurb}</p>
-                <dl class="mt-6 grid gap-5 md:grid-cols-3">
-                  <div>
-                    <dt class="eyebrow">Output</dt>
-                    <dd class="mt-2 text-sm text-stone-700">{p.output}</dd>
-                  </div>
-                  <div>
-                    <dt class="eyebrow">Value</dt>
-                    <dd class="mt-2 text-sm text-stone-700">{p.value}</dd>
-                  </div>
-                  <div>
-                    <dt class="eyebrow">Fee</dt>
-                    <dd class="mt-2 text-sm text-stone-700">{p.fee}</dd>
-                  </div>
-                </dl>
-              </div>
-            </div>
-          </article>
+      <div class="grid g2 g-2up rv">
+        {phases.map((p, i) => (
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:14px"><span class="pv-icon" style="margin-bottom:0" set:html={phaseIcons[i]}></span><span class="serif" style="font-size:23px;color:var(--terra)">{p.number}</span></div>
+            <h3 style="margin-top:10px">{p.title}</h3>
+            <p style="font-size:14.5px;line-height:1.65;color:#4a463f">{p.blurb}</p>
+            <div style="margin-top:16px"><h4>Output</h4><p style="font-size:14px;line-height:1.6;color:#4a463f">{p.output}</p></div>
+            <div style="margin-top:12px"><h4>Value</h4><p style="font-size:14px;line-height:1.6;color:#4a463f">{p.value}</p></div>
+            <div style="margin-top:12px"><h4>Fee</h4><p style="font-size:14px;line-height:1.6;color:#4a463f">{p.fee}</p></div>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  {/* Who we serve */}
-  <section class="py-section">
-    <div class="container-wide grid gap-12 md:grid-cols-12">
-      <div class="md:col-span-5">
-        <div class="eyebrow mb-4">Who we serve</div>
-        <h2 class="font-display text-display-md text-forest-700">
-          Landholders with sites large enough to become neighborhoods.
-        </h2>
-      </div>
-      <div class="md:col-span-7">
-        <p class="prose-body">
-          Family holdings, institutional campuses, waterfront reuse,
-          edge-urban sites, multi-parcel assemblages. You have the land.
-          We provide the pathway.
-        </p>
-        <p class="prose-body mt-5">
-          If your goal is a single building or a simple subdivision, you
-          might want a different partner. If your goal is a place with
-          meaning, resilience, and long-term value, we should talk.
-        </p>
+  <!-- WHO WE SERVE -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="grid g2 rv" style="align-items:center;gap:44px">
+        <div>
+          <div class="eyebrow">Who we serve</div>
+          <h2 style="font-size:clamp(28px,3.6vw,40px);margin:14px 0 18px;color:var(--ink-deep)">Landholders with sites large enough to become neighborhoods.</h2>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f">Family holdings, institutional campuses, waterfront reuse, edge-urban sites, multi-parcel assemblages. You have the land. We provide the pathway.</p>
+          <p style="font-size:16.5px;line-height:1.75;color:#4a463f;margin-top:16px">If your goal is a single building or a simple subdivision, you might want a different partner. If your goal is a place with meaning, resilience, and long-term value, we should talk.</p>
+        </div>
+        <div class="figure-block rv" style="margin-top:0">
+          <img src={mobilityStreet.src} alt="A calm, walkable neighborhood street with people on foot and bikes, wide sidewalks, street trees, and low traffic." loading="lazy" />
+          <div class="fig-cap">A walkable street where getting around on foot is the easy choice. Concept rendering.</div>
+        </div>
       </div>
     </div>
   </section>
 
-  {/* Contact / gateway call */}
-  <section id="contact" class="bg-forest-700 py-section text-cream">
-    <div class="container-narrow">
-      <div class="eyebrow mb-4 text-copper-200">Ready to explore your site's potential?</div>
-      <h2 class="font-display text-display-lg text-cream">Schedule a 30-minute gateway call.</h2>
-      <p class="mt-6 text-lg leading-relaxed text-cream/85">
-        In half an hour we will review your site context, share our
-        place-scale opportunity framework, and identify whether your
-        project qualifies for the next phase.
-      </p>
-      <p class="mt-4 text-lg leading-relaxed text-cream/85">
-        We take on a select number of engagements each quarter to ensure
-        quality and alignment.
-      </p>
-      <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-        <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded-full bg-cream px-6 py-3 text-sm font-medium text-forest-700 no-underline transition-colors hover:bg-copper-100 hover:text-forest-800">
-          Get in touch
-        </a>
-        <a href="/approach" class="inline-flex items-center justify-center gap-2 rounded-full border border-cream/40 px-6 py-3 text-sm font-medium text-cream no-underline transition-colors hover:bg-cream/10">
-          See how we work
-        </a>
+  <!-- CONTACT / GATEWAY CALL -->
+  <section class="dark">
+    <div class="wrap rv">
+      <div class="eyebrow">Ready to explore your site's potential?</div>
+      <h2 class="serif">Schedule a 30-minute gateway call.</h2>
+      <p class="muted" style="max-width:640px">In half an hour we will review your site context, share our place-scale opportunity framework, and identify whether your project qualifies for the next phase.</p>
+      <p class="muted" style="max-width:640px;margin-top:14px">We take on a select number of engagements each quarter to ensure quality and alignment.</p>
+      <div class="contacts">
+        <a href="/contact">Get in touch &rarr;</a>
+        <a href="/approach">See how we work &rarr;</a>
       </div>
     </div>
   </section>
-</Layout>
+</PreviewLayout>
