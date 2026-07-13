@@ -49,6 +49,15 @@ const nav = [
   .faq-a{padding:0 44px 22px 0}
   .faq-a p{font-size:14.5px;line-height:1.7;color:#4a463f}
   .faq-a p + p{margin-top:11px}
+  @media(max-width:760px){
+    .fcols{grid-template-columns:1fr!important;gap:24px!important}
+    .getupd{align-items:flex-start!important}
+    .getupd > div{max-width:none!important}
+    .getupd form{min-width:0!important;width:100%}
+    .getupd form input{flex:1 1 100%!important;min-width:0!important}
+    .getupd form button{width:100%}
+  }
+  @media(max-width:600px){ section{padding:60px 0} .sec-head{margin-bottom:38px} .hero .wrap{padding-top:132px} }
 </style>
 </head>
 <body>
@@ -87,7 +96,7 @@ const nav = [
 </section>
 
 <footer>
-  <div class="wrap" style="padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid #2b2823;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+  <div class="wrap getupd" style="padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid #2b2823;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap">
     <div style="max-width:440px">
       <div class="eyebrow" style="color:#e8c79d;margin-bottom:7px">Stay in the loop</div>
       <div style="color:#cfc9bd;font-size:14.5px;line-height:1.55">Follow the work as it unfolds. Occasional updates on Now City, the neighborhoods, and the ideas behind them. No noise.</div>
@@ -98,7 +107,7 @@ const nav = [
       <button type="submit" name="subscribe" style="padding:12px 22px;border:none;border-radius:8px;background:var(--terra);color:#fff;font-weight:600;font-size:14px;letter-spacing:.03em;cursor:pointer;white-space:nowrap">Get updates</button>
     </form>
   </div>
-  <div class="wrap" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;align-items:start">
+  <div class="wrap fcols" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;align-items:start">
     <div>
       <div class="serif" style="font-size:17px;color:#bdb7a8">Now City Inc.</div>
       <p style="margin-top:10px;max-width:320px;line-height:1.6">Housing, work, play, food, wellness, and mobility in one connected daily life. The best of the past and the future. Now.</p>
@@ -114,7 +123,7 @@ const nav = [
   </div>
   <div class="wrap" style="margin-top:26px;padding-top:18px;border-top:1px solid #2b2823;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
     <div>&copy; 2026 Now City Inc. All rights reserved.</div>
-    <div>Preview &middot; editorial redesign for review</div>
+    <div>The West Coast, Pacific Northwest to Baja California</div>
   </div>
 </footer>
 
