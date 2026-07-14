@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="assets/nowcity-favicon-white.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Now City Inc - Investor Preview</title>
+<meta name="description" content="Now City Inc is a master developer platform for regenerative districts. A private preview for prospective platform investors.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=1">
+<script defer src="assets/nav.js?v=1"></script>
+<style>
+#subnav .wrap{gap:6px}
+#subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
+#subnav a:hover{color:var(--terra);background:rgba(168,112,63,.08)}
+#subnav a.active{color:#fff;background:var(--terra);border-color:var(--terra)}
+.thesis{background:rgba(217,162,108,.07);border-left:3px solid #d9a26c;border-radius:0 8px 8px 0;padding:24px 26px;margin-top:38px;font-size:16.5px;color:#e8e2d6;line-height:1.75}
+.gapgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:34px}
+.gapgrid .card .gn{font-family:var(--serif);font-size:26px;color:#d9a26c;line-height:1}
+.gapgrid .card h4{margin-top:10px}
+.doc-card{position:relative;display:block;border-radius:10px;overflow:hidden;border:1px solid #3d392f;text-decoration:none;min-height:250px}
+.doc-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.doc-card:hover img{transform:scale(1.04)}
+.doc-card .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,14,.1) 0%,rgba(20,18,14,.85) 100%)}
+.doc-card .tx{position:absolute;left:0;right:0;bottom:0;padding:20px 22px}
+.doc-card .k{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#e8c79d}
+.doc-card h3{font-family:var(--serif);font-size:21px;color:#fff;margin-top:6px;line-height:1.25}
+.doc-card p{font-size:13px;color:#d8d2c4;margin-top:6px;line-height:1.55}
+.docgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:34px}
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:34px}
+.proof .p{background:#2b2823;border:1px solid #3d392f;border-radius:10px;padding:20px 22px}
+.proof .p .tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#9db08a;background:rgba(157,176,138,.12);border-radius:12px;padding:3px 10px;margin-bottom:10px}
+.proof .p h4{font-family:var(--serif);font-size:17px;color:var(--cream);font-weight:400;line-height:1.3;margin-bottom:8px}
+.proof .p p{font-size:13px;line-height:1.65;color:#c9c2b2}
+.vflow{max-width:640px;margin:40px auto 0}
+.vstep{background:#2b2823;border:1px solid #3d392f;border-radius:10px;padding:20px 24px;text-align:center}
+.vstep .vnum{font-family:var(--serif);font-size:26px;color:var(--cream);line-height:1.2}
+.vstep .vlbl{font-size:13.5px;color:#b7b0a3;margin-top:5px;line-height:1.55}
+.vstep.seed{border-color:#d9a26c;border-width:2px;background:rgba(217,162,108,.09)}
+.vstep.seed .vnum{color:#d9a26c}
+.varrow{text-align:center;color:#d9a26c;font-size:22px;line-height:1;margin:9px 0}
+</style>
+</head>
+<body class="gated">
+
+<!-- PASSCODE GATE -->
+<div id="gate">
+  <div class="panel">
+    <div class="eyebrow" style="color:#d9a26c">Now City Inc</div>
+    <h1 class="serif">Investor<br>Preview</h1>
+    <p>This site is shared with prospective platform investors for discussion purposes. Enter the access code to continue.</p>
+    <form id="gateform">
+      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+      <div class="err" id="gateerr"></div>
+    </form>
+    <p style="margin-top:22px;font-size:12.5px">Need access? Contact <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Now City Inc<span class="brand-sub"> &middot; Investor Preview</span></a>
+    <ul class="navlinks">
+      <li><a href="index.html" class="active">The Thesis</a></li>
+      <li><a href="strategy.html">Strategy</a></li>
+      <li><a href="raise.html">The Raise</a></li>
+      <li><a href="team.html">Team &amp; Traction</a></li>
+      <li><a href="../west-salem/">Edgewater Portal</a></li>
+      <li><a href="mailto:erik@nowcitylabs.com">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#opening">The Opening</a>
+    <a href="#platform">The Platform</a>
+    <a href="#proof">Proof</a>
+    <a href="#raise">The Raise</a>
+    <a href="#documents">Documents</a>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="bg" style="background-image:url('assets/oregon/oregon-coast.jpg')"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="eyebrow">Now City Inc &middot; Private Investor Preview</div>
+    <h1>The district<br>is the product.</h1>
+    <p class="sub">Now City is a master developer platform for regenerative districts. The first district is under way. This raise builds the company that builds the rest.</p>
+    <div class="meta">$3M Platform Equity &middot; C-Corp &middot; Raising Now &middot; For discussion purposes only</div>
+  </div>
+</header>
+
+<section class="dark" id="opening">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Opening</div>
+      <h2>America needs districts. Almost nobody is set up to deliver them.</h2>
+      <p class="lead">The country is short millions of homes, and the shortage is sharpest where people actually want to live: walkable, connected neighborhoods near jobs, nature, and daily life. Mid-sized cities hold the land, the zoning momentum, and the demand. What they are missing is the actor: conventional development optimizes for a single asset, a single capital structure, and a single transaction, while the value in these places is created at district scale, over a decade, across many buildings and many kinds of capital.</p>
+    </div>
+    <div class="gapgrid rv">
+      <div class="card"><div class="gn">1</div><h4>The demand is real</h4><p style="font-size:13.5px">Oregon was the #1 inbound state in 2025 and Salem the #7 inbound US metro. Core-market vacancy under 2%. Renters paying 36-37% of income. The same pattern repeats across the mid-sized West.</p></div>
+      <div class="card"><div class="gn">2</div><h4>The policy window is open</h4><p style="font-size:13.5px">Cities have rezoned corridors for density, tax increment tools are proven, the Opportunity Zone program is now permanent, and statewide housing production goals give aligned projects political tailwind.</p></div>
+      <div class="card"><div class="gn">3</div><h4>The role is vacant</h4><p style="font-size:13.5px">Merchant builders build one building and leave. Institutions arrive after de-risking. The master developer role, the actor who assembles, entitles, and stewards the whole, is unfilled in nearly every mid-sized market.</p></div>
+    </div>
+    <div class="thesis rv">Now City exists to fill that role. We are a vertically integrated master developer and operator: we help communities unlock the value in underused land, treat the district as one living system, and steward the result for decades. The mission is to accelerate the transition to regenerative, resilient, and equitable communities and cities. The business is that districts built this way outperform, and the platform that can repeat them compounds.</div>
+  </div>
+</section>
+
+<section class="dark" id="platform" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Platform</div>
+      <h2>One company, built to repeat the hardest role in real estate</h2>
+      <p class="lead">A master developer earns across four layers: land value created by assembly and entitlement, pad monetization to phase partners, development margin on the phases it builds, and long-term yield on the district it holds. Now City's edge is that every layer runs on systems the company owns: an AI-native underwriting and modeling toolchain, an industrialized building product, a public capital playbook, and a coalition method that turns cities into partners. Each district the platform delivers makes the next one faster, cheaper, and more credible.</p>
+    </div>
+    <div class="proof rv">
+      <div class="p"><span class="tag">Software</span><h4>Now City Upside Explorer</h4><p>A live, collaborative underwriting model that proves the good project pencils: from an honest floor to institutional returns, every point traced to a named, defensible move. Built and in use on the first district; productized at <a href="https://nowcity.ai" style="color:#d9a26c">nowcity.ai</a>.</p></div>
+      <div class="p"><span class="tag">Building product</span><h4>Point Access Block &middot; Passive House</h4><p>A standardized, single-stair, high-efficiency building type: 93% efficient floor plates, industrialized construction, lower cost and carbon, and a shell design that fits affordable-housing cost limits.</p></div>
+      <div class="p"><span class="tag">Capital playbook</span><h4>The blended-cost stack</h4><p>A repeatable public-private capital strategy (TIF, HUD, C-PACE, LIHTC, OZ, mission capital) that targets a blended cost of capital well below conventional finance, documented live in the Edgewater data room.</p></div>
+      <div class="p"><span class="tag">Method</span><h4>Coalition development</h4><p>Districts get built by coalitions. Now City's method recruits the city, the university, the region's employers, and local capital as named partners before vertical capital is at risk.</p></div>
+    </div>
+    <p class="muted rv" style="margin-top:26px;font-size:14px">The full business model, flywheel, and market strategy live on the <a href="strategy.html" style="color:#d9a26c">Strategy</a> page.</p>
+  </div>
+</section>
+
+<section class="dark" id="proof" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Proof, Not Promise</div>
+      <h2>Edgewater: the first district is already moving</h2>
+      <p class="lead">Edgewater is a ~22-acre riverfront district in West Salem, Oregon: roughly 1,000 homes, retail, wellness, and an innovation anchor, phased over eight years. Now City is its master developer. The land is under a signed letter of intent with the landowner contributing $5M of land value as equity, the corridor is rezoned for high-density mixed use, the tract's Opportunity Zone status is verified, and a $12M district fund is raising alongside this platform round.</p>
+    </div>
+    <div class="stats statcards c4 rv" style="max-width:1040px;margin:0 auto">
+      <div class="stat"><div class="num">~22 acres</div><div class="lbl">Willamette riverfront district, assembled from a rezoned corridor</div></div>
+      <div class="stat"><div class="num">$650M</div><div class="lbl">Development pipeline unlocked across four phases</div></div>
+      <div class="stat"><div class="num">~$1.0B</div><div class="lbl">Stabilized asset value at completion, held long-term</div></div>
+      <div class="stat"><div class="num">1,000</div><div class="lbl">Homes, priced to local incomes, first phases targeting 2029</div></div>
+    </div>
+    <p class="muted rv" style="margin-top:26px;font-size:14px;text-align:center">The complete Edgewater data room, from business plan to live underwriting, is at the <a href="../west-salem/" style="color:#d9a26c">Edgewater investor portal</a>.</p>
+  </div>
+</section>
+
+<section class="dark" id="raise" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Raise</div>
+      <h2>$3M to own the engine</h2>
+      <p class="lead">Now City Inc is raising $3M of platform equity, one of two vehicles in the $15M Phase One Capital Campaign. The companion $12M District Value Creation Fund buys the district's value; the platform raise buys the company that creates it. Platform investors participate in GP interests, fees, and promote on Edgewater and on every district that follows.</p>
+    </div>
+    <div class="vflow rv">
+      <div class="vstep seed">
+        <div class="vnum">$3M</div>
+        <div class="vlbl"><strong style="color:#e8e2d6">Now City platform equity</strong> &middot; C-corp &middot; raising now</div>
+      </div>
+      <div class="varrow">&#9660;</div>
+      <div class="vstep"><div class="vnum" style="font-size:19px">18 months of execution</div><div class="vlbl">Team, master planning, capital formation, and the systems that scale</div></div>
+      <div class="varrow">&#9660;</div>
+      <div class="vstep"><div class="vnum" style="font-size:19px">Edgewater entitled &amp; capitalized</div><div class="vlbl">Platform fees and carried economics switch on as the district closes its stack</div></div>
+      <div class="varrow">&#9660;</div>
+      <div class="vstep"><div class="vnum" style="font-size:19px">District two, then the platform</div><div class="vlbl">The playbook, product, and capital relationships repeat across the West Coast</div></div>
+    </div>
+    <p class="muted rv" style="margin-top:26px;font-size:14px;text-align:center">Use of funds, milestones, and structure on <a href="raise.html" style="color:#d9a26c">The Raise</a>. Terms are shared in conversation.</p>
+  </div>
+</section>
+
+<section class="dark" id="documents" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Room</div>
+      <h2>Read the whole case</h2>
+    </div>
+    <div class="docgrid rv">
+      <a class="doc-card" href="strategy.html">
+        <img src="assets/oregon/vineyard.jpg" alt="Willamette Valley vineyard" loading="lazy">
+        <div class="ov"></div>
+        <div class="tx"><div class="k">Strategy</div><h3>Business model &amp; flywheel</h3><p>The master developer role, four earning layers, the moat, and where we play next.</p></div>
+      </a>
+      <a class="doc-card" href="raise.html">
+        <img src="assets/mp-11.jpg" alt="Riverfront district render at dusk" loading="lazy">
+        <div class="ov"></div>
+        <div class="tx"><div class="k">The Raise</div><h3>$3M platform equity</h3><p>Structure, use of funds, the 18-month milestone ladder, and honest answers on risk.</p></div>
+      </a>
+      <a class="doc-card" href="team.html">
+        <img src="assets/oregon/riverfront-park.jpg" alt="Salem riverfront park" loading="lazy">
+        <div class="ov"></div>
+        <div class="tx"><div class="k">Team &amp; Traction</div><h3>Who is building this</h3><p>Leadership, senior advisors, and what already exists today.</p></div>
+      </a>
+      <a class="doc-card" href="../west-salem/">
+        <img src="assets/oregon/salem-aerial.jpg" alt="Aerial of Salem, Oregon" loading="lazy">
+        <div class="ov"></div>
+        <div class="tx"><div class="k">The First District</div><h3>Edgewater data room</h3><p>Business plan, capital strategy, live underwriting, and the full district portal.</p></div>
+      </a>
+    </div>
+    <p class="muted rv" style="font-size:13px;margin-top:26px;text-align:center">Start the conversation: <a href="mailto:erik@nowcitylabs.com?subject=Now%20City%20Platform%20Raise" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
+  </div>
+</section>
+
+<section class="dark" style="border-top:1px solid #3d392f;padding:48px 0">
+  <div class="wrap">
+    <p style="font-size:11px;line-height:1.7;color:#8f897c;max-width:920px">All projections are based on assumptions regarding revenues and costs that may not equate to actual results; actual results will differ and may differ materially. Prospective investors, with their financial and legal advisers, should independently evaluate all assumptions and should not place undue weight on any projections. This site does not constitute an offer to buy or sell securities; an offering can be made only pursuant to delivery of definitive offering documents. Any securities would be offered in reliance on exemptions from registration and only to persons meeting applicable requirements. Statements herein may constitute forward-looking statements involving known and unknown risks and uncertainties; no representation is made that objectives will be achieved, and Now City undertakes no obligation to update such statements. This material is confidential, furnished solely for consideration of the matters described, and is not to be copied or shared without written consent.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>©2026 Now City Inc. All Rights Reserved.</div>
+    <div>Not an offer of securities. For discussion purposes only. Any investment would be made solely through definitive offering documents.</div>
+  </div>
+</footer>
+
+<a href="#top" class="toplink" id="toplink" aria-label="Back to top">↑</a>
+<script>
+const nav=document.getElementById('nav');const tl=document.getElementById('toplink');const sub=document.getElementById('subnav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.6);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const subLinks=[...document.querySelectorAll('#subnav a')];const spyIds=subLinks.map(a=>a.getAttribute('href').slice(1));
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;subLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
+spyIds.forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+</script>
+<script>
+(function(){
+const HASH='1fdd827f52a916a168eb4fb527fc117032f895d16adc8239ac4e9c8b9a75c491';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('nci-ok')==='1'||sessionStorage.getItem('nci-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('nci-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
