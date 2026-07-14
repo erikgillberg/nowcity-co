@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="assets/nowcity-favicon-white.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capital Strategy - Edgewater West Salem</title>
+<meta name="description" content="How the Edgewater District's full build-out gets financed: a phased capital stack that compresses the blended cost of capital, and the action plan that unlocks it.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=7">
+<script defer src="assets/nav.js?v=1"></script>
+<style>
+#subnav .wrap{gap:6px}
+#subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
+#subnav a:hover{color:var(--terra);background:rgba(168,112,63,.08)}
+#subnav a.active{color:#fff;background:var(--terra);border-color:var(--terra)}
+.wacc{max-width:840px;margin:34px auto 0;display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;text-align:center}
+.wacc .wb{background:#2b2823;border:1px solid #3d392f;border-radius:10px;padding:24px 22px}
+.wacc .wb.tgt{background:rgba(217,162,108,.1);border-color:#d9a26c}
+.wacc .wb .n{font-family:var(--serif);font-size:34px;color:var(--cream);line-height:1.1}
+.wacc .wb.tgt .n{color:#d9a26c}
+.wacc .wb .l{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#d9a26c;margin-top:8px}
+.wacc .wb .d{font-size:12.5px;color:#b7b0a3;margin-top:8px;line-height:1.6}
+.wacc .warr{align-self:center;font-size:24px;color:#d9a26c}
+@media(max-width:640px){.wacc{grid-template-columns:1fr}.wacc .warr{transform:rotate(90deg)}}
+.stacktbl{width:100%;border-collapse:collapse;margin-top:30px;font-size:13px}
+.stacktbl th{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#d9a26c;text-align:left;padding:10px 12px;border-bottom:1px solid #4a453a}
+.stacktbl td{padding:12px;border-bottom:1px solid #34302a;color:#d8d2c4;line-height:1.55;vertical-align:top}
+.stacktbl td:first-child{font-family:var(--serif);font-size:14.5px;color:var(--cream);white-space:nowrap}
+.stacktbl td.rng{font-variant-numeric:tabular-nums;white-space:nowrap;color:#e8e2d6}
+.stacktbl tr.pub td{background:rgba(157,176,138,.06)}
+@media(max-width:760px){.stacktbl{display:block;overflow-x:auto;white-space:nowrap}}
+.pool{margin-top:44px}
+.pool .phead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:1px solid #3d392f;padding-bottom:14px;margin-bottom:22px}
+.pool .phead h3{font-family:var(--serif);font-size:24px;color:var(--cream)}
+.pool .phead .pr{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#d9a26c}
+.pool .phead .pd{font-size:13px;color:#b7b0a3;flex-basis:100%}
+.tool{background:#2b2823;border:1px solid #3d392f;border-radius:10px;padding:22px 24px 20px}
+.tool h4{font-family:var(--serif);font-size:17px;color:var(--cream);margin-bottom:8px;line-height:1.3;font-weight:400}
+.tool .tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#9db08a;background:rgba(157,176,138,.12);border-radius:12px;padding:3px 10px;margin-bottom:10px}
+.tool .tag.amber{color:#e8b264;background:rgba(232,178,100,.12)}
+.tool p{font-size:13px;line-height:1.65;color:#c9c2b2}
+.toolgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.thesis{background:rgba(217,162,108,.07);border-left:3px solid #d9a26c;border-radius:0 8px 8px 0;padding:24px 26px;margin-top:38px;font-size:16px;color:#e8e2d6;line-height:1.75}
+.mech{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:34px}
+.mech .card .mn{font-family:var(--serif);font-size:26px;color:#d9a26c;line-height:1}
+.mech .card h4{margin-top:10px}
+.ap{margin-top:34px}
+.apphase{border:1px solid #3d392f;border-radius:10px;background:#221f1a;margin-top:20px;overflow:hidden}
+.apphase .aph{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:16px 22px;background:#2b2823;border-bottom:1px solid #3d392f}
+.apphase .aph .n{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#d9a26c}
+.apphase .aph .t{font-family:var(--serif);font-size:18px;color:var(--cream)}
+.apphase ul{list-style:none;padding:8px 0}
+.apphase li{padding:12px 22px;border-bottom:1px solid #2e2b25;font-size:13.5px;line-height:1.65;color:#d8d2c4;display:flex;gap:12px;align-items:baseline}
+.apphase li:last-child{border-bottom:none}
+.apphase li b{color:var(--cream);font-weight:600}
+.apphase .flag{flex-shrink:0;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1e1c18;background:#e8b264;border-radius:10px;padding:3px 9px;position:relative;top:-1px}
+.apphase .dot{flex-shrink:0;width:7px;height:7px;border-radius:50%;background:#d9a26c;position:relative;top:-2px}
+.reg{width:100%;border-collapse:collapse;margin-top:30px;font-size:13px}
+.reg th{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#d9a26c;text-align:left;padding:10px 12px;border-bottom:1px solid #4a453a}
+.reg td{padding:12px;border-bottom:1px solid #34302a;color:#d8d2c4;line-height:1.55;vertical-align:middle}
+.reg .pill{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:12px;padding:4px 12px;white-space:nowrap}
+.reg .pill.done{color:#9db08a;background:rgba(157,176,138,.14)}
+.reg .pill.open{color:#e8b264;background:rgba(232,178,100,.13)}
+.reg .pill.plan{color:#b7b0a3;background:rgba(183,176,163,.13)}
+@media(max-width:700px){.reg{display:block;overflow-x:auto}}
+.prec{background:rgba(255,255,255,.04);border:1px dashed #4a453a;border-radius:8px;padding:12px 16px;font-size:12.5px;color:#b7b0a3;margin-top:18px;line-height:1.6}
+.prec b{color:#d9a26c;font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:4px}
+</style>
+</head>
+<body class="gated">
+
+<!-- PASSCODE GATE -->
+<div id="gate">
+  <div class="panel">
+    <div class="eyebrow" style="color:#d9a26c">Edgewater West Salem</div>
+    <h1 class="serif">Private<br>Preview</h1>
+    <p>This site is shared with project stakeholders for discussion purposes. Enter the access code to continue.</p>
+    <form id="gateform">
+      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+      <div class="err" id="gateerr"></div>
+    </form>
+    <p style="margin-top:22px;font-size:12.5px">Need access? Contact <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Edgewater West Salem<span class="brand-sub"> &middot; A Now City Neighborhood</span></a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="dd"><a href="plan.html">District Plan</a>
+        <ul class="ddm">
+          <li class="core"><a href="plan.html">Business Plan</a></li>
+          <li class="core"><a href="district.html">District Vision</a></li>
+          <li class="core"><a href="innovation-district.html">Innovation District</a></li>
+          <li class="core"><a href="district-capitalization.html">District Capitalization</a></li>
+          <li class="dd-head">Execution</li>
+          <li><a href="activation.html">Activation Plan</a></li>
+          <li><a href="coalition-building.html">Coalition &amp; Partners</a></li>
+          <li><a href="design-engineering.html">Delivery Teams</a></li>
+          <li><a href="odc.html" style="padding-left:32px">&rsaquo; Understanding the ODC</a></li>
+          <li><a href="proposal-held.html" style="padding-left:32px">&rsaquo; Held Proposal</a></li>
+          <li><a href="proposal-cannon.html" style="padding-left:32px">&rsaquo; CannonDesign Proposal</a></li>
+          <li class="dd-head">Underwriting</li>
+          <li><a href="about-upside.html">Upside Explorer</a></li>
+          <li><a href="capital-strategy.html" class="active">Capital Strategy</a></li>
+          <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
+          <li><a href="assets/docs/market-feasibility-study-2025.pdf" target="_blank" rel="noopener">Market Feasibility Study (2025)</a></li>
+          <li class="dd-head">Research &amp; Precedents</li>
+          <li><a href="research.html">District Economic Development</a></li>
+          <li><a href="district-value.html">District Value Creation</a></li>
+          <li><a href="global-districts.html">Global District Developments</a></li>
+          <li><a href="mobility-research.html">District Mobility</a></li>
+          <li><a href="pab.html">Single-Stair / Point Access Block</a></li>
+          <li><a href="uli-tap.html">ULI Salem TAP (2022)</a></li>
+          <li><a href="copenhagen-salem.html">The Copenhagen Comparison</a></li>
+          <li class="dd-head">Concepts</li>
+          <li><a href="mobility-concepts.html">Salem Mobility Concepts</a></li>
+          <li><a href="whoosh.html">Whoosh by Swyft Cities</a></li>
+        </ul>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#philosophy">Philosophy</a>
+    <a href="#stack">The Stack</a>
+    <a href="#pools">Three Pools</a>
+    <a href="#execution">Execution &amp; Milestones</a>
+    <a href="#register">Verification Register</a>
+  </div>
+</div>
+
+<header class="hero short" id="top">
+  <div class="bg" style="background-image:url('assets/oregon/riverfront-park.jpg')"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="eyebrow">Underwriting &middot; CFO Memorandum &middot; July 2026</div>
+    <h1>Capital<br>Strategy</h1>
+    <p class="sub">How $650M of district build-out gets financed: a phased capital stack that compresses the blended cost of capital, and the action plan that unlocks it.</p>
+    <div class="meta">Edgewater District &middot; Data room document &middot; For discussion purposes only</div>
+  </div>
+</header>
+
+<section class="dark" id="philosophy">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Capital Philosophy</div>
+      <h2>One metric governs everything: blended cost across the full stack</h2>
+      <p class="lead">Edgewater finances as a phased capital stack. Each vertical phase carries its own stack; public mechanisms carry the shared infrastructure. Public value capture, government credit enhancement, tax-advantaged structures, and mission-priced capital layer together to compress the blended weighted average cost of capital well below conventional development finance. The rate on any single instrument matters far less than what the whole stack costs together, and the delta flows directly to project feasibility, affordability depth, and sponsor economics.</p>
+    </div>
+    <div class="wacc rv">
+      <div class="wb">
+        <div class="n">8.5-10.5%</div>
+        <div class="l">Conventional finance</div>
+        <div class="d">Indicative blended cost of a $650M district capitalized at market terms: bank construction debt, market-rate equity, infrastructure on the private stack.</div>
+      </div>
+      <div class="warr">&rarr;</div>
+      <div class="wb tgt">
+        <div class="n">5.5-7.0%</div>
+        <div class="l">Target blended cost</div>
+        <div class="d">The stack on this page: increment-funded infrastructure, HUD and agency debt, C-PACE, bonds and credits, OZ equity, and mission-priced capital layered together.</div>
+      </div>
+    </div>
+    <div class="mech rv">
+      <div class="card"><div class="mn">1</div><h4>Public value capture</h4><p style="font-size:13.5px">Tax increment financing funds shared infrastructure from the value the project itself creates, moving an estimated $30-80M of scope onto the public stack.</p></div>
+      <div class="card"><div class="mn">2</div><h4>Government credit enhancement</h4><p style="font-size:13.5px">HUD-insured and agency debt prices 150-300 bps inside bank construction financing, at higher leverage and longer fixed terms.</p></div>
+      <div class="card"><div class="mn">3</div><h4>Tax-advantaged structures</h4><p style="font-size:13.5px">LIHTC equity, tax-exempt bonds, C-PACE, and Opportunity Zone equity each lower the effective cost of a tranche of the stack.</p></div>
+      <div class="card"><div class="mn">4</div><h4>Mission-priced capital</h4><p style="font-size:13.5px">CDFI debt and foundation program-related investments price at 1-4% because the regenerative mandate is the return. Now City's positioning is a genuine pricing advantage here.</p></div>
+    </div>
+    <div class="thesis rv">The $15M Phase One Capital Campaign now underway ($12M District Value Creation Fund plus $3M Now City platform) buys control of the entitlement, structuring, and sequencing work that unlocks this entire stack. That is the investment thesis. The vehicles, doors, and exits live on the <a href="district-capitalization.html" style="color:#d9a26c">District Capitalization</a> page; this page is the CFO's map of the capital those vehicles unlock.</div>
+  </div>
+</section>
+
+<section class="dark" id="stack" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Capital Stack Architecture</div>
+      <h2>Seven layers, each priced on its own terms</h2>
+      <p class="lead">The district builds in phases of roughly $60-120M, and each phase carries its own stack. District infrastructure is financed separately through public mechanisms. The composition below is indicative for the full build-out; ranges are deliberately wide at this stage, and the grounding work in the action plan narrows them.</p>
+    </div>
+    <table class="stacktbl rv">
+      <tr><th>Layer</th><th>Source</th><th>Est. Range</th><th>Indicative Cost</th></tr>
+      <tr class="pub"><td>District infrastructure</td><td>TIF / URA, state infrastructure programs</td><td class="rng">$30-80M</td><td>Carried on the public stack</td></tr>
+      <tr><td>Senior construction / perm debt</td><td>HUD 221(d)(4), agency, insurance company</td><td class="rng">$380-450M</td><td>5.0-6.5%, 40-yr fixed (HUD)</td></tr>
+      <tr><td>C-PACE</td><td>Private C-PACE providers (ORS 223.680)</td><td class="rng">$40-90M</td><td>6-7.5%, up to 30-yr fixed</td></tr>
+      <tr><td>Tax-exempt bonds + 4% LIHTC</td><td>OHCS conduit + tax credit equity</td><td class="rng">$50-120M</td><td>Below-market blended (affordable phases)</td></tr>
+      <tr><td>OZ 2.0 equity</td><td>Qualified Opportunity Funds</td><td class="rng">$60-120M</td><td>Market return target, lower hurdle via tax benefit</td></tr>
+      <tr><td>Sponsor / co-GP / Class A</td><td>Now City, co-GP, sponsor land contribution</td><td class="rng">$25-45M</td><td>Promote structure per LOI</td></tr>
+      <tr><td>Grants, PRIs, CDFI gap</td><td>URA grants, foundations, Craft3</td><td class="rng">$5-15M</td><td>0-4%</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="dark" id="pools" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Three Pools</div>
+      <h2>Capital sized to the work it funds</h2>
+      <p class="lead">The stack organizes into three pools by check size and stage. The small pool funds the next 18 months and de-risks everything above it; the medium pool capitalizes phases; the large pool operates at district scale.</p>
+    </div>
+
+    <div class="pool rv">
+      <div class="phead">
+        <h3>Small Pool</h3><span class="pr">$1M-$25M &middot; Predevelopment &amp; Catalyst Capital</span>
+        <span class="pd">Funds the next 18 months. Every instrument here also builds the public and mission relationships the larger pools depend on.</span>
+      </div>
+      <div class="toolgrid">
+        <div class="tool"><span class="tag">Public &middot; Local</span><h4>West Salem Urban Renewal Area</h4><p>The catalyst site sits inside the 453-acre West Salem URA, funded through tax increment financing under ORS 457, with a Capital Improvement matching grant program for new construction and mixed-use projects ($50K+ on larger projects). The near-term dollars are modest; the strategic value is the working relationship with the Urban Renewal Agency ahead of the district-scale TIF negotiation. Plan status, remaining capacity, and the amendment pathway are a first-30-days diligence item.</p></div>
+        <div class="tool"><span class="tag">Public &middot; Local</span><h4>City of Salem incentive stack</h4><p>Multi-Unit Housing Tax Incentive Program, Enterprise Zone, Low-Income Housing Property Tax Exemption, and the Single Property TIF District mechanism. Salem has already executed a single-property TIF granting up to a 97% property tax rebate for an affordable project (Jory Apartments): the political and administrative precedent exists.</p></div>
+        <div class="tool"><span class="tag">Mission &middot; Debt</span><h4>CDFI predevelopment &amp; gap debt</h4><p>Craft3 is the anchor Pacific Northwest CDFI for this profile. Predevelopment, acquisition, and gap loans typically price 400+ bps inside comparable private credit.</p></div>
+        <div class="tool"><span class="tag">Mission &middot; PRI</span><h4>Foundation program-related investments</h4><p>Meyer Memorial Trust and Oregon Community Foundation both deploy PRIs at 1-3% for housing and community development. A regenerative, mixed-income district in a state-capital submarket is squarely in mandate. PRIs are patient, subordinate, and signal-generating for the institutional capital that follows.</p></div>
+        <div class="tool"><span class="tag">Public &middot; State</span><h4>Business Oregon</h4><p>The Special Public Works Fund and related programs lend to municipalities at below-market rates for development-supporting infrastructure. These deploy through the City, which makes the City partnership the gating item.</p></div>
+      </div>
+    </div>
+
+    <div class="pool rv">
+      <div class="phead">
+        <h3>Medium Pool</h3><span class="pr">$25M-$150M &middot; Phase-Level Construction &amp; Permanent Debt</span>
+        <span class="pd">The instruments that capitalize each vertical phase once it is entitled and underwritable.</span>
+      </div>
+      <div class="toolgrid">
+        <div class="tool"><span class="tag">Federal &middot; Debt</span><h4>HUD 221(d)(4)</h4><p>The workhorse for market-rate and mixed-income phases: roughly 85% loan-to-cost, 40-year fully amortizing fixed rate, non-recourse, combined construction-to-permanent, priced meaningfully inside bank construction debt with zero refinance risk at stabilization. The cost is time (12-18 months from engagement to closing), which is why the HUD lender relationship starts now, well ahead of entitlement.</p></div>
+        <div class="tool"><span class="tag">State &middot; Bonds + Credits</span><h4>4% LIHTC with tax-exempt bonds</h4><p>For phases carrying significant affordable components, tax-exempt private activity bonds issued through Oregon Housing and Community Services paired with 4% credits produce the cheapest capital available in US real estate, stacking with Salem's local tax exemptions to improve operating economics simultaneously. The Point Access Block / Passive House product suits LIHTC cost limits well given its standardized shell design.</p></div>
+        <div class="tool"><span class="tag amber">County opt-in pending</span><h4>C-PACE</h4><p>Oregon authorizes C-PACE statewide under ORS 223.680 and 223.685, subject to county opt-in: up to 30-year fully amortized fixed rate, payment-free during construction, non-recourse, sized up to 35% of property value, available for new construction. Passive House by default maximizes eligible basis; the deeper the energy scope, the larger the tranche. Marion County opt-in status is the open item, and initiating that conversation is a high-leverage, low-cost coalition action with SEDCOR and the City.</p></div>
+        <div class="tool"><span class="tag amber">Tract check pending</span><h4>New Markets Tax Credits</h4><p>For commercial, community-facility, and mixed-use non-residential components, where the census tract qualifies. Tract eligibility is being verified alongside the OZ analysis.</p></div>
+        <div class="tool"><span class="tag">Agency &middot; Debt</span><h4>Agency permanent debt</h4><p>Fannie Mae and Freddie Mac takeouts on stabilized phases where HUD execution is less optimal, including green financing pricing incentives for certified high-performance buildings.</p></div>
+      </div>
+    </div>
+
+    <div class="pool rv">
+      <div class="phead">
+        <h3>Large Pool</h3><span class="pr">$150M+ &middot; District-Scale Structures</span>
+        <span class="pd">The structures that apply to the full 22-acre assembly and the decade-long build-out horizon.</span>
+      </div>
+      <div class="toolgrid">
+        <div class="tool"><span class="tag">Verified</span><h4>Opportunity Zone 2.0</h4><p>The OBBBA made the OZ program permanent, with new designations every ten years. Oregon's Governor nominates tracts in the current window (July 1 to September 29, 2026), with new zones effective January 1, 2027; Oregon has 229 eligible tracts, of which up to 58 will be designated. Now City has verified the Edgewater tract's OZ 2.0 eligibility and is working the nomination window. Designation applies OZ equity economics to the entire build-out: a rolling 5-year deferral, a 10% basis step-up, and full exclusion of appreciation at a 10-year hold, which materially lowers the return hurdle OZ equity requires. The January 1, 2027 effective date aligns directly with predevelopment and Phase 1 capitalization.</p></div>
+        <div class="tool"><span class="tag">Public &middot; District</span><h4>District-scale TIF</h4><p>The full 22-acre assembly at $650M of new assessed value generates increment that dwarfs the existing West Salem plan's original sizing. The negotiation target is a plan amendment or successor TIF district in which increment funds streets, utilities, stormwater and green infrastructure, and public realm: an estimated $30-80M of scope carried on the public stack. Salem's Urban Renewal Agency board is the Mayor and City Council; this is a political relationship with a 12-24 month arc, and it starts with the small URA grant engagement above.</p></div>
+        <div class="tool"><span class="tag">Federal &middot; Infrastructure</span><h4>Federal infrastructure credit</h4><p>EPA WIFIA lends at Treasury rates for water and stormwater infrastructure at project scales above roughly $20M, relevant where the regenerative water strategy (district stormwater, water reuse) is capitalized as a discrete system. DOT discretionary programs apply where the district carries qualifying multimodal transportation scope.</p></div>
+        <div class="tool"><span class="tag">Institutional</span><h4>Forward commitments &amp; green bonds</h4><p>Insurance company and pension debt on stabilized phases prices at tight spreads for durable, certified assets. At scale, a portfolio of Passive House buildings supports green bond or sustainability-linked issuance. Danish pension investors hold explicit sustainable real-asset mandates; US deployment typically routes through fund intermediaries, so the realistic near-term play is relationship cultivation and LP introductions on a 2027+ horizon.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="execution" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Execution &amp; Milestones</div>
+      <h2>The action plan that unlocks the stack</h2>
+      <p class="lead">Every instrument above has an owner, a sequence, and a clock. Items flagged as time-critical carry hard external deadlines. This plan is shared in full because sequencing transparency is exactly what a data room is for; the verification register below tracks each open item to closure.</p>
+    </div>
+    <div class="ap rv">
+      <div class="apphase">
+        <div class="aph"><span class="n">Phase 1</span><span class="t">Days 0-30 &middot; July 2026</span></div>
+        <ul>
+          <li><span class="flag">Time-critical</span><span><b>OZ designation advocacy.</b> With tract eligibility verified, work the Governor's nomination window (open now, closes September 29): coordinate support letters from the landowner, SEDCOR, and City of Salem Urban Development, and confirm standing with Business Oregon on the tract's position in the recommendation process. Target: designation effective January 1, 2027.</span></li>
+          <li><span class="flag">Time-critical</span><span><b>Brief co-GP candidates on OZ economics.</b> Fold verified OZ status into the co-GP materials: the 2027 effective date aligns with the 90-day LOI window and predevelopment timeline, and OZ 2.0 terms directly lower the equity return hurdle.</span></li>
+          <li><span class="dot"></span><span><b>Marion County C-PACE status.</b> Confirm whether Marion County has adopted a C-PACE opt-in ordinance under ORS 223.680; if the ordinance is still ahead, request a meeting with county economic development staff and bring the Washington County ordinance as the template.</span></li>
+          <li><span class="dot"></span><span><b>West Salem URA diligence.</b> Obtain the current West Salem Urban Renewal Plan, remaining maximum indebtedness, plan expiration timeline, and amendment history. Ask Urban Development directly about appetite for a plan amendment or successor district tied to a catalytic project.</span></li>
+          <li><span class="dot"></span><span><b>Update the co-GP materials.</b> Fold this capital strategy into the co-GP pitch: the raise buys control of a stack. The OZ timeline becomes a headline urgency argument for LOIs due within the 90-day window.</span></li>
+        </ul>
+      </div>
+      <div class="apphase">
+        <div class="aph"><span class="n">Phase 2</span><span class="t">Days 30-90 &middot; August-September 2026</span></div>
+        <ul>
+          <li><span class="dot"></span><span><b>HUD lender selection.</b> Interview two to three MAP-approved lenders active in Oregon; request indicative sizing on a Phase 1 concept using unit count, cost, and rents from the live underwriting base case. Objective: a lender letter usable in the co-GP raise.</span></li>
+          <li><span class="dot"></span><span><b>OHCS pre-engagement.</b> Introductory meeting with Oregon Housing and Community Services on bond cap availability and 4% LIHTC pipeline timing for a 2027-2028 application; set the affordable set-aside strategy per phase, since that decision drives which phases route through the bond and LIHTC stack.</span></li>
+          <li><span class="dot"></span><span><b>CDFI and PRI outreach.</b> Concurrent conversations with Craft3 on a predevelopment facility and with Meyer Memorial Trust and Oregon Community Foundation on PRIs. Target: a term sheet for a $500K-$2M predevelopment facility that stretches the early predevelopment commitment.</span></li>
+          <li><span class="dot"></span><span><b>City incentive mapping.</b> Written confirmation from Salem Urban Development of which programs stack on the catalyst site: MUHTIP, Enterprise Zone, URA Capital Improvement Grant, and single-property TIF eligibility.</span></li>
+          <li><span class="dot"></span><span><b>C-PACE provider soundings.</b> Indicative terms from two providers active in Oregon on a Passive House Phase 1 (sizing as a percentage of value, rate, construction-period accrual), contingent on county opt-in.</span></li>
+        </ul>
+      </div>
+      <div class="apphase">
+        <div class="aph"><span class="n">Phase 3</span><span class="t">Days 90-180 &middot; October 2026-January 2027</span></div>
+        <ul>
+          <li><span class="dot"></span><span><b>District TIF proposal.</b> With URA diligence complete and the catalyst-site relationship established, submit a concept memo to the Urban Renewal Agency proposing a plan amendment or successor district: increment-funded infrastructure schedule, phasing, and the assessed-value growth case, anchored with live model output.</span></li>
+          <li><span class="dot"></span><span><b>WIFIA screening.</b> Scope the district water and stormwater systems as a discrete capital item; where the ~$20M threshold is met, submit a WIFIA letter of interest.</span></li>
+          <li><span class="dot"></span><span><b>QOF structuring.</b> On designation effective January 1, 2027, stand up or partner into a Qualified Opportunity Fund structure for the equity raise, and brief co-GP candidates on OZ 2.0 economics with counsel.</span></li>
+          <li><span class="dot"></span><span><b>Nordic institutional groundwork.</b> Map the fund intermediaries through which Danish pension capital reaches US sustainable real assets; use summer Denmark presence for two to three exploratory meetings. Positioning: future LP in a Now City district vehicle at scale, 2027+ horizon.</span></li>
+        </ul>
+      </div>
+      <div class="apphase">
+        <div class="aph"><span class="n">Phase 4</span><span class="t">Months 6-18</span></div>
+        <ul>
+          <li><span class="dot"></span><span><b>Phase 1 capitalization close.</b> HUD application in processing, C-PACE committed, TIF framework agreed in principle, LIHTC and bond application submitted where applicable, OZ equity subscribed.</span></li>
+          <li><span class="dot"></span><span><b>Green financing certification path.</b> Lock the Passive House certification workflow so agency green pricing and future green bond eligibility are documented from Phase 1.</span></li>
+          <li><span class="dot"></span><span><b>Institutional debt relationships.</b> Begin insurance-company forward-commitment conversations once Phase 1 is under construction.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="prec rv"><b>Where the numbers live</b>Dollar ranges on this page remain indicative pending the blended-cost model (register item 6). Phase-level underwriting is live in the <a href="about-upside.html" style="color:#d9a26c">Upside Explorer</a>; the vehicles and investor doors are on the <a href="district-capitalization.html" style="color:#d9a26c">District Capitalization</a> page.</div>
+  </div>
+</section>
+
+<section class="dark" id="register" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Verification Register</div>
+      <h2>Open items, tracked in the open</h2>
+      <p class="lead">This register stays live. Investors reviewing the room should expect to see items move from open to closed over the diligence period; each item gates a specific piece of the stack.</p>
+    </div>
+    <table class="reg rv">
+      <tr><th>#</th><th>Item</th><th>Status</th><th>Gates</th></tr>
+      <tr><td>1</td><td>Opportunity Zone 2.0 tract status</td><td><span class="pill done">Verified</span></td><td>OZ equity strategy (Large Pool)</td></tr>
+      <tr><td>2</td><td>Marion County C-PACE opt-in</td><td><span class="pill open">Open</span></td><td>$40-90M C-PACE tranche</td></tr>
+      <tr><td>3</td><td>West Salem URA remaining capacity &amp; expiration</td><td><span class="pill open">Open</span></td><td>TIF strategy</td></tr>
+      <tr><td>4</td><td>NMTC tract eligibility</td><td><span class="pill open">Open</span></td><td>Commercial component stack</td></tr>
+      <tr><td>5</td><td>WIFIA threshold fit for water systems</td><td><span class="pill plan">Unscoped</span></td><td>Federal infrastructure credit</td></tr>
+      <tr><td>6</td><td>Blended-cost model reflecting this stack</td><td><span class="pill plan">In build</span></td><td>Investor materials</td></tr>
+    </table>
+    <p class="muted rv" style="font-size:12.5px;margin-top:18px">Prepared as working strategy for the data room. Figures are indicative ranges pending the register above.</p>
+  </div>
+</section>
+
+<section class="dark" style="border-top:1px solid #3d392f;padding:48px 0">
+  <div class="wrap">
+    <p style="font-size:11px;line-height:1.7;color:#8f897c;max-width:920px">All projections are based on assumptions regarding revenues and costs that may not equate to actual results; actual results will differ and may differ materially. Prospective investors, with their financial and legal advisers, should independently evaluate all assumptions and should not place undue weight on any projections. This page does not constitute an offer to buy or sell securities; an offering can be made only pursuant to delivery of a private placement memorandum and related documentation. Any securities would be offered in reliance on exemptions from registration and only to persons meeting applicable requirements. Statements herein may constitute forward-looking statements involving known and unknown risks and uncertainties; no representation is made that objectives will be achieved, and Now City undertakes no obligation to update such statements. This material is confidential, furnished solely for consideration of the matters described, and is not to be copied or shared without written consent.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>©2026 Now City Inc. All Rights Reserved.</div>
+    <div>Not an offer of securities. For discussion purposes only. Any investment would be made solely through definitive offering documents.</div>
+  </div>
+</footer>
+
+<a href="#top" class="toplink" id="toplink" aria-label="Back to top">↑</a>
+<script>
+const nav=document.getElementById('nav');const tl=document.getElementById('toplink');const sub=document.getElementById('subnav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.6);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const subLinks=[...document.querySelectorAll('#subnav a')];const spyIds=subLinks.map(a=>a.getAttribute('href').slice(1));
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;subLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
+spyIds.forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+</script>
+<script>
+(function(){
+const HASH='aad5d67e3ddeda88953d6714e4569a4399b3201023dae82d5931a6c376de96d4';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('ws-ok')==='1'||sessionStorage.getItem('ws-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
