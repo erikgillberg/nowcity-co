@@ -10,9 +10,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=1">
+<link rel="stylesheet" href="assets/site.css?v=2">
 <script defer src="assets/nav.js?v=1"></script>
 <style>
+/* ---- pitch-deck flow ---- */
+.kicker{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.kicker .n{font-family:var(--serif);font-size:15px;color:var(--terra);border:1.5px solid var(--terra);border-radius:999px;padding:3px 13px;white-space:nowrap}
+.dark .kicker .n{color:#d9a26c;border-color:#d9a26c}
 #subnav .wrap{gap:6px}
 #subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
 #subnav a:hover{color:var(--terra);background:rgba(168,112,63,.08)}
@@ -21,20 +25,13 @@
 .gapgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:34px}
 .gapgrid .card .gn{font-family:var(--serif);font-size:26px;color:#d9a26c;line-height:1}
 .gapgrid .card h4{margin-top:10px}
-.doc-card{position:relative;display:block;border-radius:10px;overflow:hidden;border:1px solid #3d392f;text-decoration:none;min-height:250px}
-.doc-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.doc-card:hover img{transform:scale(1.04)}
-.doc-card .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,14,.1) 0%,rgba(20,18,14,.85) 100%)}
-.doc-card .tx{position:absolute;left:0;right:0;bottom:0;padding:20px 22px}
-.doc-card .k{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#e8c79d}
-.doc-card h3{font-family:var(--serif);font-size:21px;color:#fff;margin-top:6px;line-height:1.25}
-.doc-card p{font-size:13px;color:#d8d2c4;margin-top:6px;line-height:1.55}
-.docgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:34px}
+/* proof pills */
 .proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:34px}
 .proof .p{background:#2b2823;border:1px solid #3d392f;border-radius:10px;padding:20px 22px}
 .proof .p .tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#9db08a;background:rgba(157,176,138,.12);border-radius:12px;padding:3px 10px;margin-bottom:10px}
 .proof .p h4{font-family:var(--serif);font-size:17px;color:var(--cream);font-weight:400;line-height:1.3;margin-bottom:8px}
 .proof .p p{font-size:13px;line-height:1.65;color:#c9c2b2}
+/* value flow */
 .vflow{max-width:640px;margin:40px auto 0}
 .vstep{background:#2b2823;border:1px solid #3d392f;border-radius:10px;padding:20px 24px;text-align:center}
 .vstep .vnum{font-family:var(--serif);font-size:26px;color:var(--cream);line-height:1.2}
@@ -42,6 +39,82 @@
 .vstep.seed{border-color:#d9a26c;border-width:2px;background:rgba(217,162,108,.09)}
 .vstep.seed .vnum{color:#d9a26c}
 .varrow{text-align:center;color:#d9a26c;font-size:22px;line-height:1;margin:9px 0}
+/* homes typology cards */
+.typo{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:38px}
+.typo .t{background:var(--cream-2);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.typo .t img{width:100%;height:230px;object-fit:cover}
+.typo .t .tx{padding:22px 24px 26px}
+.typo .t .tag{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+.typo .t h3{font-size:20px;margin:8px 0 10px;color:var(--ink-deep)}
+.typo .t p{font-size:14px;line-height:1.65;color:#5c584e}
+/* anchor evidence strip */
+.anchor-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:34px}
+.anchor-strip .a{border:1px solid var(--line);background:#fff;border-radius:10px;padding:22px 22px 20px}
+.anchor-strip .a .big{font-family:var(--serif);font-size:30px;color:var(--green);line-height:1.05}
+.anchor-strip .a .who{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-top:10px}
+.anchor-strip .a p{font-size:13px;line-height:1.6;color:#5c584e;margin-top:6px}
+/* plate diagrams */
+.plates{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px;margin-top:38px}
+.plate{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px}
+.plate h4{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.plate.bad h4{color:#8a857a}
+.plate.good h4{color:var(--green)}
+.plate svg{width:100%;height:auto;display:block}
+.plate .m{font-family:var(--serif);font-size:24px;margin-top:16px;color:var(--ink-deep)}
+.plate .s{font-size:13px;color:#6e6a61;margin-top:4px;line-height:1.55}
+/* regulatory window */
+.regwin{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:34px}
+.regwin .r{background:var(--cream-2);border:1px solid var(--line);border-left:3px solid var(--green-soft);border-radius:0 8px 8px 0;padding:20px 22px}
+.regwin .r h4{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--ink-deep);margin-bottom:8px;letter-spacing:.04em}
+.regwin .r p{font-size:13.5px;line-height:1.6;color:#5c584e}
+/* market funnel */
+.funnel{max-width:860px;margin:44px auto 0}
+.fr{border-radius:10px;padding:22px 26px;margin:0 auto 14px;color:#fff;position:relative}
+.fr .fk{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.fr .fv{font-family:var(--serif);font-size:clamp(24px,3vw,34px);line-height:1.15;margin-top:4px}
+.fr .fd{font-size:13.5px;line-height:1.6;margin-top:6px;opacity:.92}
+.fr.tam{background:var(--green);width:100%}
+.fr.sam{background:var(--green-soft);width:78%}
+.fr.som{background:var(--terra);width:56%}
+@media(max-width:640px){.fr.sam,.fr.som{width:100%}}
+.fnotes{font-size:12px;color:#8a857a;line-height:1.7;max-width:860px;margin:22px auto 0}
+.fnotes sup{color:var(--terra)}
+/* homes hero banner */
+.homes-banner{position:relative;border-radius:10px;overflow:hidden;margin-top:44px}
+.homes-banner img{width:100%;height:min(48vh,420px);object-fit:cover;object-position:center top}
+.homes-banner .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 30px;background:linear-gradient(180deg,transparent,rgba(15,13,10,.82));color:#fff}
+.homes-banner .cap .tag{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#e8c79d}
+.homes-banner .cap .t{font-family:var(--serif);font-size:clamp(19px,2.4vw,26px);margin-top:6px}
+/* four thresholds */
+.thresh{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:30px}
+.thresh .th{background:rgba(255,255,255,.045);border:1px solid #3d392f;border-radius:10px;padding:18px 20px}
+.thresh .th h4{font-family:var(--serif);font-size:16.5px;color:var(--cream);font-weight:400;margin-bottom:6px}
+.thresh .th p{font-size:13px;color:#b7b0a3;line-height:1.6}
+.thresh .th .ok{color:#9db08a;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+/* use of funds table */
+.uof{width:100%;border-collapse:collapse;margin-top:30px;font-size:14.5px}
+.uof th{text-align:left;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a39d8f;padding:10px 12px;border-bottom:1px solid #4a453a}
+.uof td{padding:14px 12px;border-bottom:1px solid #3d392f;color:#d8d2c4;line-height:1.5}
+.uof td:last-child,.uof th:last-child{text-align:right;white-space:nowrap}
+.uof tr.total td{font-weight:700;color:var(--cream);border-bottom:none;border-top:2px solid #4a453a}
+.uof .al{font-weight:600;color:var(--cream)}
+/* Q&A */
+.qa{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:36px}
+.qa .q{background:var(--cream-2);border:1px solid var(--line);border-radius:10px;padding:24px 26px}
+.qa .q .tag{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+.qa .q h3{font-size:18px;margin:8px 0 10px;color:var(--ink-deep);font-style:italic}
+.qa .q p{font-size:14px;line-height:1.65;color:#5c584e}
+/* print / PDF export */
+@media print{
+  #gate,#subnav,.toplink,.navtoggle{display:none!important}
+  body.gated{overflow:auto}
+  nav{position:static;background:var(--cream);box-shadow:none}
+  .brand,nav .navlinks a{color:var(--ink-deep)!important}
+  .rv{opacity:1!important;transform:none!important}
+  section{padding:52px 0;break-inside:avoid-page}
+  .hero{min-height:0;padding:80px 0 40px;color:#fff}
+  .hero .wrap{padding-top:40px;padding-bottom:40px}
+}
 </style>
 </head>
 <body class="gated">
@@ -63,12 +136,15 @@
 
 <nav id="nav">
   <div class="wrap">
-    <a class="brand" href="index.html">Now City Inc<span class="brand-sub"> &middot; Investor Preview</span></a>
+    <a class="brand" href="#top">Now City Inc<span class="brand-sub"> &middot; Investor Preview</span></a>
     <ul class="navlinks">
-      <li><a href="index.html" class="active">The Thesis</a></li>
-      <li><a href="strategy.html">Strategy</a></li>
-      <li><a href="raise.html">The Raise</a></li>
-      <li><a href="team.html">Team &amp; Traction</a></li>
+      <li><a href="#opening">The Opening</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#homes">Now City Homes</a></li>
+      <li><a href="#market">Market</a></li>
+      <li><a href="#proof">Proof</a></li>
+      <li><a href="#raise">The Raise</a></li>
+      <li><a href="#team">Team</a></li>
       <li><a href="../west-salem/">Edgewater Portal</a></li>
       <li><a href="mailto:erik@nowcitylabs.com">Contact</a></li>
     </ul>
@@ -77,132 +153,324 @@
 
 <div class="subnav" id="subnav">
   <div class="wrap">
-    <a href="#opening">The Opening</a>
-    <a href="#platform">The Platform</a>
+    <a href="#opening">Opening</a>
+    <a href="#platform">Platform</a>
+    <a href="#homes">Homes</a>
+    <a href="#market">Market</a>
     <a href="#proof">Proof</a>
-    <a href="#raise">The Raise</a>
-    <a href="#documents">Documents</a>
+    <a href="#raise">Raise</a>
+    <a href="#questions">Questions</a>
+    <a href="#team">Team</a>
   </div>
 </div>
 
+<!-- 00 · HERO -->
 <header class="hero" id="top">
   <div class="bg" style="background-image:url('assets/oregon/oregon-coast.jpg')"></div><div class="shade"></div>
   <div class="wrap">
     <div class="eyebrow">Now City Inc &middot; Private Investor Preview</div>
     <h1>The district<br>is the product.</h1>
-    <p class="sub">Now City is a master developer platform for regenerative districts. The first district is under way. This raise builds the company that builds the rest.</p>
+    <p class="sub">Now City is a master developer platform for regenerative districts, with a standardized building system to deliver them. The first district is under way. This raise builds the company that builds the rest.</p>
     <div class="meta">$3M Platform Equity &middot; C-Corp &middot; Raising Now &middot; For discussion purposes only</div>
   </div>
 </header>
 
+<!-- 01 · THE OPENING -->
 <section class="dark" id="opening">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">The Opening</div>
+      <div class="kicker"><span class="n">01</span><span class="eyebrow">The Opening</span></div>
       <h2>America needs districts. Almost nobody is set up to deliver them.</h2>
-      <p class="lead">The country is short millions of homes, and the shortage is sharpest where people actually want to live: walkable, connected neighborhoods near jobs, nature, and daily life. Mid-sized cities hold the land, the zoning momentum, and the demand. What they are missing is the actor: conventional development optimizes for a single asset, a single capital structure, and a single transaction, while the value in these places is created at district scale, over a decade, across many buildings and many kinds of capital.</p>
+      <p class="lead">The country is short roughly four million homes, and the shortage is sharpest where people actually want to live: walkable, connected neighborhoods near jobs, nature, and daily life. Mid-sized cities hold the land, the zoning momentum, and the demand. What they are missing is the actor.</p>
     </div>
-    <div class="gapgrid rv">
-      <div class="card"><div class="gn">1</div><h4>The demand is real</h4><p style="font-size:13.5px">Oregon was the #1 inbound state in 2025 and Salem the #7 inbound US metro. Core-market vacancy under 2%. Renters paying 36-37% of income. The same pattern repeats across the mid-sized West.</p></div>
-      <div class="card"><div class="gn">2</div><h4>The policy window is open</h4><p style="font-size:13.5px">Cities have rezoned corridors for density, tax increment tools are proven, the Opportunity Zone program is now permanent, and statewide housing production goals give aligned projects political tailwind.</p></div>
-      <div class="card"><div class="gn">3</div><h4>The role is vacant</h4><p style="font-size:13.5px">Merchant builders build one building and leave. Institutions arrive after de-risking. The master developer role, the actor who assembles, entitles, and stewards the whole, is unfilled in nearly every mid-sized market.</p></div>
+    <div class="gapgrid">
+      <div class="card rv"><div class="gn">1</div><h4>The demand is real</h4><p style="font-size:14.5px;line-height:1.65">Oregon was the #1 inbound state in 2025 and Salem the #7 inbound US metro. Core-market vacancy under 2%. Renters paying 36-37% of income. The same pattern repeats across the mid-sized West.</p></div>
+      <div class="card rv"><div class="gn">2</div><h4>The policy window is open</h4><p style="font-size:14.5px;line-height:1.65">Cities have rezoned corridors for density, tax increment tools are proven, the Opportunity Zone program is now permanent, and single-stair mid-rise reform has opened across the West Coast.</p></div>
+      <div class="card rv"><div class="gn">3</div><h4>The role is vacant</h4><p style="font-size:14.5px;line-height:1.65">Merchant builders build one building and leave. Institutions arrive after de-risking. The master developer role, the actor who assembles, entitles, and stewards the whole, is unfilled in nearly every mid-sized market.</p></div>
     </div>
-    <div class="thesis rv">Now City exists to fill that role. We are a vertically integrated master developer and operator: we help communities unlock the value in underused land, treat the district as one living system, and steward the result for decades. The mission is to accelerate the transition to regenerative, resilient, and equitable communities and cities. The business is that districts built this way outperform, and the platform that can repeat them compounds.</div>
+    <div class="thesis rv">Now City exists to fill that role. We are a vertically integrated master developer and operator: we help communities unlock the value in underused land, treat the district as one living system, and steward the result for decades. The business is that districts built this way outperform, and the platform that can repeat them compounds.</div>
   </div>
 </section>
 
-<section class="dark" id="platform" style="border-top:1px solid #3d392f">
+<!-- 02 · THE PLATFORM -->
+<section class="alt" id="platform">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">The Platform</div>
+      <div class="kicker"><span class="n">02</span><span class="eyebrow">The Platform</span></div>
       <h2>One company, built to repeat the hardest role in real estate</h2>
-      <p class="lead">A master developer earns across four layers: land value created by assembly and entitlement, pad monetization to phase partners, development margin on the phases it builds, and long-term yield on the district it holds. Now City's edge is that every layer runs on systems the company owns: an AI-native underwriting and modeling toolchain, an industrialized building product, a public capital playbook, and a coalition method that turns cities into partners. Each district the platform delivers makes the next one faster, cheaper, and more credible.</p>
+      <p class="lead">A master developer earns across four layers: land value created by assembly and entitlement, pad monetization to phase partners, development margin on the phases it builds, and long-term yield on the district it holds. Now City's edge is that every layer runs on systems the company owns.</p>
     </div>
-    <div class="proof rv">
-      <div class="p"><span class="tag">Software</span><h4>Now City Upside Explorer</h4><p>A live, collaborative underwriting model that proves the good project pencils: from an honest floor to institutional returns, every point traced to a named, defensible move. Built and in use on the first district; productized at <a href="https://nowcity.ai" style="color:#d9a26c">nowcity.ai</a>.</p></div>
-      <div class="p"><span class="tag">Building product</span><h4>Point Access Block &middot; Passive House</h4><p>A standardized, single-stair, high-efficiency building type: 93% efficient floor plates, industrialized construction, lower cost and carbon, and a shell design that fits affordable-housing cost limits.</p></div>
-      <div class="p"><span class="tag">Capital playbook</span><h4>The blended-cost stack</h4><p>A repeatable public-private capital strategy (TIF, HUD, C-PACE, LIHTC, OZ, mission capital) that targets a blended cost of capital well below conventional finance, documented live in the Edgewater data room.</p></div>
-      <div class="p"><span class="tag">Method</span><h4>Coalition development</h4><p>Districts get built by coalitions. Now City's method recruits the city, the university, the region's employers, and local capital as named partners before vertical capital is at risk.</p></div>
+    <div class="grid g4">
+      <div class="card rv"><h4>Layer 1 &middot; Land value</h4><p style="font-size:14px;line-height:1.6">Assembly, entitlement, and master planning turn fragmented parcels into an investable district. The step change in value accrues to positions the platform structures.</p></div>
+      <div class="card rv"><h4>Layer 2 &middot; Pad monetization</h4><p style="font-size:14px;line-height:1.6">Finished, infrastructure-served parcels are held, joint-ventured, or delivered with phase partners, converting entitlement work into proceeds and aligned partnerships.</p></div>
+      <div class="card rv"><h4>Layer 3 &middot; Development margin</h4><p style="font-size:14px;line-height:1.6">On phases Now City builds: development fees during delivery plus promote at stabilization, underwritten live in the Upside Explorer.</p></div>
+      <div class="card rv"><h4>Layer 4 &middot; Long-term yield</h4><p style="font-size:14px;line-height:1.6">The stabilized district is held as owner-operator and recapitalized rather than sold, compounding value for the long term.</p></div>
     </div>
-    <p class="muted rv" style="margin-top:26px;font-size:14px">The full business model, flywheel, and market strategy live on the <a href="strategy.html" style="color:#d9a26c">Strategy</a> page.</p>
+    <div class="sec-head rv" style="margin-top:72px;margin-bottom:34px">
+      <h2 style="font-size:clamp(24px,3vw,32px)">Four systems the platform owns</h2>
+      <p class="lead" style="font-size:17px">Each is real today, in use on the first district, and built to transfer to every district that follows.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card rv"><h4>Software &middot; nowcity.ai</h4><h3>Now City Upside Explorer</h3><p style="font-size:14.5px;line-height:1.65">A live, collaborative underwriting model that proves the good project pencils: from an honest floor to institutional returns, every point traced to a named, defensible move. Built and in use on the first district; productized at <a href="https://nowcity.ai" style="color:var(--terra)">nowcity.ai</a>.</p></div>
+      <div class="card rv" style="border-top:3px solid var(--terra)"><h4>Building system &middot; the product engine</h4><h3>Now City Homes</h3><p style="font-size:14.5px;line-height:1.65">A standardized, design-forward, factory-built housing catalog, and the demand-aggregation strategy that makes industrialized construction finally work. The full system is <a href="#homes" style="color:var(--terra)">section 03</a>, because it is a growth engine, not a feature.</p></div>
+      <div class="card rv"><h4>Capital playbook</h4><h3>The blended-cost stack</h3><p style="font-size:14.5px;line-height:1.65">A repeatable public-private capital strategy (TIF, HUD, C-PACE, LIHTC, OZ, mission capital) that targets a blended cost of capital well below conventional finance, documented live in the Edgewater data room.</p></div>
+      <div class="card rv"><h4>Method</h4><h3>Coalition development</h3><p style="font-size:14.5px;line-height:1.65">Districts get built by coalitions. Now City's method recruits the city, the university, the region's employers, and local capital as named partners before vertical capital is at risk.</p></div>
+    </div>
+    <div class="flow rv" style="margin-top:56px">
+      <div class="step"><span class="n">1</span><span>Find the opening: a rezoned corridor, real demand, vacant master developer role</span></div>
+      <div class="arrow">&rarr;</div>
+      <div class="step"><span class="n">2</span><span>Win control with patient capital and landowners as investors</span></div>
+      <div class="arrow">&rarr;</div>
+      <div class="step"><span class="n">3</span><span>De-risk with the coalition and the blended-cost stack</span></div>
+      <div class="arrow">&rarr;</div>
+      <div class="step"><span class="n">4</span><span>Deliver in phases with Now City Homes, hold long-term</span></div>
+      <div class="arrow">&rarr;</div>
+      <div class="step" style="border-color:var(--terra)"><span class="n">&#8635;</span><span>Repeat: every district makes the next one cheaper to win</span></div>
+    </div>
   </div>
 </section>
 
-<section class="dark" id="proof" style="border-top:1px solid #3d392f">
+<!-- 03 · NOW CITY HOMES -->
+<section id="homes">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">Proof, Not Promise</div>
+      <div class="kicker"><span class="n">03</span><span class="eyebrow">The Product Engine &middot; Now City Homes</span></div>
+      <h2>The technology to build great housing in factories already exists. What's been missing is an anchor buyer.</h2>
+      <p class="lead">The U.S. has spent decades trying to fix the factory. The actual problem is demand certainty: factories cannot survive on project-by-project pipelines. Industrialized construction works when an anchor buyer provides volume certainty, and the evidence is consistent wherever it appears.</p>
+    </div>
+    <div class="anchor-strip">
+      <div class="a rv"><div class="big">10,000+</div><div class="who">Public Housing Sweden &middot; Kombohus</div><p>Units delivered from a standardized catalog: roughly 5 months faster and ~18% cheaper on contract. The anchor-buyer model, proven at national scale.</p></div>
+      <div class="a rv"><div class="big">~$20B</div><div class="who">U.S. Department of Defense</div><p>Annual construction budget now being pointed at a domestic factory supply chain: the emerging American anchor buyer, targeting ~30% schedule and ~20% cost gains.</p></div>
+      <div class="a rv"><div class="big">~4%</div><div class="who">The lesson of the last cycle</div><p>Offsite construction share has stayed roughly flat for decades, and ~$4B of venture capital (Katerra) proved that capital alone cannot force a market. Demand certainty can.</p></div>
+    </div>
+    <div class="note rv"><strong>Now City Homes is our strategy to become that anchor buyer for the private, regenerative market on the West Coast.</strong> We aggregate demand across our own districts and partner pipelines, standardize the product, and deliver it through factory partners. The pipeline creates the certainty; the certainty creates the economics.</div>
+
+    <div class="homes-banner rv">
+      <img src="assets/homes/courtyard.jpg" alt="Now City Homes courtyard block render">
+      <div class="cap"><div class="tag">Now City Homes</div><div class="t">Standardized chassis. Localized soul.</div></div>
+    </div>
+
+    <div class="sec-head rv" style="margin-top:72px;margin-bottom:10px">
+      <h2 style="font-size:clamp(24px,3vw,32px)">One chassis, a full catalog of neighborhoods</h2>
+      <p class="lead" style="font-size:17px">The shell, core, structure, and factory tooling stay constant. Only the interior mix and the exterior expression change. A standardized core delivers the cost, schedule, and quality; the contextual skin means standardization never means sameness.</p>
+    </div>
+    <div class="typo">
+      <div class="t rv"><img src="assets/homes/midrise-court.jpg" alt="Now City Block courtyard render"><div class="tx"><div class="tag">Typology 01 &middot; The Hero Chassis</div><h3>The Now City Block</h3><p>A standardized single-stair mid-rise that flexes its interior mix, from compact homes for students and seniors to 3- and 4-bedroom family units, without changing the shell, core, or tooling. Stands alone or chains into a 4-to-6-story courtyard block.</p></div></div>
+      <div class="t rv"><img src="assets/homes/rowhouse.jpg" alt="Now City Row Houses render"><div class="tx"><div class="tag">Typology 02 &middot; Missing Middle</div><h3>Now City Row Houses</h3><p>A door-on-the-street typology for the peri-urban edge, with an integrated ground-floor ADU and separate entrance for multigenerational living, supplemental income, or aging in place. The same envelope and delivery system, reformatted.</p></div></div>
+      <div class="t rv"><img src="assets/homes/midrise-street.jpg" alt="Contextual urban density render"><div class="tx"><div class="tag">Typology 03 &middot; The Density Anchor</div><h3>Contextual Urban Tower</h3><p>Targeted height where a district needs it, sited to protect neighborhood light and views, never tower-next-to-tower. Shared social floors interweave the vertical stack so density scales without isolation.</p></div></div>
+    </div>
+
+    <div class="sec-head rv" style="margin-top:72px;margin-bottom:10px">
+      <h2 style="font-size:clamp(24px,3vw,32px)">The core unlock: the single-stair building</h2>
+      <p class="lead" style="font-size:17px">The Point Access Block is the fundamental building block of successful cities worldwide, and it is precisely what factories want to build: a standardized core, narrow repeatable modules, and minimal circulation. Within Now City Homes it is the hero chassis, one part of a larger system.</p>
+    </div>
+    <div class="plates">
+      <div class="plate bad rv">
+        <h4>Double-loaded corridor</h4>
+        <svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Double loaded corridor diagram">
+          <rect x="4" y="10" width="312" height="130" fill="none" stroke="#c8c2b4" stroke-width="2"/>
+          <g fill="#efece2" stroke="#c8c2b4"><rect x="8" y="14" width="60" height="50"/><rect x="70" y="14" width="60" height="50"/><rect x="132" y="14" width="60" height="50"/><rect x="194" y="14" width="60" height="50"/><rect x="256" y="14" width="56" height="50"/><rect x="8" y="86" width="60" height="50"/><rect x="70" y="86" width="60" height="50"/><rect x="132" y="86" width="60" height="50"/><rect x="194" y="86" width="60" height="50"/><rect x="256" y="86" width="56" height="50"/></g>
+          <rect x="8" y="66" width="304" height="18" fill="#8a857a"/>
+          <text x="160" y="79" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#fff" letter-spacing="2">CORRIDOR</text>
+        </svg>
+        <div class="m">~13% lost to circulation</div>
+        <div class="s">Single-aspect units, dark internal corridors, and a geometry hostile to modular repetition.</div>
+      </div>
+      <div class="plate good rv">
+        <h4>Point Access Block &middot; the Now City chassis</h4>
+        <svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Point access block diagram">
+          <rect x="60" y="6" width="200" height="138" fill="none" stroke="#48593f" stroke-width="2"/>
+          <g fill="#e7ecdf" stroke="#48593f"><rect x="64" y="10" width="94" height="63"/><rect x="162" y="10" width="94" height="63"/><rect x="64" y="77" width="94" height="63"/><rect x="162" y="77" width="94" height="63"/></g>
+          <rect x="139" y="54" width="42" height="42" fill="#a8703f"/>
+          <text x="160" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#fff" letter-spacing="1">STAIR +</text>
+          <text x="160" y="83" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#fff" letter-spacing="1">ELEVATOR</text>
+        </svg>
+        <div class="m">~6.5% circulation &middot; 93% efficient plates</div>
+        <div class="s">Corner and through-units with daylight and cross-ventilation on two sides, family-sized flexibility, and the efficient plate that gives the ground back to courtyards.</div>
+      </div>
+    </div>
+
+    <div class="sec-head rv" style="margin-top:72px;margin-bottom:10px">
+      <h2 style="font-size:clamp(24px,3vw,32px)">The regulatory window is open now</h2>
+      <p class="lead" style="font-size:17px">The same standardized, code-tested building can be deployed across an expanding set of West Coast jurisdictions today. First movers capture the arbitrage.</p>
+    </div>
+    <div class="regwin">
+      <div class="r rv"><h4>Seattle</h4><p>Six-story single-stair buildings permitted since 1977, with a safety record exceeding national averages.</p></div>
+      <div class="r rv"><h4>Washington State</h4><p>Single-stair legalized statewide (SB 5491, 2023), extended in 2026 with elevator and scissor-stair reform that further reduces core costs.</p></div>
+      <div class="r rv"><h4>Oregon &middot; the immediate play</h4><p>Four-story single-stair permitted today as a clear and objective right, with the enhanced life-safety tier unlocking 5-6 stories and roughly 25% more density.</p></div>
+      <div class="r rv"><h4>California &middot; opening</h4><p>Statewide single-stair reform in motion, with State Fire Marshal recommendations delivered to the legislature in 2026. The catalog is ready for the market's largest state.</p></div>
+    </div>
+
+    <div class="grid g2" style="margin-top:56px">
+      <div class="card rv"><h4>Asset-light by design</h4><h3>We are not building a factory. We are orchestrating a partnership stack.</h3><p style="font-size:14.5px;line-height:1.65">Delivery runs through an established industrialized construction partner in the Western U.S. with a patented building system, supported by a network of timber, logistics, and manufacturing relationships. Zero capital drain on proprietary factories, geographic flexibility to deploy the chassis where fundamentals are strongest, and a supply chain insulated from localized labor shortages.</p></div>
+      <div class="card rv"><h4>Performance + intelligence</h4><h3>Engineer once. Replicate everywhere. Compound the learning.</h3><p style="font-size:14.5px;line-height:1.65">Passive House-level envelopes, low embodied and operational carbon, and healthy cross-ventilated homes come by default, because performance is engineered into the chassis once. And because the product repeats, every deployment feeds the platform's AI-assisted optimization, from unit mix and daylighting to factory-load scheduling, with human review non-negotiable. The building system and the software system are the same flywheel.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03b · DEMAND AGGREGATION (dark interlude) -->
+<section class="dark" id="demand">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">03b</span><span class="eyebrow">Demand Aggregation</span></div>
+      <h2>We manufacture the volume certainty that makes factories viable</h2>
+      <p class="lead">Now City's own districts anchor the pipeline. Around them we aggregate demand across West Coast transit-oriented developments and large-scale master-planned communities, so the catalog clears the four thresholds industrialized construction requires.</p>
+    </div>
+    <div class="thresh">
+      <div class="th rv"><div class="ok">&#10003; Cleared by aggregation</div><h4>Scale</h4><p>A pipeline measured in districts and partner programs, not one-off projects.</p></div>
+      <div class="th rv"><div class="ok">&#10003; Cleared by the chassis</div><h4>Repeatability</h4><p>One standardized core and catalog across every deployment.</p></div>
+      <div class="th rv"><div class="ok">&#10003; Cleared by the market</div><h4>Schedule pressure</h4><p>High-carry environments where months saved convert directly to returns.</p></div>
+      <div class="th rv"><div class="ok">&#10003; Cleared by geography</div><h4>High-cost labor</h4><p>West Coast coastal cities, where factory labor arbitrage is deepest.</p></div>
+    </div>
+    <div class="thesis rv">By assembling the demand, the product, and the factory partner, Now City creates growth and stability for its delivery partners and developers, and builds the kinds of places people are proud to inherit. The platform earns as developer, as product owner, and as the intelligence layer across the pipeline.</div>
+  </div>
+</section>
+
+<!-- 04 · MARKET -->
+<section class="alt" id="market">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">04</span><span class="eyebrow">The Market</span></div>
+      <h2>A large market, a focused wedge, an honest share</h2>
+      <p class="lead">The market sizing below is stated the way we underwrite: anchored to public data where it exists, and labeled as assumption where it is ours.</p>
+    </div>
+    <div class="funnel">
+      <div class="fr tam rv"><div class="fk">TAM &middot; U.S. multifamily development</div><div class="fv">~$115B per year</div><div class="fd">Annual private multifamily construction put in place<sup>1</sup>, against a national shortage of roughly 4 million homes<sup>2</sup>. The structural demand backdrop for the next several decades.</div></div>
+      <div class="fr sam rv"><div class="fk">SAM &middot; The West Coast wedge</div><div class="fv">~$20-25B per year</div><div class="fd">West Coast multifamily development (WA, OR, CA, ~20% of national activity<sup>3</sup>), where the single-stair regulatory window, high-cost labor, and in-migration make the Now City Homes catalog most valuable: mid-rise, walkable, attainable product in supply-starved markets.</div></div>
+      <div class="fr som rv"><div class="fk">SOM &middot; The 10-year platform objective</div><div class="fv">~$250M per year by year 10</div><div class="fd">Three to five Now City districts in delivery ($2-3B cumulative pipeline, Edgewater's $650M first) plus Now City Homes units delivered into partner TOD and master-plan pipelines. Roughly 1% of the serviceable market<sup>4</sup>.</div></div>
+    </div>
+    <p class="fnotes rv"><sup>1</sup> U.S. Census Bureau, value of private multifamily residential construction put in place, seasonally adjusted annual rate, 2025-2026 releases. &nbsp;<sup>2</sup> Estimates range from ~3.8M (Up For Growth, 2025) to ~4.7M (Zillow); we use ~4M as the consensus center. &nbsp;<sup>3</sup> Company assumption based on historical West Coast share of national multifamily permitting; stated as assumption, not measurement. &nbsp;<sup>4</sup> Company objective, not a forecast: depends on Edgewater execution, district two timing, and partner pipeline conversion. All figures for discussion purposes only.</p>
+  </div>
+</section>
+
+<!-- 05 · PROOF -->
+<section class="dark" id="proof">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">05</span><span class="eyebrow">Proof, Not Promise</span></div>
       <h2>Edgewater: the first district is already moving</h2>
-      <p class="lead">Edgewater is a ~22-acre riverfront district in West Salem, Oregon: roughly 1,000 homes, retail, wellness, and an innovation anchor, phased over eight years. Now City is its master developer. The land is under a signed letter of intent with the landowner contributing $5M of land value as equity, the corridor is rezoned for high-density mixed use, the tract's Opportunity Zone status is verified, and a $12M district fund is raising alongside this platform round.</p>
+      <p class="lead">Edgewater is a ~22-acre riverfront district in West Salem, Oregon: roughly 1,000 homes, retail, wellness, and an innovation anchor, phased over eight years. Now City is its master developer, and Now City Homes is its building system.</p>
     </div>
-    <div class="stats statcards c4 rv" style="max-width:1040px;margin:0 auto">
-      <div class="stat"><div class="num">~22 acres</div><div class="lbl">Willamette riverfront district, assembled from a rezoned corridor</div></div>
-      <div class="stat"><div class="num">$650M</div><div class="lbl">Development pipeline unlocked across four phases</div></div>
-      <div class="stat"><div class="num">~$1.0B</div><div class="lbl">Stabilized asset value at completion, held long-term</div></div>
-      <div class="stat"><div class="num">1,000</div><div class="lbl">Homes, priced to local incomes, first phases targeting 2029</div></div>
+    <div class="stats statcards c4" style="margin-top:14px">
+      <div class="stat rv"><div class="num">~22 acres</div><div class="lbl">Willamette riverfront district, assembled from a rezoned corridor</div></div>
+      <div class="stat rv"><div class="num">$650M</div><div class="lbl">Development pipeline unlocked across four phases</div></div>
+      <div class="stat rv"><div class="num">~$1.0B</div><div class="lbl">Stabilized asset value at completion, held long-term</div></div>
+      <div class="stat rv"><div class="num">1,000</div><div class="lbl">Homes, priced to local incomes, first phases targeting 2029</div></div>
     </div>
-    <p class="muted rv" style="margin-top:26px;font-size:14px;text-align:center">The complete Edgewater data room, from business plan to live underwriting, is at the <a href="../west-salem/" style="color:#d9a26c">Edgewater investor portal</a>.</p>
+    <div class="proof">
+      <div class="p rv"><span class="tag">Site control</span><h4>Signed LOI, landowner invested</h4><p>Phase One land under a signed letter of intent, with the landowner contributing $5M of land value as foundational equity.</p></div>
+      <div class="p rv"><span class="tag">Entitlement</span><h4>Rezoned, OZ verified</h4><p>Corridor rezoned high-density mixed-use (2022), much of the program by-right, inside an Urban Renewal Area with Opportunity Zone status verified.</p></div>
+      <div class="p rv"><span class="tag">Capital</span><h4>$12M district fund raising</h4><p>The companion District Value Creation Fund is raising alongside this round, with a complete investor data room and live verification register.</p></div>
+      <div class="p rv"><span class="tag">Underwriting</span><h4>Live in the Upside Explorer</h4><p>An honest base case, 50+ separable levers, every point of upside traced to a named move, open to investor scrutiny.</p></div>
+    </div>
+    <p class="rv" style="margin-top:34px;font-size:15px;color:#b7b0a3">The complete Edgewater data room, from business plan to live underwriting, is at the <a href="../west-salem/" style="color:#d9a26c">Edgewater investor portal</a>.</p>
   </div>
 </section>
 
-<section class="dark" id="raise" style="border-top:1px solid #3d392f">
+<!-- 06 · THE RAISE -->
+<section id="raise">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">The Raise</div>
+      <div class="kicker"><span class="n">06</span><span class="eyebrow">The Raise</span></div>
       <h2>$3M to own the engine</h2>
-      <p class="lead">Now City Inc is raising $3M of platform equity, one of two vehicles in the $15M Phase One Capital Campaign. The companion $12M District Value Creation Fund buys the district's value; the platform raise buys the company that creates it. Platform investors participate in GP interests, fees, and promote on Edgewater and on every district that follows.</p>
+      <p class="lead">Now City Inc is raising $3M of platform equity, one of two vehicles in the $15M Phase One Capital Campaign. The companion $12M District Value Creation Fund buys the district's value; the platform raise buys the company that creates it, and that repeats it.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card rv" style="border-top:3px solid var(--terra)"><h4>This raise</h4><h3>Now City Inc &middot; $3M &middot; C-Corp equity</h3><p style="font-size:14.5px;line-height:1.65">Ownership of the master developer platform: team, systems, GP economics, Now City Homes, and every district the platform delivers. Venture-style position, 7-10 year horizon, with platform value events along the way.</p></div>
+      <div class="card rv"><h4>Companion vehicle</h4><h3>District Value Creation Fund &middot; $12M</h3><p style="font-size:14.5px;line-height:1.65">Funds Edgewater's site control, entitlements, engineering, and infrastructure planning. First exit window at land close (~$34M Land SPV), 3-5 year horizon. Detailed on the <a href="../west-salem/district-capitalization.html" style="color:var(--terra)">Edgewater portal</a>.</p></div>
     </div>
     <div class="vflow rv">
-      <div class="vstep seed">
-        <div class="vnum">$3M</div>
-        <div class="vlbl"><strong style="color:#e8e2d6">Now City platform equity</strong> &middot; C-corp &middot; raising now</div>
-      </div>
-      <div class="varrow">&#9660;</div>
-      <div class="vstep"><div class="vnum" style="font-size:19px">18 months of execution</div><div class="vlbl">Team, master planning, capital formation, and the systems that scale</div></div>
-      <div class="varrow">&#9660;</div>
-      <div class="vstep"><div class="vnum" style="font-size:19px">Edgewater entitled &amp; capitalized</div><div class="vlbl">Platform fees and carried economics switch on as the district closes its stack</div></div>
-      <div class="varrow">&#9660;</div>
-      <div class="vstep"><div class="vnum" style="font-size:19px">District two, then the platform</div><div class="vlbl">The playbook, product, and capital relationships repeat across the West Coast</div></div>
+      <div class="vstep seed"><div class="vnum">$3M</div><div class="vlbl">Platform equity sits at the control point of the campaign</div></div>
+      <div class="varrow">&darr;</div>
+      <div class="vstep"><div class="vnum">$12M</div><div class="vlbl">District Value Creation Fund organizes entitlement and engineering</div></div>
+      <div class="varrow">&darr;</div>
+      <div class="vstep"><div class="vnum">~$34M</div><div class="vlbl">Land SPV assembles at close, landowner's $5M committed under the LOI</div></div>
+      <div class="varrow">&darr;</div>
+      <div class="vstep"><div class="vnum">$650M</div><div class="vlbl">Phased development pipeline built on the blended-cost capital stack</div></div>
     </div>
-    <p class="muted rv" style="margin-top:26px;font-size:14px;text-align:center">Use of funds, milestones, and structure on <a href="raise.html" style="color:#d9a26c">The Raise</a>. Terms are shared in conversation.</p>
   </div>
 </section>
 
-<section class="dark" id="documents" style="border-top:1px solid #3d392f">
+<section class="dark" id="raise2">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:20px">
+      <h2 style="font-size:clamp(24px,3vw,32px)">$3M, deployed against 18 months of execution</h2>
+      <p class="lead" style="font-size:17px">Every dollar maps to work that advances Edgewater, prepares district two, or hardens the platform's systems.</p>
+    </div>
+    <table class="uof rv">
+      <thead><tr><th>Allocation</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td><span class="al">Team &amp; operating runway</span><br>Core team compensation and operations through Edgewater's capitalization milestones</td><td>$1.0M</td></tr>
+        <tr><td><span class="al">Master planning &amp; site evaluation</span><br>Edgewater master plan advancement plus screening of the second district</td><td>$0.7M</td></tr>
+        <tr><td><span class="al">Business development &amp; IR</span><br>Capital formation for the campaign and the phase capitalizations that follow</td><td>$0.65M</td></tr>
+        <tr><td><span class="al">Legal, community, contingency</span><br>Entity and offering work, community engagement, and reserve</td><td>$0.65M</td></tr>
+        <tr class="total"><td>Total platform raise</td><td>$3.0M</td></tr>
+      </tbody>
+    </table>
+    <div class="grid g3" style="margin-top:48px">
+      <div class="card rv"><h4>Months 0-6</h4><h3>Lock the foundations</h3><p style="font-size:14px;line-height:1.65">Platform round closed or substantially subscribed; District Fund raising in parallel. HUD lender interviews complete, C-PACE and URA diligence closed, predevelopment credit term sheet in hand. Tracked publicly on the capital strategy <a href="../west-salem/capital-strategy.html" style="color:#d9a26c">verification register</a>.</p></div>
+      <div class="card rv"><h4>Months 6-12</h4><h3>Convert control into value</h3><p style="font-size:14px;line-height:1.65">Edgewater master plan and engineering advancing on the District Fund's capital; TIF concept submitted; district two shortlist evaluated on the underwriting engine; Upside Explorer in the hands of first external deal teams.</p></div>
+      <div class="card rv"><h4>Months 12-18</h4><h3>Switch on platform economics</h3><p style="font-size:14px;line-height:1.65">The ~$34M Land SPV assembled; Phase 1 capitalization in processing across HUD, C-PACE, TIF, and OZ equity; recurring fee agreements in place, moving the platform from raise-funded to fee-supported operations.</p></div>
+    </div>
+    <div class="thesis rv">What platform investors own: the GP economics (fees, promote, carried interest) on every district; the platform's co-investment positions; the systems (Upside Explorer, Now City Homes, the capital playbook); and the pipeline, every district after the first. On terms: this preview describes structure, use of funds, and milestones. Valuation and instrument mechanics are shared in conversation.</div>
+  </div>
+</section>
+
+<!-- 07 · HONEST QUESTIONS -->
+<section class="alt" id="questions">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">The Room</div>
-      <h2>Read the whole case</h2>
+      <div class="kicker"><span class="n">07</span><span class="eyebrow">Honest Questions</span></div>
+      <h2>The questions we would ask before writing this check</h2>
+      <p class="lead">We would rather earn trust than manage impressions. Direct answers, with the risk we are still working named alongside each.</p>
     </div>
-    <div class="docgrid rv">
-      <a class="doc-card" href="strategy.html">
-        <img src="assets/oregon/vineyard.jpg" alt="Willamette Valley vineyard" loading="lazy">
-        <div class="ov"></div>
-        <div class="tx"><div class="k">Strategy</div><h3>Business model &amp; flywheel</h3><p>The master developer role, four earning layers, the moat, and where we play next.</p></div>
-      </a>
-      <a class="doc-card" href="raise.html">
-        <img src="assets/mp-11.jpg" alt="Riverfront district render at dusk" loading="lazy">
-        <div class="ov"></div>
-        <div class="tx"><div class="k">The Raise</div><h3>$3M platform equity</h3><p>Structure, use of funds, the 18-month milestone ladder, and honest answers on risk.</p></div>
-      </a>
-      <a class="doc-card" href="team.html">
-        <img src="assets/oregon/riverfront-park.jpg" alt="Salem riverfront park" loading="lazy">
-        <div class="ov"></div>
-        <div class="tx"><div class="k">Team &amp; Traction</div><h3>Who is building this</h3><p>Leadership, senior advisors, and what already exists today.</p></div>
-      </a>
-      <a class="doc-card" href="../west-salem/">
-        <img src="assets/oregon/salem-aerial.jpg" alt="Aerial of Salem, Oregon" loading="lazy">
-        <div class="ov"></div>
-        <div class="tx"><div class="k">The First District</div><h3>Edgewater data room</h3><p>Business plan, capital strategy, live underwriting, and the full district portal.</p></div>
-      </a>
+    <div class="qa">
+      <div class="q rv"><span class="tag">Concentration</span><h3>"Is this just a bet on one project in Salem?"</h3><p>Today, Edgewater is the platform's main engine, and this raise is sized to its milestones. The position you buy is broader: Now City Homes and the software have their own commercial paths, the second district search is funded in this budget, and the playbook is the durable asset. The risk we are working: near-term value does concentrate in Edgewater's progress; the milestone ladder converts that concentration into proof quickly.</p></div>
+      <div class="q rv"><span class="tag">The Katerra question</span><h3>"Didn't industrialized construction already fail?"</h3><p>Capital-first modular failed; demand-first modular works, from Sweden's Kombohus to the DoD's current program. Now City Homes is demand-first by construction: the anchor pipeline exists before factory commitments, and delivery runs through established factory partners with zero proprietary factory CapEx. The risk we are working: partner capacity and pipeline conversion are execution work, and we treat them as such.</p></div>
+      <div class="q rv"><span class="tag">Stage</span><h3>"Why equity in a young company instead of the district fund?"</h3><p>Different jobs. The fund buys a defined value-creation arc with an exit window at land close. Platform equity buys the repeating engine: GP economics, the product, the software, and every future district, with more time and more variance. Many partners take both; the campaign is designed so the two reinforce each other.</p></div>
+      <div class="q rv"><span class="tag">Revenue</span><h3>"When does the platform earn money?"</h3><p>Platform fee agreements switch on as district capital closes: structuring and development fees at land close and Phase 1 capitalization, asset management fees as vehicles operate, promote at stabilization. Product and software revenue begin as Now City Homes and nowcity.ai reach external pipelines. The risk we are working: fee timing follows capital timing; the 18-month plan reaches fee-supported operations inside this raise's runway.</p></div>
     </div>
-    <p class="muted rv" style="font-size:13px;margin-top:26px;text-align:center">Start the conversation: <a href="mailto:erik@nowcitylabs.com?subject=Now%20City%20Platform%20Raise" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
+  </div>
+</section>
+
+<!-- 08 · TEAM -->
+<section class="dark" id="team">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">08</span><span class="eyebrow">Team &amp; Traction</span></div>
+      <h2>Built around the work</h2>
+      <p class="lead">Two founders, one synthesis: the operating reality of property combined with the systems discipline of technology. A senior bench that is load-bearing, not decorative. And a lean operating model whose leverage comes from systems and coalitions.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card rv"><h4>Co-Founder &amp; CEO</h4><h3>Erik Gillberg</h3><p style="font-size:14.5px;line-height:1.65">Thirty years inside the operating reality of property, alongside a 20-year career in technology, business development, and startup leadership. As master developer of Edgewater, Erik's role is holding the whole: a vision worth committing a decade to, capital structures that let attainable homes pencil, and partnerships aligned enough to survive four phases of delivery.</p></div>
+      <div class="card rv"><h4>Co-Founder &amp; COO</h4><h3>Ritchie Ju</h3><p style="font-size:14.5px;line-height:1.65">Leads design, development, and operations. B.Arch from Carnegie Mellon, MS in Architecture and Urban Design from Columbia, MBA in progress at Johns Hopkins. His career spans Citi Bike's expansion at Lyft, capital raising and development with a $3B+ NYC mixed-use developer, and co-founding a 7-figure ecommerce business.</p></div>
+      <div class="card rv"><h4>Advisor &middot; Local Economies</h4><h3>Michael H. Shuman</h3><p style="font-size:14.5px;line-height:1.65">Economist, attorney, and one of the architects of the 2012 JOBS Act. He advises Now City on community-rooted ownership, local capital formation, and finance models that keep wealth in place.</p></div>
+      <div class="card rv"><h4>Advisor &middot; Urban Planning &amp; Design</h4><h3>Neal Payton</h3><p style="font-size:14.5px;line-height:1.65">FAIA, FCNU. Directs the western U.S. urban and architectural design practice at Torti Gallas. He advises Now City on urbanism, master planning, and entitlement strategy.</p></div>
+    </div>
+    <div class="proof" style="margin-top:40px">
+      <div class="p rv"><span class="tag">Traction</span><h4>What exists today</h4><p>Signed LOI with $5M landowner equity, rezoned corridor, verified OZ status, a raising district fund, live comp-grounded underwriting, a productized software engine, a named coalition map, and a ULI Technical Advisory Panel foundation. Nearly every item links to a live document in the <a href="../west-salem/" style="color:#d9a26c">Edgewater data room</a>.</p></div>
+      <div class="p rv"><span class="tag">Operating model</span><h4>A small core, a scaling bench</h4><p>Early phases executed with experienced local and regional teams; Now City maintains continuity of vision, performance standards, and long-term district control. Payroll stays small while the platform's reach compounds.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="dark cta" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="eyebrow rv">The Invitation</div>
+    <h2 class="rv">Build the company<br>that builds districts.</h2>
+    <p class="rv" style="max-width:560px;margin:0 auto;color:#b7b0a3">The platform raise is open now. Start with a conversation, and bring your hardest questions; the data room is built for them.</p>
+    <div class="contacts rv">
+      <a href="mailto:erik@nowcitylabs.com">erik@nowcitylabs.com</a>
+      <a href="mailto:ritchie@nowcitylabs.com">ritchie@nowcitylabs.com</a>
+      <a href="../west-salem/">Edgewater data room</a>
+    </div>
   </div>
 </section>
 
 <section class="dark" style="border-top:1px solid #3d392f;padding:48px 0">
   <div class="wrap">
-    <p style="font-size:11px;line-height:1.7;color:#8f897c;max-width:920px">All projections are based on assumptions regarding revenues and costs that may not equate to actual results; actual results will differ and may differ materially. Prospective investors, with their financial and legal advisers, should independently evaluate all assumptions and should not place undue weight on any projections. This site does not constitute an offer to buy or sell securities; an offering can be made only pursuant to delivery of definitive offering documents. Any securities would be offered in reliance on exemptions from registration and only to persons meeting applicable requirements. Statements herein may constitute forward-looking statements involving known and unknown risks and uncertainties; no representation is made that objectives will be achieved, and Now City undertakes no obligation to update such statements. This material is confidential, furnished solely for consideration of the matters described, and is not to be copied or shared without written consent.</p>
+    <p style="font-size:11px;line-height:1.7;color:#8f897c;max-width:920px">All projections are based on assumptions regarding revenues and costs that may not equate to actual results; actual results will differ and may differ materially. Prospective investors, with their financial and legal advisers, should independently evaluate all assumptions and should not place undue weight on any projections. Market sizing figures are estimates based on third-party data and company assumptions and are provided for discussion purposes only. This site does not constitute an offer to buy or sell securities; an offering can be made only pursuant to delivery of definitive offering documents. Any securities would be offered in reliance on exemptions from registration and only to persons meeting applicable requirements. Statements herein may constitute forward-looking statements involving known and unknown risks and uncertainties; no representation is made that objectives will be achieved, and Now City undertakes no obligation to update such statements. This material is confidential, furnished solely for consideration of the matters described, and is not to be copied or shared without written consent.</p>
   </div>
 </section>
 
