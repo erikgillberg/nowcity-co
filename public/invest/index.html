@@ -17,10 +17,38 @@
 .kicker{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
 .kicker .n{font-family:var(--serif);font-size:15px;color:var(--terra);border:1.5px solid var(--terra);border-radius:999px;padding:3px 13px;white-space:nowrap}
 .dark .kicker .n{color:#d9a26c;border-color:#d9a26c}
-#subnav .wrap{gap:6px}
-#subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
-#subnav a:hover{color:var(--terra);background:rgba(168,112,63,.08)}
-#subnav a.active{color:#fff;background:var(--terra);border-color:var(--terra)}
+/* iconography (from nowcity.co) */
+.pv-icon{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:rgba(168,112,63,.10);color:var(--terra);margin-bottom:16px}
+.pv-icon svg{width:23px;height:23px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.dark .pv-icon{background:rgba(217,162,108,.16);color:#d9a26c}
+/* main-nav pill scrollspy */
+.navlinks a{padding:6px 13px;border-radius:999px;transition:color .25s,background .25s}
+.navlinks a.active{border-bottom:none;padding-bottom:6px}
+.navlinks a.current{background:var(--terra);color:#fff!important}
+nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--terra);color:#fff!important}
+/* nav overflow: hamburger below 1240px (local extension of site.css 860px rules) */
+@media(max-width:1240px) and (min-width:861px){
+  nav .wrap{flex-wrap:nowrap}
+  .navtoggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:36px;padding:7px 8px;background:none;border:none;cursor:pointer;margin-left:auto;z-index:201}
+  .navtoggle span{display:block;height:2px;width:100%;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
+  nav.scrolled .navtoggle span,nav.solid .navtoggle span{background:var(--ink-deep)}
+  nav.navopen .navtoggle span{background:#fff}
+  nav.navopen .navtoggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.navopen .navtoggle span:nth-child(2){opacity:0}
+  nav.navopen .navtoggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .navlinks{position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;gap:0;background:#1f1d1a;max-height:0;overflow:hidden;padding:0;transition:max-height .32s ease}
+  nav.navopen .navlinks{max-height:85vh;overflow-y:auto;padding:6px 0;box-shadow:0 14px 30px rgba(0,0,0,.34)}
+  .navlinks>li{width:100%}
+  .navlinks a,nav.scrolled .navlinks a,nav.solid .navlinks a{display:block;color:#e9e5da!important;padding:13px 22px;font-size:13px;letter-spacing:.06em;border-radius:0}
+  .navlinks a:hover{background:rgba(255,255,255,.05)}
+  .navlinks a.current{background:rgba(168,112,63,.35);border-left:3px solid #d9a26c;padding-left:19px}
+}
+/* 4-card grids: 4 across, then 2x2, then 1 (never 3+1 orphans) */
+.grid.g4,.regwin,.thresh,.proof.c4{grid-template-columns:repeat(4,1fr)}
+.qa{grid-template-columns:repeat(2,1fr)}
+@media(max-width:1020px){.grid.g4,.regwin,.thresh,.proof.c4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.qa{grid-template-columns:1fr}}
+@media(max-width:600px){.grid.g4,.regwin,.thresh,.proof.c4{grid-template-columns:1fr}}
 .thesis{background:rgba(217,162,108,.07);border-left:3px solid #d9a26c;border-radius:0 8px 8px 0;padding:24px 26px;margin-top:38px;font-size:16.5px;color:#e8e2d6;line-height:1.75}
 .gapgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:34px}
 .gapgrid .card .gn{font-family:var(--serif);font-size:26px;color:#d9a26c;line-height:1}
@@ -154,19 +182,6 @@
   </div>
 </nav>
 
-<div class="subnav" id="subnav">
-  <div class="wrap">
-    <a href="#opening">Opening</a>
-    <a href="#platform">Platform</a>
-    <a href="#homes">Homes</a>
-    <a href="#market">Market</a>
-    <a href="#proof">Proof</a>
-    <a href="#raise">Raise</a>
-    <a href="#questions">Questions</a>
-    <a href="#team">Team</a>
-  </div>
-</div>
-
 <!-- 00 · HERO -->
 <header class="hero" id="top">
   <div class="bg" style="background-image:url('assets/oregon/oregon-coast.jpg')"></div><div class="shade"></div>
@@ -204,20 +219,20 @@
       <p class="lead">A master developer earns across four layers: land value created by assembly and entitlement, pad monetization to phase partners, development margin on the phases it builds, and long-term yield on the district it holds. Now City's edge is that every layer runs on systems the company owns.</p>
     </div>
     <div class="grid g4">
-      <div class="card rv"><h4>Layer 1 &middot; Land value</h4><p style="font-size:14px;line-height:1.6">Assembly, entitlement, and master planning turn fragmented parcels into an investable district. The step change in value accrues to positions the platform structures.</p></div>
-      <div class="card rv"><h4>Layer 2 &middot; Pad monetization</h4><p style="font-size:14px;line-height:1.6">Finished, infrastructure-served parcels are held, joint-ventured, or delivered with phase partners, converting entitlement work into proceeds and aligned partnerships.</p></div>
-      <div class="card rv"><h4>Layer 3 &middot; Development margin</h4><p style="font-size:14px;line-height:1.6">On phases Now City builds: development fees during delivery plus promote at stabilization, underwritten live in the Upside Explorer.</p></div>
-      <div class="card rv"><h4>Layer 4 &middot; Long-term yield</h4><p style="font-size:14px;line-height:1.6">The stabilized district is held as owner-operator and recapitalized rather than sold, compounding value for the long term.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9.4h16"/><path d="M4 14.6h16"/><path d="M9.4 4v16"/><path d="M14.6 4v16"/></svg></span><h4>Layer 1 &middot; Land value</h4><p style="font-size:14px;line-height:1.6">Assembly, entitlement, and master planning turn fragmented parcels into an investable district. The step change in value accrues to positions the platform structures.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 9h13l-3.5-3.5"/><path d="M20 15H7l3.5 3.5"/></svg></span><h4>Layer 2 &middot; Pad monetization</h4><p style="font-size:14px;line-height:1.6">Finished, infrastructure-served parcels are held, joint-ventured, or delivered with phase partners, converting entitlement work into proceeds and aligned partnerships.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="13.5" y="8" width="3" height="9"/></svg></span><h4>Layer 3 &middot; Development margin</h4><p style="font-size:14px;line-height:1.6">On phases Now City builds: development fees during delivery plus promote at stabilization, underwritten live in the Upside Explorer.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 16l5-5 3.5 3.5L20 7"/><path d="M15 7h5v5"/></svg></span><h4>Layer 4 &middot; Long-term yield</h4><p style="font-size:14px;line-height:1.6">The stabilized district is held as owner-operator and recapitalized rather than sold, compounding value for the long term.</p></div>
     </div>
     <div class="sec-head rv" style="margin-top:72px;margin-bottom:34px">
       <h2 style="font-size:clamp(24px,3vw,32px)">Four systems the platform owns</h2>
       <p class="lead" style="font-size:17px">Each is real today, in use on the first district, and built to transfer to every district that follows.</p>
     </div>
     <div class="grid g2">
-      <div class="card rv"><h4>Software &middot; nowcity.ai</h4><h3>Now City Upside Explorer</h3><p style="font-size:14.5px;line-height:1.65">A live, collaborative underwriting model that proves the good project pencils: from an honest floor to institutional returns, every point traced to a named, defensible move. Built and in use on the first district; productized at <a href="https://nowcity.ai" style="color:var(--terra)">nowcity.ai</a>.</p></div>
-      <div class="card rv" style="border-top:3px solid var(--terra)"><h4>Building system &middot; the product engine</h4><h3>Now City Homes</h3><p style="font-size:14.5px;line-height:1.65">A standardized, design-forward, factory-built housing catalog, and the demand-aggregation strategy that makes industrialized construction finally work. The full system is <a href="#homes" style="color:var(--terra)">section 03</a>, because it is a growth engine, not a feature.</p></div>
-      <div class="card rv"><h4>Capital playbook</h4><h3>The blended-cost stack</h3><p style="font-size:14.5px;line-height:1.65">A repeatable public-private capital strategy (TIF, HUD, C-PACE, LIHTC, OZ, mission capital) that targets a blended cost of capital well below conventional finance, documented live in the Edgewater data room.</p></div>
-      <div class="card rv"><h4>Method</h4><h3>Coalition development</h3><p style="font-size:14.5px;line-height:1.65">Districts get built by coalitions. Now City's method recruits the city, the university, the region's employers, and local capital as named partners before vertical capital is at risk.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.6 9.4l-2 5.2-5.2 2 2-5.2 5.2-2Z"/></svg></span><h4>Software &middot; nowcity.ai</h4><h3>Now City Upside Explorer</h3><p style="font-size:14.5px;line-height:1.65">A live, collaborative underwriting model that proves the good project pencils: from an honest floor to institutional returns, every point traced to a named, defensible move. Built and in use on the first district; productized at <a href="https://nowcity.ai" style="color:var(--terra)">nowcity.ai</a>.</p></div>
+      <div class="card rv" style="border-top:3px solid var(--terra)"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></span><h4>Building system &middot; the product engine</h4><h3>Now City Homes</h3><p style="font-size:14.5px;line-height:1.65">A standardized, design-forward, factory-built housing catalog, and the demand-aggregation strategy that makes industrialized construction finally work. The full system is <a href="#homes" style="color:var(--terra)">section 03</a>, because it is a growth engine, not a feature.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="5" ry="3"/><path d="M4 7v5c0 1.7 2.2 3 5 3"/><ellipse cx="15" cy="14" rx="5" ry="3"/><path d="M10 14.3v2.7c0 1.7 2.2 3 5 3s5-1.3 5-3v-3"/></svg></span><h4>Capital playbook</h4><h3>The blended-cost stack</h3><p style="font-size:14.5px;line-height:1.65">A repeatable public-private capital strategy (TIF, HUD, C-PACE, LIHTC, OZ, mission capital) that targets a blended cost of capital well below conventional finance, documented live in the Edgewater data room.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.3"/><circle cx="18" cy="7" r="2.3"/><circle cx="12" cy="17" r="2.3"/><path d="M7.8 8.5l2.7 6.4M16.2 8.5l-2.7 6.4M8.3 7h7.4"/></svg></span><h4>Method</h4><h3>Coalition development</h3><p style="font-size:14.5px;line-height:1.65">Districts get built by coalitions. Now City's method recruits the city, the university, the region's employers, and local capital as named partners before vertical capital is at risk.</p></div>
     </div>
     <div class="flow rv" style="margin-top:56px">
       <div class="step"><span class="n">1</span><span>Find the opening: a rezoned corridor, real demand, vacant master developer role</span></div>
@@ -305,27 +320,34 @@
     </div>
 
     <div class="grid g2" style="margin-top:56px">
-      <div class="card rv"><h4>Asset-light by design</h4><h3>We are not building a factory. We are orchestrating a partnership stack.</h3><p style="font-size:14.5px;line-height:1.65">Delivery runs through an established industrialized construction partner in the Western U.S. with a patented building system, supported by a network of timber, logistics, and manufacturing relationships. Zero capital drain on proprietary factories, geographic flexibility to deploy the chassis where fundamentals are strongest, and a supply chain insulated from localized labor shortages.</p></div>
-      <div class="card rv"><h4>Performance + intelligence</h4><h3>Engineer once. Replicate everywhere. Compound the learning.</h3><p style="font-size:14.5px;line-height:1.65">Passive House-level envelopes, low embodied and operational carbon, and healthy cross-ventilated homes come by default, because performance is engineered into the chassis once. And because the product repeats, every deployment feeds the platform's AI-assisted optimization, from unit mix and daylighting to factory-load scheduling, with human review non-negotiable. The building system and the software system are the same flywheel.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4-8 4-8-4 8-4Z"/><path d="M4 11l8 4 8-4"/><path d="M4 15l8 4 8-4"/></svg></span><h4>Asset-light by design</h4><h3>We are not building a factory. We are orchestrating a partnership stack.</h3><p style="font-size:14.5px;line-height:1.65">Delivery runs through an established industrialized construction partner in the Western U.S. with a patented building system, supported by a network of timber, logistics, and manufacturing relationships. Zero capital drain on proprietary factories, geographic flexibility to deploy the chassis where fundamentals are strongest, and a supply chain insulated from localized labor shortages.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 1 7 4"/><path d="M19.5 3.5V8H15"/><path d="M18.5 15A8 8 0 0 1 5 14"/><path d="M4.5 19.5V15H9"/></svg></span><h4>Performance + intelligence</h4><h3>Engineer once. Replicate everywhere. Compound the learning.</h3><p style="font-size:14.5px;line-height:1.65">Passive House-level envelopes, low embodied and operational carbon, and healthy cross-ventilated homes come by default, because performance is engineered into the chassis once. And because the product repeats, every deployment feeds the platform's AI-assisted optimization, from unit mix and daylighting to factory-load scheduling, with human review non-negotiable. The building system and the software system are the same flywheel.</p></div>
     </div>
   </div>
 </section>
 
-<!-- 03b · DEMAND AGGREGATION (dark interlude) -->
+<!-- 03b · THE ORDER BOOK (dark interlude) -->
 <section class="dark" id="demand">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="kicker"><span class="n">03b</span><span class="eyebrow">Demand Aggregation</span></div>
-      <h2>We manufacture the volume certainty that makes factories viable</h2>
-      <p class="lead">Now City's own districts anchor the pipeline. Around them we aggregate demand across West Coast transit-oriented developments and large-scale master-planned communities, so the catalog clears the four thresholds industrialized construction requires.</p>
+      <div class="kicker"><span class="n">03b</span><span class="eyebrow">The Order Book</span></div>
+      <h2>Demand certainty is manufactured. We build it four ways at once.</h2>
+      <p class="lead">A factory believes an order book, not a vision. Now City builds one the way an airline fills a route: a committed base load it controls, anchor customers on framework agreements, a distribution channel that converts continuously, and chartered volume from partners who need thousands of units on committed schedules.</p>
     </div>
+    <div class="grid g4" style="margin-top:10px">
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></span><h4>1 &middot; The base load we control</h4><p style="font-size:14px;line-height:1.6">Edgewater's ~1,000 homes across four phases, specified, sequenced, and scheduled by the master developer itself. Every district the platform wins adds a thousand-home block to the book. No sales cycle stands between the platform and its own demand.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z"/></svg></span><h4>2 &middot; Anchor customers on framework terms</h4><p style="font-size:14px;line-height:1.6">The Kombohus move, translated to the West Coast: cities, housing authorities, universities, and employers adopt a pre-engineered, pre-priced catalog under framework agreements, aggregating many small public buyers into one order. The coalition method is already opening these doors district by district.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.6 9.4l-2 5.2-5.2 2 2-5.2 5.2-2Z"/></svg></span><h4>3 &middot; The underwriting channel</h4><p style="font-size:14px;line-height:1.6">Every external deal team on the Upside Explorer is a qualified buyer in formation: the software proves, in their own numbers, that the chassis is the move that makes their project pencil, then routes the order to the catalog. Distribution for the software is aggregation for the factory.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 9h13l-3.5-3.5"/><path d="M20 15H7l3.5 3.5"/></svg></span><h4>4 &middot; Chartered pipeline volume</h4><p style="font-size:14px;line-height:1.6">Framework supply agreements with West Coast transit-oriented developments and large master-planned communities: buyers who need thousands of standardized, high-performance units on committed schedules, and who gain factory economics they could never aggregate alone.</p></div>
+    </div>
+    <div class="note rv" style="border-color:#d9a26c;background:rgba(217,162,108,.07);color:#e8e2d6"><strong>Why the book converts:</strong> the catalog arrives pre-engineered (the Passive House chassis), pre-approved (code-tested jurisdiction by jurisdiction), pre-priced (framework factory terms), and pre-proven (every delivered building becomes the comp that sells the next order). Buyers commit to certainty, and certainty is the product.</div>
     <div class="thresh">
-      <div class="th rv"><div class="ok">&#10003; Cleared by aggregation</div><h4>Scale</h4><p>A pipeline measured in districts and partner programs, not one-off projects.</p></div>
-      <div class="th rv"><div class="ok">&#10003; Cleared by the chassis</div><h4>Repeatability</h4><p>One standardized core and catalog across every deployment.</p></div>
+      <div class="th rv"><div class="ok">&#10003; Cleared by the book</div><h4>Scale</h4><p>A pipeline measured in districts and framework agreements, not one-off projects.</p></div>
+      <div class="th rv"><div class="ok">&#10003; Cleared by the chassis</div><h4>Repeatability</h4><p>One standardized core and catalog across every order in the book.</p></div>
       <div class="th rv"><div class="ok">&#10003; Cleared by the market</div><h4>Schedule pressure</h4><p>High-carry environments where months saved convert directly to returns.</p></div>
       <div class="th rv"><div class="ok">&#10003; Cleared by geography</div><h4>High-cost labor</h4><p>West Coast coastal cities, where factory labor arbitrage is deepest.</p></div>
     </div>
-    <div class="thesis rv">By assembling the demand, the product, and the factory partner, Now City creates growth and stability for its delivery partners and developers, and builds the kinds of places people are proud to inherit. The platform earns as developer, as product owner, and as the intelligence layer across the pipeline.</div>
+    <div class="thesis rv">The platform is paid three ways on the same order book: as developer of its own districts, as product owner on catalog deployments, and as the intelligence layer across the pipeline. Factories get the growth and stability they have never had; buyers get homes that pencil; the platform owns the demand.</div>
   </div>
 </section>
 
@@ -360,7 +382,7 @@
       <div class="stat rv"><div class="num">~$1.0B</div><div class="lbl">Stabilized asset value at completion, held long-term</div></div>
       <div class="stat rv"><div class="num">1,000</div><div class="lbl">Homes, priced to local incomes, first phases targeting 2029</div></div>
     </div>
-    <div class="proof">
+    <div class="proof c4">
       <div class="p rv"><span class="tag">Site control</span><h4>Signed LOI, landowner invested</h4><p>Phase One land under a signed letter of intent, with the landowner contributing $5M of land value as foundational equity.</p></div>
       <div class="p rv"><span class="tag">Entitlement</span><h4>Rezoned, OZ verified</h4><p>Corridor rezoned high-density mixed-use (2022), much of the program by-right, inside an Urban Renewal Area with Opportunity Zone status verified.</p></div>
       <div class="p rv"><span class="tag">Capital</span><h4>$12M district fund raising</h4><p>The companion District Value Creation Fund is raising alongside this round, with a complete investor data room and live verification register.</p></div>
@@ -486,13 +508,15 @@
 
 <a href="#top" class="toplink" id="toplink" aria-label="Back to top">↑</a>
 <script>
-const nav=document.getElementById('nav');const tl=document.getElementById('toplink');const sub=document.getElementById('subnav');
-addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.6);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const nav=document.getElementById('nav');const tl=document.getElementById('toplink');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-const subLinks=[...document.querySelectorAll('#subnav a')];const spyIds=subLinks.map(a=>a.getAttribute('href').slice(1));
-const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;subLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
-spyIds.forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+/* pill scrollspy on the main nav; interlude sections map to their parent pill */
+const navLinks=[...document.querySelectorAll('#nav .navlinks a')].filter(a=>(a.getAttribute('href')||'').startsWith('#'));
+const alias={demand:'homes',raise2:'raise',questions:'raise'};
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){let id=e.target.id;id=alias[id]||id;navLinks.forEach(a=>a.classList.toggle('current',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
+['opening','platform','homes','demand','market','proof','raise','raise2','questions','team'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
 </script>
 <script>
 (function(){
