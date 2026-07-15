@@ -26,8 +26,14 @@
 .navlinks a.active{border-bottom:none;padding-bottom:6px}
 .navlinks a.current{background:var(--terra);color:#fff!important}
 nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--terra);color:#fff!important}
-/* nav overflow: hamburger below 1240px (local extension of site.css 860px rules) */
-@media(max-width:1240px) and (min-width:861px){
+/* nav: single line above 1023px, hamburger below */
+@media(min-width:1024px){
+  #nav .navlinks{flex-wrap:nowrap;gap:6px}
+  #nav .navlinks a{white-space:nowrap;padding:6px 11px}
+}
+@media(min-width:1024px) and (max-width:1360px){.brand-sub{display:none}}
+/* nav overflow: hamburger below 1024px (local extension of site.css 860px rules) */
+@media(max-width:1023px) and (min-width:861px){
   nav .wrap{flex-wrap:nowrap}
   .navtoggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:36px;padding:7px 8px;background:none;border:none;cursor:pointer;margin-left:auto;z-index:201}
   .navtoggle span{display:block;height:2px;width:100%;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
@@ -43,12 +49,20 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
   .navlinks a:hover{background:rgba(255,255,255,.05)}
   .navlinks a.current{background:rgba(168,112,63,.35);border-left:3px solid #d9a26c;padding-left:19px}
 }
-/* 4-card grids: 4 across, then 2x2, then 1 (never 3+1 orphans) */
-.grid.g4,.regwin,.thresh,.proof.c4{grid-template-columns:repeat(4,1fr)}
-.qa{grid-template-columns:repeat(2,1fr)}
-@media(max-width:1020px){.grid.g4,.regwin,.thresh,.proof.c4{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:760px){.qa{grid-template-columns:1fr}}
-@media(max-width:600px){.grid.g4,.regwin,.thresh,.proof.c4{grid-template-columns:1fr}}
+/* platform fee projection chart */
+.feechart{margin-top:40px;background:rgba(255,255,255,.045);border:1px solid #3d392f;border-radius:10px;padding:28px 26px 20px}
+.fees{display:flex;gap:8px;align-items:flex-end;height:280px}
+.fb{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;position:relative}
+.fb .tot{font-size:10.5px;color:#c9c2b2;text-align:center;margin-bottom:6px;white-space:nowrap}
+.fb .seg{border-radius:2px;margin-top:2px}
+.fb .se{background:var(--terra)}
+.fb .sd{background:var(--green-soft)}
+.fb .sa{background:#c8b89a}
+.fb .yr{font-size:10.5px;color:#8f897c;text-align:center;margin-top:8px}
+.fleg{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px;font-size:12.5px;color:#b7b0a3}
+.fleg span{display:inline-flex;align-items:center;gap:8px}
+.fleg i{width:12px;height:12px;border-radius:3px;display:inline-block}
+@media(max-width:640px){.fees{height:200px}.fb .tot{font-size:8.5px}.fb .yr{font-size:8.5px}}
 .thesis{background:rgba(217,162,108,.07);border-left:3px solid #d9a26c;border-radius:0 8px 8px 0;padding:24px 26px;margin-top:38px;font-size:16.5px;color:#e8e2d6;line-height:1.75}
 .gapgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:34px}
 .gapgrid .card .gn{font-family:var(--serif);font-size:26px;color:#d9a26c;line-height:1}
@@ -132,6 +146,14 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
 .qa .q .tag{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
 .qa .q h3{font-size:18px;margin:8px 0 10px;color:var(--ink-deep);font-style:italic}
 .qa .q p{font-size:14px;line-height:1.65;color:#5c584e}
+/* card grids: even columns only (4 > 2x2 > 1, and g2 is always a true 2-up), never 3+1 orphans.
+   Kept last in the stylesheet so these always win over the auto-fit defaults above. */
+.grid.g4,.regwin,.thresh,.proof.c4{grid-template-columns:repeat(4,1fr)}
+.grid.g2{grid-template-columns:repeat(2,1fr)}
+.qa{grid-template-columns:repeat(2,1fr)}
+@media(max-width:1020px){.grid.g4,.regwin,.thresh,.proof.c4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.qa{grid-template-columns:1fr}.grid.g2{grid-template-columns:1fr}}
+@media(max-width:600px){.grid.g4,.regwin,.thresh,.proof.c4{grid-template-columns:1fr}}
 /* print / PDF export */
 @media print{
   #gate,#subnav,.toplink,.navtoggle{display:none!important}
@@ -169,14 +191,14 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
   <div class="wrap">
     <a class="brand" href="#top">Now City Inc<span class="brand-sub"> &middot; Investor Preview</span></a>
     <ul class="navlinks">
-      <li><a href="#opening">The Opening</a></li>
+      <li><a href="#opening">Opening</a></li>
       <li><a href="#platform">Platform</a></li>
-      <li><a href="#homes">Now City Homes</a></li>
+      <li><a href="#homes">Homes</a></li>
       <li><a href="#market">Market</a></li>
       <li><a href="#proof">Proof</a></li>
-      <li><a href="#raise">The Raise</a></li>
+      <li><a href="#raise">Raise</a></li>
       <li><a href="#team">Team</a></li>
-      <li><a href="../west-salem/">Edgewater Portal</a></li>
+      <li><a href="../west-salem/">Edgewater</a></li>
       <li><a href="mailto:erik@nowcitylabs.com">Contact</a></li>
     </ul>
   </div>
@@ -189,7 +211,7 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
     <div class="eyebrow">Now City Inc &middot; Private Investor Preview</div>
     <h1>The district<br>is the product.</h1>
     <p class="sub">Now City is a master developer platform for regenerative districts, with a standardized building system to deliver them. The first district is under way. This raise builds the company that builds the rest.</p>
-    <div class="meta">$3M Platform Equity &middot; C-Corp &middot; Raising Now &middot; For discussion purposes only</div>
+    <div class="meta">$3.5M Platform Equity &middot; C-Corp &middot; Raising Now &middot; For discussion purposes only</div>
   </div>
 </header>
 
@@ -397,15 +419,15 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
   <div class="wrap">
     <div class="sec-head rv">
       <div class="kicker"><span class="n">06</span><span class="eyebrow">The Raise</span></div>
-      <h2>$3M to own the engine</h2>
-      <p class="lead">Now City Inc is raising $3M of platform equity, one of two vehicles in the $15M Phase One Capital Campaign. The companion $12M District Value Creation Fund buys the district's value; the platform raise buys the company that creates it, and that repeats it.</p>
+      <h2>$3.5M to own the engine</h2>
+      <p class="lead">Now City Inc is raising $3.5M of platform equity, one of two vehicles in the $15.5M Phase One Capital Campaign. The companion $12M District Value Creation Fund buys the district's value; the platform raise buys the company that creates it, and that repeats it. The raise is sized to fund all four workstreams honestly, including the order book.</p>
     </div>
     <div class="grid g2">
-      <div class="card rv" style="border-top:3px solid var(--terra)"><h4>This raise</h4><h3>Now City Inc &middot; $3M &middot; C-Corp equity</h3><p style="font-size:14.5px;line-height:1.65">Ownership of the master developer platform: team, systems, GP economics, Now City Homes, and every district the platform delivers. Venture-style position, 7-10 year horizon, with platform value events along the way.</p></div>
+      <div class="card rv" style="border-top:3px solid var(--terra)"><h4>This raise</h4><h3>Now City Inc &middot; $3.5M &middot; C-Corp equity</h3><p style="font-size:14.5px;line-height:1.65">Ownership of the master developer platform: team, systems, GP economics, Now City Homes, and every district the platform delivers. Venture-style position, 7-10 year horizon, with platform value events along the way.</p></div>
       <div class="card rv"><h4>Companion vehicle</h4><h3>District Value Creation Fund &middot; $12M</h3><p style="font-size:14.5px;line-height:1.65">Funds Edgewater's site control, entitlements, engineering, and infrastructure planning. First exit window at land close (~$34M Land SPV), 3-5 year horizon. Detailed on the <a href="../west-salem/district-capitalization.html" style="color:var(--terra)">Edgewater portal</a>.</p></div>
     </div>
     <div class="vflow rv">
-      <div class="vstep seed"><div class="vnum">$3M</div><div class="vlbl">Platform equity sits at the control point of the campaign</div></div>
+      <div class="vstep seed"><div class="vnum">$3.5M</div><div class="vlbl">Platform equity sits at the control point of the campaign</div></div>
       <div class="varrow">&darr;</div>
       <div class="vstep"><div class="vnum">$12M</div><div class="vlbl">District Value Creation Fund organizes entitlement and engineering</div></div>
       <div class="varrow">&darr;</div>
@@ -419,8 +441,8 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
 <section class="dark" id="raise2">
   <div class="wrap">
     <div class="sec-head rv" style="margin-bottom:20px">
-      <h2 style="font-size:clamp(24px,3vw,32px)">$3M, deployed against 18 months of execution</h2>
-      <p class="lead" style="font-size:17px">Every dollar maps to work that advances Edgewater, prepares district two, or hardens the platform's systems.</p>
+      <h2 style="font-size:clamp(24px,3vw,32px)">$3.5M, deployed against 18 months of execution</h2>
+      <p class="lead" style="font-size:17px">Every dollar maps to work that advances Edgewater, prepares district two, hardens the platform's systems, or converts the order book from strategy into signed paper. We sized the raise to the work rather than trimming the work to a round number: chartered volume does not happen on a zero budget, so it has its own line.</p>
     </div>
     <table class="uof rv">
       <thead><tr><th>Allocation</th><th>Amount</th></tr></thead>
@@ -428,15 +450,48 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
         <tr><td><span class="al">Team &amp; operating runway</span><br>Core team compensation and operations through Edgewater's capitalization milestones</td><td>$1.0M</td></tr>
         <tr><td><span class="al">Master planning &amp; site evaluation</span><br>Edgewater master plan advancement plus screening of the second district</td><td>$0.7M</td></tr>
         <tr><td><span class="al">Business development &amp; IR</span><br>Capital formation for the campaign and the phase capitalizations that follow</td><td>$0.65M</td></tr>
+        <tr><td><span class="al">Product &amp; order book &middot; Now City Homes</span><br>Catalog schematic package and Passive House chassis engineering (~$250K), jurisdiction code-pathway packages for Oregon and Washington (~$100K), factory framework agreement diligence and legal (~$75K), and anchor-buyer partnership development (~$75K)</td><td>$0.5M</td></tr>
         <tr><td><span class="al">Legal, community, contingency</span><br>Entity and offering work, community engagement, and reserve</td><td>$0.65M</td></tr>
-        <tr class="total"><td>Total platform raise</td><td>$3.0M</td></tr>
+        <tr class="total"><td>Total platform raise</td><td>$3.5M</td></tr>
       </tbody>
     </table>
+    <div class="note rv" style="background:rgba(255,255,255,.045);border-color:#d9a26c;color:#d8d2c4"><strong style="color:var(--cream)">The honest read on chartered volume.</strong> Framework agreements with TODs and master-planned communities are 12-to-24-month sales cycles with sophisticated counterparties, and they sign against artifacts, not intentions. The $0.5M product line buys the four artifacts that make signature possible: an engineered catalog, code-approved pathways, committed factory terms, and a delivered first order at Edgewater. Until those exist, chartered volume is a pipeline, and we will report it as one.</div>
     <div class="grid g3" style="margin-top:48px">
-      <div class="card rv"><h4>Months 0-6</h4><h3>Lock the foundations</h3><p style="font-size:14px;line-height:1.65">Platform round closed or substantially subscribed; District Fund raising in parallel. HUD lender interviews complete, C-PACE and URA diligence closed, predevelopment credit term sheet in hand. Tracked publicly on the capital strategy <a href="../west-salem/capital-strategy.html" style="color:#d9a26c">verification register</a>.</p></div>
-      <div class="card rv"><h4>Months 6-12</h4><h3>Convert control into value</h3><p style="font-size:14px;line-height:1.65">Edgewater master plan and engineering advancing on the District Fund's capital; TIF concept submitted; district two shortlist evaluated on the underwriting engine; Upside Explorer in the hands of first external deal teams.</p></div>
-      <div class="card rv"><h4>Months 12-18</h4><h3>Switch on platform economics</h3><p style="font-size:14px;line-height:1.65">The ~$34M Land SPV assembled; Phase 1 capitalization in processing across HUD, C-PACE, TIF, and OZ equity; recurring fee agreements in place, moving the platform from raise-funded to fee-supported operations.</p></div>
+      <div class="card rv"><h4>Months 0-6</h4><h3>Lock the foundations</h3><p style="font-size:14px;line-height:1.65">Platform round closed or substantially subscribed; District Fund raising in parallel. HUD lender interviews complete, C-PACE and URA diligence closed, predevelopment credit term sheet in hand. Order book: catalog schematic package commissioned and factory framework term sheet in negotiation. Tracked publicly on the capital strategy <a href="../west-salem/capital-strategy.html" style="color:#d9a26c">verification register</a>.</p></div>
+      <div class="card rv"><h4>Months 6-12</h4><h3>Convert control into value</h3><p style="font-size:14px;line-height:1.65">Edgewater master plan and engineering advancing on the District Fund's capital; TIF concept submitted; district two shortlist evaluated on the underwriting engine; Upside Explorer in the hands of first external deal teams. Order book: Oregon and Washington code-pathway packages complete, first anchor-customer framework LOI in hand.</p></div>
+      <div class="card rv"><h4>Months 12-18</h4><h3>Switch on platform economics</h3><p style="font-size:14px;line-height:1.65">The ~$34M Land SPV assembled; Phase 1 capitalization in processing across HUD, C-PACE, TIF, and OZ equity; recurring fee agreements in place, moving the platform from raise-funded to fee-supported operations. Order book: Edgewater Phase 1 order specified with the factory partner, and at least two external framework LOIs in diligence.</p></div>
     </div>
+
+    <div class="sec-head rv" style="margin-top:72px;margin-bottom:20px">
+      <h2 style="font-size:clamp(24px,3vw,32px)">What the engine earns: fee revenue, projected honestly</h2>
+      <p class="lead" style="font-size:17px">The projection below is built from the Edgewater master developer pro forma, then repeated. A district pays the platform three ways long before promote: a $2.5M development management agreement across five pre-construction milestones, a $300K annual master developer advance, and master developer plus development fees that balloon as each phase entitles and capitalizes. Edgewater alone models ~$39M of fee revenue across 2026-2035. The platform intends to help kick off 10+ new projects over the next ten years: three to four as full master developer on the Edgewater template, and six to eight as advisory kickoffs where the services practice and the software earn fees without balance-sheet weight.</p>
+    </div>
+    <div class="feechart rv">
+      <div class="fees">
+        <div class="fb"><div class="tot">$0.5M</div><div class="seg se" style="height:4px"></div><div class="yr">2026</div></div>
+        <div class="fb"><div class="tot">$2.4M</div><div class="seg sa" style="height:3px"></div><div class="seg se" style="height:18px"></div><div class="yr">2027</div></div>
+        <div class="fb"><div class="tot">$12.6M</div><div class="seg sa" style="height:6px"></div><div class="seg se" style="height:107px"></div><div class="yr">2028</div></div>
+        <div class="fb"><div class="tot">$1.7M</div><div class="seg sa" style="height:6px"></div><div class="seg sd" style="height:4px"></div><div class="seg se" style="height:4px"></div><div class="yr">2029</div></div>
+        <div class="fb"><div class="tot">$9.7M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:18px"></div><div class="seg se" style="height:60px"></div><div class="yr">2030</div></div>
+        <div class="fb"><div class="tot">$13.9M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:111px"></div><div class="seg se" style="height:4px"></div><div class="yr">2031</div></div>
+        <div class="fb"><div class="tot">$11.1M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:22px"></div><div class="seg se" style="height:68px"></div><div class="yr">2032</div></div>
+        <div class="fb"><div class="tot">$20.5M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:171px"></div><div class="seg se" style="height:3px"></div><div class="yr">2033</div></div>
+        <div class="fb"><div class="tot">$12.5M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:26px"></div><div class="seg se" style="height:76px"></div><div class="yr">2034</div></div>
+        <div class="fb"><div class="tot">$27.7M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:234px"></div><div class="seg se" style="height:5px"></div><div class="yr">2035</div></div>
+      </div>
+      <div class="fleg">
+        <span><i style="background:var(--terra)"></i>Edgewater fees (modeled: ~$39M)</span>
+        <span><i style="background:var(--green-soft)"></i>Districts 2-4 on the Edgewater template (~$65M)</span>
+        <span><i style="background:#c8b89a"></i>Advisory kickoffs &amp; services practice (~$8M)</span>
+      </div>
+    </div>
+    <div class="stats statcards c4" style="margin-top:26px">
+      <div class="stat rv"><div class="num">~$112M</div><div class="lbl">Cumulative platform fee revenue by 2035 across the projection</div></div>
+      <div class="stat rv"><div class="num">10+</div><div class="lbl">Projects kicked off in ten years: 4 owned districts, 6-8 advisory engagements</div></div>
+      <div class="stat rv"><div class="num">&lt;24 mo</div><div class="lbl">A new district writes its first checks: DMA milestones and the annual advance start pre-construction</div></div>
+      <div class="stat rv"><div class="num">+ promote</div><div class="lbl">Fees shown exclude promote, carried interest, and co-investment appreciation, which are additional</div></div>
+    </div>
+    <p class="fnotes rv" style="margin-top:20px;color:#8f897c">Assumptions, stated plainly: Edgewater's bars come from the 14 July 2026 master developer pro forma (fee revenue only, before platform operating costs). Districts 2-4 assume the Edgewater fee template repeats with starts in 2029, 2031, and 2033; no two districts will be identical, and later districts' largest fee years fall beyond this window. Advisory revenue assumes a services practice ramping from one engagement in 2027 to roughly three concurrent engagements at ~$350K each per year. Fee timing follows entitlement and capitalization milestones and will be lumpy in exactly the way the bars are. This is a projection for discussion, not a forecast.</p>
     <div class="thesis rv">What platform investors own: the GP economics (fees, promote, carried interest) on every district; the platform's co-investment positions; the systems (Upside Explorer, Now City Homes, the capital playbook); and the pipeline, every district after the first. On terms: this preview describes structure, use of funds, and milestones. Valuation and instrument mechanics are shared in conversation.</div>
   </div>
 </section>
@@ -453,7 +508,7 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="q rv"><span class="tag">Concentration</span><h3>"Is this just a bet on one project in Salem?"</h3><p>Today, Edgewater is the platform's main engine, and this raise is sized to its milestones. The position you buy is broader: Now City Homes and the software have their own commercial paths, the second district search is funded in this budget, and the playbook is the durable asset. The risk we are working: near-term value does concentrate in Edgewater's progress; the milestone ladder converts that concentration into proof quickly.</p></div>
       <div class="q rv"><span class="tag">The Katerra question</span><h3>"Didn't industrialized construction already fail?"</h3><p>Capital-first modular failed; demand-first modular works, from Sweden's Kombohus to the DoD's current program. Now City Homes is demand-first by construction: the anchor pipeline exists before factory commitments, and delivery runs through established factory partners with zero proprietary factory CapEx. The risk we are working: partner capacity and pipeline conversion are execution work, and we treat them as such.</p></div>
       <div class="q rv"><span class="tag">Stage</span><h3>"Why equity in a young company instead of the district fund?"</h3><p>Different jobs. The fund buys a defined value-creation arc with an exit window at land close. Platform equity buys the repeating engine: GP economics, the product, the software, and every future district, with more time and more variance. Many partners take both; the campaign is designed so the two reinforce each other.</p></div>
-      <div class="q rv"><span class="tag">Revenue</span><h3>"When does the platform earn money?"</h3><p>Platform fee agreements switch on as district capital closes: structuring and development fees at land close and Phase 1 capitalization, asset management fees as vehicles operate, promote at stabilization. Product and software revenue begin as Now City Homes and nowcity.ai reach external pipelines. The risk we are working: fee timing follows capital timing; the 18-month plan reaches fee-supported operations inside this raise's runway.</p></div>
+      <div class="q rv"><span class="tag">Revenue</span><h3>"When does the platform earn money?"</h3><p>Earlier than most expect, and lumpier than most like. The development management agreement pays $2.5M across five pre-construction milestones and a $300K annual advance starts in year two, so a district writes checks inside 24 months; master developer and development fees then balloon as phases entitle and capitalize. The full projection, built from the Edgewater pro forma and repeated across the pipeline, is charted above. The risk we are working: fee timing follows milestone timing; the 18-month plan reaches fee-supported operations inside this raise's runway.</p></div>
     </div>
   </div>
 </section>
