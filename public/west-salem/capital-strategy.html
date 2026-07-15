@@ -69,6 +69,12 @@
 @media(max-width:700px){.reg{display:block;overflow-x:auto}}
 .prec{background:rgba(255,255,255,.04);border:1px dashed #4a453a;border-radius:8px;padding:12px 16px;font-size:12.5px;color:#b7b0a3;margin-top:18px;line-height:1.6}
 .prec b{color:#d9a26c;font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:4px}
+.hier{max-width:720px;margin:30px auto 0;counter-reset:h}
+.hier li{list-style:none;counter-increment:h;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;background:#2b2823;border:1px solid #3d392f;border-radius:8px;padding:12px 18px;margin-top:8px;font-size:13.5px;line-height:1.55;color:#d8d2c4}
+.hier li:before{content:counter(h);font-family:var(--serif);font-size:20px;color:#9db08a;text-align:center}
+.hier li.mid:before{color:#e8b264}
+.hier li.hot:before{color:#d97a6c}
+.hier li b{color:var(--cream);font-weight:600}
 </style>
 </head>
 <body class="gated">
@@ -135,6 +141,7 @@
     <a href="#philosophy">Philosophy</a>
     <a href="#stack">The Stack</a>
     <a href="#pools">Three Pools</a>
+    <a href="#equity">Equity Strategy</a>
     <a href="#execution">Execution &amp; Milestones</a>
     <a href="#register">Verification Register</a>
   </div>
@@ -176,7 +183,8 @@
       <div class="card"><div class="mn">3</div><h4>Tax-advantaged structures</h4><p style="font-size:13.5px">LIHTC equity, tax-exempt bonds, C-PACE, and Opportunity Zone equity each lower the effective cost of a tranche of the stack.</p></div>
       <div class="card"><div class="mn">4</div><h4>Mission-priced capital</h4><p style="font-size:13.5px">CDFI debt and foundation program-related investments price at 1-4% because the regenerative mandate is the return. Now City's positioning is a genuine pricing advantage here.</p></div>
     </div>
-    <div class="thesis rv">The $15M Phase One Capital Campaign now underway ($12M District Value Creation Fund plus $3M Now City platform) buys control of the entitlement, structuring, and sequencing work that unlocks this entire stack. That is the investment thesis. The vehicles, doors, and exits live on the <a href="district-capitalization.html" style="color:#d9a26c">District Capitalization</a> page; this page is the CFO's map of the capital those vehicles unlock.</div>
+    <div class="thesis rv">What sponsor-level capital buys at this stage is control of the entitlement, structuring, and sequencing work that unlocks this entire stack. That is the strategic thesis of this page.</div>
+    <div class="prec rv"><b>Scope</b>This page identifies strategic options for strengthening the project's financial outlook. Offering terms, current capitalization status, and financial projections live in the <a href="plan.html" style="color:#d9a26c">Business Plan</a> and the Investment Summary; the vehicles, doors, and exits are on the <a href="district-capitalization.html" style="color:#d9a26c">District Capitalization</a> page.</div>
   </div>
 </section>
 
@@ -194,7 +202,7 @@
       <tr><td>C-PACE</td><td>Private C-PACE providers (ORS 223.680)</td><td class="rng">$40-90M</td><td>6-7.5%, up to 30-yr fixed</td></tr>
       <tr><td>Tax-exempt bonds + 4% LIHTC</td><td>OHCS conduit + tax credit equity</td><td class="rng">$50-120M</td><td>Below-market blended (affordable phases)</td></tr>
       <tr><td>OZ 2.0 equity</td><td>Qualified Opportunity Funds</td><td class="rng">$60-120M</td><td>Market return target, lower hurdle via tax benefit</td></tr>
-      <tr><td>Sponsor / co-GP / Class A</td><td>Now City, co-GP, sponsor land contribution</td><td class="rng">$25-45M</td><td>Promote structure per LOI</td></tr>
+      <tr><td>Sponsor / GP equity</td><td>Sponsor, co-GP partner, landowner land contribution</td><td class="rng">$25-45M</td><td>Promote structure</td></tr>
       <tr><td>Grants, PRIs, CDFI gap</td><td>URA grants, foundations, Craft3</td><td class="rng">$5-15M</td><td>0-4%</td></tr>
     </table>
   </div>
@@ -251,6 +259,64 @@
   </div>
 </section>
 
+<section class="dark" id="equity" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Equity Strategy</div>
+      <h2>Four equity products, sequenced across the lifecycle</h2>
+      <p class="lead">The debt and public instruments above define the cost floor; the equity strategy defines who carries which risk at which stage, and at what price. Equity arrives as four distinct products with different risk appetites, return requirements, and entry points. Sequencing them correctly protects sponsor economics while keeping every phase capitalized.</p>
+    </div>
+    <div class="ap rv">
+      <div class="apphase">
+        <div class="aph"><span class="n">Stage 0</span><span class="t">Entitlement &amp; Predevelopment &middot; now to month 18</span></div>
+        <ul>
+          <li><span class="dot"></span><span><b>Land as GP equity.</b> Contributing land into the venture as GP equity aligns the landowner with district outcomes instead of a sale price and removes land carry from the cash equity requirement. This is the cheapest equity available to the project: zero cash out, and no preferred return meter running.</span></li>
+          <li><span class="dot"></span><span><b>Sponsor equity and promote.</b> Now City holds the sponsor position and promote. Sponsor cash is minimized by design; sponsor value is contributed as entitlement, structuring, and stack-assembly work, which is precisely what Stage 0 capital pays for.</span></li>
+          <li><span class="dot"></span><span><b>Co-GP capital.</b> Capitalizes predevelopment, site control and assembly, and structuring through Phase 1 closing. Co-GP investors enter the promote at the point of maximum risk and maximum multiple: their capital converts into control of a $650M stack. Target profile: entrepreneurial family offices, developer-adjacent capital, and mission-aligned principals who underwrite sponsors as well as deals. Offering terms and current status are addressed in the Investment Summary.</span></li>
+          <li><span class="dot"></span><span><b>Quasi-equity.</b> Foundation PRIs and recoverable grants sit beside co-GP capital as patient, subordinate predevelopment funding, reducing how much promote must be sold to reach Phase 1.</span></li>
+        </ul>
+      </div>
+      <div class="apphase">
+        <div class="aph"><span class="n">Stage 1</span><span class="t">Phase-Level Construction &middot; per vertical phase</span></div>
+        <ul>
+          <li><span class="dot"></span><span><b>LP equity through the OZ structure.</b> With OZ 2.0 status verified, phase-level LP raises route through a Qualified Opportunity Fund. OZ economics let the project clear investor hurdles at lower cash returns than conventional LP equity, typically 200-400 bps of effective hurdle compression, and the 10-year hold is structural alignment with the stewardship model.</span></li>
+          <li><span class="dot"></span><span><b>LIHTC equity.</b> On affordable phases, 4% credit equity is functionally the senior-most, cheapest equity in the market: investors are buying tax attributes rather than development risk.</span></li>
+          <li><span class="dot"></span><span><b>Preferred equity and mezzanine, as gap capital only.</b> Where a phase's stack has a gap between senior debt plus C-PACE and available LP equity, preferred equity fills it. It is the most expensive money in the project (typically low-to-mid teens all-in), used surgically and retired early. The discipline rule: pref is a bridge to a cheaper stack, never a permanent layer.</span></li>
+          <li><span class="dot"></span><span><b>Co-investment rights.</b> Co-GP and early LP investors receive priority co-invest rights on subsequent phases: the mechanism that turns Stage 0 relationships into a repeatable phase-level equity syndicate, with each raise building on the last.</span></li>
+        </ul>
+      </div>
+      <div class="apphase">
+        <div class="aph"><span class="n">Stage 2</span><span class="t">Stabilization &amp; Recapitalization &middot; per phase, months 30+</span></div>
+        <ul>
+          <li><span class="dot"></span><span><b>Reprice the equity as the risk drops.</b> At stabilization, each phase moves from development risk to core-plus, and its equity is repriced accordingly. HUD 40-year debt removes refinance pressure, so recapitalization happens by choice, on the district's schedule.</span></li>
+          <li><span class="dot"></span><span><b>Three paths, in order of preference.</b> Hold within the OZ structure to the 10-year mark, harvesting cash flow; admit core and core-plus institutional equity (insurance, pension) at a compressed return requirement, returning capital to early investors and crystallizing part of the promote; or take a refinance-driven return of capital with the equity intact. The choice per phase follows OZ hold requirements and the district-vehicle strategy below.</span></li>
+        </ul>
+      </div>
+      <div class="apphase">
+        <div class="aph"><span class="n">Stage 3</span><span class="t">District Vehicle &amp; Permanent Capital &middot; years 3-10</span></div>
+        <ul>
+          <li><span class="dot"></span><span><b>Aggregate into a district-scale vehicle.</b> As multiple phases stabilize, the endgame is a programmatic JV or evergreen structure holding the stabilized portfolio, capitalized by institutional partners with long-duration sustainable real-asset mandates.</span></li>
+          <li><span class="dot"></span><span><b>Where the institutional relationships mature.</b> This is where the Nordic pension relationships move from cultivation to commitment, via fund intermediaries, and where a certified Passive House portfolio supports green bond issuance at the vehicle level. An evergreen structure is the financial expression of the stewardship model: the district is held and operated for the long term.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sec-head rv" style="margin-top:54px;margin-bottom:0">
+      <div class="eyebrow">The Hierarchy</div>
+      <h2 style="font-size:clamp(24px,3vw,32px)">Equity cost, cheapest first</h2>
+    </div>
+    <ol class="hier rv">
+      <li><span><b>Land contributed as GP equity</b> &middot; zero cash cost</span></li>
+      <li><span><b>LIHTC equity</b> &middot; tax-attribute pricing</span></li>
+      <li><span><b>Quasi-equity: PRIs, recoverable grants</b> &middot; 1-3%</span></li>
+      <li><span><b>OZ LP equity</b> &middot; hurdle compressed by tax benefits</span></li>
+      <li class="mid"><span><b>Impact-mandate LP equity</b></span></li>
+      <li class="mid"><span><b>Conventional LP equity</b></span></li>
+      <li class="hot"><span><b>Preferred equity / mezzanine</b> &middot; gap use only</span></li>
+    </ol>
+    <div class="thesis rv" style="max-width:720px;margin-left:auto;margin-right:auto">The strategy in one sentence: maximize layers 1-4 at every stage, reserve 5-6 for speed, and treat 7 as a tourniquet.</div>
+  </div>
+</section>
+
 <section class="dark" id="execution" style="border-top:1px solid #3d392f">
   <div class="wrap">
     <div class="sec-head rv">
@@ -263,18 +329,18 @@
         <div class="aph"><span class="n">Phase 1</span><span class="t">Days 0-30 &middot; July 2026</span></div>
         <ul>
           <li><span class="flag">Time-critical</span><span><b>OZ designation advocacy.</b> With tract eligibility verified, work the Governor's nomination window (open now, closes September 29): coordinate support letters from the landowner, SEDCOR, and City of Salem Urban Development, and confirm standing with Business Oregon on the tract's position in the recommendation process. Target: designation effective January 1, 2027.</span></li>
-          <li><span class="flag">Time-critical</span><span><b>Brief co-GP candidates on OZ economics.</b> Fold verified OZ status into the co-GP materials: the 2027 effective date aligns with the 90-day LOI window and predevelopment timeline, and OZ 2.0 terms directly lower the equity return hurdle.</span></li>
+          <li><span class="flag">Time-critical</span><span><b>Incorporate OZ economics into capital materials.</b> The January 1, 2027 effective date aligns with the predevelopment timeline, and OZ 2.0 terms (rolling 5-year deferral, 10% step-up, tax-free appreciation at the 10-year hold) directly lower the equity return hurdle across every phase.</span></li>
           <li><span class="dot"></span><span><b>Marion County C-PACE status.</b> Confirm whether Marion County has adopted a C-PACE opt-in ordinance under ORS 223.680; if the ordinance is still ahead, request a meeting with county economic development staff and bring the Washington County ordinance as the template.</span></li>
           <li><span class="dot"></span><span><b>West Salem URA diligence.</b> Obtain the current West Salem Urban Renewal Plan, remaining maximum indebtedness, plan expiration timeline, and amendment history. Ask Urban Development directly about appetite for a plan amendment or successor district tied to a catalytic project.</span></li>
-          <li><span class="dot"></span><span><b>Update the co-GP materials.</b> Fold this capital strategy into the co-GP pitch: the raise buys control of a stack. The OZ timeline becomes a headline urgency argument for LOIs due within the 90-day window.</span></li>
+          <li><span class="dot"></span><span><b>Align data-room documents.</b> Cross-reference this strategy against the Business Plan and Investment Summary so instrument descriptions, dollar ranges, and sequencing stay consistent everywhere an investor reads them.</span></li>
         </ul>
       </div>
       <div class="apphase">
         <div class="aph"><span class="n">Phase 2</span><span class="t">Days 30-90 &middot; August-September 2026</span></div>
         <ul>
-          <li><span class="dot"></span><span><b>HUD lender selection.</b> Interview two to three MAP-approved lenders active in Oregon; request indicative sizing on a Phase 1 concept using unit count, cost, and rents from the live underwriting base case. Objective: a lender letter usable in the co-GP raise.</span></li>
+          <li><span class="dot"></span><span><b>HUD lender selection.</b> Interview two to three MAP-approved lenders active in Oregon; request indicative sizing on a Phase 1 concept using unit count, cost, and rents from the live underwriting base case. Objective: a lender letter usable in capital formation conversations.</span></li>
           <li><span class="dot"></span><span><b>OHCS pre-engagement.</b> Introductory meeting with Oregon Housing and Community Services on bond cap availability and 4% LIHTC pipeline timing for a 2027-2028 application; set the affordable set-aside strategy per phase, since that decision drives which phases route through the bond and LIHTC stack.</span></li>
-          <li><span class="dot"></span><span><b>CDFI and PRI outreach.</b> Concurrent conversations with Craft3 on a predevelopment facility and with Meyer Memorial Trust and Oregon Community Foundation on PRIs. Target: a term sheet for a $500K-$2M predevelopment facility that stretches the early predevelopment commitment.</span></li>
+          <li><span class="dot"></span><span><b>CDFI and PRI outreach.</b> Concurrent conversations with Craft3 on a predevelopment facility and with Meyer Memorial Trust and Oregon Community Foundation on PRIs. Target: a term sheet for a $500K-$2M predevelopment facility that extends early predevelopment capacity.</span></li>
           <li><span class="dot"></span><span><b>City incentive mapping.</b> Written confirmation from Salem Urban Development of which programs stack on the catalyst site: MUHTIP, Enterprise Zone, URA Capital Improvement Grant, and single-property TIF eligibility.</span></li>
           <li><span class="dot"></span><span><b>C-PACE provider soundings.</b> Indicative terms from two providers active in Oregon on a Passive House Phase 1 (sizing as a percentage of value, rate, construction-period accrual), contingent on county opt-in.</span></li>
         </ul>
@@ -284,16 +350,18 @@
         <ul>
           <li><span class="dot"></span><span><b>District TIF proposal.</b> With URA diligence complete and the catalyst-site relationship established, submit a concept memo to the Urban Renewal Agency proposing a plan amendment or successor district: increment-funded infrastructure schedule, phasing, and the assessed-value growth case, anchored with live model output.</span></li>
           <li><span class="dot"></span><span><b>WIFIA screening.</b> Scope the district water and stormwater systems as a discrete capital item; where the ~$20M threshold is met, submit a WIFIA letter of interest.</span></li>
-          <li><span class="dot"></span><span><b>QOF structuring.</b> On designation effective January 1, 2027, stand up or partner into a Qualified Opportunity Fund structure for the equity raise, and brief co-GP candidates on OZ 2.0 economics with counsel.</span></li>
+          <li><span class="dot"></span><span><b>QOF structuring.</b> On designation effective January 1, 2027, stand up or partner into a Qualified Opportunity Fund structure for phase-level equity, with counsel, and incorporate OZ 2.0 economics into investor materials.</span></li>
           <li><span class="dot"></span><span><b>Nordic institutional groundwork.</b> Map the fund intermediaries through which Danish pension capital reaches US sustainable real assets; use summer Denmark presence for two to three exploratory meetings. Positioning: future LP in a Now City district vehicle at scale, 2027+ horizon.</span></li>
         </ul>
       </div>
       <div class="apphase">
         <div class="aph"><span class="n">Phase 4</span><span class="t">Months 6-18</span></div>
         <ul>
-          <li><span class="dot"></span><span><b>Phase 1 capitalization close.</b> HUD application in processing, C-PACE committed, TIF framework agreed in principle, LIHTC and bond application submitted where applicable, OZ equity subscribed.</span></li>
+          <li><span class="dot"></span><span><b>Phase 1 capitalization close.</b> HUD application in processing, C-PACE committed, TIF framework agreed in principle, LIHTC and bond application submitted where applicable, OZ equity subscribed through the QOF.</span></li>
+          <li><span class="dot"></span><span><b>Co-invest syndicate formalized.</b> Priority co-investment rights documented for co-GP and Stage 0 investors, converting early relationships into a repeatable phase-level equity channel.</span></li>
+          <li><span class="dot"></span><span><b>Preferred equity relationships on standby.</b> Two pref and mezzanine providers pre-qualified with indicative terms, held as gap capacity only, drawn only where a phase stack requires it.</span></li>
           <li><span class="dot"></span><span><b>Green financing certification path.</b> Lock the Passive House certification workflow so agency green pricing and future green bond eligibility are documented from Phase 1.</span></li>
-          <li><span class="dot"></span><span><b>Institutional debt relationships.</b> Begin insurance-company forward-commitment conversations once Phase 1 is under construction.</span></li>
+          <li><span class="dot"></span><span><b>Institutional debt and recap groundwork.</b> Begin insurance-company forward-commitment conversations once Phase 1 is under construction, and draft the district-vehicle concept (Stage 3) for 2027 institutional conversations.</span></li>
         </ul>
       </div>
     </div>
