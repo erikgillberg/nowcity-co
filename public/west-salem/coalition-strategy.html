@@ -42,10 +42,13 @@
 .gaptbl tr.grp td{background:rgba(217,162,108,.08);font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#d9a26c;padding:9px 12px}
 .gaptbl .when{white-space:nowrap;color:#b7b0a3}
 @media(max-width:760px){.gaptbl{display:block;overflow-x:auto}}
-.snapshot{background:#2b2823;border:1px solid #3d392f;border-radius:9px;padding:22px 24px;margin-top:26px}
-.snapshot .num{font-family:var(--serif);font-size:22px;color:#d9a26c}
-.snapshot .lbl2{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#b7b0a3;margin-top:4px}
-.snapgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px}
+.seq{margin-top:14px}
+.seq .step{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid #34302a;align-items:start}
+.seq .step:last-child{border-bottom:none;padding-bottom:6px}
+.seq .num{font-family:var(--serif);font-size:26px;color:#d9a26c;line-height:1.1;padding-top:2px}
+.seq h4{font-size:16px;color:#f0ebe0;margin-bottom:6px}
+.seq p{font-size:14.5px;color:#d8d2c4;line-height:1.6;margin:0;max-width:760px}
+@media(max-width:600px){.seq .step{grid-template-columns:40px 1fr;gap:14px}}
 /* subnav pop + scroll highlight */
 #subnav .wrap{gap:6px}
 #subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
@@ -145,18 +148,6 @@
       <h2>Districts are built by coalitions before they are built by cranes</h2>
       <p class="lead">Every district transformation we studied shares one structure: a coalition of capital, government, institutions, and community, formed early, with each member holding something the project needs and receiving something it values. This page is a working tool for our connectors and advisors: the precedent evidence, the coalition model designed for Salem's specific conditions, and a map of the people and organizations who fit each seat. The question it answers for anyone who wants to help is simple: who do you know, and which seat do they belong in?</p>
     </div>
-    <div class="snapshot rv">
-      <div class="lbl" style="font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#d9a26c;margin-bottom:14px">The Signal We Lead With: Phase 1 Snapshot</div>
-      <div class="snapgrid">
-        <div><div class="num">5.29 ac</div><div class="lbl2">Phase 1 site, controlled</div></div>
-        <div><div class="num">~380</div><div class="lbl2">Multifamily units</div></div>
-        <div><div class="num">~40,000 SF</div><div class="lbl2">Experiential retail + innovation</div></div>
-        <div><div class="num">~$185M</div><div class="lbl2">Total capitalization</div></div>
-        <div><div class="num">~60%</div><div class="lbl2">Phase 1 capital committed via JV land contribution</div></div>
-        <div><div class="num">20+ ac</div><div class="lbl2">Master-planned OZ district behind it</div></div>
-      </div>
-      <p style="font-size:13.5px;color:#b7b0a3;margin-top:16px">Two participation paths keep every conversation open: a shorter-horizon Phase 1 investment with potential liquidity at entitlement, and the ten-year district build-out for Opportunity Zone capital. Phase 1 is both a strong standalone project and the front door to the district.</p>
-    </div>
   </div>
 </section>
 
@@ -201,15 +192,15 @@
       <div class="card"><h4>3 &middot; The City Compact</h4><p style="font-size:14px">A development agreement with the City of Salem and the West Salem URA: infrastructure and public realm funded through the URA project list, in exchange for binding public benefits: attainable housing, riverfront access, jobs.</p></div>
       <div class="card"><h4>4 &middot; Funder Collaborative + Anchor Circle</h4><p style="font-size:14px">Oregon's Kresge play, done as a collaborative: statewide and family philanthropy pooling a catalytic grant and PRI pool for the Trust; alongside an anchor MOU circle (universities, employers, agencies) committing tenancy, programs, and dollars.</p></div>
     </div>
-    <div class="stratbox rv" style="margin-top:34px">
-      <div class="lbl">Formation Sequence (adapted from the precedents)</div>
-      <ul>
-        <li><strong>1. Recruit the champion(s).</strong> Every precedent had one: a Matt Cullen, a Lyndhurst. Edgewater needs a Salem-credible civic champion and an Oregon philanthropy champion; the stakeholder map below is where they come from.</li>
-        <li><strong>2. See one together.</strong> A joint study tour (Cortex or 16 Tech, or BNY/Newlab) with city, county, university, and funder representatives. Shared witness precedes shared commitment in nearly every origin story.</li>
-        <li><strong>3. Form the Trust with seed pledges.</strong> Stand up Edgewater Commons Trust only when two or three founding pledges exist, so it is born funded and plural, never an empty shell.</li>
-        <li><strong>4. Sign the compact, land the anchor.</strong> The city development agreement and the first institutional anchor commitment move together; each makes the other easier to say yes to.</li>
-        <li><strong>5. Build the first proof.</strong> The activation layers (market, arts, live-work) are the coalition's visible 24-month win, run as OpCos with community capital participation.</li>
-      </ul>
+    <div class="rv" style="margin-top:48px">
+      <div class="eyebrow">Formation Sequence &middot; Adapted from the Precedents</div>
+      <div class="seq">
+        <div class="step"><div class="num">01</div><div><h4>Recruit the champion(s)</h4><p>Every precedent had one: a Matt Cullen, a Lyndhurst. Edgewater needs a Salem-credible civic champion and an Oregon philanthropy champion; the stakeholder map below is where they come from.</p></div></div>
+        <div class="step"><div class="num">02</div><div><h4>See one together</h4><p>A joint study tour (Cortex or 16 Tech, or BNY/Newlab) with city, county, university, and funder representatives. Shared witness precedes shared commitment in nearly every origin story.</p></div></div>
+        <div class="step"><div class="num">03</div><div><h4>Form the Trust with seed pledges</h4><p>Stand up Edgewater Commons Trust only when two or three founding pledges exist, so it is born funded and plural, never an empty shell.</p></div></div>
+        <div class="step"><div class="num">04</div><div><h4>Sign the compact, land the anchor</h4><p>The city development agreement and the first institutional anchor commitment move together; each makes the other easier to say yes to.</p></div></div>
+        <div class="step"><div class="num">05</div><div><h4>Build the first proof</h4><p>The activation layers (market, arts, live-work) are the coalition's visible 24-month win, run as OpCos with community capital participation.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -462,7 +453,7 @@
       <div class="card"><h4>The Ask Ladder</h4><p style="font-size:14px">Advice before money, always: "help me think about who belongs in this circle" opens doors a pitch closes. Then a visit, then a pilot or introduction, then capital. Each rung earns the next.</p></div>
       <div class="card"><h4>Convenings</h4><p style="font-size:14px">Three signature tables: a mass timber roundtable (timber fortunes, the university, builders, the design bench), a founders’ briefing dinner (Ring 2), and an innovation coalition convening (city, universities, regional economic development, employers). Hosts recruit better than emails.</p></div>
       <div class="card"><h4>Named Pilots</h4><p style="font-size:14px">Give tech founders and institutions something with their name on it: a civic tech pilot, a venture studio, a research outpost, a resilience hub. Ownership of a piece beats sponsorship of the whole.</p></div>
-      <div class="card"><h4>One Pipeline</h4><p style="font-size:14px">Every connector works from the same Phase 1 snapshot, the same investor archetype spec, and a single tracked pipeline so introductions never collide and every conversation gets a next step.</p></div>
+      <div class="card"><h4>One Pipeline</h4><p style="font-size:14px">Every connector works from the same district brief, the same investor archetype spec, and a single tracked pipeline so introductions never collide and every conversation gets a next step.</p></div>
     </div>
     <div class="stratbox rv" style="margin-top:34px">
       <div class="lbl">The Door List, By Role (specific names live in the internal pipeline)</div>
@@ -490,7 +481,7 @@
     <div class="stratbox rv" style="margin-top:22px">
       <div class="lbl">Cadence &amp; Sequencing</div>
       <ul>
-        <li><strong>Now:</strong> brief every connector and advisor with this page, the snapshot, and the archetype spec; City of Salem and Polk County structured engagement; venture-fund and university-foundation meetings; the tribal relationship opened properly; a peer OZ-developer sanity-check call; champion recruitment begins.</li>
+        <li><strong>Now:</strong> brief every connector and advisor with this page and the archetype spec; City of Salem and Polk County structured engagement; venture-fund and university-foundation meetings; the tribal relationship opened properly; a peer OZ-developer sanity-check call; champion recruitment begins.</li>
         <li><strong>Next two quarters:</strong> the three convenings held; study tour organized with city, county, university, and funder representatives; the Salem developer-philanthropist co-GP conversation advanced; two anchor-family conversations live (timber and university angles first); grant calendar built and first stack (brownfield or resilience hub) filed.</li>
         <li><strong>By Phase 1 capitalization:</strong> Edgewater Commons Trust formed with founding pledges, city compact signed, one anchor institution committed with skin, one OZ platform in diligence, and a standing community table that makes every approval hearing easier instead of harder.</li>
       </ul>
