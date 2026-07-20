@@ -39,8 +39,8 @@
 <div id="gate">
   <div class="panel">
     <div class="eyebrow" style="color:#d9a26c">Edgewater West Salem</div>
-    <h1 class="serif">Private<br>Preview</h1>
-    <p>This site is shared with project stakeholders for discussion purposes. Enter the access code to continue.</p>
+    <h1 class="serif">Investor<br>Access</h1>
+    <p>This section contains detailed financial, underwriting, and diligence materials, shared individually. Enter the investor access code to continue.</p>
     <form id="gateform">
       <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
       <button type="submit">Enter</button>
@@ -55,25 +55,14 @@
     <a class="brand" href="index.html">Edgewater West Salem<span class="brand-sub"> &middot; A Now City Neighborhood</span></a>
     <ul class="navlinks">
       <li><a href="index.html">Home</a></li>
-      <li class="dd"><a href="plan.html">District Plan</a>
+      <li class="dd"><a href="district.html">District Plan</a>
         <ul class="ddm">
-          <li class="core"><a href="plan.html">Business Plan</a></li>
           <li class="core"><a href="district.html">District Vision</a></li>
           <li class="core"><a href="innovation-district.html">Innovation District</a></li>
-          <li class="core"><a href="district-capitalization.html">District Capitalization</a></li>
           <li class="dd-head">Execution</li>
           <li><a href="activation.html">Activation Plan</a></li>
           <li><a href="coalition-building.html">Capital City Compact</a></li>
           <li><a href="coalition-strategy.html">Coalition &amp; Partner Strategy</a></li>
-          <li><a href="design-engineering.html" class="active">Delivery Teams</a></li>
-          <li><a href="odc.html" style="padding-left:32px">&rsaquo; Understanding the ODC</a></li>
-          <li><a href="proposal-held.html" style="padding-left:32px">&rsaquo; Held Proposal</a></li>
-          <li><a href="proposal-cannon.html" style="padding-left:32px">&rsaquo; CannonDesign Proposal</a></li>
-          <li class="dd-head">Underwriting</li>
-          <li><a href="about-upside.html">Upside Explorer</a></li>
-          <li><a href="capital-strategy.html">Capital Strategy</a></li>
-          <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
-          <li><a href="assets/docs/market-feasibility-study-2025.pdf" target="_blank" rel="noopener">Market Feasibility Study (2025)</a></li>
           <li class="dd-head">Research &amp; Precedents</li>
           <li><a href="research.html">District Economic Development</a></li>
           <li><a href="district-value.html">District Value Creation</a></li>
@@ -86,6 +75,22 @@
           <li><a href="wellness-institute.html">Women &amp; Family Health Institute</a></li>
           <li><a href="mobility-concepts.html">Salem Mobility Concepts</a></li>
           <li><a href="whoosh.html">Whoosh by Swyft Cities</a></li>
+        </ul>
+      </li>
+      <li class="dd"><a href="district-capitalization.html">Investor Portal</a>
+        <ul class="ddm">
+          <li class="core"><a href="plan.html">Business Plan</a></li>
+          <li class="core"><a href="district-capitalization.html">District Capitalization</a></li>
+          <li class="core"><a href="capital-strategy.html">Capital Strategy</a></li>
+          <li class="dd-head">Underwriting</li>
+          <li><a href="about-upside.html">Upside Explorer</a></li>
+          <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
+          <li><a href="assets/docs/market-feasibility-study-2025.pdf" target="_blank" rel="noopener">Market Feasibility Study (2025)</a></li>
+          <li class="dd-head">Delivery</li>
+          <li><a href="design-engineering.html" class="active">Delivery Teams</a></li>
+          <li><a href="odc.html" style="padding-left:32px">&rsaquo; Understanding the ODC</a></li>
+          <li><a href="proposal-held.html" style="padding-left:32px">&rsaquo; Held Proposal</a></li>
+          <li><a href="proposal-cannon.html" style="padding-left:32px">&rsaquo; CannonDesign Proposal</a></li>
         </ul>
       </li>
       <li><a href="team.html">Team</a></li>
@@ -187,15 +192,15 @@ spyIds.forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);}
 </script>
 <script>
 (function(){
-const HASH='aad5d67e3ddeda88953d6714e4569a4399b3201023dae82d5931a6c376de96d4';
+const HASH='ca2d692d44cac518f4293884ad6be8c1f9b9f381e6f8034f46ee13bc5cd74828';
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
-if(localStorage.getItem('ws-ok')==='1'||sessionStorage.getItem('ws-ok')==='1')unlock();
+if(localStorage.getItem('ws-ok2')==='1'||sessionStorage.getItem('ws-ok2')==='1')unlock();
 document.getElementById('gateform').addEventListener('submit',async function(e){
   e.preventDefault();
   var h='';
   try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
-  if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}
+  if(h===HASH){localStorage.setItem('ws-ok2','1');localStorage.setItem('ws-ok','1');unlock()}
   else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
 });
 })();
