@@ -63,6 +63,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
 #gate .err{color:#e08a8a;font-size:13px;margin-top:10px;min-height:18px}
 @media print{#gate{display:none}body.gated main,body.gated header{display:block}body{background:#fff;color:#222}article h1,article h2,article strong,.node .nm{color:#111}}
 </style>
+<script defer src="nav.js?v=1"></script>
 </head>
 <body class="gated">
 <div id="gate"><div class="panel">
@@ -71,10 +72,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
   <form id="gateform"><input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
   <button type="submit">Enter</button><div class="err" id="gateerr"></div></form>
 </div></div>
-<header><div class="wrap">
-  <a class="brand" href="index.html">Now City <span>Dev</span></a>
-  <div class="crumb"><a href="index.html">Working documents</a> · The Atlas</div>
-</div></header>
 <main><div class="wrap"><article>
 
 <h1>The Atlas: Everything We Have Built</h1>
@@ -167,7 +164,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
 <h2>7 · urbanreboot.org, the mission vehicle</h2>
 <p><strong>Audience:</strong> philanthropy, impact capital, and mission partners. Urban Reboot is a venture philanthropy fund: raising and deploying catalytic capital for sustainable real estate, reinvesting returns, and providing capacity-building and advisory support. Its stated mission ("accelerating the transition to regenerative, resilient, and equitable communities") is word-for-word the mission Now City Inc executes commercially; the two are the mission-side and market-side of the same idea. Keep the relationship clean: separate entities, separate sites, aligned language.</p>
 
-<h2>8 · Access codes and gates</h2>
+<h2 id="codes">8 · Access codes and gates</h2>
 <table>
 <thead><tr><th>Property</th><th>Gate</th><th>Code</th><th>Notes</th></tr></thead>
 <tbody>

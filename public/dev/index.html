@@ -39,6 +39,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
 #gate button{margin-top:12px;width:100%;padding:13px;border:none;border-radius:6px;background:var(--accent);color:#1d1a16;font-weight:700;font-size:14px;cursor:pointer;letter-spacing:.05em}
 #gate .err{color:#e08a8a;font-size:13px;margin-top:10px;min-height:18px}
 </style>
+<script defer src="nav.js?v=1"></script>
 </head>
 <body class="gated">
 
@@ -55,17 +56,22 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
   </div>
 </div>
 
-<header>
-  <div class="wrap">
-    <a class="brand" href="index.html">Now City <span>Dev</span></a>
-    <div class="tag">Working documents · Playbooks · Field notes</div>
-  </div>
-</header>
 
 <main>
   <div class="wrap">
     <h1>The working shelf</h1>
     <p class="lead">Live strategy documents for Now City's district platform. Each one compounds: dated addenda are added as conversations, term sheets, and meetings teach us things.</p>
+
+    <div style="background:#15130f;border:1px solid var(--line);border-radius:8px;padding:20px 24px;margin-bottom:34px">
+      <div style="font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Access codes &middot; quick reference</div>
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px">
+        <tr><td style="padding:5px 8px 5px 0;color:var(--muted)">nowcity.co/invest</td><td style="padding:5px 0;color:var(--ink-strong);font-family:monospace">FutureNow2026</td></tr>
+        <tr><td style="padding:5px 8px 5px 0;color:var(--muted)">nowcity.co/west-salem</td><td style="padding:5px 0;color:var(--ink-strong);font-family:monospace">WestSalem2026</td></tr>
+        <tr><td style="padding:5px 8px 5px 0;color:var(--muted)">Investor Portal tier-2 <span style="color:#6f6a5e">(disarmed Jul 21; re-arm after visit cycle)</span></td><td style="padding:5px 0;color:var(--ink-strong);font-family:monospace">EdgewaterCapital2026</td></tr>
+        <tr><td style="padding:5px 8px 5px 0;color:var(--muted)">dev.nowcity.co (this shelf)</td><td style="padding:5px 0;color:var(--ink-strong);font-family:monospace">NowCityDev2026</td></tr>
+      </table>
+      <div style="font-size:12px;color:var(--muted);margin-top:10px">Details, gate mechanics, and the re-arm recipe: <a href="atlas.html#codes">Atlas &sect;8</a>. These are hygiene gates, not security; treat accordingly.</div>
+    </div>
 
     <a class="doc" href="atlas.html">
       <div class="kind">Reference</div>
