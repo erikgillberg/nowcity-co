@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Now City Dev · Working Documents</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1d1a16;--panel:#26221d;--line:#3d392f;--ink:#d8d2c4;--ink-strong:#f0ebe0;--muted:#948d80;--accent:#d9a26c;--serif:'Libre Baskerville',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body.gated main,body.gated header{display:none}
+a{color:var(--accent)}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);padding:26px 0}
+.brand{font-family:var(--serif);font-size:19px;color:var(--ink-strong);text-decoration:none;letter-spacing:.01em}
+.brand span{color:var(--accent)}
+.tag{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+main{padding:64px 0 90px}
+h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,42px);color:var(--ink-strong);line-height:1.25;margin-bottom:14px}
+.lead{font-size:17px;color:var(--ink);max-width:640px;margin-bottom:50px}
+.doc{display:block;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:26px 28px;margin-bottom:18px;text-decoration:none;transition:border-color .2s}
+.doc:hover{border-color:var(--accent)}
+.doc .kind{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.doc h2{font-family:var(--serif);font-size:21px;color:var(--ink-strong);margin-bottom:8px}
+.doc p{font-size:14.5px;color:var(--ink);max-width:640px}
+.doc .meta{font-size:12.5px;color:var(--muted);margin-top:12px}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:var(--muted)}
+/* gate */
+#gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:50}
+#gate .panel{max-width:360px;width:90%;}
+#gate .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+#gate h1{font-size:34px;margin-bottom:12px}
+#gate p{font-size:14px;color:var(--ink);margin-bottom:18px}
+#gate input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:6px;background:#15130f;color:var(--ink-strong);font-size:15px}
+#gate button{margin-top:12px;width:100%;padding:13px;border:none;border-radius:6px;background:var(--accent);color:#1d1a16;font-weight:700;font-size:14px;cursor:pointer;letter-spacing:.05em}
+#gate .err{color:#e08a8a;font-size:13px;margin-top:10px;min-height:18px}
+</style>
+</head>
+<body class="gated">
+
+<div id="gate">
+  <div class="panel">
+    <div class="eyebrow">Now City Dev</div>
+    <h1 style="font-family:var(--serif);color:var(--ink-strong)">Working<br>Documents</h1>
+    <p>Internal material for the Now City team and invited collaborators.</p>
+    <form id="gateform">
+      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+      <div class="err" id="gateerr"></div>
+    </form>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">Now City <span>Dev</span></a>
+    <div class="tag">Working documents · Playbooks · Field notes</div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>The working shelf</h1>
+    <p class="lead">Live strategy documents for Now City's district platform. Each one compounds: dated addenda are added as conversations, term sheets, and meetings teach us things.</p>
+
+    <a class="doc" href="jv-playbook.html">
+      <div class="kind">Playbook</div>
+      <h2>The Programmatic JV Playbook</h2>
+      <p>How Now City moves from deal-by-deal raises to one patient capital partner across a district pipeline: marketing the platform, matching the partner, the waterfall, the approval matrix, the term sheet, and the eight traps that turn sponsors into employees.</p>
+      <div class="meta">Working draft · July 21, 2026 · Internal</div>
+    </a>
+
+    <a class="doc" href="meeting-guides-jul-22.html">
+      <div class="kind">Field Guide</div>
+      <h2>Meeting Guides: Kadlub &amp; Atkins Dame</h2>
+      <p>Extraction-oriented question sets for July 22: Rudy Kadlub (Costa Pacific, Orenco Station, Villebois) and Jim Atkins &amp; Dike Dame (Pearl District, South Waterfront, Eugene's River District). Two closers, no capital ask.</p>
+      <div class="meta">Prepared July 21, 2026 · Internal</div>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">©2026 Now City Inc. · Internal working documents · Not an offer of securities · Please do not circulate</div>
+</footer>
+
+<script>
+(function(){
+const HASH='1f00699cc101299062a06ee673d8d95a277ac29bbca767118da65116461dd645';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('nc-dev-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('nc-dev-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
