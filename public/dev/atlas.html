@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Atlas · Everything We Have Built</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1d1a16;--panel:#26221d;--line:#3d392f;--ink:#d8d2c4;--ink-strong:#f0ebe0;--muted:#948d80;--accent:#d9a26c;--green:#9db08a;--serif:'Libre Baskerville',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body.gated main,body.gated header{display:none}
+a{color:var(--accent)}
+.wrap{max-width:840px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);padding:22px 0}
+.brand{font-family:var(--serif);font-size:18px;color:var(--ink-strong);text-decoration:none}
+.brand span{color:var(--accent)}
+.crumb{font-size:12px;color:var(--muted);margin-top:4px}
+.crumb a{color:var(--muted)}
+main{padding:56px 0 90px}
+article h1{font-family:var(--serif);font-size:clamp(28px,4vw,38px);color:var(--ink-strong);line-height:1.28;margin-bottom:10px}
+.docmeta{font-size:13px;color:var(--muted);margin-bottom:40px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+article h2{font-family:var(--serif);font-size:23px;color:var(--ink-strong);margin:52px 0 16px;line-height:1.35}
+article h3{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:34px 0 12px}
+article p{margin-bottom:16px}
+article strong{color:var(--ink-strong)}
+article ul,article ol{margin:0 0 18px 22px}
+article li{margin-bottom:9px}
+article table{width:100%;border-collapse:collapse;font-size:14px;margin:20px 0}
+article th{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+article td{padding:10px;border-bottom:1px solid #2e2a24;vertical-align:top}
+article hr{border:none;border-top:1px solid var(--line);margin:44px 0}
+article em{color:var(--muted)}
+.callout{background:var(--panel);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 22px;margin:22px 0;font-size:15px}
+/* ---- map ---- */
+.map{margin:34px 0 8px}
+.tier{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:stretch;margin-bottom:0}
+.tier .tl{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:20px}
+.tier .tboxes{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.node{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;position:relative}
+.node.hot{border-color:var(--accent)}
+.node .nm{font-family:var(--serif);font-size:15.5px;color:var(--ink-strong);line-height:1.3}
+.node .nm a{color:var(--ink-strong);text-decoration:none;border-bottom:1px dotted #5a5344}
+.node .role{font-size:12px;color:var(--ink);margin-top:5px;line-height:1.5}
+.node .badge{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:10px;padding:2px 8px;margin-top:9px}
+.badge.open{background:rgba(157,176,138,.14);color:var(--green)}
+.badge.gate{background:rgba(217,162,108,.14);color:var(--accent)}
+.badge.int{background:rgba(216,210,196,.1);color:var(--muted)}
+.tierarrow{display:grid;grid-template-columns:120px 1fr;margin:2px 0}
+.tierarrow div:last-child{text-align:center;color:#5a5344;font-size:15px;line-height:1.4}
+@media(max-width:640px){.tier{grid-template-columns:1fr}.tier .tl{padding-top:0}.tierarrow{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:var(--muted)}
+#gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:50}
+#gate .panel{max-width:360px;width:90%}
+#gate .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+#gate h1{font-family:var(--serif);color:var(--ink-strong);font-size:34px;margin-bottom:12px}
+#gate p{font-size:14px;margin-bottom:18px}
+#gate input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:6px;background:#15130f;color:var(--ink-strong);font-size:15px}
+#gate button{margin-top:12px;width:100%;padding:13px;border:none;border-radius:6px;background:var(--accent);color:#1d1a16;font-weight:700;font-size:14px;cursor:pointer}
+#gate .err{color:#e08a8a;font-size:13px;margin-top:10px;min-height:18px}
+@media print{#gate{display:none}body.gated main,body.gated header{display:block}body{background:#fff;color:#222}article h1,article h2,article strong,.node .nm{color:#111}}
+</style>
+</head>
+<body class="gated">
+<div id="gate"><div class="panel">
+  <div class="eyebrow">Now City Dev</div><h1>Working<br>Documents</h1>
+  <p>Internal material for the Now City team and invited collaborators.</p>
+  <form id="gateform"><input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+  <button type="submit">Enter</button><div class="err" id="gateerr"></div></form>
+</div></div>
+<header><div class="wrap">
+  <a class="brand" href="index.html">Now City <span>Dev</span></a>
+  <div class="crumb"><a href="index.html">Working documents</a> · The Atlas</div>
+</div></header>
+<main><div class="wrap"><article>
+
+<h1>The Atlas: Everything We Have Built</h1>
+<div class="docmeta"><strong>Reference · July 21, 2026 · Internal</strong> · The map of the Now City web ecosystem: every property, what it is for, who it is for, how it opens, and where it is updated. This page exists so nothing we build gets forgotten. When something ships, add it here.</div>
+
+<h2>The map</h2>
+<div class="map">
+  <div class="tier">
+    <div class="tl">Mission</div>
+    <div class="tboxes">
+      <div class="node"><div class="nm"><a href="https://urbanreboot.org">urbanreboot.org</a></div><div class="role">Urban Reboot: venture philanthropy fund. Mission-aligned catalytic capital and capacity building for sustainable real estate.</div><span class="badge open">Public</span></div>
+    </div>
+  </div>
+  <div class="tierarrow"><div></div><div>&darr; the mission the company executes &darr;</div></div>
+  <div class="tier">
+    <div class="tl">Company &amp; brand</div>
+    <div class="tboxes">
+      <div class="node"><div class="nm"><a href="https://nowcity.co">nowcity.co</a></div><div class="role">Now City Inc corporate site: regenerative developer and operator of walkable districts. The front door.</div><span class="badge open">Public</span></div>
+      <div class="node"><div class="nm"><a href="https://nowcity.life">nowcity.life</a></div><div class="role">Now City Neighborhoods: the resident-facing brand. Where future residents raise their hands.</div><span class="badge open">Public</span></div>
+    </div>
+  </div>
+  <div class="tierarrow"><div></div><div>&darr; the company raises capital &darr;</div></div>
+  <div class="tier">
+    <div class="tl">Capital rooms</div>
+    <div class="tboxes">
+      <div class="node hot"><div class="nm"><a href="https://nowcity.co/invest/">nowcity.co/invest</a></div><div class="role">The platform raise: single-page investor pitch for $3.5M Now City Inc equity. Thesis &rarr; Homes &rarr; market &rarr; raise &rarr; team.</div><span class="badge gate">Gated</span></div>
+      <div class="node hot"><div class="nm"><a href="https://nowcity.co/west-salem/">nowcity.co/west-salem</a></div><div class="role">The Edgewater district portal and data room: ~30 pages from district vision to live underwriting. The $12M district fund's evidence base.</div><span class="badge gate">Gated</span></div>
+    </div>
+  </div>
+  <div class="tierarrow"><div></div><div>&darr; the districts run on systems &darr;</div></div>
+  <div class="tier">
+    <div class="tl">Product</div>
+    <div class="tboxes">
+      <div class="node"><div class="nm"><a href="https://nowcity.ai">nowcity.ai</a></div><div class="role">Now City Regenerative Development Intelligence: the software arm. Upside Explorer underwriting, NCRDI outcomes framework, AI + expert systems.</div><span class="badge open">Public</span></div>
+      <div class="node"><div class="nm">Now City Homes</div><div class="role">The building product and anchor-buyer strategy. Lives as invest section 03 publicly and as a working doc on this shelf. Not yet its own domain.</div><span class="badge int">Program</span></div>
+    </div>
+  </div>
+  <div class="tierarrow"><div></div><div>&darr; and the thinking lives here &darr;</div></div>
+  <div class="tier">
+    <div class="tl">Internal</div>
+    <div class="tboxes">
+      <div class="node hot"><div class="nm"><a href="index.html">dev.nowcity.co</a></div><div class="role">This shelf: working documents, playbooks, field guides, and the atlas you are reading.</div><span class="badge gate">Gated</span></div>
+      <div class="node"><div class="nm">GitHub</div><div class="role">erikgillberg/nowcity-co carries everything above except nowcity.ai and nowcity.life, which have their own repos.</div><span class="badge int">Infra</span></div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h2>1 · nowcity.co, the front door</h2>
+<p><strong>Audience:</strong> everyone. Cities, partners, press, and anyone we hand a card to. <strong>What it says:</strong> Now City Inc is a regenerative developer and operator turning underused sites into walkable, green, mixed-use districts across the West Coast.</p>
+<p><strong>Pages:</strong> Home, Approach, Stack, Services, Investment, Team, FAQs, Contact, each with a parallel /staging copy for drafting. Built in Astro (src/pages/ in the repo), unlike everything else in this atlas, which is hand-built static HTML in public/.</p>
+<p><em>Standing caveat: the main site runs the System A brand treatment (the tailwind "Brand Bible"), which we have flagged as the slop root cause; the west-salem editorial system (System B) is the preferred direction and a phased unification plan exists but has not been green-lit. Until then, expect the front door and the deeper rooms to feel like cousins, not twins.</em></p>
+
+<h2>2 · nowcity.co/invest, the platform raise</h2>
+<p><strong>Audience:</strong> prospective platform investors in Now City Inc itself. <strong>The ask:</strong> $3.5M of C-Corp equity, one of two vehicles in the $15.5M Phase One Capital Campaign. <strong>Form:</strong> a single-page pitch-deck flow (rebuilt July 15 from the original four-page portal; old URLs redirect to anchors).</p>
+<p>The section flow, which is also the argument: <strong>01 The Opening</strong> (America needs districts, the role is vacant) &rarr; <strong>02 The Platform</strong> (four earning layers, four owned systems, the flywheel) &rarr; <strong>03 Now City Homes</strong> (the anchor-buyer thesis, the chassis catalog, the single-stair unlock, the regulatory window, asset-light delivery) &rarr; <strong>03b The Order Book</strong> (four demand sources and the artifacts that convert them) &rarr; <strong>04 Market</strong> (TAM ~$115B / SAM ~$20-25B / SOM ~$250M by year 10, footnoted) &rarr; <strong>05 Proof</strong> (Edgewater stats and traction) &rarr; <strong>06 The Raise</strong> (two vehicles, value flow $3.5M &rarr; $12M &rarr; ~$34M &rarr; $650M, use of funds including the $0.5M order-book line, milestones, and the fee revenue projection: ~$112M cumulative by 2035 across 10+ project kickoffs) &rarr; <strong>07 Honest Questions</strong> &rarr; <strong>08 Team</strong>.</p>
+<p><strong>Also:</strong> exports to a paginated PDF via the print stylesheet; the current export lives in the project folder as "Now City Inc - Investor Pitch (July 2026).pdf". Maxumal is never named here. Returns language stays structural; IRR lives only in the Upside Explorer.</p>
+
+<h2>3 · nowcity.co/west-salem, the Edgewater portal</h2>
+<p><strong>Audience:</strong> district fund investors, coalition partners, delivery partners, and diligence-minded readers. This is the deep data room for the first district: a ~22-acre riverfront assembly in West Salem, roughly 1,000 homes, $650M pipeline, Now City as master developer.</p>
+<p><strong>The nav, grouped as visitors see it:</strong></p>
+<ul>
+<li><strong>District Plan:</strong> District Vision, Innovation District, Activation Plan, Capital City Compact, Coalition &amp; Partner Strategy.</li>
+<li><strong>Research &amp; Precedents:</strong> District Economic Development, District Value Creation, Global District Developments, District Mobility, Single-Stair / Point Access Block, ULI Salem TAP (2022), The Copenhagen Comparison.</li>
+<li><strong>Concepts:</strong> Women &amp; Family Health Institute, Salem Mobility Concepts, Whoosh by Swyft Cities.</li>
+<li><strong>Investor Portal:</strong> District Capitalization, Business Plan, Capital Stack (the financing memo with its live verification register), Upside Explorer, Feasibility Review (Jun 2026), Market Feasibility Study (2025 PDF).</li>
+<li><strong>Delivery:</strong> Delivery Teams, Team, Contact.</li>
+</ul>
+<p><strong>Off-nav pages that still exist</strong> (linked contextually or retired in place): the OM page, phase1-model (the old tool preserved for the OM iframe), upside/upside-dev/ncue-product (product surfaces for the live NCUE embed), partners, proposal-cannon, proposal-held, odc, wellness-institute-seats. Treat these as inventory when auditing links or doing redesign sweeps.</p>
+<p><strong>Standing rules for this portal:</strong> master developer positioning throughout; returns live only in the Upside Explorer; the landowner and specialist builders are never named; positive framing; no em dashes. The district flythrough video is self-hosted (mind the Pages 25MiB file limit and the edge-cache gotcha on new assets).</p>
+
+<h2>4 · dev.nowcity.co, this shelf</h2>
+<p><strong>Audience:</strong> us, and invited collaborators. Working documents in branded HTML, each built to compound through dated addenda. Current shelf:</p>
+<ul>
+<li><strong>The Atlas</strong> (this page): the ecosystem map and inventory.</li>
+<li><strong>Now City Homes: The Anchor Buyer Strategy:</strong> the working version with Maxumal named, the framework-agreement checklist, verification homework on the code pathways, and the open questions.</li>
+<li><strong>The Programmatic JV Playbook:</strong> how we move from deal-by-deal raises to one patient capital partner across the pipeline, and the eight traps that turn sponsors into employees.</li>
+<li><strong>Meeting Guides, Kadlub &amp; Atkins Dame:</strong> extraction-oriented question sets for the July 22 meetings.</li>
+</ul>
+<p><strong>Publishing workflow:</strong> author in markdown in the project folder where practical, convert to the shared template, add a card to the shelf index, push. When a meeting or negotiation teaches us something, the addendum goes in the document, not in a drawer.</p>
+
+<h2>5 · nowcity.ai, the software arm</h2>
+<p><strong>Audience:</strong> deal teams and capital partners beyond our own districts. Now City Regenerative Development Intelligence: expert human and AI systems for complex mixed-use development. Home of the <strong>Upside Explorer</strong> (live collaborative underwriting; embedded into the west-salem portal via the token-gated nc-embed endpoint) and the NCRDI twelve-dimension outcomes framework. The Python engine lives in the now-city-upside-explorer repo (verified port plus MCP stub; V1.0 aims at per-upside agents with an orchestrator).</p>
+<p><strong>Strategic role in the platform story:</strong> the software is simultaneously a product with its own commercial path, the platform's underwriting engine, and, per the order-book strategy, a demand-aggregation channel: every external team that underwrites with it is a qualified buyer for the Homes catalog.</p>
+
+<h2>6 · nowcity.life, the resident brand</h2>
+<p><strong>Audience:</strong> future residents. "Now City Neighborhoods: a new Pacific Northwest neighborhood is coming together. The peace and space people leave the city for; the walkability and culture they leave behind." The consumer-facing surface where demand raises its hand, which makes it a quiet input to the order book too. Own repo (nowcity-life).</p>
+
+<h2>7 · urbanreboot.org, the mission vehicle</h2>
+<p><strong>Audience:</strong> philanthropy, impact capital, and mission partners. Urban Reboot is a venture philanthropy fund: raising and deploying catalytic capital for sustainable real estate, reinvesting returns, and providing capacity-building and advisory support. Its stated mission ("accelerating the transition to regenerative, resilient, and equitable communities") is word-for-word the mission Now City Inc executes commercially; the two are the mission-side and market-side of the same idea. Keep the relationship clean: separate entities, separate sites, aligned language.</p>
+
+<h2>8 · Access codes and gates</h2>
+<table>
+<thead><tr><th>Property</th><th>Gate</th><th>Code</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>nowcity.co, nowcity.ai, nowcity.life, urbanreboot.org</td><td>None</td><td>&mdash;</td><td>Public.</td></tr>
+<tr><td>nowcity.co/invest</td><td>JS gate, localStorage nci-ok</td><td>FutureNow2026</td><td>Terms stay structural; valuation in conversation only.</td></tr>
+<tr><td>nowcity.co/west-salem</td><td>JS gate, localStorage ws-ok</td><td>WestSalem2026</td><td>Currently opens the whole site including the Investor Portal: the tier-2 gate (EdgewaterCapital2026) was deliberately disarmed for investor visitors on July 21. The re-arm recipe is documented; re-arm when that visit cycle ends.</td></tr>
+<tr><td>dev.nowcity.co</td><td>JS gate, localStorage nc-dev-ok</td><td>NowCityDev2026</td><td>Deliberately separate from the capital-room codes.</td></tr>
+</tbody>
+</table>
+<p><em>Caution we accept knowingly: these are client-side JS gates for access hygiene, not security. Nothing on any gated page should be something we could not survive a sophisticated visitor reading, and true secrets (personal terms, negotiation floors with numbers attached to named counterparties) stay off the web entirely.</em></p>
+
+<h2>9 · Repos and update discipline</h2>
+<table>
+<thead><tr><th>Repo (erikgillberg/)</th><th>Carries</th><th>Discipline</th></tr></thead>
+<tbody>
+<tr><td>nowcity-co</td><td>Main Astro site (src/) + static public/west-salem, public/invest, public/dev, public/brand. Cloudflare Pages.</td><td><strong>Always pull fresh before editing; never work from a local mirror or zip.</strong> Multiple processes edit this repo; a stale unzip once clobbered 20+ pages. 25MiB per-file limit; new assets can hit an edge-cache fallback briefly.</td></tr>
+<tr><td>now-city-upside-explorer</td><td>NCUE Python engine, verified against the spreadsheet model, plus MCP stub.</td><td>V1.0 direction: per-upside agents + orchestrator.</td></tr>
+<tr><td>nowcity-life</td><td>The resident-brand site.</td><td>&mdash;</td></tr>
+<tr><td>nowcitylabs</td><td>Labs domain (the team's email domain).</td><td>&mdash;</td></tr>
+<tr><td>maxumal</td><td>Partner-related site work.</td><td>Confidential relationship; see the Homes strategy doc.</td></tr>
+</tbody>
+</table>
+<p><strong>The one rule that keeps this atlas true:</strong> when something ships anywhere in the ecosystem, it gets a line here the same day. An atlas that is 95% current is 100% distrusted.</p>
+
+<h2>Changelog</h2>
+<ul>
+<li><em>July 21, 2026:</em> Atlas created. Reflects the invest rebuild (single-page pitch, $3.5M, Now City Homes + order book + fee projection), the Homes render set, and the dev shelf's first four documents.</li>
+</ul>
+
+</article></div></main>
+<footer><div class="wrap">©2026 Now City Inc. · Internal working documents · Not an offer of securities · Please do not circulate</div></footer>
+<script>
+(function(){
+const HASH='1f00699cc101299062a06ee673d8d95a277ac29bbca767118da65116461dd645';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('nc-dev-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('nc-dev-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
