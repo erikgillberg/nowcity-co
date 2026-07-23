@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="../invest/assets/nowcity-favicon-white.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Now City Inc - The Physical AI Platform</title>
+<meta name="description" content="Now City is a master developer and district operating platform for the physical AI era. A private preview for prospective platform investors.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../invest/assets/site.css?v=2">
+<script defer src="../invest/assets/nav.js?v=1"></script>
+<style>
+.kicker{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.kicker .n{font-family:var(--serif);font-size:15px;color:var(--terra);border:1.5px solid var(--terra);border-radius:999px;padding:3px 13px;white-space:nowrap}
+.dark .kicker .n{color:#d9a26c;border-color:#d9a26c}
+.pv-icon{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:rgba(168,112,63,.10);color:var(--terra);margin-bottom:16px}
+.pv-icon svg{width:23px;height:23px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.dark .pv-icon{background:rgba(217,162,108,.16);color:#d9a26c}
+.navlinks a{padding:6px 13px;border-radius:999px;transition:color .25s,background .25s}
+.navlinks a.active{border-bottom:none;padding-bottom:6px}
+.navlinks a.current{background:var(--terra);color:#fff!important}
+nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--terra);color:#fff!important}
+@media(min-width:1024px){#nav .navlinks{flex-wrap:nowrap;gap:6px}#nav .navlinks a{white-space:nowrap;padding:6px 11px}}
+@media(min-width:1024px) and (max-width:1360px){.brand-sub{display:none}}
+@media(max-width:1023px) and (min-width:861px){
+  nav .wrap{flex-wrap:nowrap}
+  .navtoggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:36px;padding:7px 8px;background:none;border:none;cursor:pointer;margin-left:auto;z-index:201}
+  .navtoggle span{display:block;height:2px;width:100%;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
+  nav.scrolled .navtoggle span,nav.solid .navtoggle span{background:var(--ink-deep)}
+  nav.navopen .navtoggle span{background:#fff}
+  nav.navopen .navtoggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.navopen .navtoggle span:nth-child(2){opacity:0}
+  nav.navopen .navtoggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .navlinks{position:absolute;top:100%;left:0;right:0;flex-direction:column;flex-wrap:nowrap;gap:0;background:#1f1d1a;max-height:0;overflow:hidden;padding:0;transition:max-height .32s ease}
+  nav.navopen .navlinks{max-height:85vh;overflow-y:auto;padding:6px 0;box-shadow:0 14px 30px rgba(0,0,0,.34)}
+  .navlinks>li{width:100%}
+  .navlinks a,nav.scrolled .navlinks a,nav.solid .navlinks a{display:block;color:#e9e5da!important;padding:13px 22px;font-size:13px;letter-spacing:.06em;border-radius:0}
+  .navlinks a.current{background:rgba(168,112,63,.35);border-left:3px solid #d9a26c;padding-left:19px}
+}
+.thesis{background:rgba(217,162,108,.07);border-left:3px solid #d9a26c;border-radius:0 8px 8px 0;padding:24px 26px;margin-top:34px;font-size:16.5px;color:#e8e2d6;line-height:1.75}
+.hier{max-width:720px;margin:34px 0 0;border-left:2px solid var(--line);padding-left:0}
+.hier .row{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:13px 0 13px 20px;border-bottom:1px solid rgba(0,0,0,.06)}
+.dark .hier .row{border-color:rgba(255,255,255,.08)}
+.hier .row:last-child{border-bottom:none}
+.hier .k{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);padding-top:3px}
+.dark .hier .k{color:#d9a26c}
+.hier .v{font-family:var(--serif);font-size:17px;color:var(--ink-deep);line-height:1.4}
+.dark .hier .v{color:var(--cream)}
+/* OS table */
+.ostab{width:100%;border-collapse:collapse;margin-top:34px;font-size:14px}
+.ostab th{text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--terra);padding:10px 12px;border-bottom:1px solid var(--line)}
+.ostab td{padding:15px 12px;border-bottom:1px solid rgba(0,0,0,.07);vertical-align:top;line-height:1.55;color:#4a463f}
+.ostab td:first-child{font-family:var(--serif);font-size:16px;color:var(--ink-deep);white-space:nowrap}
+.ostab .rev{color:var(--green);font-weight:600}
+@media(max-width:820px){.ostab,.ostab thead,.ostab tbody,.ostab tr,.ostab th,.ostab td{display:block}.ostab thead{display:none}.ostab tr{border:1px solid var(--line);border-radius:10px;margin-bottom:14px;padding:6px 4px;background:var(--cream-2)}.ostab td{border:none;padding:8px 16px}.ostab td:first-child{padding-top:14px}}
+/* ledger */
+.ledger{margin-top:34px;display:flex;flex-direction:column;gap:0}
+.lrow{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #3d392f}
+.lrow:last-child{border-bottom:none}
+.lstat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 11px;border-radius:12px;height:fit-content;white-space:nowrap}
+.s-exec{background:rgba(157,176,138,.16);color:#9db08a}
+.s-under{background:rgba(217,162,108,.16);color:#d9a26c}
+.s-rel{background:rgba(216,210,196,.1);color:#b7b0a3}
+.s-model{background:rgba(139,150,168,.14);color:#9aa6bd}
+.lrow .lx{font-size:14.5px;line-height:1.6;color:#d8d2c4}
+.lrow .lx b{color:var(--cream)}
+@media(max-width:640px){.lrow{grid-template-columns:1fr;gap:8px}}
+/* doors */
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.door{background:var(--cream-2);border:1px solid var(--line);border-top:3px solid var(--terra);border-radius:10px;padding:26px 24px;display:flex;flex-direction:column}
+.dark .door{background:#2b2823;border-color:#3d392f;border-top-color:#d9a26c}
+.door .who{font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
+.dark .door .who{color:#d9a26c}
+.door h3{font-family:var(--serif);font-size:21px;color:var(--ink-deep);margin-bottom:10px}
+.dark .door h3{color:var(--cream)}
+.door p{font-size:14px;line-height:1.6;color:#4a463f;flex:1}
+.dark .door p{color:#c9c2b2}
+.door .cta{margin-top:16px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--terra)}
+.dark .door .cta{color:#d9a26c}
+@media(max-width:820px){.doors{grid-template-columns:1fr}}
+.note{border-left:3px solid var(--terra);background:var(--cream-2);padding:18px 22px;font-size:15px;border-radius:0 6px 6px 0;margin-top:26px;line-height:1.7}
+.dark .note{background:#2b2823;color:#d8d2c4}
+.qa{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:36px}
+.qa .q{background:var(--cream-2);border:1px solid var(--line);border-radius:10px;padding:24px 26px}
+.qa .q h3{font-size:17px;margin:0 0 10px;color:var(--ink-deep);font-style:italic}
+.qa .q p{font-size:14px;line-height:1.65;color:#5c584e}
+@media(max-width:760px){.qa{grid-template-columns:1fr}}
+.uof{width:100%;border-collapse:collapse;margin-top:30px;font-size:14.5px}
+.uof th{text-align:left;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a39d8f;padding:10px 12px;border-bottom:1px solid #4a453a}
+.uof td{padding:14px 12px;border-bottom:1px solid #3d392f;color:#d8d2c4;line-height:1.5}
+.uof .al{font-weight:600;color:var(--cream)}
+.grid.g4{grid-template-columns:repeat(4,1fr)}
+.grid.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:1020px){.grid.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.grid.g2{grid-template-columns:1fr}}
+@media(max-width:600px){.grid.g4{grid-template-columns:1fr}}
+@media print{#gate{display:none!important}body.gated{overflow:auto}nav{position:static}.rv{opacity:1!important;transform:none!important}section{padding:52px 0}}
+</style>
+</head>
+<body class="gated">
+
+<div id="gate">
+  <div class="panel">
+    <div class="eyebrow" style="color:#d9a26c">Now City Inc</div>
+    <h1 class="serif">The Physical AI<br>Platform</h1>
+    <p>This preview is shared with prospective platform investors for discussion purposes. Enter the access code to continue.</p>
+    <form id="gateform">
+      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+      <div class="err" id="gateerr"></div>
+    </form>
+    <p style="margin-top:22px;font-size:12.5px">Need access? Contact <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Now City Inc<span class="brand-sub"> &middot; Physical AI Platform</span></a>
+    <ul class="navlinks">
+      <li><a href="#category">Category</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#doctrine">Ownership</a></li>
+      <li><a href="#proof">Proof</a></li>
+      <li><a href="#network">Network</a></li>
+      <li><a href="#raise">Raise</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="mailto:erik@nowcitylabs.com">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="bg" style="background-image:url('../invest/assets/oregon/salem-river-aerial.jpg')"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="eyebrow">Now City Inc &middot; The Physical AI Economy &middot; Private Preview</div>
+    <h1>The district<br>is the product.</h1>
+    <p class="sub">Now City creates, capitalizes, delivers, and operates next-generation districts, and provides the platform that helps other master developers do the same.</p>
+    <div class="meta">Platform Equity &middot; Master developer &amp; district operating platform &middot; For discussion purposes only</div>
+  </div>
+</header>
+
+<!-- proof strip -->
+<section class="dark" id="strip" style="padding:64px 0">
+  <div class="wrap">
+    <div class="stats statcards c3 rv">
+      <div class="stat"><div class="num">Edgewater</div><div class="lbl">A ~22-acre riverfront vision in West Salem; Phase One advancing with its land sponsor under an executed LOI</div></div>
+      <div class="stat"><div class="num">Three OS</div><div class="lbl">Development, Deployment, and Neighborhood operating systems, built from live district work</div></div>
+      <div class="stat"><div class="num">Partner network</div><div class="lbl">A collaboration pathway with accomplished regional master developers, in early formation</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 CATEGORY -->
+<section id="category">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">01</span><span class="eyebrow">The Category</span></div>
+      <h2>A master developer and district operating platform for the physical AI era</h2>
+      <p class="lead">The economy is entering a physical AI phase: intelligent, adaptable systems embedded in the real world, from energy and mobility to construction and logistics. Enormous capital is flowing to the machines. Far less is going to the scarce, local, difficult work of forming the districts where those systems actually get deployed, operated, and paid for. That work is Now City's.</p>
+    </div>
+    <p class="lead rv" style="max-width:820px">The thesis is being validated at scale. In July 2026 a physical-AI company raised $1.7B to digitize and operate the physical world, an independent bet that land, real-estate construction, energy, and cross-stack competence are where this economy is won. We read the same signal and draw the opposite conclusion about our own posture: Now City should not retreat into a narrow complementary role. It should deepen its ownership of district formation, software, data, and physical-systems economics, and remain free to partner, build, buy, or invest as value dictates.</p>
+    <div class="grid g3" style="margin-top:44px">
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></span><h4>Develop districts</h4><p style="font-size:14.5px;line-height:1.65">Land strategy, site control, entitlement, master planning, capital architecture, public-private alignment, phasing, and long-term stewardship. Value compounds as land, entitlement, and development margin accrue to positions the platform structures.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4-8 4-8-4 8-4Z"/><path d="M4 11l8 4 8-4"/><path d="M4 15l8 4 8-4"/></svg></span><h4>Deploy physical systems</h4><p style="font-size:14.5px;line-height:1.65">Design standards, procurement, systems integration, pilots, commissioning, and data rights across construction, energy, water, mobility, food, waste, and robotics. Now City creates the demand and the real-world environment that physical systems need.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 1 7 4"/><path d="M19.5 3.5V8H15"/><path d="M18.5 15A8 8 0 0 1 5 14"/><path d="M4.5 19.5V15H9"/></svg></span><h4>Operate the platform</h4><p style="font-size:14.5px;line-height:1.65">Software, analytics, digital twins, asset and district workflows, resident and operator services, performance measurement, and continuous optimization. This layer produces recurring revenue and long-duration data relationships.</p></div>
+    </div>
+    <div class="hier rv">
+      <div class="row"><div class="k">Primary</div><div class="v">The district is the product.</div></div>
+      <div class="row"><div class="k">Secondary</div><div class="v">The district is the deployment platform.</div></div>
+      <div class="row"><div class="k">Company</div><div class="v">Now City creates, capitalizes, delivers, and operates next-generation districts.</div></div>
+      <div class="row"><div class="k">Platform</div><div class="v">Our development, deployment, and neighborhood operating systems make the model repeatable.</div></div>
+      <div class="row"><div class="k">Outcome</div><div class="v">Human-first places with intelligent, adaptable physical systems.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 PLATFORM -->
+<section class="alt" id="platform">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">02</span><span class="eyebrow">The Platform</span></div>
+      <h2>Three operating systems, one district lifecycle</h2>
+      <p class="lead">The Now City Platform moves a district from possibility to operation. It was born from real development work, is tested in a real district, and is built to be deployed with external sponsors, not only inside Now City's own projects.</p>
+    </div>
+    <table class="ostab rv">
+      <thead><tr><th>System</th><th>Primary users</th><th>Core capabilities</th><th>Revenue path</th></tr></thead>
+      <tbody>
+        <tr><td>Development OS</td><td>Master developers, landowners, cities, capital and deal teams</td><td>Site intelligence, live underwriting, entitlement and partner workflows, procurement, financing scenarios, and source traceability. In daily use on the live West Salem workstream.</td><td class="rev">Advisory, licensing, and SaaS to external master developers</td></tr>
+        <tr><td>Deployment OS</td><td>Design teams, builders, infrastructure and technology providers, district operators</td><td>Physical-systems requirements, a vendor marketplace, digital-twin interfaces, pilots, commissioning, safety, and data governance.</td><td class="rev">Integration fees, marketplace and procurement economics</td></tr>
+        <tr><td>Neighborhood OS</td><td>Owners, operators, residents, cities and institutions</td><td>Energy, water, waste, mobility, buildings, public realm, local economy, resident services, governance, resilience, and measured outcomes.</td><td class="rev">Recurring SaaS, managed services, and performance economics</td></tr>
+      </tbody>
+    </table>
+    <div class="note rv"><strong>Two frameworks, cleanly separated.</strong> The Now City Platform (Development OS, Deployment OS, Neighborhood OS, and the capital and ownership architecture) is <em>how</em> a district gets made and run. The District Design System (regenerative placemaking, green infrastructure, industrialized construction, and innovative finance) is <em>what</em> the platform is trying to deliver. The platform applies the design system across the life of a district.</div>
+    <p class="lead rv" style="margin-top:26px;max-width:820px">nowcity.ai is the software and agentic-intelligence layer across all three systems, not a separate story that competes with the development company. The software was born from development work, is tested in real districts, and can be deployed with external sponsors.</p>
+  </div>
+</section>
+
+<!-- 03 OWNERSHIP DOCTRINE -->
+<section id="doctrine">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">03</span><span class="eyebrow">The Doctrine</span></div>
+      <h2>Own the control points. Integrate the ecosystem. Build or buy where ownership earns it.</h2>
+      <p class="lead">Complementarity is a choice, not a constraint. Now City owns the scarce control points that make the district work, integrates the best of the ecosystem around them, and stays free to build, acquire, or take a stake when the economics justify it.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card rv"><h4>Control points we do not surrender</h4>
+        <ul class="tick" style="margin-top:6px">
+          <li>The master-developer and customer relationship.</li>
+          <li>Land strategy, site rights, entitlements, phasing, and district standards.</li>
+          <li>Capital architecture and the right to participate in project and operating economics.</li>
+          <li>The district data model, data rights, benchmarking, and source traceability.</li>
+          <li>The software interface used by deal teams, operators, residents, and partners.</li>
+          <li>Procurement standards, vendor qualification, and systems-integration decisions.</li>
+          <li>Civic, community, institutional, and landowner relationships.</li>
+          <li>The performance framework: what is measured, verified, improved, and financed.</li>
+        </ul>
+      </div>
+      <div class="card rv"><h4>Where we partner, build, or buy</h4>
+        <p style="font-size:14px;line-height:1.65;color:inherit">Industrialized construction, district energy and water, mobility and shared fleets, food and resource-recovery businesses, and specialized robotics are integrated with specialist partners first. Ownership becomes attractive only when repeat volume, utility-like cash flow, or a repeated district-specific job creates durable margin and Now City holds privileged demand or data. Software and data are the exception: they are a core control point, owned from the start, because they are the source of cross-district learning, recurring revenue, and strategic leverage.</p>
+        <p style="font-size:13.5px;line-height:1.6;color:inherit;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)"><strong>The test we apply:</strong> does it control the district customer, data, standards, or economics; will it repeat across districts; does integration risk decide whether the district works; could an outside provider commoditize us; and would ownership consume capital before demand is proven? The answers decide own versus partner, case by case.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PROOF -->
+<section class="dark" id="proof">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">04</span><span class="eyebrow">Proof, Precisely Stated</span></div>
+      <h2>West Salem is the first owned proof environment</h2>
+      <p class="lead">Now City is advancing Edgewater West Salem in partnership with the Phase One land sponsor. We state status the way we underwrite it: executed facts, active work, live relationships, and modeled outcomes, each labeled, never blurred.</p>
+    </div>
+    <div class="ledger rv">
+      <div class="lrow"><span class="lstat s-exec">Executed</span><div class="lx"><b>Sponsor LOI in force.</b> An active Phase One sponsor partnership with the land sponsor, under an executed letter of intent.</div></div>
+      <div class="lrow"><span class="lstat s-under">Underway</span><div class="lx"><b>Due diligence and capital formation.</b> Entitlement strategy, delivery-team development, and partner cultivation are active. Phase One begins on 5.29 acres; the district vision spans roughly 22 acres across four phases.</div></div>
+      <div class="lrow"><span class="lstat s-under">Underway</span><div class="lx"><b>Development OS in daily use.</b> The platform's underwriting and decision workflow runs the live West Salem workstream, recording decisions, sources, and risks surfaced.</div></div>
+      <div class="lrow"><span class="lstat s-rel">In relationship</span><div class="lx"><b>Design, delivery, and operating partners.</b> Phase-level development partners, an owner's development company, builders, and operators are being selected and formalized.</div></div>
+      <div class="lrow"><span class="lstat s-model">Modeled</span><div class="lx"><b>Phase economics and performance.</b> A detailed business plan, live underwriting, a partner map, an activation strategy, and a physical-systems thesis exist. Phase economics and system outcomes are modeled and labeled as such until measured.</div></div>
+    </div>
+    <div class="thesis rv"><strong>What West Salem proves.</strong> That Now City can earn the master-developer role with a real land sponsor; integrate development, finance, infrastructure, technology, community, and placemaking into one plan; run Development, Deployment, and Neighborhood OS in a real district; create owned or participated operating businesses before and after vertical construction; and turn a phased district into repeated capital, procurement, data, and partner events rather than a one-time transaction.</div>
+    <p class="rv" style="margin-top:26px;font-size:15px;color:#b7b0a3">The full Edgewater data room, from business plan to live underwriting, is at the <a href="../west-salem/" style="color:#d9a26c">Edgewater portal</a>.</p>
+  </div>
+</section>
+
+<!-- 05 NETWORK -->
+<section id="network">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">05</span><span class="eyebrow">Distribution</span></div>
+      <h2>The fastest path to a platform runs through other excellent developers</h2>
+      <p class="lead">Now City can collaborate with accomplished master developers on districts they are already forming. That gives the platform credible external deployments, seasoned execution partners, and multi-district data long before Now City needs to originate a national pipeline alone. The approach is disciplined: we do not ask accomplished developers to adopt a grand theory; we help them solve the next hard decision on a real district, then earn the right to expand.</p>
+    </div>
+    <div class="doors">
+      <div class="door rv"><div class="who">Door 1</div><h3>Build with us</h3><p>For landowners, cities, institutions, and communities. Now City forms and stewards a district from land strategy through long-term operation.</p><div class="cta">Discuss a district &rarr;</div></div>
+      <div class="door rv"><div class="who">Door 2</div><h3>Deploy with us</h3><p>For master developers, operators, and technology or infrastructure partners. Use the Now City platform on an active project, or deploy a system into a qualified district.</p><div class="cta">Explore a collaboration &rarr;</div></div>
+      <div class="door rv"><div class="who">Door 3</div><h3>Invest with us</h3><p>For platform, project, infrastructure, and mission capital. Invest at the layer that matches your mandate and duration.</p><div class="cta">Request investor access &rarr;</div></div>
+    </div>
+    <div class="note rv">Each district produces reusable cost, schedule, entitlement, vendor, and operating benchmarks; partners open doors to landowners, cities, institutions, builders, and capital; and a portfolio of external deployments makes platform investment more credible than a single flagship project. A District Partner Program formalizes this, from a scoped diagnostic engagement through integrated pre-development, physical-systems deployment, managed operations, and co-development. Early conversations with respected regional developers are exploratory and are not presented as partnerships until roles and permissions are clear.</div>
+  </div>
+</section>
+
+<!-- 06 RAISE -->
+<section class="dark" id="raise">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">06</span><span class="eyebrow">The Raise</span></div>
+      <h2>Three investable layers, not one blended story</h2>
+      <p class="lead">Now City combines the scarce, local work of district formation with the scalable economics of software, services, procurement, infrastructure, and operations. Investors participate at the layer that matches their mandate. Platform capital scales a multi-district business; project capital is ring-fenced to defined assets and phases.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card rv" style="border-top:3px solid var(--terra)"><h4>Layer 1 &middot; Platform equity</h4><h3 style="font-family:var(--serif);font-size:19px;color:var(--cream);margin:6px 0 10px">The company that repeats</h3><p style="font-size:14px;line-height:1.6;color:#c9c2b2">Ownership of Now City Inc: the master-developer platform, the three operating systems, the data rights, GP economics, and every district the platform delivers or helps deliver. Venture-style horizon with platform value events along the way.</p></div>
+      <div class="card rv"><h4>Layer 2 &middot; District &amp; project vehicles</h4><h3 style="font-family:var(--serif);font-size:19px;color:var(--cream);margin:6px 0 10px">Ring-fenced to the asset</h3><p style="font-size:14px;line-height:1.6;color:#c9c2b2">Defined district and phase vehicles, such as the Edgewater district fund, capitalized against a specific value-creation arc with its own exit windows. Documented in the Edgewater data room.</p></div>
+      <div class="card rv"><h4>Layer 3 &middot; Infrastructure &amp; OpCos</h4><h3 style="font-family:var(--serif);font-size:19px;color:var(--cream);margin:6px 0 10px">Utility-like cash flow</h3><p style="font-size:14px;line-height:1.6;color:#c9c2b2">Selective operating companies and infrastructure, from district energy and mobility to activation businesses, structured with specialist partners where durable cash flow and control justify ownership.</p></div>
+    </div>
+    <div class="sec-head rv" style="margin-top:64px;margin-bottom:20px"><h2 style="font-size:clamp(24px,3vw,32px)">What platform capital funds</h2><p class="lead" style="font-size:17px">The next stretch of work builds the assets that make independence valuable and strategic combination optional, on the roadmap below.</p></div>
+    <table class="uof rv">
+      <thead><tr><th>Window</th><th>Primary work &amp; proof gate</th></tr></thead>
+      <tbody>
+        <tr><td><span class="al">0-90 days</span></td><td>Site and information architecture around the independent category; a single West Salem status ledger; the three-OS product architecture and data/IP doctrine; Development OS in the live workstream; scoped follow-ups with the regional developer conversations. <b>Gate:</b> published category, ledger, and doctrine.</td></tr>
+        <tr><td><span class="al">3-6 months</span></td><td>Advance West Salem diligence and sponsor documents; sign the first paid District Partner engagement; qualify vendors and partners; choose one deployment pilot tied to a live decision; package investor materials by capital layer. <b>Gate:</b> first external engagement, first pilot scoped.</td></tr>
+        <tr><td><span class="al">6-12 months</span></td><td>Launch the Development OS MVP; build the procurement and deployment workflow; execute external district agreements and data rights; measure activation or pre-development KPIs; raise appropriate platform and project capital. <b>Gate:</b> external agreements executed, first KPIs measured.</td></tr>
+        <tr><td><span class="al">12-24 months</span></td><td>Add Deployment OS and Neighborhood OS modules; form or invest in one strategically important operating company or infrastructure capability; deepen the partner network; publish benchmark evidence and demonstrate repeatability across owned and partner districts. <b>Gate:</b> a multi-district benchmark set and a credible independent-growth path.</td></tr>
+      </tbody>
+    </table>
+    <div class="thesis rv"><strong>Optionality, built deliberately.</strong> The aim is a durable, independent company whose assets are hard to cheaply recreate: master-developer positions and project rights, a multi-district partner network, the three operating systems and their IP, a longitudinal district data model, a qualified vendor network, and selective operating-company participation. That durability creates multiple paths to scale, independent growth, commercial alliances, or strategic combination on our terms, and strategic value is highest when a partner needs the company, not when the company needs a partner. Terms and instrument mechanics are shared in conversation.</div>
+  </div>
+</section>
+
+<!-- 07 FAQ -->
+<section class="alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">07</span><span class="eyebrow">Direct Answers</span></div>
+      <h2>The questions that decide this</h2>
+    </div>
+    <div class="qa">
+      <div class="q rv"><h3>"Are you a consultant or a developer?"</h3><p>A developer. Now City is master developer of Edgewater West Salem, holding land strategy, plan, phasing, partnerships, and district standards under an executed sponsor LOI. The platform and advisory work extend that execution to other districts; they do not replace it.</p></div>
+      <div class="q rv"><h3>"Do you build technology and own infrastructure?"</h3><p>We own the software and data as a core control point, and build it from live district work. Physical infrastructure and construction we integrate with specialist partners first, and own or take a stake only where repeat volume or utility-like cash flow earns it. We do not vertically integrate ahead of demand.</p></div>
+      <div class="q rv"><h3>"What is the status of West Salem?"</h3><p>Advancing with the Phase One land sponsor under an executed LOI; due diligence, capital formation, entitlement strategy, and delivery-team formation are underway. Phase One begins on 5.29 acres within a roughly 22-acre, four-phase vision. Definitive JV, land contribution, and construction remain subject to diligence and financing, and are labeled as such.</p></div>
+      <div class="q rv"><h3>"How do you work with other master developers?"</h3><p>Through a District Partner Program that begins with one hard decision on a real project and can expand into integrated pre-development, physical-systems deployment, managed operations, or co-development. Early conversations with regional developers are exploratory and are not described as partnerships until roles and permissions are clear.</p></div>
+      <div class="q rv"><h3>"Are you affiliated with any physical-AI company?"</h3><p>No. The large physical-AI companies are independent, and their capital and thesis validate the importance of land, construction, energy, and cross-stack competence. Now City is an independent company that owns district formation, software, and operations, free to partner, build, buy, or invest where value dictates. We do not imply a relationship that does not exist.</p></div>
+      <div class="q rv"><h3>"How do you protect resident and district data?"</h3><p>Data is portable, permissioned, auditable, and usable for district-level optimization, with source lineage recorded so credibility is a product feature, not only a communications practice. Core data rights and platform IP stay in the parent company and are licensed to project vehicles and partner districts.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 TEAM -->
+<section class="dark" id="team">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">08</span><span class="eyebrow">Team &amp; Execution</span></div>
+      <h2>A lean core, an execution architecture around it</h2>
+      <p class="lead">Now City operates as a district strategy and systems integrator: a small core that holds vision, standards, and long-term district control, with development, construction, infrastructure, and operating capacity rented from proven partners until owning it is earned.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card rv"><h4>Co-Founder &amp; CEO</h4><h3>Erik Gillberg</h3><p style="font-size:14.5px;line-height:1.65">Thirty years inside the operating reality of property alongside a 20-year career in technology, business development, and startup leadership. As master developer of Edgewater, Erik holds the whole: the vision, the capital structures that let attainable homes pencil, and the partnerships aligned enough to survive four phases.</p></div>
+      <div class="card rv"><h4>Co-Founder &amp; COO</h4><h3>Ritchie Ju</h3><p style="font-size:14.5px;line-height:1.65">Leads design, development, and operations. B.Arch from Carnegie Mellon, MS in Architecture and Urban Design from Columbia, MBA in progress at Johns Hopkins. Career spans Citi Bike's expansion at Lyft, capital raising and development with a $3B+ NYC mixed-use developer, and co-founding a 7-figure ecommerce business.</p></div>
+      <div class="card rv"><h4>Advisor &middot; Local Economies</h4><h3>Michael H. Shuman</h3><p style="font-size:14.5px;line-height:1.65">Economist, attorney, and one of the architects of the 2012 JOBS Act. Advises Now City on community-rooted ownership, local capital formation, and finance that keeps wealth in place.</p></div>
+      <div class="card rv"><h4>Advisor &middot; Urban Planning &amp; Design</h4><h3>Neal Payton</h3><p style="font-size:14.5px;line-height:1.65">FAIA, FCNU. Directs the western U.S. urban and architectural design practice at Torti Gallas. Advises Now City on urbanism, master planning, and entitlement strategy.</p></div>
+    </div>
+    <div class="note rv" style="background:#2b2823;color:#d8d2c4">Execution capacity scales through the partner bench: an owner's development company and phase developers, builders, infrastructure providers, operators, and a software team, coordinated under one master-developer standard. Payroll stays small while the platform's reach compounds. Named partner relationships are added publicly only as agreements become disclosable.</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="dark cta" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="eyebrow rv">The Invitation</div>
+    <h2 class="rv">Build the company that<br>builds districts.</h2>
+    <p class="rv" style="max-width:600px;margin:0 auto;color:#b7b0a3">Request the investor preview for current project status, platform economics, capital entry points, live underwriting, and the twenty-four-month proof roadmap. Bring your hardest questions; the data room is built for them.</p>
+    <div class="contacts rv">
+      <a href="mailto:erik@nowcitylabs.com">erik@nowcitylabs.com</a>
+      <a href="mailto:ritchie@nowcitylabs.com">ritchie@nowcitylabs.com</a>
+      <a href="../west-salem/">Edgewater data room</a>
+    </div>
+  </div>
+</section>
+
+<section class="dark" style="border-top:1px solid #3d392f;padding:48px 0">
+  <div class="wrap">
+    <p style="font-size:11px;line-height:1.7;color:#8f897c;max-width:920px">All project, relationship, investment, and performance statements are subject to confirmation and to applicable confidentiality and securities requirements. Status labels (executed, underway, in relationship, modeled) describe the state of each item as of the date of this preview and may change. Modeled outputs are not delivered results. References to other companies are for market context only and do not imply any affiliation, partnership, or endorsement. This site does not constitute an offer to buy or sell securities; an offering can be made only pursuant to delivery of definitive offering documents, and any securities would be offered in reliance on exemptions from registration and only to persons meeting applicable requirements. Statements herein may constitute forward-looking statements involving known and unknown risks and uncertainties; no representation is made that objectives will be achieved, and Now City undertakes no obligation to update such statements. This material is confidential, furnished solely for consideration of the matters described, and is not to be copied or shared without written consent.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>©2026 Now City Inc. All Rights Reserved.</div>
+    <div>Not an offer of securities. For discussion purposes only. Any investment would be made solely through definitive offering documents.</div>
+  </div>
+</footer>
+
+<a href="#top" class="toplink" id="toplink" aria-label="Back to top">↑</a>
+<script>
+const nav=document.getElementById('nav');const tl=document.getElementById('toplink');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const navLinks=[...document.querySelectorAll('#nav .navlinks a')].filter(a=>(a.getAttribute('href')||'').startsWith('#'));
+const alias={strip:'category',faq:'raise'};
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){let id=e.target.id;id=alias[id]||id;navLinks.forEach(a=>a.classList.toggle('current',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
+['category','platform','doctrine','proof','network','raise','faq','team'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+</script>
+<script>
+(function(){
+const HASH='1fdd827f52a916a168eb4fb527fc117032f895d16adc8239ac4e9c8b9a75c491';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('nci-ok')==='1'||sessionStorage.getItem('nci-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('nci-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
