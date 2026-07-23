@@ -170,22 +170,8 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
 }
 </style>
 </head>
-<body class="gated">
+<body>
 
-<!-- PASSCODE GATE -->
-<div id="gate">
-  <div class="panel">
-    <div class="eyebrow" style="color:#d9a26c">Now City Inc</div>
-    <h1 class="serif">Investor<br>Preview</h1>
-    <p>This site is shared with prospective platform investors for discussion purposes. Enter the access code to continue.</p>
-    <form id="gateform">
-      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
-      <button type="submit">Enter</button>
-      <div class="err" id="gateerr"></div>
-    </form>
-    <p style="margin-top:22px;font-size:12.5px">Need access? Contact <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
-  </div>
-</div>
 
 <nav id="nav">
   <div class="wrap">
@@ -578,21 +564,6 @@ const navLinks=[...document.querySelectorAll('#nav .navlinks a')].filter(a=>(a.g
 const alias={demand:'homes',raise2:'raise',questions:'raise'};
 const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){let id=e.target.id;id=alias[id]||id;navLinks.forEach(a=>a.classList.toggle('current',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
 ['opening','platform','homes','demand','market','proof','raise','raise2','questions','team'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
-</script>
-<script>
-(function(){
-const HASH='1fdd827f52a916a168eb4fb527fc117032f895d16adc8239ac4e9c8b9a75c491';
-async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
-function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
-if(localStorage.getItem('nci-ok')==='1'||sessionStorage.getItem('nci-ok')==='1')unlock();
-document.getElementById('gateform').addEventListener('submit',async function(e){
-  e.preventDefault();
-  var h='';
-  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
-  if(h===HASH){localStorage.setItem('nci-ok','1');unlock()}
-  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
-});
-})();
 </script>
 </body>
 </html>
