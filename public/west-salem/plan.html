@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=7">
+<link rel="stylesheet" href="assets/site.css?v=8">
 <script defer src="assets/nav.js?v=1"></script>
 <style>
 /* subnav pop + scroll highlight */
@@ -64,8 +64,8 @@
 <div id="gate">
   <div class="panel">
     <div class="eyebrow" style="color:#d9a26c">Edgewater West Salem</div>
-    <h1 class="serif">Private<br>Preview</h1>
-    <p>This site is shared with project stakeholders for discussion purposes. Enter the access code to continue.</p>
+    <h1 class="serif">Investor<br>Access</h1>
+    <p>This section contains detailed financial, underwriting, and diligence materials, shared individually. Enter the investor access code to continue.</p>
     <form id="gateform">
       <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
       <button type="submit">Enter</button>
@@ -88,6 +88,7 @@
           <li><a href="activation.html">Activation Plan</a></li>
           <li><a href="coalition-building.html">Capital City Compact</a></li>
           <li><a href="coalition-strategy.html">Coalition &amp; Partner Strategy</a></li>
+          <li><a href="partners.html">Partner Strategy</a></li>
           <li class="dd-head">Research &amp; Precedents</li>
           <li><a href="research.html">District Economic Development</a></li>
           <li><a href="district-value.html">District Value Creation</a></li>
@@ -102,7 +103,9 @@
           <li><a href="whoosh.html">Whoosh by Swyft Cities</a></li>
         </ul>
       </li>
-      <li class="dd"><a href="investor-portal.html">Investor Portal</a>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="dd pill"><a href="investor-portal.html">Investor Portal</a>
         <ul class="ddm">
           <li class="core"><a href="investor-portal.html">District Capitalization</a></li>
           <li class="core"><a href="plan.html" class="active">Business Plan</a></li>
@@ -115,8 +118,6 @@
           <li><a href="design-engineering.html">Delivery Teams</a></li>
         </ul>
       </li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -1015,15 +1016,15 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
 <script>
 (function(){
-const HASH='aad5d67e3ddeda88953d6714e4569a4399b3201023dae82d5931a6c376de96d4';
+const HASH='ca2d692d44cac518f4293884ad6be8c1f9b9f381e6f8034f46ee13bc5cd74828';
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
-if(localStorage.getItem('ws-ok')==='1'||sessionStorage.getItem('ws-ok')==='1')unlock();
+if(localStorage.getItem('ws-ok2')==='1'||sessionStorage.getItem('ws-ok2')==='1')unlock();
 document.getElementById('gateform').addEventListener('submit',async function(e){
   e.preventDefault();
   var h='';
   try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
-  if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}
+  if(h===HASH){localStorage.setItem('ws-ok2','1');localStorage.setItem('ws-ok','1');unlock()}
   else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
 });
 })();

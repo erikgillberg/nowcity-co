@@ -259,7 +259,7 @@ body.embed .main{max-height:none;overflow:visible;padding:14px 16px 26px}
 <div id="gate"><div class="gp">
   <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#d9a26c">Now City West Salem</div>
   <h1>Upside<br>Explorer</h1>
-  <p>Internal upside explorer. Enter the access code to continue.</p>
+  <p>Internal upside explorer. Enter the investor access code to continue.</p>
   <form id="gateform"><input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
   <button type="submit">Enter</button><div class="err" id="gateerr"></div></form>
 </div></div>
@@ -277,6 +277,7 @@ body.embed .main{max-height:none;overflow:visible;padding:14px 16px 26px}
           <li><a href="activation.html">Activation Plan</a></li>
           <li><a href="coalition-building.html">Capital City Compact</a></li>
           <li><a href="coalition-strategy.html">Coalition &amp; Partner Strategy</a></li>
+          <li><a href="partners.html">Partner Strategy</a></li>
           <li class="dd-head">Research &amp; Precedents</li>
           <li><a href="research.html">District Economic Development</a></li>
           <li><a href="district-value.html">District Value Creation</a></li>
@@ -291,7 +292,9 @@ body.embed .main{max-height:none;overflow:visible;padding:14px 16px 26px}
           <li><a href="whoosh.html">Whoosh by Swyft Cities</a></li>
         </ul>
       </li>
-      <li class="dd"><a href="investor-portal.html">Investor Portal</a>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="dd pill"><a href="investor-portal.html">Investor Portal</a>
         <ul class="ddm">
           <li class="core"><a href="investor-portal.html">District Capitalization</a></li>
           <li class="core"><a href="plan.html">Business Plan</a></li>
@@ -304,8 +307,6 @@ body.embed .main{max-height:none;overflow:visible;padding:14px 16px 26px}
           <li><a href="design-engineering.html">Delivery Teams</a></li>
         </ul>
       </li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -698,13 +699,13 @@ body.embed .main{max-height:none;overflow:visible;padding:14px 16px 26px}
 <script>
 // ===== passcode gate (same code as the rest of the site) =====
 (function(){
-const HASH='aad5d67e3ddeda88953d6714e4569a4399b3201023dae82d5931a6c376de96d4';
+const HASH='ca2d692d44cac518f4293884ad6be8c1f9b9f381e6f8034f46ee13bc5cd74828';
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
-if(localStorage.getItem('ws-ok')==='1'||sessionStorage.getItem('ws-ok')==='1')unlock();
+if(localStorage.getItem('ws-ok2')==='1'||sessionStorage.getItem('ws-ok2')==='1')unlock();
 document.getElementById('gateform').addEventListener('submit',async function(e){e.preventDefault();
 let h='';try{h=await sha256(document.getElementById('code').value.trim())}catch(_){ }
-if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}});
+if(h===HASH){localStorage.setItem('ws-ok2','1');localStorage.setItem('ws-ok','1');unlock()}else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}});
 })();
 
 // ===== shared constants (mirror the base-case engine) =====
