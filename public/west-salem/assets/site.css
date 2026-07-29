@@ -244,8 +244,8 @@ body.gated .page{filter:blur(14px);pointer-events:none;user-select:none}
 }
 
 /* Investor Portal pill */
-.navlinks .pill>a{border:1px solid #d9a26c;border-radius:999px;padding:7px 16px;color:#d9a26c!important}
+.navlinks .pill>a{border:1px solid #d9a26c;border-radius:999px;padding:7px 16px;color:#d9a26c!important;background:rgba(24,21,17,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .navlinks .pill>a:hover{background:#d9a26c;color:#1d1a16!important}
-nav.scrolled .navlinks .pill>a,nav.solid .navlinks .pill>a{color:#a8703f!important;border-color:#a8703f}
+nav.scrolled .navlinks .pill>a,nav.solid .navlinks .pill>a{color:#a8703f!important;border-color:#a8703f;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
 nav.scrolled .navlinks .pill>a:hover,nav.solid .navlinks .pill>a:hover{background:#a8703f;color:#fff!important}
 .navlinks .dd.pill .ddm{left:auto;right:0}
