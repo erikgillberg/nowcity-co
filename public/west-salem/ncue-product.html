@@ -143,6 +143,33 @@ footer .bm{font-family:var(--serif);color:#fff;font-size:18px;margin-bottom:8px}
 </style>
 </head>
 <body>
+<div id="ncgate" style="position:fixed;inset:0;background:#1d1a16;z-index:9999;display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif">
+  <div style="max-width:360px;width:90%">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#d9a26c;margin-bottom:14px">Edgewater West Salem</div>
+    <h1 style="font-family:Georgia,serif;font-size:34px;color:#f0ebe0;margin:0 0 12px">Investor<br>Access</h1>
+    <p style="font-size:14px;color:#d8d2c4;margin:0 0 18px">This page contains detailed underwriting material, shared individually. Enter the investor access code to continue.</p>
+    <form id="ncgateform"><input type="password" id="nccode" placeholder="Access code" autocomplete="off" autofocus style="width:100%;padding:13px 14px;border:1px solid #3d392f;border-radius:6px;background:#15130f;color:#f0ebe0;font-size:15px;box-sizing:border-box">
+    <button type="submit" style="margin-top:12px;width:100%;padding:13px;border:none;border-radius:6px;background:#d9a26c;color:#1d1a16;font-weight:700;font-size:14px;cursor:pointer">Enter</button>
+    <div id="ncgateerr" style="color:#e08a8a;font-size:13px;margin-top:10px;min-height:18px"></div></form>
+  </div>
+</div>
+<script>
+(function(){
+const HASH='ca2d692d44cac518f4293884ad6be8c1f9b9f381e6f8034f46ee13bc5cd74828';
+function unlock(){var g=document.getElementById('ncgate');if(g)g.style.display='none';document.documentElement.style.overflow=''}
+document.documentElement.style.overflow='hidden';
+if(localStorage.getItem('ws-ok2')==='1'||sessionStorage.getItem('ws-ok2')==='1')unlock();
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+document.getElementById('ncgateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('nccode').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('ws-ok2','1');localStorage.setItem('ws-ok','1');unlock()}
+  else{document.getElementById('ncgateerr').textContent='Incorrect access code.';document.getElementById('nccode').value=''}
+});
+})();
+</script>
+
 
 <nav>
   <div class="wrap">
