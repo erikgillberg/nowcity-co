@@ -64,6 +64,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
 .dkcard .contact{margin-top:10px;font-size:11.5px;display:flex;flex-wrap:wrap;gap:6px}
 .dkcard .contact a{border:1px solid var(--line,#3d392f);border-radius:999px;padding:3px 9px;text-decoration:none;color:var(--muted,#948d80)}
 .dkcard .contact a:hover{color:var(--accent,#d9a26c);border-color:var(--accent,#d9a26c)}
+.dkcard .mono{width:56px;height:56px;border-radius:12px;float:right;margin:0 0 8px 10px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:19px;color:#1d1a16;background:var(--gc,#d9a26c);font-weight:700}
+.dkcard.orgcard{border-style:dashed}
 .dkghead{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:36px 0 4px;color:var(--gc,#d9a26c)}
 .boardcta{display:block;background:rgba(217,162,108,.08);border:1px solid var(--accent,#d9a26c);border-radius:9px;padding:22px 26px;margin:34px 0;text-decoration:none}
 .boardcta b{font-family:var(--serif);font-size:19px;color:var(--ink-strong,#f0ebe0)}
@@ -84,30 +86,35 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
 
 <h2>The people</h2>
 <p>Every person below is a real relationship: someone Erik has met and stayed connected with. They are presented here as <strong>potential</strong> coalition members and partners, grouped by the role their world suggests, with contact details from Erik&rsquo;s own network export. Nothing on this page implies commitment.</p>
+<p style="margin-top:6px">The final two groups below are a different card type: <strong>organizations and companies</strong> (dashed cards) rather than personal relationships. They are targets and context; the people above them are the paths in.</p>
 <div id="dkpeople"></div>
 
 <h2>What happens next</h2>
 <p>This roster becomes a coalition the same way Salem&rsquo;s does: the ask ladder (advice before money, always), a small number of convenings, named pilots, and one tracked pipeline. The natural first moves: (1) test the product-of-Denmark framing with three trusted connections in different groups; (2) open the Trade Council conversation through the people already adjacent to it; (3) define what the demonstration district specifically asks of Danish partners: design authorship, systems integration, product supply, capital, or presence. Dated addenda below as conversations happen.</p>
 </article></div>
-<script src="denmark-data.js"></script>
+<script src="denmark-data.js?v=3"></script>
 <script>
 (function(){
   var wrap=document.getElementById('dkpeople');
-  var order=["capital","design","circular","energy","ecosystem","culture","crown"];
+  var order=["capital","design","circular","energy","ecosystem","culture","crown","platform","industry"];
+  var ALL=DK_PEOPLE.concat(window.DK_ORGS||[]);
   order.forEach(function(g){
     var info=DK_GROUPS[g];
-    var people=DK_PEOPLE.filter(function(p){return p.group===g});
+    var people=ALL.filter(function(p){return p.group===g});
     if(!people.length)return;
     var h=document.createElement('div');h.className='dkghead';h.style.setProperty('--gc',info.color);h.textContent=info.label+' · '+people.length;
     wrap.appendChild(h);
     var grid=document.createElement('div');grid.className='dkgrid';
     people.forEach(function(p){
-      var c=document.createElement('div');c.className='dkcard';c.style.setProperty('--gc',info.color);
+      var c=document.createElement('div');c.className='dkcard'+(p.kind==='org'?' orgcard':'');c.style.setProperty('--gc',info.color);
       var contacts='';
       if(p.email)contacts+='<a href="mailto:'+p.email+'">'+p.email+'</a>';
       if(p.phone)contacts+='<a href="tel:'+p.phone.replace(/\s/g,'')+'">'+p.phone+'</a>';
       if(p.linkedin)contacts+='<a href="'+p.linkedin+'" target="_blank" rel="noopener">LinkedIn</a>';
-      c.innerHTML='<img src="img/denmark/'+p.slug+'.jpg" alt="'+p.name+'" loading="lazy">'+
+      if(p.url)contacts+='<a href="'+p.url+'" target="_blank" rel="noopener">Website</a>';
+      var mono=p.name.split(/\s+/).map(function(w){return w[0]}).join('').replace(/[^A-Za-z]/g,'').slice(0,3);
+      var media=(p.kind==='org')?('<div class="mono">'+mono+'</div>'):('<img src="img/denmark/'+p.slug+'.jpg" alt="'+p.name+'" loading="lazy">');
+      c.innerHTML=media+
         '<h3>'+p.name+'</h3><div class="role">'+p.title+(p.org?' · '+p.org:'')+'</div>'+
         '<div class="blurb">'+p.blurb+'</div>'+(contacts?'<div class="contact">'+contacts+'</div>':'');
       grid.appendChild(c);

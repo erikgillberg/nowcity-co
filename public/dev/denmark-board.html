@@ -14,47 +14,49 @@
 html,body{height:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);display:flex;flex-direction:column;overflow:hidden}
 body.gated #app{display:none}
-#topbar{display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(21,18,15,.97);flex-wrap:wrap;z-index:20}
-#topbar .brand{font-family:var(--serif);font-size:15px;color:var(--ink-strong);text-decoration:none;margin-right:8px;white-space:nowrap}
+#topbar{display:flex;align-items:center;gap:7px;padding:9px 14px;border-bottom:1px solid var(--line);background:rgba(21,18,15,.97);flex-wrap:wrap;z-index:20}
+#topbar .brand{font-family:var(--serif);font-size:14px;color:var(--ink-strong);text-decoration:none;margin-right:6px;white-space:nowrap}
 #topbar .brand span{color:var(--accent)}
-#topbar button,#topbar label.btn{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 13px;cursor:pointer}
-#topbar button:hover{color:var(--accent);border-color:var(--accent)}
+#topbar button,#topbar label.btn{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer}
+#topbar button:hover,#topbar label.btn:hover{color:var(--accent);border-color:var(--accent)}
 #topbar button.on{background:var(--accent);color:#1d1a16;border-color:var(--accent)}
-#topbar .sep{width:1px;height:22px;background:var(--line);margin:0 4px}
-#topbar .hint{font-size:11.5px;color:var(--muted);margin-left:auto;white-space:nowrap}
+#topbar button:disabled{opacity:.35;cursor:default}
+#topbar button:disabled:hover{color:var(--muted);border-color:var(--line)}
+#topbar .sep{width:1px;height:20px;background:var(--line);margin:0 3px}
+#topbar .hint{font-size:11px;color:var(--muted);margin-left:auto;white-space:nowrap}
+#palette{display:none;align-items:center;gap:4px;flex-wrap:wrap}
+#palette.show{display:flex}
+#palette .sw{display:flex;align-items:center;gap:0;font-size:9.5px;font-weight:700;letter-spacing:.05em;color:#1d1a16;padding:3px 9px;border-radius:999px;cursor:pointer;border:2px solid transparent;text-transform:uppercase}
+#palette .sw.on{border-color:#fff}
 #app{flex:1;display:flex;flex-direction:column;min-height:0}
 #viewport{flex:1;overflow:auto;position:relative;background:
  radial-gradient(circle at 1px 1px, rgba(217,162,108,.10) 1px, transparent 1.5px) 0 0/28px 28px}
-#board{position:relative;width:4400px;height:3000px;transform-origin:0 0}
+#board{position:relative;width:4600px;height:3200px;transform-origin:0 0}
 #wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-#wires .link{stroke:#d9a26c;stroke-width:2;fill:none;opacity:.75;pointer-events:stroke;cursor:pointer}
+#wires .link{stroke:#d9a26c;stroke-width:2;fill:none;opacity:.7;pointer-events:stroke;cursor:pointer}
 #wires .link:hover{opacity:1;stroke-width:3}
 #wires .stroke{stroke:#8fb98f;stroke-width:2.5;fill:none;opacity:.8;stroke-linecap:round;stroke-linejoin:round;pointer-events:stroke;cursor:pointer}
 #wires text{font-family:var(--sans);font-size:11px;fill:#e8d9be;pointer-events:none}
-.glabel{position:absolute;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:.55;pointer-events:none}
 .node{position:absolute;width:172px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--gc,#d9a26c);border-radius:9px;padding:10px 12px;cursor:grab;user-select:none;box-shadow:0 3px 14px rgba(0,0,0,.35)}
 .node:active{cursor:grabbing}
 .node img{width:44px;height:44px;border-radius:50%;object-fit:cover;float:left;margin:0 8px 4px 0;border:1px solid var(--line);pointer-events:none}
+.node .mono{width:40px;height:40px;border-radius:9px;float:left;margin:0 8px 4px 0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;font-weight:700;color:#1d1a16;background:var(--gc,#d9a26c);pointer-events:none}
 .node .nm{font-family:var(--serif);font-size:12.5px;color:var(--ink-strong);line-height:1.3}
 .node .rl{font-size:10px;color:var(--muted);line-height:1.35;margin-top:3px;clear:both}
+.node .gtag{font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gc,#d9a26c);margin-top:5px}
+.node.org{border-style:dashed;border-top-style:solid}
 .node.sel{outline:2px solid var(--accent);outline-offset:2px}
-.node.anchor{width:200px;border:2px solid var(--accent);background:#2e2823;text-align:center}
+.node.anchor{width:210px;border:2px solid var(--accent);background:#2e2823;text-align:center}
 .node.anchor .nm{font-size:15px}
-.note{position:absolute;min-width:140px;max-width:240px;background:var(--nc,#e8d9be);color:#2a251d;border-radius:6px;padding:22px 12px 10px;font-size:12.5px;line-height:1.45;box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:grab;border-bottom:3px solid rgba(0,0,0,.18)}
-.note .tag{position:absolute;top:4px;left:10px;font-size:8.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(42,37,29,.55);pointer-events:none}
-#palette{display:none;align-items:center;gap:5px}
-#palette.show{display:flex}
-#palette .sw{width:18px;height:18px;border-radius:5px;cursor:pointer;border:2px solid transparent}
-#palette .sw.on{border-color:#fff}
-#topbar button:disabled{opacity:.35;cursor:default}
-#topbar button:disabled:hover{color:var(--muted);border-color:var(--line)}
-.note .grip{position:absolute;top:4px;left:0;right:0;text-align:center;font-size:9px;letter-spacing:.2em;color:#8a7c5e;pointer-events:none}
-.note .txt{outline:none;cursor:text;min-height:18px}
-.note .del{position:absolute;top:2px;right:6px;cursor:pointer;color:#8a7c5e;font-size:12px}
-#legend{position:fixed;bottom:14px;left:14px;background:rgba(21,18,15,.94);border:1px solid var(--line);border-radius:9px;padding:10px 14px;font-size:11px;z-index:15;max-width:230px}
+.note{position:absolute;width:250px;background:var(--nc,#e8d9be);color:#2a251d;border-radius:6px;padding:24px 12px 10px;font-size:12px;line-height:1.45;box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:grab;border-bottom:3px solid rgba(0,0,0,.18)}
+.note .tag{position:absolute;top:5px;left:10px;font-size:8.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(42,37,29,.6);pointer-events:none}
+.note .grip{position:absolute;top:4px;right:24px;font-size:9px;color:rgba(42,37,29,.4);pointer-events:none}
+.note .del{position:absolute;top:2px;right:7px;cursor:pointer;color:rgba(42,37,29,.5);font-size:12px}
+.note .txt{outline:none;cursor:text;min-height:18px;white-space:pre-wrap}
+#legend{position:fixed;bottom:14px;left:14px;background:rgba(21,18,15,.94);border:1px solid var(--line);border-radius:9px;padding:10px 14px;font-size:11px;z-index:15;max-width:240px}
 #legend b{display:block;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 #legend .li{display:flex;align-items:center;gap:7px;margin:3px 0}
-#legend .sw{width:10px;height:10px;border-radius:3px}
+#legend .sw{width:10px;height:10px;border-radius:3px;flex:none}
 #gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:50}
 #gate .panel{max-width:360px;width:90%}
 #gate .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
@@ -75,22 +77,27 @@ body.gated #app{display:none}
 
 <div id="app">
 <div id="topbar">
-  <a class="brand" href="denmark-coalition.html">&larr; Denmark <span>Coalition Board</span></a>
-  <button id="m-move" class="on">Move</button>
-  <button id="m-connect">Connect</button>
-  <button id="m-draw">Draw</button>
-  <button id="m-erase">Erase</button>
-  <button id="m-note">Note</button>
+  <a class="brand" href="denmark-coalition.html">&larr; Denmark <span>Board</span></a>
+  <button id="m-move" class="on" title="Drag cards and notes">Move</button>
+  <button id="m-connect" title="Click two cards to link them">Connect</button>
+  <button id="m-draw" title="Freehand drawing">Draw</button>
+  <button id="m-erase" title="Click lines or drawings to remove them">Erase</button>
+  <button id="m-note" title="Add a sticky note; pick a color first">Note</button>
   <span id="palette"></span>
   <span class="sep"></span>
-  <button id="b-undo" title="Undo (Cmd/Ctrl+Z)" disabled>&#8630; Undo</button>
-  <button id="b-redo" title="Redo (Cmd/Ctrl+Shift+Z)" disabled>&#8631; Redo</button>
+  <button id="b-undo" title="Undo (Cmd/Ctrl+Z)" disabled>&#8630;</button>
+  <button id="b-redo" title="Redo (Cmd/Ctrl+Shift+Z)" disabled>&#8631;</button>
   <span class="sep"></span>
-  <button id="b-export">Export</button>
-  <label class="btn" for="importfile" style="display:inline-block">Import</label>
+  <button id="z-out" title="Zoom out">&minus;</button>
+  <button id="z-val" title="Reset zoom to 100%">100%</button>
+  <button id="z-in" title="Zoom in">+</button>
+  <span class="sep"></span>
+  <button id="b-snap" title="Download the board as a PNG image">Snapshot</button>
+  <button id="b-export" title="Download the board as a JSON file">Export</button>
+  <label class="btn" for="importfile" title="Load a board JSON file">Import</label>
   <input type="file" id="importfile" accept=".json" style="display:none">
-  <button id="b-reset">Reset Layout</button>
-  <span class="hint" id="hint">Drag cards · your board saves automatically in this browser</span>
+  <button id="b-reset" title="Return to the curated layout">Reset</button>
+  <span class="hint" id="hint">Drag cards · autosaves in this browser</span>
 </div>
 <div id="viewport"><div id="board">
   <svg id="wires"><g id="g-links"></g><g id="g-strokes"></g></svg>
@@ -98,47 +105,82 @@ body.gated #app{display:none}
 <div id="legend"><b>Groups</b><div id="legendrows"></div></div>
 </div>
 
-<script src="denmark-data.js"></script>
+<script src="denmark-data.js?v=3"></script>
 <script>
 (function(){
-const LS='dk-board-v2';
+const LS='dk-board-v3';
 const board=document.getElementById('board');
 const viewport=document.getElementById('viewport');
 const gLinks=document.getElementById('g-links');
 const gStrokes=document.getElementById('g-strokes');
-let mode='move';
-let state=null;
-let selected=null;
-let noteColor='plain';
+const SHORT={capital:'Capital',design:'Design',circular:'Science',energy:'Energy',ecosystem:'Civic',culture:'Culture',platform:'Platform',industry:'Industry',crown:'Crown'};
+let mode='move', state=null, selected=null, noteColor='plain', scale=1;
 const hist=[], redoStack=[];
+
+const ANCHOR={slug:'now-city',name:'Now City · Erik Gillberg',title:'Master developer of Edgewater West Salem: the American demonstration district for a neighborhood that is a product of Denmark.',group:'crown',anchor:true};
+const ALL=[ANCHOR].concat(DK_PEOPLE).concat(window.DK_ORGS||[]);
+
 function snapshot(){hist.push(JSON.stringify(state));if(hist.length>80)hist.shift();redoStack.length=0;histUI();}
 function histUI(){document.getElementById('b-undo').disabled=!hist.length;document.getElementById('b-redo').disabled=!redoStack.length;}
 function doUndo(){if(!hist.length)return;redoStack.push(JSON.stringify(state));state=JSON.parse(hist.pop());save();renderAll();histUI();}
 function doRedo(){if(!redoStack.length)return;hist.push(JSON.stringify(state));state=JSON.parse(redoStack.pop());save();renderAll();histUI();}
 
-const ANCHOR={slug:'now-city',name:'Now City · Erik Gillberg',title:'Master developer of Edgewater West Salem. The American demonstration district for a neighborhood that is a product of Denmark.',group:'crown',anchor:true};
-
-// ---- default layout ----
+// ---------- curated default ----------
 function defaultState(){
   const clusters={
-    crown:    {cx:2200,cy:340,cols:2},
-    capital:  {cx:3350,cy:900,cols:2},
-    design:   {cx:900,cy:1000,cols:3},
-    circular: {cx:1050,cy:2050,cols:3},
-    energy:   {cx:3250,cy:1850,cols:2},
-    ecosystem:{cx:2200,cy:2250,cols:3},
-    culture:  {cx:2250,cy:1050,cols:3}
+    ecosystem:{cx:620,cy:520,cols:3},
+    platform:{cx:1610,cy:470,cols:3},
+    crown:{cx:2620,cy:340,cols:1},
+    culture:{cx:3260,cy:520,cols:3},
+    design:{cx:700,cy:1500,cols:3},
+    capital:{cx:3620,cy:1300,cols:2},
+    circular:{cx:900,cy:2420,cols:3},
+    industry:{cx:2200,cy:2650,cols:3},
+    energy:{cx:3560,cy:2350,cols:2}
   };
-  const pos={};
-  pos['now-city']=[2100,1500];
-  const counts={};
-  DK_PEOPLE.forEach(p=>{
+  const pos={}; const counts={};
+  pos['now-city']=[2280,1560];
+  ALL.forEach(p=>{
+    if(p.anchor)return;
     const c=clusters[p.group]||clusters.ecosystem;
     const i=(counts[p.group]=(counts[p.group]||0)+1)-1;
     const col=i%c.cols, row=Math.floor(i/c.cols);
-    pos[p.slug]=[c.cx+col*200-((c.cols-1)*100), c.cy+row*150];
+    pos[p.slug]=[c.cx+col*200-((c.cols-1)*100), c.cy+row*160];
   });
-  return {pos:pos,links:[],strokes:[],notes:[]};
+  const gn=(g,x,y,t)=>({x:x,y:y,g:g,text:t});
+  const notes=[
+    gn('plain',120,90,"THE COALITION BOARD\nGoal: turn these relationships into the coalition that makes a Now City Neighborhood a product of Denmark, with Edgewater as the first demonstration.\nTools: MOVE drags cards and notes. CONNECT links two cards (click a line to delete). DRAW sketches freehand. NOTE adds stickies; pick a labeled color first. Undo with Cmd+Z. Zoom with + and -. SNAPSHOT downloads a PNG; EXPORT/IMPORT shares the whole board. Everything autosaves in this browser."),
+    gn('plain',2660,1360,"GAP ANALYSIS · WHO WE STILL NEED\n1. Trade Council Sustainable Urban Development team + Innovation Centre Denmark SV: the official bridge.\n2. State of Green and DAC staff to carry the story.\n3. DenmarkBridge leadership.\n4. Realdania: philanthropic urbanism.\n5. EIFO for export finance.\n6. A Danish contractor or industrialized builder.\n7. Product majors: Danfoss, Grundfos, VELUX, ROCKWOOL.\n8. A pension LP beyond ATP (PFA or PKA).\n9. LEGO Foundation for the play and family layer.\n10. US side: Danish Consulate SF + American-Scandinavian Foundation (a royal patronage)."),
+    gn('ecosystem',340,200,"ECOSYSTEM, CIVIC & STRATEGY\nConveners and city-craft. Ask: who hosts the first Copenhagen roundtable? Lars Jensen legitimizes; Mette and The Link model the coalition mechanics."),
+    gn('platform',1400,160,"PLATFORM ORGS\nThe official machinery: everything here exists to carry a project like ours. Enter through the people, never through inboxes."),
+    gn('crown',2500,120,"THE CROWN\nAlignment, never endorsement. Build something worth a royal delegation; let Denmark decide when."),
+    gn('culture',3120,200,"CULTURE, HOSPITALITY & SPORT\nThe story layer: Danish hospitality, certification, education, and sport make the district legible to families and visitors."),
+    gn('design',420,1180,"DESIGN & ARCHITECTURE\nThe authorship bench. Ask: which firm wants Edgewater as its US demonstration? BIG, Henning Larsen, EFFEKT, SLA, CEBRA, and the Vandkunsten lineage are the product-of-Denmark signature."),
+    gn('capital',3380,980,"CAPITAL & INSTITUTIONAL\nWho funds the bridge. First asks: Stig for the Nordic impact-capital map; Urban Partners on US appetite; the EIFO precedent via Home.Earth."),
+    gn('circular',620,2100,"CIRCULAR & BUILDING SCIENCE\nThe proof layer: Denmark's whole-life carbon limits, reuse practice, and LCA science give the district its credibility. Ask: adapt the Danish methods to Oregon code."),
+    gn('industry',1930,2350,"INDUSTRY MAJORS\nThe product-of-Denmark supply chain. Every name here is a reason the Trade Council should care. VELUX Living Places is the nearest existing proof of the housing thesis."),
+    gn('energy',3330,2050,"ENERGY, MOBILITY & INFRASTRUCTURE\nDistrict systems. First ask: Christopher Sørensen; he already advises the Trade Council on US re-industrialization sites.")
+  ];
+  const links=[
+    {a:'mikkel-bulow-lehnsby',b:'clause-mathisen',label:'Urban Partners'},
+    {a:'soren-stig',b:'rasmus-nogaard',label:'Home.Earth'},
+    {a:'soren-stig',b:'kasper-guldager-jensen',label:'Home.Earth'},
+    {a:'rasmus-nogaard',b:'kasper-guldager-jensen',label:'Home.Earth'},
+    {a:'nathan-smith',b:'jesper-boye-andersen',label:'BIG'},
+    {a:'lars-gemynthe-gylling',b:'mikkel-schlesinger',label:'CEBRA'},
+    {a:'ditte-lysgaard-vind',b:'jacob-rask',label:'BLOXHUB'},
+    {a:'ditte-lysgaard-vind',b:'org-bloxhub',label:'co-lead'},
+    {a:'jacob-rask',b:'org-bloxhub',label:'director'},
+    {a:'lee-wray-davies',b:'chiara-cottone',label:'FEE'},
+    {a:'christopher-sorensen',b:'org-trade-council',label:'advisor'},
+    {a:'soren-stig',b:'org-eifo',label:'via Home.Earth round'},
+    {a:'ditte-lysgaard-vind',b:'org-ddc',label:'Design Council chair'},
+    {a:'king-frederik-x-of-denmark',b:'org-state-of-green',label:'patron'},
+    {a:'king-frederik-x-of-denmark',b:'org-dac',label:'patron'},
+    {a:'king-frederik-x-of-denmark',b:'org-ddc',label:'patron'},
+    {a:'king-frederik-x-of-denmark',b:'org-denmarkbridge',label:'patron'}
+  ];
+  return {pos:pos,links:links,strokes:[],notes:notes};
 }
 function load(){
   try{const s=JSON.parse(localStorage.getItem(LS)); if(s&&s.pos)return s;}catch(e){}
@@ -146,36 +188,45 @@ function load(){
 }
 function save(){localStorage.setItem(LS,JSON.stringify(state));}
 
-// ---- render ----
+// ---------- render ----------
 function nodeEl(p){
   const d=document.createElement('div');
-  d.className='node'+(p.anchor?' anchor':'');
+  d.className='node'+(p.anchor?' anchor':'')+(p.kind==='org'?' org':'');
   d.dataset.slug=p.slug;
-  d.style.setProperty('--gc',(DK_GROUPS[p.group]||{}).color||'#d9a26c');
-  const img=p.anchor?'':'<img src="img/denmark/'+p.slug+'.jpg" alt="" draggable="false">';
-  d.innerHTML=img+'<div class="nm">'+p.name+'</div><div class="rl">'+(p.title||'')+(p.org?' · '+p.org:'')+'</div>';
+  const gi=DK_GROUPS[p.group]||{};
+  d.style.setProperty('--gc',gi.color||'#d9a26c');
+  let media='';
+  if(!p.anchor){
+    if(p.kind==='org'){
+      const mono=p.name.split(/\s+/).map(w=>w[0]).join('').replace(/[^A-Za-zØÅÆ]/g,'').slice(0,3);
+      media='<div class="mono">'+mono+'</div>';
+    } else {
+      media='<img src="img/denmark/'+p.slug+'.jpg" alt="" draggable="false">';
+    }
+  }
+  d.innerHTML=media+'<div class="nm">'+p.name+'</div><div class="rl">'+(p.title||'')+(p.org&&p.kind!=='org'?' · '+p.org:'')+'</div>'+
+    '<div class="gtag">'+(p.kind==='org'?'ORG · ':'')+(gi.label||'')+'</div>';
   return d;
 }
 function renderNodes(){
   document.querySelectorAll('.node').forEach(n=>n.remove());
-  [ANCHOR].concat(DK_PEOPLE).forEach(p=>{
+  ALL.forEach(p=>{
     const el=nodeEl(p);
     const xy=state.pos[p.slug]||[100,100];
     el.style.left=xy[0]+'px'; el.style.top=xy[1]+'px';
     board.appendChild(el);
   });
-  // group labels near cluster tops (static hints)
-  document.querySelectorAll('.glabel').forEach(n=>n.remove());
 }
 function center(slug){
   const el=document.querySelector('.node[data-slug="'+CSS.escape(slug)+'"]');
-  if(!el)return [0,0];
+  if(!el)return null;
   return [el.offsetLeft+el.offsetWidth/2, el.offsetTop+el.offsetHeight/2];
 }
 function renderLinks(){
   gLinks.innerHTML='';
   state.links.forEach((l,i)=>{
     const a=center(l.a), b=center(l.b);
+    if(!a||!b)return;
     const path=document.createElementNS('http://www.w3.org/2000/svg','path');
     const mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2;
     path.setAttribute('d','M'+a[0]+' '+a[1]+' Q '+mx+' '+(my-30)+' '+b[0]+' '+b[1]);
@@ -205,13 +256,12 @@ function renderNotes(){
     d.style.left=n.x+'px'; d.style.top=n.y+'px';
     const gi=(n.g&&n.g!=='plain')?DK_GROUPS[n.g]:null;
     if(gi)d.style.setProperty('--nc',gi.color);
-    const tag=gi?('<div class="tag">'+gi.label+'</div>'):'';
-    d.innerHTML=tag+'<div class="grip">· · ·</div><div class="del" title="Delete">✕</div><div class="txt" contenteditable="true"></div>';
+    const tag=gi?('<div class="tag">'+gi.label+'</div>'):'<div class="tag">Note</div>';
+    d.innerHTML=tag+'<div class="grip">drag</div><div class="del" title="Delete note">✕</div><div class="txt" contenteditable="true"></div>';
     d.querySelector('.txt').textContent=n.text||'';
     board.appendChild(d);
   });
 }
-function renderAll(){renderNodes();renderLinks();renderStrokes();renderNotes();legend();}
 function legend(){
   const rows=document.getElementById('legendrows'); rows.innerHTML='';
   Object.keys(DK_GROUPS).forEach(g=>{
@@ -220,23 +270,28 @@ function legend(){
     rows.appendChild(r);
   });
 }
+function renderAll(){renderNodes();renderLinks();renderStrokes();renderNotes();legend();}
 
-// ---- modes ----
-const hints={move:'Drag cards · your board saves automatically in this browser',
- connect:'Click one card, then another, to draw a connection · click a line to delete it',
- draw:'Draw freehand on the board',
- erase:'Click a line or stroke to erase it',
- note:'Click anywhere on the board to add a sticky note'};
+// ---------- palette (labeled for colorblind accessibility) ----------
 function buildPalette(){
   const pal=document.getElementById('palette'); pal.innerHTML='';
-  const opts=[['plain','#e8d9be','Plain note']].concat(Object.keys(DK_GROUPS).map(g=>[g,DK_GROUPS[g].color,DK_GROUPS[g].label]));
+  const opts=[['plain','#e8d9be','Plain']].concat(Object.keys(DK_GROUPS).map(g=>[g,DK_GROUPS[g].color,SHORT[g]||g]));
   opts.forEach(o=>{
     const s=document.createElement('span');
-    s.className='sw'+(noteColor===o[0]?' on':''); s.style.background=o[1]; s.title=o[2];
+    s.className='sw'+(noteColor===o[0]?' on':''); s.style.background=o[1];
+    s.textContent=o[2];
+    s.title=(o[0]==='plain'?'Plain note':(DK_GROUPS[o[0]].label+' note'));
     s.addEventListener('click',()=>{noteColor=o[0];pal.querySelectorAll('.sw').forEach(x=>x.classList.remove('on'));s.classList.add('on');});
     pal.appendChild(s);
   });
 }
+
+// ---------- modes ----------
+const hints={move:'Drag cards and notes · autosaves in this browser',
+ connect:'Click one card, then another, to link them · click a line to delete it',
+ draw:'Draw freehand on the board',
+ erase:'Click a line or drawing to erase it',
+ note:'Pick a labeled color, then click the board to place a note'};
 function setMode(m){
   mode=m; selected=null;
   document.getElementById('palette').classList.toggle('show',m==='note');
@@ -250,20 +305,35 @@ function setMode(m){
   document.getElementById('m-'+x).addEventListener('click',()=>setMode(x));
 });
 
-// ---- interactions ----
+// ---------- zoom ----------
+function setZoom(z){
+  scale=Math.min(1.6,Math.max(.35,z));
+  board.style.transform='scale('+scale+')';
+  board.style.width=(4600*scale)+'px'; board.style.height=(3200*scale)+'px';
+  document.getElementById('z-val').textContent=Math.round(scale*100)+'%';
+}
+document.getElementById('z-in').addEventListener('click',()=>setZoom(scale+0.12));
+document.getElementById('z-out').addEventListener('click',()=>setZoom(scale-0.12));
+document.getElementById('z-val').addEventListener('click',()=>setZoom(1));
+
+// ---------- interactions ----------
 let drag=null, drawing=null;
+function bcoords(e){
+  const rect=board.getBoundingClientRect();
+  return [(e.clientX-rect.left)/scale,(e.clientY-rect.top)/scale];
+}
 board.addEventListener('pointerdown',e=>{
   const node=e.target.closest('.node');
   const note=e.target.closest('.note');
-  const rect=board.getBoundingClientRect();
-  const bx=e.clientX-rect.left, by=e.clientY-rect.top;
+  const c=bcoords(e); const bx=c[0], by=c[1];
   if(mode==='draw'&&!node&&!note){
     snapshot();
     drawing=[[Math.round(bx),Math.round(by)]];
     state.strokes.push(drawing); e.preventDefault(); return;
   }
   if(mode==='note'&&!node&&!note){
-    snapshot();state.notes.push({x:Math.round(bx),y:Math.round(by),text:'New note',g:noteColor});
+    snapshot();
+    state.notes.push({x:Math.round(bx),y:Math.round(by),text:'New note',g:noteColor});
     save();renderNotes(); setMode('move'); return;
   }
   if(node){
@@ -283,7 +353,6 @@ board.addEventListener('pointerdown',e=>{
     if(mode==='move'){
       snapshot();
       drag={el:node,slug:slug,ox:bx-node.offsetLeft,oy:by-node.offsetTop,type:'node'};
-      node.setPointerCapture&&node.setPointerCapture(e.pointerId);
       e.preventDefault();
     }
     return;
@@ -292,7 +361,7 @@ board.addEventListener('pointerdown',e=>{
     if(e.target.classList.contains('del')){
       const i=+note.dataset.i; snapshot(); state.notes.splice(i,1); save(); renderNotes(); return;
     }
-    if(e.target.classList.contains('txt')) return; // editing
+    if(e.target.classList.contains('txt')) return;
     if(mode==='move'){
       snapshot();
       drag={el:note,i:+note.dataset.i,ox:bx-note.offsetLeft,oy:by-note.offsetTop,type:'note'};
@@ -301,8 +370,7 @@ board.addEventListener('pointerdown',e=>{
   }
 });
 board.addEventListener('pointermove',e=>{
-  const rect=board.getBoundingClientRect();
-  const bx=e.clientX-rect.left, by=e.clientY-rect.top;
+  const c=bcoords(e); const bx=c[0], by=c[1];
   if(drawing){drawing.push([Math.round(bx),Math.round(by)]);renderStrokes();return;}
   if(!drag)return;
   const x=Math.max(0,Math.round(bx-drag.ox)), y=Math.max(0,Math.round(by-drag.oy));
@@ -311,10 +379,9 @@ board.addEventListener('pointermove',e=>{
   else{state.notes[drag.i].x=x;state.notes[drag.i].y=y;}
 });
 window.addEventListener('pointerup',()=>{
-  if(drawing){if(drawing.length<3){state.strokes.pop();renderStrokes();} drawing=null; save();}
+  if(drawing){if(drawing.length<3){state.strokes.pop();renderStrokes();hist.pop();histUI();} drawing=null; save();}
   if(drag){save();drag=null;}
 });
-// delete links/strokes by click
 document.getElementById('wires').addEventListener('click',e=>{
   if(mode!=='erase'&&mode!=='connect')return;
   if(e.target.classList.contains('link')){
@@ -323,11 +390,9 @@ document.getElementById('wires').addEventListener('click',e=>{
     snapshot(); state.strokes.splice(+e.target.dataset.i,1); save(); renderStrokes();
   }
 });
-// note text: snapshot once per editing session
 board.addEventListener('focusin',e=>{
   if(e.target.classList&&e.target.classList.contains('txt'))snapshot();
 });
-// note text save
 board.addEventListener('input',e=>{
   const note=e.target.closest('.note');
   if(note&&e.target.classList.contains('txt')){
@@ -335,7 +400,16 @@ board.addEventListener('input',e=>{
   }
 });
 
-// ---- toolbar ----
+// ---------- toolbar ----------
+document.getElementById('b-undo').addEventListener('click',doUndo);
+document.getElementById('b-redo').addEventListener('click',doRedo);
+window.addEventListener('keydown',e=>{
+  const mod=e.metaKey||e.ctrlKey;
+  if(!mod)return;
+  if(e.target.isContentEditable||/input|textarea/i.test(e.target.tagName))return;
+  if(e.key.toLowerCase()==='z'&&!e.shiftKey){e.preventDefault();doUndo();}
+  else if((e.key.toLowerCase()==='z'&&e.shiftKey)||e.key.toLowerCase()==='y'){e.preventDefault();doRedo();}
+});
 document.getElementById('b-export').addEventListener('click',()=>{
   const blob=new Blob([JSON.stringify(state,null,1)],{type:'application/json'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);
@@ -346,26 +420,110 @@ document.getElementById('importfile').addEventListener('change',e=>{
   f.text().then(t=>{try{const s=JSON.parse(t); if(s.pos){snapshot();state=s;save();renderAll();}}catch(err){alert('Not a valid board file.');}});
 });
 document.getElementById('b-reset').addEventListener('click',()=>{
-  if(confirm('Reset the board to the suggested layout? Your connections, drawings, and notes will be cleared.')){
+  if(confirm('Reset to the curated layout with default notes and connections? Your changes will be replaced (Undo can bring them back this session).')){
     snapshot(); state=defaultState(); save(); renderAll();
   }
 });
 
-document.getElementById('b-undo').addEventListener('click',doUndo);
-document.getElementById('b-redo').addEventListener('click',doRedo);
-window.addEventListener('keydown',e=>{
-  const mod=e.metaKey||e.ctrlKey;
-  if(!mod)return;
-  if(e.target.isContentEditable||/input|textarea/i.test(e.target.tagName))return;
-  if(e.key.toLowerCase()==='z'&&!e.shiftKey){e.preventDefault();doUndo();}
-  else if((e.key.toLowerCase()==='z'&&e.shiftKey)||e.key.toLowerCase()==='y'){e.preventDefault();doRedo();}
-});
+// ---------- PNG snapshot ----------
+function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function wrapText(ctx,text,x,y,maxW,lh,maxLines){
+  const words=String(text).split(/\s+/); let line='',lines=0;
+  for(let w of words){
+    const t=line?line+' '+w:w;
+    if(ctx.measureText(t).width>maxW&&line){ctx.fillText(line,x,y);y+=lh;line=w;lines++;if(maxLines&&lines>=maxLines)return y;}
+    else line=t;
+  }
+  if(line)ctx.fillText(line,x,y),y+=lh;
+  return y;
+}
+function snapshotPNG(){
+  const btn=document.getElementById('b-snap');btn.disabled=true;btn.textContent='Rendering...';
+  // bounding box
+  let minX=1e9,minY=1e9,maxX=0,maxY=0;
+  const consider=(x,y,w,h)=>{minX=Math.min(minX,x);minY=Math.min(minY,y);maxX=Math.max(maxX,x+w);maxY=Math.max(maxY,y+h);};
+  Object.values(state.pos).forEach(p=>consider(p[0],p[1],210,110));
+  state.notes.forEach(n=>consider(n.x,n.y,260,160));
+  state.strokes.forEach(s=>s.forEach(pt=>consider(pt[0],pt[1],0,0)));
+  minX=Math.max(0,minX-60);minY=Math.max(0,minY-100);maxX+=60;maxY+=60;
+  const W=maxX-minX,H=maxY-minY,S=Math.min(1,2600/W);
+  const cv=document.createElement('canvas');cv.width=Math.round(W*S);cv.height=Math.round(H*S);
+  const ctx=cv.getContext('2d');ctx.scale(S,S);ctx.translate(-minX,-minY);
+  ctx.fillStyle='#1d1a16';ctx.fillRect(minX,minY,W,H);
+  // preload photos
+  const people=ALL.filter(p=>!p.anchor&&p.kind!=='org');
+  const imgs={};
+  Promise.all(people.map(p=>new Promise(res=>{
+    const im=new Image();im.onload=()=>{imgs[p.slug]=im;res()};im.onerror=res;im.src='img/denmark/'+p.slug+'.jpg';
+  }))).then(()=>{
+    // strokes
+    ctx.strokeStyle='#8fb98f';ctx.lineWidth=2.5;ctx.lineJoin='round';ctx.lineCap='round';
+    state.strokes.forEach(s=>{ctx.beginPath();s.forEach((pt,i)=>i?ctx.lineTo(pt[0],pt[1]):ctx.moveTo(pt[0],pt[1]));ctx.stroke();});
+    // links
+    ctx.strokeStyle='rgba(217,162,108,.8)';ctx.lineWidth=2;
+    ctx.font='11px Inter, sans-serif';
+    state.links.forEach(l=>{
+      const a=center(l.a),b=center(l.b);if(!a||!b)return;
+      const mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2;
+      ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.quadraticCurveTo(mx,my-30,b[0],b[1]);ctx.stroke();
+      if(l.label){ctx.fillStyle='#e8d9be';ctx.textAlign='center';ctx.fillText(l.label,mx,my-34);}
+    });
+    // notes
+    state.notes.forEach(n=>{
+      const gi=(n.g&&n.g!=='plain')?DK_GROUPS[n.g]:null;
+      const col=gi?gi.color:'#e8d9be';
+      const lines=String(n.text||'').length;
+      const h=Math.max(70,Math.min(300,34+Math.ceil(lines/34)*15));
+      ctx.fillStyle=col;roundRect(ctx,n.x,n.y,250,h,6);ctx.fill();
+      ctx.fillStyle='rgba(42,37,29,.6)';ctx.font='bold 8px Inter, sans-serif';ctx.textAlign='left';
+      ctx.fillText((gi?gi.label:'NOTE').toUpperCase(),n.x+10,n.y+13);
+      ctx.fillStyle='#2a251d';ctx.font='11px Inter, sans-serif';
+      wrapText(ctx,n.text||'',n.x+10,n.y+28,230,14,Math.floor((h-30)/14));
+    });
+    // nodes
+    ALL.forEach(p=>{
+      const xy=state.pos[p.slug];if(!xy)return;
+      const gi=DK_GROUPS[p.group]||{};const w=p.anchor?210:172,h=p.anchor?86:78;
+      ctx.fillStyle=p.anchor?'#2e2823':'#26221d';roundRect(ctx,xy[0],xy[1],w,h,9);ctx.fill();
+      ctx.strokeStyle=p.anchor?'#d9a26c':'#3d392f';ctx.lineWidth=p.anchor?2:1;
+      if(p.kind==='org')ctx.setLineDash([4,3]);
+      ctx.stroke();ctx.setLineDash([]);
+      ctx.fillStyle=gi.color||'#d9a26c';ctx.fillRect(xy[0]+1,xy[1],w-2,3);
+      let tx=xy[0]+10;
+      if(!p.anchor){
+        if(p.kind==='org'){
+          ctx.fillStyle=gi.color;roundRect(ctx,xy[0]+10,xy[1]+12,34,34,7);ctx.fill();
+          ctx.fillStyle='#1d1a16';ctx.font='bold 13px Georgia, serif';ctx.textAlign='center';
+          const mono=p.name.split(/\s+/).map(x=>x[0]).join('').replace(/[^A-Za-z]/g,'').slice(0,3);
+          ctx.fillText(mono,xy[0]+27,xy[1]+33);tx=xy[0]+52;
+        } else if(imgs[p.slug]){
+          ctx.save();ctx.beginPath();ctx.arc(xy[0]+28,xy[1]+30,18,0,7);ctx.clip();
+          ctx.drawImage(imgs[p.slug],xy[0]+10,xy[1]+12,36,36);ctx.restore();tx=xy[0]+52;
+        }
+      }
+      ctx.fillStyle='#f0ebe0';ctx.font='bold 11px Georgia, serif';ctx.textAlign='left';
+      wrapText(ctx,p.name,tx,xy[1]+22,w-(tx-xy[0])-8,12,2);
+      ctx.fillStyle='#948d80';ctx.font='8.5px Inter, sans-serif';
+      wrapText(ctx,(p.title||'').slice(0,80),tx,xy[1]+48,w-(tx-xy[0])-8,10,3);
+    });
+    // title stamp
+    ctx.fillStyle='#d9a26c';ctx.font='bold 20px Georgia, serif';ctx.textAlign='left';
+    ctx.fillText('Now City · Denmark Coalition Board · '+new Date().toISOString().slice(0,10),minX+20,minY+34);
+    cv.toBlob(b=>{
+      const a=document.createElement('a');a.href=URL.createObjectURL(b);
+      a.download='denmark-board-'+new Date().toISOString().slice(0,10)+'.png';a.click();
+      btn.disabled=false;btn.textContent='Snapshot';
+    },'image/png');
+  });
+}
+document.getElementById('b-snap').addEventListener('click',snapshotPNG);
 
-// ---- boot ----
+// ---------- boot ----------
 state=load();
 buildPalette();
 renderAll();
-viewport.scrollLeft=1400; viewport.scrollTop=700;
+setZoom(0.62);
+viewport.scrollLeft=750; viewport.scrollTop=350;
 })();
 </script>
 <script>
