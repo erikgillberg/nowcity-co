@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Reboot · Now City Dev</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1d1a16;--panel:#26221d;--line:#3d392f;--ink:#d8d2c4;--ink-strong:#f0ebe0;--muted:#948d80;--accent:#d9a26c;--serif:'Libre Baskerville',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body.gated main,body.gated header{display:none}
+a{color:var(--accent)}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);padding:22px 0}
+.brand{font-family:var(--serif);font-size:18px;color:var(--ink-strong);text-decoration:none}
+.brand span{color:var(--accent)}
+.crumb{font-size:12px;color:var(--muted);margin-top:4px}
+.crumb a{color:var(--muted)}
+main{padding:56px 0 90px}
+article h1{font-family:var(--serif);font-size:clamp(28px,4vw,38px);color:var(--ink-strong);line-height:1.28;margin-bottom:10px}
+.docmeta{font-size:13px;color:var(--muted);margin-bottom:40px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+article h2{font-family:var(--serif);font-size:23px;color:var(--ink-strong);margin:52px 0 16px;line-height:1.35}
+article h3{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:34px 0 12px}
+article p{margin-bottom:16px}
+article strong{color:var(--ink-strong)}
+article ul,article ol{margin:0 0 18px 22px}
+article li{margin-bottom:9px}
+article table{width:100%;border-collapse:collapse;font-size:14px;margin:20px 0}
+article th{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+article td{padding:10px;border-bottom:1px solid #2e2a24;vertical-align:top}
+article hr{border:none;border-top:1px solid var(--line);margin:44px 0}
+article em{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:var(--muted)}
+#gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:50}
+#gate .panel{max-width:360px;width:90%}
+#gate .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+#gate h1{font-family:var(--serif);color:var(--ink-strong);font-size:34px;margin-bottom:12px}
+#gate p{font-size:14px;margin-bottom:18px}
+#gate input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:6px;background:#15130f;color:var(--ink-strong);font-size:15px}
+#gate button{margin-top:12px;width:100%;padding:13px;border:none;border-radius:6px;background:var(--accent);color:#1d1a16;font-weight:700;font-size:14px;cursor:pointer}
+#gate .err{color:#e08a8a;font-size:13px;margin-top:10px;min-height:18px}
+@media print{#gate{display:none}body.gated main,body.gated header{display:block}body{background:#fff;color:#222}article h1,article h2,article strong{color:#111}}
+</style>
+<script defer src="nav.js?v=2"></script>
+</head>
+<body class="gated">
+<div id="gate"><div class="panel">
+  <div class="eyebrow">Now City Dev</div><h1>Working<br>Documents</h1>
+  <p>Internal material for the Now City team and invited collaborators.</p>
+  <form id="gateform"><input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+  <button type="submit">Enter</button><div class="err" id="gateerr"></div></form>
+</div></div>
+<main><div class="wrap"><article>
+<h1>Urban Reboot</h1>
+<p class="docmeta"><strong>Position paper · July 29, 2026 · Internal</strong> · How the nonprofit, the funds, and the Edgewater civic entity relate</p>
+
+<h2>What Urban Reboot is</h2>
+<p>Urban Reboot is Now City&rsquo;s allied nonprofit: an organization that enables sustainable, neighborhood-scale development through <strong>grants and advisory</strong>. It supports the movement around regenerative districts with capacity building, education, technical assistance, and targeted philanthropic funding for public goods: the work that makes good projects possible but that no pro forma pays for.</p>
+<p>Urban Reboot is deliberately not a developer and not a marketing arm. Its value depends on independence: an independent board majority, a real conflict-of-interest policy, and arms-length agreements for anything touching Now City projects. Structure and the 501(c)(3) application run through exempt-organization counsel.</p>
+
+<h2>Urban Reboot Funds: the capital vehicle, on standby</h2>
+<p>Urban Reboot Funds is the capital side of the vision: mission-driven, catalytic capital for sustainable real estate, as explored in depth by the Columbia University capstone (May 2025). It remains a real ambition and a distinct vehicle, and it is <strong>on standby</strong> until we find the team to build and manage the fund(s): a seasoned impact fund manager and the operating bench the capstone itself says the model requires.</p>
+<p>When that team exists, the capstone&rsquo;s guidance stands: start with a clear theory of change and a focused niche; prefer a simple, philanthropic-first capital stack over complex blended structures; deploy flexibly at the project level; and use the capstone&rsquo;s Sustainability Metrics + Cost-Benefit model to pick the upgrades that earn their keep. Until then, no fund is marketed, and no capital is solicited.</p>
+
+<h2>The Edgewater civic entity is a separate question</h2>
+<p>The Edgewater district needs a civic nonprofit: the commons steward and coalition table described in the district&rsquo;s coalition strategy. That will be <strong>a new entity, or a partnership with an existing Salem institution, supported by Now City and/or Urban Reboot</strong>. Urban Reboot is a potential supporter, incubator, or partner of that entity; it is not automatically that entity. Keeping the two distinct protects both: the district entity gets Salem-rooted legitimacy, and Urban Reboot keeps a mandate wider than one district.</p>
+
+<h2>Current status and rebuild</h2>
+<ul>
+<li><strong>Nonprofit designation:</strong> 501(c)(3) determination not yet complete. Interim option if grants need to flow sooner: fiscal sponsorship.</li>
+<li><strong>Leadership:</strong> Brianna Gonzalez is stepping away as Executive Director. The rebuild seeks a new ED (fractional acceptable at first) and a reconstructed board with an independent majority.</li>
+<li><strong>Assets in hand:</strong> the Columbia capstone toolkit (Sustainability Metrics + CBA model, Fund Development Toolkit, Fund Creation Reference), the urbanreboot.org site (needs a refresh: contact links, Oregon presence, and mission language differentiated from Now City&rsquo;s), and the brand.</li>
+<li><strong>Near-term sequence:</strong> counsel review of structure &rarr; board slate &rarr; ED search &rarr; 501(c)(3) completion &rarr; site refresh &rarr; first grants/advisory program defined.</li>
+</ul>
+
+<h2>How it shows up in conversations</h2>
+<p>With partners like SEDCOR and Salem institutions, Urban Reboot is presented as what it is: the nonprofit side of the Now City ecosystem, in rebuild, whose charter and board we are actively shaping and whose fingerprints we invite. The funds are mentioned only as a future vehicle awaiting the right team.</p>
+</article></div></main>
+<footer><div class="wrap">©2026 Now City Inc. · Internal working document · Not an offer of securities · Please do not circulate</div></footer>
+<script>
+(function(){
+const HASH='1f00699cc101299062a06ee673d8d95a277ac29bbca767118da65116461dd645';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('nc-dev-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('nc-dev-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>

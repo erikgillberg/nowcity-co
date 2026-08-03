@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denmark Coalition Board · Now City Dev</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1d1a16;--panel:#26221d;--line:#3d392f;--ink:#d8d2c4;--ink-strong:#f0ebe0;--muted:#948d80;--accent:#d9a26c;--serif:'Libre Baskerville',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);display:flex;flex-direction:column;overflow:hidden}
+body.gated #app{display:none}
+#topbar{display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(21,18,15,.97);flex-wrap:wrap;z-index:20}
+#topbar .brand{font-family:var(--serif);font-size:15px;color:var(--ink-strong);text-decoration:none;margin-right:8px;white-space:nowrap}
+#topbar .brand span{color:var(--accent)}
+#topbar button,#topbar label.btn{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 13px;cursor:pointer}
+#topbar button:hover{color:var(--accent);border-color:var(--accent)}
+#topbar button.on{background:var(--accent);color:#1d1a16;border-color:var(--accent)}
+#topbar .sep{width:1px;height:22px;background:var(--line);margin:0 4px}
+#topbar .hint{font-size:11.5px;color:var(--muted);margin-left:auto;white-space:nowrap}
+#app{flex:1;display:flex;flex-direction:column;min-height:0}
+#viewport{flex:1;overflow:auto;position:relative;background:
+ radial-gradient(circle at 1px 1px, rgba(217,162,108,.10) 1px, transparent 1.5px) 0 0/28px 28px}
+#board{position:relative;width:4400px;height:3000px;transform-origin:0 0}
+#wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#wires .link{stroke:#d9a26c;stroke-width:2;fill:none;opacity:.75;pointer-events:stroke;cursor:pointer}
+#wires .link:hover{opacity:1;stroke-width:3}
+#wires .stroke{stroke:#8fb98f;stroke-width:2.5;fill:none;opacity:.8;stroke-linecap:round;stroke-linejoin:round;pointer-events:stroke;cursor:pointer}
+#wires text{font-family:var(--sans);font-size:11px;fill:#e8d9be;pointer-events:none}
+.glabel{position:absolute;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:.55;pointer-events:none}
+.node{position:absolute;width:172px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--gc,#d9a26c);border-radius:9px;padding:10px 12px;cursor:grab;user-select:none;box-shadow:0 3px 14px rgba(0,0,0,.35)}
+.node:active{cursor:grabbing}
+.node img{width:44px;height:44px;border-radius:50%;object-fit:cover;float:left;margin:0 8px 4px 0;border:1px solid var(--line);pointer-events:none}
+.node .nm{font-family:var(--serif);font-size:12.5px;color:var(--ink-strong);line-height:1.3}
+.node .rl{font-size:10px;color:var(--muted);line-height:1.35;margin-top:3px;clear:both}
+.node.sel{outline:2px solid var(--accent);outline-offset:2px}
+.node.anchor{width:200px;border:2px solid var(--accent);background:#2e2823;text-align:center}
+.node.anchor .nm{font-size:15px}
+.note{position:absolute;min-width:140px;max-width:240px;background:#e8d9be;color:#2a251d;border-radius:6px;padding:20px 12px 10px;font-size:12.5px;line-height:1.45;box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:grab}
+.note .grip{position:absolute;top:4px;left:0;right:0;text-align:center;font-size:9px;letter-spacing:.2em;color:#8a7c5e;pointer-events:none}
+.note .txt{outline:none;cursor:text;min-height:18px}
+.note .del{position:absolute;top:2px;right:6px;cursor:pointer;color:#8a7c5e;font-size:12px}
+#legend{position:fixed;bottom:14px;left:14px;background:rgba(21,18,15,.94);border:1px solid var(--line);border-radius:9px;padding:10px 14px;font-size:11px;z-index:15;max-width:230px}
+#legend b{display:block;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+#legend .li{display:flex;align-items:center;gap:7px;margin:3px 0}
+#legend .sw{width:10px;height:10px;border-radius:3px}
+#gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:50}
+#gate .panel{max-width:360px;width:90%}
+#gate .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+#gate h1{font-family:var(--serif);color:var(--ink-strong);font-size:34px;margin-bottom:12px}
+#gate p{font-size:14px;margin-bottom:18px}
+#gate input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:6px;background:#15130f;color:var(--ink-strong);font-size:15px}
+#gate button{margin-top:12px;width:100%;padding:13px;border:none;border-radius:6px;background:var(--accent);color:#1d1a16;font-weight:700;font-size:14px;cursor:pointer}
+#gate .err{color:#e08a8a;font-size:13px;margin-top:10px;min-height:18px}
+</style>
+</head>
+<body class="gated">
+<div id="gate"><div class="panel">
+  <div class="eyebrow">Now City Dev</div><h1>Working<br>Documents</h1>
+  <p>Internal material for the Now City team and invited collaborators.</p>
+  <form id="gateform"><input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+  <button type="submit">Enter</button><div class="err" id="gateerr"></div></form>
+</div></div>
+
+<div id="app">
+<div id="topbar">
+  <a class="brand" href="denmark-coalition.html">&larr; Denmark <span>Coalition Board</span></a>
+  <button id="m-move" class="on">Move</button>
+  <button id="m-connect">Connect</button>
+  <button id="m-draw">Draw</button>
+  <button id="m-erase">Erase</button>
+  <button id="m-note">Note</button>
+  <span class="sep"></span>
+  <button id="b-export">Export</button>
+  <label class="btn" for="importfile" style="display:inline-block">Import</label>
+  <input type="file" id="importfile" accept=".json" style="display:none">
+  <button id="b-reset">Reset Layout</button>
+  <span class="hint" id="hint">Drag cards · your board saves automatically in this browser</span>
+</div>
+<div id="viewport"><div id="board">
+  <svg id="wires"><g id="g-links"></g><g id="g-strokes"></g></svg>
+</div></div>
+<div id="legend"><b>Groups</b><div id="legendrows"></div></div>
+</div>
+
+<script src="denmark-data.js"></script>
+<script>
+(function(){
+const LS='dk-board-v2';
+const board=document.getElementById('board');
+const viewport=document.getElementById('viewport');
+const gLinks=document.getElementById('g-links');
+const gStrokes=document.getElementById('g-strokes');
+let mode='move';
+let state=null;
+let selected=null;
+
+const ANCHOR={slug:'now-city',name:'Now City · Erik Gillberg',title:'Master developer of Edgewater West Salem. The American demonstration district for a neighborhood that is a product of Denmark.',group:'crown',anchor:true};
+
+// ---- default layout ----
+function defaultState(){
+  const clusters={
+    crown:    {cx:2200,cy:340,cols:2},
+    capital:  {cx:3350,cy:900,cols:2},
+    design:   {cx:900,cy:1000,cols:3},
+    circular: {cx:1050,cy:2050,cols:3},
+    energy:   {cx:3250,cy:1850,cols:2},
+    ecosystem:{cx:2200,cy:2250,cols:3},
+    culture:  {cx:2250,cy:1050,cols:3}
+  };
+  const pos={};
+  pos['now-city']=[2100,1500];
+  const counts={};
+  DK_PEOPLE.forEach(p=>{
+    const c=clusters[p.group]||clusters.ecosystem;
+    const i=(counts[p.group]=(counts[p.group]||0)+1)-1;
+    const col=i%c.cols, row=Math.floor(i/c.cols);
+    pos[p.slug]=[c.cx+col*200-((c.cols-1)*100), c.cy+row*150];
+  });
+  return {pos:pos,links:[],strokes:[],notes:[]};
+}
+function load(){
+  try{const s=JSON.parse(localStorage.getItem(LS)); if(s&&s.pos)return s;}catch(e){}
+  return defaultState();
+}
+function save(){localStorage.setItem(LS,JSON.stringify(state));}
+
+// ---- render ----
+function nodeEl(p){
+  const d=document.createElement('div');
+  d.className='node'+(p.anchor?' anchor':'');
+  d.dataset.slug=p.slug;
+  d.style.setProperty('--gc',(DK_GROUPS[p.group]||{}).color||'#d9a26c');
+  const img=p.anchor?'':'<img src="img/denmark/'+p.slug+'.jpg" alt="" draggable="false">';
+  d.innerHTML=img+'<div class="nm">'+p.name+'</div><div class="rl">'+(p.title||'')+(p.org?' · '+p.org:'')+'</div>';
+  return d;
+}
+function renderNodes(){
+  document.querySelectorAll('.node').forEach(n=>n.remove());
+  [ANCHOR].concat(DK_PEOPLE).forEach(p=>{
+    const el=nodeEl(p);
+    const xy=state.pos[p.slug]||[100,100];
+    el.style.left=xy[0]+'px'; el.style.top=xy[1]+'px';
+    board.appendChild(el);
+  });
+  // group labels near cluster tops (static hints)
+  document.querySelectorAll('.glabel').forEach(n=>n.remove());
+}
+function center(slug){
+  const el=document.querySelector('.node[data-slug="'+CSS.escape(slug)+'"]');
+  if(!el)return [0,0];
+  return [el.offsetLeft+el.offsetWidth/2, el.offsetTop+el.offsetHeight/2];
+}
+function renderLinks(){
+  gLinks.innerHTML='';
+  state.links.forEach((l,i)=>{
+    const a=center(l.a), b=center(l.b);
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    const mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2;
+    path.setAttribute('d','M'+a[0]+' '+a[1]+' Q '+mx+' '+(my-30)+' '+b[0]+' '+b[1]);
+    path.setAttribute('class','link'); path.dataset.i=i;
+    gLinks.appendChild(path);
+    if(l.label){
+      const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+      t.setAttribute('x',mx); t.setAttribute('y',my-34); t.setAttribute('text-anchor','middle');
+      t.textContent=l.label; gLinks.appendChild(t);
+    }
+  });
+}
+function renderStrokes(){
+  gStrokes.innerHTML='';
+  state.strokes.forEach((s,i)=>{
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d','M'+s.map(pt=>pt.join(' ')).join(' L '));
+    path.setAttribute('class','stroke'); path.dataset.i=i;
+    gStrokes.appendChild(path);
+  });
+}
+function renderNotes(){
+  document.querySelectorAll('.note').forEach(n=>n.remove());
+  state.notes.forEach((n,i)=>{
+    const d=document.createElement('div');
+    d.className='note'; d.dataset.i=i;
+    d.style.left=n.x+'px'; d.style.top=n.y+'px';
+    d.innerHTML='<div class="grip">· · ·</div><div class="del" title="Delete">✕</div><div class="txt" contenteditable="true"></div>';
+    d.querySelector('.txt').textContent=n.text||'';
+    board.appendChild(d);
+  });
+}
+function renderAll(){renderNodes();renderLinks();renderStrokes();renderNotes();legend();}
+function legend(){
+  const rows=document.getElementById('legendrows'); rows.innerHTML='';
+  Object.keys(DK_GROUPS).forEach(g=>{
+    const r=document.createElement('div');r.className='li';
+    r.innerHTML='<span class="sw" style="background:'+DK_GROUPS[g].color+'"></span>'+DK_GROUPS[g].label;
+    rows.appendChild(r);
+  });
+}
+
+// ---- modes ----
+const hints={move:'Drag cards · your board saves automatically in this browser',
+ connect:'Click one card, then another, to draw a connection · click a line to delete it',
+ draw:'Draw freehand on the board',
+ erase:'Click a line or stroke to erase it',
+ note:'Click anywhere on the board to add a sticky note'};
+function setMode(m){
+  mode=m; selected=null;
+  document.querySelectorAll('.node.sel').forEach(n=>n.classList.remove('sel'));
+  ['move','connect','draw','erase','note'].forEach(x=>{
+    document.getElementById('m-'+x).classList.toggle('on',x===m);
+  });
+  document.getElementById('hint').textContent=hints[m];
+}
+['move','connect','draw','erase','note'].forEach(x=>{
+  document.getElementById('m-'+x).addEventListener('click',()=>setMode(x));
+});
+
+// ---- interactions ----
+let drag=null, drawing=null;
+board.addEventListener('pointerdown',e=>{
+  const node=e.target.closest('.node');
+  const note=e.target.closest('.note');
+  const rect=board.getBoundingClientRect();
+  const bx=e.clientX-rect.left, by=e.clientY-rect.top;
+  if(mode==='draw'&&!node&&!note){
+    drawing=[[Math.round(bx),Math.round(by)]];
+    state.strokes.push(drawing); e.preventDefault(); return;
+  }
+  if(mode==='note'&&!node&&!note){
+    state.notes.push({x:Math.round(bx),y:Math.round(by),text:'New note'});
+    save();renderNotes(); setMode('move'); return;
+  }
+  if(node){
+    const slug=node.dataset.slug;
+    if(mode==='connect'){
+      if(!selected){selected=slug;node.classList.add('sel');}
+      else if(selected!==slug){
+        const label=prompt('Label for this connection? (optional)','')||'';
+        state.links.push({a:selected,b:slug,label:label.trim()});
+        save();renderLinks();
+        document.querySelectorAll('.node.sel').forEach(n=>n.classList.remove('sel'));
+        selected=null;
+      }
+      return;
+    }
+    if(mode==='move'){
+      drag={el:node,slug:slug,ox:bx-node.offsetLeft,oy:by-node.offsetTop,type:'node'};
+      node.setPointerCapture&&node.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    }
+    return;
+  }
+  if(note){
+    if(e.target.classList.contains('del')){
+      const i=+note.dataset.i; state.notes.splice(i,1); save(); renderNotes(); return;
+    }
+    if(e.target.classList.contains('txt')) return; // editing
+    if(mode==='move'){
+      drag={el:note,i:+note.dataset.i,ox:bx-note.offsetLeft,oy:by-note.offsetTop,type:'note'};
+      e.preventDefault();
+    }
+  }
+});
+board.addEventListener('pointermove',e=>{
+  const rect=board.getBoundingClientRect();
+  const bx=e.clientX-rect.left, by=e.clientY-rect.top;
+  if(drawing){drawing.push([Math.round(bx),Math.round(by)]);renderStrokes();return;}
+  if(!drag)return;
+  const x=Math.max(0,Math.round(bx-drag.ox)), y=Math.max(0,Math.round(by-drag.oy));
+  drag.el.style.left=x+'px'; drag.el.style.top=y+'px';
+  if(drag.type==='node'){state.pos[drag.slug]=[x,y];renderLinks();}
+  else{state.notes[drag.i].x=x;state.notes[drag.i].y=y;}
+});
+window.addEventListener('pointerup',()=>{
+  if(drawing){if(drawing.length<3){state.strokes.pop();renderStrokes();} drawing=null; save();}
+  if(drag){save();drag=null;}
+});
+// delete links/strokes by click
+document.getElementById('wires').addEventListener('click',e=>{
+  if(mode!=='erase'&&mode!=='connect')return;
+  if(e.target.classList.contains('link')){
+    state.links.splice(+e.target.dataset.i,1); save(); renderLinks();
+  } else if(e.target.classList.contains('stroke')&&mode==='erase'){
+    state.strokes.splice(+e.target.dataset.i,1); save(); renderStrokes();
+  }
+});
+// note text save
+board.addEventListener('input',e=>{
+  const note=e.target.closest('.note');
+  if(note&&e.target.classList.contains('txt')){
+    state.notes[+note.dataset.i].text=e.target.textContent; save();
+  }
+});
+
+// ---- toolbar ----
+document.getElementById('b-export').addEventListener('click',()=>{
+  const blob=new Blob([JSON.stringify(state,null,1)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='denmark-board-'+new Date().toISOString().slice(0,10)+'.json';a.click();
+});
+document.getElementById('importfile').addEventListener('change',e=>{
+  const f=e.target.files[0]; if(!f)return;
+  f.text().then(t=>{try{const s=JSON.parse(t); if(s.pos){state=s;save();renderAll();}}catch(err){alert('Not a valid board file.');}});
+});
+document.getElementById('b-reset').addEventListener('click',()=>{
+  if(confirm('Reset the board to the suggested layout? Your connections, drawings, and notes will be cleared.')){
+    state=defaultState(); save(); renderAll();
+  }
+});
+
+// ---- boot ----
+state=load();
+renderAll();
+viewport.scrollLeft=1400; viewport.scrollTop=700;
+})();
+</script>
+<script>
+(function(){
+const HASH='1f00699cc101299062a06ee673d8d95a277ac29bbca767118da65116461dd645';
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('nc-dev-ok')==='1')unlock();
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('nc-dev-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
