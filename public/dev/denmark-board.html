@@ -97,7 +97,7 @@ body.gated #app{display:none}
   <label class="btn" for="importfile" title="Load a board JSON file">Import</label>
   <input type="file" id="importfile" accept=".json" style="display:none">
   <button id="b-reset" title="Return to the curated layout">Reset</button>
-  <span class="hint" id="hint">Drag cards · autosaves in this browser</span>
+  <span class="hint" id="hint">Drag cards · Cmd+scroll or pinch to zoom · autosaves</span>
 </div>
 <div id="viewport"><div id="board">
   <svg id="wires"><g id="g-links"></g><g id="g-strokes"></g></svg>
@@ -287,7 +287,7 @@ function buildPalette(){
 }
 
 // ---------- modes ----------
-const hints={move:'Drag cards and notes · autosaves in this browser',
+const hints={move:'Drag cards and notes · Cmd+scroll or pinch to zoom · autosaves',
  connect:'Click one card, then another, to link them · click a line to delete it',
  draw:'Draw freehand on the board',
  erase:'Click a line or drawing to erase it',
@@ -306,15 +306,36 @@ function setMode(m){
 });
 
 // ---------- zoom ----------
-function setZoom(z){
+function setZoom(z,ax,ay){
+  const old=scale;
   scale=Math.min(1.6,Math.max(.35,z));
+  if(scale===old)return;
+  // anchor: keep the board point under (ax,ay) stationary; default to viewport center
+  const vr=viewport.getBoundingClientRect();
+  if(ax===undefined){ax=vr.left+vr.width/2;ay=vr.top+vr.height/2;}
+  const px=(viewport.scrollLeft+(ax-vr.left))/old;
+  const py=(viewport.scrollTop+(ay-vr.top))/old;
   board.style.transform='scale('+scale+')';
   board.style.width=(4600*scale)+'px'; board.style.height=(3200*scale)+'px';
+  viewport.scrollLeft=px*scale-(ax-vr.left);
+  viewport.scrollTop=py*scale-(ay-vr.top);
   document.getElementById('z-val').textContent=Math.round(scale*100)+'%';
 }
 document.getElementById('z-in').addEventListener('click',()=>setZoom(scale+0.12));
 document.getElementById('z-out').addEventListener('click',()=>setZoom(scale-0.12));
 document.getElementById('z-val').addEventListener('click',()=>setZoom(1));
+// Cmd+scroll (Magic Mouse) and trackpad pinch (reported as ctrl+wheel) zoom the BOARD, not the page
+viewport.addEventListener('wheel',e=>{
+  if(!(e.ctrlKey||e.metaKey))return;
+  e.preventDefault();
+  const factor=Math.exp(-e.deltaY*0.0022);
+  setZoom(scale*factor,e.clientX,e.clientY);
+},{passive:false});
+// Safari trackpad pinch fires gesture events instead
+let gestureStart=1;
+viewport.addEventListener('gesturestart',e=>{e.preventDefault();gestureStart=scale;});
+viewport.addEventListener('gesturechange',e=>{e.preventDefault();setZoom(gestureStart*e.scale,e.clientX,e.clientY);});
+viewport.addEventListener('gestureend',e=>e.preventDefault());
 
 // ---------- interactions ----------
 let drag=null, drawing=null;
@@ -409,6 +430,9 @@ window.addEventListener('keydown',e=>{
   if(e.target.isContentEditable||/input|textarea/i.test(e.target.tagName))return;
   if(e.key.toLowerCase()==='z'&&!e.shiftKey){e.preventDefault();doUndo();}
   else if((e.key.toLowerCase()==='z'&&e.shiftKey)||e.key.toLowerCase()==='y'){e.preventDefault();doRedo();}
+  else if(e.key==='='||e.key==='+'){e.preventDefault();setZoom(scale+0.12);}
+  else if(e.key==='-'){e.preventDefault();setZoom(scale-0.12);}
+  else if(e.key==='0'){e.preventDefault();setZoom(1);}
 });
 document.getElementById('b-export').addEventListener('click',()=>{
   const blob=new Blob([JSON.stringify(state,null,1)],{type:'application/json'});
