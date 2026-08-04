@@ -12,8 +12,9 @@
   ];
   var PARTNERS=[
     ["urban-reboot.html","Urban Reboot"],
-    ["denmark-coalition.html","Denmark Coalition"],
-    ["denmark-board.html","Coalition Board"]
+    ["/denmark/","Salem & Denmark \u2197"],
+    ["/denmark/coalition.html","Denmark Coalition \u2197"],
+    ["/denmark/board.html","Coalition Board \u2197"]
   ];
   var EXT=[
     ["https://nowcity.co/invest/","Invest ↗"],

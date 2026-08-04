@@ -1,2 +1,5 @@
 /dev/*
   Cache-Control: no-cache
+
+/denmark/*
+  Cache-Control: no-cache

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Denmark Coalition Board · Now City Dev</title>
+<title>The Board · Salem & Denmark</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,15 +73,15 @@ body.gated #app{display:none}
 </head>
 <body class="gated">
 <div id="gate"><div class="panel">
-  <div class="eyebrow">Now City Dev</div><h1>Working<br>Documents</h1>
-  <p>Internal material for the Now City team and invited collaborators.</p>
+  <div class="eyebrow">Now City &middot; Denmark</div><h1>Salem &amp;<br>Denmark</h1>
+  <p>Working material for coalition members and invited collaborators.</p>
   <form id="gateform"><input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
   <button type="submit">Enter</button><div class="err" id="gateerr"></div></form>
 </div></div>
 
 <div id="app">
 <div id="topbar">
-  <a class="brand" href="denmark-coalition.html">&larr; Denmark <span>Board</span></a>
+  <a class="brand" href="coalition.html">&larr; The <span>Board</span></a>
   <button id="m-move" class="on" title="Drag cards and notes">Move</button>
   <button id="m-connect" title="Click two cards to link them">Connect</button>
   <button id="m-draw" title="Freehand drawing">Draw</button>
@@ -632,15 +632,15 @@ viewport.scrollLeft=750; viewport.scrollTop=350;
 </script>
 <script>
 (function(){
-const HASH='1f00699cc101299062a06ee673d8d95a277ac29bbca767118da65116461dd645';
+const HASH='3c027c1fdd8485363de89fd383d288b33fef29c0c8131d50b78d53b697636bc3';
 function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
-if(localStorage.getItem('nc-dev-ok')==='1')unlock();
+if(localStorage.getItem('nc-dk-ok')==='1')unlock();
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 document.getElementById('gateform').addEventListener('submit',async function(e){
   e.preventDefault();
   var h='';
   try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
-  if(h===HASH){localStorage.setItem('nc-dev-ok','1');unlock()}
+  if(h===HASH){localStorage.setItem('nc-dk-ok','1');unlock()}
   else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
 });
 })();
