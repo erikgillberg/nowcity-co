@@ -3,7 +3,8 @@
   var LINKS=[
     ["index.html","The Plan"],
     ["coalition.html","The Coalition"],
-    ["board.html","The Board"]
+    ["board.html","The Board"],
+    ["https://nowcity.co/west-salem/district.html","Edgewater ↗"]
   ];
   function init(){
     var css=[
@@ -21,7 +22,7 @@
     var here=location.pathname.split('/').pop()||'index.html';
     var nav=document.createElement('nav');nav.id='dknav';
     var items=LINKS.map(function(l){return '<li><a href="'+l[0]+'"'+(here===l[0]?' class="on"':'')+'>'+l[1]+'</a></li>'}).join('');
-    nav.innerHTML='<div class="nwrap"><a class="nbrand" href="index.html">Salem <span>&amp;</span> Denmark</a><ul class="nlinks">'+items+'</ul></div>';
+    nav.innerHTML='<div class="nwrap"><a class="nbrand" href="index.html">Now City <span>&amp;</span> Denmark</a><ul class="nlinks">'+items+'</ul></div>';
     document.body.insertBefore(nav,document.body.firstChild);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
