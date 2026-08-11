@@ -75,6 +75,37 @@
 .hier li.mid:before{color:#e8b264}
 .hier li.hot:before{color:#d97a6c}
 .hier li b{color:var(--cream);font-weight:600}
+.ddl{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:26px}
+.ddl .dd1{background:#2b2823;border:1px solid #3d392f;border-left:3px solid #e8b264;border-radius:8px;padding:14px 16px}
+.ddl .dd1 .dt{font-family:var(--serif);font-size:17px;color:#e8b264}
+.ddl .dd1 .dw{font-size:12px;color:#d8d2c4;margin-top:5px;line-height:1.5}
+.fnbar{margin-top:30px;display:flex;flex-direction:column;gap:10px}
+.fnbar .frow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.fnbar .flbl{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f897c;min-width:70px}
+.fchip{cursor:pointer;font-size:11.5px;font-weight:600;color:#b7b0a3;background:#2b2823;border:1px solid #3d392f;border-radius:999px;padding:5px 13px;transition:all .15s;user-select:none}
+.fchip:hover{color:#e8e2d6;border-color:#5a5346}
+.fchip.on{color:#1e1c18;background:#d9a26c;border-color:#d9a26c}
+.fnsearch{background:#221f1a;border:1px solid #3d392f;border-radius:8px;color:#e8e2d6;font-size:13px;padding:9px 14px;width:100%;max-width:340px;font-family:var(--sans)}
+.fnsearch:focus{outline:none;border-color:#d9a26c}
+.fncount{font-size:12px;color:#8f897c;margin-top:14px}
+.fnlist{margin-top:10px}
+.fnrow{display:grid;grid-template-columns:minmax(220px,1.4fr) minmax(140px,.8fr) minmax(110px,.6fr) minmax(260px,2fr) 60px;gap:14px;align-items:start;padding:13px 16px;border-bottom:1px solid #2e2b25;background:#221f1a}
+.fnrow:nth-child(odd){background:#25221d}
+.fnrow .fname{font-family:var(--serif);font-size:14.5px;color:var(--cream);line-height:1.35}
+.fnrow .fbadges{margin-top:5px;display:flex;gap:5px;flex-wrap:wrap}
+.fnrow .fb{font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:9px;padding:2px 8px;white-space:nowrap}
+.fnrow .fb.lvl{color:#d9a26c;background:rgba(217,162,108,.13)}
+.fnrow .fb.typ{color:#b7b0a3;background:rgba(183,176,163,.13)}
+.fnrow .fsize{font-size:12px;color:#e8e2d6;line-height:1.5;font-variant-numeric:tabular-nums}
+.fnrow .fwho{font-size:11.5px;color:#b7b0a3;line-height:1.5}
+.fnrow .ffit{font-size:12px;color:#c9c2b2;line-height:1.55}
+.fnrow .ffit .stdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;position:relative;top:-1px}
+.stdot.live{background:#9db08a}.stdot.window{background:#e8b264}.stdot.watch{background:#8f897c}.stdot.paused{background:#d97a6c}
+.fnrow .flink a{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#d9a26c;text-decoration:none}
+.fnhead{display:grid;grid-template-columns:minmax(220px,1.4fr) minmax(140px,.8fr) minmax(110px,.6fr) minmax(260px,2fr) 60px;gap:14px;padding:9px 16px;border-bottom:1px solid #4a453a}
+.fnhead div{font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#d9a26c}
+.fnleg{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:11px;color:#8f897c}
+@media(max-width:900px){.fnrow,.fnhead{grid-template-columns:1fr 1fr}.fnhead div:nth-child(n+3){display:none}.fnrow .ffit{grid-column:1/-1}.fnrow .flink{grid-column:1/-1}}
 </style>
 </head>
 <body class="gated">
@@ -147,6 +178,7 @@
     <a href="#stack">The Stack</a>
     <a href="#pools">Three Pools</a>
     <a href="#equity">Equity Strategy</a>
+    <a href="#navigator">Funding Navigator</a>
     <a href="#execution">Execution &amp; Milestones</a>
     <a href="#register">Verification Register</a>
   </div>
@@ -322,6 +354,126 @@
   </div>
 </section>
 
+<section class="dark" id="navigator" style="border-top:1px solid #3d392f">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Funding Navigator</div>
+      <h2>Every program in the stack, in one filterable view</h2>
+      <p class="lead">The working directory behind the pools above: federal, Oregon, Pacific Northwest regional, and Salem programs relevant to the district, each with size, applicant, current status, and an honest fit note. Filter by level, use, or who applies; statuses update as diligence closes. Source notes for every entry live in the project data lake (August 2026 research pass).</p>
+    </div>
+    <div class="rv">
+      <div class="eyebrow" style="margin-top:8px">The next 90 days</div>
+      <div class="ddl">
+        <div class="dd1"><div class="dt">Aug 17</div><div class="dw">OHCS Predevelopment Loan Program opens (to $750K/project)</div></div>
+        <div class="dd1"><div class="dt">Aug 21</div><div class="dw">ODOT TGM planning grant applications due</div></div>
+        <div class="dd1"><div class="dt">Sep 1</div><div class="dw">MUHTIP pre-application conference deadline for the 2027 benefit year</div></div>
+        <div class="dd1"><div class="dt">Sep 4</div><div class="dw">Business Oregon Industrial Site RFA closes</div></div>
+        <div class="dd1"><div class="dt">Sep 29</div><div class="dw">Governor's OZ 2.0 nomination window closes</div></div>
+        <div class="dd1"><div class="dt">Sep 30</div><div class="dw">DOT Safe Streets authorization expires without reauthorization</div></div>
+      </div>
+    </div>
+    <div class="fnbar rv">
+      <div class="frow"><span class="flbl">Level</span><span class="fchip on" data-f="lv" data-v="all">All</span><span class="fchip" data-f="lv" data-v="Federal">Federal</span><span class="fchip" data-f="lv" data-v="State">Oregon</span><span class="fchip" data-f="lv" data-v="Regional">PNW Regional</span><span class="fchip" data-f="lv" data-v="Local">Salem</span></div>
+      <div class="frow"><span class="flbl">Use</span><span class="fchip on" data-f="c" data-v="all">All</span><span class="fchip" data-f="c" data-v="housing">Housing</span><span class="fchip" data-f="c" data-v="infrastructure">District Infrastructure</span><span class="fchip" data-f="c" data-v="innovation">Innovation &amp; Ag-Tech</span><span class="fchip" data-f="c" data-v="energy">Energy</span><span class="fchip" data-f="c" data-v="mobility">Mobility</span><span class="fchip" data-f="c" data-v="cleanup">Land &amp; Cleanup</span><span class="fchip" data-f="c" data-v="circular">Circular Economy</span><span class="fchip" data-f="c" data-v="capital">District Capital</span><span class="fchip" data-f="c" data-v="placemaking">Placemaking</span></div>
+      <div class="frow"><span class="flbl">Who applies</span><span class="fchip on" data-f="w" data-v="all">All</span><span class="fchip" data-f="w" data-v="Sponsor">Sponsor</span><span class="fchip" data-f="w" data-v="City partnership">City partnership</span><span class="fchip" data-f="w" data-v="Tenant / operator">Tenant / operator</span><span class="fchip" data-f="w" data-v="Nonprofit / partner">Nonprofit / partner</span></div>
+      <div class="frow"><span class="flbl">Search</span><input class="fnsearch" id="fnq" type="text" placeholder="Search programs, terms, agencies..."></div>
+    </div>
+    <div class="fncount rv" id="fncount"></div>
+    <div class="fnlist rv">
+      <div class="fnhead"><div>Program</div><div>Size / Terms</div><div>Who applies</div><div>Fit &amp; status</div><div></div></div>
+      <div id="fnrows"></div>
+    </div>
+    <div class="fnleg rv">
+      <span><span class="stdot live"></span>Open now</span>
+      <span><span class="stdot window"></span>Window or deadline</span>
+      <span><span class="stdot watch"></span>Watch / next cycle</span>
+      <span><span class="stdot paused"></span>Paused or exhausted</span>
+    </div>
+    <div class="prec rv"><b>The industrial symbiosis thread</b>Oregon has stood up its own industrial symbiosis program modeled on Washington's $5M grant and technical assistance effort, with Danish expertise (GreenLab Skive) embedded in the regional pipeline and a Denmark-Washington cooperation agreement signed in June 2026. Edgewater's district loops (energy, water, materials, food systems) belong on the state roadmap early, and the Nordic relationship is a working asset here, alongside the pension-capital groundwork in Stage 3.</div>
+  </div>
+<script>
+const FN=[
+{n:"HUD 221(d)(4)",lv:"Federal",t:"Debt",c:"housing",s:"~85% LTC, 40-yr fixed, non-recourse",w:"Sponsor",st:"live",f:"Workhorse construction-to-perm for market and mixed-income phases; 12-18 months, lender relationship starts now.",u:"https://www.hud.gov/program_offices/housing/mfh/progdesc/rentcoophsg221d3n4"},
+{n:"Tax-exempt bonds + 4% LIHTC (OHCS)",lv:"Federal",t:"Tax",c:"housing",s:"$50-120M tranche potential",w:"Sponsor",st:"live",f:"Cheapest capital in US real estate for affordable phases; pairs with Salem's local exemptions.",u:"https://www.oregon.gov/ohcs"},
+{n:"Opportunity Zone 2.0",lv:"Federal",t:"Equity",c:"capital",s:"$60-120M equity tranche",w:"Sponsor",st:"window",f:"Tract verified; nomination window closes Sep 29; designation effective Jan 1 2027 lowers phase equity hurdles.",u:"https://www.irs.gov/credits-deductions/businesses/opportunity-zones"},
+{n:"New Markets Tax Credits",lv:"Federal",t:"Tax",c:"capital",s:"Allocations via CDEs",w:"Nonprofit / partner",st:"watch",f:"Commercial and community-facility components where the tract qualifies; register item 4.",u:"https://www.cdfifund.gov/programs-training/programs/new-markets-tax-credit"},
+{n:"EPA WIFIA",lv:"Federal",t:"Debt",c:"infrastructure",s:"49% of costs, $20M minimum, 35-yr",w:"City partnership",st:"live",f:"Round 9 open ($6.5B): Treasury-flat money for district water and stormwater as a discrete system.",u:"https://www.epa.gov/wifia"},
+{n:"EPA Brownfields assessment & cleanup",lv:"Federal",t:"Grant",c:"cleanup",s:"~$500K assess; to $4M cleanup",w:"City partnership",st:"window",f:"Former industrial corridor is exactly the profile; FY27 window expected fall 2026; city or URA applies.",u:"https://www.epa.gov/brownfields"},
+{n:"EPA Brownfields RLF loans",lv:"Federal",t:"Debt",c:"cleanup",s:"To ~$1M per loan",w:"Sponsor",st:"live",f:"The one brownfields channel lending directly to developers; route through existing Oregon RLF operators.",u:"https://www.epa.gov/brownfields/brownfields-revolving-loan-fund-rlf-grants"},
+{n:"EDA Public Works & Economic Adjustment",lv:"Federal",t:"Grant",c:"innovation",s:"$600K-$5M, 50-80% federal share",w:"City partnership",st:"live",f:"Best federal door for innovation-district infrastructure; rolling NOFO; verify distress eligibility with the regional EDD.",u:"https://www.eda.gov/funding/funding-opportunities"},
+{n:"EDA Build to Scale",lv:"Federal",t:"Grant",c:"innovation",s:"~$750K-$2M historically",w:"Nonprofit / partner",st:"watch",f:"2026 restart announced after the FY24 cancellation; terms unsettled; university or EDO applies.",u:"https://www.eda.gov/funding/programs/build-to-scale"},
+{n:"EDA Tech Hubs (affiliation)",lv:"Federal",t:"Grant",c:"innovation",s:"Consortium-scale",w:"Nonprofit / partner",st:"watch",f:"Designated consortia only; the play is affiliation with the PNW bioproducts orbit, an application is closed.",u:"https://www.eda.gov/funding/programs/regional-technology-and-innovation-hubs"},
+{n:"USDA REAP",lv:"Federal",t:"Grant",c:"energy",s:"Grants to $1M; loans to $25M",w:"Tenant / operator",st:"paused",f:"Salem exceeds rural population caps; ag-producer tenants qualify anywhere; grant window paused mid-2026, loans open.",u:"https://www.rd.usda.gov/programs-services/energy-programs"},
+{n:"USDA Value-Added Producer Grants",lv:"Federal",t:"Grant",c:"innovation",s:"$50K planning / $200K working capital",w:"Tenant / operator",st:"window",f:"Ag-producer tenants of the innovation district; no rural location test; FY27 cycle expected.",u:"https://www.rd.usda.gov/programs-services/business-programs/value-added-producer-grants"},
+{n:"USDA NIFA AFRI",lv:"Federal",t:"Grant",c:"innovation",s:"$500-750K typical awards",w:"Nonprofit / partner",st:"live",f:"Research money for OSU and ag-tech tenants; funds R&D rather than construction; no rural test.",u:"https://www.nifa.usda.gov/grants/funding-opportunities/agriculture-food-research-initiative-foundational-applied-science"},
+{n:"USDA SBIR / STTR",lv:"Federal",t:"Grant",c:"innovation",s:"~$175-200K Phase I; ~$650K Phase II",w:"Tenant / operator",st:"live",f:"Non-dilutive tenant pipeline and a recruiting tool for the innovation district.",u:"https://www.nifa.usda.gov"},
+{n:"Clean electricity ITC (48E) + direct pay",lv:"Federal",t:"Tax",c:"energy",s:"30%+ of eligible cost",w:"Sponsor",st:"live",f:"Storage and geothermal live through 2033 with domestic-content rules; solar credit ended for post-July-2026 starts; model with tax counsel.",u:"https://www.irs.gov/credits-deductions/clean-electricity-investment-credit"},
+{n:"DOT BUILD",lv:"Federal",t:"Grant",c:"mobility",s:"~$5-25M urban awards, 20% match",w:"City partnership",st:"watch",f:"Right vehicle for Wallace Road multimodal scope; FY26 closed, FY27 depends on reauthorization.",u:"https://www.transportation.gov/BUILDgrants"},
+{n:"DOT Safe Streets (SS4A)",lv:"Federal",t:"Grant",c:"mobility",s:"20% match",w:"City partnership",st:"watch",f:"Program expires Sep 30 2026 without reauthorization; monitor with the City's safety action plan.",u:"https://www.transportation.gov/grants/SS4A"},
+{n:"Agency green takeouts (Fannie / Freddie)",lv:"Federal",t:"Debt",c:"housing",s:"Stabilized-phase scale",w:"Sponsor",st:"live",f:"Green pricing for certified high-performance buildings where HUD execution is less optimal.",u:"https://multifamily.fanniemae.com/financing-options/specialty-financing/green-financing"},
+{n:"C-PACE (ORS 223.680)",lv:"State",t:"Debt",c:"energy",s:"$40-90M tranche, to 30-yr fixed",w:"Sponsor",st:"watch",f:"Marion County opt-in is the gate (register item 2); Passive House maximizes eligible basis.",u:"https://www.oregon.gov/energy"},
+{n:"Business Oregon Special Public Works Fund",lv:"State",t:"Debt",c:"infrastructure",s:"Below-market municipal loans",w:"City partnership",st:"live",f:"Development-supporting infrastructure, lent through the City.",u:"https://www.oregon.gov/biz/programs/spwf/pages/default.aspx"},
+{n:"Brownfields Redevelopment Fund",lv:"State",t:"Debt",c:"cleanup",s:"Loans to 20 years",w:"Sponsor",st:"live",f:"Private borrowers eligible, rolling applications; pair with site-condition diligence.",u:"https://www.oregon.gov/biz/programs/brownfields/pages/default.aspx"},
+{n:"Brownfields Properties Revitalization Fund",lv:"State",t:"Debt",c:"cleanup",s:"50% to $250K; $500K with affordable housing",w:"Sponsor",st:"live",f:"Forgivable-loan structure built for private sponsors; small fund, confirm balance.",u:"https://www.oregon.gov/biz/programs/brownfields_properties_revitalization_fund/pages/default.aspx"},
+{n:"Industrial Site Readiness / ISLF",lv:"State",t:"Debt",c:"innovation",s:"$25M pool",w:"Sponsor",st:"window",f:"Employment-land case for the innovation district; RFA closes Sep 4 2026.",u:"https://www.oregon.gov/biz/programs/islf/pages/default.aspx"},
+{n:"Oregon Business Development Fund",lv:"State",t:"Debt",c:"innovation",s:"Gap loans, ~4% floor",w:"Tenant / operator",st:"live",f:"Tenant equipment and fit-out for traded-sector operators.",u:"https://www.oregon.gov/biz/programs/obdf/pages/default.aspx"},
+{n:"Water / Wastewater Financing Program",lv:"State",t:"Debt",c:"infrastructure",s:"Below-market loans, partial grants",w:"City partnership",st:"live",f:"City-side water tool; needs a regulatory-compliance hook to score.",u:"https://www.oregon.gov/biz/programs/wwf/pages/default.aspx"},
+{n:"Housing Infrastructure Financing Program (HB 3031)",lv:"State",t:"Grant",c:"infrastructure",s:"$10M round 1 fully awarded",w:"City partnership",st:"watch",f:"Best-shaped state program for city-plus-developer district infrastructure; watch recapitalization in the 2027 session.",u:"https://www.oregon.gov/biz/programs/hifp/pages/default.aspx"},
+{n:"Housing Infrastructure Support Fund (SB 1537)",lv:"State",t:"Grant",c:"infrastructure",s:"$95.9M round spent",w:"City partnership",st:"watch",f:"The mechanism for a 2027 earmark, worked through the delegation and Regional Solutions.",u:"https://www.oregon.gov/biz/programs/hisf/pages/default.aspx"},
+{n:"OHCS LIFT Rental",lv:"State",t:"Debt",c:"housing",s:"$450M 2025-27 authority",w:"Sponsor",st:"live",f:"Core gap subsidy pairing with 4% LIHTC on affordable phases; competitive queue via ORCA.",u:"https://www.oregon.gov/ohcs/rental-housing/housing-development/development-resources/pages/local-innovation-fast-track-rental.aspx"},
+{n:"OHCS Permanent Supportive Housing",lv:"State",t:"Grant",c:"housing",s:"~$36M uncommitted (Jan 2026)",w:"Sponsor",st:"live",f:"Only with a deliberate PSH component and a services operator.",u:"https://www.oregon.gov/ohcs/about-us/pages/2025-affordable-rental-housing-requests.aspx"},
+{n:"OHCS GHAP",lv:"State",t:"Grant",c:"housing",s:"Gap-scale awards",w:"Sponsor",st:"live",f:"Flexible standard gap filler; oversubscribed, plan alternates.",u:"https://www.oregon.gov/ohcs/rental-housing/housing-development/development-resources/pages/general-housing-account-program-ghap-veterans.aspx"},
+{n:"OHCS Predevelopment Loan Program",lv:"State",t:"Debt",c:"housing",s:"To $750K per project",w:"Sponsor",st:"window",f:"Opens Aug 17 2026; small pot, move fast for affordable-phase predevelopment.",u:"https://www.oregon.gov/ohcs/development/pages/grants-tax-credit-programs.aspx"},
+{n:"Oregon Multifamily Energy Program",lv:"State",t:"Grant",c:"energy",s:"$27.8M through 2027, 6-month rounds",w:"Sponsor",st:"window",f:"Made for Passive House affordable phases; requires PGE / Pacific Power territory, so register item 7 gates it.",u:"https://oregonmultifamilyenergy.com/"},
+{n:"Energy Trust New Buildings / Path to Net Zero",lv:"State",t:"Grant",c:"energy",s:"Per-kWh/therm incentives + studies to $40K",w:"Sponsor",st:"live",f:"Hinges on PGE vs Salem Electric service at the parcels; verify by address before underwriting (register item 7).",u:"https://www.energytrust.org/incentives/multifamily-new-buildings-path-to-net-zero/"},
+{n:"Community Renewable Energy Grant Program",lv:"State",t:"Grant",c:"energy",s:"~$12M per round",w:"City partnership",st:"paused",f:"District energy or microgrid with the City or the co-op as applicant; paused and heavily oversubscribed, watch the next round.",u:"https://www.oregon.gov/energy/Incentives/Pages/CREP.aspx"},
+{n:"ODOT TGM planning grants",lv:"State",t:"Technical",c:"mobility",s:"~$100-250K planning",w:"City partnership",st:"window",f:"District mobility planning; 2026 applications due Aug 21, realistically the 2027 cycle.",u:"https://www.oregon.gov/lcd/tgm/pages/planning-grants.aspx"},
+{n:"Regional Solutions (Mid-Valley)",lv:"State",t:"Technical",c:"infrastructure",s:"Coordination + discretionary dollars",w:"City partnership",st:"live",f:"The strongest single state door; priorities match housing, infrastructure, and ag entrepreneurship; meet early.",u:"https://www.oregon.gov/gov/regional-solutions/pages/midvalley.aspx"},
+{n:"Business Oregon Industrial Symbiosis program",lv:"State",t:"Technical",c:"circular",s:"New program; TA cohort forming",w:"Sponsor",st:"live",f:"Get Edgewater's district loops (energy, water, materials) onto the state roadmap and into the first TA cohort; Danish expertise is embedded in the regional pipeline.",u:"https://www.oregon.gov/biz/aboutus/pages/industrial_symbiosis_tour.aspx"},
+{n:"Oregon DEQ Reduce Reuse Reimagine grants",lv:"State",t:"Grant",c:"circular",s:"$25K-$225K, ~$2M/yr",w:"Sponsor",st:"window",f:"2026 theme is healthy building materials; fits the Passive House materials specification work.",u:"https://www.oregon.gov/deq/mm/pages/grants.aspx"},
+{n:"Travel Oregon competitive grants",lv:"State",t:"Grant",c:"placemaking",s:"~$20-100K",w:"Nonprofit / partner",st:"watch",f:"Riverfront destination projects; 2027 cycle.",u:"https://industry.traveloregon.com/grants/competitive-grants-program/"},
+{n:"Oregon Cultural Trust grants",lv:"State",t:"Grant",c:"placemaking",s:"$5-40K",w:"Nonprofit / partner",st:"watch",f:"Riverfront art and heritage components; spring 2027 cycle.",u:"https://www.culturaltrust.org/grants/how-to-apply/"},
+{n:"WA Commerce Industrial Symbiosis grants",lv:"Regional",t:"Grant",c:"circular",s:"$40K-$500K, 1:1 match",w:"Nonprofit / partner",st:"live",f:"Washington-only, but it is the template Oregon copied and the cross-border partner channel.",u:"https://fundhub.wa.gov/funding/industrial-symbiosis-grants-program/"},
+{n:"Denmark cooperation / EIFO export financing",lv:"Regional",t:"Debt",c:"capital",s:"Project-scale with Danish content",w:"Sponsor",st:"watch",f:"Danish export financing where Danish district-energy or building-system suppliers are used; relationship-driven, builds on the June 2026 Denmark-Washington agreement.",u:"https://www.eifo.dk/en/"},
+{n:"Scan Design Foundation",lv:"Regional",t:"Philanthropy",c:"circular",s:"Tens to low hundreds of thousands",w:"Nonprofit / partner",st:"live",f:"Funds the Denmark exchange work around the district rather than buildings.",u:"https://www.scandesignfoundation.org/"},
+{n:"OCF Building Hope Fund",lv:"Regional",t:"Equity",c:"capital",s:"$100M fund (new)",w:"Sponsor",st:"live",f:"New middle-income housing production capital; the strongest regional fit found in this pass.",u:"https://oregoncf.org/"},
+{n:"OCF Oregon Impact Fund",lv:"Regional",t:"Debt",c:"housing",s:"$30M via intermediaries",w:"Nonprofit / partner",st:"live",f:"Reaches projects through Craft3-type intermediaries.",u:"https://oregoncf.org/community-impact/impact-areas/economic-and-community-vitality/oregon-impact-fund"},
+{n:"Craft3 (CDFI)",lv:"Regional",t:"Debt",c:"housing",s:"Predevelopment and gap facilities",w:"Sponsor",st:"live",f:"Anchor PNW CDFI; the action plan's predevelopment facility conversation.",u:"https://www.craft3.org/"},
+{n:"Meyer Memorial Trust",lv:"Regional",t:"Philanthropy",c:"housing",s:"$50-250K grants",w:"Nonprofit / partner",st:"watch",f:"Current strategy favors policy and homeownership; PRI appetite to verify directly.",u:"https://mmt.org/programs"},
+{n:"M.J. Murdock Charitable Trust",lv:"Regional",t:"Philanthropy",c:"placemaking",s:"Capital grants to ~$1M",w:"Nonprofit / partner",st:"live",f:"Capital grant for a nonprofit-owned district component such as a community facility.",u:"https://murdocktrust.org/grant-opportunities"},
+{n:"RIA Northwest (PNWER)",lv:"Regional",t:"Technical",c:"infrastructure",s:"In-kind technical assistance",w:"City partnership",st:"window",f:"USDOT-funded finance structuring help for city-sponsored district infrastructure, funded through 2026.",u:"https://www.rianorthwest.org/about"},
+{n:"MWVCOG Small Business Loan Fund",lv:"Regional",t:"Debt",c:"innovation",s:"Five-to-six-figure loans",w:"Tenant / operator",st:"live",f:"Tenant financing across Marion, Polk, and Yamhill counties.",u:"https://www.mwvcog.org/small-business-financing"},
+{n:"SEDCOR",lv:"Regional",t:"Technical",c:"innovation",s:"Recruitment and coordination",w:"Tenant / operator",st:"live",f:"Enterprise Zone manager and employer-recruitment ally for the innovation district.",u:"https://www.sedcor.com/"},
+{n:"West Salem URA Capital Improvement Grant",lv:"Local",t:"Grant",c:"infrastructure",s:"Matching, to $300K",w:"Sponsor",st:"live",f:"Mixed-use multifamily eligible in the WS URA; 5-year retention; the relationship-builder for the district TIF conversation.",u:"https://www.cityofsalem.net/business/business-resources/grants-and-incentives/west-salem-capital-improvement-grant-program"},
+{n:"Multi-Unit Housing Tax Incentive (MUHTIP)",lv:"Local",t:"Tax",c:"housing",s:"To 10-yr property tax abatement",w:"Sponsor",st:"window",f:"Over 50 units requires 15% of homes at rents under 80% AMI; construction window runs to 2031; pre-application before Sep 1.",u:"https://www.cityofsalem.net/business/business-resources/grants-and-incentives/multi-unit-housing-tax-incentive-program"},
+{n:"Single Property TIF for Affordable Housing",lv:"Local",t:"Tax",c:"housing",s:"Rebate to 97% (Jory precedent)",w:"Sponsor",st:"live",f:"Citywide; at least 15% of units or 20 homes at or below 80% AMI; choose against other exemptions, they do not stack.",u:"https://www.cityofsalem.net/business/business-resources/grants-and-incentives/single-property-tax-increment-financing-district-for-affordable-housing"},
+{n:"Low-Income Housing Property Tax Exemption",lv:"Local",t:"Tax",c:"housing",s:"To 10 years",w:"Nonprofit / partner",st:"live",f:"Requires a nonprofit owner or nonprofit GP; tenants at or below 60% AMI.",u:"https://www.cityofsalem.net/community/household/financial-assistance-grants/low-income-housing-property-tax-exemption-program"},
+{n:"Salem Enterprise Zone",lv:"Local",t:"Tax",c:"innovation",s:"3-5 year abatement",w:"Tenant / operator",st:"live",f:"Traded-sector tenants only, retail and housing excluded; pre-certify before ground-break; managed with SEDCOR.",u:"https://www.cityofsalem.net/business/land-use-zoning/development-maps/enterprise-zone"},
+{n:"City CDBG / HOME",lv:"Local",t:"Grant",c:"housing",s:"Annual entitlement funds",w:"City partnership",st:"live",f:"Salem is an entitlement city, so these route through the city's Federal Programs division for eligible affordable components.",u:"https://www.cityofsalem.net/business/building-in-salem/housing-development-resources"},
+{n:"Safety & Livability Bond housing funds",lv:"Local",t:"Grant",c:"housing",s:"$10M affordable fund + $7.5M site acquisition",w:"City partnership",st:"live",f:"City bond proceeds; align affordable phases with the city's deployment schedule.",u:"https://www.cityofsalem.net/business/building-in-salem/housing-development-resources"},
+{n:"Affordable housing SDC exemptions",lv:"Local",t:"Tax",c:"housing",s:"~$8K/unit at market SDC rates",w:"Sponsor",st:"live",f:"1/30th per year of affordability over 5-30 years; automatic for qualifying units.",u:"https://www.cityofsalem.net/business/building-in-salem/housing-development-resources"},
+{n:"District-scale TIF (WS URA amendment or successor)",lv:"Local",t:"Tax",c:"infrastructure",s:"$30-80M target scope",w:"City partnership",st:"watch",f:"The central negotiation, 12-24 month arc; register item 3 tracks plan capacity ($31M current plan figure vs $53M in the 2017 fact sheet).",u:"https://www.cityofsalem.net/government/departments-agencies/urban-renewal-agency/urban-renewal-areas/west-salem-urban-renewal-area"}
+];
+(function(){
+const state={lv:"all",c:"all",w:"all",q:""};
+const rows=document.getElementById("fnrows"),count=document.getElementById("fncount");
+function render(){
+  const q=state.q.toLowerCase();
+  const list=FN.filter(p=>(state.lv==="all"||p.lv===state.lv)&&(state.c==="all"||p.c===state.c)&&(state.w==="all"||p.w===state.w)&&(!q||(p.n+" "+p.f+" "+p.s+" "+p.t).toLowerCase().includes(q)));
+  rows.innerHTML=list.map(p=>`<div class="fnrow"><div><div class="fname">${p.n}</div><div class="fbadges"><span class="fb lvl">${p.lv==="State"?"Oregon":(p.lv==="Regional"?"PNW":p.lv)}</span><span class="fb typ">${p.t}</span></div></div><div class="fsize">${p.s}</div><div class="fwho">${p.w}</div><div class="ffit"><span class="stdot ${p.st}"></span>${p.f}</div><div class="flink"><a href="${p.u}" target="_blank" rel="noopener">Source&nbsp;&rarr;</a></div></div>`).join("");
+  count.textContent="Showing "+list.length+" of "+FN.length+" programs";
+}
+document.querySelectorAll(".fchip").forEach(ch=>ch.addEventListener("click",()=>{
+  const f=ch.dataset.f;state[f]=ch.dataset.v;
+  document.querySelectorAll('.fchip[data-f="'+f+'"]').forEach(x=>x.classList.toggle("on",x===ch));
+  render();
+}));
+document.getElementById("fnq").addEventListener("input",e=>{state.q=e.target.value;render();});
+render();
+})();
+</script>
+</section>
+
 <section class="dark" id="execution" style="border-top:1px solid #3d392f">
   <div class="wrap">
     <div class="sec-head rv">
@@ -389,6 +541,7 @@
       <tr><td>4</td><td>NMTC tract eligibility</td><td><span class="pill open">Open</span></td><td>Commercial component stack</td></tr>
       <tr><td>5</td><td>WIFIA threshold fit for water systems</td><td><span class="pill plan">Unscoped</span></td><td>Federal infrastructure credit</td></tr>
       <tr><td>6</td><td>Blended-cost model reflecting this stack</td><td><span class="pill plan">In build</span></td><td>Investor materials</td></tr>
+      <tr><td>7</td><td>Utility territory at the parcels (PGE vs Salem Electric)</td><td><span class="pill open">Open</span></td><td>Energy Trust + Oregon Multifamily Energy incentives</td></tr>
     </table>
     <p class="muted rv" style="font-size:12.5px;margin-top:18px">Prepared as working strategy for the data room. Figures are indicative ranges pending the register above.</p>
   </div>
