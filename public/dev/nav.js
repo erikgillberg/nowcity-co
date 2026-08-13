@@ -6,6 +6,7 @@
     ["index.html","The Shelf"],
     ["atlas.html","Atlas"],
     ["now-city-homes.html","Homes Strategy"],
+    ["million-homes.html","Million Homes"],
     ["jv-playbook.html","JV Playbook"],
     ["meeting-guides-jul-22.html","Meeting Guides"],
     ["atlas.html#codes","Codes"]

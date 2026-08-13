@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Million Homes Question · 30-Year Deck</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script defer src="nav.js?v=1"></script>
+<style>
+:root{--bg:#1d1a16;--panel:#26221d;--line:#3d392f;--ink:#d8d2c4;--ink-strong:#f0ebe0;--muted:#948d80;--accent:#d9a26c;--green:#9db08a;--serif:'Libre Baskerville',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body.gated main,body.gated header{display:none}
+a{color:var(--accent)}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+main{padding:40px 0 90px}
+.deckmeta{font-size:13px;color:var(--muted);padding:26px 0 8px;border-bottom:1px solid var(--line)}
+.slide{padding:54px 0 46px;border-bottom:1px solid var(--line)}
+.sk{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.sk .sn{font-family:var(--serif);font-size:13px;color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:2px 11px;white-space:nowrap}
+.sk .sp{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.slide h2{font-family:var(--serif);font-size:clamp(22px,3vw,30px);color:var(--ink-strong);line-height:1.3;margin-bottom:16px}
+.slide h2 em{color:var(--accent);font-style:normal}
+.slide p{margin-bottom:12px;max-width:760px}
+.slide p.big{font-family:var(--serif);font-size:clamp(17px,2.2vw,21px);color:var(--ink-strong);line-height:1.55}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:16px 0 6px}
+th{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:10px;border-bottom:1px solid #2e2a24;vertical-align:top;line-height:1.5}
+td:first-child{color:var(--ink-strong)}
+tr.hl td{background:rgba(217,162,108,.07)}
+.gap{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:11px;padding:3px 10px;margin:0 2px}
+.g-model{background:rgba(139,150,168,.16);color:#9aa6bd}
+.g-assume{background:rgba(217,162,108,.16);color:var(--accent)}
+.g-derive{background:rgba(157,176,138,.14);color:var(--green)}
+.g-verify{background:rgba(224,138,138,.13);color:#e08a8a}
+.callout{background:var(--panel);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:16px 20px;margin:16px 0;font-size:14.5px;max-width:760px}
+.blocked{border:1.5px dashed #4a453a;border-radius:10px;padding:20px 22px;margin-top:14px;background:rgba(139,150,168,.05)}
+.blocked .bt{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9aa6bd;margin-bottom:8px}
+.src{font-size:11.5px;color:var(--muted);line-height:1.6;margin-top:10px;max-width:760px}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:var(--muted)}
+#gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:50}
+#gate .panel{max-width:360px;width:90%}
+#gate .eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+#gate h1{font-family:var(--serif);color:var(--ink-strong);font-size:34px;margin-bottom:12px}
+#gate p{font-size:14px;margin-bottom:18px}
+#gate input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:6px;background:#15130f;color:var(--ink-strong);font-size:15px}
+#gate button{margin-top:12px;width:100%;padding:13px;border:none;border-radius:6px;background:var(--accent);color:#1d1a16;font-weight:700;font-size:14px;cursor:pointer}
+#gate .err{color:#e08a8a;font-size:13px;margin-top:10px;min-height:18px}
+@media print{#gate{display:none}body.gated main,body.gated header{display:block}body{background:#fff;color:#222}.slide{page-break-inside:avoid}h2,td:first-child,.slide p.big{color:#111}}
+</style>
+</head>
+<body class="gated">
+<div id="gate"><div class="panel">
+  <div class="eyebrow">Now City Dev</div><h1>Working<br>Documents</h1>
+  <p>Internal material for the Now City team and invited collaborators.</p>
+  <form id="gateform"><input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+  <button type="submit">Enter</button><div class="err" id="gateerr"></div></form>
+</div></div>
+<main><div class="wrap">
+
+<div class="deckmeta"><strong style="color:var(--ink-strong)">The Million Homes Question</strong> &middot; 30-year strategy deck, v2 structure &middot; August 13, 2026 &middot; Internal, confidential &middot; Financial slides are framed with labeled gaps; no invented numbers appear anywhere in this deck. Provenance labels: <span class="gap g-derive">Sourced / Derived</span> <span class="gap g-assume">Assumption</span> <span class="gap g-model">To Model</span> <span class="gap g-verify">To Verify</span></div>
+
+<!-- PART I -->
+<div class="slide" id="s1">
+  <div class="sk"><span class="sn">1</span><span class="sp">Part I &middot; The Constraint</span></div>
+  <h2>What would it take to build and operate <em>one million homes</em> this way over thirty years?</h2>
+  <p class="big">The million is a diagnostic, not a target. We use the number to find out what the business model has to become, because the answer disqualifies the business almost everyone in this industry is in.</p>
+  <p>As a boast, it invites dismissal from anyone who knows the ground truth. As a stress test, it is the most useful question in the plan.</p>
+</div>
+
+<div class="slide" id="s2">
+  <div class="sk"><span class="sn">2</span><span class="sp">Part I &middot; The Arithmetic</span></div>
+  <h2>The arithmetic</h2>
+  <table>
+    <tr><td>1,000,000 homes &divide; 30 years</td><td><strong>33,300 / year</strong> average</td></tr>
+    <tr><td>With a realistic ramp (near-zero years 1-5)</td><td><strong>~47,000 / year</strong> steady state</td></tr>
+    <tr><td>At ~1,000 homes per district</td><td><strong>1,000 districts</strong></td></tr>
+    <tr><td>At an 8-year district cycle</td><td><strong>~260 districts in flight</strong> simultaneously</td></tr>
+  </table>
+</div>
+
+<div class="slide" id="s3">
+  <div class="sk"><span class="sn">3</span><span class="sp">Part I &middot; Benchmarks</span></div>
+  <h2>What that number means</h2>
+  <table>
+    <thead><tr><th>Benchmark</th><th>Figure</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Largest US apartment developer (Greystar), units started 2024</td><td>8,247</td><td>NMHC Top 25 Developers, 2025</td></tr>
+      <tr><td>Top developer, 2026 list</td><td>&lt;8,000, first time below since 2019</td><td>NMHC / Multifamily Dive, Apr 2026</td></tr>
+      <tr><td>US multifamily completions, 2024 peak</td><td>584,000</td><td>Continental Properties / CoStar</td></tr>
+      <tr><td>US multifamily completions, 2025</td><td>531,000</td><td>Apartments.com / CoStar</td></tr>
+      <tr><td>2026 forecast</td><td>260,000-478,000 (sources diverge widely)</td><td>MMG, Apartments.com, Yardi Matrix</td></tr>
+      <tr><td>Pre-pandemic 5-year average</td><td>303,000</td><td>Continental Properties</td></tr>
+    </tbody>
+  </table>
+  <p class="big">33,300/year &asymp; 4x the largest developer in America, every year, for 30 years, or 8-11% of all US multifamily production.</p>
+</div>
+
+<div class="slide" id="s4">
+  <div class="sk"><span class="sn">4</span><span class="sp">Part I &middot; The Finding</span></div>
+  <h2>Nobody can reach this as a developer. Not us, not anyone.</h2>
+  <p class="big">So the question is which engine carries volume and which carries margin. This is not a scaling problem; it is a structural ceiling on the development business model.</p>
+</div>
+
+<div class="slide" id="s5">
+  <div class="sk"><span class="sn">5</span><span class="sp">Part I &middot; The Mix</span></div>
+  <h2>The mix that reaches a million <span class="gap g-assume">Assumption</span></h2>
+  <table>
+    <thead><tr><th>Engine</th><th>30-year homes</th><th>Share</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td>Owned districts</td><td>40,000-60,000</td><td>~5%</td><td>Proof, margin, design authority, data</td></tr>
+      <tr><td>Catalog delivered by others</td><td>700,000-800,000</td><td>~75%</td><td>Volume</td></tr>
+      <tr class="hl"><td>Operated (incl. homes not built by us)</td><td>1,000,000+</td><td>&mdash;</td><td>The compounding asset</td></tr>
+    </tbody>
+  </table>
+  <p class="src">Directionally forced by the constraint, not modeled. Per-unit catalog economics are input #2 on the final slide.</p>
+</div>
+
+<!-- PART II -->
+<div class="slide" id="s6">
+  <div class="sk"><span class="sn">6</span><span class="sp">Part II &middot; The Compounding Engine</span></div>
+  <h2>Why the opportunity exists: fragmentation</h2>
+  <p class="big">Construction, infrastructure, capital, and operations are each optimized separately, by different firms, on different clocks, with different exit horizons. Cross-layer gains are structurally unclaimable by anyone optimizing one layer.</p>
+  <p>The concrete case: a Passive House envelope raises capex and lowers operating cost for decades. A merchant builder cannot capture that, because they sell before the operating years arrive, so they value-engineer it out. Every rational actor in the current structure makes the same choice. The gain is not hard to find. It is unownable.</p>
+  <div class="callout"><strong>Now City holds.</strong> That single fact makes the trade available. The same logic runs through district energy, water reuse, mobility, and ground-floor programming. This is the technical claim the whole company rests on: checkable, not a matter of taste, and independent of anyone believing in regenerative development.</div>
+</div>
+
+<div class="slide" id="s7">
+  <div class="sk"><span class="sn">7</span><span class="sp">Part II &middot; What Compounds</span></div>
+  <h2>What compounds, specifically</h2>
+  <table>
+    <thead><tr><th>Variable</th><th>Mechanism</th><th>Measured by</th></tr></thead>
+    <tbody>
+      <tr><td>Delivery cost per unit</td><td>Chassis revision + tooling amortization across a larger order book</td><td>Factory contract price per unit, per generation</td></tr>
+      <tr><td>Schedule to occupancy</td><td>Repeat sequence, pre-approved details</td><td>Start-to-CO days</td></tr>
+      <tr><td>Entitlement cycle time</td><td>Code pathway packages approved jurisdiction by jurisdiction</td><td>Application-to-permit days</td></tr>
+      <tr><td>Energy + water cost per unit</td><td>Designed, measured, redesigned</td><td>Metered actuals vs. design intent</td></tr>
+      <tr><td>Retention</td><td>Operating and programming discipline</td><td>Turnover rate, downtime, concessions</td></tr>
+      <tr><td>Cost of capital</td><td>Track record with repeat public and lending partners</td><td>Blended cost per district</td></tr>
+      <tr class="hl"><td>Underwriting error</td><td>Every pro forma compared to actuals; variance fed back</td><td>Modeled vs. actual, by line</td></tr>
+    </tbody>
+  </table>
+  <p class="src">The last row is the real instrument. A district that measures its own forecast error and narrows it is a system that learns. It is also the honest answer to "what does the AI actually do."</p>
+</div>
+
+<div class="slide" id="s8">
+  <div class="sk"><span class="sn">8</span><span class="sp">Part II &middot; The Rate</span></div>
+  <h2>The rate, stated honestly</h2>
+  <p class="big">We do not have a rate. At n=1, nobody could. What we have is a mechanism and an instrument, and the specific purpose of districts two and three is to produce the first two data points.</p>
+  <p>Anyone who gives you a learning-curve percentage before their second project is making it up. Naming the rate is the deliverable of Phase 2, not a claim of Phase 1.</p>
+</div>
+
+<div class="slide" id="s9">
+  <div class="sk"><span class="sn">9</span><span class="sp">Part II &middot; Precedent</span></div>
+  <h2>Precedent: borrow the mechanism, choose the anchor</h2>
+  <p>Four moves worth borrowing, all from the same playbook: co-design the whole stack rather than one layer; partner on manufacturing but never on product definition; keep improving the product after delivery; and let the standard spread further than your own production.</p>
+  <table>
+    <thead><tr><th>Anchor</th><th>Mechanism it demonstrates</th></tr></thead>
+    <tbody>
+      <tr><td>Tesla <em style="color:var(--muted)">(US audiences)</em></td><td>The full sequence: a staged master plan funding each phase from the last; one platform expanded into an adjacent product line (cars &rarr; energy storage &rarr; solar &rarr; compute); manufacturing as the product ("the machine that builds the machine"); fleet data compounding into the software advantage; and sibling ventures (SpaceX) sharing talent, tooling discipline, and credibility without sharing a balance sheet. Now City's analog: district &rarr; catalog &rarr; infrastructure &rarr; operations, with the operating data as the fleet.</td></tr>
+      <tr><td>Kombohus <em style="color:var(--muted)">(institutional / Nordic)</em></td><td>Demand aggregation producing real factory economics: ~10,000 apartments, ~5 months faster, 20-25% below comparable cost (Sveriges Allm&auml;nnytta). Proven at national scale, and already in our materials.</td></tr>
+      <tr><td>LEGO</td><td>One standardized system, unlimited contextual expression, sustained for generations.</td></tr>
+      <tr><td>&Oslash;rsted</td><td>Infrastructure ownership and a long-horizon transformation, with the volatility that comes with it.</td></tr>
+    </tbody>
+  </table>
+  <p class="src">Lead with the mechanism; let the reader supply the comparison. The American anchor is most legible in the US and most contested in Europe; default to Nordic anchors for institutional audiences.</p>
+</div>
+
+<div class="slide" id="s10">
+  <div class="sk"><span class="sn">10</span><span class="sp">Part II &middot; The Plan</span></div>
+  <h2>The plan, in four sentences</h2>
+  <table>
+    <tr><td>1</td><td>Build one district as one product, at a cost that only makes sense as proof.</td></tr>
+    <tr><td>2</td><td>Use it to build a small number of districts and finish the catalog.</td></tr>
+    <tr><td>3</td><td>Use the catalog to make the chassis the thing others default to.</td></tr>
+    <tr><td>4</td><td>And operate every district, forever, so each one teaches the next.</td></tr>
+  </table>
+</div>
+
+<!-- PART III -->
+<div class="slide" id="s11">
+  <div class="sk"><span class="sn">11</span><span class="sp">Part III &middot; Land and Consent</span></div>
+  <h2>Two land strategies</h2>
+  <table>
+    <thead><tr><th></th><th>Assembly-first</th><th>Consent-first (Now City)</th></tr></thead>
+    <tbody>
+      <tr><td>Land</td><td>Buy quietly at scale, greenfield</td><td>Brownfield infill inside an existing city</td></tr>
+      <tr><td>Entitlement</td><td>Sought after acquisition</td><td>Corridor already rezoned before we arrive</td></tr>
+      <tr><td>Landowner</td><td>Cashed out as seller</td><td>Converted to equity partner</td></tr>
+      <tr><td>Cash at risk pre-approval</td><td>Very high</td><td>Near zero</td></tr>
+      <tr><td>Political risk</td><td>Concentrated, binary, potentially fatal</td><td>Distributed, incremental</td></tr>
+      <tr><td>Timeline</td><td>Unbounded</td><td>Bounded by existing entitlement</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">Land basis per acre is higher. Cash at risk is a fraction. <strong>The trade is deliberate: we pay more per acre to buy a bounded timeline and a survivable politics.</strong></div>
+</div>
+
+<div class="slide" id="s12">
+  <div class="sk"><span class="sn">12</span><span class="sp">Part III &middot; Evidence</span></div>
+  <h2>Edgewater as the evidence</h2>
+  <table>
+    <tbody>
+      <tr><td>Corridor rezoned high-density mixed-use</td><td>2022, complete</td></tr>
+      <tr><td>Program by-right</td><td>Substantially</td></tr>
+      <tr><td>Urban Renewal Area</td><td>Inside</td></tr>
+      <tr><td>Opportunity Zone</td><td>Verified</td></tr>
+      <tr><td>Landowner</td><td>Signed LOI, contributing $5M of land value as foundational equity, not a cash purchase</td></tr>
+    </tbody>
+  </table>
+  <p class="big">The longest pole in a new-city project, the right to build, was removed before we committed capital.</p>
+</div>
+
+<div class="slide" id="s13">
+  <div class="sk"><span class="sn">13</span><span class="sp">Part III &middot; The Veto Map</span></div>
+  <h2>Everyone who can stop this, named</h2>
+  <p>An unbounded actor on this list is a fatal flaw. The argument is that there is not one.</p>
+  <table>
+    <thead><tr><th>Actor</th><th>Power</th><th>Bounded by</th></tr></thead>
+    <tbody>
+      <tr><td>City of Salem</td><td>Permits, master plan approval</td><td>Existing zoning; program largely by-right</td></tr>
+      <tr><td>West Salem URA board</td><td>TIF participation</td><td>Adopted URA plan</td></tr>
+      <tr><td>State of Oregon</td><td>OZ nomination</td><td>Sept 29, 2026 window, a hard date</td></tr>
+      <tr><td>Landowner</td><td>Site control</td><td>Executed LOI with milestone gates</td></tr>
+      <tr><td>Neighbors / referendum</td><td>Political pressure</td><td>No rezoning required, so no ballot trigger</td></tr>
+      <tr><td>Lenders / HUD</td><td>Capital</td><td>Standard underwriting</td></tr>
+    </tbody>
+  </table>
+  <p class="src"><span class="gap g-verify">To Verify</span> before external use: confirm no local referendum mechanism attaches to any remaining discretionary approval. <span class="gap g-verify">To Verify</span> Salem adoption of single-stair Appendix Q is unconfirmed (Aug 2026 fact-check); no chassis assumption should rest on it until confirmed in writing.</p>
+</div>
+
+<div class="slide" id="s14">
+  <div class="sk"><span class="sn">14</span><span class="sp">Part III &middot; The Clock</span></div>
+  <h2>The entitlement clock we claim to compress</h2>
+  <p class="big">Honest version: rezoning was the long pole and it is already done at Edgewater. What remains, master plan, engineering, TIF concept, phase permits, is normal-course work.</p>
+  <p>The compression claim across <em>future</em> districts rests on the code pathway packages and the repeat playbook, and is unproven until district two.</p>
+</div>
+
+<!-- PART IV -->
+<div class="slide" id="s15">
+  <div class="sk"><span class="sn">15</span><span class="sp">Part IV &middot; Entity Architecture</span></div>
+  <h2>Six entities, three revenue models</h2>
+  <table>
+    <thead><tr><th>Entity</th><th>Model</th><th>Capital type</th><th>Revenue</th></tr></thead>
+    <tbody>
+      <tr><td>Now City Inc (holdco)</td><td>Platform</td><td>Venture equity</td><td>GP economics, promote, IP, brand</td></tr>
+      <tr><td>Now City Homes</td><td>Product</td><td>Venture / strategic</td><td>Product margin + per-unit license</td></tr>
+      <tr><td>Now City Districts</td><td>Development</td><td>LP equity + public stack</td><td>Dev fees, promote</td></tr>
+      <tr><td>Now City Infrastructure</td><td>Utility</td><td>Infrastructure capital, long-dated</td><td>Metered energy, water, mobility</td></tr>
+      <tr><td>Now City Operating</td><td>Services</td><td>Cash-flow financed, acquisition-fed</td><td>Management fees, programming, retention premium</td></tr>
+      <tr><td>NowCity.AI</td><td>Software + data</td><td>Venture</td><td>SaaS, and the operating data asset</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">Design authority over the chassis and the brand stay at the holdco, never delegated. Partner on the factory; never on the product definition. <strong>Open founder decision:</strong> whether Infrastructure and Operating are separate entities or divisions; this slide changes with that answer.</div>
+</div>
+
+<div class="slide" id="s16">
+  <div class="sk"><span class="sn">16</span><span class="sp">Part IV &middot; Model Behavior</span></div>
+  <h2>How the three models behave</h2>
+  <table>
+    <thead><tr><th></th><th>Development</th><th>Product</th><th>Operating</th></tr></thead>
+    <tbody>
+      <tr><td>Margin</td><td>High per deal</td><td>Thin per unit, high volume</td><td>Thin, recurring, compounding</td></tr>
+      <tr><td>Capital intensity</td><td>Very high</td><td>Moderate</td><td>Low</td></tr>
+      <tr><td>Cyclicality</td><td>Severe</td><td>Moderate</td><td>Low</td></tr>
+      <tr><td>Scales with</td><td>Districts won</td><td>Units shipped</td><td>Units under management</td></tr>
+      <tr class="hl"><td>Multiple</td><td>Low</td><td>Moderate</td><td>High</td></tr>
+    </tbody>
+  </table>
+  <p class="big">The valuation argument lives in the right-hand column.</p>
+</div>
+
+<div class="slide" id="s17">
+  <div class="sk"><span class="sn">17</span><span class="sp">Part IV &middot; Stewardship</span></div>
+  <h2>Who is accountable in thirty years</h2>
+  <p>An entity map answers who earns. It does not answer who is responsible, or where the value created ends up. Both must be structural, not cultural, or they will not survive a recapitalization.</p>
+  <table>
+    <thead><tr><th>Question</th><th>Instrument</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Who holds the district long-term?</td><td>Now City Operating + holdco co-investment; recapitalized rather than sold</td><td>Stated policy, no binding instrument</td></tr>
+      <tr><td>What obligations run with the land?</td><td>Covenants, district cultural assessment in lease templates</td><td>Lease template drafted; covenants not drafted</td></tr>
+      <tr><td>Who represents residents and tenants?</td><td>District governance role (Cultural Steward defined)</td><td>Role defined, unfilled</td></tr>
+      <tr><td>Where does created value land?</td><td>Local ownership structures; Urban Reboot as nonprofit counterweight</td><td>Advisory relationship; no capital mechanism</td></tr>
+      <tr class="hl"><td>What survives a change of control?</td><td><strong>Nothing yet.</strong></td><td><strong>The real gap</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="callout"><strong>Say this plainly:</strong> stewardship is currently intention plus advisory relationships. The instruments that would make it binding do not exist. Naming that is what earns the institutional reader; claiming otherwise is what loses them permanently.</div>
+</div>
+
+<!-- PART V -->
+<div class="slide" id="s18">
+  <div class="sk"><span class="sn">18</span><span class="sp">Part V &middot; Phasing</span></div>
+  <h2>Four phases <span class="gap g-model">To Model</span></h2>
+  <table>
+    <thead><tr><th>Phase</th><th>Years</th><th>Proves</th><th>Homes/yr at exit</th></tr></thead>
+    <tbody>
+      <tr><td>1 &middot; Proof</td><td>2026-2029</td><td>The stack works once</td><td>~250</td></tr>
+      <tr><td>2 &middot; Repeat</td><td>2029-2033</td><td>It repeats; operating capability exists; the learning rate is measured</td><td>~2,000</td></tr>
+      <tr><td>3 &middot; Standard</td><td>2033-2040</td><td>Others build with our chassis</td><td>~15,000</td></tr>
+      <tr><td>4 &middot; Default</td><td>2040-2056</td><td>Infrastructure and operating carry the P&amp;L</td><td>~47,000</td></tr>
+    </tbody>
+  </table>
+  <div class="blocked"><div class="bt">Blocked until modeled</div>These are reverse-engineered requirements, not forecasts. The homes-per-year exits, district counts per phase, and team growth by phase come from the finance library (input #3, final slide) before this slide is shown to anyone.</div>
+</div>
+
+<div class="slide" id="s19">
+  <div class="sk"><span class="sn">19</span><span class="sp">Part V &middot; Capital</span></div>
+  <h2>The capital ladder <span class="gap g-model">To Model</span></h2>
+  <table>
+    <thead><tr><th>Phase</th><th>Platform capital</th><th>Purpose</th><th>Separate vehicles</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>Pre-seed (now)</td><td>$3.5M</td><td>Edgewater, catalog artifacts, first operating hire</td><td>$12M District Fund</td></tr>
+      <tr><td>Seed / A</td><td><span class="gap g-model">To Model</span></td><td>First operating acquisition, districts 2-3</td><td>District SPVs</td></tr>
+      <tr><td>B</td><td><span class="gap g-model">To Model</span></td><td>Infrastructure co seeded, licensing at scale</td><td>Infra vehicle</td></tr>
+      <tr><td>Growth</td><td><span class="gap g-model">To Model</span></td><td>National catalog, M&amp;A</td><td>Project capital</td></tr>
+    </tbody>
+  </table>
+  <p class="big">What can be said without a model: platform raises stay small relative to the district and infrastructure vehicles, and that asymmetry is the design. It is how a small platform controls a large pipeline.</p>
+  <p>Read $3.5M the way the question demands: not as a development budget but as the first rung of a ladder whose later rungs assemble teams and acquire companies. The raise buys the proof district, the catalog artifacts, and the first operating hire; the Series A buys the first operating acquisition.</p>
+</div>
+
+<div class="slide" id="s20">
+  <div class="sk"><span class="sn">20</span><span class="sp">Part V &middot; Acquisitions</span></div>
+  <h2>The acquisition roadmap: buy capabilities on the way to the vision</h2>
+  <p>Precedent: Greystar reached ~1M units under management by 2026 from a 1993 founding, substantially through acquisitions and portfolio partnerships, including a 2025 partnership adding 11,000 units in one move (NMHC 2026; Multifamily Dive, Apr 2026). Thirty years, built by buying operators. The Tesla analog is the same discipline applied to capabilities: acquire or build the adjacent layer when the platform's demand makes it accretive.</p>
+  <table>
+    <thead><tr><th>Phase</th><th>Acquire</th><th>Fixes</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>2</td><td>Regional property management platform (5,000-20,000 units)</td><td>Operating capability, operating data, cash flow: three problems, one transaction</td></tr>
+      <tr><td>2-3</td><td>Civil / entitlement engineering firm</td><td>Pipeline velocity</td></tr>
+      <tr><td>3</td><td>ESCO or district energy operator</td><td>Seeds Now City Infrastructure with an operating book</td></tr>
+      <tr><td>3</td><td>Equity in factory capacity</td><td>Chassis supply risk</td></tr>
+      <tr><td>3-4</td><td>Resident experience / revenue management software</td><td>Makes the experience layer measurable</td></tr>
+    </tbody>
+  </table>
+  <div class="callout"><strong>The Phase 2 management acquisition is the highest-leverage move on this map</strong> and should be the spine of the Series A story.</div>
+</div>
+
+<!-- PART VI -->
+<div class="slide" id="s21">
+  <div class="sk"><span class="sn">21</span><span class="sp">Part VI &middot; Market Sizing</span></div>
+  <h2>The current sizing measures the wrong thing</h2>
+  <p class="big">The /invest page sizes a construction TAM (~$115B/yr) for a company whose thesis is product and operations. It undercounts our own business and invites comparison to developers.</p>
+</div>
+
+<div class="slide" id="s22">
+  <div class="sk"><span class="sn">22</span><span class="sp">Part VI &middot; Layered TAM</span></div>
+  <h2>Layered TAM <span class="gap g-model">To Model</span></h2>
+  <table>
+    <thead><tr><th>Layer</th><th>US market</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr><td>Development</td><td>~$115B/yr <span class="gap g-derive">Sourced</span></td><td>Census: private multifamily construction put in place, $114.8B SAAR, Jun 2026 release</td></tr>
+      <tr><td>Product / chassis</td><td><span class="gap g-model">To Model</span></td><td>Units &times; per-unit product and license revenue</td></tr>
+      <tr><td>Operating</td><td>~$14B/yr <span class="gap g-derive">Derived</span> <span class="gap g-verify">Verify</span></td><td>~23M US apartments &times; ~$1,700/mo &times; 12 &times; ~3% mgmt fee; verify against a real source before use</td></tr>
+      <tr><td>Infrastructure</td><td><span class="gap g-model">To Model</span></td><td>District energy, water, mobility</td></tr>
+      <tr><td>Software / data</td><td><span class="gap g-model">To Model</span></td><td>Underwriting + operating optimization</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="slide" id="s23">
+  <div class="sk"><span class="sn">23</span><span class="sp">Part VI &middot; SAM / SOM</span></div>
+  <h2>SAM and SOM <span class="gap g-model">To Model</span></h2>
+  <p><strong>SAM:</strong> the West Coast wedge (~$20-25B/yr) is right for Phases 1-2 and wrong for the 30-year story. By Phase 3 the constraint is code pathway coverage, not geography.</p>
+  <p><strong>SOM:</strong> the existing ~$250M/yr by year 10 is a development SOM. A second SOM, units under management and infrastructure revenue, is where the valuation sits, and it does not yet exist.</p>
+  <div class="blocked"><div class="bt">Blocked until modeled</div>The layered SOM requires per-unit catalog economics and the phase ramp (inputs #2 and #3). Until then, this deck states the development SOM only, labeled as such.</div>
+</div>
+
+<!-- PART VII -->
+<div class="slide" id="s24">
+  <div class="sk"><span class="sn">24</span><span class="sp">Part VII &middot; The Bets</span></div>
+  <h2>Five load-bearing bets</h2>
+  <table>
+    <tbody>
+      <tr><td>1</td><td><strong>Single-stair reform keeps spreading.</strong> Grounded: Seattle since 1977; WA statewide effective May 2027; OR four-story local opt-in live; CA stalled after a skeptical Fire Marshal report; 19 states + DC have introduced bills, 7 passed in 2025 (Pew), and Connecticut repealed in 2026. Without continued spread the chassis has no national market.</td></tr>
+      <tr><td>2</td><td><strong>Demand aggregation actually produces factory economics.</strong> Kombohus is the precedent; Katerra (~$2B raised, bankrupt 2021) is the counter-example. Our version is untested.</td></tr>
+      <tr><td>3</td><td><strong>Other developers will build with someone else's chassis.</strong> The biggest unproven claim in the plan.</td></tr>
+      <tr><td>4</td><td><strong>The operating layer produces a measurable premium.</strong> No Now City data exists.</td></tr>
+      <tr><td>5</td><td><strong>Operating data compounds into real advantage.</strong> Believable, unproven at n=1.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="slide" id="s25">
+  <div class="sk"><span class="sn">25</span><span class="sp">Part VII &middot; The Readers</span></div>
+  <h2>What would make each reader say no</h2>
+  <table>
+    <thead><tr><th>Reader</th><th>Fatal finding</th></tr></thead>
+    <tbody>
+      <tr><td>Systems technologist</td><td>A learning rate asserted rather than measured, or a compounding loop with no instrument attached</td></tr>
+      <tr><td>New-city builder</td><td>An unbounded actor on the veto map, an entitlement claim that is aspirational, or land basis that only works at zero cost of capital</td></tr>
+      <tr><td>Nordic institution</td><td>Stewardship claimed without instruments, or accountability that ends at sale</td></tr>
+      <tr class="hl"><td>All three</td><td><strong>One invented number</strong></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="slide" id="s26">
+  <div class="sk"><span class="sn">26</span><span class="sp">Part VII &middot; The Gaps</span></div>
+  <h2>What we do not have</h2>
+  <table>
+    <tbody>
+      <tr><td>1</td><td>No operating entity, team, or budget line</td></tr>
+      <tr><td>2</td><td>No infrastructure entity or capital plan</td></tr>
+      <tr><td>3</td><td>No per-unit catalog economics</td></tr>
+      <tr><td>4</td><td>No modeled 30-year financials</td></tr>
+      <tr><td>5</td><td>No binding stewardship instruments</td></tr>
+      <tr><td>6</td><td>No second data point on anything</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PART VIII -->
+<div class="slide" id="s27" style="border-bottom:none">
+  <div class="sk"><span class="sn">27</span><span class="sp">Part VIII &middot; Before This Becomes a Deck</span></div>
+  <h2>Inputs required before this is shown to anyone</h2>
+  <table>
+    <thead><tr><th>#</th><th>Item</th><th>Owner</th><th>Unblocks</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Verify the operating TAM derivation against a real source</td><td>&mdash;</td><td>Slide 22</td></tr>
+      <tr><td>2</td><td>Build per-unit catalog economics</td><td>finance library</td><td>Slides 5, 22, 23</td></tr>
+      <tr><td>3</td><td>Model the four-phase ramp</td><td>finance library</td><td>Slides 18, 19, 23</td></tr>
+      <tr><td>4</td><td>Scope Now City Operating: entity, first hire, acquisition criteria</td><td>Erik</td><td>Slides 15, 20</td></tr>
+      <tr><td>5</td><td>Scope Now City Infrastructure</td><td>Ritchie</td><td>Slide 15</td></tr>
+      <tr><td>6</td><td>Size the Series A against the first operating acquisition</td><td>&mdash;</td><td>Slides 19, 20</td></tr>
+      <tr><td>7</td><td>Confirm no referendum mechanism attaches to remaining approvals</td><td>Ritchie</td><td>Slide 13</td></tr>
+      <tr><td>8</td><td>Draft one binding stewardship instrument</td><td>Erik</td><td>Slide 17</td></tr>
+      <tr><td>9</td><td>Practitioner evidence pass: pressure-test the suppositions (fragmentation, compounding variables, land strategy) against operator insight, e.g. the Paul Stanton material, and cite what survives</td><td>Erik</td><td>Slides 6, 7, 11</td></tr>
+      <tr><td>10</td><td>Confirm Salem adoption of single-stair Appendix Q in writing</td><td>Ritchie</td><td>Slides 13, 24</td></tr>
+    </tbody>
+  </table>
+  <div class="callout"><strong>A 30-year vision with invented numbers is worse than no deck.</strong> A 30-year vision with honest arithmetic, a named mechanism, a bounded veto map, and five stated bets is a fundable one.</div>
+</div>
+
+</div></main>
+<footer><div class="wrap">©2026 Now City Inc. · Internal working documents · Not an offer of securities · Please do not circulate · If used with prospective investors, this deck inherits Reg D 506(b) constraints</div></footer>
+<script>
+(function(){
+const HASH='1f00699cc101299062a06ee673d8d95a277ac29bbca767118da65116461dd645';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('nc-dev-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('nc-dev-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
