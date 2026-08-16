@@ -176,21 +176,8 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
 @media print{#gate{display:none!important}body.gated{overflow:auto}nav{position:static}.rv{opacity:1!important;transform:none!important}section{padding:52px 0}}
 </style>
 </head>
-<body class="gated">
+<body>
 
-<div id="gate">
-  <div class="panel">
-    <div class="eyebrow" style="color:#d9a26c">Now City Inc</div>
-    <h1 class="serif">Investor<br>Preview</h1>
-    <p>This preview is shared with prospective platform investors for discussion purposes. Enter the access code to continue.</p>
-    <form id="gateform">
-      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
-      <button type="submit">Enter</button>
-      <div class="err" id="gateerr"></div>
-    </form>
-    <p style="margin-top:22px;font-size:12.5px">Need access? Contact <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
-  </div>
-</div>
 
 <nav id="nav">
   <div class="wrap">
@@ -227,6 +214,23 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="stat"><div class="num">Homes &amp; Stack</div><div class="lbl">A repeatable housing product and a four-layer delivery system behind every district</div></div>
       <div class="stat"><div class="num">The Platform</div><div class="lbl">Development, Deployment, and Neighborhood operating systems that make the model repeatable</div></div>
     </div>
+  </div>
+</section>
+
+<!-- 00 · UP FRONT -->
+<section id="upfront" style="padding:72px 0">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:28px">
+      <div class="kicker"><span class="n">00</span><span class="eyebrow">Up Front, For Platform Investors</span></div>
+      <h2>The ask, before the story</h2>
+      <p class="lead">Now City Inc is raising <strong>$3.5M of platform equity</strong>, the pre-seed rung of a deliberately small platform ladder that controls much larger district vehicles. It funds three things: proving the model at Edgewater, finishing the Now City Homes catalog and its factory framework, and seeding the operating capability that makes the district better after it is built.</p>
+    </div>
+    <div class="stats statcards c3 rv">
+      <div class="stat"><div class="num">What you own</div><div class="lbl">The company that repeats: GP economics on every district, Now City Homes, the operating systems and their data, and the pipeline after the first district</div></div>
+      <div class="stat"><div class="num">Where it stands</div><div class="lbl">Sponsor LOI executed on Phase One; due diligence, capital formation, and entitlement strategy underway; every status labeled, never blurred</div></div>
+      <div class="stat"><div class="num">The horizon</div><div class="lbl">Venture-style, 7-10 years, with platform value events along the way; the question we run the company against is a million homes over thirty years</div></div>
+    </div>
+    <div class="note rv" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between"><span><strong>The next step is a conversation, and it is thirty minutes.</strong> Terms, valuation, and the data room are shared there.</span><span style="white-space:nowrap"><a href="mailto:erik@nowcitylabs.com?subject=Now City platform: 30 minutes" style="font-weight:700;color:var(--terra)">erik@nowcitylabs.com &rarr;</a>&nbsp;&nbsp;<a href="#raise" style="font-weight:600;color:var(--terra)">or jump to the raise &darr;</a></span></div>
   </div>
 </section>
 
@@ -581,21 +585,6 @@ const navLinks=[...document.querySelectorAll('#nav .navlinks a')].filter(a=>(a.g
 const alias={strip:'mission',category:'build',scale:'proof',raise2:'raise'};
 const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){let id=e.target.id;id=alias[id]||id;navLinks.forEach(a=>a.classList.toggle('current',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
 ['mission','category','build','stack','platform','model','proof','scale','raise','raise2','team'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
-</script>
-<script>
-(function(){
-const HASH='1fdd827f52a916a168eb4fb527fc117032f895d16adc8239ac4e9c8b9a75c491';
-async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
-function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
-if(localStorage.getItem('nci-ok')==='1'||sessionStorage.getItem('nci-ok')==='1')unlock();
-document.getElementById('gateform').addEventListener('submit',async function(e){
-  e.preventDefault();
-  var h='';
-  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
-  if(h===HASH){localStorage.setItem('nci-ok','1');unlock()}
-  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
-});
-})();
 </script>
 </body>
 </html>
