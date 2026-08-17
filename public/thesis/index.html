@@ -81,6 +81,17 @@ h1 em{font-style:normal;color:var(--terra)}
 .proj td{padding:12px;border-bottom:1px solid #2e2a24;color:#D3CFC5}
 .proj td:first-child{color:#f4f1e9}
 .proj td:nth-child(3){font-family:var(--serif);font-size:16px;color:#f4f1e9}
+.feechart{margin-top:34px;background:rgba(241,239,233,.05);border:1px solid #3a3b37;border-radius:12px;padding:26px 24px 18px}
+.fees{display:flex;gap:8px;align-items:flex-end;height:270px}
+.fb{flex:1;display:flex;flex-direction:column;justify-content:flex-end}
+.fb .tot{font-size:10px;color:#D3CFC5;text-align:center;margin-bottom:6px;white-space:nowrap}
+.fb .seg{border-radius:2px;margin-top:2px}
+.fb .se{background:#B5A58E}.fb .sd{background:#73786A}.fb .sa{background:#D3CFC5}
+.fb .yr{font-size:10px;color:#8B887C;text-align:center;margin-top:8px}
+.fleg{display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;font-size:12px;color:#B0ACA0}
+.fleg span{display:inline-flex;align-items:center;gap:7px}
+.fleg i{width:11px;height:11px;border-radius:3px;display:inline-block}
+@media(max-width:640px){.fees{height:190px}.fb .tot,.fb .yr{font-size:8px}}
 .quote{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.2vw,23px);color:#4B4C46;margin-top:32px;max-width:640px;line-height:1.5}
 .quote span{display:block;font-family:var(--sans);font-style:normal;font-size:12.5px;color:#8B887C;margin-top:8px}
 .cta{display:inline-block;background:var(--terra);color:#fff;font-weight:700;font-size:16px;padding:16px 34px;border-radius:10px;text-decoration:none;margin-top:34px}
@@ -235,28 +246,39 @@ footer{background:#1E201E;color:#8B887C;padding:44px 0 60px;font-size:12px}
     <div class="k">Market Opportunity</div>
     <h1>A platform-sized market</h1>
     <div class="fun">
-      <div class="fr t"><div class="fk">TAM</div><div class="fv">$1.08T</div><div class="fd">global mixed-use, smart cities, and green development<sup>4</sup></div></div>
-      <div class="fr s"><div class="fk">SAM</div><div class="fv">$100B</div><div class="fd">U.S. mixed-use, climate-resilient real estate investment<sup>4</sup></div></div>
-      <div class="fr o"><div class="fk">SOM</div><div class="fv">$5.75B</div><div class="fd">Now City developments + platform revenue over 10 years, per company plan<sup>5</sup></div></div>
+      <div class="fr t"><div class="fk">TAM</div><div class="fv">$115B<span style="font-size:.45em">/yr</span></div><div class="fd">U.S. multifamily development, Census-measured<sup>4</sup></div></div>
+      <div class="fr s"><div class="fk">SAM</div><div class="fv">$20-25B<span style="font-size:.45em">/yr</span></div><div class="fd">the West Coast wedge: WA, OR, CA, ~20% of national activity<sup>4</sup></div></div>
+      <div class="fr o"><div class="fk">SOM</div><div class="fv">$250M<span style="font-size:.45em">/yr</span></div><div class="fd">by year 10: three to five districts in delivery plus Homes and platform revenue, ~1% of SAM<sup>5</sup></div></div>
     </div>
+    <p style="margin-top:18px;font-size:13.5px;color:#B0ACA0">Global mixed-use and smart-city development runs past $1T<sup>6b</sup>; we size to the U.S. engine we can win first. The operating, software, and infrastructure layers compound on top of development, detailed in the <a href="../invest/" style="color:#B5A58E">deep dive</a>.</p>
   </div>
 </section>
 
 <!-- 6 PROJECTIONS -->
 <section class="slide dark">
   <div class="wrap">
-    <div class="k">Projections &middot; Company Plan<sup>5</sup></div>
-    <h1>Real estate revenue, software multiples</h1>
-    <table class="proj">
-      <thead><tr><th>Metric</th><th>5 years</th><th>10 years</th></tr></thead>
-      <tbody>
-        <tr><td>Total area in development</td><td>10M sq ft</td><td>25M sq ft</td></tr>
-        <tr><td>Real estate revenue (sales, rents, asset mgmt)</td><td>$250-500M</td><td>$5B</td></tr>
-        <tr><td>Adaptive Urban Intelligence&trade; reach</td><td>50K users</td><td>5M users</td></tr>
-        <tr><td>Technology revenue (SaaS, licensing, data)</td><td>$50-100M</td><td>$750M</td></tr>
-        <tr><td>CO&#8322; reduction, cumulative (carbon value)</td><td>200,000T ($10-20M)</td><td>1,000,000T ($50-100M)</td></tr>
-      </tbody>
-    </table>
+    <div class="k">Projections &middot; Modeled, Not Delivered<sup>5</sup></div>
+    <h1>What the engine earns</h1>
+    <p class="sub">Platform fee revenue, built from the Edgewater master developer pro forma and repeated across the pipeline: ~$39M from district #1 in decade one, ~$112M cumulative by 2035 across 10+ project kickoffs. Promote, product margin, and software revenue are additional.</p>
+    <div class="feechart">
+      <div class="fees">
+        <div class="fb"><div class="tot">$0.5M</div><div class="seg se" style="height:4px"></div><div class="yr">2026</div></div>
+        <div class="fb"><div class="tot">$2.4M</div><div class="seg sa" style="height:3px"></div><div class="seg se" style="height:18px"></div><div class="yr">2027</div></div>
+        <div class="fb"><div class="tot">$12.6M</div><div class="seg sa" style="height:6px"></div><div class="seg se" style="height:107px"></div><div class="yr">2028</div></div>
+        <div class="fb"><div class="tot">$1.7M</div><div class="seg sa" style="height:6px"></div><div class="seg sd" style="height:4px"></div><div class="seg se" style="height:4px"></div><div class="yr">2029</div></div>
+        <div class="fb"><div class="tot">$9.7M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:18px"></div><div class="seg se" style="height:60px"></div><div class="yr">2030</div></div>
+        <div class="fb"><div class="tot">$13.9M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:111px"></div><div class="seg se" style="height:4px"></div><div class="yr">2031</div></div>
+        <div class="fb"><div class="tot">$11.1M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:22px"></div><div class="seg se" style="height:68px"></div><div class="yr">2032</div></div>
+        <div class="fb"><div class="tot">$20.5M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:171px"></div><div class="seg se" style="height:3px"></div><div class="yr">2033</div></div>
+        <div class="fb"><div class="tot">$12.5M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:26px"></div><div class="seg se" style="height:76px"></div><div class="yr">2034</div></div>
+        <div class="fb"><div class="tot">$27.7M</div><div class="seg sa" style="height:9px"></div><div class="seg sd" style="height:234px"></div><div class="seg se" style="height:5px"></div><div class="yr">2035</div></div>
+      </div>
+      <div class="fleg">
+        <span><i style="background:#B5A58E"></i>District #1, modeled (~$39M)</span>
+        <span><i style="background:#73786A"></i>Districts 2-4 on the same template (~$65M)</span>
+        <span><i style="background:#D3CFC5"></i>Advisory practice (~$8M)</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -295,7 +317,7 @@ footer{background:#1E201E;color:#8B887C;padding:44px 0 60px;font-size:12px}
 
 <footer>
   <div class="wrap">
-    <p class="cites" style="margin-bottom:18px"><sup>1</sup> McKinsey Global Institute, Reinventing Construction (2017). &nbsp;<sup>2</sup> National Association of Realtors, Community Preference Survey. &nbsp;<sup>3</sup> Kombohus program, Sveriges Allm&auml;nnytta. &nbsp;<sup>4</sup> Grand View Research, as compiled in company market materials (2025); sector estimates, not measurements. &nbsp;<sup>5</sup> Company plan and master developer pro forma (2025-2026); projections are modeled, not delivered, and depend on capital formation, entitlement, and market conditions. &nbsp;<sup>6</sup> Atoms equity round announced July 22, 2026 (TechCrunch; Crunchbase News). Atoms is an independent company; the reference is market context only and implies no affiliation.</p>
+    <p class="cites" style="margin-bottom:18px"><sup>1</sup> McKinsey Global Institute, Reinventing Construction (2017). &nbsp;<sup>2</sup> National Association of Realtors, Community Preference Survey. &nbsp;<sup>3</sup> Kombohus program, Sveriges Allm&auml;nnytta. &nbsp;<sup>4</sup> TAM: U.S. Census Bureau, private multifamily construction put in place, $114.8B seasonally adjusted annual rate, June 2026 release. SAM: company assumption from historical West Coast share of national multifamily activity, stated as assumption. &nbsp;<sup>5</sup> Company master developer pro forma (July 2026) and company plan; modeled, not delivered. Districts 2-4 assume the district #1 fee template repeats with starts in 2029, 2031, and 2033; advisory assumes roughly three concurrent engagements; all dependent on capital formation, entitlement, and market conditions. &nbsp;<sup>6b</sup> Grand View Research global mixed-use and smart-city estimates, as compiled in company materials; context, not a sizing basis. &nbsp;<sup>6</sup> Atoms equity round announced July 22, 2026 (TechCrunch; Crunchbase News). Atoms is an independent company; the reference is market context only and implies no affiliation.</p>
     <p style="font-size:11px;line-height:1.7;color:#84806F;max-width:880px">All projections are based on assumptions that may not equate to actual results; actual results will differ and may differ materially. This page does not constitute an offer to buy or sell securities; an offering can be made only pursuant to delivery of definitive offering documents, and any securities would be offered in reliance on exemptions from registration and only to persons meeting applicable requirements. Statements herein may constitute forward-looking statements; no representation is made that objectives will be achieved. Confidential; please do not circulate. ©2026 Now City Inc.</p>
   </div>
 </footer>
