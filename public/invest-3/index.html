@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Now City</title>
-<meta name="description" content="The neighborhood is the next platform. Now City builds complete neighborhoods: hardware, software, and experience, held and operated forever.">
+<meta name="description" content="The neighborhood is the next platform.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,200 +14,212 @@
 :root{--cream:#f4f1e9;--cream2:#fbf9f4;--ink:#333230;--deep:#211f1c;--green:#48593f;--gsoft:#6c7d5e;--terra:#a8703f;--line:#dcd8cc;--serif:'Libre Baskerville',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:900px;margin:0 auto;padding:0 28px}
-.slide{min-height:78vh;display:flex;align-items:center;padding:84px 0}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 28px}
+.slide{min-height:72vh;display:flex;align-items:center;padding:76px 0}
 .slide.dark{background:var(--deep);color:#e9e5da}
 .slide.alt{background:var(--cream2)}
-.k{font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin-bottom:20px}
+.k{font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin-bottom:18px}
 .dark .k{color:#d9a26c}
-h1{font-family:var(--serif);font-size:clamp(34px,5.4vw,56px);line-height:1.16;color:var(--deep);letter-spacing:-.01em}
+h1{font-family:var(--serif);font-size:clamp(32px,5vw,52px);line-height:1.16;color:var(--deep);letter-spacing:-.01em}
 .dark h1{color:#f4f1e9}
 h1 em{font-style:normal;color:var(--terra)}
 .dark h1 em{color:#d9a26c}
-.sub{font-size:clamp(17px,2vw,21px);line-height:1.6;margin-top:24px;max-width:760px;color:#5c584e}
+.sub{font-size:clamp(16px,1.9vw,20px);line-height:1.55;margin-top:20px;max-width:720px;color:#5c584e}
 .dark .sub{color:#c9c2b2}
 .sub strong{color:var(--deep)}
 .dark .sub strong{color:#f4f1e9}
-.pts{margin-top:34px;max-width:780px}
-.pt{display:grid;grid-template-columns:26px 1fr;gap:16px;padding:15px 0;border-top:1px solid var(--line)}
-.dark .pt{border-color:#3d392f}
-.pt .pn{font-family:var(--serif);font-size:18px;color:var(--terra);line-height:1.5}
-.dark .pt .pn{color:#d9a26c}
-.pt .pv{font-size:16.5px;line-height:1.6;color:#4a463f}
-.dark .pt .pv{color:#c9c2b2}
-.pt .pv b{color:var(--deep)}
-.dark .pt .pv b{color:#f4f1e9}
-/* stack map */
-.stackmap{margin-top:40px;max-width:640px}
-.sm{display:grid;grid-template-columns:210px 1fr;gap:0;border:1px solid var(--line);border-bottom:none}
-.sm:last-child{border-bottom:1px solid var(--line)}
-.dark .sm{border-color:#3d392f}
-.sm .a{padding:15px 18px;font-size:14px;font-weight:600;background:rgba(168,112,63,.08);color:var(--deep)}
-.dark .sm .a{background:rgba(217,162,108,.1);color:#f4f1e9}
-.sm .b{padding:15px 18px;font-size:14px;color:#6e6a61;border-left:1px solid var(--line)}
-.dark .sm .b{color:#a39d8f;border-color:#3d392f}
-/* pillars table */
-.ptab{width:100%;border-collapse:collapse;margin-top:36px;font-size:14.5px}
-.ptab th{text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);padding:10px 12px;border-bottom:1px solid var(--line)}
-.ptab td{padding:16px 12px;border-bottom:1px solid rgba(0,0,0,.07);vertical-align:top;line-height:1.55;color:#4a463f}
-.ptab td:first-child{font-family:var(--serif);font-size:17px;color:var(--deep);white-space:nowrap}
-@media(max-width:760px){.ptab,.ptab thead,.ptab tbody,.ptab tr,.ptab th,.ptab td{display:block}.ptab thead{display:none}.ptab tr{border:1px solid var(--line);border-radius:10px;margin-bottom:14px;padding:8px;background:var(--cream2)}.ptab td{border:none;padding:8px 12px}}
-.quote{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,25px);color:#5c584e;margin-top:36px;max-width:680px;line-height:1.5}
-.dark .quote{color:#c9c2b2}
-.quote span{display:block;font-family:var(--sans);font-style:normal;font-size:13px;color:#8a857a;margin-top:10px}
-.cta{display:inline-block;background:var(--terra);color:#fff;font-weight:700;font-size:16px;letter-spacing:.03em;padding:16px 34px;border-radius:10px;text-decoration:none;margin-top:36px}
+.bignum{display:flex;gap:40px;flex-wrap:wrap;margin-top:36px}
+.bn .n{font-family:var(--serif);font-size:clamp(30px,3.6vw,46px);color:var(--deep);line-height:1.05}
+.dark .bn .n{color:#f4f1e9}
+.bn .n small{font-size:.55em}
+.bn .l{font-size:13px;color:#8a857a;margin-top:6px;max-width:200px;line-height:1.45}
+.dark .bn .l{color:#a39d8f}
+.stackmap{margin-top:36px;max-width:640px}
+.sm{display:grid;grid-template-columns:210px 1fr;border:1px solid #3d392f;border-bottom:none}
+.sm:last-of-type{border-bottom:1px solid #3d392f}
+.sm .a{padding:13px 18px;font-size:14px;font-weight:600;background:rgba(217,162,108,.1);color:#f4f1e9}
+.sm .b{padding:13px 18px;font-size:13.5px;color:#a39d8f;border-left:1px solid #3d392f}
+/* OS layers */
+.os{margin-top:36px;max-width:820px}
+.osr{display:grid;grid-template-columns:180px 1fr;gap:0;margin-bottom:10px;border-radius:10px;overflow:hidden}
+.osr .ol{padding:18px;font-family:var(--serif);font-size:16px;color:#fff;display:flex;align-items:center}
+.osr .oc{background:var(--cream2);border:1px solid var(--line);border-left:none;padding:13px 16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font-size:12px;font-weight:600;color:#4a463f;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+/* pillars */
+.ptab{width:100%;border-collapse:collapse;margin-top:32px;font-size:14px}
+.ptab th{text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);padding:9px 12px;border-bottom:1px solid var(--line)}
+.ptab td{padding:14px 12px;border-bottom:1px solid rgba(0,0,0,.07);vertical-align:top;line-height:1.5;color:#4a463f}
+.ptab td:first-child{font-family:var(--serif);font-size:16.5px;color:var(--deep);white-space:nowrap}
+@media(max-width:760px){.ptab,.ptab thead,.ptab tbody,.ptab tr,.ptab th,.ptab td{display:block}.ptab thead{display:none}.ptab tr{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;padding:8px;background:var(--cream2)}.ptab td{border:none;padding:7px 12px}}
+/* funnel */
+.fun{max-width:760px;margin-top:36px}
+.fr{border-radius:10px;padding:16px 22px;margin-bottom:10px;color:#fff}
+.fr .fk{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;opacity:.9}
+.fr .fv{font-family:var(--serif);font-size:clamp(22px,2.8vw,30px)}
+.fr .fd{font-size:12.5px;opacity:.92;margin-top:2px}
+.fr.t{background:var(--green);width:100%}
+.fr.s{background:var(--gsoft);width:76%}
+.fr.o{background:var(--terra);width:52%}
+@media(max-width:640px){.fr.s,.fr.o{width:100%}}
+/* projections */
+.proj{width:100%;border-collapse:collapse;margin-top:32px;font-size:14px}
+.proj th{text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#d9a26c;padding:9px 12px;border-bottom:1px solid #3d392f}
+.proj th:nth-child(2),.proj th:nth-child(3),.proj td:nth-child(2),.proj td:nth-child(3){text-align:right;white-space:nowrap}
+.proj td{padding:12px;border-bottom:1px solid #2e2a24;color:#c9c2b2}
+.proj td:first-child{color:#f4f1e9}
+.proj td:nth-child(3){font-family:var(--serif);font-size:16px;color:#f4f1e9}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.2vw,23px);color:#5c584e;margin-top:32px;max-width:640px;line-height:1.5}
+.quote span{display:block;font-family:var(--sans);font-style:normal;font-size:12.5px;color:#8a857a;margin-top:8px}
+.cta{display:inline-block;background:var(--terra);color:#fff;font-weight:700;font-size:16px;padding:16px 34px;border-radius:10px;text-decoration:none;margin-top:34px}
 .cta:hover{background:#b8804f}
-.ghost{font-size:14.5px;color:#8a857a;margin-top:14px}
+.ghost{font-size:14px;color:#8a857a;margin-top:14px}
 .ghost a{color:var(--terra)}
-.img{border-radius:12px;overflow:hidden;margin-top:40px}
-.img img{width:100%;display:block;height:min(42vh,380px);object-fit:cover}
+.img{border-radius:12px;overflow:hidden;margin-top:36px}
+.img img{width:100%;display:block;height:min(40vh,360px);object-fit:cover}
 sup{color:var(--terra);font-size:.6em}
 .dark sup{color:#d9a26c}
-.team{display:flex;gap:30px;flex-wrap:wrap;margin-top:34px}
-.tm{display:flex;align-items:center;gap:14px}
-.tm img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
-.tm .tn{font-size:15px;font-weight:600;color:var(--deep)}
-.tm .tr{font-size:12.5px;color:#8a857a}
+.team{display:flex;gap:28px;flex-wrap:wrap;margin-top:30px}
+.tm{display:flex;align-items:center;gap:13px}
+.tm img{width:62px;height:62px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
+.tm .tn{font-size:14.5px;font-weight:600;color:var(--deep)}
+.tm .tr{font-size:12px;color:#8a857a}
 .dark .tm img{border-color:#3d392f}
 .dark .tm .tn{color:#f4f1e9}
 .dark .tm .tr{color:#a39d8f}
 .book{position:fixed;right:22px;bottom:22px;z-index:50;background:var(--terra);color:#fff;font-weight:700;font-size:14px;padding:13px 22px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .cites{font-size:11.5px;line-height:1.8;color:#8f897c;max-width:880px}
 footer{background:#161410;color:#8a857a;padding:44px 0 60px;font-size:12px}
-@media(max-width:640px){.slide{min-height:0;padding:60px 0}.sm{grid-template-columns:1fr}.sm .b{border-left:none;border-top:1px solid var(--line)}}
+.flyw{margin-top:36px;display:flex;justify-content:center}
+.flyw svg{width:100%;max-width:700px;height:auto}
+@media(max-width:640px){.slide{min-height:0;padding:56px 0}.sm{grid-template-columns:1fr}.sm .b{border-left:none;border-top:1px solid #3d392f}.osr{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <a class="book" href="https://calendly.com/erikgillberg/">Book time &rarr;</a>
 
-<!-- 1 · THE VISION -->
-<section class="slide dark" style="min-height:90vh">
+<!-- 1 VISION -->
+<section class="slide dark" style="min-height:88vh">
   <div class="wrap">
-    <div class="k">Now City &middot; Slide 1 &middot; The Vision</div>
+    <div class="k">Now City &middot; The Vision</div>
     <h1>The neighborhood is the <em>next platform.</em></h1>
-    <p class="sub">Computing became cheap and universal when hardware, operating systems, and applications became one product. The built world never got its platform: every project is still bespoke, built by temporary teams, and handed off the moment it starts working. We are building the platform, shipped as complete neighborhoods.</p>
+    <p class="sub">Computing became universal when hardware, an operating system, and applications became one product. The built world never got its platform. We are building it.</p>
     <div class="stackmap">
       <div class="sm"><div class="a">Homes &amp; infrastructure</div><div class="b">the hardware, standardized and factory-built</div></div>
-      <div class="sm"><div class="a">Neighborhood OS</div><div class="b">the operating system: underwriting, energy, mobility, operations</div></div>
-      <div class="sm"><div class="a">Attractors &amp; daily life</div><div class="b">the applications: innovation, sports, wellness, food, the river</div></div>
-      <div class="sm"><div class="a">Blended capital stack</div><div class="b">the business model that makes the platform financeable</div></div>
+      <div class="sm"><div class="a">Neighborhood OS&trade;</div><div class="b">the operating system: underwriting, energy, mobility, operations</div></div>
+      <div class="sm"><div class="a">Attractors &amp; daily life</div><div class="b">the applications: innovation, sports, wellness, food, nature</div></div>
+      <div class="sm"><div class="a">Blended capital stack</div><div class="b">the business model that makes it financeable</div></div>
     </div>
   </div>
 </section>
 
-<!-- 2 · THE MACRO PROBLEM -->
+<!-- 2 PROBLEM -->
 <section class="slide">
   <div class="wrap">
-    <div class="k">Slide 2 &middot; The Macro Problem</div>
-    <h1>Structural friction in the world's largest asset class</h1>
-    <div class="pts">
-      <div class="pt"><div class="pn">1</div><div class="pv"><b>Productivity never arrived.</b> Construction productivity has been roughly flat for decades while nearly every other industry compounded.<sup>1</sup> Housing is still artisanal: designed once, built by hand, never versioned.</div></div>
-      <div class="pt"><div class="pn">2</div><div class="pv"><b>Demand moved; supply cannot follow.</b> 78% of Americans say they would pay more for a walkable neighborhood,<sup>2</sup> and the industry has no repeatable way to make one. The climate-resilient mixed-use sector is a ~$100B U.S. market with no product platform serving it.<sup>3</sup></div></div>
-      <div class="pt"><div class="pn">3</div><div class="pv"><b>The megaproject distraction.</b> Billions go to smart-city moonshots that fail because the city is too big a unit and the building is too small. The unit that works is the neighborhood.</div></div>
+    <div class="k">The Problem</div>
+    <h1>Legacy real estate is failing on every axis</h1>
+    <div class="bignum">
+      <div class="bn"><div class="n">~1%<small>/yr</small></div><div class="l">construction productivity growth for two decades, vs ~2.8% for the economy<sup>1</sup></div></div>
+      <div class="bn"><div class="n">78%</div><div class="l">of Americans would pay more for walkability; supply cannot deliver it<sup>2</sup></div></div>
+      <div class="bn"><div class="n">0</div><div class="l">proven, scalable, high-yield models for regenerative districts. Megaprojects fail big; single buildings change nothing.</div></div>
     </div>
     <p class="quote">"Cities are a network of neighborhoods."<span>Kent Larson, MIT City Science</span></p>
   </div>
 </section>
 
-<!-- 3 · THE SOLUTION -->
+<!-- 3 SOLUTION: NEIGHBORHOOD OS -->
 <section class="slide alt">
   <div class="wrap">
-    <div class="k">Slide 3 &middot; The Solution</div>
-    <h1>One chassis. Modular attractors. <em>A city's own soul.</em></h1>
-    <div class="pts">
-      <div class="pt"><div class="pn">1</div><div class="pv"><b>The standardized chassis.</b> One housing and infrastructure platform, engineered once for health, energy, and cost, designed for factory delivery. Sweden proves the play at national scale: ~10,000 apartments, five months faster, 20-25% below comparable cost.<sup>4</sup></div></div>
-      <div class="pt"><div class="pn">2</div><div class="pv"><b>Neighborhood OS.</b> The intelligence layer that underwrites the district today and runs it for decades: energy, water, mobility, maintenance, community. Its forecast error feeds back into the product, so every neighborhood improves the next.</div></div>
-      <div class="pt"><div class="pn">3</div><div class="pv"><b>Modular attractors.</b> The attachments that make each district a destination, fitted to each city: an innovation anchor, sports and wellness, food and market halls, the waterfront. Same platform, different city, different soul.</div></div>
+    <div class="k">The Solution &middot; Adaptive Urban Intelligence&trade;</div>
+    <h1>One platform runs the whole neighborhood</h1>
+    <div class="os">
+      <div class="osr"><div class="ol" style="background:var(--terra)">User Experience</div><div class="oc"><span class="chip">Smart healthy homes</span><span class="chip">Water &amp; air quality</span><span class="chip">Mobility</span><span class="chip">Greenspace &amp; urban ag</span><span class="chip">Community &amp; identity</span></div></div>
+      <div class="osr"><div class="ol" style="background:var(--gsoft)">Building</div><div class="oc"><span class="chip">Acquisition</span><span class="chip">Design &amp; materials</span><span class="chip">Construction tech</span><span class="chip">Green infrastructure</span><span class="chip">IoT &amp; sensors</span></div></div>
+      <div class="osr"><div class="ol" style="background:var(--green)">Operations</div><div class="oc"><span class="chip">Energy</span><span class="chip">Waste</span><span class="chip">Facilities</span><span class="chip">Security &amp; resilience</span><span class="chip">Impact analytics</span><span class="chip">Payments</span></div></div>
+    </div>
+    <p class="sub" style="margin-top:26px">The hardware ships from factories: Sweden builds this way at national scale, five months faster, 20-25% cheaper.<sup>3</sup> The attractors are modular: innovation, sports, wellness, market halls, fitted to each city. <strong>Same platform, different soul.</strong></p>
+  </div>
+</section>
+
+<!-- 4 MODEL: WASH RINSE REPEAT -->
+<section class="slide dark">
+  <div class="wrap">
+    <div class="k">The Model</div>
+    <h1>Phased districts. Portfolio discipline.</h1>
+    <div class="flyw"><svg viewBox="0 0 740 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wash rinse repeat model"><circle cx="370" cy="240" r="70" fill="rgba(217,162,108,.14)"/><circle cx="370" cy="240" r="57" fill="#a8703f"/><text x="370" y="236" text-anchor="middle" style="font-family:Libre Baskerville,Georgia,serif;font-size:14px;fill:#fff">Wash. Rinse.</text><text x="370" y="256" text-anchor="middle" style="font-family:Libre Baskerville,Georgia,serif;font-size:14px;fill:#fff">Repeat.</text><path d="M 408.2 86.7 A 158 158 0 0 1 483.7 130.2" fill="none" stroke="#a8703f" stroke-width="22" stroke-linecap="round" opacity=".92"/><polygon points="496,143 496,118 471,142" fill="#a8703f" opacity=".92"/><path d="M 521.9 196.4 A 158 158 0 0 1 521.9 283.6" fill="none" stroke="#6c7d5e" stroke-width="22" stroke-linecap="round" opacity=".92"/><polygon points="517,301 538,288 506,279" fill="#6c7d5e" opacity=".92"/><path d="M 483.7 349.8 A 158 158 0 0 1 408.2 393.3" fill="none" stroke="#a8703f" stroke-width="22" stroke-linecap="round" opacity=".92"/><polygon points="391,398 412,410 404,377" fill="#a8703f" opacity=".92"/><path d="M 331.8 393.3 A 158 158 0 0 1 256.3 349.8" fill="none" stroke="#6c7d5e" stroke-width="22" stroke-linecap="round" opacity=".92"/><polygon points="244,337 244,362 269,338" fill="#6c7d5e" opacity=".92"/><path d="M 218.1 283.6 A 158 158 0 0 1 218.1 196.4" fill="none" stroke="#a8703f" stroke-width="22" stroke-linecap="round" opacity=".92"/><polygon points="223,179 202,192 234,201" fill="#a8703f" opacity=".92"/><path d="M 256.3 130.2 A 158 158 0 0 1 331.8 86.7" fill="none" stroke="#6c7d5e" stroke-width="22" stroke-linecap="round" opacity=".92"/><polygon points="349,82 328,70 336,103" fill="#6c7d5e" opacity=".92"/><circle cx="370" cy="82" r="18" fill="#faf7f0" stroke="#a8703f" stroke-width="1.5"/><text x="370" y="87" text-anchor="middle" style="font-family:Libre Baskerville,Georgia,serif;font-size:14px;font-weight:700;fill:#a8703f">1</text><circle cx="507" cy="161" r="18" fill="#faf7f0" stroke="#a8703f" stroke-width="1.5"/><text x="507" y="166" text-anchor="middle" style="font-family:Libre Baskerville,Georgia,serif;font-size:14px;font-weight:700;fill:#a8703f">2</text><circle cx="507" cy="319" r="18" fill="#faf7f0" stroke="#a8703f" stroke-width="1.5"/><text x="507" y="324" text-anchor="middle" style="font-family:Libre Baskerville,Georgia,serif;font-size:14px;font-weight:700;fill:#a8703f">3</text><circle cx="370" cy="398" r="18" fill="#faf7f0" stroke="#a8703f" stroke-width="1.5"/><text x="370" y="403" text-anchor="middle" style="font-family:Libre Baskerville,Georgia,serif;font-size:14px;font-weight:700;fill:#a8703f">4</text><circle cx="233" cy="319" r="18" fill="#faf7f0" stroke="#a8703f" stroke-width="1.5"/><text x="233" y="324" text-anchor="middle" style="font-family:Libre Baskerville,Georgia,serif;font-size:14px;font-weight:700;fill:#a8703f">5</text><circle cx="233" cy="161" r="18" fill="#faf7f0" stroke="#a8703f" stroke-width="1.5"/><text x="233" y="166" text-anchor="middle" style="font-family:Libre Baskerville,Georgia,serif;font-size:14px;font-weight:700;fill:#a8703f">6</text><text x="370" y="31" text-anchor="middle" style="font-family:Inter,sans-serif;font-size:14.5px;font-weight:600;fill:#e9e5da">Acquire</text><text x="555" y="138" text-anchor="start" style="font-family:Inter,sans-serif;font-size:14.5px;font-weight:600;fill:#e9e5da">Entitle</text><text x="555" y="352" text-anchor="start" style="font-family:Inter,sans-serif;font-size:14.5px;font-weight:600;fill:#e9e5da">Horizontal</text><text x="370" y="459" text-anchor="middle" style="font-family:Inter,sans-serif;font-size:14.5px;font-weight:600;fill:#e9e5da">Vertical</text><text x="185" y="352" text-anchor="end" style="font-family:Inter,sans-serif;font-size:14.5px;font-weight:600;fill:#e9e5da">Operate</text><text x="185" y="138" text-anchor="end" style="font-family:Inter,sans-serif;font-size:14.5px;font-weight:600;fill:#e9e5da">Hold or Sell</text></svg></div>
+    <p class="sub" style="margin-top:10px">Evaluate at every stage: continue, sell, or hold and yield. Three revenue engines ride the cycle: development fees and promote, product margin and licensing, recurring software and operations.</p>
+  </div>
+</section>
+
+<!-- 5 MARKET -->
+<section class="slide">
+  <div class="wrap">
+    <div class="k">Market Opportunity</div>
+    <h1>A platform-sized market</h1>
+    <div class="fun">
+      <div class="fr t"><div class="fk">TAM</div><div class="fv">$1.08T</div><div class="fd">global mixed-use, smart cities, and green development<sup>4</sup></div></div>
+      <div class="fr s"><div class="fk">SAM</div><div class="fv">$100B</div><div class="fd">U.S. mixed-use, climate-resilient real estate investment<sup>4</sup></div></div>
+      <div class="fr o"><div class="fk">SOM</div><div class="fv">$5.75B</div><div class="fd">Now City developments + platform revenue over 10 years, per company plan<sup>5</sup></div></div>
     </div>
   </div>
 </section>
 
-<!-- 4 · THREE MARKET PILLARS -->
-<section class="slide">
+<!-- 6 PROJECTIONS -->
+<section class="slide dark">
   <div class="wrap">
-    <div class="k">Slide 4 &middot; The Three Pillars</div>
-    <h1>A portfolio play across one connected asset</h1>
-    <table class="ptab">
-      <thead><tr><th>Pillar</th><th>Core problem</th><th>The Now City intervention</th></tr></thead>
+    <div class="k">Projections &middot; Company Plan<sup>5</sup></div>
+    <h1>Real estate revenue, software multiples</h1>
+    <table class="proj">
+      <thead><tr><th>Metric</th><th>5 years</th><th>10 years</th></tr></thead>
       <tbody>
-        <tr><td>Homes</td><td>Bespoke design and on-site labor dominate cost; attainable homes rarely pencil.</td><td>A standardized, factory-built catalog with demand aggregated across districts, sold into our projects and everyone else's.</td></tr>
-        <tr><td>Districts</td><td>Walkable supply is scarce because entitlement risk and fragmented teams kill integrated projects.</td><td>Consent-first districts on pre-zoned land with the landowner as partner. Edgewater is district #1: 22 riverfront acres, four phases, from innovation anchor to waterfront.</td></tr>
-        <tr><td>Operations</td><td>Builders sell and leave; buildings never improve; the data is thrown away.</td><td>Hold everything, run it on Neighborhood OS, and turn operating data into the next district's cost advantage.</td></tr>
+        <tr><td>Total developed area</td><td>10M sq ft</td><td>25M sq ft</td></tr>
+        <tr><td>Real estate revenue (sales, rents, asset mgmt)</td><td>$250-500M</td><td>$5B</td></tr>
+        <tr><td>Neighborhood OS&trade; platform reach</td><td>50K users</td><td>5M users</td></tr>
+        <tr><td>Technology revenue (SaaS, licensing, data)</td><td>$50-100M</td><td>$750M</td></tr>
+        <tr><td>CO&#8322; reduction, cumulative (carbon value)</td><td>200,000T ($10-20M)</td><td>1,000,000T ($50-100M)</td></tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<!-- 7 TRACTION -->
+<section class="slide alt">
+  <div class="wrap">
+    <div class="k">Traction</div>
+    <h1>District #1 is underway</h1>
+    <p class="sub"><strong>Edgewater, West Salem, Oregon:</strong> 22 riverfront acres, rezoned by-right, in a verified Opportunity Zone, phased from innovation anchor to waterfront.</p>
+    <div class="bignum">
+      <div class="bn"><div class="n">$5M</div><div class="l">landowner land equity under a signed LOI, chosen over a sale</div></div>
+      <div class="bn"><div class="n">$650M</div><div class="l">four-phase pipeline: innovation, homes, sports, waterfront<sup>5</sup></div></div>
+      <div class="bn"><div class="n">~$39M</div><div class="l">modeled platform fees, decade one<sup>5</sup></div></div>
+      <div class="bn"><div class="n">$10B+</div><div class="l">further Western U.S. pipeline identified, per company plan<sup>5</sup></div></div>
+    </div>
     <div class="img"><img src="../invest/assets/homes/street-arch.jpg" alt="Now City district render"></div>
   </div>
 </section>
 
-<!-- 5 · THE STRATEGY ARC -->
-<section class="slide dark">
-  <div class="wrap">
-    <div class="k">Slide 5 &middot; The Strategy</div>
-    <h1>Five years building the foundation first</h1>
-    <div class="pts">
-      <div class="pt"><div class="pn">1</div><div class="pv"><b>Position, quietly.</b> Since 2021: a rezoned riverfront corridor secured with the landowner investing $5M under a signed LOI instead of selling; verified Opportunity Zone; a civic coalition assembled before capital was at risk; a Danish design-and-delivery channel in formation.</div></div>
-      <div class="pt"><div class="pn">2</div><div class="pv"><b>Product before promotion.</b> The housing catalog, the underwriting engine that becomes Neighborhood OS, and a documented public-private capital playbook, all built on the live district, not in a lab.</div></div>
-      <div class="pt"><div class="pn">3</div><div class="pv"><b>The acquisition engine.</b> Operating capability gets bought, not improvised: the roadmap's first major move after proof is acquiring a regional management platform, adding capability, cash flow, and data in one transaction.</div></div>
-      <div class="pt"><div class="pn">4</div><div class="pv"><b>The shared moat.</b> Every district feeds one set of standards, vendor relationships, capital partners, and operating data. The platform gets stronger with each deployment; a competitor starts from zero.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 6 · BUSINESS MODEL -->
-<section class="slide alt">
-  <div class="wrap">
-    <div class="k">Slide 6 &middot; Business Model</div>
-    <h1>Scaling real estate at the speed of <em>product</em></h1>
-    <div class="pts">
-      <div class="pt"><div class="pn">1</div><div class="pv"><b>Develop.</b> Master developer and development fees, promote, and land value on owned districts. Edgewater models ~$39M in platform fees over its first decade.<sup>5</sup></div></div>
-      <div class="pt"><div class="pn">2</div><div class="pv"><b>Productize.</b> Per-home margin and licensing as the catalog ships into other developers' projects, with demand aggregated across the network.</div></div>
-      <div class="pt"><div class="pn">3</div><div class="pv"><b>Operate.</b> Recurring software and management revenue on everything the platform touches, compounding with units under management, the layer where real estate multiples become technology multiples.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 7 · TEAM -->
-<section class="slide">
-  <div class="wrap">
-    <div class="k">Slide 7 &middot; Team &amp; Unfair Advantage</div>
-    <h1>Operators who hold, in an industry that flips</h1>
-    <div class="pts">
-      <div class="pt"><div class="pn">1</div><div class="pv"><b>Erik Gillberg, CEO:</b> thirty years inside the operating reality of property, twenty in technology and startups. The rare founder profile that has both run buildings and shipped software.</div></div>
-      <div class="pt"><div class="pn">2</div><div class="pv"><b>Ritchie Ju, COO:</b> Carnegie Mellon architect, Columbia urban designer, Citi Bike expansion at Lyft, capital and development with a $3B+ NYC mixed-use developer.</div></div>
-      <div class="pt"><div class="pn">3</div><div class="pv"><b>The bench:</b> a JOBS Act architect on local capital, a Torti Gallas principal on master planning, and a delivery network spanning Oregon operators and Danish design institutions.</div></div>
-    </div>
-    <div class="team">
-      <div class="tm"><img src="../west-salem/assets/team-erik.jpg" alt="Erik Gillberg"><div><div class="tn">Erik Gillberg</div><div class="tr">Co-Founder &amp; CEO</div></div></div>
-      <div class="tm"><img src="../west-salem/assets/team-ritchie.jpg" alt="Ritchie Ju"><div><div class="tn">Ritchie Ju</div><div class="tr">Co-Founder &amp; COO</div></div></div>
-      <div class="tm"><img src="../west-salem/assets/team-michael.jpg" alt="Michael Shuman"><div><div class="tn">Michael H. Shuman</div><div class="tr">Advisor</div></div></div>
-      <div class="tm"><img src="../west-salem/assets/team-neal.jpg" alt="Neal Payton"><div><div class="tn">Neal Payton</div><div class="tr">Advisor</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 8 · CAPITAL REQUEST -->
+<!-- 8 TEAM + ASK -->
 <section class="slide dark" style="min-height:86vh">
   <div class="wrap">
-    <div class="k">Slide 8 &middot; Capital Request</div>
+    <div class="k">Team &middot; The Ask</div>
     <h1>$3.5M ends the drawing-board phase.</h1>
-    <div class="pts">
-      <div class="pt"><div class="pn">1</div><div class="pv"><b>Use of capital:</b> carry district #1 through entitlement and capitalization, beginning with the Innovation + Residential phase; finish the catalog and its factory framework; make the first operating hire.</div></div>
-      <div class="pt"><div class="pn">2</div><div class="pv"><b>Structure:</b> platform equity, pre-seed. District capital ($12M fund, then phase vehicles) is raised separately and ring-fenced. Terms discussed directly.</div></div>
-      <div class="pt"><div class="pn">3</div><div class="pv"><b>The clock:</b> Oregon's Opportunity Zone nominations close September 29, 2026. Clocks like that are why we are raising now.</div></div>
-    </div>
+    <p class="sub">Platform equity, pre-seed: entitle and capitalize district #1, finish the catalog and factory framework, make the first operating hire. District capital is separate and ring-fenced. Oregon's Opportunity Zone nominations close September 29, 2026; clocks like that are why we are raising now. Terms discussed directly.</p>
     <a class="cta" href="https://calendly.com/erikgillberg/">Book the call &rarr;</a>
-    <p class="ghost"><a href="mailto:erik@nowcitylabs.com">erik@nowcitylabs.com</a> &middot; the deep version: <a href="../invest-2/">the full platform case</a> &middot; <a href="../west-salem/">the Edgewater data room</a></p>
+    <p class="ghost"><a href="mailto:erik@nowcitylabs.com">erik@nowcitylabs.com</a> &middot; deep dive: <a href="../invest-2/">the platform case</a> &middot; <a href="../west-salem/">the district data room</a></p>
+    <div class="team">
+      <div class="tm"><img src="../west-salem/assets/team-erik.jpg" alt="Erik Gillberg"><div><div class="tn">Erik Gillberg</div><div class="tr">Co-Founder &amp; CEO &middot; 30 yrs property, 20 yrs tech</div></div></div>
+      <div class="tm"><img src="../west-salem/assets/team-ritchie.jpg" alt="Ritchie Ju"><div><div class="tn">Ritchie Ju</div><div class="tr">Co-Founder &amp; COO &middot; CMU, Columbia, Lyft</div></div></div>
+      <div class="tm"><img src="../west-salem/assets/team-michael.jpg" alt="Michael Shuman"><div><div class="tn">Michael H. Shuman</div><div class="tr">Advisor &middot; JOBS Act architect</div></div></div>
+      <div class="tm"><img src="../west-salem/assets/team-neal.jpg" alt="Neal Payton"><div><div class="tn">Neal Payton</div><div class="tr">Advisor &middot; Torti Gallas</div></div></div>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p class="cites" style="margin-bottom:18px"><sup>1</sup> McKinsey Global Institute, Reinventing Construction (2017): construction-sector labor productivity growth of ~1% annually over two decades, against ~2.8% for the world economy. &nbsp;<sup>2</sup> National Association of Realtors, Community Preference Survey. &nbsp;<sup>3</sup> Grand View Research, as compiled in company market materials (2025); a sector estimate, not a measurement. &nbsp;<sup>4</sup> Kombohus program, Sveriges Allm&auml;nnytta. &nbsp;<sup>5</sup> Company master developer pro forma, July 2026; modeled, not delivered. Pipeline and phasing per company plan.</p>
+    <p class="cites" style="margin-bottom:18px"><sup>1</sup> McKinsey Global Institute, Reinventing Construction (2017). &nbsp;<sup>2</sup> National Association of Realtors, Community Preference Survey. &nbsp;<sup>3</sup> Kombohus program, Sveriges Allm&auml;nnytta. &nbsp;<sup>4</sup> Grand View Research, as compiled in company market materials (2025); sector estimates, not measurements. &nbsp;<sup>5</sup> Company plan and master developer pro forma (2025-2026); projections are modeled, not delivered, and depend on capital formation, entitlement, and market conditions.</p>
     <p style="font-size:11px;line-height:1.7;color:#6f6a5e;max-width:880px">All projections are based on assumptions that may not equate to actual results; actual results will differ and may differ materially. This page does not constitute an offer to buy or sell securities; an offering can be made only pursuant to delivery of definitive offering documents, and any securities would be offered in reliance on exemptions from registration and only to persons meeting applicable requirements. Statements herein may constitute forward-looking statements; no representation is made that objectives will be achieved. Confidential; please do not circulate. ©2026 Now City Inc.</p>
   </div>
 </footer>
-
 </body>
 </html>
