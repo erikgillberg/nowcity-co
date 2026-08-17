@@ -40,6 +40,16 @@ h1 em{font-style:normal;color:var(--terra)}
 .sm:last-of-type{border-bottom:1px solid #3d392f}
 .sm .a{padding:13px 18px;font-size:14px;font-weight:600;background:rgba(181,165,142,.16);color:#f4f1e9}
 .sm .b{padding:13px 18px;font-size:13.5px;color:#B0ACA0;border-left:1px solid #3d392f}
+/* vision equation */
+.eq{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1.25fr;gap:14px;align-items:stretch;margin-top:38px;max-width:860px}
+.eqt{border:1px solid #3a3b37;background:rgba(241,239,233,.05);border-radius:12px;padding:20px 18px;display:flex;flex-direction:column;justify-content:center}
+.eqk{font-family:var(--serif);font-size:19px;color:#F1EFE9;margin-bottom:7px}
+.eqd{font-size:12.5px;line-height:1.5;color:#B0ACA0}
+.eqplus{font-family:var(--serif);font-size:26px;color:#B5A58E;display:flex;align-items:center}
+.eqp{position:relative;border-radius:12px;overflow:hidden;min-height:130px}
+.eqp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.eqp .eqcap{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;font-family:var(--serif);font-size:15px;line-height:1.35;color:#fff;background:linear-gradient(180deg,transparent,rgba(20,20,18,.85))}
+@media(max-width:860px){.eq{grid-template-columns:1fr;gap:10px}.eqplus{justify-content:center;padding:0}.eqp{min-height:200px}}
 /* OS layers */
 .os{margin-top:36px;max-width:820px}
 .osr{display:grid;grid-template-columns:180px 1fr;gap:0;margin-bottom:10px;border-radius:10px;overflow:hidden}
@@ -118,13 +128,18 @@ footer{background:#1E201E;color:#8B887C;padding:44px 0 60px;font-size:12px}
 <section class="slide dark" style="min-height:88vh">
   <div class="wrap">
     <div class="k">Now City &middot; The Vision</div>
-    <h1>The neighborhood is the <em>next platform.</em></h1>
-    <p class="sub">Computing became universal when hardware, an operating system, and applications became one product. The built world never got its platform. We are building it.</p>
-    <div class="stackmap">
-      <div class="sm"><div class="a">Homes &amp; infrastructure</div><div class="b">the hardware, standardized and factory-built</div></div>
-      <div class="sm"><div class="a">Adaptive Urban Intelligence&trade;</div><div class="b">the operating system: underwriting, energy, mobility, daily operations</div></div>
-      <div class="sm"><div class="a">Attractors &amp; daily life</div><div class="b">the applications: innovation, sports, wellness, food, nature</div></div>
+    <h1>A real estate platform.<br>A neighborhood <em>product.</em></h1>
+    <p class="sub">Now City combines real estate, technology, and finance to build and operate regenerative districts: walkable, mixed-use neighborhoods that deliver durable value for people, place, and capital.</p>
+    <div class="eq">
+      <div class="eqt"><div class="eqk">Real estate</div><div class="eqd">originate, entitle, co-develop, hold</div></div>
+      <div class="eqplus">+</div>
+      <div class="eqt"><div class="eqk">Technology</div><div class="eqd">Adaptive Urban Intelligence&trade;: underwrite, deliver, operate</div></div>
+      <div class="eqplus">+</div>
+      <div class="eqt"><div class="eqk">Finance</div><div class="eqd">blended, catalytic capital stack</div></div>
+      <div class="eqplus">=</div>
+      <div class="eqp"><img src="../invest/assets/homes/midrise-court.jpg" alt="The neighborhood product"><div class="eqcap">The neighborhood,<br>shipped complete</div></div>
     </div>
+    <p style="margin-top:22px;font-size:13.5px;color:#8B887C">Hardware, an operating system, applications: one product, held forever.</p>
   </div>
 </section>
 
