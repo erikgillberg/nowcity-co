@@ -173,6 +173,16 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
 .engrow .et{font-family:var(--serif);font-size:18px;color:var(--cream)}
 .engrow .et span{display:block;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#d9a26c;margin-bottom:4px}
 .engrow .ed{font-size:14.5px;line-height:1.6;color:#c9c2b2}
+.bmod{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:32px}
+.bm{background:rgba(255,255,255,.045);border:1px solid #3d392f;border-left:4px solid;border-radius:10px;padding:18px 16px 15px}
+.bmn{font-family:var(--serif);font-size:12px;color:#8f897c}
+.bmt{font-family:var(--serif);font-size:20px;color:var(--cream);margin:4px 0 9px}
+.bmd{font-size:12.5px;line-height:1.5;color:#c9c2b2;min-height:76px}
+.bmw{font-size:11px;color:#8f897c;border-top:1px solid #3d392f;padding-top:10px;margin-top:6px}
+.bmw b{color:#d9a26c;font-weight:600}
+@media(max-width:1020px){.bmod{grid-template-columns:repeat(2,1fr)}.bmd{min-height:0}}
+@media(max-width:600px){.bmod{grid-template-columns:1fr}}
+.tphoto{width:92px;height:92px;border-radius:50%;object-fit:cover;border:3px solid #3d392f;margin-bottom:16px;display:block}
 @media(max-width:700px){.engrow{grid-template-columns:1fr;gap:6px}}
 /* card grids: even columns only (4 > 2x2 > 1, and g2 is always a true 2-up), never 3+1 orphans.
    Kept last in the stylesheet so these always win over the auto-fit defaults above. */
@@ -297,28 +307,7 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="13.5" y="8" width="3" height="9"/></svg></span><h4>Layer 3 &middot; Development margin</h4><p style="font-size:14px;line-height:1.6">On phases Now City builds: development fees during delivery plus promote at stabilization, underwritten live in the Upside Explorer.</p></div>
       <div class="card rv" style="border-top:3px solid var(--terra)"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 16l5-5 3.5 3.5L20 7"/><path d="M15 7h5v5"/></svg></span><h4>Layer 4 &middot; The destination</h4><p style="font-size:14px;line-height:1.6">The stabilized district is held as owner-operator and recapitalized rather than sold. Recurring operating income, compounding value, and the operating data that improves every district after it: this is where the model is headed, and section 04 is how it earns.</p></div>
     </div>
-    <div class="sec-head rv" style="margin-top:72px;margin-bottom:34px">
-      <h2 style="font-size:clamp(24px,3vw,32px)">Four systems we're building the platform to own</h2>
-      <p class="lead" style="font-size:17px">Each is real today, in use on the first district, and built to transfer to every district that follows.</p>
     </div>
-    <div class="grid g2">
-      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.6 9.4l-2 5.2-5.2 2 2-5.2 5.2-2Z"/></svg></span><h4>Software &middot; nowcity.ai</h4><h3>The district operating system</h3><p style="font-size:14.5px;line-height:1.65">Today: the Upside Explorer, a live collaborative underwriting model that proves the good project pencils, every point traced to a named, defensible move, in use on the first district. As districts occupy, the same system grows into Adaptive Urban Intelligence&trade;, the operating layer: metered actuals compared to design intent, forecast error measured and fed back, every district teaching the next. Productized at <a href="https://nowcity.ai" style="color:var(--terra)">nowcity.ai</a>.</p></div>
-      <div class="card rv" style="border-top:3px solid var(--terra)"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></span><h4>Building system &middot; the product engine</h4><h3>Now City Homes</h3><p style="font-size:14.5px;line-height:1.65">A standardized, design-forward, factory-built housing catalog, and the demand-aggregation strategy that makes industrialized construction finally work. The full system is <a href="#homes" style="color:var(--terra)">section 03</a>, because it is a growth engine, not a feature.</p></div>
-      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="5" ry="3"/><path d="M4 7v5c0 1.7 2.2 3 5 3"/><ellipse cx="15" cy="14" rx="5" ry="3"/><path d="M10 14.3v2.7c0 1.7 2.2 3 5 3s5-1.3 5-3v-3"/></svg></span><h4>Capital playbook</h4><h3>The blended-cost stack</h3><p style="font-size:14.5px;line-height:1.65">A repeatable public-private capital strategy (TIF, HUD, C-PACE, LIHTC, OZ, mission capital) that targets a blended cost of capital well below conventional finance, documented live in the Edgewater data room.</p></div>
-      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.3"/><circle cx="18" cy="7" r="2.3"/><circle cx="12" cy="17" r="2.3"/><path d="M7.8 8.5l2.7 6.4M16.2 8.5l-2.7 6.4M8.3 7h7.4"/></svg></span><h4>Method</h4><h3>Coalition development</h3><p style="font-size:14.5px;line-height:1.65">Districts get built by coalitions. Now City's method recruits the city, the university, the region's employers, and local capital as named partners before vertical capital is at risk.</p></div>
-    </div>
-    <div class="flow rv" style="margin-top:56px">
-      <div class="step"><span class="n">1</span><span>Find the opening: a rezoned corridor, real demand, vacant master developer role</span></div>
-      <div class="arrow">&rarr;</div>
-      <div class="step"><span class="n">2</span><span>Win control with patient capital and aligned landowners</span></div>
-      <div class="arrow">&rarr;</div>
-      <div class="step"><span class="n">3</span><span>De-risk with the coalition and the blended-cost stack</span></div>
-      <div class="arrow">&rarr;</div>
-      <div class="step"><span class="n">4</span><span>Deliver in phases with Now City Homes, hold long-term</span></div>
-      <div class="arrow">&rarr;</div>
-      <div class="step" style="border-color:var(--terra)"><span class="n">&#8635;</span><span>Repeat: every district makes the next one cheaper to win</span></div>
-    </div>
-  </div>
 </section>
 
 <!-- 03 · NOW CITY HOMES -->
@@ -381,11 +370,6 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
         <div class="s">Corner and through-units with daylight and cross-ventilation on two sides, family-sized flexibility, and the efficient plate that gives the ground back to courtyards.</div>
       </div>
     </div>
-    <div class="duo rv">
-      <figure><img src="assets/homes/corridor-dark.jpg" alt="Double-loaded corridor interior"><figcaption>What the industry default buys: a windowless tube of doors on every floor, on every project.</figcaption></figure>
-      <figure><img src="assets/homes/stair-light.jpg" alt="Daylit single-stair core with landscape view"><figcaption>What the same square footage buys in the Now City chassis: a daylit stair with a view, two flights to your door.</figcaption></figure>
-    </div>
-
     <div class="sec-head rv" style="margin-top:72px;margin-bottom:10px">
       <h2 style="font-size:clamp(24px,3vw,32px)">The regulatory window, opening jurisdiction by jurisdiction</h2>
       <p class="lead" style="font-size:17px">Single-stair reform is arriving city by city and state by state rather than all at once. The catalog is engineered to move with it: buildable under Seattle's code today, code-ready for each jurisdiction as it opens. First movers with a code-tested chassis capture each opening as it lands.</p>
@@ -397,11 +381,7 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="r rv"><h4>California &middot; opening</h4><p>The State Fire Marshal's mandated report arrived in March 2026, recommending a four-story cap with added safeguards; enabling legislation has not yet advanced. The catalog will be ready when the market's largest state is.</p></div>
     </div>
 
-    <div class="typo" style="margin-top:56px">
-      <div class="t rv"><img src="assets/homes/factory-line.jpg" alt="Industrialized timber construction line"><div class="tx"><div class="tag">Capital-efficient by design</div><h3>We are not building a factory. We are orchestrating a partnership stack.</h3><p>Delivery runs through an established industrialized construction partner in the Western U.S. with a patented building system, supported by a network of timber, logistics, and manufacturing relationships. Zero capital drain on proprietary factories, geographic flexibility to deploy the chassis where fundamentals are strongest, and a supply chain insulated from localized labor shortages.</p></div></div>
-      <div class="t rv"><img src="assets/homes/chassis-kit.jpg" alt="The standardized chassis as a kit of parts"><div class="tx"><div class="tag">Performance + intelligence</div><h3>Engineer once. Replicate everywhere. Compound the learning.</h3><p>Passive House-level envelopes, low embodied and operational carbon, and healthy cross-ventilated homes come by default, because performance is engineered into the chassis and refined with every generation. And because the product repeats, every deployment feeds the platform's AI-assisted optimization, from unit mix and daylighting to factory-load scheduling, with human review non-negotiable. The building system and the software system are the same flywheel.</p></div></div>
     </div>
-  </div>
 </section>
 
 <!-- 03b · THE ORDER BOOK (dark interlude) -->
@@ -419,13 +399,7 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 9h13l-3.5-3.5"/><path d="M20 15H7l3.5 3.5"/></svg></span><h4>4 &middot; Chartered pipeline volume</h4><p style="font-size:14px;line-height:1.6">Framework supply agreements with West Coast transit-oriented developments and large master-planned communities: buyers who need thousands of standardized, high-performance units on committed schedules, and who gain factory economics they could never aggregate alone.</p></div>
     </div>
     <div class="note rv" style="border-color:#d9a26c;background:rgba(217,162,108,.07);color:#e8e2d6"><strong>Why the book converts:</strong> the catalog arrives pre-engineered (the Passive House chassis), pre-approved (code-tested jurisdiction by jurisdiction), pre-priced (framework factory terms), and pre-proven (every delivered building becomes the comp that sells the next order). Buyers commit to certainty, and certainty is the product.</div>
-    <div class="thresh">
-      <div class="th rv"><div class="ok">&#10003; Cleared by the book</div><h4>Scale</h4><p>A pipeline measured in districts and framework agreements, not one-off projects.</p></div>
-      <div class="th rv"><div class="ok">&#10003; Cleared by the chassis</div><h4>Repeatability</h4><p>One standardized core and catalog across every order in the book.</p></div>
-      <div class="th rv"><div class="ok">&#10003; Cleared by the market</div><h4>Schedule pressure</h4><p>High-carry environments where months saved convert directly to returns.</p></div>
-      <div class="th rv"><div class="ok">&#10003; Cleared by geography</div><h4>High-cost labor</h4><p>West Coast coastal cities, where factory labor arbitrage is deepest.</p></div>
-    </div>
-    <div class="thesis rv">The platform is paid three ways on the same order book: as developer of its own districts, as product owner on catalog deployments, and as the intelligence layer across the pipeline. Factories get the growth and stability they have never had; buyers get homes that pencil; the platform owns the demand.</div>
+    
   </div>
 </section>
 
@@ -476,14 +450,8 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="fr som rv"><div class="fk">SOM &middot; The 10-year platform objective</div><div class="fv">~$250M per year by year 10</div><div class="fd">Three to five Now City districts in delivery ($2-3B cumulative pipeline, Edgewater's $650M first) plus Now City Homes units delivered into partner TOD and master-plan pipelines. Roughly 1% of the serviceable market<sup>4</sup>.</div></div>
     </div>
     <p class="fnotes rv"><sup>1</sup> U.S. Census Bureau, value of private new multifamily construction put in place: $114.8B seasonally adjusted annual rate, June 2026 release (Aug 3, 2026). &nbsp;<sup>2</sup> Estimates range from ~3.7M (Freddie Mac) to ~4.7M (Zillow), with Up For Growth at 3.78M and Realtor.com at 4.03M; we use ~4M as the consensus center. &nbsp;<sup>3</sup> Company assumption based on historical West Coast share of national multifamily permitting; stated as assumption, not measurement. &nbsp;<sup>4</sup> Company objective, not a forecast: depends on Edgewater execution, district two timing, and partner pipeline conversion. All figures for discussion purposes only.</p>
-  </div>
-</section>
-
-<!-- 05b · THE LONG ARC -->
-<section id="longarc">
-  <div class="wrap">
     <div class="sec-head rv">
-      <div class="kicker"><span class="n">05b</span><span class="eyebrow">The Long Arc</span></div>
+      <div class="kicker" style="margin-top:64px"><span class="n">05b</span><span class="eyebrow">The Long Arc</span></div>
       <h2>Why this is bigger than a developer</h2>
       <p class="lead">We stress-test the plan with one question: what would it take to build and operate one hundred thousand homes this way over thirty years? That is AvalonBay scale: one of America's largest apartment REITs reached roughly 97,000 homes over three decades of building and buying, with a REIT-scale balance sheet behind it<sup style="color:var(--terra)">5</sup>. Averaged, the question demands more than 3,000 homes a year for thirty years, a pace few institutions have ever sustained, and the largest developer in America started 8,247 units in its best recent year<sup style="color:var(--terra)">6</sup>. A developer alone reaches that scale only by becoming a REIT. That finding is why the platform is built as a product and operating company rather than a development company.</p>
     </div>
@@ -493,6 +461,8 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="arcrow"><div class="at"><span>Engine 3 &middot; the compounding asset</span>Districts operated</div><div class="ad">Including homes Now City did not build. Operating is the engine that touches every unit, earns recurring revenue, and feeds the learning loop in section 04.</div></div>
     </div>
     <p class="fnotes rv" style="margin:18px 0 0"><strong>Stated plainly:</strong> the engine mix over thirty years is a company assumption, directionally forced by the arithmetic, not a model. No thirty-year financials exist, and none are shown. This raise sits at the very start of the arc: it buys the proof, one district built as one product, and the seed of the operating capability. <sup style="color:var(--terra)">5</sup> AvalonBay Communities, 2025 Form 10-K: 314 communities, 97,219 apartment homes as of September 30, 2025; predecessor IPO 1994. <sup style="color:var(--terra)">6</sup> NMHC Top 25 Developers (2025): Greystar, the largest U.S. apartment developer, started 8,247 units in 2024.</p>
+  </div>
+
   </div>
 </section>
 
@@ -533,31 +503,23 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="card rv"><h4>Companion vehicle</h4><h3>District Value Creation Fund &middot; $12M</h3><p style="font-size:14.5px;line-height:1.65">Funds Edgewater's site control, entitlements, engineering, and infrastructure planning. First exit window at land close (~$34M Land SPV), 3-5 year horizon. Detailed on the <a href="../west-salem/district-capitalization.html" style="color:var(--terra)">Edgewater portal</a>.</p></div>
     </div>
     <div class="sec-head rv" style="margin-top:64px;margin-bottom:10px">
-      <h2 style="font-size:clamp(24px,3vw,32px)">Five economic engines, three ways to invest</h2>
-      <p class="lead" style="font-size:17px">Development earns first and funds the rest. Each later engine is unlocked by the proof, demand, and data the earlier ones create, which is how a small platform ends up with diversified, compounding revenue.</p>
+      <h2 style="font-size:clamp(24px,3vw,32px)">The business model</h2>
+      <p class="lead" style="font-size:17px">Development earns first and funds the rest. Each later engine is unlocked by the proof, demand, and data the earlier ones create, so revenue diversifies and lengthens as the platform matures.</p>
     </div>
-    <div class="engines rv" style="margin-bottom:44px">
-      <div class="engrow"><div class="et"><span>Engine 1</span>Owned &amp; JV districts</div><div class="ed">Master developer and development fees, promote, land and entitlement value, co-investment appreciation, long-term ownership.</div></div>
-      <div class="engrow"><div class="et"><span>Engine 2</span>Now City Homes</div><div class="ed">Product margin, catalog licensing, procurement and supply-chain economics, demand aggregated across owned and partner projects.</div></div>
-      <div class="engrow"><div class="et"><span>Engine 3</span>Partner districts &amp; services</div><div class="ed">Diagnostics, development management, owner representation, co-development, success fees and GP participation with other master developers.</div></div>
-      <div class="engrow"><div class="et"><span>Engine 4</span>Adaptive Urban Intelligence&trade;</div><div class="ed">Software subscriptions, managed data and analytics, benchmarking, AI-assisted underwriting and operations at nowcity.ai.</div></div>
-      <div class="engrow"><div class="et"><span>Engine 5</span>Infrastructure &amp; OpCos</div><div class="ed">Selective participation in district energy, water, mobility, food, and community services where repeat demand and durable cash flow justify it.</div></div>
+    <div class="bmod rv">
+      <div class="bm" style="border-left-color:#d9a26c"><div class="bmn">01</div><div class="bmt">Develop</div><div class="bmd">Master developer and development fees, promote, land value, co-investment</div><div class="bmw">scales with <b>districts won</b></div></div>
+      <div class="bm" style="border-left-color:#c8b89a"><div class="bmn">02</div><div class="bmt">Productize</div><div class="bmd">Now City Homes: per-home margin, catalog licensing, procurement economics</div><div class="bmw">scales with <b>homes shipped</b></div></div>
+      <div class="bm" style="border-left-color:#9db08a"><div class="bmn">03</div><div class="bmt">Advise</div><div class="bmd">Partner districts: diagnostics, development management, co-development, GP participation</div><div class="bmw">scales with <b>partner projects</b></div></div>
+      <div class="bm" style="border-left-color:#6c7d5e"><div class="bmn">04</div><div class="bmt">Operate</div><div class="bmd">Adaptive Urban Intelligence&trade;, management fees, performance economics</div><div class="bmw">scales with <b>units under management</b></div></div>
+      <div class="bm" style="border-left-color:#48593f"><div class="bmn">05</div><div class="bmt">Own</div><div class="bmd">Selective infrastructure and operating companies: energy, water, mobility, food</div><div class="bmw">scales with <b>district systems held</b></div></div>
     </div>
+    <p class="rv" style="margin-top:20px;font-size:14px;color:#a39d8f">Engines 1 through 3 are live or in formation. Engines 4 and 5 follow the first operating district. Three ways to invest in that arc:</p>
     <div class="grid g3" style="margin-bottom:44px">
       <div class="card rv" style="border-top:3px solid var(--terra)"><h4>Layer 1 &middot; Platform equity</h4><h3>This raise</h3><p style="font-size:14px;line-height:1.6">$3.5M for ownership of the company that repeats: the team, the systems, GP economics, and every district the platform delivers or helps deliver.</p></div>
       <div class="card rv"><h4>Layer 2 &middot; District vehicles</h4><h3>Ring-fenced to the asset</h3><p style="font-size:14px;line-height:1.6">The companion $12M District Value Creation Fund and the phase vehicles that follow, capitalized against defined value-creation arcs with their own exit windows.</p></div>
       <div class="card rv"><h4>Layer 3 &middot; Infrastructure &amp; OpCos</h4><h3>Utility-like cash flow</h3><p style="font-size:14px;line-height:1.6">Selective operating companies and district infrastructure, structured with specialist partners where duration and control justify ownership.</p></div>
     </div>
-    <div class="vflow rv">
-      <div class="vstep seed"><div class="vnum">$3.5M</div><div class="vlbl">Platform equity sits at the control point of the campaign</div></div>
-      <div class="varrow">&darr;</div>
-      <div class="vstep"><div class="vnum">$12M</div><div class="vlbl">District Value Creation Fund organizes entitlement and engineering</div></div>
-      <div class="varrow">&darr;</div>
-      <div class="vstep"><div class="vnum">~$34M</div><div class="vlbl">Land SPV assembles at close under the executed Phase One LOI</div></div>
-      <div class="varrow">&darr;</div>
-      <div class="vstep"><div class="vnum">$650M</div><div class="vlbl">Phased development pipeline built on the blended-cost capital stack</div></div>
     </div>
-  </div>
 </section>
 
 <section class="dark" id="raise2">
@@ -578,11 +540,7 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       </tbody>
     </table>
     <div class="note rv" style="background:rgba(255,255,255,.045);border-color:#d9a26c;color:#d8d2c4"><strong style="color:var(--cream)">The honest read on chartered volume.</strong> Framework agreements with TODs and master-planned communities are 12-to-24-month sales cycles with sophisticated counterparties, and they sign against artifacts, not intentions. The $0.5M product line buys the four artifacts that make signature possible: an engineered catalog, code-approved pathways, committed factory terms, and a delivered first order at Edgewater. Until those exist, chartered volume is a pipeline, and we will report it as one.</div>
-    <div class="grid g3" style="margin-top:48px">
-      <div class="card rv"><h4>Months 0-6</h4><h3>Lock the foundations</h3><p style="font-size:14px;line-height:1.65">Platform round closed or substantially subscribed; District Fund raising in parallel. HUD lender interviews complete, C-PACE and URA diligence closed, predevelopment credit term sheet in hand. Order book: catalog schematic package commissioned and factory framework term sheet in negotiation. Tracked publicly on the capital strategy <a href="../west-salem/capital-strategy.html" style="color:#d9a26c">verification register</a>.</p></div>
-      <div class="card rv"><h4>Months 6-12</h4><h3>Convert control into value</h3><p style="font-size:14px;line-height:1.65">Edgewater master plan and engineering advancing on the District Fund's capital; TIF concept submitted; district two shortlist evaluated on the underwriting engine; Upside Explorer in the hands of first external deal teams. Order book: Oregon and Washington code-pathway packages complete, first anchor-customer framework LOI in hand.</p></div>
-      <div class="card rv"><h4>Months 12-18</h4><h3>Switch on platform economics</h3><p style="font-size:14px;line-height:1.65">The ~$34M Land SPV assembled; Phase 1 capitalization in processing across HUD, C-PACE, TIF, and OZ equity; recurring fee agreements in place, moving the platform from raise-funded to fee-supported operations. Order book: Edgewater Phase 1 order specified with the factory partner, and at least two external framework LOIs in diligence.</p></div>
-    </div>
+    
 
     <div class="sec-head rv" style="margin-top:72px;margin-bottom:20px">
       <h2 style="font-size:clamp(24px,3vw,32px)">What the engine earns: illustrative platform revenue at target scale</h2>
@@ -629,11 +587,7 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
     <div class="qa">
       <div class="q rv"><span class="tag">Concentration</span><h3>"Is this just a bet on one project in Salem?"</h3><p>Today, Edgewater is the platform's main engine, and this raise is sized to its milestones. The position you buy is broader: Now City Homes and the software have their own commercial paths, the second district search is funded in this budget, and the playbook is the durable asset. The risk we are working: near-term value does concentrate in Edgewater's progress; the milestone ladder converts that concentration into proof quickly.</p></div>
       <div class="q rv"><span class="tag">The Katerra question</span><h3>"Didn't industrialized construction already fail?"</h3><p>Capital-first modular failed; demand-first modular works, from Sweden's Kombohus to the DoD's current program. Now City Homes is demand-first by construction: the anchor pipeline exists before factory commitments, and delivery runs through established factory partners with zero proprietary factory CapEx. The risk we are working: partner capacity and pipeline conversion are execution work, and we treat them as such.</p></div>
-      <div class="q rv"><span class="tag">Stage</span><h3>"Why equity in a young company instead of the district fund?"</h3><p>Different jobs. The fund buys a defined value-creation arc with an exit window at land close. Platform equity buys the repeating engine: GP economics, the product, the software, and every future district, with more time and more variance. Many partners take both; the campaign is designed so the two reinforce each other.</p></div>
-      <div class="q rv"><span class="tag">Operating capability</span><h3>"Can a developer actually operate?"</h3><p>Not yet, and we say so plainly: there is no operating entity, team, or budget line today. The plan is deliberate. This raise seeds the first operating hire, and the roadmap builds operating capability the way the industry's largest manager built it over thirty years, substantially by acquiring it, with a regional management platform as the highest-leverage early move. The risk we are working: operating is a different discipline from developing, and we treat it as one to buy and learn rather than improvise.</p></div>
-      <div class="q rv"><span class="tag">The experience layer</span><h3>"Does the experience layer really earn?"</h3><p>The claim is that operating and programming discipline produce a retention premium: lower turnover, less downtime, fewer concessions. External evidence supports it; Now City data does not yet exist, because no Now City district is occupied. We treat the premium as a hypothesis with an instrument attached, measured from the first occupied phase forward. The risk we are working: until measured, the experience layer is a design conviction, not a number.</p></div>
-      <div class="q rv"><span class="tag">Revenue</span><h3>"When does the platform earn money?"</h3><p>Earlier than most expect, and lumpier than most like. The development management agreement pays $2.5M across five pre-construction milestones and a $300K annual advance starts in year two, so a district writes checks inside 24 months; master developer and development fees then balloon as phases entitle and capitalize. The full projection, built from the Edgewater pro forma and repeated across the pipeline, is charted above. The risk we are working: fee timing follows milestone timing; the 18-month plan reaches fee-supported operations inside this raise's runway.</p></div>
-    </div>
+      </div>
   </div>
 </section>
 
@@ -646,10 +600,10 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <p class="lead">Two founders, one synthesis: the operating reality of property combined with the systems discipline of technology. A senior bench that is load-bearing, not decorative. And a lean operating model whose leverage comes from systems and coalitions.</p>
     </div>
     <div class="grid g2">
-      <div class="card rv"><h4>Co-Founder &amp; CEO</h4><h3>Erik Gillberg</h3><p style="font-size:14.5px;line-height:1.65">Thirty years inside the operating reality of property, alongside a 20-year career in technology, business development, and startup leadership. As master developer of Edgewater, Erik's role is holding the whole: a vision worth committing a decade to, capital structures that let attainable homes pencil, and partnerships aligned enough to survive four phases of delivery.</p></div>
-      <div class="card rv"><h4>Co-Founder &amp; COO</h4><h3>Ritchie Ju</h3><p style="font-size:14.5px;line-height:1.65">Leads design, development, and operations. B.Arch from Carnegie Mellon, MS in Architecture and Urban Design from Columbia, MBA in progress at Johns Hopkins. His career spans Citi Bike's expansion at Lyft, capital raising and development with a $3B+ NYC mixed-use developer, and co-founding a 7-figure ecommerce business.</p></div>
-      <div class="card rv"><h4>Advisor &middot; Local Economies</h4><h3>Michael H. Shuman</h3><p style="font-size:14.5px;line-height:1.65">Economist, attorney, and one of the architects of the 2012 JOBS Act. He advises Now City on community-rooted ownership, local capital formation, and finance models that keep wealth in place.</p></div>
-      <div class="card rv"><h4>Advisor &middot; Urban Planning &amp; Design</h4><h3>Neal Payton</h3><p style="font-size:14.5px;line-height:1.65">FAIA, FCNU. Directs the western U.S. urban and architectural design practice at Torti Gallas. He advises Now City on urbanism, master planning, and entitlement strategy.</p></div>
+      <div class="card rv"><img class="tphoto" src="assets/team-erik.jpg" alt="Erik Gillberg"><h4>Co-Founder &amp; CEO</h4><h3>Erik Gillberg</h3><p style="font-size:14.5px;line-height:1.65">Thirty years inside the operating reality of property, alongside a 20-year career in technology, business development, and startup leadership. As master developer of Edgewater, Erik's role is holding the whole: a vision worth committing a decade to, capital structures that let attainable homes pencil, and partnerships aligned enough to survive four phases of delivery.</p></div>
+      <div class="card rv"><img class="tphoto" src="assets/team-ritchie.jpg" alt="Ritchie Ju"><h4>Co-Founder &amp; COO</h4><h3>Ritchie Ju</h3><p style="font-size:14.5px;line-height:1.65">Leads design, development, and operations. B.Arch from Carnegie Mellon, MS in Architecture and Urban Design from Columbia, MBA in progress at Johns Hopkins. His career spans Citi Bike's expansion at Lyft, capital raising and development with a $3B+ NYC mixed-use developer, and co-founding a 7-figure ecommerce business.</p></div>
+      <div class="card rv"><img class="tphoto" src="assets/team-michael.jpg" alt="Michael H. Shuman"><h4>Advisor &middot; Local Economies</h4><h3>Michael H. Shuman</h3><p style="font-size:14.5px;line-height:1.65">Economist, attorney, and one of the architects of the 2012 JOBS Act. He advises Now City on community-rooted ownership, local capital formation, and finance models that keep wealth in place.</p></div>
+      <div class="card rv"><img class="tphoto" src="assets/team-neal.jpg" alt="Neal Payton"><h4>Advisor &middot; Urban Planning &amp; Design</h4><h3>Neal Payton</h3><p style="font-size:14.5px;line-height:1.65">FAIA, FCNU. Directs the western U.S. urban and architectural design practice at Torti Gallas. He advises Now City on urbanism, master planning, and entitlement strategy.</p></div>
     </div>
     <div class="proof" style="margin-top:40px">
       <div class="p rv"><span class="tag">Traction</span><h4>What exists today</h4><p>Phase One land under an executed LOI, rezoned corridor, OZ location, a raising district fund, live comp-grounded underwriting, a productized software engine, a named coalition map, and a ULI Technical Advisory Panel foundation. Nearly every item links to a live document in the <a href="../west-salem/" style="color:#d9a26c">Edgewater data room</a>.</p></div>
