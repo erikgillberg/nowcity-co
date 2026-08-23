@@ -151,7 +151,13 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
 .optab th{text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--terra);padding:9px 10px;border-bottom:1px solid var(--line)}
 .optab td{padding:11px 10px;border-bottom:1px solid rgba(0,0,0,.07);vertical-align:top;line-height:1.5;color:#4a463f}
 .optab td:first-child{font-weight:600;color:var(--ink-deep);white-space:nowrap}
-@media(max-width:760px){.optab td:first-child{white-space:normal}}
+@media(max-width:760px){
+ .optab,.optab thead,.optab tbody,.optab tr,.optab th,.optab td{display:block;width:100%}
+ .optab thead{display:none}
+ .optab tr{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;padding:10px 6px;background:var(--cream-2)}
+ .optab td{border:none;padding:6px 12px;white-space:normal}
+ .optab td:first-child{font-size:16.5px;padding-top:8px}
+}
 .arc{margin-top:30px;display:flex;flex-direction:column;gap:0}
 .arcrow{display:grid;grid-template-columns:250px 1fr;gap:22px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.07);align-items:center}
 .arcrow:last-child{border-bottom:none}
@@ -445,10 +451,10 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <h2 style="font-size:clamp(24px,3vw,32px)">How Now City makes money</h2>
       <p class="lead" style="font-size:17px">The platform participates in value creation throughout the life of a project. Near-term revenue is anchored in development economics; over time, ownership, operating and platform revenues make the business increasingly recurring.</p>
     </div>
-    <table class="ostab rv">
+    <table class="optab rv">
       <thead><tr><th>Category</th><th>Revenue</th><th>Who pays</th><th>Stage</th></tr></thead>
       <tbody>
-        <tr><td>Development</td><td>Development and management fees, land value creation, GP and promote participation, project equity</td><td>Project vehicles, capital partners, phase developers</td><td class="rev">Live</td></tr>
+        <tr><td>Development</td><td>Development and management fees, land value creation, GP and promote participation, project equity</td><td>Project vehicles, capital partners, phase developers</td><td><strong style="color:var(--green)">Live</strong></td></tr>
         <tr><td>Ownership</td><td>Long-term interests in real estate, infrastructure, energy and other district assets</td><td>Residents, commercial tenants, service offtakers</td><td>First district onward</td></tr>
         <tr><td>Operating</td><td>Property and district operations, mobility and infrastructure services, recurring neighborhood services</td><td>Residents, tenants, asset owners</td><td>Post-occupancy</td></tr>
         <tr><td>Platform</td><td>Joint ventures, advisory and development services, technology licensing and deployment on third-party projects</td><td>Other developers, landowners, municipalities</td><td>In development</td></tr>
