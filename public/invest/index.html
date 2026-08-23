@@ -159,6 +159,21 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
 .arcrow .at span{display:block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:3px}
 .arcrow .ad{font-size:14px;line-height:1.6;color:#4a463f}
 @media(max-width:700px){.arcrow{grid-template-columns:1fr;gap:6px}}
+/* mission + stack + engines (aligned with /thesis) */
+.stackgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
+.slay{background:var(--cream-2);border:1px solid var(--line);border-top:4px solid;border-radius:10px;padding:24px 24px 20px}
+.slay .sk{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#8a857a}
+.slay h4{font-family:var(--serif);font-size:19px;font-weight:400;color:var(--ink-deep);letter-spacing:0;text-transform:none;margin:7px 0 10px}
+.slay p{font-size:14px;line-height:1.6;color:#4a463f}
+.slay .pay{margin-top:13px;padding-top:11px;border-top:1px solid rgba(0,0,0,.07);font-size:12.5px;color:#6e6a61}
+.slay .pay b{color:var(--green)}
+@media(max-width:760px){.stackgrid{grid-template-columns:1fr}}
+.engrow{display:grid;grid-template-columns:210px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid #3d392f;align-items:baseline}
+.engrow:last-child{border-bottom:none}
+.engrow .et{font-family:var(--serif);font-size:18px;color:var(--cream)}
+.engrow .et span{display:block;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#d9a26c;margin-bottom:4px}
+.engrow .ed{font-size:14.5px;line-height:1.6;color:#c9c2b2}
+@media(max-width:700px){.engrow{grid-template-columns:1fr;gap:6px}}
 /* card grids: even columns only (4 > 2x2 > 1, and g2 is always a true 2-up), never 3+1 orphans.
    Kept last in the stylesheet so these always win over the auto-fit defaults above. */
 .grid.g4,.regwin,.thresh,.proof.c4{grid-template-columns:repeat(4,1fr)}
@@ -216,6 +231,23 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
   </div>
 </header>
 
+<!-- 00b · UP FRONT -->
+<section id="upfront" style="padding:64px 0">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:26px">
+      <div class="kicker"><span class="n">00</span><span class="eyebrow">Up Front</span></div>
+      <h2>The ask, before the case</h2>
+      <p class="lead">Now City Inc is raising <strong>$3.5M of platform equity</strong>, the pre-seed rung of a deliberately small platform ladder that directs much larger district vehicles. It carries the first district through entitlement and capitalization, advances the housing catalog and its factory framework, and makes the first operating hire.</p>
+    </div>
+    <div class="stats statcards c3 rv">
+      <div class="stat"><div class="num">What you own</div><div class="lbl">The company that repeats: GP economics on every district, Now City Homes, the operating systems and their data, and the pipeline after the first district</div></div>
+      <div class="stat"><div class="num">Where it stands</div><div class="lbl">Phase One land under an executed LOI, on a rezoned corridor in an Opportunity Zone; due diligence, capital formation, and entitlement strategy underway</div></div>
+      <div class="stat"><div class="num">The horizon</div><div class="lbl">Venture-style, 7-10 years, with platform value events along the way. The question we run the company against: one hundred thousand homes over thirty years</div></div>
+    </div>
+    <div class="note rv" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between"><span><strong>The next step is a conversation.</strong> Terms, valuation, and the data room are shared there.</span><a href="https://calendly.com/erikgillberg/" style="display:inline-block;background:var(--terra);color:#fff;font-weight:700;font-size:14px;padding:12px 24px;border-radius:8px;text-decoration:none;white-space:nowrap">Book time with the founders &rarr;</a></div>
+  </div>
+</section>
+
 <!-- 01 · THE OPENING -->
 <section class="dark" id="opening">
   <div class="wrap">
@@ -230,6 +262,24 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="card rv"><div class="gn">3</div><h4>The role is vacant</h4><p style="font-size:14.5px;line-height:1.65">Merchant builders build one building and leave. Institutions arrive after de-risking. The master developer role, the actor who assembles, entitles, and stewards the whole, is unfilled in nearly every mid-sized market.</p></div>
     </div>
     <div class="thesis rv">Now City exists to fill that role. We are a vertically integrated master developer and operator: we help communities unlock the value in underused land, treat the district as one living system, and steward the result for decades. The deeper reason the model works is structural. Construction, infrastructure, capital, and operations are normally optimized separately, by different firms, on different clocks, with different exit horizons, so the gains that live between the layers go unclaimed: a high-performance envelope raises capital cost and lowers operating cost for decades, and a merchant builder cannot capture that trade because they sell before the operating years arrive, so it gets value-engineered out. Now City holds. That single fact stacks three efficiencies no single-layer actor can reach: <strong>capital efficiency</strong> from the blended public-private stack, <strong>resource efficiency</strong> engineered once into the chassis and district systems, and <strong>time efficiency</strong> from industrialized, repeatable delivery. Districts built this way outperform, and the platform that can repeat them compounds.</div>
+  </div>
+</section>
+
+<!-- 01b · MISSION & THE STACK -->
+<section class="alt" id="mission">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker"><span class="n">01b</span><span class="eyebrow">Mission &amp; Method</span></div>
+      <h2>Aligned with what people pay for</h2>
+      <p class="lead">Our mission is to accelerate the transition to regenerative, resilient, and equitable communities. Not warm fuzzies: these are the outcomes residents pay a premium for, commercial tenants seek out, and institutional capital is increasingly mandated to hold. Little of it needed inventing. The technologies exist, and most people are rightly impatient that they remain so rarely deployed. Our work is integration: pull the pieces into one product, get it financed, get it built, and stay to help it grow. Four layers, engineered together, in different stages today.</p>
+    </div>
+    <div class="stackgrid">
+      <div class="slay rv" style="border-top-color:#a8703f"><div class="sk">Layer 1</div><h4>Regenerative placemaking</h4><p>Every place is a living system: land, water, people, culture, history, already becoming something. We begin by learning that story, then design so the neighborhood adds life to it, and so the people who live there gain capacity to keep it thriving.</p><div class="pay">The measure is not less harm. It is a place, and a community, <b>more alive every year</b>.</div></div>
+      <div class="slay rv" style="border-top-color:#6c7d5e"><div class="sk">Layer 2</div><h4>Green infrastructure</h4><p>A neighborhood has a metabolism: energy, water, nutrients, materials. We are designing that metabolism at district scale, where the loops can close: energy made and stored locally, water cycled, soil and canopy sharing the work of pipes.</p><div class="pay">Unlike pavement, living infrastructure <b>can gain value as it matures</b>.</div></div>
+      <div class="slay rv" style="border-top-color:#48593f"><div class="sk">Layer 3</div><h4>Industrialized construction</h4><p>Homes are among the last major products still made largely by hand, on site, one at a time. The last wave of factory building failed on demand, not technology. Our strategy runs demand first: standardize one design, aggregate orders across our districts and our partners', bring that volume to factories that already exist.</p><div class="pay">Where practiced at scale: <b>months faster, meaningfully cheaper</b>, with the precision that makes performance attainable.</div></div>
+      <div class="slay rv" style="border-top-color:#c8b89a"><div class="sk">Layer 4</div><h4>Innovative finance</h4><p>Much of what is wrong with development traces to a mismatch: neighborhoods create value over decades, while the money behind them demands its exit in years. We are building structures that blend public purpose, patient private money, and community participation.</p><div class="pay">Each paid in <b>the currency it seeks</b>, with value shared where a place creates it.</div></div>
+    </div>
+    <div class="note rv"><strong>Why now.</strong> The built environment is being digitized, and capital has noticed: in July 2026 a physical-AI company raised $1.7B led by Andreessen Horowitz<sup style="color:var(--terra)">&dagger;</sup> to digitize and operate the physical world. Districts are where that arc lands: the demand, the deployment environment, and the operating data, in one place with one long-term owner. Now City is built for it, instrumented from day one, with open integration points. Physical AI makes this company more scalable and more valuable. It does not make it worth doing; the mission does that.</div>
   </div>
 </section>
 
@@ -284,6 +334,7 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="a rv"><div class="big">~$20B</div><div class="who">U.S. Department of Defense</div><p>A nearly $20B annual construction budget beginning to move toward factory-built delivery: the Defense Innovation Unit's industrialized-construction initiative targets 30% faster delivery at 20% lower cost.</p></div>
       <div class="a rv"><div class="big">&lt;7%</div><div class="who">The lesson of the last cycle</div><p>Offsite construction remains a single-digit sliver of U.S. starts, roughly 6-7% even after a decade of growth (Modular Building Institute), and Katerra burned through ~$2B of venture capital before its 2021 bankruptcy. Capital alone cannot force this market; demand certainty can.</p></div>
     </div>
+    <div class="note rv" style="border-color:var(--terra)"><strong>One principle, two starving systems.</strong> The last wave of factory building failed for lack of committed orders; most development stalls for lack of committed residents. Those are the same problem, so we run demand first on both sides. On the supply side, the order book below. On the resident side, we are learning from the best product companies: form the community before the buildings, invite future residents into the design, and let reservations and commitments lead construction the way orders came to lead production in the car business. Demand secured early softens the factory's risk, the lender's, and the lease-up's at once.</div>
     <div class="note rv"><strong>Now City Homes is our strategy to become that anchor buyer for the private, regenerative market on the West Coast.</strong> We aggregate demand across our own districts and partner pipelines, standardize the product, and deliver it through factory partners. The pipeline creates the certainty; the certainty creates the economics.</div>
 
     <div class="homes-banner rv">
@@ -481,6 +532,22 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="card rv" style="border-top:3px solid var(--terra)"><h4>This raise</h4><h3>Now City Inc &middot; $3.5M &middot; C-Corp equity</h3><p style="font-size:14.5px;line-height:1.65">Ownership of the master developer platform: team, systems, GP economics, Now City Homes, and every district the platform delivers. Venture-style position, 7-10 year horizon, with platform value events along the way.</p></div>
       <div class="card rv"><h4>Companion vehicle</h4><h3>District Value Creation Fund &middot; $12M</h3><p style="font-size:14.5px;line-height:1.65">Funds Edgewater's site control, entitlements, engineering, and infrastructure planning. First exit window at land close (~$34M Land SPV), 3-5 year horizon. Detailed on the <a href="../west-salem/district-capitalization.html" style="color:var(--terra)">Edgewater portal</a>.</p></div>
     </div>
+    <div class="sec-head rv" style="margin-top:64px;margin-bottom:10px">
+      <h2 style="font-size:clamp(24px,3vw,32px)">Five economic engines, three ways to invest</h2>
+      <p class="lead" style="font-size:17px">Development earns first and funds the rest. Each later engine is unlocked by the proof, demand, and data the earlier ones create, which is how a small platform ends up with diversified, compounding revenue.</p>
+    </div>
+    <div class="engines rv" style="margin-bottom:44px">
+      <div class="engrow"><div class="et"><span>Engine 1</span>Owned &amp; JV districts</div><div class="ed">Master developer and development fees, promote, land and entitlement value, co-investment appreciation, long-term ownership.</div></div>
+      <div class="engrow"><div class="et"><span>Engine 2</span>Now City Homes</div><div class="ed">Product margin, catalog licensing, procurement and supply-chain economics, demand aggregated across owned and partner projects.</div></div>
+      <div class="engrow"><div class="et"><span>Engine 3</span>Partner districts &amp; services</div><div class="ed">Diagnostics, development management, owner representation, co-development, success fees and GP participation with other master developers.</div></div>
+      <div class="engrow"><div class="et"><span>Engine 4</span>Adaptive Urban Intelligence&trade;</div><div class="ed">Software subscriptions, managed data and analytics, benchmarking, AI-assisted underwriting and operations at nowcity.ai.</div></div>
+      <div class="engrow"><div class="et"><span>Engine 5</span>Infrastructure &amp; OpCos</div><div class="ed">Selective participation in district energy, water, mobility, food, and community services where repeat demand and durable cash flow justify it.</div></div>
+    </div>
+    <div class="grid g3" style="margin-bottom:44px">
+      <div class="card rv" style="border-top:3px solid var(--terra)"><h4>Layer 1 &middot; Platform equity</h4><h3>This raise</h3><p style="font-size:14px;line-height:1.6">$3.5M for ownership of the company that repeats: the team, the systems, GP economics, and every district the platform delivers or helps deliver.</p></div>
+      <div class="card rv"><h4>Layer 2 &middot; District vehicles</h4><h3>Ring-fenced to the asset</h3><p style="font-size:14px;line-height:1.6">The companion $12M District Value Creation Fund and the phase vehicles that follow, capitalized against defined value-creation arcs with their own exit windows.</p></div>
+      <div class="card rv"><h4>Layer 3 &middot; Infrastructure &amp; OpCos</h4><h3>Utility-like cash flow</h3><p style="font-size:14px;line-height:1.6">Selective operating companies and district infrastructure, structured with specialist partners where duration and control justify ownership.</p></div>
+    </div>
     <div class="vflow rv">
       <div class="vstep seed"><div class="vnum">$3.5M</div><div class="vlbl">Platform equity sits at the control point of the campaign</div></div>
       <div class="varrow">&darr;</div>
@@ -610,6 +677,7 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
 
 <section class="dark" style="border-top:1px solid #3d392f;padding:48px 0">
   <div class="wrap">
+    <p style="font-size:12px;line-height:1.7;color:#a39d8f;max-width:920px;margin-bottom:14px"><sup style="color:#d9a26c">&dagger;</sup> Atoms, announced July 22, 2026: $1.7B equity led by Andreessen Horowitz with Bain Capital Ventures, Fifth Wall, Uber, and others (TechCrunch, Crunchbase News). Atoms is an independent company; the reference is market context only and implies no affiliation.</p>
     <p style="font-size:11px;line-height:1.7;color:#8f897c;max-width:920px">All projections are based on assumptions regarding revenues and costs that may not equate to actual results; actual results will differ and may differ materially. Prospective investors, with their financial and legal advisers, should independently evaluate all assumptions and should not place undue weight on any projections. Market sizing figures are estimates based on third-party data and company assumptions and are provided for discussion purposes only. This site does not constitute an offer to buy or sell securities; an offering can be made only pursuant to delivery of definitive offering documents. Any securities would be offered in reliance on exemptions from registration and only to persons meeting applicable requirements. Statements herein may constitute forward-looking statements involving known and unknown risks and uncertainties; no representation is made that objectives will be achieved, and Now City undertakes no obligation to update such statements. This material is confidential, furnished solely for consideration of the matters described, and is not to be copied or shared without written consent.</p>
   </div>
 </section>
@@ -629,9 +697,9 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 /* pill scrollspy on the main nav; interlude sections map to their parent pill */
 const navLinks=[...document.querySelectorAll('#nav .navlinks a')].filter(a=>(a.getAttribute('href')||'').startsWith('#'));
-const alias={demand:'homes',longarc:'market',raise2:'raise',questions:'raise'};
+const alias={opening:'upfront',demand:'homes',longarc:'market',raise2:'raise',questions:'raise'};
 const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){let id=e.target.id;id=alias[id]||id;navLinks.forEach(a=>a.classList.toggle('current',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
-['opening','platform','homes','demand','operating','market','longarc','proof','raise','raise2','questions','team'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+['upfront','opening','mission','platform','homes','demand','operating','market','longarc','proof','raise','raise2','questions','team'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
 </script>
 </body>
 </html>
