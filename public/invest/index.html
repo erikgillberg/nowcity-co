@@ -184,6 +184,13 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
 .dark .bmt{color:var(--cream)}.dark .bmd{color:#c9c2b2}.dark .bmw{border-color:#3d392f;color:#8f897c}.dark .bmw b{color:#d9a26c}
 @media(max-width:1020px){.bmod{grid-template-columns:repeat(2,1fr)}.bmd{min-height:0}}
 @media(max-width:600px){.bmod{grid-template-columns:1fr}}
+.verbs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.vb{background:var(--cream-2);border:1px solid var(--line);border-radius:10px;padding:20px 20px 18px}
+.vn{font-family:var(--serif);font-size:13px;color:var(--terra);border:1.5px solid var(--terra);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.vt{font-family:var(--serif);font-size:20px;color:var(--ink-deep);margin-bottom:8px}
+.vd{font-size:13.5px;line-height:1.55;color:#4a463f}
+@media(max-width:900px){.verbs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.verbs{grid-template-columns:1fr}}
 .tphoto{width:92px;height:92px;border-radius:50%;object-fit:cover;border:3px solid #3d392f;margin-bottom:16px;display:block}
 @media(max-width:700px){.engrow{grid-template-columns:1fr;gap:6px}}
 /* card grids: even columns only (4 > 2x2 > 1, and g2 is always a true 2-up), never 3+1 orphans.
@@ -219,7 +226,7 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
     <ul class="navlinks">
       <li><a href="#opening">Opening</a></li>
       <li><a href="#platform">Platform</a></li>
-      <li><a href="#homes">Homes</a></li>
+      <li><a href="#homes">Initiatives</a></li>
       <li><a href="#operating">Operating</a></li>
       <li><a href="#market">Market</a></li>
       <li><a href="#proof">Proof</a></li>
@@ -295,113 +302,43 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
   </div>
 </section>
 
-<!-- 02 · THE PLATFORM -->
+<!-- 02 · HOW WE CREATE VALUE -->
 <section class="alt" id="platform">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="kicker"><span class="n">02</span><span class="eyebrow">The Platform</span></div>
-      <h2>One company, built to repeat the hardest role in real estate</h2>
-      <p class="lead">A master developer earns across four layers: land value created by assembly and entitlement, pad monetization to phase partners, development margin on the phases it builds, and long-term operating yield on the district it holds. The first three fund the journey; the fourth is the destination. Now City's edge is that every layer runs on systems the company owns.</p>
+      <div class="kicker"><span class="n">02</span><span class="eyebrow">How We Create Value</span></div>
+      <h2>One company, six moves, repeated</h2>
+      <p class="lead">Conventional development optimizes individual buildings and parcels, with infrastructure, mobility, energy, technology and public space planned, financed and operated separately. At district scale those systems can be designed together. Now City captures the value created by organizing them around the neighborhood rather than the building.</p>
     </div>
-    <div class="grid g4">
-      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9.4h16"/><path d="M4 14.6h16"/><path d="M9.4 4v16"/><path d="M14.6 4v16"/></svg></span><h4>Layer 1 &middot; Land value</h4><p style="font-size:14px;line-height:1.6">Assembly, entitlement, and master planning turn fragmented parcels into an investable district. The step change in value accrues to positions the platform structures.</p></div>
-      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 9h13l-3.5-3.5"/><path d="M20 15H7l3.5 3.5"/></svg></span><h4>Layer 2 &middot; Pad monetization</h4><p style="font-size:14px;line-height:1.6">Finished, infrastructure-served parcels are held, joint-ventured, or delivered with phase partners, converting entitlement work into proceeds and aligned partnerships.</p></div>
-      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="13.5" y="8" width="3" height="9"/></svg></span><h4>Layer 3 &middot; Development margin</h4><p style="font-size:14px;line-height:1.6">On phases Now City builds: development fees during delivery plus promote at stabilization, underwritten live in the Upside Explorer.</p></div>
-      <div class="card rv" style="border-top:3px solid var(--terra)"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 16l5-5 3.5 3.5L20 7"/><path d="M15 7h5v5"/></svg></span><h4>Layer 4 &middot; The destination</h4><p style="font-size:14px;line-height:1.6">The stabilized district is held as owner-operator and recapitalized rather than sold. Recurring operating income, compounding value, and the operating data that improves every district after it: this is where the model is headed, and section 04 is how it earns.</p></div>
+    <div class="verbs rv">
+      <div class="vb"><div class="vn">1</div><div class="vt">Originate</div><div class="vd">Identify underutilized sites where planning, entitlement, infrastructure and placemaking can create substantial new value.</div></div>
+      <div class="vb"><div class="vn">2</div><div class="vt">Assemble</div><div class="vd">Bring together landowners, investors, municipalities, developers, designers, infrastructure providers and operators.</div></div>
+      <div class="vb"><div class="vn">3</div><div class="vt">Develop</div><div class="vd">Create the master plan, entitlement and capital structure, and lead execution through construction and stabilization.</div></div>
+      <div class="vb"><div class="vn">4</div><div class="vt">Integrate</div><div class="vd">Coordinate real estate with mobility, energy, water, digital infrastructure and public realm where integration produces measurable benefit.</div></div>
+      <div class="vb"><div class="vn">5</div><div class="vt">Operate</div><div class="vd">Retain ownership or operating interests in selected real estate, infrastructure and neighborhood services.</div></div>
+      <div class="vb"><div class="vn">6</div><div class="vt">Replicate</div><div class="vd">Turn each project into reusable knowledge, technology, partnerships, standards and financial structures.</div></div>
     </div>
-    </div>
+    <div class="note rv"><strong>Why we can win.</strong> The competitive advantage is not owning every component of a neighborhood. It is knowing how to assemble, finance, integrate and operate the right components as one investable system. That lets Now City stay capital-efficient at the corporate level while project capital, strategic partners and specialist operators carry the capital-intensive work.</div>
+  </div>
 </section>
 
-<!-- 03 · NOW CITY HOMES -->
+<!-- 03 · STRATEGIC INITIATIVES -->
 <section id="homes">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="kicker"><span class="n">03</span><span class="eyebrow">The Product Engine &middot; Now City Homes</span></div>
-      <h2>The technology to build great housing in factories already exists. What's been missing is an anchor buyer.</h2>
-      <p class="lead">The U.S. has spent decades trying to fix the factory. The actual problem is demand certainty: factories cannot survive on project-by-project pipelines. Industrialized construction works when an anchor buyer provides volume certainty, and the evidence is consistent wherever it appears.</p>
+      <div class="kicker"><span class="n">03</span><span class="eyebrow">Long-Term Initiatives</span></div>
+      <h2>Two initiatives that make the platform compound</h2>
+      <p class="lead">Development economics carry the company today. Two initiatives, developed alongside the first districts, are what turn a strong development business into a platform: a standardized housing product, and the intelligence layer that runs what we build. Both are in development, funded modestly by this raise, and neither is required for the near-term business to work.</p>
     </div>
-    <div class="anchor-strip">
-      <div class="a rv"><div class="big">~10,000</div><div class="who">Public Housing Sweden &middot; Kombohus</div><p>Apartments built or in production from a standardized catalog: on average five months faster and 20-25% below comparable construction cost (Sveriges Allm&auml;nnytta). The anchor-buyer model, proven at national scale.</p></div>
-      <div class="a rv"><div class="big">~$20B</div><div class="who">U.S. Department of Defense</div><p>A nearly $20B annual construction budget beginning to move toward factory-built delivery: the Defense Innovation Unit's industrialized-construction initiative targets 30% faster delivery at 20% lower cost.</p></div>
-      <div class="a rv"><div class="big">&lt;7%</div><div class="who">The lesson of the last cycle</div><p>Offsite construction remains a single-digit sliver of U.S. starts, roughly 6-7% even after a decade of growth (Modular Building Institute), and Katerra burned through ~$2B of venture capital before its 2021 bankruptcy. Capital alone cannot force this market; demand certainty can.</p></div>
+    <div class="grid g2">
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></span><h4>Initiative 1 &middot; Product</h4><h3>Now City Homes</h3><p style="font-size:14.5px;line-height:1.65">A standardized, design-forward housing catalog that could eventually be built in our districts and sold into others'. The last wave of factory building failed on demand, not technology: factories starve on one-off projects. Our approach runs demand first, aggregating orders across our own districts and partners' before committing to factory capacity. Sweden has proven the sequence at national scale, months faster and 20-25% below comparable cost.<sup>3</sup> Today: catalog design and code pathways in progress; no factory agreement signed.</p></div>
+      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 1 7 4"/><path d="M19.5 3.5V8H15"/><path d="M18.5 15A8 8 0 0 1 5 14"/><path d="M4.5 19.5V15H9"/></svg></span><h4>Initiative 2 &middot; Software</h4><h3>Adaptive Urban Intelligence&trade;</h3><p style="font-size:14.5px;line-height:1.65">The layer that underwrites a district before it exists and runs it afterward. Today it is the live underwriting model in daily use on the first district, where every forecast can be checked against what actually happens. As districts occupy, the same system becomes the operating layer, and the accumulated data is what makes each district cheaper and faster than the last. Productized at <a href="https://nowcity.ai" style="color:var(--terra)">nowcity.ai</a> for other deal teams.</p></div>
     </div>
-    <div class="note rv" style="border-color:var(--terra)"><strong>One principle, two starving systems.</strong> The last wave of factory building failed for lack of committed orders; most development stalls for lack of committed residents. Those are the same problem, so we run demand first on both sides. On the supply side, the order book below. On the resident side, we are learning from the best product companies: form the community before the buildings, invite future residents into the design, and let reservations and commitments lead construction the way orders came to lead production in the car business. Demand secured early softens the factory's risk, the lender's, and the lease-up's at once.</div>
-    <div class="note rv"><strong>Now City Homes is our strategy to become that anchor buyer for the private, regenerative market on the West Coast.</strong> We aggregate demand across our own districts and partner pipelines, standardize the product, and deliver it through factory partners. The pipeline creates the certainty; the certainty creates the economics.</div>
-
     <div class="homes-banner rv">
-      <img src="assets/homes/street-arch.jpg" alt="Now City Homes street render: one chassis, contextual expression">
+      <img src="assets/homes/street-arch.jpg" alt="Now City Homes catalog render">
       <div class="cap"><div class="tag">Now City Homes</div><div class="t">Standardized chassis. Localized soul.</div></div>
     </div>
-
-    <div class="sec-head rv" style="margin-top:72px;margin-bottom:10px">
-      <h2 style="font-size:clamp(24px,3vw,32px)">One chassis, a full catalog of neighborhoods</h2>
-      <p class="lead" style="font-size:17px">The shell, core, structure, and factory tooling stay constant. Only the interior mix and the exterior expression change. A standardized core delivers the cost, schedule, and quality; the contextual skin means standardization never means sameness.</p>
-    </div>
-    <div class="typo">
-      <div class="t rv"><img src="assets/homes/block-corner.jpg" alt="Now City Block street corner render"><div class="tx"><div class="tag">Typology 01 &middot; The Hero Chassis</div><h3>The Now City Block</h3><p>A standardized single-stair mid-rise that flexes its interior mix, from compact homes for students and seniors to 3- and 4-bedroom family units, without changing the shell, core, or tooling. Stands alone or chains into a courtyard block: four stories under Oregon's current code, six under Seattle's, with the taller tiers following each jurisdiction's reform.</p></div></div>
-      <div class="t rv"><img src="assets/homes/rowhouse.jpg" alt="Now City Row Houses render"><div class="tx"><div class="tag">Typology 02 &middot; Missing Middle</div><h3>Now City Row Houses</h3><p>A door-on-the-street typology for the peri-urban edge, with an integrated ground-floor ADU and separate entrance for multigenerational living, supplemental income, or aging in place. The same envelope and delivery system, reformatted.</p></div></div>
-      <div class="t rv"><img src="assets/homes/tower-dusk.jpg" alt="Contextual urban tower at dusk among low-rise neighbors"><div class="tx"><div class="tag">Typology 03 &middot; The Density Anchor</div><h3>Contextual Urban Tower</h3><p>Targeted height where a district needs it, sited to protect neighborhood light and views, never tower-next-to-tower. Shared social floors interweave the vertical stack so density scales without isolation.</p></div></div>
-    </div>
-
-    <div class="sec-head rv" style="margin-top:72px;margin-bottom:10px">
-      <h2 style="font-size:clamp(24px,3vw,32px)">The core unlock: the single-stair building</h2>
-      <p class="lead" style="font-size:17px">The Point Access Block is the fundamental building block of successful cities worldwide, and it is precisely what factories want to build: a standardized core, narrow repeatable modules, and minimal circulation. Within Now City Homes it is the hero chassis, one part of a larger system.</p>
-    </div>
-    <div class="plates">
-      <div class="plate bad rv">
-        <h4>Double-loaded corridor</h4>
-        <svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Double loaded corridor diagram">
-          <rect x="4" y="10" width="312" height="130" fill="none" stroke="#c8c2b4" stroke-width="2"/>
-          <g fill="#efece2" stroke="#c8c2b4"><rect x="8" y="14" width="60" height="50"/><rect x="70" y="14" width="60" height="50"/><rect x="132" y="14" width="60" height="50"/><rect x="194" y="14" width="60" height="50"/><rect x="256" y="14" width="56" height="50"/><rect x="8" y="86" width="60" height="50"/><rect x="70" y="86" width="60" height="50"/><rect x="132" y="86" width="60" height="50"/><rect x="194" y="86" width="60" height="50"/><rect x="256" y="86" width="56" height="50"/></g>
-          <rect x="8" y="66" width="304" height="18" fill="#8a857a"/>
-          <text x="160" y="79" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#fff" letter-spacing="2">CORRIDOR</text>
-        </svg>
-        <div class="m">~13% lost to circulation</div>
-        <div class="s">Single-aspect units, dark internal corridors, and a geometry hostile to modular repetition.</div>
-      </div>
-      <div class="plate good rv" style="border-color:var(--green)">
-        <h4>Point Access Block &middot; the Now City chassis</h4>
-        <svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Point access block diagram">
-          <rect x="60" y="6" width="200" height="138" fill="none" stroke="#48593f" stroke-width="2"/>
-          <g fill="#e7ecdf" stroke="#48593f"><rect x="64" y="10" width="94" height="63"/><rect x="162" y="10" width="94" height="63"/><rect x="64" y="77" width="94" height="63"/><rect x="162" y="77" width="94" height="63"/></g>
-          <rect x="139" y="54" width="42" height="42" fill="#a8703f"/>
-          <text x="160" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#fff" letter-spacing="1">STAIR +</text>
-          <text x="160" y="83" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#fff" letter-spacing="1">ELEVATOR</text>
-        </svg>
-        <div class="m">~6.5% circulation &middot; 93% efficient plates</div>
-        <div class="s">Corner and through-units with daylight and cross-ventilation on two sides, family-sized flexibility, and the efficient plate that gives the ground back to courtyards.</div>
-      </div>
-    </div>
-    <div class="sec-head rv" style="margin-top:72px;margin-bottom:10px">
-      <h2 style="font-size:clamp(24px,3vw,32px)">The regulatory window, opening jurisdiction by jurisdiction</h2>
-      <p class="lead" style="font-size:17px">Single-stair reform is arriving city by city and state by state rather than all at once. The catalog is engineered to move with it: buildable under Seattle's code today, code-ready for each jurisdiction as it opens. First movers with a code-tested chassis capture each opening as it lands.</p>
-    </div>
-    <div class="regwin">
-      <div class="r rv"><h4>Seattle</h4><p>Single-stair apartment buildings up to six stories permitted since 1977. A 2025 Pew study of every fire death in Seattle and New York, 2012-2024, found single-stair buildings matched other residential buildings, with no death attributable to a missing second stair.</p></div>
-      <div class="r rv"><h4>Washington State</h4><p>Statewide single-stair directed in 2023 (SB 5491) and adopted into the 2024 state code, effective May 2027; Vancouver, WA builds under Seattle-style provisions now. 2026 laws added smaller elevators (SB 5156) and first-in-nation scissor-stair reform (HB 2228).</p></div>
-      <div class="r rv"><h4>Oregon &middot; four stories, city by city</h4><p>The 2025 state code's Appendix Q allows single-stair up to four stories, four units and 4,000 square feet per floor, in cities that adopt it with fire-service approval; Portland adopted in late 2025. Taller tiers await a state amendment, expected to be taken up in 2027.</p></div>
-      <div class="r rv"><h4>California &middot; opening</h4><p>The State Fire Marshal's mandated report arrived in March 2026, recommending a four-story cap with added safeguards; enabling legislation has not yet advanced. The catalog will be ready when the market's largest state is.</p></div>
-    </div>
-
-    </div>
-</section>
-
-<!-- 03b · THE ORDER BOOK (dark interlude) -->
-<section class="dark" id="demand">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="kicker"><span class="n">03b</span><span class="eyebrow">The Order Book</span></div>
-      <h2>Demand certainty is manufactured. We build it four ways at once.</h2>
-      <p class="lead">A factory believes an order book, not a vision. Now City builds one the way an airline fills a route: a committed base load it controls, anchor customers on framework agreements, a distribution channel that converts continuously, and chartered volume from partners who need thousands of units on committed schedules.</p>
-    </div>
-    <div class="grid g4" style="margin-top:10px">
-      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></span><h4>1 &middot; The base load we control</h4><p style="font-size:14px;line-height:1.6">Edgewater's ~1,000 homes across four phases, specified, sequenced, and scheduled by the master developer itself. Every district the platform wins adds a thousand-home block to the book. No sales cycle stands between the platform and its own demand.</p></div>
-      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z"/></svg></span><h4>2 &middot; Anchor customers on framework terms</h4><p style="font-size:14px;line-height:1.6">The Kombohus move, translated to the West Coast: cities, housing authorities, universities, and employers adopt a pre-engineered, pre-priced catalog under framework agreements, aggregating many small public buyers into one order. The coalition method is already opening these doors district by district.</p></div>
-      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.6 9.4l-2 5.2-5.2 2 2-5.2 5.2-2Z"/></svg></span><h4>3 &middot; The underwriting channel</h4><p style="font-size:14px;line-height:1.6">Every external deal team on the Upside Explorer is a qualified buyer in formation: the software proves, in their own numbers, that the chassis is the move that makes their project pencil, then routes the order to the catalog. Distribution for the software is aggregation for the factory.</p></div>
-      <div class="card rv"><span class="pv-icon"><svg viewBox="0 0 24 24"><path d="M4 9h13l-3.5-3.5"/><path d="M20 15H7l3.5 3.5"/></svg></span><h4>4 &middot; Chartered pipeline volume</h4><p style="font-size:14px;line-height:1.6">Framework supply agreements with West Coast transit-oriented developments and large master-planned communities: buyers who need thousands of standardized, high-performance units on committed schedules, and who gain factory economics they could never aggregate alone.</p></div>
-    </div>
-    <div class="note rv" style="border-color:#d9a26c;background:rgba(217,162,108,.07);color:#e8e2d6"><strong>Why the book converts:</strong> the catalog arrives pre-engineered (the Passive House chassis), pre-approved (code-tested jurisdiction by jurisdiction), pre-priced (framework factory terms), and pre-proven (every delivered building becomes the comp that sells the next order). Buyers commit to certainty, and certainty is the product.</div>
-    
+    <div class="note rv"><strong>One principle, two starving systems.</strong> Factory building fails for lack of committed orders; development stalls for lack of committed residents. Those are the same problem, so both initiatives run demand first: aggregate orders on the supply side, and form the community before the buildings on the resident side, letting reservations and commitments lead construction the way orders came to lead production in the car business.</div>
   </div>
 </section>
 
@@ -488,7 +425,7 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="p rv"><span class="tag">Capital</span><h4>$12M district fund raising</h4><p>The companion District Value Creation Fund is raising alongside this round, with a complete investor data room and live verification register.</p></div>
       <div class="p rv"><span class="tag">Underwriting</span><h4>Live in the Upside Explorer</h4><p>An honest base case, 50+ separable levers, every point of upside traced to a named move, open to investor scrutiny.</p></div>
     </div>
-    <p class="rv" style="margin-top:34px;font-size:15px;color:#b7b0a3">Beyond Edgewater, a further Western U.S. district pipeline is identified, per company plan. The complete Edgewater data room, from business plan to live underwriting, is at the <a href="../west-salem/" style="color:#d9a26c">Edgewater investor portal</a>.</p>
+    <p class="rv" style="margin-top:34px;font-size:15px;color:#b7b0a3">Beyond Edgewater, a further Western U.S. district pipeline is identified, per company plan. The district has its own business plan and returns story at the <a href="../west-salem/plan.html" style="color:#d9a26c">Edgewater business plan</a>. The complete data room is at the <a href="../west-salem/" style="color:#d9a26c">Edgewater investor portal</a>.</p>
   </div>
 </section>
 
@@ -505,17 +442,19 @@ nav.scrolled .navlinks a.current,nav.solid .navlinks a.current{background:var(--
       <div class="card rv"><h4>Companion vehicle</h4><h3>District Value Creation Fund &middot; $12M</h3><p style="font-size:14.5px;line-height:1.65">Funds Edgewater's site control, entitlements, engineering, and infrastructure planning. First exit window at land close (~$34M Land SPV), 3-5 year horizon. Detailed on the <a href="../west-salem/district-capitalization.html" style="color:var(--terra)">Edgewater portal</a>.</p></div>
     </div>
     <div class="sec-head rv" style="margin-top:64px;margin-bottom:10px">
-      <h2 style="font-size:clamp(24px,3vw,32px)">The business model</h2>
-      <p class="lead" style="font-size:17px">Development earns first and funds the rest. Each later engine is unlocked by the proof, demand, and data the earlier ones create, so revenue diversifies and lengthens as the platform matures.</p>
+      <h2 style="font-size:clamp(24px,3vw,32px)">How Now City makes money</h2>
+      <p class="lead" style="font-size:17px">The platform participates in value creation throughout the life of a project. Near-term revenue is anchored in development economics; over time, ownership, operating and platform revenues make the business increasingly recurring.</p>
     </div>
-    <div class="bmod rv">
-      <div class="bm" style="border-left-color:#d9a26c"><div class="bmn">01</div><div class="bmt">Develop</div><div class="bmd">Master developer and development fees, promote, land value, co-investment</div><div class="bmw">scales with <b>districts won</b></div></div>
-      <div class="bm" style="border-left-color:#c8b89a"><div class="bmn">02</div><div class="bmt">Productize</div><div class="bmd">Now City Homes: per-home margin, catalog licensing, procurement economics</div><div class="bmw">scales with <b>homes shipped</b></div></div>
-      <div class="bm" style="border-left-color:#9db08a"><div class="bmn">03</div><div class="bmt">Advise</div><div class="bmd">Partner districts: diagnostics, development management, co-development, GP participation</div><div class="bmw">scales with <b>partner projects</b></div></div>
-      <div class="bm" style="border-left-color:#6c7d5e"><div class="bmn">04</div><div class="bmt">Operate</div><div class="bmd">Adaptive Urban Intelligence&trade;, management fees, performance economics</div><div class="bmw">scales with <b>units under management</b></div></div>
-      <div class="bm" style="border-left-color:#48593f"><div class="bmn">05</div><div class="bmt">Own</div><div class="bmd">Selective infrastructure and operating companies: energy, water, mobility, food</div><div class="bmw">scales with <b>district systems held</b></div></div>
-    </div>
-    <p class="rv" style="margin-top:20px;font-size:14px;color:#6e6a61">Engines 1 through 3 are live or in formation. Engines 4 and 5 follow the first operating district. Three ways to invest in that arc:</p>
+    <table class="ostab rv">
+      <thead><tr><th>Category</th><th>Revenue</th><th>Who pays</th><th>Stage</th></tr></thead>
+      <tbody>
+        <tr><td>Development</td><td>Development and management fees, land value creation, GP and promote participation, project equity</td><td>Project vehicles, capital partners, phase developers</td><td class="rev">Live</td></tr>
+        <tr><td>Ownership</td><td>Long-term interests in real estate, infrastructure, energy and other district assets</td><td>Residents, commercial tenants, service offtakers</td><td>First district onward</td></tr>
+        <tr><td>Operating</td><td>Property and district operations, mobility and infrastructure services, recurring neighborhood services</td><td>Residents, tenants, asset owners</td><td>Post-occupancy</td></tr>
+        <tr><td>Platform</td><td>Joint ventures, advisory and development services, technology licensing and deployment on third-party projects</td><td>Other developers, landowners, municipalities</td><td>In development</td></tr>
+      </tbody>
+    </table>
+    <p class="rv" style="margin-top:18px;font-size:14px;color:#a39d8f">Three ways to participate in that arc:</p>
     <div class="grid g3" style="margin-bottom:44px">
       <div class="card rv" style="border-top:3px solid var(--terra)"><h4>Layer 1 &middot; Platform equity</h4><h3>This raise</h3><p style="font-size:14px;line-height:1.6">$3.5M for ownership of the company that repeats: the team, the systems, GP economics, and every district the platform delivers or helps deliver.</p></div>
       <div class="card rv"><h4>Layer 2 &middot; District vehicles</h4><h3>Ring-fenced to the asset</h3><p style="font-size:14px;line-height:1.6">The companion $12M District Value Creation Fund and the phase vehicles that follow, capitalized against defined value-creation arcs with their own exit windows.</p></div>
@@ -653,9 +592,9 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 /* pill scrollspy on the main nav; interlude sections map to their parent pill */
 const navLinks=[...document.querySelectorAll('#nav .navlinks a')].filter(a=>(a.getAttribute('href')||'').startsWith('#'));
-const alias={opening:'upfront',demand:'homes',longarc:'market',raise2:'raise',questions:'raise'};
+const alias={opening:'upfront',longarc:'market',raise2:'raise',questions:'raise'};
 const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){let id=e.target.id;id=alias[id]||id;navLinks.forEach(a=>a.classList.toggle('current',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-45% 0px -50% 0px'});
-['upfront','opening','mission','platform','homes','demand','operating','market','longarc','proof','raise','raise2','questions','team'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+['upfront','opening','mission','platform','homes','operating','market','proof','raise','raise2','questions','team'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
 </script>
 </body>
 </html>
