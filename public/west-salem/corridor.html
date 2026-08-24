@@ -393,10 +393,10 @@
 <a href="#top" class="toplink" id="toplink">&uarr;</a>
 
 <script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}),{threshold:.08});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-const nav=document.getElementById('nav'),sub=document.getElementById('subnav'),top=document.getElementById('toplink');
-window.addEventListener('scroll',()=>{const y=window.scrollY;nav.classList.toggle('scrolled',y>40);sub.classList.toggle('show',y>420);top.classList.toggle('show',y>900)},{passive:true});
+const nav=document.getElementById('nav'),sub=document.getElementById('subnav'),toplink=document.getElementById('toplink');
+window.addEventListener('scroll',()=>{const y=window.scrollY;nav.classList.toggle('scrolled',y>40);sub.classList.toggle('show',y>420);toplink.classList.toggle('show',y>900)},{passive:true});
 </script>
 <script>
 (function(){
