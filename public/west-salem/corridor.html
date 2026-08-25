@@ -42,7 +42,7 @@
 .dark .tag.pilot{background:rgba(217,162,108,.16);color:#d9a26c}
 .dark .tag.res{background:rgba(255,255,255,.09);color:#b7b0a3}
 .wheel{display:flex;justify-content:center;margin-top:10px}
-.wheel svg{max-width:560px;width:100%;height:auto}
+.wheel svg{max-width:660px;width:100%;height:auto}
 .qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:10px}
 .qcard{background:var(--cream-2);border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:0 8px 8px 0;padding:18px 20px}
 .qcard b{display:block;font-family:var(--serif);font-size:15.5px;color:var(--ink-deep);margin-bottom:6px}
@@ -151,6 +151,7 @@
   <div class="wrap">
     <a href="#asset">The Asset</a>
     <a href="#history">1913</a>
+    <a href="#tried">What Has Been Tried</a>
     <a href="#geography">The Valley</a>
     <a href="#stack">The Stack</a>
     <a href="#tech">The Technology</a>
@@ -266,6 +267,53 @@
       <div class="ev"><div class="yr">Today</div><p>Freight still runs on much of the geography. Amtrak Cascades carries passengers through the same valley cities, sponsored by ODOT, at intercity frequencies rather than regional ones.</p></div>
       <div class="ev"><div class="yr">Next</div><p>A new generation of battery, lightweight and autonomous vehicles changes the equation again. The question is no longer whether Oregon can support regional electric mobility. It did, for twenty-five years. The question is what it could become now.</p></div>
     </div>
+  </div>
+</section>
+
+
+<section id="tried">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">What Has Been Tried</div>
+      <h2>This question is not new, and the record is useful</h2>
+      <p class="lead">Oregon has spent three decades studying, and in one case building, passenger service on exactly these corridors. Anyone proposing something here should know that record cold, because it contains both the encouragement and the warnings.</p>
+    </div>
+
+    <div class="grid g2 rv">
+      <div class="card">
+        <h4>2009 to today &middot; Built</h4>
+        <h3 style="font-size:20px;margin-bottom:10px">WES Commuter Rail</h3>
+        <p style="font-size:15px">Oregon's first commuter rail: 14.7 miles from Beaverton to Wilsonville, owned by TriMet and <strong>operated by Portland &amp; Western</strong>, running on a shared freight corridor. It exists, it works mechanically, and it has never come close to its ridership projections. Reporting has put the operating subsidy at roughly a hundred dollars per passenger.</p>
+      </div>
+      <div class="card">
+        <h4>2012 to 2021 &middot; Studied</h4>
+        <h3 style="font-size:20px;margin-bottom:10px">Oregon Passenger Rail</h3>
+        <p style="font-size:15px">A federally funded Tier 1 environmental study of passenger rail between Eugene and Portland, concluded with a Record of Decision in April 2021. It examined building a new alignment along I-5 and <strong>rejected it</strong>, selecting instead the existing Amtrak Cascades route with incremental track, signal and communications work, noting that investment could be broken into relatively small, lower-cost pieces.</p>
+      </div>
+      <div class="card">
+        <h4>2019, 2024 &middot; Proposed</h4>
+        <h3 style="font-size:20px;margin-bottom:10px">WES extension to Salem and Keizer</h3>
+        <p style="font-size:15px">Legislators and transit advocates have repeatedly pushed for a state study of extending WES south through Donald, Woodburn, Keizer and Salem, with a task force including the cities, Cherriots, TriMet, ODOT, both counties and Portland &amp; Western. Today the same trip is served by the SMART and Cherriots 1X bus, carrying a few hundred riders a day. Supporters themselves estimate fifteen years or more from serious start to service.</p>
+      </div>
+      <div class="card">
+        <h4>2022 to 2023 &middot; Sketched</h4>
+        <h3 style="font-size:20px;margin-bottom:10px">A Salem streetcar, and the West Salem connector</h3>
+        <p style="font-size:15px">Proposals to study a Salem streetcar have surfaced repeatedly, including a West Salem connector concept that would carry track across the 1912 Union Street Railroad Bridge and fly over the rail line and Front Street into downtown. The bridge last carried trains in the early 1990s, was sold to the city for a dollar in 2003, and has been a much-loved walking and cycling crossing since 2009.</p>
+      </div>
+    </div>
+
+    <div class="sec-head rv" style="margin-top:56px;margin-bottom:22px">
+      <div class="eyebrow">What the record says</div>
+      <h2 style="font-size:clamp(24px,3vw,32px)">Four lessons we would rather learn from someone else's expense</h2>
+    </div>
+    <ul class="numlist rv" style="max-width:900px">
+      <li><strong>Rail without density underneath it does not fill.</strong> WES connects suburb to suburb, through farmland and industrial land, and the destination employment never materialized around it. This is the central warning, and it points directly at what a district developer can actually contribute.</li>
+      <li><strong>Sharing a freight corridor constrains the timetable.</strong> WES runs peak-hours only on weekdays, partly because a shared line makes frequent, regular service hard. Any honest version of this concept treats scheduling as the hard problem, not an afterthought.</li>
+      <li><strong>Vehicle and staffing rules drive operating cost.</strong> Federal requirements on crewing and equipment are a large part of why a WES trip costs what it does. Lighter, newer vehicle classes exist partly to change that arithmetic, which is why the technology generations on this page matter beyond novelty.</li>
+      <li><strong>The state has already chosen incrementalism.</strong> Oregon studied building new alignment and decided against it, in favor of improving what exists, in pieces. A corridor-reuse hypothesis is aligned with adopted state policy rather than arguing against it.</li>
+    </ul>
+
+    <div class="note rv">Read together, the record suggests the sequence usually runs backwards. Build the rail, then hope the development and the riders follow. Edgewater offers the reverse: the development is happening regardless, which means the riders arrive before the service has to justify itself. That inversion is the only genuinely new thing we bring to a very old question.</div>
   </div>
 </section>
 
@@ -401,21 +449,44 @@
       <h2>Mobility creates place value</h2>
       <p class="lead">Accessibility is the mechanism. When more of a region is reachable without a car, the ground under a district behaves differently, and the effects compound in a loop.</p>
     </div>
-    <div class="wheel rv"><svg viewBox="0 0 520 520" role="img" aria-label="Circular diagram: mobility improves accessibility, which supports development, which creates ridership, which supports frequency, which improves mobility">
-  <circle cx="260" cy="260" r="176" fill="none" stroke="#dcd8cc" stroke-width="2"/>
-  <g font-family="Inter, sans-serif" text-anchor="middle">
-    <g><circle cx="260" cy="84" r="46" fill="#48593f"/><text x="260" y="82" font-size="13" font-weight="700" fill="#fff">Mobility</text><text x="260" y="99" font-size="10" fill="#cfdac6">the corridor</text></g>
-    <g><circle cx="427" cy="205" r="46" fill="#6c7d5e"/><text x="427" y="203" font-size="13" font-weight="700" fill="#fff">Access</text><text x="427" y="220" font-size="10" fill="#e2e9dd">bigger reach</text></g>
-    <g><circle cx="364" cy="401" r="46" fill="#a8703f"/><text x="364" y="399" font-size="13" font-weight="700" fill="#fff">Development</text><text x="364" y="416" font-size="10" fill="#f2ddc9">homes, jobs</text></g>
-    <g><circle cx="156" cy="401" r="46" fill="#a8703f"/><text x="156" y="399" font-size="13" font-weight="700" fill="#fff">Ridership</text><text x="156" y="416" font-size="10" fill="#f2ddc9">people moving</text></g>
-    <g><circle cx="93" cy="205" r="46" fill="#6c7d5e"/><text x="93" y="203" font-size="13" font-weight="700" fill="#fff">Frequency</text><text x="93" y="220" font-size="10" fill="#e2e9dd">better service</text></g>
+    <div class="wheel rv"><svg viewBox="0 0 640 340" role="img" aria-label="A cycle: better mobility widens access, which supports development, which creates ridership, which supports frequency, which improves mobility again. Development is the step a developer controls.">
+  <defs>
+    <marker id="fw-ah" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#a8703f"/>
+    </marker>
+  </defs>
+  <g font-family="Inter, sans-serif">
+    <path d="M108,120 C150,58 232,44 300,60" fill="none" stroke="#c7c2b6" stroke-width="1.6" marker-end="url(#fw-ah)"/>
+    <path d="M380,60 C450,46 530,62 566,118" fill="none" stroke="#c7c2b6" stroke-width="1.6" marker-end="url(#fw-ah)"/>
+    <path d="M566,188 C540,252 470,286 404,282" fill="none" stroke="#a8703f" stroke-width="2.2" marker-end="url(#fw-ah)"/>
+    <path d="M276,284 C210,288 140,254 110,192" fill="none" stroke="#c7c2b6" stroke-width="1.6" marker-end="url(#fw-ah)"/>
+    <path d="M64,188 C48,168 48,140 62,120" fill="none" stroke="#c7c2b6" stroke-width="1.6" marker-end="url(#fw-ah)"/>
+
+    <g text-anchor="middle">
+      <text x="340" y="52" font-size="14.5" font-weight="600" fill="#211f1c">Access</text>
+      <text x="340" y="70" font-size="11" fill="#6e6a61">more places reachable without a car</text>
+    </g>
+    <g text-anchor="start">
+      <rect x="452" y="128" width="176" height="54" rx="6" fill="#a8703f"/>
+      <text x="540" y="151" font-size="14.5" font-weight="700" fill="#fff" text-anchor="middle">Development</text>
+      <text x="540" y="169" font-size="11" fill="#f4e3d2" text-anchor="middle">homes and jobs at the station</text>
+      <text x="540" y="202" font-size="10.5" font-weight="700" fill="#a8703f" text-anchor="middle" letter-spacing="1.2">THE STEP WE CONTROL</text>
+    </g>
+    <g text-anchor="middle">
+      <text x="340" y="292" font-size="14.5" font-weight="600" fill="#211f1c">Ridership</text>
+      <text x="340" y="310" font-size="11" fill="#6e6a61">people with a reason to travel</text>
+    </g>
+    <g text-anchor="middle">
+      <text x="86" y="212" font-size="14.5" font-weight="600" fill="#211f1c">Frequency</text>
+      <text x="86" y="230" font-size="11" fill="#6e6a61">service worth relying on</text>
+    </g>
+    <g text-anchor="middle">
+      <text x="86" y="104" font-size="14.5" font-weight="600" fill="#211f1c">Mobility</text>
+      <text x="86" y="122" font-size="11" fill="#6e6a61">the corridor, in use</text>
+    </g>
+    <text x="340" y="168" font-size="11" fill="#8a857a" text-anchor="middle" letter-spacing="1.6">EACH STEP FEEDS THE NEXT</text>
+    <text x="340" y="188" font-size="11" fill="#8a857a" text-anchor="middle" font-style="italic">a hypothesis to test, not a projection</text>
   </g>
-  <g fill="#a8703f">
-    <polygon points="357,131 371,138 358,146"/><polygon points="414,281 407,296 399,282"/><polygon points="258,438 244,431 257,423"/><polygon points="104,283 112,297 119,283"/><polygon points="146,139 160,132 161,147"/>
-  </g>
-  <text x="260" y="256" font-size="12" font-family="Inter, sans-serif" text-anchor="middle" fill="#6e6a61" letter-spacing="2">THE FLYWHEEL</text>
-  <text x="260" y="278" font-size="11" font-family="Inter, sans-serif" text-anchor="middle" fill="#8a857a">a hypothesis to be tested,</text>
-  <text x="260" y="294" font-size="11" font-family="Inter, sans-serif" text-anchor="middle" fill="#8a857a">not a projection</text>
 </svg></div>
     <div class="rv" style="max-width:900px;margin-top:34px">
       <p style="font-size:16px;line-height:1.7">Transit accessibility has historically created the conditions for a larger effective labor market, lower household transportation costs, reduced parking requirements, greater development capacity, stronger retail foot traffic, larger visitor catchments and stronger station-area economics. Those conditions tend to show up in land value.</p>
