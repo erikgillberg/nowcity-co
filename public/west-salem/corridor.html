@@ -46,6 +46,32 @@
 .qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:10px}
 .qcard{background:var(--cream-2);border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:0 8px 8px 0;padding:18px 20px}
 .qcard b{display:block;font-family:var(--serif);font-size:15.5px;color:var(--ink-deep);margin-bottom:6px}
+
+.maps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+@media(max-width:900px){.maps{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+.mapcard{background:var(--cream-2);border:1px solid var(--line);border-radius:9px;padding:22px 20px 18px;display:flex;flex-direction:column}
+.dark .mapcard{background:#2b2823;border-color:#3d392f}
+.mapcard .yr{font-family:var(--serif);font-size:24px;color:var(--terra);line-height:1}
+.mapcard .cap{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a857a;margin:6px 0 14px}
+.mapcard svg{width:100%;height:auto;max-height:330px}
+.mapcard p{font-size:13.5px;line-height:1.6;color:#4a463f;margin-top:14px}
+.dark .mapcard p{color:#c9c4b8}
+.tline{border-left:2px solid var(--line);padding-left:26px;margin-top:10px}
+.tline .ev{position:relative;padding:0 0 26px}
+.tline .ev:last-child{padding-bottom:0}
+.tline .ev::before{content:'';position:absolute;left:-33px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--terra);border:2px solid var(--cream)}
+.dark .tline{border-color:#3d392f}
+.dark .tline .ev::before{border-color:var(--ink-deep)}
+.tline .yr{font-family:var(--serif);font-size:19px;color:var(--ink-deep);margin-bottom:4px}
+.dark .tline .yr{color:var(--cream)}
+.tline p{font-size:14.5px;line-height:1.6;color:#4a463f;max-width:640px}
+.dark .tline p{color:#c9c4b8}
+.layers{display:grid;gap:12px;margin-top:10px}
+.layer{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:start;padding:18px 20px;background:var(--cream-2);border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:0 8px 8px 0}
+.layer .lb{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--terra)}
+.layer .lt{font-family:var(--serif);font-size:17px;color:var(--ink-deep);margin-top:3px}
+.layer p{font-size:14.5px;line-height:1.6;color:#4a463f;margin:0}
+@media(max-width:700px){.layer{grid-template-columns:1fr;gap:8px}}
 .qcard span{font-size:13.5px;color:#4a463f;line-height:1.55}
 
 /* Failsafe: if the reveal script never runs (JS error, blocked, or throttled),
@@ -124,9 +150,11 @@
 <div class="subnav" id="subnav">
   <div class="wrap">
     <a href="#asset">The Asset</a>
-    <a href="#geography">The Geography</a>
+    <a href="#history">1913</a>
+    <a href="#geography">The Valley</a>
     <a href="#stack">The Stack</a>
     <a href="#tech">The Technology</a>
+    <a href="#center">The Position</a>
     <a href="#freight">Freight</a>
     <a href="#flywheel">Value</a>
     <a href="#phases">The Path</a>
@@ -140,7 +168,7 @@
   <div class="wrap">
     <div class="eyebrow">Concept &middot; Regional Mobility</div>
     <h1>The tracks are<br>already here.</h1>
-    <p class="sub">A working freight line runs through the district. What would it take to give that corridor a second job, and connect West Salem to the valley and eventually to Portland without building a new right of way?</p>
+    <p class="sub">Oregon connected this valley with electric passenger trains a century ago, and much of the geography survived as freight. What would it take to make that infrastructure useful again?</p>
     <div class="meta">A development and mobility hypothesis &middot; Not an approved project &middot; Requires railroad, regulatory and technical validation</div>
   </div>
 </header>
@@ -183,12 +211,70 @@
   </div>
 </section>
 
+
+<section class="alt" id="history">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Precedent</div>
+      <h2>Oregon already built an electric valley once</h2>
+      <p class="lead">This is the part of the story that surprises people. A connected, electric Willamette Valley is not a futuristic concept borrowed from Europe. It is something Oregon financed, built and operated, and then gave up.</p>
+    </div>
+    <div class="maps rv">
+      <div class="mapcard">
+        <div class="yr">1913</div>
+        <div class="cap">Electric</div>
+        <svg viewBox="0 0 300 430" role="img" aria-label="Willamette Valley map, Oregon Electric Railway, 1913">
+  <path d="M252,44 L232,112 L206,196 L192,292 L182,392" stroke="rgba(168,112,63,.28)" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M192,292 L104,312" stroke="rgba(168,112,63,.28)" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M252,44 L232,112 L206,196 L192,292 L182,392" stroke="#a8703f" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M192,292 L104,312" stroke="#a8703f" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="252" cy="44" r="5.5" fill="#a8703f"/><text x="266" y="48" font-size="12.5" font-weight="500" fill="#211f1c" text-anchor="start">Portland</text><circle cx="232" cy="112" r="5.5" fill="#a8703f"/><text x="246" y="116" font-size="12.5" font-weight="500" fill="#211f1c" text-anchor="start">Wilsonville</text><circle cx="206" cy="196" r="8" fill="#48593f"/><text x="220" y="200" font-size="12.5" font-weight="700" fill="#211f1c" text-anchor="start">Salem</text><circle cx="192" cy="292" r="5.5" fill="#a8703f"/><text x="206" y="296" font-size="12.5" font-weight="500" fill="#211f1c" text-anchor="start">Albany</text><circle cx="104" cy="312" r="5.5" fill="#a8703f"/><text x="90" y="316" font-size="12.5" font-weight="500" fill="#211f1c" text-anchor="end">Corvallis</text><circle cx="182" cy="392" r="5.5" fill="#a8703f"/><text x="196" y="396" font-size="12.5" font-weight="500" fill="#211f1c" text-anchor="start">Eugene</text><circle cx="186" cy="196" r="4.5" fill="#a8703f"/><text x="180" y="184" font-size="10.5" fill="#a8703f" text-anchor="end" font-weight="700">Edgewater</text>
+</svg>
+        <p>By 1913 the Oregon Electric Railway connected Portland, Salem, Albany and Eugene, with a branch to Corvallis. Electric passenger trains, running on a 122-mile valley mainline.</p>
+      </div>
+      <div class="mapcard">
+        <div class="yr">Today</div>
+        <div class="cap">Latent</div>
+        <svg viewBox="0 0 300 430" role="img" aria-label="Willamette Valley map, Surviving rail geography">
+  <path d="M252,44 L232,112 L206,196 L192,292 L182,392" stroke="none" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M192,292 L104,312" stroke="none" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M252,44 L232,112 L206,196 L192,292 L182,392" stroke="#c7c2b6" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M192,292 L104,312" stroke="#c7c2b6" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M252,44 L232,112 L206,196 L192,292 L182,392" stroke="#6c7d5e" stroke-width="2.4" fill="none" stroke-dasharray="3 7" stroke-linecap="round"/><circle cx="252" cy="44" r="5.5" fill="#c7c2b6"/><text x="266" y="48" font-size="12.5" font-weight="500" fill="#8a857a" text-anchor="start">Portland</text><circle cx="232" cy="112" r="5.5" fill="#c7c2b6"/><text x="246" y="116" font-size="12.5" font-weight="500" fill="#8a857a" text-anchor="start">Wilsonville</text><circle cx="206" cy="196" r="8" fill="#211f1c"/><text x="220" y="200" font-size="12.5" font-weight="700" fill="#211f1c" text-anchor="start">Salem</text><circle cx="192" cy="292" r="5.5" fill="#c7c2b6"/><text x="206" y="296" font-size="12.5" font-weight="500" fill="#8a857a" text-anchor="start">Albany</text><circle cx="104" cy="312" r="5.5" fill="#c7c2b6"/><text x="90" y="316" font-size="12.5" font-weight="500" fill="#8a857a" text-anchor="end">Corvallis</text><circle cx="182" cy="392" r="5.5" fill="#c7c2b6"/><text x="196" y="396" font-size="12.5" font-weight="500" fill="#8a857a" text-anchor="start">Eugene</text><circle cx="186" cy="196" r="4.5" fill="#a8703f"/><text x="180" y="184" font-size="10.5" fill="#a8703f" text-anchor="end" font-weight="700">Edgewater</text>
+</svg>
+        <p>The passengers left in 1933. Much of the transportation geography did not: corridors kept working as freight, and Amtrak Cascades still links the same valley cities a few times a day.</p>
+      </div>
+      <div class="mapcard">
+        <div class="yr">Next?</div>
+        <div class="cap">Layered</div>
+        <svg viewBox="0 0 300 430" role="img" aria-label="Willamette Valley map, A layered network, potentially">
+  <path d="M252,44 L232,112 L206,196 L192,292 L182,392" stroke="rgba(72,89,63,.26)" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M192,292 L104,312" stroke="rgba(72,89,63,.26)" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M252,44 L232,112 L206,196 L192,292 L182,392" stroke="#48593f" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M192,292 L104,312" stroke="#48593f" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M252,44 L232,112 L206,196 L192,292 L182,392" stroke="#6c7d5e" stroke-width="11" fill="none" opacity=".22" stroke-linecap="round"/><path d="M252,44 L232,112 L206,196 L192,292 L182,392" stroke="#a8703f" stroke-width="2.2" fill="none" stroke-dasharray="2 8" stroke-linecap="round"/><circle cx="252" cy="44" r="5.5" fill="#48593f"/><text x="266" y="48" font-size="12.5" font-weight="500" fill="#211f1c" text-anchor="start">Portland</text><circle cx="232" cy="112" r="5.5" fill="#48593f"/><text x="246" y="116" font-size="12.5" font-weight="500" fill="#211f1c" text-anchor="start">Wilsonville</text><circle cx="206" cy="196" r="8" fill="#48593f"/><text x="220" y="200" font-size="12.5" font-weight="700" fill="#211f1c" text-anchor="start">Salem</text><circle cx="192" cy="292" r="5.5" fill="#48593f"/><text x="206" y="296" font-size="12.5" font-weight="500" fill="#211f1c" text-anchor="start">Albany</text><circle cx="104" cy="312" r="5.5" fill="#48593f"/><text x="90" y="316" font-size="12.5" font-weight="500" fill="#211f1c" text-anchor="end">Corvallis</text><circle cx="182" cy="392" r="5.5" fill="#48593f"/><text x="196" y="396" font-size="12.5" font-weight="500" fill="#211f1c" text-anchor="start">Eugene</text><circle cx="186" cy="196" r="4.5" fill="#a8703f"/><text x="180" y="184" font-size="10.5" fill="#a8703f" text-anchor="end" font-weight="700">Edgewater</text>
+</svg>
+        <p>Same geography, different technology. Battery propulsion, lighter vehicles and automation raise a question that would have sounded naive twenty years ago.</p>
+      </div>
+    </div>
+    <p class="rv" style="margin-top:20px;font-size:12.5px;color:#8a857a;font-style:italic;max-width:900px">Schematic only. Historic Oregon Electric alignments and today's active corridors are not identical, segments have been abandoned or repurposed, and nothing here should be read as an available route. Verifying what actually survives, and who controls it, is the first task on the list below.</p>
+    <div class="tline rv" style="margin-top:44px">
+      <div class="ev"><div class="yr">1908</div><p>On New Year's Day, electric passenger trains begin running between Portland and Salem.</p></div>
+      <div class="ev"><div class="yr">1912</div><p>The line reaches Albany on the Fourth of July, and Eugene by that October.</p></div>
+      <div class="ev"><div class="yr">1913</div><p>A branch to Corvallis opens in March, connecting what are now Oregon's two largest public universities to the same electric network.</p></div>
+      <div class="ev"><div class="yr">1933</div><p>Passenger service ends. The automobile, the highway and the motor bus changed the economics, as they did across America. Electrified freight continues until 1945.</p></div>
+      <div class="ev"><div class="yr">Today</div><p>Freight still runs on much of the geography. Amtrak Cascades carries passengers through the same valley cities, sponsored by ODOT, at intercity frequencies rather than regional ones.</p></div>
+      <div class="ev"><div class="yr">Next</div><p>A new generation of battery, lightweight and autonomous vehicles changes the equation again. The question is no longer whether Oregon can support regional electric mobility. It did, for twenty-five years. The question is what it could become now.</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="alt" id="geography">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Geography</div>
-      <h2>What a corridor would change</h2>
-      <p class="lead">Transportation changes land value because it changes what is reachable. A functioning regional connection would begin to move Edgewater out of a purely Salem frame of reference and into the economic geography of the valley and the metro beyond it.</p>
+      <h2>The valley is the market</h2>
+      <p class="lead">Transportation changes land value because it changes what is reachable. Salem sits between Oregon's largest metropolitan economy to the north and two major university cities to the south. A functioning regional connection would begin to move Edgewater out of a purely Salem frame of reference and into the economic geography of the whole valley.</p>
     </div>
     <div class="spine rv"><svg viewBox="0 0 900 200" role="img" aria-label="Diagram of the rail corridor from Edgewater through Salem and the Willamette Valley toward the Portland metro">
   <line x1="60" y1="112" x2="840" y2="112" stroke="#dcd8cc" stroke-width="10" stroke-linecap="round"/>
@@ -223,20 +309,17 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Stack</div>
-      <h2>Regional speed. Local freedom.</h2>
-      <p class="lead">This corridor concept is not a replacement for the mobility plan already published on this site. It is the layer above it. The <a href="mobility-concepts.html" style="color:var(--terra)">four layers described in Salem in Motion</a> handle movement inside the district and the city. Rail handles the distances those layers cannot.</p>
+      <h2>Four layers, and Amtrak is one of them</h2>
+      <p class="lead">This is not a proposal to compete with the passenger rail Oregon already funds. Amtrak Cascades is the express layer of this picture, and a regional service would exist to feed it, not to duplicate it. The layers below get progressively more local, and each one makes the others more useful.</p>
     </div>
-    <div class="flow rv">
-      <div class="step"><span class="n">Layer 00</span><span>Regional rail<br><span style="font-weight:400;font-size:12px;color:#8a857a">valley and metro</span></span></div>
-      <span class="arrow">&darr;</span>
-      <div class="step"><span class="n">The hub</span><span>Edgewater<br><span style="font-weight:400;font-size:12px;color:#8a857a">transfer point</span></span></div>
-      <span class="arrow">&darr;</span>
-      <div class="step"><span class="n">Layer 03</span><span>Whoosh circulator<br><span style="font-weight:400;font-size:12px;color:#8a857a">city-wide, frequent</span></span></div>
-      <span class="arrow">&darr;</span>
-      <div class="step"><span class="n">Layers 01-02</span><span>Walk, bike, Cherriots<br><span style="font-weight:400;font-size:12px;color:#8a857a">the last few minutes</span></span></div>
+    <div class="layers rv">
+      <div class="layer"><div><div class="lb">Express</div><div class="lt">Amtrak Cascades</div></div><p>Already running, ODOT sponsored, connecting Eugene, Albany, Salem and Portland onward to Seattle and Vancouver. Intercity distances at intercity frequencies. An asset to connect to, and the reason a regional layer does not need to solve long-distance travel.</p></div>
+      <div class="layer"><div><div class="lb">Regional</div><div class="lt">Willamette Valley Electric</div></div><p>The layer that does not exist today: more stations, higher frequency, smaller battery-electric vehicles on existing corridors where feasible, and eventually increasing automation. This is the hypothesis this page is about.</p></div>
+      <div class="layer"><div><div class="lb">Local</div><div class="lt">Whoosh and autonomous transit</div></div><p>Station to destination, across the river, around the district and through the city. Frequent, on demand, and the reason a regional trip ends somewhere useful. Described in full on the <a href="whoosh.html" style="color:var(--terra)">Whoosh</a> and <a href="mobility-concepts.html" style="color:var(--terra)">Salem in Motion</a> pages.</p></div>
+      <div class="layer"><div><div class="lb">Human scale</div><div class="lt">Walk, bike, micromobility</div></div><p>The last few minutes, which decide whether any of the layers above get used at all.</p></div>
     </div>
     <div class="rv" style="max-width:900px;margin-top:34px">
-      <p style="font-size:16px;line-height:1.7">The systems make each other better, which is the actual argument. Regional rail is only as useful as what you can do when you step off it, so a <a href="whoosh.html" style="color:var(--terra)">Whoosh circulator</a> raises the value of every arriving train. The circulator is only as useful as the density around its stops, so development raises its value. And a district built around both needs less parking, which changes what can be built at all.</p>
+      <p style="font-size:16px;line-height:1.7">The systems make each other better, which is the actual argument. Regional service is only as useful as what you can do when you step off it, so a local circulator raises the value of every arriving train. The circulator is only as useful as the density around its stops, so development raises its value. And a district built around both needs less parking, which changes what can be built at all.</p>
       <p style="font-size:16px;line-height:1.7;margin-top:16px">The goal is not to replace a car with a different vehicle you have to own. It is a network dense enough that most trips stop requiring one.</p>
     </div>
   </div>
@@ -271,6 +354,28 @@
     </div>
     <div class="note rv" style="background:#2b2823">One connection worth noting, because it is a matter of public record rather than a claim: Parallel Systems' pilot partner is Genesee &amp; Wyoming, and Portland &amp; Western, the regional railroad that operates in this valley and keeps its executive offices in Salem, is a Genesee &amp; Wyoming company. That is not an introduction, an agreement, or a plan. It is a reason to think the conversation is worth having with people who are already in the state.</div>
     <p class="rv" style="max-width:900px;margin-top:26px;font-size:15px;color:#b7b0a3">Further out, research programmes in Europe including Urbanloop, TaxiRail and Pods4Rail are testing on-demand, individually routed rail concepts. We list them as research, not as options, and we would not plan around them.</p>
+  </div>
+</section>
+
+
+<section class="alt" id="center">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Position</div>
+      <h2>Connect the valley's brains</h2>
+      <p class="lead">Look at the map again and a second argument appears, one that is about economies rather than trains. Salem sits at the center of a line that runs from Oregon's largest metropolitan economy through the state capital to two major research universities.</p>
+    </div>
+    <div class="grid g4 rv">
+      <div class="card on-alt"><h4>Portland</h4><p style="font-size:14.5px">Technology, capital, employment, and an international airport.</p></div>
+      <div class="card on-alt"><h4>Salem</h4><p style="font-size:14.5px">State government, industry, a growing population, and a district being planned around mobility.</p></div>
+      <div class="card on-alt"><h4>Corvallis</h4><p style="font-size:14.5px">Oregon State University: engineering, robotics, materials, and research that needs somewhere to be commercialized.</p></div>
+      <div class="card on-alt"><h4>Eugene</h4><p style="font-size:14.5px">The University of Oregon, and the southern anchor of the valley economy.</p></div>
+    </div>
+    <div class="rv" style="max-width:900px;margin-top:34px">
+      <p style="font-size:16px;line-height:1.7">Better regional connectivity between those places could plausibly widen labor markets, make university collaboration and research commercialization easier, give students and employers more options, and expand the catchment for culture, tourism and events. We are deliberately not attaching numbers to any of that, because credible numbers come from a study rather than a website.</p>
+      <p style="font-size:16px;line-height:1.7;margin-top:16px">What it does change is how to describe this project. Edgewater is not simply a mixed-use district in West Salem. It could be a mobility-oriented innovation district near the center of a Portland to Eugene economic corridor. That is a different proposition for an employer, a university, or an investor.</p>
+    </div>
+    <div class="note rv" style="margin-top:34px"><strong>An important piece of realism.</strong> The viable north-south corridor may well sit on the east side of Salem, and forcing regional rail across the Willamette into Edgewater would be expensive and probably unnecessary. A fast, frequent local link across the river can deliver most of the accessibility benefit. The objective is not to put a train through Edgewater. It is for Edgewater to function as though the regional network begins at its front door.</div>
   </div>
 </section>
 
@@ -334,7 +439,7 @@
       <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra);margin-bottom:8px">Phase 0</div><h3 style="font-size:19px;margin-bottom:10px">Corridor discovery</h3><p style="font-size:14.5px">Ownership, operating rights, freight customers and volumes, track and bridge condition, crossings, signaling, right of way width, station opportunities, regulatory jurisdiction, and connections to existing transit. Mostly desk work and conversations. Cheap, and it either opens the door or closes it honestly.</p></div>
       <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra);margin-bottom:8px">Phase 1</div><h3 style="font-size:19px;margin-bottom:10px">A Salem demonstration</h3><p style="font-size:14.5px">A short segment that tests vehicle technology, operating compatibility with freight, station design, charging, community response and actual ridership. Edgewater is the natural hub for it, because the district is being built anyway and can host the stop, the charging and the crowd.</p></div>
       <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra);margin-bottom:8px">Phase 2</div><h3 style="font-size:19px;margin-bottom:10px">A Salem and Keizer spine</h3><p style="font-size:14.5px">Extend to a useful passenger catchment and integrate properly with Cherriots, cycling infrastructure and the district circulator, so the rail line is part of a network rather than a novelty.</p></div>
-      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra);margin-bottom:8px">Phase 3</div><h3 style="font-size:19px;margin-bottom:10px">Regional connection</h3><p style="font-size:14.5px">Explore extension north through the valley and toward the Portland metro, and connections into the regional transportation network. This is the phase everyone wants to start with, and the one that only works if the earlier phases have proven demand.</p></div>
+      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra);margin-bottom:8px">Phase 3</div><h3 style="font-size:19px;margin-bottom:10px">Regional connection</h3><p style="font-size:14.5px">Explore extension along the valley: north toward Wilsonville and the Portland metro, south toward Albany and from there to Corvallis and Eugene, with Amtrak Cascades as the express spine rather than a competitor. This is the phase everyone wants to start with, and the one that only works if the earlier phases have proven demand.</p></div>
       <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra);margin-bottom:8px">Phase 4</div><h3 style="font-size:19px;margin-bottom:10px">An autonomous corridor</h3><p style="font-size:14.5px">As regulation and technology mature, smaller vehicles at higher frequency with increasing automation. The corridor does not need to be rebuilt for this. The vehicles change; the infrastructure stays.</p></div>
     </div>
     <p class="bigquote rv" style="margin-top:44px">The destination is not a train. It is a transportation protocol running on rail infrastructure, where the vehicles can evolve without rebuilding the corridor.</p>
@@ -369,6 +474,7 @@
     <div class="rv" style="max-width:900px">
       <p style="font-size:16.5px;line-height:1.7">For a century, railroads decided where American cities grew. Then we stopped building around them, and in most places the corridors quietly kept running with a fraction of the traffic they were built for. The infrastructure is still there. Battery propulsion, lighter vehicles, automation and better networks now make it reasonable to ask a question that would have sounded naive twenty years ago.</p>
       <p style="font-size:16.5px;line-height:1.7;margin-top:16px">What if the railroad became city-building infrastructure again? Salem has the corridor, a district being planned around it, and a regional railroad headquartered in town. That is an unusually good place to find out.</p>
+      <p style="font-size:16.5px;line-height:1.7;margin-top:16px">The strategy is deliberately the inverse of how these things usually fail. Not a network, then an enormous capital program, then hope development follows. Instead: a place, then a demonstration, then a corridor, then a network, with each step earning the next. Big systems can start with small places, and this one would start here.</p>
     </div>
     <div class="grid g3 rv" style="margin-top:40px">
       <div class="card"><h4>Mobility companies</h4><p style="font-size:14.5px">A district willing to host a demonstration, with a development team that can build the stop, the charging and the ridership around it.</p></div>
