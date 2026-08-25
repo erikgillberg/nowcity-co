@@ -72,6 +72,14 @@
 .layer .lt{font-family:var(--serif);font-size:17px;color:var(--ink-deep);margin-top:3px}
 .layer p{font-size:14.5px;line-height:1.6;color:#4a463f;margin:0}
 @media(max-width:700px){.layer{grid-template-columns:1fr;gap:8px}}
+
+.plat{width:100%;border-collapse:collapse;font-size:13.5px;min-width:660px}
+.plat th{text-align:left;font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d9a26c;padding:0 14px 11px 0;border-bottom:2px solid #3d392f}
+.plat td{padding:14px 14px 14px 0;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top;line-height:1.55;color:#c9c4b8}
+.plat td.nm{font-weight:600;color:var(--cream);white-space:nowrap}
+.plat .mat{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.plat .m-run{color:#a9c497}.plat .m-test{color:#d9a26c}.plat .m-dev{color:#b7b0a3}
+.tscroll2{overflow-x:auto;margin-top:8px}
 .qcard span{font-size:13.5px;color:#4a463f;line-height:1.55}
 
 /* Failsafe: if the reveal script never runs (JS error, blocked, or throttled),
@@ -157,6 +165,7 @@
     <a href="#tech">The Technology</a>
     <a href="#center">The Position</a>
     <a href="#freight">Freight</a>
+    <a href="#hardparts">The Hard Parts</a>
     <a href="#flywheel">Value</a>
     <a href="#phases">The Path</a>
     <a href="#unknowns">Open Questions</a>
@@ -368,6 +377,7 @@
     </div>
     <div class="rv" style="max-width:900px;margin-top:34px">
       <p style="font-size:16px;line-height:1.7">The systems make each other better, which is the actual argument. Regional service is only as useful as what you can do when you step off it, so a local circulator raises the value of every arriving train. The circulator is only as useful as the density around its stops, so development raises its value. And a district built around both needs less parking, which changes what can be built at all.</p>
+      <p style="font-size:16px;line-height:1.7;margin-top:16px">Proposals for passenger service on the river itself have also surfaced in Oregon over the years. A rail corridor and a river service are complements rather than rivals: one is weather-proof and fast, the other is pleasant and connects landings the tracks do not reach.</p>
       <p style="font-size:16px;line-height:1.7;margin-top:16px">The goal is not to replace a car with a different vehicle you have to own. It is a network dense enough that most trips stop requiring one.</p>
     </div>
   </div>
@@ -439,6 +449,59 @@
     <div class="note rv" style="background:#2b2823;margin-top:34px"><strong>The connection worth knowing.</strong> Parallel Systems' pilot partner is Genesee &amp; Wyoming. Portland &amp; Western, the regional railroad operating in this valley with executive offices in Salem, is a Genesee &amp; Wyoming company, and it is also the railroad that operates Oregon's only commuter rail service. That is not an introduction, an agreement, or a plan. It means the people who would have to say yes are already in Oregon, already running passenger trains on a shared freight corridor, and already inside the corporate family piloting autonomous battery rail in America.</div>
 
 
+
+    <div class="rv" style="margin-top:52px">
+      <h4 style="font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d9a26c;margin-bottom:8px">The wider field</h4>
+      <p style="font-size:15.5px;color:#c9c4b8;max-width:900px;margin-bottom:18px">Others are building toward the same idea from different directions: some replacing the regional train, some automating what already runs, some rethinking the vehicle entirely. Maturity varies enormously, so it is stated for each.</p>
+      <div class="tscroll2">
+      <table class="plat">
+        <tr><th>Platform</th><th>What it is</th><th>Fit with existing track</th><th>Where it stands</th></tr>
+        <tr>
+          <td class="nm">Pop-Up Metro</td>
+          <td>Remanufactured battery passenger trainsets, sold as a way to test demand before committing</td>
+          <td>Lightly used freight lines, minimal new infrastructure</td>
+          <td class="mat m-test">Demonstration ready</td>
+        </tr>
+        <tr>
+          <td class="nm">Lohr DRAISY</td>
+          <td>Very light battery railcar with SNCF, France's national railway: 80 passengers, roughly 20 tonnes, around 100km of range</td>
+          <td>Built expressly to bring quiet regional branch lines back into use, with low axle load to spare the track</td>
+          <td class="mat m-dev">In development, French approval pending, production targeted 2028</td>
+        </tr>
+        <tr>
+          <td class="nm">Coventry VLR</td>
+          <td>Lightweight battery vehicle on a shallow track slab that avoids most utility relocation</td>
+          <td>Urban streets rather than freight corridors, but the cost logic transfers</td>
+          <td class="mat m-test">Demonstrator built, passenger service targeted 2026 to 2027</td>
+        </tr>
+        <tr>
+          <td class="nm">MonoCab</td>
+          <td>Gyro-stabilised micro cabins, four to six passengers, on-demand</td>
+          <td>Single-track lines, two directions at once, no sidings needed</td>
+          <td class="mat m-test">Prototypes running on a test line</td>
+        </tr>
+        <tr>
+          <td class="nm">Parallel Systems</td>
+          <td>Autonomous battery freight vehicles running individually or in platoons</td>
+          <td>Ordinary American track, tested against existing train control</td>
+          <td class="mat m-run">Commercial freight pilot, FRA approved</td>
+        </tr>
+        <tr>
+          <td class="nm">Intramotev</td>
+          <td>American self-propelled battery railcars that can move independently of a locomotive</td>
+          <td>Heavy freight equipment, retrofit rather than new build</td>
+          <td class="mat m-run">In service on an isolated mining railroad, first regulated deployment underway in Austria</td>
+        </tr>
+        <tr>
+          <td class="nm">Futurail</td>
+          <td>Autonomy software rather than vehicles, developed alongside the DRAISY programme</td>
+          <td>Aimed specifically at corridors where light passenger vehicles share track with heavy freight</td>
+          <td class="mat m-dev">Software in development</td>
+        </tr>
+      </table>
+      </div>
+      <p style="font-size:12.5px;color:#8a857a;font-style:italic;margin-top:12px">Compiled from public company and programme information. None of these companies has any connection to this corridor, and inclusion here is not an endorsement or an indication of interest.</p>
+    </div>
     <div class="rv" style="margin-top:52px;border-top:1px solid #3d392f;padding-top:44px">
       <div style="max-width:900px">
         <h4 style="font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d9a26c;margin-bottom:14px">The closest thing to an answer</h4>
@@ -553,7 +616,35 @@
   </div>
 </section>
 
-<section class="alt" id="flywheel">
+
+<section class="alt" id="hardparts">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Hard Parts</div>
+      <h2>Two specific engineering problems, named</h2>
+      <p class="lead">Beyond the commercial question of whether a railroad wants a partner, there are two technical obstacles that decide whether light passenger vehicles can run on an American freight corridor at all. Both are well documented, both have known approaches, and neither is solved by enthusiasm.</p>
+    </div>
+
+    <div class="grid g2 rv">
+      <div class="card on-alt">
+        <h4>Problem one</h4>
+        <h3 style="font-size:20px;margin-bottom:10px">Light vehicles may not trip the track circuits</h3>
+        <p style="font-size:15px">Grade crossings and dispatch signals detect trains through electrical circuits in the rails, completed by the weight and steel mass of a passing train. A vehicle light enough to be cheap may be too light to reliably close that circuit, which is known as a shunting failure, and it is the difference between a crossing gate that drops and one that does not. Rust and light traffic on a lightly used line make it worse.</p>
+        <p style="font-size:15px;margin-top:12px"><strong>Known approaches:</strong> auxiliary shunting devices that add an artificial impedance change to the circuit, or detection based on satellite positioning and train control rather than track circuits alone. The Federal Railroad Administration publishes on this specific problem, and grade crossing signal integrity is federally regulated.</p>
+      </div>
+      <div class="card on-alt">
+        <h4>Problem two</h4>
+        <h3 style="font-size:20px;margin-bottom:10px">American crashworthiness rules were written for heavy trains</h3>
+        <p style="font-size:15px">Vehicles operating on the general railroad system must meet federal structural strength standards designed around the reality of sharing track with freight locomotives. Most of the light European vehicles on this page were not built to those standards, which is a large part of why they have not simply appeared in the United States.</p>
+        <p style="font-size:15px;margin-top:12px"><strong>Known approaches:</strong> temporal separation, where passenger vehicles and freight never occupy the corridor at the same time and the separation is enforced operationally, or a physically separated right of way. Temporal separation is the basis of several existing shared-corridor operations, and it is the approach this concept would most likely have to take.</p>
+      </div>
+    </div>
+
+    <div class="note rv">Neither problem is exotic, and neither is trivial. What they establish is the shape of a real feasibility study: not "would people ride it," which is the fun question, but "can the crossings see it, and when is it allowed to run." A corridor discovery study that does not answer those two first is not worth commissioning.</div>
+  </div>
+</section>
+
+<section id="flywheel">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Value</div>
@@ -602,7 +693,7 @@
     <div class="sec-head rv">
       <div class="eyebrow">Open Questions</div>
       <h2>What we do not know yet</h2>
-      <p class="lead">This page would be worth less if it pretended otherwise. These are the questions Phase 0 exists to answer, and any one of them could end the idea.</p>
+      <p class="lead">This page would be worth less if it pretended otherwise. These are the questions Phase 0 exists to answer, and any one of them could end the idea. The two engineering problems above are no longer on this list, because they are now named, documented, and have known approaches. That is what progress looks like at this stage: questions moving from unknown to merely difficult.</p>
     </div>
     <div class="qgrid rv">
       <div class="qcard" style="background:#2b2823;border-color:#3d392f"><b style="color:var(--cream)">Who holds the rights</b><span style="color:#b7b0a3">Ownership of the line, operating rights, and what a passenger operator would actually need to negotiate.</span></div>
