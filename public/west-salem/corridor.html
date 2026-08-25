@@ -47,6 +47,12 @@
 .qcard{background:var(--cream-2);border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:0 8px 8px 0;padding:18px 20px}
 .qcard b{display:block;font-family:var(--serif);font-size:15.5px;color:var(--ink-deep);margin-bottom:6px}
 .qcard span{font-size:13.5px;color:#4a463f;line-height:1.55}
+
+/* Failsafe: if the reveal script never runs (JS error, blocked, or throttled),
+   content still appears rather than staying invisible forever. */
+@keyframes rvFailsafe{to{opacity:1;transform:none}}
+.rv{animation:rvFailsafe .35s linear 2.5s forwards}
+.rv.in{animation:none}
 </style>
 </head>
 <body class="gated">

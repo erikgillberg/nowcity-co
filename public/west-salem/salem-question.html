@@ -22,6 +22,12 @@
 .dark .ledger td.who{color:var(--cream)}
 .canlist li strong{color:var(--ink-deep)}
 .dark .canlist li strong{color:var(--cream)}
+
+/* Failsafe: if the reveal script never runs (JS error, blocked, or throttled),
+   content still appears rather than staying invisible forever. */
+@keyframes rvFailsafe{to{opacity:1;transform:none}}
+.rv{animation:rvFailsafe .35s linear 2.5s forwards}
+.rv.in{animation:none}
 </style>
 </head>
 <body class="gated">
