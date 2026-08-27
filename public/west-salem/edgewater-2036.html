@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="assets/nowcity-favicon-white.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edgewater 2036 - Now City West Salem</title>
+<meta name="description" content="A narrative scenario: a day, a week, and a decade in the life of one family living in the Edgewater District in 2036. Imagined, not forecast, and written to test whether the plan adds up to a life worth wanting.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=9">
+<script defer src="assets/nav.js?v=1"></script>
+<style>
+.beat{display:grid;grid-template-columns:190px 1fr;gap:34px;align-items:start;padding:34px 0;border-bottom:1px solid rgba(0,0,0,.07)}
+.beat:last-child{border-bottom:none}
+.beat.flip{grid-template-columns:1fr 190px}
+.beat.flip .porthole{order:2}
+@media(max-width:760px){.beat,.beat.flip{grid-template-columns:1fr;gap:20px}.beat.flip .porthole{order:0}}
+.porthole{position:relative;width:190px;height:190px;border-radius:50%;overflow:hidden;border:1px solid var(--line);box-shadow:0 14px 34px rgba(33,31,28,.14)}
+.porthole img{width:100%;height:100%;object-fit:cover;display:block}
+.porthole::after{content:'';position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 40px rgba(33,31,28,.18);pointer-events:none}
+@media(max-width:760px){.porthole{width:150px;height:150px}}
+.beat .time{font-family:var(--serif);font-size:15px;color:var(--terra);margin-bottom:8px;letter-spacing:.02em}
+.beat p{font-size:16.5px;line-height:1.72;margin-bottom:14px}
+.beat p:last-child{margin-bottom:0}
+.dayline{max-width:900px}
+.wk{display:grid;grid-template-columns:118px 1fr;gap:22px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.07);align-items:baseline}
+.wk:last-child{border-bottom:none}
+.wk .d{font-family:var(--serif);font-size:17px;color:var(--ink-deep)}
+.dark .wk .d{color:var(--cream)}
+.wk p{font-size:15.5px;line-height:1.65;margin:0}
+.dark .wk{border-color:rgba(255,255,255,.09)}
+@media(max-width:620px){.wk{grid-template-columns:1fr;gap:6px}}
+.yr-block{display:grid;grid-template-columns:104px 1fr;gap:28px;padding:26px 0;border-bottom:1px solid rgba(0,0,0,.07);align-items:start}
+.yr-block:last-child{border-bottom:none}
+.yr-block .y{font-family:var(--serif);font-size:26px;color:var(--terra);line-height:1}
+.yr-block p{font-size:16px;line-height:1.7;margin:0}
+@media(max-width:620px){.yr-block{grid-template-columns:1fr;gap:8px}}
+.pullq{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.8vw,29px);line-height:1.4;color:var(--ink-deep);max-width:820px;margin:44px 0}
+.dark .pullq{color:var(--cream)}
+.roundstrip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;margin-top:12px;justify-items:center}
+.roundstrip figure{margin:0;text-align:center;max-width:210px}
+.roundstrip .porthole{width:100%;aspect-ratio:1;height:auto}
+.roundstrip figcaption{font-size:12.5px;color:#6e6a61;margin-top:12px;line-height:1.5}
+.dark .roundstrip figcaption{color:#a39d8f}
+
+@keyframes rvFailsafe{to{opacity:1;transform:none}}
+.rv{animation:rvFailsafe .35s linear 2.5s forwards}
+.rv.in{animation:none}
+</style>
+</head>
+<body class="gated">
+
+<!-- PASSCODE GATE -->
+<div id="gate">
+  <div class="panel">
+    <div class="eyebrow" style="color:#d9a26c">Edgewater West Salem</div>
+    <h1 class="serif">Private<br>Preview</h1>
+    <p>This site is shared with project stakeholders for discussion purposes. Enter the access code to continue.</p>
+    <form id="gateform">
+      <input type="password" id="code" placeholder="Access code" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+      <div class="err" id="gateerr"></div>
+    </form>
+    <p style="margin-top:22px;font-size:12.5px">Need access? Contact <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a></p>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Edgewater West Salem<span class="brand-sub"> &middot; A Now City Neighborhood</span></a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="dd"><a href="district.html">District Plan</a>
+        <ul class="ddm">
+          <li class="core"><a href="district.html">District Vision</a></li>
+          <li class="core"><a href="placemaking.html">Placemaking</a></li>
+          <li class="core"><a href="innovation-district.html">Innovation District</a></li>
+          <li class="dd-head">Execution</li>
+          <li><a href="activation.html">Activation Plan</a></li>
+          <li><a href="coalition-strategy.html">Coalition &amp; Partner Strategy</a></li>
+          <li><a href="partners.html">Partner Strategy</a></li>
+          <li class="dd-head">The Ambition</li>
+          <li class="core"><a href="salem-question.html">The Salem Question</a></li>
+          <li class="dd-head">Research &amp; Precedents</li>
+          <li><a href="research.html">District Economic Development</a></li>
+          <li><a href="district-value.html">District Value Creation</a></li>
+          <li><a href="global-districts.html">Global District Developments</a></li>
+          <li><a href="mobility-research.html">District Mobility</a></li>
+          <li><a href="pab.html">Single-Stair / Point Access Block</a></li>
+          <li><a href="uli-tap.html">ULI Salem TAP (2022)</a></li>
+          <li><a href="copenhagen-salem.html">The Copenhagen Comparison</a></li>
+          <li class="dd-head">Concepts</li>
+          <li><a href="edgewater-2036.html" class="active">Edgewater 2036</a></li>
+          <li><a href="wellness-institute.html">Women &amp; Family Health Institute</a></li>
+          <li><a href="mobility-concepts.html">Salem Mobility Concepts</a></li>
+          <li><a href="corridor.html">The Rail Corridor</a></li>
+          <li><a href="whoosh.html">Whoosh by Swyft Cities</a></li>
+        </ul>
+      </li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="dd pill"><a href="investor-portal.html">Investor Portal</a>
+        <ul class="ddm">
+          <li class="core"><a href="investor-portal.html">District Capitalization</a></li>
+          <li class="core"><a href="plan.html">Business Plan</a></li>
+          <li class="core"><a href="capital-strategy.html">Capital Stack</a></li>
+          <li class="dd-head">Underwriting</li>
+          <li><a href="about-upside.html">Upside Explorer</a></li>
+          <li><a href="feasibility.html">Feasibility Review (Jun 2026)</a></li>
+          <li><a href="assets/docs/market-feasibility-study-2025.pdf" target="_blank" rel="noopener">Market Feasibility Study (2025)</a></li>
+          <li class="dd-head">Delivery</li>
+          <li><a href="design-engineering.html">Delivery Teams</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="subnav" id="subnav">
+  <div class="wrap">
+    <a href="#tuesday">A Tuesday</a>
+    <a href="#week">The Week</a>
+    <a href="#decade">2026 to 2036</a>
+    <a href="#town">The Town</a>
+    <a href="#note">On This Story</a>
+  </div>
+</div>
+
+<header class="hero short" id="top">
+  <div class="bg" style="background-image:url('assets/props/scandi-aerial.jpg')"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="eyebrow">Concept &middot; A Narrative Scenario</div>
+    <h1>Edgewater, 2036:<br>Derek and Susanne</h1>
+    <p class="sub">A day, a week and a decade in the life of one family in the district. Written as fiction, to test whether the plan adds up to a life worth wanting.</p>
+    <div class="meta">An imagined future &middot; Not a forecast or a promise &middot; See the note at the end</div>
+  </div>
+</header>
+
+<section id="tuesday">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">A Tuesday in October</div>
+      <h2>One ordinary day, ten years from now</h2>
+      <p class="lead">Everything on this site describes plans, structures and phases. This page asks the only question that finally matters: what would it actually be like to live here?</p>
+    </div>
+    <div class="dayline"><div class="beat rv"><div class="porthole"><img src="assets/props/courtyard-dusk.jpg" alt="A courtyard at first light" loading="lazy"></div><div><div class="time">6.40 a.m.</div><p>The light comes up over the river and through the birch outside the bedroom window. Derek and Susanne live on the third floor of a single-stair courtyard building in the second Scandi Block, the one with the cider-colored stair towers. Their unit faces the courtyard, so the first sounds of the day are not traffic. They are the neighbor's kettle through an open window, and a heron working the rain garden at the courtyard's low end.</p></div></div><div class="beat flip rv"><div><div class="time">7.15 a.m.</div><p>Elsa, five, and Otto, three, eat breakfast at the window seat. Susanne walks them down two flights, one stair and no corridor, forty seconds door to door, and across the courtyard to the children's house on the ground floor of the next building. The teachers know both kids by name and by temperament. Drop-off takes four minutes, most of it spent saying hello to other parents.</p></div><div class="porthole"><img src="assets/props/interior-dining.jpg" alt="A family breakfast at a window seat" loading="lazy"></div></div><div class="beat rv"><div class="porthole"><img src="assets/om/om-gondola.jpg" alt="An aerial cabin crossing above the river" loading="lazy"></div><div><div class="time">7.30 a.m.</div><p>Derek walks six minutes to the circulator station at the market hall. The cabins run continuously over the river and out along the highway corridor to the robotics campus. Fourteen minutes, no parking, and he reads the whole way.</p><p>Ten years ago this commute was a car, a bridge bottleneck and a bad mood. Now the bottleneck is something he explains to the kids like a fairy tale about the old days.</p></div></div><div class="beat flip rv"><div><div class="time">8.05 a.m.</div><p>Susanne's Tuesdays are Portland days. She walks four minutes to the Front Street stop, where electric rail vehicles run on the old freight alignment past the cannery, the building that sat half empty through her first years here and is now the district's fabrication commons and food hall.</p><p>The trip makes Portland in under an hour and she preps her design review on the way. Her employer moved much of its West Coast product team to a hybrid Salem and Portland footprint once the line made the two cities feel like one labor market.</p></div><div class="porthole"><img src="assets/rail/railpods-station.jpg" alt="Small electric rail vehicles at a simple platform" loading="lazy"></div></div><div class="beat rv"><div class="porthole"><img src="assets/props/market-illustration.jpg" alt="A daily market hall busy at lunchtime" loading="lazy"></div><div><div class="time">12.30 p.m.</div><p>On days she is not travelling, Susanne eats at the market hall, the pillar the district calls TABLE, where half the stalls are graduates of the food business incubator in the old cannery. Her mother-in-law Carol is usually there on Tuesdays too, at the long table with the walking group.</p></div></div><div class="beat flip rv"><div><div class="time">3.45 p.m.</div><p>Derek's parents pick up the kids twice a week. Roger and Carol sold the split level across town in 2032 and bought a two-bedroom flat in the first Scandi Block, four hundred meters from their grandchildren. Roger, who spent thirty years telling anyone who would listen that West Salem was fifteen years from being something, now takes personal credit for all of it.</p><p>The kids go to the riverfront commons, where the play landscape is built into the restored bank.</p></div><div class="porthole"><img src="assets/props/community-garden.jpg" alt="Children playing in a planted commons" loading="lazy"></div></div><div class="beat rv"><div class="porthole"><img src="assets/mp-11.jpg" alt="The riverfront at dusk" loading="lazy"></div><div><div class="time">5.50 p.m.</div><p>Susanne's train glides past the cannery at dusk and she can see her own kitchen light from the platform. Derek's cabin crosses the river as the rowing club goes out. They meet at the market hall, buy dinner from two stalls, and are home by 6.15.</p></div></div><div class="beat flip rv"><div><div class="time">7.30 p.m.</div><p>After bedtime, Susanne walks to a session at the women's and family health institute. She is one of the parent advisors this quarter. She joined originally as a patient: when Otto was born, the district's family care program assigned them a nurse who visited the apartment, knew Elsa's name, and stayed with the family through the first year.</p><p>She grew up surrounded by world-class hospitals. She tells her parents that nothing there ever felt like this.</p></div><div class="porthole"><img src="assets/om/om-women.jpg" alt="A family health institute in the evening" loading="lazy"></div></div></div>
+    <p class="pullq rv">The measure of a district is not what it looks like from above. It is whether an ordinary Tuesday is good.</p>
+  </div>
+</section>
+
+<section class="alt" id="week">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Shape of a Week</div>
+      <h2>Rhythm, which is what a neighborhood really is</h2>
+    </div>
+    <div class="rv" style="max-width:900px">
+      <div class="wk"><div class="d">Monday</div><p>Both in Salem. Derek at the robotics facility; Susanne at the institute's innovation studio, where her company, spun out of a founder cohort there, builds postpartum care tools now licensed in three states.</p></div>
+      <div class="wk"><div class="d">Tuesday</div><p>Portland day, and a grandparent pickup day.</p></div>
+      <div class="wk"><div class="d">Wednesday</div><p>Derek's early day; he coaches the six a.m. rowing juniors. Evening is the district's stage night, this month a Norwegian film series Susanne's father keeps requesting over video call.</p></div>
+      <div class="wk"><div class="d">Thursday</div><p>Portland again. Carol collects the children and the walking group absorbs them for an hour.</p></div>
+      <div class="wk"><div class="d">Friday</div><p>Market day. The whole family shops the hall and the kids each get one stall choice. Dinner in the courtyard with three other families, weather permitting, which under the covered arcade means always.</p></div>
+      <div class="wk"><div class="d">Saturday</div><p>Riverfront day. Kayaks in summer, the wetland boardwalk in winter. Once a month the district's stewardship crew day: Derek plants, Elsa supervises.</p></div>
+      <div class="wk"><div class="d">Sunday</div><p>Slow. Sauna at the river house, and a call with Susanne's parents, who now end every call the same way: send us the listings again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="decade">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">How They Got Here</div>
+      <h2>2026 to 2036</h2>
+      <p class="lead">The district in this story is not built in one move. It compounds, which is the only way any of this happens.</p>
+    </div>
+    <div class="rv" style="max-width:900px">
+      <div class="yr-block"><div class="y">2027</div><p>Derek and Susanne arrive when his employer scales up Salem manufacturing. Derek is coming home, a Salem kid and a West Salem High graduate, with a design-trained wife who is, frankly, skeptical. They rent in South Salem and cross the bridge every day.</p></div>
+      <div class="yr-block"><div class="y">2028</div><p>The district breaks ground on the catalyst parcel. Derek drags Susanne to the open house mostly out of hometown curiosity. What she sees is not a rendering. It is a pattern book, a courtyard block she recognizes from a semester in Copenhagen, and a promise that the land came first: the rain gardens, the riverbank and the daylight studies all designed before the buildings. She puts their name on the list that night.</p></div>
+      <div class="yr-block"><div class="y">2029</div><p>They move into the first Scandi Block, one of the attainable homes, priced against their actual salaries rather than a fantasy market. Elsa arrives in 2031 and Otto in 2033, both into the family care program that becomes the household's spine.</p></div>
+      <div class="yr-block"><div class="y">2030 to 2032</div><p>The district compounds. The market halls open. The cannery reopens as fabrication commons and food hall. The circulator to the robotics campus opens, and the Front Street line to Portland follows on the old freight alignment. Roger and Carol move in. Blocks three and four deliver, each measurably better than the last, because the buildings ship improvements to the district the way software ships updates.</p></div>
+      <div class="yr-block"><div class="y">2033 to 2036</div><p>Susanne leaves her job to found her company through the institute. Derek is promoted to lead a line that now supplies half the logistics industry. Their home has appreciated, but the district's shared-equity structure means the next family in can still afford the block, which is why their favorite babysitter, a teacher's aide, lives two courtyards over instead of two towns away.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="town">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">The Town That Grew Around Them</div>
+      <h2>What a decade of compounding looks like from the outside</h2>
+    </div>
+    <div class="grid g2 rv">
+      <div class="card"><h4>Robotics and advanced manufacturing</h4><p style="font-size:15px">Component suppliers relocate to the industrial land east of the campus, followed by an actuator startup founded by engineers who refused to leave town.</p></div>
+      <div class="card"><h4>Mobility</h4><p style="font-size:15px">The operations and maintenance hub for the circulator sits at the Salem end of the line. A system that started as a commute solution becomes an export industry, and the corridor's success makes Salem the demonstration city other mid-size metros tour.</p></div>
+      <div class="card"><h4>Wellness and family health</h4><p style="font-size:15px">The institute's founder cohorts spin out six companies, Susanne's among them, and a perinatal research partnership operates from the district. Health systems send delegations the way planners once toured Portland's Pearl.</p></div>
+      <div class="card"><h4>The civic compact</h4><p style="font-size:15px">The coalition formed in the late 2020s turns the state-capital workforce, the universities and the new employers into one aligned constituency. Salem stops apologizing for not being Portland and starts being the place Portland families move to.</p></div>
+    </div>
+    <p class="pullq rv">The pitch that once required imagination now requires only a train ticket.</p>
+    <p class="rv" style="max-width:900px;font-size:16.5px;line-height:1.7;color:#c9c4b8">A mid-size American city where a robotics engineer and a health-tech founder raise two kids without a second car, where the grandparents live four hundred meters away by choice, and where the riverfront that was a liability in 2026 is the reason the in-laws keep asking for listings.</p>
+    <p class="rv" style="max-width:900px;font-size:16.5px;line-height:1.7;color:#e9e5da;margin-top:18px"><strong>2037, probably. They will say yes. Carol has already picked out their building.</strong></p>
+  </div>
+</section>
+
+<section class="alt" id="note">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">On This Story</div>
+      <h2>Why we wrote fiction on a development website</h2>
+    </div>
+    <div class="rv" style="max-width:860px">
+      <p style="font-size:16.5px;line-height:1.72">Derek and Susanne do not exist. Neither does their Tuesday. This is a scenario, written to do something a masterplan cannot: check whether all the pieces on this site, the housing mix and the mobility layers and the health institute and the market hall, actually add up to a life somebody would choose.</p>
+      <p style="font-size:16.5px;line-height:1.72;margin-top:16px">Read it as a design tool rather than a projection. Every date is invented. No employer, institution or company has committed to anything described here, and the specific companies and partnerships that would make a decade like this real are, in 2026, conversations rather than agreements. The mobility systems in the story are concepts under study, described honestly elsewhere on this site.</p>
+      <p style="font-size:16.5px;line-height:1.72;margin-top:16px">What is real is the plan underneath it: the land, the phases, the partnerships taking shape, and the intent to build homes people can actually afford next to the things that make a day good. If the story reads as plausible, that is the argument. If a part of it reads as fantasy, we would genuinely like to know which part.</p>
+      <div class="note" style="margin-top:26px">See the plan this story sits on: the <a href="district.html" style="color:var(--terra)">District Vision</a>, the <a href="corridor.html" style="color:var(--terra)">rail corridor</a> and <a href="mobility-concepts.html" style="color:var(--terra)">mobility concepts</a>, the <a href="wellness-institute.html" style="color:var(--terra)">health institute</a>, and <a href="salem-question.html" style="color:var(--terra)">the larger question</a> the district is a first move toward.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap rv">
+    <div class="eyebrow">Build It With Us</div>
+    <h2 class="serif" style="color:var(--ink-deep)">Somebody's Tuesday<br>is the whole point.</h2>
+    <p class="muted" style="max-width:640px;margin:0 auto;color:#4a463f">If you want a hand in making a day like this ordinary in Salem, we would like to hear from you.</p>
+    <div class="contacts">
+      <a href="mailto:erik@nowcitylabs.com" style="color:var(--terra)">erik@nowcitylabs.com &middot; +1 818 312 0491</a>
+      <a href="mailto:ritchie@nowcitylabs.com" style="color:var(--terra)">ritchie@nowcitylabs.com &middot; +1 718 916 1106</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy;2026 Now City Inc. &middot; Edgewater West Salem</span>
+    <span><a href="district.html">District Vision</a> &middot; <a href="corridor.html">The Corridor</a> &middot; <a href="index.html">Home</a></span>
+  </div>
+</footer>
+<a href="#top" class="toplink" id="toplink">&uarr;</a>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.06});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const nav=document.getElementById('nav'),sub=document.getElementById('subnav'),toplink=document.getElementById('toplink');
+window.addEventListener('scroll',()=>{const y=window.scrollY;nav.classList.toggle('scrolled',y>40);sub.classList.toggle('show',y>420);toplink.classList.toggle('show',y>900)},{passive:true});
+</script>
+<script>
+(function(){
+const HASH='aad5d67e3ddeda88953d6714e4569a4399b3201023dae82d5931a6c376de96d4';
+async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.body.classList.remove('gated');var g=document.getElementById('gate');if(g)g.style.display='none'}
+if(localStorage.getItem('ws-ok')==='1'||sessionStorage.getItem('ws-ok')==='1')unlock();
+document.getElementById('gateform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var h='';
+  try{h=await sha256(document.getElementById('code').value.trim())}catch(_){}
+  if(h===HASH){localStorage.setItem('ws-ok','1');unlock()}
+  else{document.getElementById('gateerr').textContent='Incorrect access code.';document.getElementById('code').value=''}
+});
+})();
+</script>
+</body>
+</html>
