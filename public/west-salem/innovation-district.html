@@ -98,6 +98,43 @@
 .shuman{display:flex;gap:18px;align-items:center;margin-top:30px;padding:20px 24px;border-radius:10px;background:var(--cream);border:1px solid var(--line)}
 .shuman .sq{font-family:var(--serif);font-size:15px;line-height:1.55;color:var(--ink-deep)}
 .shuman .sa{font-size:12.5px;color:#6e6a61;margin-top:6px}
+
+.gf3{grid-template-columns:repeat(3,1fr)!important}
+.gf2{grid-template-columns:repeat(2,1fr)!important}
+@media(max-width:900px){.gf3{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:620px){.gf3,.gf2{grid-template-columns:1fr!important}}
+.rounds{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin:34px 0 4px;justify-items:center}
+@media(max-width:760px){.rounds{grid-template-columns:repeat(2,1fr)}}
+.rounds figure{margin:0;text-align:center;max-width:190px}
+.rounds .ph{position:relative;width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 26px rgba(33,31,28,.13)}
+.dark .rounds .ph{border-color:rgba(255,255,255,.14)}
+.rounds img{width:100%;height:100%;object-fit:cover;display:block}
+.rounds figcaption{font-size:12px;color:#6e6a61;margin-top:11px;line-height:1.5}
+.dark .rounds figcaption{color:#a39d8f}
+.corridor{display:grid;grid-template-columns:150px 1fr;gap:0 26px}
+.corridor .cy{font-family:var(--serif);font-size:16px;color:var(--ink-deep);padding:13px 0 13px 20px;border-top:1px solid rgba(0,0,0,.08);position:relative}
+.corridor .cy:before{content:'';position:absolute;left:0;top:20px;width:9px;height:9px;border-radius:50%;background:var(--green)}
+.corridor .cd{font-size:14px;line-height:1.62;color:#4a463f;padding:13px 0;border-top:1px solid rgba(0,0,0,.08)}
+.corridor .cy.hi{color:var(--terra)}
+.corridor .cy.hi:before{background:var(--terra);width:12px;height:12px;left:-2px;top:19px}
+.corridor .cd b{color:var(--ink-deep);font-weight:600}
+@media(max-width:700px){.corridor{grid-template-columns:1fr}.corridor .cd{border-top:none;padding-top:0}}
+.mx{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
+.mx th{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--terra);font-weight:700;padding:0 8px 10px;border-bottom:2px solid var(--line);text-align:center;vertical-align:bottom;line-height:1.35}
+.mx th:first-child{text-align:left;width:31%}
+.mx td{padding:11px 8px;border-bottom:1px solid rgba(0,0,0,.06);text-align:center;color:var(--green);font-size:15px}
+.mx td:first-child{text-align:left;font-size:13.5px;color:#4a463f;line-height:1.5}
+.mx tr.us td{background:rgba(168,112,63,.07)}
+.mx tr.us td:first-child{font-weight:600;color:var(--ink-deep)}
+.mx .no{color:#c3bdb0}
+.mx .pt{color:var(--soft-green,#8a9c79)}
+@media(max-width:820px){.mx{display:block;overflow-x:auto;white-space:nowrap}}
+.roles{margin-top:8px}
+.role{display:grid;grid-template-columns:190px 1fr 1fr;gap:24px;padding:16px 0;border-top:1px solid rgba(0,0,0,.08);align-items:start}
+.role .rn{font-family:var(--serif);font-size:16px;color:var(--ink-deep)}
+.role p{font-size:13.5px;line-height:1.62;color:#4a463f;margin:0}
+.role .rw{color:var(--green)}
+@media(max-width:860px){.role{grid-template-columns:1fr;gap:6px}}
 </style>
 </head>
 <body class="gated">
@@ -177,6 +214,7 @@
     <a href="#model">The Model</a>
     <a href="#playbook">How They Are Built</a>
     <a href="#cases">Case Studies</a>
+    <a href="#patterns">Reading Across</a>
     <a href="#coalition">The Coalition</a>
     <a href="#begin">Where We Begin</a>
     <a href="#anchor">Built to Suit</a>
@@ -223,8 +261,43 @@
       <h2>What Oregon already has</h2>
       <p class="lead">Oregon's Silicon Forest is one of the deepest technology ecosystems in the country: more than 6,000 high-tech businesses and 81,000 jobs, running from Intel and the semiconductor cluster around Portland through instrumentation, software and research talent down the length of the Willamette. Salem sits on that corridor. What the valley does not have is a single place where these industries work near each other.</p>
     </div>
-    <figure class="photo rv"><img src="assets/innov/photos/silicon-forest.jpg" alt="Reference map of verified semiconductor, hardware, robotics and research operations along Oregon's Interstate 5 corridor from Hillsboro to Eugene, with employment and funding statistics and their sources" loading="lazy"><figcaption>The corridor, compiled September 2026 from primary sources. Only operations we could confirm are listed, so it is a reference rather than a complete inventory. Sources are printed on the map.</figcaption></figure>
-    <div class="grid g3 rv" style="margin-top:34px">
+    <div class="statband rv" style="margin-top:8px">
+      <div><div class="sv">95,440</div><div class="sl">core high-tech jobs in Oregon in 2025, down from a peak of 103,200 in 2023</div></div>
+      <div><div class="sv">28,338</div><div class="sl">of those in semiconductor manufacturing, about $4.9B of payroll</div></div>
+      <div><div class="sv">$148,274</div><div class="sl">average high-tech wage, against a statewide private average near $72,000</div></div>
+      <div><div class="sv">2</div><div class="sl">federal Tech Hubs led by Oregon State: microfluidics, and mass timber</div></div>
+    </div>
+    <div class="note rv" style="margin-top:16px">Employment and wage figures: Oregon Employment Department, QualityInfo, 2025. Tech Hubs: US Economic Development Administration, designated October 2023. Oregon State is the only university leading two.</div>
+
+    <div class="rv" style="margin-top:44px">
+      <h3 style="font-family:var(--serif);font-size:23px;color:var(--ink-deep);margin-bottom:8px">The corridor, north to south</h3>
+      <p style="font-size:15.5px;line-height:1.72;color:#4a463f;max-width:860px;margin-bottom:22px">Everything below is confirmed at that location from a primary source. It is a reference rather than a complete inventory, and the omissions are honest ones: we left out anything we could not check.</p>
+      <div class="corridor">
+        <div class="cy">Hillsboro</div>
+        <div class="cd"><b>Intel</b> Ronler Acres, six wafer fabs and Oregon's largest private employer &middot; <b>Lattice Semiconductor</b> headquarters &middot; <b>Qorvo</b> RF fab and test &middot; <b>Thermo Fisher Scientific</b> semiconductor business unit and electron microscopy &middot; <b>Hitachi High-Tech America</b> nanotechnology centre &middot; <b>Kokusai Electric</b> US demonstration centre &middot; <b>AGC Electronics America</b> quartzware &middot; <b>Planar Systems</b> headquarters &middot; <b>Epson Portland Inc.</b></div>
+        <div class="cy">Beaverton</div>
+        <div class="cd"><b>Tektronix</b> global headquarters, test and measurement &middot; <b>Analog Devices</b> largest US site, mature-node manufacturing &middot; <b>Biamp</b> headquarters</div>
+        <div class="cy">Portland</div>
+        <div class="cd"><b>Siltronic</b> silicon wafer manufacturing &middot; <b>Daimler Truck North America</b> headquarters and engineering centre on Swan Island, with a new electric and hydrogen fuel-cell facility &middot; <b>Ampere Computing</b> Arm server CPU design &middot; <b>AWS Elemental</b> video engineering &middot; <b>Jama Software</b> &middot; <b>Autodesk</b> &middot; <b>eBay</b> engineering &middot; <b>Puppet</b> &middot; <b>OHSU</b> Knight Cancer Institute, the Vollum Institute and Oregon's only biomedical engineering department &middot; <b>Portland State University</b> Maseeh College, with an intelligent robotics laboratory</div>
+        <div class="cy">Gresham</div>
+        <div class="cd"><b>onsemi</b> 200mm wafer fab across 83 acres &middot; <b>Microchip Technology</b> Fab 4</div>
+        <div class="cy">Tualatin</div>
+        <div class="cd"><b>Lam Research</b> R&amp;D and manufacturing campus, with a $620M cleanroom laboratory breaking ground in 2026 &middot; <b>Kinetics</b>, legally Mega Fluid Systems, chemical and gas delivery for fabs</div>
+        <div class="cy">Wilsonville</div>
+        <div class="cd"><b>Siemens EDA</b> headquarters, design automation &middot; <b>Teledyne FLIR</b> headquarters, thermal imaging &middot; <b>ESS Tech</b> headquarters and manufacturing, iron flow batteries</div>
+        <div class="cy hi">Salem</div>
+        <div class="cd"><b>Agility</b>, known until March 2026 as Agility Robotics, an Oregon State spinout building humanoid robots at RoboFab &middot; <b>Garmin AT</b> aviation avionics design and manufacturing near McNary Field &middot; <b>Salem Health</b> the mid-valley's largest private employer at about 6,400 staff, running clinical trials &middot; <b>Truitt Bros.</b> thermally processed foods &middot; <b>Willamette University</b> data science and dual-degree engineering &middot; <b>Chemeketa Community College</b> robotics, industrial electronics and machining programmes</div>
+        <div class="cy">Albany and Millersburg</div>
+        <div class="cd"><b>ATI Specialty Alloys &amp; Components</b> titanium, zirconium and nickel alloys across 110 acres &middot; <b>Valliscor</b> fluorinated materials for semiconductor etch, new campus from 2025</div>
+        <div class="cy">Corvallis</div>
+        <div class="cd"><b>HP Inc.</b> Corvallis Division, microfluidics and printhead development &middot; <b>Inpria</b>, now part of JSR, EUV photoresist and an Oregon State spinout &middot; <b>Oregon State University</b> &middot; the <b>Corvallis Microfluidics Tech Hub</b></div>
+        <div class="cy">Eugene</div>
+        <div class="cd"><b>STRATACACHE</b> the 1.2M sq ft former SK Hynix plant, converting to micro-LED production &middot; <b>University of Oregon</b></div>
+      </div>
+      <div class="note" style="margin-top:22px"><b>Where Salem sits.</b> About 47 miles by road from Portland, 35 from Corvallis and Oregon State, 60 from the Hillsboro fabs and 64 from Eugene. It is the only point on the corridor within an hour of all of them, and the only one that is also a state capital.</div>
+      <div class="note" style="margin-top:14px"><b>What we left out.</b> Widely repeated figures for the total number of Oregon high-tech businesses and for semiconductor supply-chain companies are absent because we could not trace them to a dated primary source. Company locations were confirmed against company sites, city economic-development pages and NIST CHIPS award pages. <b>FAST</b>, the Frontiers of Advanced Semiconductor Technology engine, is an NSF Regional Innovation Engine led by Oregon State with up to $160M over ten years and close to a hundred partner organisations across twelve counties.</div>
+    </div>
+    <div class="grid g3 gf3 rv" style="margin-top:34px">
       <div class="card">
         <h4>Humanoid manufacturing in Salem</h4>
         <p style="font-size:14px">Agility, an Oregon State spinout known until March 2026 as Agility Robotics, manufactures humanoid robots at RoboFab in Salem, reported as the first purpose-built factory of its kind. We have no relationship with the company and describe it here only as evidence that this work is already happening in the valley.</p>
@@ -250,7 +323,8 @@
       <h2>The shared engineering</h2>
       <p class="lead">Most innovation districts pick one industry. The argument here is that these five are better understood as five applications of the same engineering. A weeding robot, a care assistant, an autonomous shuttle and a construction arm share perception, actuation, control, safety validation, and the problem of building a hundred units rather than a million. What differs is the domain knowledge on top. To be precise: this is about the physical AI components of these fields, not the whole of them. Much of health care and agriculture is biology and data, and will stay that way.</p>
     </div>
-    <div class="grid g3 rv" style="margin-top:34px">
+<div class="rounds rv"><figure><div class="ph"><img src="assets/props/bowtruss-int1.jpg" alt="Interior of a raw high-bay industrial building" loading="lazy"></div><figcaption>High-bay space, the shop floor the applications share</figcaption></figure><figure><div class="ph"><img src="assets/innov/photos/newlab.jpg" alt="Inside Newlab at the Brooklyn Navy Yard" loading="lazy"></div><figcaption>Newlab, the fabrication model</figcaption></figure><figure><div class="ph"><img src="assets/props/community-garden.jpg" alt="Planted commons in a neighbourhood" loading="lazy"></div><figcaption>The valley, where field work gets tested</figcaption></figure><figure><div class="ph"><img src="assets/om/om-women.jpg" alt="A family health setting" loading="lazy"></div><figcaption>Care, where the safety case is hardest</figcaption></figure></div>
+    <div class="grid g3 gf3 rv" style="margin-top:34px">
       <div class="card on-alt">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20S4.5 15 4.5 9.8A4 4 0 0 1 12 7.4 4 4 0 0 1 19.5 9.8C19.5 15 12 20 12 20z"/></svg></span><h4>Health &amp; care</h4>
         <p style="font-size:14px">Lab automation, surgical assist, rehabilitation and in-home care robotics. The hardest constraints in the stack live here: safety cases, regulatory validation, and machines that work reliably beside a person rather than behind a fence. Salem Health anchors a regional care economy, an aging Oregon makes the demand real, and the proposed <a href="wellness-institute.html" style="color:#e8b785">Women &amp; Family Health Institute</a> would give this domain a clinical setting to be tested in.</p>
@@ -287,7 +361,7 @@
       <h2>The district is the largest instance</h2>
       <p class="lead">A robot is a body that senses its surroundings, decides, and acts on the physical world. A district is the same thing at another scale. Streets, buildings, energy, water and movement systems that sense, respond, and shape what happens to the people inside them. We do not think of the neighborhood as a testbed for physical AI. We think it is physical AI, built at the size where people live.</p>
     </div>
-    <div class="grid g3 rv" style="margin-top:34px">
+    <div class="grid g3 gf3 rv" style="margin-top:34px">
       <div class="card">
         <h4>Why the scale matters</h4>
         <p style="font-size:14px">A machine can be validated in a lab. A district can only be validated in use, over years, by the people who live in it. That makes it the slowest and most honest instrument in the stack, and the one that answers the question the others cannot: whether any of this improved a life.</p>
@@ -297,8 +371,8 @@
         <p style="font-size:14px">Companies working here can test on real streets, in real homes, and across energy, water, food and mobility systems that residents actually depend on. Detroit filled its first building within months of designating a testing zone. The same conditions can be created here, with the same discipline about consent and safety.</p>
       </div>
       <div class="card">
-        <h4>The obligation it creates</h4>
-        <p style="font-size:14px">If the neighborhood is an instrument, the people in it are not subjects. Residents hold a seat in how the district is governed, results are published including the ones that disappoint, and nothing enters the daily environment because it is interesting to build.</p>
+        <h4>Built to be experimented in</h4>
+        <p style="font-size:14px">Walk the Brooklyn Navy Yard and you meet autonomous shuttles moving between buildings. It is genuinely good fun, and it is the sort of thing that makes a person want to live there. What that campus lacks is homes, so nobody can. A district with designated testing zones, residents who opted in, and published results gets to be both: a place where new things are tried in public, and a place people live.</p>
       </div>
     </div>
   </div>
@@ -338,7 +412,7 @@
       <h2>The place the work sits in</h2>
       <p class="lead">Recruiting is the constraint most hardware companies in this valley name first. An engineer choosing between Salem and a larger metro is not comparing job offers alone, they are comparing lives, and a partner's job prospects, rent, and what there is to do on a Saturday decide as many moves as salary does. So the district is planned as a neighborhood that happens to contain workspace, rather than workspace with housing attached.</p>
     </div>
-    <div class="grid g3 rv" style="margin-top:32px">
+    <div class="grid g3 gf3 rv" style="margin-top:32px">
       <div class="card">
         <h4>Homes, priced against local salaries</h4>
         <p style="font-size:14px">Roughly a thousand homes are planned in the district, in Scandinavian-style courtyard blocks: studios through family flats, rental and ownership, with a share held permanently attainable through shared equity so the next family in can still afford the block. The mix is designed against what people here actually earn.</p>
@@ -364,8 +438,12 @@
         <p style="font-size:14px">Mass timber, Passive House performance, district energy, and water treated as a resource. Lower operating costs for residents, and a place that still works in the climate the next forty years will bring.</p>
       </div>
     </div>
+<div class="rounds rv"><figure><div class="ph"><img src="assets/props/courtyard-dusk.jpg" alt="A courtyard at dusk" loading="lazy"></div><figcaption>Courtyard blocks</figcaption></figure><figure><div class="ph"><img src="assets/props/loft-1.jpg" alt="A live-work loft interior" loading="lazy"></div><figcaption>Live-work lofts</figcaption></figure><figure><div class="ph"><img src="assets/props/market-illustration.jpg" alt="A daily market hall" loading="lazy"></div><figcaption>The market hall</figcaption></figure><figure><div class="ph"><img src="assets/mp-11.jpg" alt="The riverfront in the evening" loading="lazy"></div><figcaption>The river edge</figcaption></figure></div>
     <div class="note rv" style="margin-top:26px">
-      The longer versions: the <a href="district.html" style="color:var(--terra)">District Vision</a> for the plan as a whole, <a href="placemaking.html" style="color:var(--terra)">Placemaking</a> for what daily life is designed to feel like, <a href="activation.html" style="color:var(--terra)">Activation</a> for the market, arts district and live-work campus, <a href="mobility-concepts.html" style="color:var(--terra)">Mobility</a> for the crossings, and <a href="edgewater-2036.html" style="color:var(--terra)">Edgewater 2036</a>, a written scenario of one family's ordinary Tuesday here ten years from now, which is the fastest way to see whether any of this would suit the people you are trying to hire.
+      The longer versions: the <a href="district.html" style="color:var(--terra)">District Vision</a> for the plan as a whole, <a href="placemaking.html" style="color:var(--terra)">Placemaking</a> for what daily life is designed to feel like, <a href="activation.html" style="color:var(--terra)">Activation</a> for the market, arts district and live-work campus, <a href="mobility-concepts.html" style="color:var(--terra)">Mobility</a> for the crossings, and <a href="edgewater-2036.html" style="color:var(--terra)">Edgewater 2036</a>.
+    </div>
+    <div class="bigquote rv" style="margin-top:34px">
+      <p style="font-size:15.5px;line-height:1.75;color:#4a463f;max-width:880px">If you would rather read it as a life than as a plan, <a href="edgewater-2036.html" style="color:var(--terra)"><strong>Edgewater 2036</strong></a> is a written scenario of one family's ordinary Tuesday here ten years from now: a robotics engineer, a designer who founded a company, two small children, and the grandparents four hundred metres away. It is fiction and says so. It is also the fastest way to judge whether this is a place the people you are trying to hire would actually choose.</p>
     </div>
   </div>
 </section>
@@ -379,7 +457,7 @@
     </div>
     <div class="duo rv">
       <figure><img src="assets/innov/photos/newlab.jpg" alt="Inside Newlab in Building 128 at the Brooklyn Navy Yard" loading="lazy"><figcaption>Inside Newlab: Building 128, an 1899 Navy machine shop rebuilt as a maker community</figcaption></figure>
-      <figure><img src="assets/props/bowtruss-int1.jpg" alt="Interior of a raw high-bay bow-truss industrial building in West Salem" loading="lazy"><figcaption>West Salem's raw, high-bay industrial stock: the same building type, still standing</figcaption></figure>
+      <figure><img src="assets/props/bowtruss-int1.jpg" alt="Interior of a raw high-bay bow-truss industrial building in West Salem" loading="lazy"><figcaption>West Salem's raw, high-bay industrial stock: a similar building type, still standing</figcaption></figure>
     </div>
     <div class="grid g3 rv" style="margin-top:34px">
       <div class="card on-alt">
@@ -557,6 +635,25 @@
   </div>
 </section>
 
+<!-- PATTERN MATRIX -->
+<section id="patterns">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Reading Across The Cases</div>
+      <h2>Which patterns each district actually ran</h2>
+      <p class="lead">Read down a column to see how complete a district's playbook was. Read across a row to see how universal a pattern is. The bottom row is the one worth pausing on.</p>
+    </div>
+    <div class="rv">
+      <table class="mx">
+        <thead><tr><th>Pattern</th><th>Cortex<br><span style="font-weight:400;text-transform:none;letter-spacing:0">St. Louis</span></th><th>Brainport<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Eindhoven</span></th><th>Kista<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Stockholm</span></th><th>Adlershof<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Berlin</span></th><th>22@<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Barcelona</span></th><th>Newlab<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Navy Yard</span></th><th>Edgewater<br><span style="font-weight:400;text-transform:none;letter-spacing:0">intent</span></th></tr></thead>
+        <tbody><tr><td>Coalition formed before the real estate</td><td><span>&#9679;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td><td><span class="pt">&#9675;</span></td><td><span class="no">&#8211;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td></tr><tr><td>A neutral entity holds the mission</td><td><span>&#9679;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td><td><span class="pt">&#9675;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td></tr><tr><td>One shared building came first</td><td><span class="pt">&#9675;</span></td><td><span class="no">&#8211;</span></td><td><span>&#9679;</span></td><td><span class="no">&#8211;</span></td><td><span class="no">&#8211;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td></tr><tr><td>Researchers physically on site</td><td><span class="pt">&#9675;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td><td><span class="pt">&#9675;</span></td><td><span class="pt">&#9675;</span></td></tr><tr><td>A public financing tool paired with the anchor</td><td><span>&#9679;</span></td><td><span class="pt">&#9675;</span></td><td><span class="pt">&#9675;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td></tr><tr><td>Community seated in governance</td><td><span class="pt">&#9675;</span></td><td><span class="no">&#8211;</span></td><td><span class="no">&#8211;</span></td><td><span class="no">&#8211;</span></td><td><span class="no">&#8211;</span></td><td><span>&#9679;</span></td><td><span>&#9679;</span></td></tr><tr class="us"><td>Homes inside the district</td><td><span class="pt">&#9675;</span></td><td><span class="no">&#8211;</span></td><td><span class="pt">&#9675;</span></td><td><span class="pt">&#9675;</span></td><td><span class="pt">&#9675;</span></td><td><span class="no">&#8211;</span></td><td><span>&#9679;</span></td></tr></tbody>
+      </table>
+      <div class="note" style="margin-top:20px">&#9679; present &nbsp;&nbsp; <span class="pt">&#9675;</span> partial &nbsp;&nbsp; <span class="no">&#8211;</span> absent. These are our readings of published accounts of each district rather than the districts' own self-assessments, and reasonable people would score some cells differently.</div>
+      <div class="note" style="margin-top:14px"><b>On the last row.</b> Almost none of these places put homes inside the district. Walk the Brooklyn Navy Yard and you find a working campus with autonomous shuttles between the buildings, a fabrication shop, three hundred startups, and nowhere at all to live. It is the most common gap in the model, and it is the one Edgewater starts from rather than adds later.</div>
+    </div>
+  </div>
+</section>
+
 <!-- THE COALITION FOR WEST SALEM -->
 <section id="coalition">
   <div class="wrap">
@@ -565,19 +662,9 @@
       <h2>Who would build it</h2>
       <p class="lead">This is a starting point for conversations, not a roster. The precedents suggest which kinds of partner a district needs and roughly when. Which specific institutions fill each role is open, and in most of the cases we studied the answer changed once the work started.</p>
     </div>
-    <div class="rv" style="overflow-x:auto">
-      <table class="who">
-        <thead><tr><th>Role</th><th>What that partner brings</th><th>Where we would look</th></tr></thead>
-        <tbody>
-          <tr><td>Research</td><td>Applied research programs, graduate talent, and shared instrumentation that no single company would buy alone</td><td>Oregon's research universities, particularly those already holding federal Tech Hub designations in semiconductors and mass timber; robotics and precision-agriculture programs in and beyond the state</td></tr>
-          <tr><td>Education and workforce</td><td>The pipeline that fills the jobs, from technician through engineer, plus small-business support for the companies that spin out</td><td>Community colleges, in-town universities, and the applied-skills programs already operating in Salem; apprenticeship and training partners in advanced manufacturing</td></tr>
-          <tr><td>City and land</td><td>Land, entitlement, infrastructure, and value-capture financing. In every precedent the public tool arrived alongside the anchor, never after it</td><td>City of Salem and its Urban Renewal Agency, working through the Riverfront-Downtown urban renewal area</td></tr>
-          <tr><td>State</td><td>Incentives, site readiness, and alignment with federal programs the state already leads</td><td>Business Oregon and the state's regional coordination function</td></tr>
-          <tr><td>Regional convener</td><td>The standing table that holds employers, training, and capital together between announcements</td><td>The Mid-Willamette Valley's public-private economic-development organization, which already convenes this group</td></tr>
-          <tr><td>Anchor</td><td>Founding tenancy and the credibility that makes the second commitment easier. This is the hardest seat to fill and the one that decides the timeline</td><td>See below</td></tr>
-          <tr><td>Community</td><td>Legitimacy, workforce, and a seat in governance from the start rather than a consultation later</td><td>West Salem neighborhoods, tribal partners, and the organizations already representing the valley's agricultural workforce</td></tr>
-        </tbody>
-      </table>
+    <div class="roles">
+      <div class="role" style="border-top:none;padding-bottom:4px"><div class="rn" style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:700;font-family:var(--sans,inherit)">Role</div><p style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:700">What that partner brings</p><p class="rw" style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:700">Where we would look</p></div>
+      <div class="role rv"><div class="rn">Research</div><p>Applied research programmes, graduate talent, and shared instrumentation that no single company would buy alone.</p><p class="rw">Oregon's research universities, particularly those holding federal Tech Hub designations, and robotics and precision-agriculture programmes in and beyond the state.</p></div><div class="role rv"><div class="rn">Education and workforce</div><p>The pipeline that fills the jobs, from technician through engineer, plus small-business support for the companies that spin out.</p><p class="rw">Community colleges and in-town universities already running robotics, industrial electronics and machining programmes in Salem, with apprenticeship partners in advanced manufacturing.</p></div><div class="role rv"><div class="rn">City and land</div><p>Land, entitlement, infrastructure and value-capture financing. In every precedent the public tool arrived alongside the anchor rather than after it.</p><p class="rw">The City of Salem and its Urban Renewal Agency, working through the Riverfront-Downtown urban renewal area.</p></div><div class="role rv"><div class="rn">State</div><p>Incentives, site readiness, and alignment with the federal programmes the state already leads.</p><p class="rw">Business Oregon and the state's regional coordination function.</p></div><div class="role rv"><div class="rn">Regional convener</div><p>The standing table that holds employers, training and capital together between announcements.</p><p class="rw">The Mid-Willamette Valley's public-private economic-development organisation, which already convenes this group.</p></div><div class="role rv"><div class="rn">Anchor</div><p>Founding tenancy and the credibility that makes the second commitment easier. The hardest seat to fill and the one that sets the timeline.</p><p class="rw">Four kinds are described below, drawn from what actually happened in the precedents.</p></div><div class="role rv"><div class="rn">Community</div><p>Legitimacy, workforce, and a seat in governance from the start rather than a consultation later.</p><p class="rw">West Salem neighbourhoods, tribal partners, and the organisations already representing the valley's agricultural workforce.</p></div>
     </div>
 
     <div class="sec-head rv" style="margin-top:52px">
@@ -585,7 +672,7 @@
       <h2>What an anchor actually is</h2>
       <p class="lead">In every district we studied, one commitment came first and made the rest possible. The anchors were not all the same kind of organization, and the difference is worth understanding before deciding who to ask.</p>
     </div>
-    <div class="grid g2 rv" style="margin-top:26px">
+    <div class="grid g2 gf2 rv" style="margin-top:26px">
       <div class="card">
         <h4>A health system</h4>
         <p style="font-size:14px">At Cortex, hospital and university anchors pooled roughly $29M and formed a nonprofit master developer. A health system has long-horizon capital, a permanent local presence, and a research mission. In Salem the regional care economy is the obvious place to look, and the health institute concept is one route to that conversation.</p>
@@ -660,7 +747,7 @@
       <h2>The outcomes we would be judged on</h2>
       <p class="lead">A district can post a strong headline while local incomes, ownership and opportunity stand still. We would rather name the outcomes now, while they can still be argued with, than claim a projection we cannot support. Two things need counting, and they are usually treated as opposites.</p>
     </div>
-    <div class="grid g3 rv" style="margin-top:30px">
+    <div class="grid g3 gf3 rv" style="margin-top:30px">
       <div class="card">
         <h4>Companies that come and stay</h4>
         <p style="font-size:14px">Firms that move a team here and then expand it. Companies started here that reach their second and third building without leaving. Suppliers that follow their customers into the valley. The measure is not the announcement, it is what is still here in year five.</p>
