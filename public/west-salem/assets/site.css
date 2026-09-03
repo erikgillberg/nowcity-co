@@ -249,3 +249,39 @@ body.gated .page{filter:blur(14px);pointer-events:none;user-select:none}
 nav.scrolled .navlinks .pill>a,nav.solid .navlinks .pill>a{color:#a8703f!important;border-color:#a8703f;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
 nav.scrolled .navlinks .pill>a:hover,nav.solid .navlinks .pill>a:hover{background:#a8703f;color:#fff!important}
 .navlinks .dd.pill .ddm{left:auto;right:0}
+
+/* ============ responsive hardening, September 2026 ============ */
+html,body{overflow-x:clip}
+img,picture,svg,video,iframe{max-width:100%}
+table{max-width:100%}
+
+@media(max-width:900px){
+  /* tables never force the page wide */
+  .wrap table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  /* subnav pills become real tap targets */
+  .subnav{padding:4px 0}
+  .subnav a{display:inline-block;padding:10px 6px;font-size:12px;min-height:40px;line-height:20px}
+  /* top nav links */
+  #nav .wrap{gap:8px}
+  .subnav{top:64px}
+  #nav ul a{padding:11px 6px;display:block}
+  #nav .ddm a{padding:12px 14px;display:block}
+}
+
+@media(max-width:760px){
+  .wrap{padding-left:20px;padding-right:20px}
+  .hero .wrap{padding-top:120px;padding-bottom:64px}
+  .hero h1{font-size:clamp(28px,8.4vw,42px);overflow-wrap:break-word}
+  .hero .sub,.hero .meta{overflow-wrap:break-word}
+  .brand,.brand *{overflow-wrap:break-word}
+  /* legibility floor on small screens */
+  .note,figcaption,.sl,.ss,.cred,.foot{font-size:12.5px}
+  /* generic grids collapse */
+  .grid.g2,.grid.g3,.grid.g4{grid-template-columns:1fr}
+  .duo{grid-template-columns:1fr}
+  .statband,.bignum{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:420px){
+  .statband,.bignum{grid-template-columns:1fr}
+}
