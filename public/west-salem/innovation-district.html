@@ -99,6 +99,14 @@
 .shuman .sq{font-family:var(--serif);font-size:15px;line-height:1.55;color:var(--ink-deep)}
 .shuman .sa{font-size:12.5px;color:#6e6a61;margin-top:6px}
 
+.callout{border-left:4px solid var(--terra);background:rgba(168,112,63,.08);padding:24px 28px;margin-top:26px;border-radius:0 8px 8px 0}
+.dark .callout{background:rgba(216,162,108,.10)}
+.callout h4{font-family:var(--serif);font-size:18.5px;color:var(--ink-deep);margin-bottom:9px}
+.dark .callout h4{color:#e8b785}
+.callout p{font-size:14.5px;line-height:1.72;color:#4a463f}
+.dark .callout p{color:#c9c4b8}
+.callout p+p{margin-top:10px}
+@media(max-width:640px){.callout{padding:20px 18px}}
 .pg{display:grid;gap:20px;margin-top:30px}
 .pg3{grid-template-columns:repeat(3,1fr)}
 .pg4{grid-template-columns:repeat(2,1fr)}
@@ -279,10 +287,10 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Premise</div>
-      <h2>What the technology is for</h2>
-      <p class="lead"><strong>None of this technology exists to reward investors, though it will. It exists to get us faster to communities that are resilient, regenerative and worth living in.</strong> That is the test we would like to be held to, and it is why we are building a neighborhood rather than a campus. The only way to know whether machines that act on the physical world improve daily life is to put them where people live, and then measure.</p>
-      <p style="font-size:15.5px;line-height:1.72;color:#4a463f;margin-top:16px"><strong>Underneath sits a technical argument.</strong> Robotics, agriculture, care, mobility and the built environment are treated as five industries. From the engineering side they are five uses of one stack: perception, actuation, control, safety validation, and manufacturing in the awkward middle band. Oregon has depth in every part of it, spread across a semiconductor cluster, a robotics lineage at Oregon State, one of the most diverse farm valleys on earth, a health system and a mass-timber sector.</p>
-      <p style="font-size:15.5px;line-height:1.72;color:#4a463f;margin-top:14px"><strong>The hypothesis is that a great deal of value is stranded between those five, because each pays separately to build the same foundations.</strong> Put them next to each other and the shared work gets done once. What follows is the evidence from districts that worked, the evidence from those that disappointed, and what we still do not know. Every section below opens with the claim it is making, so the argument can be read in about ninety seconds and the detail taken only where it is wanted.</p>
+      <h2>What is the purpose of physical AI?</h2>
+      <p class="lead"><strong>None of this technology exists to reward investors, though it will. It exists to get us faster to communities that are resilient, regenerative and worth living in.</strong> That is the test we want to be held to, and the reason we are building a neighborhood rather than a campus. The only way to know whether machines that act on the physical world improve daily life is to put them where people live and then measure.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#4a463f;margin-top:16px"><strong>Underneath sits a technical argument.</strong> Robotics, agriculture, care, mobility and the built environment are treated as five industries. From the engineering side they are five uses of one stack: perception, actuation, control, safety validation, and manufacturing in the thousands. Oregon has depth in every part of it: a semiconductor cluster, a robotics lineage at Oregon State, one of the most diverse farm valleys on earth, a health system and a mass-timber sector.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#4a463f;margin-top:14px"><strong>The hypothesis: value is stranded between those five, because each pays separately to build the same foundations.</strong> Put them next to each other and the shared work gets done once. What follows is the evidence from districts that worked, the evidence from those that disappointed, and what we still do not know.</p>
     </div>
     <div class="thesis rv">
       <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.8 8.2l-2 5.6-5.6 2 2-5.6z"/></svg></span><a class="tl" href="#corridor">Why</a><div class="td">Oregon holds the components of the physical AI stack across a semiconductor cluster, a robotics research lineage, a working farm valley and a health system. What it lacks is one place where they meet.</div></div>
@@ -383,9 +391,11 @@
     <div class="sec-head rv">
       <div class="eyebrow">The Argument</div>
       <h2>The shared engineering</h2>
-      <p class="lead"><strong>Most innovation districts pick one industry. The argument here is that these five are five uses of the same engineering.</strong> The stack underneath them is perception, actuation, control, sim-to-real, safety validation, edge compute, power and mechanical design, and a shop floor built for the volumes these products actually run at. A weeding robot, a care assistant, an autonomous shuttle and a retrofit arm share almost all of it. What differs is the domain knowledge on top, and the instrumentation the stack needs costs more than any one company can justify while sitting idle most of the week. To be precise: this is about the physical AI components of these fields rather than the whole of them. Much of health care and agriculture is biology and data, and will stay that way.</p>
+      <p class="lead"><strong>Most innovation districts pick one industry. These five are five uses of the same engineering.</strong> The stack underneath is perception, actuation, control, sim-to-real, safety validation, edge compute, power and mechanical design, and a shop floor built for the volumes these products actually run at. A weeding robot, a care assistant, an autonomous shuttle and a retrofit arm share almost all of it. What differs is the domain knowledge on top. The instrumentation costs more than any one company can justify while it sits idle most of the week. To be precise, this is about the physical AI components of these fields. Much of health care and agriculture is biology and data, and stays that way.</p>
     </div>
-<figure class="photo wide rv"><picture><source srcset="assets/adaptive/commons.webp" type="image/webp"><img src="assets/adaptive/commons.jpg" alt="A reused bow-truss warehouse where robotics benches, a humanoid prototype, a care and mobility bay, growing tables and timber fabrication share one floor" loading="lazy"></picture><figcaption>One floor, five applications: a robotics bench, a humanoid prototype, a care and mobility bay, growing tables and timber fabrication. What gets shared is the floor, the tools and the instrumentation.</figcaption></figure><div class="note rv" style="margin-top:14px">The renders on this page show West Salem's existing industrial buildings adapted. They are studies of how the space could be used rather than proposals or photographs. The precedent photographs further down are labeled where they appear.</div><div class="rounds rv"><figure><div class="ph"><picture><source srcset="assets/adaptive/agyard.webp" type="image/webp"><img src="assets/adaptive/agyard.jpg" alt="An ag-tech test yard between reused warehouses with raised beds, sensors and a small autonomous cultivator" loading="lazy"></picture></div><figcaption>Field trials a few minutes from the bench</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/humanoids.webp" type="image/webp"><img src="assets/adaptive/humanoids.jpg" alt="Engineers working on humanoid robot prototypes in a warm bow-truss live-work commons" loading="lazy"></picture></div><figcaption>Prototypes worked on in the open</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/timberfab.webp" type="image/webp"><img src="assets/adaptive/timberfab.jpg" alt="A robotic arm fabricating mass timber components behind glass, visible from a courtyard" loading="lazy"></picture></div><figcaption>Fabrication behind glass, visible from the courtyard</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/hydroponics.webp" type="image/webp"><img src="assets/adaptive/hydroponics.jpg" alt="An indoor hydroponics commons inside a reused bow-truss warehouse" loading="lazy"></picture></div><figcaption>Controlled-environment growing in a reused bay</figcaption></figure></div>
+<figure class="photo wide rv"><picture><source srcset="assets/adaptive/commons.webp" type="image/webp"><img src="assets/adaptive/commons.jpg" alt="A reused bow-truss warehouse where robotics benches, a humanoid prototype, a care and mobility bay, growing tables and timber fabrication share one floor" loading="lazy"></picture><figcaption>One floor, five applications: a robotics bench, a humanoid prototype, a care and mobility bay, growing tables and timber fabrication. What gets shared is the floor, the tools and the instrumentation.</figcaption></figure><div class="callout rv"><h4>What these images show, and where the work actually stands</h4>
+<p>Every render on this page shows the goal. Today a humanoid robot works behind a fence or inside a warehouse, away from the public, because the safety case for a large machine working beside a child or an older person has not been made yet. The people building them say so plainly, and they are right.</p>
+<p>Closing that gap takes years of validation in real conditions, with real people, published as it goes. That is the argument for a district rather than a campus: somewhere the work can be done in the open, with residents who agreed to it, at a pace evidence sets. The images are studies of West Salem's existing industrial buildings adapted. Photographs of real places appear further down and are labeled where they do.</p></div><div class="rounds rv"><figure><div class="ph"><picture><source srcset="assets/adaptive/agyard.webp" type="image/webp"><img src="assets/adaptive/agyard.jpg" alt="An ag-tech test yard between reused warehouses with raised beds, sensors and a small autonomous cultivator" loading="lazy"></picture></div><figcaption>Field trials a few minutes from the bench</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/humanoids.webp" type="image/webp"><img src="assets/adaptive/humanoids.jpg" alt="Engineers working on humanoid robot prototypes in a warm bow-truss live-work commons" loading="lazy"></picture></div><figcaption>Prototypes worked on in the open</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/timberfab.webp" type="image/webp"><img src="assets/adaptive/timberfab.jpg" alt="A robotic arm fabricating mass timber components behind glass, visible from a courtyard" loading="lazy"></picture></div><figcaption>Fabrication behind glass, visible from the courtyard</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/hydroponics.webp" type="image/webp"><img src="assets/adaptive/hydroponics.jpg" alt="An indoor hydroponics commons inside a reused bow-truss warehouse" loading="lazy"></picture></div><figcaption>Controlled-environment growing in a reused bay</figcaption></figure></div>
     <div class="grid g3 gf3 rv" style="margin-top:34px">
       <div class="card on-alt">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20S4.5 15 4.5 9.8A4 4 0 0 1 12 7.4 4 4 0 0 1 19.5 9.8C19.5 15 12 20 12 20z"/></svg></span><h4>Health &amp; care</h4>
@@ -411,15 +421,24 @@
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="4.6"/><circle cx="15" cy="12" r="4.6"/></svg></span><h4 style="color:#e8b785">What is locked up, and the objection</h4>
         <p style="font-size:14px">Our claim: five industries are each paying to build the same things. Perception and safety-validation methods, actuator and sensor supply, manufacturing capacity in the band described above, and somewhere to test. Built once and shared, that becomes cheaper validation, a supplier base with enough combined volume to be worth serving, engineers who can move between applications without starting over, and problems solved for all five the first time. The objection: domains diverge faster than they converge, shared infrastructure is often a fiction, and proximity mostly produces meetings. We think the value is real and currently stranded. We would welcome the argument.</p>
       </div>
-    
-    <div class="rv" style="max-width:920px;margin-top:38px">
-      <h3 style="font-family:var(--serif);font-size:22px;color:var(--cream);margin-bottom:10px">The awkward middle band</h3>
-      <p style="font-size:15.5px;line-height:1.75;color:#c9c4b8">These products all sit in the same manufacturing regime, and it is a genuinely difficult one. Humanoid robots are being built toward ten thousand units a year. Field robots, care devices and shuttles run in the thousands. Industrialized housing components run in the tens of thousands. That is far too many to hand-build, and far too few to justify the hard tooling and dedicated lines that make a car cheap.</p>
-      <p style="font-size:15.5px;line-height:1.75;color:#c9c4b8;margin-top:12px">The consequence is a supplier problem. At those volumes a component maker will not retool for you, quote you a serious price, or take your call before the automotive customer's. Every company in this band pays more, waits longer and carries inventory it should not have to. <strong style="color:#e9e5da">One firm at that volume is a nuisance to a supplier. Five industries at that volume, in one place, is a customer.</strong></p>
-      <p style="font-size:15.5px;line-height:1.75;color:#c9c4b8;margin-top:12px">It is also where our own ambition lives. Building housing at the scale and pace of America's largest rental homebuilders means moving construction into this band and then out the other side of it, using flexible automation rather than craft labor. The engineering problem is the same one the robotics companies are solving, which is the most concrete reason we think these belong in one place.</p>
-      <figure class="photo wide rv"><picture><source srcset="assets/adaptive/tractor.webp" type="image/webp"><img src="assets/adaptive/tractor.jpg" alt="A vintage farm tractor being rebuilt with batteries, sensors and robotic controls inside a reused warehouse workshop" loading="lazy"></picture><figcaption>An old tractor rebuilt with batteries, sensors and controls. Work like this runs in the hundreds and the thousands, which is the volume the whole band lives at.</figcaption></figure>
     </div>
-</div>
+
+    <div class="rv" style="margin-top:44px">
+      <h3 style="font-family:var(--serif);font-size:23px;color:var(--cream);margin-bottom:10px">Mid-volume manufacturing</h3>
+      <p style="font-size:15.5px;line-height:1.75;color:#c9c4b8;max-width:880px">These products sit in one manufacturing regime, and it is a hard one: too many to build by hand, too few to justify the hard tooling and dedicated lines that make a car cheap.</p>
+      <div class="specgrid" style="margin-top:26px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:26px">
+        <div class="spec"><div class="num">10,000</div><div class="lbl">humanoid robots a year, the volume their builders are heading toward</div></div>
+        <div class="spec"><div class="num">Thousands</div><div class="lbl">field robots, care devices and shuttles</div></div>
+        <div class="spec"><div class="num">Tens of thousands</div><div class="lbl">industrialized housing components</div></div>
+      </div>
+      <div class="split" style="margin-top:34px">
+        <div>
+          <p style="font-size:15.5px;line-height:1.75;color:#c9c4b8">At those volumes a component maker will not retool for you, quote you a serious price, or take your call before the automotive customer's. Everyone in this band pays more, waits longer and carries inventory they should not have to. <strong style="color:#e9e5da">One firm at that volume is a nuisance to a supplier. Five industries at that volume, in one place, is a customer.</strong></p>
+          <p style="font-size:15.5px;line-height:1.75;color:#c9c4b8;margin-top:14px">It is where our own ambition lives. Building homes at the scale and pace of America's largest rental homebuilders means moving construction into this band and out the other side of it with flexible automation. Same engineering problem the robotics companies are solving, which is the most concrete reason we think these belong in one place.</p>
+        </div>
+        <figure class="photo" style="margin:0"><picture><source srcset="assets/adaptive/tractor.webp" type="image/webp"><img src="assets/adaptive/tractor.jpg" alt="A farm tractor being rebuilt with batteries, sensors and robotic controls inside a reused warehouse workshop" loading="lazy"></picture><figcaption>A working tractor rebuilt with batteries, sensors and controls rather than scrapped. Retrofit is a domain of its own: the machines already in the field outnumber the ones being built, and modernizing them runs on the same stack.</figcaption></figure>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -428,8 +447,8 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Scale Argument</div>
-      <h2>We think the district itself is physical AI, built at the size where people live and work</h2>
-      <p class="lead"><strong>A robot is a body that senses, decides and acts on the physical world. A district is the same thing at another scale.</strong> Streets, buildings, energy, water and movement systems that sense, respond, and shape what happens to the people inside them. We do not think of the neighborhood as a testbed for physical AI. We think it is physical AI, built at the size where people live.</p>
+      <h2>The district is physical AI at the size where people live</h2>
+      <p class="lead"><strong>A robot is a body that senses, decides and acts on the physical world. A district is the same thing at another scale.</strong> Streets, buildings, energy, water and movement systems that sense, respond and shape what happens to the people inside them. The neighborhood is physical AI, built at the size where people live.</p>
     </div>
     <div class="grid g3 gf3 rv" style="margin-top:34px">
       <div class="card">
@@ -458,8 +477,8 @@
     </div>
     <div class="duo rv" style="margin-top:30px">
       <div>
-        <p style="font-size:15.5px;line-height:1.75;color:#4a463f">The proposed <a href="wellness-institute.html" style="color:var(--terra)"><strong>Women &amp; Family Health Institute</strong></a> is a working clinic that doubles as a research institute, founded around one question: what would it take for a woman to thrive across her whole life, and to raise children who thrive. It is deliberately small, it is led by clinicians rather than by a lab, and it publishes openly, including what fails.</p>
-        <p style="font-size:15.5px;line-height:1.75;color:#4a463f;margin-top:14px">It sits in this page for two reasons. Health and care is the hardest application of physical AI, because a machine working beside a person carries a safety case that a machine behind a fence does not, and that work needs a clinical setting to be evaluated in. And a district designed as a physical system needs an instrument pointed at the humans inside it, or it is only measuring itself.</p>
+        <p style="font-size:15.5px;line-height:1.75;color:#4a463f">The proposed <a href="wellness-institute.html" style="color:var(--terra)"><strong>Women &amp; Family Health Institute</strong></a> is a working clinic that doubles as a research institute, founded around one question: what would it take for a woman to thrive across her whole life, and to raise children who thrive. It is small, led by clinicians, and publishes openly, including what fails.</p>
+        <p style="font-size:15.5px;line-height:1.75;color:#4a463f;margin-top:14px">It sits on this page for two reasons. Health and care is the hardest application of physical AI, because a machine working beside a person carries a safety case that a caged machine never has to make, and that work needs a clinical setting to be judged in. And a district designed as a physical system needs an instrument pointed at the people inside it.</p>
       </div>
       <div>
         <div class="card on-alt">
@@ -481,33 +500,33 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Neighborhood</div>
-      <h2>Designed to attract and retain talent</h2>
-      <p class="lead"><strong>Recruiting is the constraint most hardware companies in this valley name first.</strong> An engineer choosing between Salem and a larger metro is not comparing job offers alone, they are comparing lives, and a partner's job prospects, rent, and what there is to do on a Saturday decide as many moves as salary does. So the district is planned as a neighborhood that happens to contain workspace, rather than workspace with housing attached.</p>
+      <h2>Why an engineer would move here and stay</h2>
+      <p class="lead"><strong>Recruiting is the constraint hardware companies in this valley name first.</strong> An engineer choosing between Salem and a larger metro is comparing lives, and a partner's job prospects, rent and what there is to do on a Saturday decide as many moves as salary does. So the district is planned as a neighborhood that happens to contain workspace. The test we would hold it to: an engineer picks Salem with the offer held equal.</p>
     </div>
     <div class="grid g3 gf3 rv" style="margin-top:32px">
       <div class="card">
-        <h4>Homes, priced against local salaries</h4>
-        <p style="font-size:14px">Roughly a thousand homes are planned in the district, in Scandinavian-style courtyard blocks: studios through family flats, rental and ownership, with a share held permanently attainable through shared equity so the next family in can still afford the block. The mix is designed against what people here actually earn.</p>
+        <h4>A bench you can walk to</h4>
+        <p style="font-size:14px">High-bay workshop space with lofts above it, and a shared fabrication floor carrying the machines no single company buys for itself. It is the cheapest space in the district and the first thing brought back into use. You can leave a job running and be home for dinner.</p>
       </div>
       <div class="card">
-        <h4>Live-work and maker lofts</h4>
-        <p style="font-size:14px">The bow-truss campus pairs high-bay workshop space with lofts above it, for the founder who is also the first employee and the maker whose rent has to cover both a home and a bench. It is the cheapest space in the district and the first thing being brought back into use.</p>
+        <h4>Test it on the street outside</h4>
+        <p style="font-size:14px">Designated zones, residents who opted in, and results that publish. Rain, gravel, curbs, dogs, children, a river crossing, and a farm valley twenty minutes out. The conditions that break a machine are a short walk from the bench it was built on.</p>
       </div>
       <div class="card">
-        <h4>A car-light daily life</h4>
-        <p style="font-size:14px">Short blocks, a market hall, a riverfront, and a crossing to downtown, planned so a household can run on one car or none. The saving is not incidental. For an early-career engineer it is the difference between affording to live here and not.</p>
+        <h4>People who have solved your problem</h4>
+        <p style="font-size:14px">Five applications at one address, which means the engineer who already fixed your perception problem solved it in agriculture rather than in your field, and works two buildings away. That is the part of a district you cannot buy and install.</p>
       </div>
       <div class="card">
-        <h4>Somewhere to be on a Saturday</h4>
-        <p style="font-size:14px">A daily market, an arts district in the existing buildings, food and small retail at ground level, and a restored river edge to walk, row and swim from. Activation starts before the permanent buildings, because the neighborhood has to be worth visiting before it is worth moving to.</p>
+        <h4>Homes priced against local salaries</h4>
+        <p style="font-size:14px">Roughly a thousand homes in courtyard blocks, studios through family flats, rental and ownership, with a share held permanently attainable through shared equity. Mass timber and Passive House performance keep the running cost low the whole time you live there. Short blocks and a crossing to downtown let a household run on one car or none, which for an early-career engineer decides whether the salary works.</p>
       </div>
       <div class="card">
-        <h4>Family infrastructure</h4>
-        <p style="font-size:14px">Early learning inside the blocks rather than across town, and a clinical partner in the health institute concept. The thing that most often decides whether a hire stays past year three is whether their family is settled.</p>
+        <h4>A family that is settled</h4>
+        <p style="font-size:14px">Early learning inside the blocks rather than across town, a clinical partner in the health institute concept, and a labor market a partner can find work in. Whether a hire stays past year three usually turns on this rather than on the job.</p>
       </div>
       <div class="card">
-        <h4>Built for the long term</h4>
-        <p style="font-size:14px">Mass timber, Passive House performance, district energy, and water treated as a resource. Lower operating costs for residents, and a place that still works in the climate the next forty years will bring.</p>
+        <h4>Somewhere to be on Saturday</h4>
+        <p style="font-size:14px">A daily market, an arts district in the existing buildings, a sauna club in a warehouse bay, food and small retail at ground level, and a river edge to walk, row and swim from. Activation starts before the permanent buildings, because the neighborhood has to be worth visiting before it is worth moving to.</p>
       </div>
     </div>
 <div class="rounds rv"><figure><div class="ph"><picture><source srcset="assets/adaptive/market.webp" type="image/webp"><img src="assets/adaptive/market.jpg" alt="A covered stall market beside reused bow-truss warehouses with produce, bikes and families" loading="lazy"></picture></div><figcaption>The market under a permanent canopy</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/loft.webp" type="image/webp"><img src="assets/adaptive/loft.jpg" alt="A bow-truss warehouse converted into a live-work loft where a family cooks, builds and works on a small robot" loading="lazy"></picture></div><figcaption>A live-work loft under the old trusses</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/play.webp" type="image/webp"><img src="assets/adaptive/play.jpg" alt="A mass timber play structure with harnessed climbers, a bouldering wall and a slide in a landscaped warehouse courtyard" loading="lazy"></picture></div><figcaption>A play structure built in the courtyard</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/sauna.webp" type="image/webp"><img src="assets/adaptive/sauna.jpg" alt="A cedar sauna club and cold plunge courtyard inserted into a reused industrial warehouse edge" loading="lazy"></picture></div><figcaption>A sauna club in a warehouse bay</figcaption></figure></div><div class="pg pg3 rv"><figure class="photo"><picture><source srcset="assets/adaptive/foodhall.webp" type="image/webp"><img src="assets/adaptive/foodhall.jpg" alt="An evening food hall and maker market inside a reused bow-truss warehouse with families eating at long tables" loading="lazy"></picture><figcaption>Dinner and maker stalls in the evening</figcaption></figure><figure class="photo"><picture><source srcset="assets/adaptive/sculptors.webp" type="image/webp"><img src="assets/adaptive/sculptors.jpg" alt="Sculptors and fabricators working in open warehouse studios beside a planted courtyard" loading="lazy"></picture><figcaption>Fabricators and sculptors with the doors open</figcaption></figure><figure class="photo"><picture><source srcset="assets/adaptive/farmersmarket.webp" type="image/webp"><img src="assets/adaptive/farmersmarket.jpg" alt="An open farmers market in a landscaped courtyard between reused industrial warehouses" loading="lazy"></picture><figcaption>The weekend market in the courtyard</figcaption></figure></div>
@@ -525,7 +544,7 @@
     <div class="sec-head rv">
       <div class="eyebrow">The Hub Model</div>
       <h2>Newlab is the model for one building</h2>
-      <p class="lead"><strong>Newlab is the clearest model we have found for the workspace at the center of a district</strong>: a venture and maker community for hard technology, in one rehabilitated industrial building, giving founders infrastructure to prototype, real projects to pilot and a path to capital. It is a hub, and we would build one. It is worth being precise about what it is not. Newlab is a single building inside a gated industrial campus with no homes, no streets of its own and nothing open in the evening. The hub is the part we borrow. The neighborhood around it is the part we add, and it is the part most of this page is about.</p>
+      <p class="lead"><strong>Newlab is the clearest model we have found for the workspace at the center of a district</strong>: a venture and maker community for hard technology, in one rehabilitated industrial building, giving founders infrastructure to prototype, real projects to pilot and a path to capital. It is a hub, and we would build one. Newlab is also one building inside a gated industrial campus, closed in the evening, with the nearest homes somewhere else entirely. The hub is what we borrow. The neighborhood around it is what we add, and it is what most of this page is about.</p>
     </div>
     <div class="duo rv">
       <figure><picture><source srcset="assets/innov/photos/newlab.webp" type="image/webp"><img src="assets/innov/photos/newlab.jpg" alt="Inside Newlab in Building 128 at the Brooklyn Navy Yard" loading="lazy"></picture><figcaption>Inside Newlab: Building 128, an 1899 Navy machine shop rebuilt as a maker community</figcaption></figure>
@@ -557,7 +576,7 @@
       <div class="col-tx">
         <div class="eyebrow">How These Districts Are Built</div>
         <h2>The four partners</h2>
-        <p class="lead"><strong>The same structure appears in most of these districts.</strong> Four partners come together, a university, a government, an industry and a community, and a neutral entity holds the mission so that no single party owns it. This is the pattern usually called the triple helix, with the community as a fourth strand.</p>
+        <p class="lead"><strong>The same structure appears in most of these districts.</strong> Four partners come together, a university, a government, an industry and a community, and a neutral entity holds the mission so no single party owns it. The pattern is usually called the triple helix, with the community as a fourth strand.</p>
         <p style="font-size:14.5px;color:#6e6a61;margin-top:16px">Each partner brings what the others cannot: the university its research and talent, government its land and patient capital, industry its anchor demand and jobs, and the community its workforce and its stake in the result. The case studies below show it.</p>
       </div>
       <figure class="col-img imgcard"><picture><source srcset="assets/innov/stewardship-model.webp" type="image/webp"><img src="assets/innov/stewardship-model.png" alt="Innovation district stewardship model: a neutral district trust at the center holds the mission and convenes university, government, industry, and community" loading="lazy"></picture></figure>
@@ -571,7 +590,7 @@
     <div class="sec-head rv">
       <div class="eyebrow">Case Studies</div>
       <h2>Coalitions that built districts</h2>
-      <p class="lead"><strong>These places began the same way Edgewater begins:</strong> a champion convened partners, a neutral entity was formed, an anchor and a public tool arrived together, and a community was kept close. Their industries range from semiconductors to biotech to clean energy; what Edgewater borrows is their method, the way a coalition turns one building into a district, which Salem applies to its own mix of fields. The closest match to West Salem is the first one.</p>
+      <p class="lead"><strong>These places began the same way Edgewater begins:</strong> a champion convened partners, a neutral entity was formed, an anchor and a public tool arrived together, and a community was kept close. Their industries range from semiconductors to biotech to clean energy. What Edgewater borrows is the method, the way a coalition turns one building into a district. The closest match to West Salem is the first one.</p>
     </div>
 
     <!-- FEATURED: CORTEX -->
@@ -793,7 +812,7 @@
     <div class="sec-head rv">
       <div class="eyebrow">The Approach &middot; Built to Suit</div>
       <h2>Adaptive reuse first</h2>
-      <p class="lead"><strong>Start with the buildings that are already standing.</strong> The district grows building by building. It starts by adapting West Salem's existing industrial buildings, raw high-bay structures rebuilt to suit makers, ventures, and labs, and adds purpose-built facilities as demand grows. Reusing existing buildings is faster, lower-carbon and cheaper to finance, and new construction follows demand rather than preceding it. The district can open early and grow on real occupancy.</p>
+      <p class="lead"><strong>Start with the buildings that are already standing.</strong> The district grows one building at a time, adapting West Salem's raw high-bay industrial stock to suit makers, ventures and labs, and adding purpose-built facilities as demand appears. Reuse is faster, lower-carbon and cheaper to finance. It also lets the district open early and grow on real occupancy.</p>
     </div>
     <div class="specgrid rv">
       <div class="spec"><div class="num">Reuse first</div><div class="lbl">existing industrial buildings rebuilt to suit shops, studios, labs, and demonstration</div></div>
@@ -821,7 +840,7 @@
     <div class="sec-head rv">
       <div class="eyebrow">What We Will Count</div>
       <h2>The outcomes we would be judged on</h2>
-      <p class="lead"><strong>A district can post a strong headline while local incomes, ownership and opportunity stand still.</strong> We would rather name the outcomes now, while they can still be argued with, than claim a projection we cannot support. Two things need counting, and they are usually treated as opposites.</p>
+      <p class="lead"><strong>A district can post a strong headline while local incomes, ownership and opportunity stand still.</strong> So we name the outcomes now, while they can still be argued with, rather than publish a projection we cannot support. Two things need counting, and they are usually treated as opposites.</p>
     </div>
     <div class="grid g3 gf3 rv" style="margin-top:30px">
       <div class="card">
@@ -852,7 +871,7 @@
     <div class="sec-head rv">
       <div class="eyebrow">The Test</div>
       <h2>Twelve indicators we would track</h2>
-      <p class="lead"><strong>Most places measure progress by regional GDP</strong>, population growth, or the size of the company they recruited. Now City advisor Michael Shuman, an economist and the author of The Local Economy Solution, argues those numbers mislead, because a district can post a big headline while local incomes, ownership, and opportunity stand still. A community grows stronger when its own economy gets healthier. These are the twelve signs Shuman recommends watching, and the ones this district is built to move.</p>
+      <p class="lead"><strong>Most places measure progress by regional GDP</strong>, population growth, or the size of the company they recruited. Now City advisor Michael Shuman, an economist and the author of The Local Economy Solution, argues those numbers mislead: a community grows stronger when its own economy gets healthier. These are the twelve signs he recommends watching, and the ones this district is built to move.</p>
     </div>
     <div class="measures rv">
       <div class="ms"><span class="msn">1</span><div><h5>Median income</h5><p>Whether the typical resident earns more, a truer gauge than averages a handful of high earners can inflate.</p></div></div>
