@@ -155,6 +155,15 @@
 .wst tr.q td:first-child{font-weight:600;color:var(--ink-deep)}
 .wst tr.tot td{border-top:2px solid var(--line);border-bottom:none;font-weight:700;color:var(--ink-deep);padding-top:13px}
 @media(max-width:700px){.wst{display:block;overflow-x:auto;white-space:nowrap}}
+
+.jobs{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px}
+.jobs th{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);font-weight:700;padding:0 10px 9px;border-bottom:2px solid var(--line);text-align:right}
+.jobs th:first-child{text-align:left}
+.jobs td{padding:10px;border-bottom:1px solid rgba(0,0,0,.06);color:#4a463f;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.jobs td:first-child{text-align:left;font-family:var(--serif);font-size:15px;color:var(--ink-deep);white-space:normal}
+.jobs td:last-child{text-align:left;white-space:normal;font-size:13px}
+.jobs tr.hi td{background:rgba(168,112,63,.07)}
+@media(max-width:760px){.jobs{display:block;overflow-x:auto;white-space:nowrap}}
 </style>
 </head>
 <body class="gated">
@@ -318,6 +327,27 @@
       <div class="note" style="margin-top:22px"><b>Where Salem sits.</b> About 47 miles by road from Portland, 35 from Corvallis and Oregon State, 60 from the Hillsboro fabs and 64 from Eugene. It is the only point on the corridor within an hour of all of them, and the only one that is also a state capital.</div>
       <div class="note" style="margin-top:14px"><b>What we left out.</b> Widely repeated figures for the total number of Oregon high-tech businesses and for semiconductor supply-chain companies are absent because we could not trace them to a dated primary source. Company locations were confirmed against company sites, city economic-development pages and NIST CHIPS award pages. <b>FAST</b>, the Frontiers of Advanced Semiconductor Technology engine, is an NSF Regional Innovation Engine led by Oregon State with up to $160M over ten years and close to a hundred partner organizations across twelve counties.</div>
     </div>
+
+    <div class="rv" style="margin-top:44px">
+      <h3 style="font-family:var(--serif);font-size:23px;color:var(--ink-deep);margin-bottom:8px">The work that is already here</h3>
+      <p style="font-size:15.5px;line-height:1.72;color:#4a463f;max-width:900px"><strong>Physical AI is a narrow technology that touches wide industries, and it is worth being clear which way round that is.</strong> Semiconductor manufacturing employs about 28,000 Oregonians. Health care employs three hundred thousand. Construction employs a hundred and eighteen thousand. Agriculture and food manufacturing together employ around eighty thousand. The technology on this page is small. The work it would touch is not, and most of it is not high-tech work.</p>
+      <table class="jobs">
+        <thead><tr><th>Sector in Oregon</th><th>Jobs</th><th>Average wage</th><th>Where it meets this</th></tr></thead>
+        <tbody>
+          <tr><td>Health care and social assistance</td><td>301,000</td><td>varies widely</td><td>The fastest-growing sector in the state, projected to add 40,400 jobs by 2034. Care robotics, lab automation and rehabilitation.</td></tr>
+          <tr><td>Construction</td><td>118,200</td><td>not published</td><td>Near a record high statewide, though down 3.8% in Salem this year. Off-site fabrication and assembly.</td></tr>
+          <tr><td>Transportation and warehousing</td><td>71,600</td><td>not published</td><td>Autonomy, materials handling, and the corridor itself.</td></tr>
+          <tr><td>Agriculture, forestry and fishing</td><td>52,924</td><td>$49,046</td><td>Field robotics and plant-level sensing. Farmworkers are about 39% of it, at $37,294.</td></tr>
+          <tr><td>Food manufacturing</td><td>28,207</td><td>$57,459</td><td>Marion County holds 13% of the state total, second only to Multnomah. Processing automation and inspection.</td></tr>
+          <tr class="hi"><td>Semiconductors and electronics</td><td>28,338</td><td>$173,152</td><td>The high-wage core of the stack, and the smallest number in this table.</td></tr>
+          <tr><td>Wood products manufacturing</td><td>22,400</td><td>$68,275 to $79,413</td><td>Engineered wood and sawmills. The material input to industrialized building, already made here.</td></tr>
+          <tr><td>Forestry and logging</td><td>8,787</td><td>$65,530</td><td>The front of the same supply chain, mostly rural.</td></tr>
+        </tbody>
+      </table>
+      <div class="note" style="margin-top:20px">Oregon Employment Department, 2024 and 2025 figures. Oregon manufacturing overall is 178,900 jobs at an average wage of $90,100, though excluding semiconductors that average falls to roughly $73,000, which is about the statewide average of $71,964. Wage columns are left blank where no primary figure was available.</div>
+      <div class="note" style="margin-top:14px"><strong>Salem's own picture, which is the reason to do anything at all.</strong> The metro has 191,200 nonfarm jobs. Government is 47,100 of them, about a quarter, because this is the state capital. Manufacturing is 11,500 and fell 4.2% over the past year. Construction is 12,600 and fell 3.8%. The average weekly wage here is $1,280 against $1,569 nationally. A district that adds work across several of the sectors above, at several wage levels, matters more here than a district that adds only the highest-paid kind.</div>
+    </div>
+
     <div class="grid g3 gf3 rv" style="margin-top:34px">
       <div class="card">
         <h4>Humanoid manufacturing in Salem</h4>
