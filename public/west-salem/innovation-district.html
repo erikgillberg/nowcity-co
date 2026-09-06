@@ -99,6 +99,18 @@
 .shuman .sq{font-family:var(--serif);font-size:15px;line-height:1.55;color:var(--ink-deep)}
 .shuman .sa{font-size:12.5px;color:#6e6a61;margin-top:6px}
 
+h1,h2,h3,h4,h5,.sub,.lead,figcaption,.eyebrow{text-wrap:balance}
+p,li,.td,.lbl,.sl{text-wrap:pretty}
+details.more{border:1px solid var(--line);border-radius:10px;margin-top:28px;background:#fff}
+.alt details.more{background:var(--cream-2,#fbf9f4)}
+.dark details.more{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.14)}
+details.more>summary{cursor:pointer;list-style:none;padding:15px 22px;font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--terra)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary:after{content:"   +";white-space:pre}
+details.more[open]>summary:after{content:"   \2013";white-space:pre}
+details.more .inner{padding:2px 22px 26px}
+details.more .inner>*:first-child{margin-top:0}
+.rounds figcaption{max-width:300px}
 .callout{border-left:4px solid var(--terra);background:rgba(168,112,63,.08);padding:24px 28px;margin-top:26px;border-radius:0 8px 8px 0}
 .dark .callout{background:rgba(216,162,108,.10)}
 .callout h4{font-family:var(--serif);font-size:18.5px;color:var(--ink-deep);margin-bottom:9px}
@@ -122,9 +134,9 @@
 .gf2{grid-template-columns:repeat(2,1fr)!important}
 @media(max-width:900px){.gf3{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:620px){.gf3,.gf2{grid-template-columns:1fr!important}}
-.rounds{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin:34px 0 4px;justify-items:center}
-@media(max-width:760px){.rounds{grid-template-columns:repeat(2,1fr)}}
-.rounds figure{margin:0;text-align:center;max-width:190px}
+.rounds{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;margin:36px 0 4px;justify-items:center}
+@media(max-width:560px){.rounds{grid-template-columns:1fr}}
+.rounds figure{margin:0;text-align:center;max-width:330px}
 .rounds .ph{position:relative;width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 26px rgba(33,31,28,.13)}
 .dark .rounds .ph{border-color:rgba(255,255,255,.14)}
 .rounds img{width:100%;height:100%;object-fit:cover;display:block}
@@ -324,6 +336,7 @@
     <div class="rv" style="margin-top:44px">
       <h3 style="font-family:var(--serif);font-size:23px;color:var(--ink-deep);margin-bottom:8px">The corridor, north to south</h3>
       <p style="font-size:15.5px;line-height:1.72;color:#4a463f;max-width:860px;margin-bottom:22px">Everything below is confirmed at that location from a primary source. It is a reference rather than a complete inventory, and the omissions are honest ones: we left out anything we could not check.</p>
+<details class="more rv"><summary>The corridor, company by company</summary><div class="inner">
       <div class="corridor">
         <div class="cy">Hillsboro</div>
         <div class="cd"><b>Intel</b> Ronler Acres, six wafer fabs and Oregon's largest private employer &middot; <b>Lattice Semiconductor</b> headquarters &middot; <b>Qorvo</b> RF fab and test &middot; <b>Thermo Fisher Scientific</b> semiconductor business unit and electron microscopy &middot; <b>Hitachi High-Tech America</b> nanotechnology center &middot; <b>Kokusai Electric</b> US demonstration center &middot; <b>AGC Electronics America</b> quartzware &middot; <b>Planar Systems</b> headquarters &middot; <b>Epson Portland Inc.</b></div>
@@ -346,8 +359,9 @@
         <div class="cy">Eugene</div>
         <div class="cd"><b>STRATACACHE</b> the 1.2M sq ft former SK Hynix plant, converting to micro-LED production &middot; <b>University of Oregon</b></div>
       </div>
+</div></details>
       <div class="note" style="margin-top:22px"><b>Where Salem sits.</b> About 47 miles by road from Portland, 35 from Corvallis and Oregon State, 60 from the Hillsboro fabs and 64 from Eugene. It is the only point on the corridor within an hour of all of them, and the only one that is also a state capital.</div>
-      <div class="note" style="margin-top:14px"><b>What we left out.</b> Widely repeated figures for the total number of Oregon high-tech businesses and for semiconductor supply-chain companies are absent because we could not trace them to a dated primary source. Company locations were confirmed against company sites, city economic-development pages and NIST CHIPS award pages. <b>FAST</b>, the Frontiers of Advanced Semiconductor Technology engine, is an NSF Regional Innovation Engine led by Oregon State with up to $160M over ten years and close to a hundred partner organizations across twelve counties.</div>
+      <div class="note" style="margin-top:14px"><b>What we left out.</b> Widely repeated totals for Oregon high-tech businesses and semiconductor supply-chain companies are absent because we could not trace them to a dated primary source. Locations were confirmed against company sites, city economic-development pages and NIST CHIPS award pages. <b>FAST</b>, the Frontiers of Advanced Semiconductor Technology engine, is an NSF Regional Innovation Engine led by Oregon State with up to $160M over ten years and close to a hundred partner organizations across twelve counties.</div>
     </div>
 
     <div class="rv" style="margin-top:44px">
@@ -366,7 +380,8 @@
           <tr><td>Forestry and logging</td><td>8,787</td><td>$65,530</td><td>The front of the same supply chain, mostly rural.</td></tr>
         </tbody>
       </table>
-      <div class="note" style="margin-top:20px">Oregon Employment Department, 2024 and 2025 figures. Oregon manufacturing overall is 178,900 jobs at an average wage of $90,100, though excluding semiconductors that average falls to roughly $73,000, which is about the statewide average of $71,964. Wage columns are left blank where no primary figure was available.</div>
+      <div class="rounds rv"><figure><div class="ph"><picture><source srcset="assets/adaptive/hydroponics.webp" type="image/webp"><img src="assets/adaptive/hydroponics.jpg" alt="An indoor hydroponics commons inside a reused bow-truss warehouse" loading="lazy"></picture></div><figcaption>Controlled-environment growing in a reused bay</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/agyard.webp" type="image/webp"><img src="assets/adaptive/agyard.jpg" alt="An ag-tech test yard between reused warehouses with raised beds, sensors and a small autonomous cultivator" loading="lazy"></picture></div><figcaption>Field trials a few minutes from the bench</figcaption></figure></div>
+    <div class="note" style="margin-top:20px">Oregon Employment Department, 2024 and 2025 figures. Oregon manufacturing overall is 178,900 jobs at an average wage of $90,100, though excluding semiconductors that average falls to roughly $73,000, which is about the statewide average of $71,964. Wage columns are left blank where no primary figure was available.</div>
       <div class="note" style="margin-top:14px"><strong>Salem's own picture, which is the reason to do anything at all.</strong> The metro has 191,200 nonfarm jobs. Government is 47,100 of them, about a quarter, because this is the state capital. Manufacturing is 11,500 and fell 4.2% over the past year. Construction is 12,600 and fell 3.8%. The average weekly wage here is $1,280 against $1,569 nationally. A district that adds work across several of the sectors above, at several wage levels, matters more here than a district that adds only the highest-paid kind.</div>
     </div>
 
@@ -398,7 +413,7 @@
     </div>
 <figure class="photo wide rv"><picture><source srcset="assets/adaptive/makerfloor.webp" type="image/webp"><img src="assets/adaptive/makerfloor.jpg" alt="A reused bow-truss warehouse where timber framing, machine tools, a caged robotic arm and workbenches share one floor beneath a mezzanine" loading="lazy"></picture><figcaption>One floor, several kinds of work: timber framing, machine tools, a caged arm, small machines moving material, and benches for the parts that are still done by hand. What gets shared is the floor, the tools and the instrumentation.</figcaption></figure><div class="callout rv"><h4>A note on the images</h4>
 <p><strong>We took the humanoid robots out of this page on purpose.</strong> A humanoid today works behind a fence or inside a warehouse, away from the public, because the safety case for a large machine working beside a child or an older person has not been made yet. The people building them say so plainly. Putting one in a rendering of a public street sets an expectation that the field then has to spend years managing, and there is enough of that already.</p>
-<p>What these images show instead is work that is possible now: components coming off a line, arms in cages, small machines moving at walking pace, and a lot of people. Closing the distance to anything more takes years of validation in real conditions, published as it goes, which is the strongest argument we know of for doing this work in a place rather than on a campus. The renders are studies of West Salem's existing industrial buildings adapted. Photographs of real places appear further down and are labeled where they do.</p></div><div class="rounds rv"><figure><div class="ph"><picture><source srcset="assets/adaptive/agyard.webp" type="image/webp"><img src="assets/adaptive/agyard.jpg" alt="An ag-tech test yard between reused warehouses with raised beds, sensors and a small autonomous cultivator" loading="lazy"></picture></div><figcaption>Field trials a few minutes from the bench</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/tractor.webp" type="image/webp"><img src="assets/adaptive/tractor.jpg" alt="A farm tractor being rebuilt with batteries, sensors and controls inside a reused warehouse workshop" loading="lazy"></picture></div><figcaption>Old equipment rebuilt rather than scrapped</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/timberfab.webp" type="image/webp"><img src="assets/adaptive/timberfab.jpg" alt="A robotic arm fabricating mass timber components behind glass, visible from a courtyard" loading="lazy"></picture></div><figcaption>Fabrication behind glass, visible from the courtyard</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/hydroponics.webp" type="image/webp"><img src="assets/adaptive/hydroponics.jpg" alt="An indoor hydroponics commons inside a reused bow-truss warehouse" loading="lazy"></picture></div><figcaption>Controlled-environment growing in a reused bay</figcaption></figure></div>
+<p>What these images show instead is work that is possible now: components coming off a line, arms in cages, small machines moving at walking pace, and a lot of people. Closing the distance to anything more takes years of validation in real conditions, published as it goes, which is the strongest argument we know of for doing this work in a place rather than on a campus. The renders are studies of West Salem's existing industrial buildings adapted. Photographs of real places appear further down and are labeled where they do.</p></div><div class="rounds rv"><figure><div class="ph"><picture><source srcset="assets/adaptive/timberfab.webp" type="image/webp"><img src="assets/adaptive/timberfab.jpg" alt="A robotic arm fabricating mass timber components behind glass, visible from a courtyard" loading="lazy"></picture></div><figcaption>Fabrication behind glass, visible from the courtyard</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/tractor.webp" type="image/webp"><img src="assets/adaptive/tractor.jpg" alt="A farm tractor being rebuilt with batteries, sensors and controls inside a reused warehouse workshop" loading="lazy"></picture></div><figcaption>Old equipment rebuilt rather than scrapped</figcaption></figure></div>
     <div class="grid g3 gf3 rv" style="margin-top:34px">
       <div class="card on-alt">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20S4.5 15 4.5 9.8A4 4 0 0 1 12 7.4 4 4 0 0 1 19.5 9.8C19.5 15 12 20 12 20z"/></svg></span><h4>Health &amp; care</h4>
@@ -410,7 +425,7 @@
       </div>
       <div class="card on-alt">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-4 8 4v13"/><path d="M4 12h16M4 16.5h16M12 4.5v16.5"/></svg></span><h4>The built environment</h4>
-        <p style="font-size:14px">Buildings and district systems across their whole life, not the building of them. Off-site fabrication and assembly robotics at the start, then sensing, energy and water management, predictive maintenance, and the robotic retrofit and disassembly that decide whether a building is adapted or demolished. A district takes in energy, water, materials and people and handles that well or badly for eighty years. Construction is a couple of those years. Our own ambition sits here: to build homes at the scale and pace America's largest rental homebuilders manage, which is a manufacturing problem before it is an architectural one. Oregon's mass-timber Tech Hub and the TallWood Design Institute put the materials science next door.</p>
+        <p style="font-size:14px">Buildings and district systems across their whole life, rather than the building of them. Off-site fabrication and assembly robotics at the start, then sensing, energy and water management, predictive maintenance, and the robotic retrofit and disassembly that decide whether a building is adapted or demolished. A district handles energy, water, materials and people well or badly for eighty years; construction is a couple of those years. Our own ambition sits here: homes at the scale and pace America's largest rental homebuilders manage, which is a manufacturing problem before it is an architectural one. Oregon's mass-timber Tech Hub and the TallWood Design Institute put the materials science next door.</p>
       </div>
       <div class="card on-alt">
         <span class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/></svg></span><h4>Industry and logistics</h4>
@@ -464,7 +479,7 @@
       </div>
       <div class="card">
         <h4>Built to be experimented in</h4>
-        <p style="font-size:14px">Walk the Brooklyn Navy Yard and you meet autonomous shuttles moving between buildings. It is genuinely good fun, and it is the sort of thing that makes a person want to live there. What that campus lacks is homes, so nobody can. A district with designated testing zones, residents who opted in, and published results gets to be both: a place where new things are tried in public, and a place people live.</p>
+        <p style="font-size:14px">Walking a working campus and meeting an autonomous shuttle between buildings is genuinely good fun, and the sort of thing that makes a person want to live there. A district with designated testing zones, residents who opted in and published results gets to be both: a place where new things are tried in public, and a place people live.</p>
       </div>
     </div>
 <figure class="photo wide rv"><picture><source srcset="assets/adaptive/aerial.webp" type="image/webp"><img src="assets/adaptive/aerial.jpg" alt="An aerial view of an industrial district with reused warehouse roofs, landscaped courtyards, live-work space and new apartments alongside" loading="lazy"></picture><figcaption>The blocks around the first phase: warehouse roofs kept, courtyards cut into the asphalt, homes next door. One system rather than a set of separate buildings.</figcaption></figure>
@@ -532,7 +547,7 @@
         <p style="font-size:14px">A daily market, an arts district in the existing buildings, a sauna club in a warehouse bay, food and small retail at ground level, and a river edge to walk, row and swim from. Activation starts before the permanent buildings, because the neighborhood has to be worth visiting before it is worth moving to.</p>
       </div>
     </div>
-<div class="rounds rv"><figure><div class="ph"><picture><source srcset="assets/adaptive/market.webp" type="image/webp"><img src="assets/adaptive/market.jpg" alt="A covered stall market beside reused bow-truss warehouses with produce, bikes and families" loading="lazy"></picture></div><figcaption>The market under a permanent canopy</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/loft.webp" type="image/webp"><img src="assets/adaptive/loft.jpg" alt="A bow-truss warehouse converted into a live-work loft where a family cooks, builds and works on a small robot" loading="lazy"></picture></div><figcaption>A live-work loft under the old trusses</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/play.webp" type="image/webp"><img src="assets/adaptive/play.jpg" alt="A mass timber play structure with harnessed climbers, a bouldering wall and a slide in a landscaped warehouse courtyard" loading="lazy"></picture></div><figcaption>A play structure built in the courtyard</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/sauna.webp" type="image/webp"><img src="assets/adaptive/sauna.jpg" alt="A cedar sauna club and cold plunge courtyard inserted into a reused industrial warehouse edge" loading="lazy"></picture></div><figcaption>A sauna club in a warehouse bay</figcaption></figure></div><div class="pg pg3 rv"><figure class="photo"><picture><source srcset="assets/adaptive/foodhall.webp" type="image/webp"><img src="assets/adaptive/foodhall.jpg" alt="An evening food hall and maker market inside a reused bow-truss warehouse with families eating at long tables" loading="lazy"></picture><figcaption>Dinner and maker stalls in the evening</figcaption></figure><figure class="photo"><picture><source srcset="assets/adaptive/sculptors.webp" type="image/webp"><img src="assets/adaptive/sculptors.jpg" alt="Sculptors and fabricators working in open warehouse studios beside a planted courtyard" loading="lazy"></picture><figcaption>Fabricators and sculptors with the doors open</figcaption></figure><figure class="photo"><picture><source srcset="assets/adaptive/farmersmarket.webp" type="image/webp"><img src="assets/adaptive/farmersmarket.jpg" alt="An open farmers market in a landscaped courtyard between reused industrial warehouses" loading="lazy"></picture><figcaption>The weekend market in the courtyard</figcaption></figure></div>
+<div class="rounds rv"><figure><div class="ph"><picture><source srcset="assets/adaptive/market.webp" type="image/webp"><img src="assets/adaptive/market.jpg" alt="A covered stall market beside reused bow-truss warehouses with produce, bikes and families" loading="lazy"></picture></div><figcaption>The market under a permanent canopy</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/play.webp" type="image/webp"><img src="assets/adaptive/play.jpg" alt="A mass timber play structure with harnessed climbers, a bouldering wall and a slide in a landscaped warehouse courtyard" loading="lazy"></picture></div><figcaption>A play structure built in the courtyard</figcaption></figure></div><div class="pg pg3 rv"><figure class="photo"><picture><source srcset="assets/adaptive/foodhall.webp" type="image/webp"><img src="assets/adaptive/foodhall.jpg" alt="An evening food hall and maker market inside a reused bow-truss warehouse with families eating at long tables" loading="lazy"></picture><figcaption>Dinner and maker stalls in the evening</figcaption></figure><figure class="photo"><picture><source srcset="assets/adaptive/sculptors.webp" type="image/webp"><img src="assets/adaptive/sculptors.jpg" alt="Sculptors and fabricators working in open warehouse studios beside a planted courtyard" loading="lazy"></picture><figcaption>Fabricators and sculptors with the doors open</figcaption></figure><figure class="photo"><picture><source srcset="assets/adaptive/farmersmarket.webp" type="image/webp"><img src="assets/adaptive/farmersmarket.jpg" alt="An open farmers market in a landscaped courtyard between reused industrial warehouses" loading="lazy"></picture><figcaption>The weekend market in the courtyard</figcaption></figure></div>
     <div class="note rv" style="margin-top:26px">
       The longer versions: the <a href="district.html" style="color:var(--terra)">District Vision</a> for the plan as a whole, <a href="placemaking.html" style="color:var(--terra)">Placemaking</a> for what daily life is designed to feel like, <a href="activation.html" style="color:var(--terra)">Activation</a> for the market, arts district and live-work campus, <a href="mobility-concepts.html" style="color:var(--terra)">Mobility</a> for the crossings, and <a href="edgewater-2036.html" style="color:var(--terra)">Edgewater 2036</a>.
     </div>
@@ -547,7 +562,7 @@
     <div class="sec-head rv">
       <div class="eyebrow">The Hub Model</div>
       <h2>Newlab is the model for one building</h2>
-      <p class="lead"><strong>Newlab is the clearest model we have found for the workspace at the center of a district</strong>: a venture and maker community for hard technology, in one rehabilitated industrial building, giving founders infrastructure to prototype, real projects to pilot and a path to capital. It is a hub, and we would build one. Newlab is also one building inside a gated industrial campus, closed in the evening, with the nearest homes somewhere else entirely. The hub is what we borrow. The neighborhood around it is what we add, and it is what most of this page is about.</p>
+      <p class="lead"><strong>Newlab is the clearest model we have found for the workspace at the center of a district</strong>: a venture and maker community for hard technology in one rehabilitated industrial building, giving founders infrastructure to prototype, real projects to pilot and a path to capital. It is also one building inside a gated industrial campus, closed in the evening, with the nearest homes somewhere else. The hub is what we borrow. The neighborhood around it is what we add.</p>
     </div>
     <div class="duo rv">
       <figure><picture><source srcset="assets/innov/photos/newlab.webp" type="image/webp"><img src="assets/innov/photos/newlab.jpg" alt="Inside Newlab in Building 128 at the Brooklyn Navy Yard" loading="lazy"></picture><figcaption>Inside Newlab: Building 128, an 1899 Navy machine shop rebuilt as a maker community</figcaption></figure>
@@ -619,6 +634,7 @@
     </div>
 
     <h3 class="serif rv" style="font-size:19px;margin:46px 0 10px;color:var(--ink-deep)">From around the world</h3>
+<details class="more rv"><summary>All eight international cases, with the lesson from each</summary><div class="inner">
     <div class="grid g3 rv">
       <div class="card on-alt">
         <div class="cardimg"><picture><source srcset="assets/innov/photos/brainport.webp" type="image/webp"><img src="assets/innov/photos/brainport.jpg" alt="Brainport Eindhoven at dusk" loading="lazy"></picture></div>
@@ -693,6 +709,7 @@
         <a class="prelink" href="https://www.jtc.gov.sg/" target="_blank" rel="noopener">Visit &#8599;</a>
       </div>
     </div>
+</div></details>
 
     <div class="split rv" style="margin:46px 0 28px">
       <div class="col-tx">
@@ -745,8 +762,7 @@
       </table>
       <div class="note" style="margin-top:20px">&#9679; present &nbsp;&nbsp; <span class="pt">&#9675;</span> partial &nbsp;&nbsp; <span class="no">&#8211;</span> absent. These are our readings of published accounts of each district rather than the districts' own self-assessments, and reasonable people would score some cells differently.</div>
       <div class="note" style="margin-top:14px"><b>A correction we owe this page.</b> An earlier version of this table claimed almost none of these districts had homes. That was wrong, and the real picture is more useful. Brookings, in the 2014 report that gave the term its meaning, defines an innovation district as offering mixed-use housing alongside the work. So housing is not our invention. It is the orthodoxy, unevenly applied.</div>
-      <div class="note" style="margin-top:14px"><b>What the record actually shows, in three tiers.</b> A minority built housing in from the start: Singapore's One-North had residential in the 2001 masterplan; Barcelona's 2000 rezoning legally required 4,000 subsidized homes as the price of the innovation land use; Mission Rock in San Francisco is 40% affordable by design; Cambridge's Eddington and Oxford's Begbroke pair thousands of homes with science-park expansion. A larger group added housing later, usually under outside pressure: Adlershof now has around 3,900 homes and 6,000 residents, Cortex broke ground on its first 174 apartments in 2026 after two decades, and Kendall Square is only now filling its Volpe site with roughly 1,400 units following a city rezoning. And a small famous group still has none: the Brooklyn Navy Yard by industrial zoning, and Research Triangle Park by a covenant that stood for sixty-five years until it was repealed in November 2025.</div>
-      <div class="note" style="margin-top:14px"><b>Two honest caveats.</b> Barcelona's 4,000 units were a requirement, not a delivery; roughly 1,581 are built or under construction twenty-five years on. And the peer-reviewed critique of this field is not that housing is missing but that the housing which gets built skews expensive, so the people already living nearby are pushed out. That is the failure we are trying to design against, and it is the reason shared equity is in the plan rather than a note at the end of it.</div>
+      <div class="note" style="margin-top:14px"><b>What the record shows.</b> A minority built housing in from the start: One-North had residential in its 2001 masterplan, Barcelona's 2000 rezoning legally required 4,000 subsidized homes, and Mission Rock in San Francisco is 40% affordable by design. More added it later under pressure: Adlershof now has around 3,900 homes, and Cortex broke ground on its first 174 apartments in 2026 after two decades. A famous few still have none, including the Brooklyn Navy Yard by industrial zoning. Two caveats worth carrying: Barcelona's 4,000 units were a requirement rather than a delivery, with roughly 1,581 built or under construction twenty-five years on, and the peer-reviewed critique of this field is that the housing which does get built skews expensive and pushes out the people already nearby. That is the failure shared equity is in our plan to avoid.</div>
     </div>
   </div>
 </section>
@@ -815,7 +831,7 @@
     <div class="sec-head rv">
       <div class="eyebrow">The Approach &middot; Built to Suit</div>
       <h2>Adaptive reuse first</h2>
-      <p class="lead"><strong>Start with the buildings that are already standing.</strong> The district grows one building at a time, adapting West Salem's raw high-bay industrial stock to suit makers, ventures and labs, and adding purpose-built facilities as demand appears. Reuse is faster, lower-carbon and cheaper to finance. It also lets the district open early and grow on real occupancy.</p>
+      <p class="lead"><strong>Start with the buildings that are already standing.</strong> The district grows one building at a time, adapting West Salem's raw high-bay industrial stock to suit makers, ventures and labs, and adding purpose-built facilities as demand appears. Reuse is faster, lower-carbon and cheaper to finance, and a retrofit can draw historic and New Markets tax credits, as Newlab's Building 128 did. Newlab, Michigan Central and Greentown Labs all began this way. It also lets the district open early and grow on real occupancy.</p>
     </div>
     <div class="specgrid rv">
       <div class="spec"><div class="num">Reuse first</div><div class="lbl">existing industrial buildings rebuilt to suit shops, studios, labs, and demonstration</div></div>
@@ -825,14 +841,11 @@
     </div>
     <div class="grid g2 rv" style="margin-top:38px">
       <div class="card on-alt">
-        <h4>Why start with existing buildings</h4>
-        <p style="font-size:14.5px">Newlab, Michigan Central and Greentown Labs all began in old industrial buildings. Rehabilitation is also cheaper to finance: an industrial retrofit can draw historic and New Markets tax credits, as Newlab's Building 128 did. West Salem has the same building stock, and new facilities can go up beside it.</p>
-      </div>
-      <div class="card on-alt">
         <h4>What gets built new</h4>
         <p style="font-size:14.5px">Purpose-built shared facilities follow demand: fabrication and instrumentation that no single company would buy alone, and the labs and high-bay space the applications on this page require. The order matters. Retrofit proves the occupancy that justifies the new construction.</p>
       </div>
     </div>
+<div class="rounds rv"><figure><div class="ph"><picture><source srcset="assets/adaptive/loft.webp" type="image/webp"><img src="assets/adaptive/loft.jpg" alt="A bow-truss warehouse converted into a live-work loft where a family cooks, builds and works on a small robot" loading="lazy"></picture></div><figcaption>A live-work loft under the old trusses</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/sauna.webp" type="image/webp"><img src="assets/adaptive/sauna.jpg" alt="A cedar sauna club and cold plunge courtyard inserted into a reused industrial warehouse edge" loading="lazy"></picture></div><figcaption>A sauna club in a warehouse bay</figcaption></figure></div>
 <div class="pg pg4 rv"><figure class="photo"><picture><source srcset="assets/adaptive/promenade.webp" type="image/webp"><img src="assets/adaptive/promenade.jpg" alt="A reused bow-truss warehouse opening onto a landscaped pedestrian lane with engineers, families, bikes and a new apartment block beyond" loading="lazy"></picture><figcaption>The frontage of a reused warehouse, opened onto a landscaped lane</figcaption></figure><figure class="photo"><picture><source srcset="assets/adaptive/buildyard.webp" type="image/webp"><img src="assets/adaptive/buildyard.jpg" alt="Families and engineers using hand tools in a landscaped build yard beside a reused warehouse and a greenhouse frame" loading="lazy"></picture><figcaption>A build yard where the work is visible from the street</figcaption></figure><figure class="photo"><picture><source srcset="assets/adaptive/evening.webp" type="image/webp"><img src="assets/adaptive/evening.jpg" alt="An evening live-work promenade beside reused bow-truss warehouses with warm interiors, families, bikes and planted paths" loading="lazy"></picture><figcaption>The live-work edge after dark</figcaption></figure><figure class="photo"><picture><source srcset="assets/adaptive/arcade.webp" type="image/webp"><img src="assets/adaptive/arcade.jpg" alt="A rainy-day covered market arcade beside reused warehouses with produce stalls, bikes, hydroponics and stormwater planting" loading="lazy"></picture><figcaption>A covered arcade, so the market still works in the rain</figcaption></figure></div>
   </div>
 </section>
@@ -861,8 +874,8 @@
     </div>
     <div class="rv" style="max-width:900px;margin-top:34px">
       <h4 style="font-family:var(--serif);font-size:19px;color:var(--ink-deep);margin-bottom:10px">Why these are complementary rather than opposed</h4>
-      <p style="font-size:15.5px;line-height:1.75;color:#4a463f">Attracting companies and building local ownership are usually argued as a choice. The argument turns on how the companies are won. Michael Shuman, an advisor here, is direct that public money spent luring firms with grants and tax breaks tends to subtract from a local economy rather than add to it, and one of his twelve indicators counts exactly that. What he is objecting to is the cheque, not the company.</p>
-      <p style="font-size:15.5px;line-height:1.75;color:#4a463f;margin-top:12px">Competing on the place is a different instrument. Homes people can afford, shared fabrication no single firm would buy alone, a neighborhood an engineer wants to live in, and a workforce pipeline that already exists. Those are assets the community keeps whether or not any particular company says yes, and they build local capacity while they attract outside investment. That is the version of attraction we are trying to test, and it is the only version we think survives Shuman's scorecard.</p>
+        <p style="font-size:15px;line-height:1.72;color:#4a463f">Attracting companies and building local ownership are usually argued as a choice. The argument turns on how the companies are won. Michael Shuman, an advisor here, is direct that public money spent luring firms with grants and tax breaks tends to subtract from a local economy rather than add to it, and one of his twelve indicators counts exactly that. What he objects to is the cheque, not the company.</p>
+        <p style="font-size:15px;line-height:1.72;color:#4a463f;margin-top:12px">Competing on the place is a different instrument: homes people can afford, shared fabrication no single firm would buy alone, a neighborhood an engineer wants to live in, and a workforce pipeline that already exists. Those are assets the community keeps whether or not any particular company says yes.</p>
     </div>
     <div class="note rv" style="margin-top:26px">Documented precedent, for scale rather than projection: Cortex in St. Louis grew 406 companies from a single brownfield and returned $163.8M of public revenue between 2014 and 2025. Enrico Moretti's work in The New Geography of Jobs puts the local multiplier on a traded-sector innovation job at roughly five. What Edgewater produces depends on partners, sector focus and pace, and we will not know until it is built.</div>
   </div>
@@ -932,12 +945,13 @@
           <tr class="tot"><td>Indicative total</td><td>$230K to $400K</td><td>Working target of roughly $300K to $350K</td></tr>
         </tbody>
       </table>
-      <div class="note" style="margin-top:20px"><strong>The one grounded figure.</strong> An independent market consultant quoted a fixed fee of $19,200 for a defined residential market study of the Salem area in August 2026, which is where the $20K to $30K line comes from. That scope covers one site rather than the corridor, so widening it to the questions on this page would move it upward. Every other line is a planning estimate drawn from comparable scopes, and should be treated as a budget placeholder until quotes exist. The third workstream above is genuinely unpriced, because we have found nobody who has done it.</div>
+      <div class="note" style="margin-top:20px"><strong>The one grounded figure.</strong> An independent consultant quoted a fixed fee of $19,200 for a defined residential market study of the Salem area in August 2026, which is where the $20K to $30K line comes from. That scope covers one site rather than the corridor, so widening it would move it upward. Every other line is a planning estimate and should be treated as a placeholder until quotes exist.</div>
     </div>
 
     <div class="rv" style="margin-top:34px">
       <h3 style="font-family:var(--serif);font-size:22px;color:var(--ink-deep);margin-bottom:8px">How the jobs number would be built</h3>
       <p style="font-size:14.5px;line-height:1.7;color:#4a463f;max-width:900px"><strong>The first question anyone asks is how many jobs, and we would rather show the method than assert a figure.</strong> A number produced before the study is a number produced by whoever wants it to be large. So the economic and fiscal impact workstream above has a specification rather than a target.</p>
+<details class="more rv"><summary>The method we would specify, in detail</summary><div class="inner">
       <div class="grid g2 gf2 rv" style="margin-top:22px">
         <div class="card">
           <h4>Direct employment, from space and density</h4>
@@ -956,6 +970,7 @@
           <p style="font-size:14px">Construction employment counted separately and in person-years, because it is temporary and mixing it into a headline inflates everything. And for the manufacturing question, net rather than gross: factory work substitutes for some site labor, so the study has to say what is genuinely additional and what has moved.</p>
         </div>
       </div>
+</div></details>
       <div class="note" style="margin-top:22px"><strong>What a comparable actually produced.</strong> Cortex in St. Louis reports 5,400 people employed and 406 companies on a 200-acre former brownfield, roughly two decades after five anchor institutions pooled about $29 million. That is the honest shape of the opportunity: real, large, and slow. Any figure we published today would be a scaled guess against that, which is why the study has to produce it instead.</div>
     </div>
 
@@ -963,14 +978,14 @@
       <h4>Who could hold the money</h4>
       <p><strong>Now City cannot be the applicant for most of this, and that shapes everything.</strong> Federal and state programs will not pay a private developer to study its own site. The eligible applicant is a city, a county, an economic development district, a university, a tribe, or a nonprofit acting with a local government. So the first task is sponsor recruitment, not grant writing.</p>
       <p style="margin-top:12px"><strong>The good news is that the host does not have to be a charity.</strong> EDA's rules make eligible any public or private nonprofit acting in cooperation with a political subdivision, with no 501(c)(3) requirement, which puts regional economic development organizations squarely in scope. SEDCOR, the Mid-Willamette Valley's economic development organization, is the obvious candidate to talk to first, and it has done both halves of this before: it held an EDA Build to Scale award for the Northwest Ag Innovation Hub, and it convened the Newberg workforce housing consortium that secured a $3M state allocation in 2022 and has administered it as a fund ever since. That is a model to learn from rather than reinvent, and whether SEDCOR wants the role is their decision to make, not ours to assume.</p>
-      <p style="margin-top:12px"><strong>Two eligibility limits worth naming early.</strong> EPA Brownfields assessment grants were opened to nonprofits by the 2018 BUILD Act, but only to 501(c)(3)s, so that application needs a charity or a public body as applicant rather than a trade association. And Oregon's transportation and growth management grants exclude nonprofits entirely; only cities, counties, tribes, councils of government and special districts may apply.</p>
-      <p style="margin-top:12px"><strong>And a practical one that shapes the ask.</strong> Federal awards reimburse after money is spent, so any host carries the cost until it is repaid. For a lean organization that is real exposure, which is why an advance structure or a state appropriation is usually the workable route, and why the ask should be sized to what a host can comfortably carry rather than to what we would like to spend.</p>
-      <p style="margin-top:12px"><strong>Two rules we would hold to whoever hosts it.</strong> Describe consultant roles rather than naming firms before an award, because federal procurement standards govern how a public grantee selects its team. And check pre-award cost rules before engaging anyone, because most programs will not reimburse work that started before the award landed.</p>
+      <p style="margin-top:12px"><strong>Three limits worth naming early.</strong> EPA Brownfields assessment grants were opened to nonprofits by the 2018 BUILD Act, but only to 501(c)(3)s. Oregon's transportation and growth management grants exclude nonprofits entirely. And federal awards reimburse after money is spent, so any host carries the cost until repayment, which is why an advance structure or a state appropriation is usually the workable route, and why the ask should be sized to what a host can comfortably carry.</p>
+      <p style="margin-top:12px"><strong>Two rules we would hold to whoever hosts it.</strong> Describe consultant roles rather than naming firms before an award, because federal procurement standards govern how a public grantee selects its team. And check pre-award cost rules before engaging anyone.</p>
     </div>
 
     <div class="rv" style="margin-top:34px">
       <h3 style="font-family:var(--serif);font-size:22px;color:var(--ink-deep);margin-bottom:6px">The doors that are actually open</h3>
       <p style="font-size:14.5px;line-height:1.7;color:#4a463f;max-width:880px;margin-bottom:6px">Verified against program sources in August and September 2026. Dates move, so each is worth confirming before it is relied on.</p>
+<details class="more rv"><summary>All seven funding doors, with timing and who applies</summary><div class="inner">
       <div class="doors">
         <div class="dw">West Salem URA<span>Now &middot; City applies</span></div>
         <div class="dd">The city's own urban renewal opportunity fund runs to roughly $50,000 to $100,000 a year and sits on the exact corridor. Smallest paperwork, fastest answer, and the relationship matters more than the money.</div>
@@ -987,6 +1002,7 @@
         <div class="dw">Philanthropy<span>Needs a charity applicant</span></div>
         <div class="dd">Oregon's statewide and family foundations fund predevelopment and planning readily, but the recipient has to be a 501(c)(3). Until an established one is involved, a fiscal sponsor is the interim route.</div>
       </div>
+</div></details>
       <div class="note" style="margin-top:24px"><strong>And an honest limit.</strong> Grant timelines can outrun a project. If nothing is executable within a reasonable window we would fund the market study ourselves and proceed, because a study that arrives two years late has answered a question nobody is asking any more.</div>
       <div class="note" style="margin-top:14px">Sources: EDA eligibility at 13 CFR 300.3; EPA Brownfields eligibility under CERCLA section 104(k) as amended by the 2018 BUILD Act; Oregon DLCD and ODOT for TGM applicant rules; USASpending.gov for federal award history; the market study fee is from a proposal dated 11 August 2026.</div>
     </div>
