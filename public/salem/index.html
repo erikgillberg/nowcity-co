@@ -46,12 +46,8 @@
           <li class="core"><a href="innovation-district.html">Innovation District</a></li>
           <li class="core"><a href="placemaking.html">Placemaking</a></li>
           <li class="dd-head">The Ambition</li>
-          <li><a href="salem-question.html">The Salem Question</a></li>
           <li><a href="copenhagen-salem.html">The Copenhagen Comparison</a></li>
           <li class="dd-head">Execution</li>
-          <li><a href="activation.html">Activation Plan</a></li>
-          <li><a href="coalition-strategy.html">Coalition Strategy</a></li>
-          <li><a href="partners.html">Partners &amp; Mentors</a></li>
           <li class="dd-head">Research &amp; Precedents</li>
           <li><a href="research.html">District Economic Development</a></li>
           <li><a href="district-value.html">District Value Creation</a></li>
@@ -172,10 +168,10 @@
       <p class="lead">This is a working record rather than a brochure. It changes as the thinking does.</p>
     </div>
     <div class="grid g3 gf3 rv">
-      <div class="card"><h4>The argument</h4><p style="font-size:14px"><a href="district.html">District Vision</a> &middot; <a href="innovation-district.html">Innovation District</a> &middot; <a href="placemaking.html">Placemaking</a> &middot; <a href="salem-question.html">The Salem Question</a> &middot; <a href="copenhagen-salem.html">The Copenhagen Comparison</a></p></div>
+      <div class="card"><h4>The argument</h4><p style="font-size:14px"><a href="district.html">District Vision</a> &middot; <a href="innovation-district.html">Innovation District</a> &middot; <a href="placemaking.html">Placemaking</a> &middot; The Salem Question &middot; <a href="copenhagen-salem.html">The Copenhagen Comparison</a></p></div>
       <div class="card"><h4>The evidence</h4><p style="font-size:14px"><a href="research.html">District Economic Development</a> &middot; <a href="district-value.html">District Value Creation</a> &middot; <a href="global-districts.html">Global District Developments</a> &middot; <a href="uli-tap.html">ULI Salem TAP</a> &middot; <a href="pab.html">Single-Stair Housing</a></p></div>
       <div class="card"><h4>Getting there</h4><p style="font-size:14px"><a href="mobility-research.html">District Mobility</a> &middot; <a href="mobility-concepts.html">Salem Mobility Concepts</a> &middot; <a href="corridor.html">The Rail Corridor</a> &middot; <a href="whoosh.html">Whoosh</a></p></div>
-      <div class="card"><h4>Doing it</h4><p style="font-size:14px"><a href="activation.html">Activation Plan</a> &middot; <a href="coalition-strategy.html">Coalition Strategy</a> &middot; <a href="partners.html">Partners &amp; Mentors</a> &middot; <a href="team.html">Team</a></p></div>
+      <div class="card"><h4>Doing it</h4><p style="font-size:14px">Activation Plan &middot; Coalition Strategy &middot; Partners &amp; Mentors &middot; <a href="team.html">Team</a></p></div>
       <div class="card"><h4>Concepts in development</h4><p style="font-size:14px"><a href="wellness-institute.html">Women &amp; Family Health Institute</a> &middot; <a href="edgewater-2036.html">Edgewater 2036</a>, a written scenario of one family's ordinary Tuesday here ten years from now.</p></div>
       <div class="card on-alt" style="background:rgba(168,112,63,.07);border-color:rgba(168,112,63,.4)"><h4>A note on what is here</h4><p style="font-size:14px">Every image on this site is a concept render rather than a photograph of a finished place, unless it is labeled as a photograph. Nothing is offered for sale or lease.</p></div>
     </div>
@@ -201,5 +197,11 @@
   </div>
 </footer>
 <a href="#top" class="toplink" id="toplink" aria-label="Back to top">&uarr;</a>
+<script>
+const nav=document.getElementById('nav');const sub=document.getElementById('subnav');const tl=document.getElementById('toplink');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.5);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
