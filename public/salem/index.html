@@ -146,6 +146,17 @@ figure{margin:0}
   .sec-head{break-inside:avoid}
   .foot{break-inside:avoid}
 }
+
+
+/* carried over with the ported district sections */
+.gallery figure{position:relative;border-radius:8px;overflow:hidden;margin:0 0 30px}
+.gallery img{width:100%;display:block}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 24px;font-size:13.5px;color:#f3ecdd;background:linear-gradient(180deg,transparent,rgba(15,13,10,.75));letter-spacing:.04em}
+.vibe-card{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.vibe-card .txt{padding:34px 32px}
+.vibe-card .img{min-height:280px;background-size:cover;background-position:center}
+.vibe-card.flip .txt{order:2}
+@media(max-width:820px){.vibe-card{grid-template-columns:1fr}.vibe-card .img{min-height:220px;order:0!important}}
 </style>
 <style>
 #nav .wrap{max-width:1240px;padding:0 34px}
