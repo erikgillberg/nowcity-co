@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=7">
+<link rel="stylesheet" href="assets/site.css?v=8">
 <script defer src="assets/nav.js?v=2"></script>
 <style>
 .carousel{margin-top:34px}
@@ -41,7 +41,7 @@
 .numlist{margin-top:30px}
 .nrow{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:15px 0;border-top:1px solid rgba(0,0,0,.08);align-items:start}
 .nrow .n{font-family:var(--serif);font-size:17px;color:var(--terra-ink)}
-.nrow .t{font-family:var(--serif);font-size:16.5px;color:var(--ink-deep);margin-bottom:3px}
+.nrow .t{font-family:var(--serif);font-size:16.5px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ink-deep);margin:0 0 3px}
 .nrow p{font-size:14px;margin:0}
 .ask{background:var(--green);color:#fff;border-radius:12px;padding:38px 40px;margin-top:34px}
 .ask h3{color:#fff;font-size:23px}
@@ -67,7 +67,7 @@
 .pgcard{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
 .pgcard img{width:100%;display:block}
 .pgcard .txt{padding:24px 26px 26px}
-.pgcard h4{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-ink);margin-bottom:11px}
+.pgcard h3{font-family:var(--serif);font-size:19px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ink-deep);margin-bottom:11px}
 .pgcard p{font-size:14.5px;line-height:1.65;color:#4a463f}
 .pgcard .take{margin-top:13px;font-size:13.5px}
 .take{margin-top:12px;font-size:13px;line-height:1.6;color:var(--mute)}
@@ -132,12 +132,12 @@
       <p class="lead">Designed to make Salem a place where talented people come to build things and stay to build a life. The reasoning runs in six steps, and every one of them is worth arguing with.</p>
     </div>
     <div class="numlist rv">
-      <div class="nrow"><div class="n">01</div><div><div class="t">Why Oregon?</div><p>Oregon already has the ingredients: a semiconductor cluster, a robotics research base, one of the most productive farm valleys in the country, a mass timber sector and a health system, all within about a hundred miles of each other.</p></div></div>
-      <div class="nrow"><div class="n">02</div><div><div class="t">Why physical AI?</div><p>Several of Oregon's strongest industries increasingly draw on the same engineering, and a robotics manufacturer has already built its factory in Salem.</p></div></div>
-      <div class="nrow"><div class="n">03</div><div><div class="t">Why a district?</div><p>Those companies need physical places to prototype, manufacture, collaborate and grow, close enough together to share what none of them would buy alone.</p></div></div>
-      <div class="nrow"><div class="n">04</div><div><div class="t">Why housing and urbanism?</div><p>Companies compete for people, and people choose places. A district that is good to live in is part of how the jobs get filled.</p></div></div>
-      <div class="nrow"><div class="n">05</div><div><div class="t">Why Salem?</div><p>Affordability, the state capital and its institutions, an existing industrial base, a riverfront, a position in the middle of the corridor, and room to grow.</p></div></div>
-      <div class="nrow"><div class="n">06</div><div><div class="t">Why now?</div><p>The companies are arriving before the place around them has been built on purpose. Deciding what goes on this ground is easier before the ground is spoken for.</p></div></div>
+      <div class="nrow"><div class="n">01</div><div><h3 class="t">Why Oregon?</h3><p>Oregon already has the ingredients: a semiconductor cluster, a robotics research base, one of the most productive farm valleys in the country, a mass timber sector and a health system, all within about a hundred miles of each other.</p></div></div>
+      <div class="nrow"><div class="n">02</div><div><h3 class="t">Why physical AI?</h3><p>Several of Oregon's strongest industries increasingly draw on the same engineering, and a robotics manufacturer has already built its factory in Salem.</p></div></div>
+      <div class="nrow"><div class="n">03</div><div><h3 class="t">Why an Innovation District?</h3><p>Those companies need physical places to prototype, manufacture, collaborate and grow, close enough together to share what none of them would buy alone.</p></div></div>
+      <div class="nrow"><div class="n">04</div><div><h3 class="t">Why housing and urbanism?</h3><p>Companies compete for people, and people choose places. A district that is good to live in is part of how the jobs get filled.</p></div></div>
+      <div class="nrow"><div class="n">05</div><div><h3 class="t">Why Salem?</h3><p>Affordability, the state capital and its institutions, an existing industrial base, a riverfront, a position in the middle of the corridor, and room to grow.</p></div></div>
+      <div class="nrow"><div class="n">06</div><div><h3 class="t">Why now?</h3><p>The companies are arriving before the place around them has been built on purpose. Deciding what goes on this ground is easier before the ground is spoken for.</p></div></div>
     </div>
     <div class="note rv" style="margin-top:26px"><strong>What happens next.</strong> Treat all of the above as a hypothesis and test it. <a href="study-plan.html" style="color:var(--terra-ink)">The study plan</a> sets out the six questions that would settle it, the order they would run in, and who is best placed to run each one.</div>
     </div>
@@ -167,9 +167,9 @@
       <p class="lead">There are three parts to it, and they are meant to be read in whatever order suits you.</p>
     </div>
     <div class="grid g3 gf3 rv">
-      <div class="card"><h4>The case</h4><p>This page. The question we think Salem is facing, the three questions underneath it, and why a private company is publishing any of this.</p></div>
-      <div class="card"><h4>The vision</h4><p>What a district on the river could be, drawn at district scale. <a href="river-district.html" style="color:var(--terra-ink)">The river district</a> and <a href="innovation-district.html" style="color:var(--terra-ink)">the innovation district</a>, plus the research behind both.</p></div>
-      <div class="card"><h4>The plan</h4><p>The studies that would test whether any of it holds up, who is best placed to run each one, and what we are asking for. <a href="study-plan.html" style="color:var(--terra-ink)">The study plan</a>.</p></div>
+      <div class="card"><h3>The case</h3><p>This page. The question we think Salem is facing, the three questions underneath it, and why a private company is publishing any of this.</p></div>
+      <div class="card"><h3>The vision</h3><p>What a district on the river could be, drawn at district scale. <a href="river-district.html" style="color:var(--terra-ink)">The river district</a> and <a href="innovation-district.html" style="color:var(--terra-ink)">the innovation district</a>, plus the research behind both.</p></div>
+      <div class="card"><h3>The plan</h3><p>The studies that would test whether any of it holds up, who is best placed to run each one, and what we are asking for. <a href="study-plan.html" style="color:var(--terra-ink)">The study plan</a>.</p></div>
     </div>
     <p class="note rv">Nothing here is a request for investment, and nothing is offered for sale or lease. It is a proposal that a set of questions be studied properly and published, and an argument for why they are worth the money.</p>
     </div>
@@ -183,9 +183,9 @@
       <p class="lead">Salem has about 183,000 residents and has been adding people steadily for decades. It will keep growing whether or not anyone plans for it. Growth by itself does nothing for livability, and in most American cities it works against it: more cars, longer trips, more farmland consumed, more runoff into the river. That outcome follows from where the homes go rather than from how many people arrive.</p>
     </div>
     <div class="grid g3 gf3">
-      <div class="card"><h4>Traffic</h4><p>Households in walkable, mixed-use areas make fewer and shorter vehicle trips than households at the edge of a city. Homes placed near work, schools, shops and transit reduce total driving even as the population rises.</p></div>
-      <div class="card"><h4>Daily life</h4><p>Living close to things gives people time back. A shorter commute, a school within walking distance and a market on the way home change how a day is spent more than any single amenity does.</p></div>
-      <div class="card"><h4>Local ecology</h4><p>Reusing buildings that already stand consumes no new land, and compact development leaves farmland and habitat intact. At district scale, stormwater can be cleaned before it reaches the river, the bank can be replanted, and canopy and habitat added rather than removed.</p></div>
+      <div class="card"><h3>Traffic</h3><p>Households in walkable, mixed-use areas make fewer and shorter vehicle trips than households at the edge of a city. Homes placed near work, schools, shops and transit reduce total driving even as the population rises.</p></div>
+      <div class="card"><h3>Daily life</h3><p>Living close to things gives people time back. A shorter commute, a school within walking distance and a market on the way home change how a day is spent more than any single amenity does.</p></div>
+      <div class="card"><h3>Local ecology</h3><p>Reusing buildings that already stand consumes no new land, and compact development leaves farmland and habitat intact. At district scale, stormwater can be cleaned before it reaches the river, the bank can be replanted, and canopy and habitat added rather than removed.</p></div>
     </div>
     <p class="note">Say Salem added thirty thousand residents over the next twenty years. That is close to its existing trend line, so the number is not the difficult part. Whether those homes go at the edge or in the middle decides whether the city that results is better to live in than the one we have now. That is what a district like this is meant to test, and <a href="study-plan.html" style="color:var(--terra-ink)">the study plan</a> sets out how it would be measured.</p>
   <figure class="plate rv"><picture><source srcset="assets/river/daily-street.webp" type="image/webp"><img src="assets/river/daily-street.jpg" alt="A planted street between reused buildings with people walking, cycling and shops at ground level" loading="lazy"></picture><figcaption>Homes and work close enough together that a day takes fewer car trips. Concept render.</figcaption></figure>
@@ -201,19 +201,19 @@
     </div>
     <div class="grid g3 gf3 rv">
       <div class="card">
-        <h4>Work</h4>
+        <h3>Work</h3>
         <p style="font-size:14.5px"><strong>How might Salem and Oregon support small business and build on the physical AI work already here?</strong></p>
         <p style="font-size:14.5px;margin-top:10px">The valley already holds the pieces: a semiconductor cluster to the north, a robotics research group at Oregon State, one of the most diverse farm valleys in the country, a health system, a mass-timber sector, and a humanoid robot factory in Salem. What it lacks is a place where they meet and a path for the small companies that grow up around them.</p>
         <p class="take">Natural sponsors: Business Oregon, the regional economic development organization, the universities and colleges, employers. <a href="innovation-district.html" style="color:var(--terra-ink)">The long version</a>.</p>
       </div>
       <div class="card">
-        <h4>Mobility</h4>
+        <h3>Mobility</h3>
         <p style="font-size:14.5px"><strong>How might the friction along the Portland, Salem, Corvallis and Eugene corridor be reduced?</strong></p>
         <p style="font-size:14.5px;margin-top:10px">Four cities inside about 110 miles that behave as four separate labor markets. Someone living in Corvallis and a job in Hillsboro are two hours apart in practice. That gap is a real cost to employers and households, and we could not find a published estimate of its size.</p>
         <p class="take">Natural sponsors: ODOT, the councils of government, the corridor cities. <a href="corridor.html" style="color:var(--terra-ink)">The rail corridor</a> and <a href="mobility-research.html" style="color:var(--terra-ink)">district mobility</a>.</p>
       </div>
       <div class="card">
-        <h4>Homes</h4>
+        <h3>Homes</h3>
         <p style="font-size:14.5px"><strong>How might Salem and the region meet the housing shortage?</strong></p>
         <p style="font-size:14.5px;margin-top:10px">Salem adopted its first Housing Production Strategy in 2025 with seventeen actions, so the strategy exists. Delivery capacity is the open question, and so is which housing types local incomes actually support.</p>
         <p class="take">Natural sponsors: Oregon Housing and Community Services, DLCD, the City, philanthropy. <a href="homes-question.html" style="color:var(--terra-ink)">The long version</a>.</p>
@@ -235,7 +235,7 @@
       <figure class="pgcard">
         <a href="river-district.html"><picture><source srcset="assets/river/district-overview.webp" type="image/webp"><img src="assets/river/district-overview.jpg" alt="Aerial view of a district of reused industrial buildings with planted roofs, new blocks and a green street grid" loading="lazy"></picture></a>
         <div class="txt">
-          <h4>The River District</h4>
+          <h3>The River District</h3>
           <p>Both banks, at district scale. What Salem already has, what is missing today, what the framework would include, and what an ordinary day in it could feel like.</p>
           <p class="take"><a href="river-district.html" style="color:var(--terra-ink)">See the district</a></p>
         </div>
@@ -243,7 +243,7 @@
       <figure class="pgcard">
         <a href="innovation-district.html"><picture><source srcset="assets/river/factory.webp" type="image/webp"><img src="assets/river/factory.jpg" alt="A reused warehouse where school-age children watch timber components being machined on a working factory floor" loading="lazy"></picture></a>
         <div class="txt">
-          <h4>The Innovation District</h4>
+          <h3>The Innovation District</h3>
           <p>The working side of the same ground: what would be made here, who would make it, and why breaking the silos between farming, timber, health and manufacturing is the part worth testing.</p>
           <p class="take"><a href="innovation-district.html" style="color:var(--terra-ink)">See the work</a></p>
         </div>
@@ -262,9 +262,9 @@
       <p class="lead">A drawing of a district costs very little and proves nothing. What decides whether anything gets built are the studies behind it: what the market supports, what the ground can carry, what the public sector would do, and what housing costs allow. As far as we can tell, most of those are still open for this part of Salem.</p>
     </div>
     <div class="numlist rv">
-      <div class="nrow"><div class="n">01</div><div><div class="t">Commission the questions independently</div><p>Scoped in public, carried out by people with no stake in the answer, and published in full whichever way they come out. A study that shows the first phase should be smaller is a useful study.</p></div></div>
-      <div class="nrow"><div class="n">02</div><div><div class="t">Split them between sponsors</div><p>Work, mobility and homes have different natural holders, and the questions divide cleanly. That is usually easier than finding one body willing to carry all of them.</p></div></div>
-      <div class="nrow"><div class="n">03</div><div><div class="t">Publish the answers as a regional asset</div><p>Whatever the studies conclude about us, the findings stay available to every developer, employer and public body that comes afterward.</p></div></div>
+      <div class="nrow"><div class="n">01</div><div><h3 class="t">Commission the questions independently</h3><p>Scoped in public, carried out by people with no stake in the answer, and published in full whichever way they come out. A study that shows the first phase should be smaller is a useful study.</p></div></div>
+      <div class="nrow"><div class="n">02</div><div><h3 class="t">Split them between sponsors</h3><p>Work, mobility and homes have different natural holders, and the questions divide cleanly. That is usually easier than finding one body willing to carry all of them.</p></div></div>
+      <div class="nrow"><div class="n">03</div><div><h3 class="t">Publish the answers as a regional asset</h3><p>Whatever the studies conclude about us, the findings stay available to every developer, employer and public body that comes afterward.</p></div></div>
     </div>
     <div class="ask rv">
       <h3>The first step is a meeting.</h3>

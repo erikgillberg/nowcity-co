@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=7">
+<link rel="stylesheet" href="assets/site.css?v=8">
 <script defer src="assets/nav.js?v=2"></script>
 <style>
 .carousel{margin-top:34px}
@@ -41,7 +41,7 @@
 .numlist{margin-top:30px}
 .nrow{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:15px 0;border-top:1px solid rgba(0,0,0,.08);align-items:start}
 .nrow .n{font-family:var(--serif);font-size:17px;color:var(--terra-ink)}
-.nrow .t{font-family:var(--serif);font-size:16.5px;color:var(--ink-deep);margin-bottom:3px}
+.nrow .t{font-family:var(--serif);font-size:16.5px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ink-deep);margin:0 0 3px}
 .nrow p{font-size:14px;margin:0}
 .ask{background:var(--green);color:#fff;border-radius:12px;padding:38px 40px;margin-top:34px}
 .ask h3{color:#fff;font-size:23px}
@@ -145,27 +145,27 @@
     </div>
     <div class="grid g3 gf3 rv">
       <div class="card">
-        <h4>01 &middot; What the market supports</h4>
+        <h3>01 &middot; What the market supports</h3>
         <p style="font-size:14.5px">Two separate questions. What rents and sale prices do existing Salem buildings support today, which is what a first phase can be financed against. And what would have to change for the site to support more. Keeping the two separate is what keeps the first phase realistic.</p>
       </div>
       <div class="card">
-        <h4>02 &middot; Whether the ground can carry it</h4>
+        <h3>02 &middot; Whether the ground can carry it</h3>
         <p style="font-size:14.5px">Title, environmental, civil, geotechnical, utilities, flood and stormwater, transportation and easements across the study area. Every finding sorted into one of three groups: no material issue, solvable at a known cost, or a possible fatal flaw. Lenders accept risks that are identified and priced. An unexamined site stops a deal.</p>
       </div>
       <div class="card">
-        <h4>03 &middot; What should be built</h4>
+        <h3>03 &middot; What should be built</h3>
         <p style="font-size:14.5px">A district framework of streets, blocks, parks, infrastructure and development parcels. Then a first phase defined precisely enough to cost: acreage, homes, floor area, parking, construction method, rents and capital requirement. Most of the land would stay as it is for a long time.</p>
       </div>
       <div class="card">
-        <h4>04 &middot; What the public sector would do</h4>
+        <h3>04 &middot; What the public sector would do</h3>
         <p style="font-size:14.5px">Which specific tools apply: urban renewal and tax increment financing, infrastructure participation, system development charges, the permitting pathway, housing incentives and workforce programs. Along with a written record of which party is responsible for each infrastructure item.</p>
       </div>
       <div class="card">
-        <h4>05 &middot; What private investors would need to see</h4>
+        <h3>05 &middot; What private investors would need to see</h3>
         <p style="font-size:14.5px">At the end an investor should be able to read the market findings, the priced site risks, the public commitments, the land strategy, the entitlement budget, the first phase economics, and the milestones their money would pay for.</p>
       </div>
       <div class="card">
-        <h4>06 &middot; How many jobs, and how the number was reached</h4>
+        <h3>06 &middot; How many jobs, and how the number was reached</h3>
         <p style="font-size:14.5px">The first question anyone asks. A jobs figure produced before the studies is a figure produced by whoever wants it to be large, so the method belongs next to the number: floor area by use, employment density for that use, published regional multipliers, construction jobs counted separately in person-years, and net jobs rather than gross.</p>
       </div>
     </div>
@@ -181,9 +181,9 @@
       <p class="lead">A single predicted number hides what a sponsor needs to see: what separates a modest result from an ambitious one, and who controls each step in between.</p>
     </div>
     <div class="numlist rv">
-      <div class="nrow"><div class="n">01</div><div><div class="t">Floor case</div><p>What existing Salem buildings support today, with no district effect assumed. This is the case a first phase would be financed against, and it is deliberately conservative.</p></div></div>
-      <div class="nrow"><div class="n">02</div><div><div class="t">Base case</div><p>The floor plus the premium that comparable districts elsewhere have actually achieved, measured against those places rather than against Salem's current buildings.</p></div></div>
-      <div class="nrow"><div class="n">03</div><div><div class="t">Conditional cases</div><p>Two or three futures, each with a stated trigger condition and a date. An employer arriving. A transportation decision. A housing program reaching scale. Each case names who controls the condition and when it would have to happen.</p></div></div>
+      <div class="nrow"><div class="n">01</div><div><h3 class="t">Floor case</h3><p>What existing Salem buildings support today, with no district effect assumed. This is the case a first phase would be financed against, and it is deliberately conservative.</p></div></div>
+      <div class="nrow"><div class="n">02</div><div><h3 class="t">Base case</h3><p>The floor plus the premium that comparable districts elsewhere have actually achieved, measured against those places rather than against Salem's current buildings.</p></div></div>
+      <div class="nrow"><div class="n">03</div><div><h3 class="t">Conditional cases</h3><p>Two or three futures, each with a stated trigger condition and a date. An employer arriving. A transportation decision. A housing program reaching scale. Each case names who controls the condition and when it would have to happen.</p></div></div>
     </div>
     <div class="note rv" style="margin-top:24px"><strong>Four methods would produce this, and each one is standard practice.</strong>
       <ul style="margin:12px 0 0 18px;font-size:14px;line-height:1.7">
@@ -232,9 +232,9 @@
       <p class="lead">The claim behind this proposal is that Salem could add people while daily life and the local environment improve. These three measurements would test it.</p>
     </div>
     <div class="grid g3 gf3 rv">
-      <div class="card"><h4>Vehicle trips per household</h4><p style="font-size:14.5px">Measured against the Salem average. If households in a compact riverfront district drive as much as households at the edge of the city, the premise fails and the studies would say so.</p></div>
-      <div class="card"><h4>Land used per home</h4><p style="font-size:14.5px">Acres per dwelling, compared with the same number of homes built at the edge of the city. This is what decides how much farmland and habitat get consumed, and how much new infrastructure the city has to build and then maintain.</p></div>
-      <div class="card"><h4>Carbon in reuse against replacement</h4><p style="font-size:14.5px">The difference between reusing a building that already stands and replacing it, counted properly, including the energy performance a reused building gives up.</p></div>
+      <div class="card"><h3>Vehicle trips per household</h3><p style="font-size:14.5px">Measured against the Salem average. If households in a compact riverfront district drive as much as households at the edge of the city, the premise fails and the studies would say so.</p></div>
+      <div class="card"><h3>Land used per home</h3><p style="font-size:14.5px">Acres per dwelling, compared with the same number of homes built at the edge of the city. This is what decides how much farmland and habitat get consumed, and how much new infrastructure the city has to build and then maintain.</p></div>
+      <div class="card"><h3>Carbon in reuse against replacement</h3><p style="font-size:14.5px">The difference between reusing a building that already stands and replacing it, counted properly, including the energy performance a reused building gives up.</p></div>
     </div>
     <p class="note rv">If the measurements support the claim, Salem has the basis for a district and a large amount of housing. If they contradict it, the city learns why at low cost, and so does every other mid-size city working on the same problem. Both results are worth the price of the studies.</p>
   <figure class="plate rv"><picture><source srcset="assets/river/stormwater.webp" type="image/webp"><img src="assets/river/stormwater.jpg" alt="A courtyard planted as a stormwater garden between apartment blocks, with families walking through" loading="lazy"></picture><figcaption>Stormwater cleaned on the block before it reaches the river. Concept render.</figcaption></figure>
@@ -249,8 +249,8 @@
       <p class="lead">Salem's adopted comprehensive plan already contains most of what we are describing, so the proposal works inside it. Two limits follow from that.</p>
     </div>
     <div class="grid g2 gf2 rv">
-      <div class="card"><h4>High-value industrial land stays industrial</h4><p>Salem's comprehensive plan directs the city to preserve large, flat, serviced industrial sites with highway access. The employment land east of the city is exactly that, and it should keep doing the job it was set aside for. This proposal asks for none of it.</p></div>
-      <div class="card"><h4>The industrial land surplus is stated plainly</h4><p>Salem's 2015 economic opportunities analysis found a commercial deficit alongside an industrial surplus. The studies would start from that finding. It is one of the reasons the case here rests on housing, mixed use and the riverfront.</p></div>
+      <div class="card"><h3>High-value industrial land stays industrial</h3><p>Salem's comprehensive plan directs the city to preserve large, flat, serviced industrial sites with highway access. The employment land east of the city is exactly that, and it should keep doing the job it was set aside for. This proposal asks for none of it.</p></div>
+      <div class="card"><h3>The industrial land surplus is stated plainly</h3><p>Salem's 2015 economic opportunities analysis found a commercial deficit alongside an industrial surplus. The studies would start from that finding. It is one of the reasons the case here rests on housing, mixed use and the riverfront.</p></div>
     </div>
     <p class="note rv">There is an open question inside the second limit. That analysis was adopted in 2015 for a twenty year period and is now eleven years old, and industrial land has been used since. Whether the surplus is still the size the document reports is worth checking, and a study could settle it in a few weeks.</p>
   <figure class="plate rv"><picture><source srcset="assets/river/district-evening.webp" type="image/webp"><img src="assets/river/district-evening.jpg" alt="An evening view across a district of reused industrial buildings and new blocks beside the river" loading="lazy"></picture><figcaption>Housing and mixed use on ground that is already inside the city. Concept render.</figcaption></figure>
@@ -265,10 +265,10 @@
       <p class="lead">The questions depend on one another, so the order matters. Running them out of order is how study money gets spent twice.</p>
     </div>
     <div class="numlist rv">
-      <div class="nrow"><div class="n">01</div><div><div class="t">Market study and site diligence, together</div><p>These two are independent of each other and everything else depends on both. The market study sets what can be financed. The site work says whether there is anything to finance it on. Running them at the same time saves several months.</p></div></div>
-      <div class="nrow"><div class="n">02</div><div><div class="t">The public conversation, starting at the same time</div><p>What the city, the region and the state would do takes the longest to settle, because it is a series of meetings rather than a report. Starting it alongside the technical work means the answers arrive together.</p></div></div>
-      <div class="nrow"><div class="n">03</div><div><div class="t">The district framework and the first phase</div><p>Once the market study and the site work are finished, the framework and a costed first phase can be drawn against real constraints.</p></div></div>
-      <div class="nrow"><div class="n">04</div><div><div class="t">Economic and fiscal impact, last</div><p>The jobs and tax revenue figures depend on what the framework says would be built, so producing them earlier produces a number with no method behind it. This is also where the questions about travel across the valley and housing capacity get folded back in.</p></div></div>
+      <div class="nrow"><div class="n">01</div><div><h3 class="t">Market study and site diligence, together</h3><p>These two are independent of each other and everything else depends on both. The market study sets what can be financed. The site work says whether there is anything to finance it on. Running them at the same time saves several months.</p></div></div>
+      <div class="nrow"><div class="n">02</div><div><h3 class="t">The public conversation, starting at the same time</h3><p>What the city, the region and the state would do takes the longest to settle, because it is a series of meetings rather than a report. Starting it alongside the technical work means the answers arrive together.</p></div></div>
+      <div class="nrow"><div class="n">03</div><div><h3 class="t">The district framework and the first phase</h3><p>Once the market study and the site work are finished, the framework and a costed first phase can be drawn against real constraints.</p></div></div>
+      <div class="nrow"><div class="n">04</div><div><h3 class="t">Economic and fiscal impact, last</h3><p>The jobs and tax revenue figures depend on what the framework says would be built, so producing them earlier produces a number with no method behind it. This is also where the questions about travel across the valley and housing capacity get folded back in.</p></div></div>
     </div>
     <div class="note rv" style="margin-top:22px"><strong>One practical point for any sponsor.</strong> Most public funding programs will pay only for costs incurred after an award is made. Work that starts early, however sensible, usually cannot count toward a grant or its match. Check that rule before signing any engagement.</div>
   <figure class="plate rv"><picture><source srcset="assets/river/buildyard.webp" type="image/webp"><img src="assets/river/buildyard.jpg" alt="An open build yard between reused buildings where people work on timber components at benches" loading="lazy"></picture><figcaption>Work in sequence, on ground that is already inside the city. Concept render.</figcaption></figure>
