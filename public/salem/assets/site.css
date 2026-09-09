@@ -285,3 +285,11 @@ table{max-width:100%}
 @media(max-width:420px){
   .statband,.bignum{grid-template-columns:1fr}
 }
+
+
+/* Failsafe: if the IntersectionObserver never fires for an element (clipped,
+   below a lazy container, script error), reveal it anyway rather than leaving
+   content permanently invisible. */
+@keyframes rvFailsafe{to{opacity:1;transform:none}}
+.rv{animation:rvFailsafe .35s linear 2.2s forwards}
+.rv.in{animation:none}
