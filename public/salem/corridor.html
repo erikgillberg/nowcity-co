@@ -17,9 +17,9 @@
 .vs .col{padding:30px 28px}
 .vs .col.old{background:var(--cream-2);border:1px solid var(--line);border-radius:8px 0 0 8px}
 .vs .col.new{background:var(--ink-deep);color:#e9e5da;border-radius:0 8px 8px 0}
-.vs .mid{display:flex;align-items:center;justify-content:center;padding:0 18px;font-family:var(--serif);font-size:13px;color:#8a857a;letter-spacing:.14em}
+.vs .mid{display:flex;align-items:center;justify-content:center;padding:0 18px;font-family:var(--serif);font-size:13px;color:var(--mute);letter-spacing:.14em}
 .vs h4{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px}
-.vs .old h4{color:#8a857a}.vs .new h4{color:#d9a26c}
+.vs .old h4{color:var(--mute)}.vs .new h4{color:#d9a26c}
 .vs ul{list-style:none}
 .vs li{font-size:14.5px;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.07);line-height:1.5}
 .vs .new li{border-color:rgba(255,255,255,.09);color:#c9c4b8}
@@ -29,14 +29,14 @@
 .spine svg{min-width:660px;width:100%;height:auto}
 .gen{border:1px solid var(--line);border-radius:9px;background:var(--cream-2);padding:26px 24px;display:flex;flex-direction:column}
 .dark .gen{background:#2b2823;border-color:#3d392f}
-.gen .g{font-family:var(--serif);font-size:13px;color:var(--terra);margin-bottom:6px}
+.gen .g{font-family:var(--serif);font-size:13px;color:var(--terra-ink);margin-bottom:6px}
 .dark .gen .g{color:#d9a26c}
 .gen h3{font-size:20px;margin-bottom:10px;color:var(--ink-deep)}
 .dark .gen h3{color:var(--cream)}
 .gen p{font-size:14.5px;line-height:1.6}
 .tag{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:4px 11px;margin-top:14px;align-self:flex-start}
 .tag.run{background:rgba(72,89,63,.13);color:var(--green)}
-.tag.pilot{background:rgba(168,112,63,.14);color:var(--terra)}
+.tag.pilot{background:rgba(168,112,63,.14);color:var(--terra-ink)}
 .tag.res{background:rgba(110,106,97,.14);color:#6e6a61}
 .dark .tag.run{background:rgba(140,170,120,.16);color:#a9c497}
 .dark .tag.pilot{background:rgba(217,162,108,.16);color:#d9a26c}
@@ -51,8 +51,8 @@
 @media(max-width:900px){.maps{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
 .mapcard{background:var(--cream-2);border:1px solid var(--line);border-radius:9px;padding:22px 20px 18px;display:flex;flex-direction:column}
 .dark .mapcard{background:#2b2823;border-color:#3d392f}
-.mapcard .yr{font-family:var(--serif);font-size:24px;color:var(--terra);line-height:1}
-.mapcard .cap{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a857a;margin:6px 0 14px}
+.mapcard .yr{font-family:var(--serif);font-size:24px;color:var(--terra-ink);line-height:1}
+.mapcard .cap{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:6px 0 14px}
 .mapcard svg{width:100%;height:auto;max-height:330px}
 .mapcard p{font-size:13.5px;line-height:1.6;color:#4a463f;margin-top:14px}
 .dark .mapcard p{color:#c9c4b8}
@@ -68,7 +68,7 @@
 .dark .tline p{color:#c9c4b8}
 .layers{display:grid;gap:12px;margin-top:10px}
 .layer{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:start;padding:18px 20px;background:var(--cream-2);border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:0 8px 8px 0}
-.layer .lb{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--terra)}
+.layer .lb{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--terra-ink)}
 .layer .lt{font-family:var(--serif);font-size:17px;color:var(--ink-deep);margin-top:3px}
 .layer p{font-size:14.5px;line-height:1.6;color:#4a463f;margin:0}
 @media(max-width:700px){.layer{grid-template-columns:1fr;gap:8px}}
@@ -82,15 +82,15 @@
 .pic img{width:100%;display:block}
 .pic figcaption{font-size:12.5px;line-height:1.5;color:#6e6a61;padding:11px 14px}
 .dark .pic figcaption{color:#a39d8f}
-.cred{display:block;font-size:11px;color:#8a857a;margin-top:5px;font-style:italic}
+.cred{display:block;font-size:11px;color:var(--mute);margin-top:5px;font-style:italic}
 .histpic{border-radius:9px;overflow:hidden;border:1px solid var(--line)}
 .histpic img{width:100%;display:block;filter:sepia(.12)}
 .plat{width:100%;border-collapse:collapse;font-size:13.5px;min-width:660px}
-.plat th{text-align:left;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d9a26c;padding:0 14px 11px 0;border-bottom:2px solid #3d392f}
-.plat td{padding:14px 14px 14px 0;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top;line-height:1.55;color:#c9c4b8}
-.plat td.nm{font-weight:600;color:var(--cream);white-space:nowrap}
+.plat th{text-align:left;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-ink);padding:0 14px 11px 0;border-bottom:2px solid var(--line)}
+.plat td{padding:14px 14px 14px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55;color:#4a463f}
+.plat td.nm{font-weight:600;color:var(--ink-deep);white-space:nowrap}
 .plat .mat{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.plat .m-run{color:#a9c497}.plat .m-test{color:#d9a26c}.plat .m-dev{color:#b7b0a3}
+.plat .m-run{color:#4a6b38}.plat .m-test{color:var(--terra-ink)}.plat .m-dev{color:var(--mute)}
 .tscroll2{overflow-x:auto;margin-top:8px}
 .qcard span{font-size:13.5px;color:#4a463f;line-height:1.55}
 
@@ -155,7 +155,7 @@
 </div>
 
 <header class="hero short" id="top">
-  <div class="bg" style="background-image:url('assets/oregon/salem-river-aerial.jpg')"></div><div class="shade"></div>
+  <div class="bg" style="background-image:url('assets/innov/photos/salem-aerial.jpg')"></div><div class="shade"></div>
   <div class="wrap">
     <div class="eyebrow">Concept &middot; Regional Mobility</div>
     <h1>The tracks are<br>already here.</h1>
@@ -248,7 +248,7 @@
         <p>Same geography, different technology. Battery propulsion, lighter vehicles and automation raise a question that would have sounded naive twenty years ago.</p>
       </div>
     </div>
-    <p class="rv" style="margin-top:20px;font-size:12.5px;color:#8a857a;font-style:italic;max-width:900px">Schematic only. Historic Oregon Electric alignments and today's active corridors are not identical, segments have been abandoned or repurposed, and nothing here should be read as an available route. Verifying what actually survives, and who controls it, is the first task on the list below.</p>
+    <p class="rv" style="margin-top:20px;font-size:12.5px;color:var(--mute);font-style:italic;max-width:900px">Schematic only. Historic Oregon Electric alignments and today's active corridors are not identical, segments have been abandoned or repurposed, and nothing here should be read as an available route. Verifying what actually survives, and who controls it, is the first task on the list below.</p>
     <div class="figrow two rv" style="margin-top:40px">
       <figure style="margin:0">
         <div class="histpic"><picture><source srcset="assets/rail/oe-construction.webp" type="image/webp"><img src="assets/rail/oe-construction.jpg" alt="Black and white photograph of electric railway track being laid through the Willamette Valley in the early 1900s" loading="lazy"></picture></div>
@@ -275,11 +275,11 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">What Has Been Tried</div>
-      <h2>This question is not new, and the record is useful</h2>
+      <h2>The record of earlier attempts</h2>
       <p class="lead">Oregon has spent three decades studying, and in one case building, passenger service on exactly these corridors. Anyone proposing something here should know that record cold, because it contains both the encouragement and the warnings.</p>
     </div>
 
-    <div class="grid g2 rv">
+    <div class="grid g2 rv gf2">
       <div class="card">
         <h4>2009 to today &middot; Built</h4>
         <h3 style="font-size:20px;margin-bottom:10px">WES Commuter Rail</h3>
@@ -346,7 +346,7 @@
     <text x="450" y="188" font-size="11" fill="#8a857a" font-style="italic">Illustrative only. Alignment, ownership, operating rights and feasibility are unresolved.</text>
   </g>
 </svg></div>
-    <div class="grid g2 rv" style="margin-top:36px">
+    <div class="grid g2 rv gf2" style="margin-top:36px">
       <div class="card on-alt"><h4>Today</h4><p style="font-size:15px">West Salem's connection to the rest of the city runs through a small number of bridges. Most trips require a car. The regional connection is I-5, and it behaves like every other American interstate at rush hour.</p></div>
       <div class="card on-alt"><h4>Potentially</h4><p style="font-size:15px">A rail connection that treats West Salem as a starting point rather than a suburb, with the district's mobility hub as the transfer point between regional travel and local movement.</p></div>
     </div>
@@ -363,7 +363,7 @@
     <div class="layers rv">
       <div class="layer"><div><div class="lb">Express</div><div class="lt">Amtrak Cascades</div></div><p>Already running, ODOT sponsored, connecting Eugene, Albany, Salem and Portland onward to Seattle and Vancouver. Intercity distances at intercity frequencies. An asset to connect to, and the reason a regional layer does not need to solve long-distance travel.</p></div>
       <div class="layer"><div><div class="lb">Regional</div><div class="lt">Willamette Valley Electric</div></div><p>The layer that does not exist today: more stations, higher frequency, smaller battery-electric vehicles on existing corridors where feasible, and eventually increasing automation. This is the hypothesis this page is about.</p></div>
-      <div class="layer"><div><div class="lb">Local</div><div class="lt">Whoosh and autonomous transit</div></div><p>Station to destination, across the river, around the district and through the city. Frequent, on demand, and the reason a regional trip ends somewhere useful. Described in full on the <a href="whoosh.html" style="color:var(--terra)">Whoosh</a> and <a href="mobility-concepts.html" style="color:var(--terra)">Salem in Motion</a> pages.</p></div>
+      <div class="layer"><div><div class="lb">Local</div><div class="lt">Whoosh and autonomous transit</div></div><p>Station to destination, across the river, around the district and through the city. Frequent, on demand, and the reason a regional trip ends somewhere useful. Described in full on the <a href="whoosh.html" style="color:var(--terra-ink)">Whoosh</a> and <a href="mobility-concepts.html" style="color:var(--terra-ink)">Salem in Motion</a> pages.</p></div>
       <div class="layer"><div><div class="lb">Human scale</div><div class="lt">Walk, bike, micromobility</div></div><p>The last few minutes, which decide whether any of the layers above get used at all.</p></div>
     </div>
     <div class="rv" style="max-width:900px;margin-top:34px">
@@ -374,7 +374,7 @@
   </div>
 </section>
 
-<section class="dark" id="tech">
+<section id="tech">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Technology</div>
@@ -392,15 +392,15 @@
       <rect x="164" y="42" width="22" height="13" rx="2"/><rect x="194" y="42" width="22" height="13" rx="2"/><rect x="224" y="42" width="22" height="13" rx="2"/><rect x="254" y="42" width="18" height="13" rx="2"/>
     </g>
     <circle cx="44" cy="72" r="5" fill="#5f7052"/><circle cx="120" cy="72" r="5" fill="#5f7052"/><circle cx="180" cy="72" r="5" fill="#5f7052"/><circle cx="256" cy="72" r="5" fill="#5f7052"/>
-    <text x="300" y="48" font-size="12.5" font-weight="600" fill="#e9e5da">Battery trainset</text>
-    <text x="300" y="65" font-size="11" fill="#a39d8f">A conventional passenger experience, without wires or diesel</text>
+    <text x="300" y="48" font-size="12.5" font-weight="600" fill="var(--ink-deep)">Battery trainset</text>
+    <text x="300" y="65" font-size="11" fill="#6e6a61">A conventional passenger experience, without wires or diesel</text>
 
     <text x="16" y="106" font-size="10.5" fill="#8a857a" letter-spacing="1.4">LIGHTER, MORE OFTEN</text>
     <rect x="16" y="118" width="104" height="30" rx="5" fill="#8a6a3f" stroke="#a8703f"/>
     <g fill="#c99a63"><rect x="28" y="126" width="20" height="12" rx="2"/><rect x="56" y="126" width="20" height="12" rx="2"/><rect x="84" y="126" width="20" height="12" rx="2"/></g>
     <circle cx="40" cy="153" r="4.5" fill="#a8703f"/><circle cx="96" cy="153" r="4.5" fill="#a8703f"/>
-    <text x="300" y="130" font-size="12.5" font-weight="600" fill="#e9e5da">Very light rail</text>
-    <text x="300" y="147" font-size="11" fill="#a39d8f">Smaller vehicle, smaller stop, higher frequency, lower cost</text>
+    <text x="300" y="130" font-size="12.5" font-weight="600" fill="var(--ink-deep)">Very light rail</text>
+    <text x="300" y="147" font-size="11" fill="#6e6a61">Smaller vehicle, smaller stop, higher frequency, lower cost</text>
 
     <text x="16" y="180" font-size="10.5" fill="#8a857a" letter-spacing="1.4">SMALLER STILL, AND AUTONOMOUS</text>
     <g>
@@ -410,10 +410,10 @@
       <rect x="172" y="186" width="46" height="9" rx="3" fill="#6c7d5e"/>
       <rect x="224" y="186" width="46" height="9" rx="3" fill="#6c7d5e"/>
     </g>
-    <text x="300" y="194" font-size="12.5" font-weight="600" fill="#e9e5da">Autonomous units, in platoons</text>
+    <text x="300" y="194" font-size="12.5" font-weight="600" fill="var(--ink-deep)">Autonomous units, in platoons</text>
   </g>
 </svg>
-      <p style="font-size:12.5px;color:#8a857a;font-style:italic;margin-top:8px">Schematic, drawn to relative scale. The trend runs from fewer, larger, scheduled vehicles toward more, smaller, responsive ones.</p>
+      <p style="font-size:12.5px;color:var(--mute);font-style:italic;margin-top:8px">Schematic, drawn to relative scale. The trend runs from fewer, larger, scheduled vehicles toward more, smaller, responsive ones.</p>
     </div>
 
     <div class="grid g3 rv">
@@ -437,13 +437,13 @@
       </div>
     </div>
 
-    <div class="note rv" style="background:#2b2823;margin-top:34px"><strong>The connection worth knowing.</strong> Parallel Systems' pilot partner is Genesee &amp; Wyoming. Portland &amp; Western, the regional railroad operating in this valley with executive offices in Salem, is a Genesee &amp; Wyoming company, and it is also the railroad that operates Oregon's only commuter rail service. That is not an introduction, an agreement, or a plan. It means the people who would have to say yes are already in Oregon, already running passenger trains on a shared freight corridor, and already inside the corporate family piloting autonomous battery rail in America.</div>
+    <div class="note rv" style="background:var(--cream-2);margin-top:34px"><strong>The connection worth knowing.</strong> Parallel Systems' pilot partner is Genesee &amp; Wyoming. Portland &amp; Western, the regional railroad operating in this valley with executive offices in Salem, is a Genesee &amp; Wyoming company, and it is also the railroad that operates Oregon's only commuter rail service. That is not an introduction, an agreement, or a plan. It means the people who would have to say yes are already in Oregon, already running passenger trains on a shared freight corridor, and already inside the corporate family piloting autonomous battery rail in America.</div>
 
 
 
     <div class="rv" style="margin-top:52px">
-      <h4 style="font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d9a26c;margin-bottom:8px">The wider field</h4>
-      <p style="font-size:15.5px;color:#c9c4b8;max-width:900px;margin-bottom:18px">Others are building toward the same idea from different directions: some replacing the regional train, some automating what already runs, some rethinking the vehicle entirely. Maturity varies enormously, so it is stated for each.</p>
+      <h4 style="font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-ink);margin-bottom:8px">The wider field</h4>
+      <p style="font-size:15.5px;color:#4a463f;max-width:900px;margin-bottom:18px">Others are building toward the same idea from different directions: some replacing the regional train, some automating what already runs, some rethinking the vehicle entirely. Maturity varies enormously, so it is stated for each.</p>
       <div class="tscroll2">
       <table class="plat">
         <tr><th>Platform</th><th>What it is</th><th>Fit with existing track</th><th>Where it stands</th></tr>
@@ -501,16 +501,16 @@
           <figcaption>The Revolution Very Light Rail demonstrator on test in the United Kingdom. Lighter vehicles are the reason the operating arithmetic looks different than it did for WES.<span class="cred">Revolution VLR programme</span></figcaption>
         </figure>
       </div>
-      <p style="font-size:12.5px;color:#8a857a;font-style:italic;margin-top:12px">Compiled from public company and programme information. None of these companies has any connection to this corridor, and inclusion here is not an endorsement or an indication of interest.</p>
+      <p style="font-size:12.5px;color:var(--mute);font-style:italic;margin-top:12px">Compiled from public company and programme information. None of these companies has any connection to this corridor, and inclusion here is not an endorsement or an indication of interest.</p>
     </div>
-    <div class="rv" style="margin-top:52px;border-top:1px solid #3d392f;padding-top:44px">
+    <div class="rv" style="margin-top:52px;border-top:1px solid var(--line);padding-top:44px">
       <div style="max-width:900px">
-        <h4 style="font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d9a26c;margin-bottom:14px">The closest thing to an answer</h4>
-        <h3 class="serif" style="font-size:clamp(24px,3vw,32px);color:var(--cream);line-height:1.25;margin-bottom:18px">MonoCab: two vehicles, opposite directions, one track</h3>
-        <p style="font-size:16px;line-height:1.7;color:#c9c4b8">A German research consortium has spent several years on the problem this page keeps running into: how do you run useful passenger service on a single lightly used rural track without building a second one? Their answer is elegant enough to change how you think about the constraint.</p>
-        <p style="font-size:16px;line-height:1.7;color:#c9c4b8;margin-top:16px">MonoCab vehicles are narrow cabins carrying four to six people, each balancing on <em>one</em> rail of an ordinary track, held upright by counter-rotating gyroscopes and a sliding mass in the floor. Because each cabin occupies only half the track, two of them can pass each other travelling in opposite directions. No siding. No second track. No waiting for a slot.</p>
+        <h4 style="font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-ink);margin-bottom:14px">The closest thing to an answer</h4>
+        <h3 class="serif" style="font-size:clamp(24px,3vw,32px);color:var(--ink-deep);line-height:1.25;margin-bottom:18px">MonoCab: two vehicles, opposite directions, one track</h3>
+        <p style="font-size:16px;line-height:1.7;color:#4a463f">A German research consortium has spent several years on the problem this page keeps running into: how do you run useful passenger service on a single lightly used rural track without building a second one? Their answer is elegant enough to change how you think about the constraint.</p>
+        <p style="font-size:16px;line-height:1.7;color:#4a463f;margin-top:16px">MonoCab vehicles are narrow cabins carrying four to six people, each balancing on <em>one</em> rail of an ordinary track, held upright by counter-rotating gyroscopes and a sliding mass in the floor. Because each cabin occupies only half the track, two of them can pass each other travelling in opposite directions. No siding. No second track. No waiting for a slot.</p>
       </div>
-      <div style="background:#26231e;border:1px solid #3d392f;border-radius:9px;padding:26px 24px;margin-top:28px"><svg viewBox="0 0 760 300" role="img" aria-label="Cross-section and plan view showing two narrow gyro-stabilised cabins travelling in opposite directions on a single standard-gauge track, each balancing on one rail, passing each other without a siding.">
+      <div style="background:var(--cream-2);border:1px solid var(--line);border-radius:9px;padding:26px 24px;margin-top:28px"><svg viewBox="0 0 760 300" role="img" aria-label="Cross-section and plan view showing two narrow gyro-stabilised cabins travelling in opposite directions on a single standard-gauge track, each balancing on one rail, passing each other without a siding.">
   <defs>
     <marker id="mc-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0,1 L9,5 L0,9 z" fill="#a8703f"/>
@@ -532,8 +532,8 @@
     <rect x="288" y="166" width="22" height="12" rx="2" fill="#6e6a61"/>
     <line x1="193" y1="158" x2="193" y2="166" stroke="#6c7d5e" stroke-width="2"/>
     <line x1="299" y1="158" x2="299" y2="166" stroke="#a8703f" stroke-width="2"/>
-    <text x="193" y="202" font-size="10.5" fill="#a39d8f" text-anchor="middle">one rail</text>
-    <text x="299" y="202" font-size="10.5" fill="#a39d8f" text-anchor="middle">the other</text>
+    <text x="193" y="202" font-size="10.5" fill="#6e6a61" text-anchor="middle">one rail</text>
+    <text x="299" y="202" font-size="10.5" fill="#6e6a61" text-anchor="middle">the other</text>
     <line x1="120" y1="222" x2="372" y2="222" stroke="#4a453a" stroke-width="1"/>
     <text x="246" y="240" font-size="10.5" fill="#9d9689" text-anchor="middle">existing track gauge, unchanged</text>
 
@@ -546,8 +546,8 @@
     <path d="M600,112 L664,112" stroke="#a8703f" stroke-width="1.6" fill="none" marker-end="url(#mc-ah)"/>
     <rect x="614" y="140" width="96" height="16" rx="7" fill="#8a6a3f"/>
     <path d="M580,148 L516,148" stroke="#a8703f" stroke-width="1.6" fill="none" marker-end="url(#mc-ah)"/>
-    <text x="590" y="188" font-size="12.5" font-weight="600" fill="#e9e5da" text-anchor="middle">They pass each other</text>
-    <text x="590" y="206" font-size="11" fill="#a39d8f" text-anchor="middle">no siding, no second track, no waiting</text>
+    <text x="590" y="188" font-size="12.5" font-weight="600" fill="var(--ink-deep)" text-anchor="middle">They pass each other</text>
+    <text x="590" y="206" font-size="11" fill="#6e6a61" text-anchor="middle">no siding, no second track, no waiting</text>
     <text x="590" y="240" font-size="10.5" fill="#9d9689" text-anchor="middle" font-style="italic">Schematic of the MonoCab principle, not a technical drawing</text>
   </g>
 </svg></div>
@@ -578,12 +578,12 @@
           <p>Led by OWL University of Applied Sciences with Bielefeld University of Applied Sciences and Fraunhofer, funded by North Rhine-Westphalia, the EU and the German federal transport ministry, and awarded the European Commission's RegioStars prize in 2025.</p>
         </div>
       </div>
-      <div class="note" style="background:#2b2823;margin-top:26px"><strong>Where it actually is.</strong> Two demonstrator vehicles have run test drives on a historic single-track line between Lemgo and Extertal, including autonomous running. It is a funded research programme with working prototypes, not a product anyone can buy, and the rules it would have to satisfy in Germany are not the rules that apply here. We include it because it is the clearest existing proof that the single-track constraint has an engineering answer, and because it points at the experience worth aiming for.</div>
+      <div class="note" style="background:var(--cream-2);margin-top:26px"><strong>Where it actually is.</strong> Two demonstrator vehicles have run test drives on a historic single-track line between Lemgo and Extertal, including autonomous running. It is a funded research programme with working prototypes, not a product anyone can buy, and the rules it would have to satisfy in Germany are not the rules that apply here. We include it because it is the clearest existing proof that the single-track constraint has an engineering answer, and because it points at the experience worth aiming for.</div>
     </div>
 
     <div class="rv" style="margin-top:44px;max-width:900px">
-      <h4 style="font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d9a26c;margin-bottom:14px">Further out, and labeled honestly</h4>
-      <p style="font-size:15.5px;color:#c9c4b8;line-height:1.7">MonoCab is not alone in this direction. <strong style="color:#e9e5da">Urbanloop</strong>, <strong style="color:#e9e5da">TaxiRail</strong> and <strong style="color:#e9e5da">Pods4Rail</strong> in France and elsewhere are testing their own versions of individually routed, on-demand rail: closer to an elevator network than a timetable. All are research rather than options, and we would not plan a corridor around any of them. Taken together, though, they show a consistent direction of travel, and the direction is smaller vehicles arriving more often.</p>
+      <h4 style="font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-ink);margin-bottom:14px">Further out, and labeled honestly</h4>
+      <p style="font-size:15.5px;color:#4a463f;line-height:1.7">MonoCab is not alone in this direction. <strong style="color:var(--ink-deep)">Urbanloop</strong>, <strong style="color:var(--ink-deep)">TaxiRail</strong> and <strong style="color:var(--ink-deep)">Pods4Rail</strong> in France and elsewhere are testing their own versions of individually routed, on-demand rail: closer to an elevator network than a timetable. All are research rather than options, and we would not plan a corridor around any of them. Taken together, though, they show a consistent direction of travel, and the direction is smaller vehicles arriving more often.</p>
       <div class="figrow two rv" style="margin-top:24px">
         <figure class="pic">
           <picture><source srcset="assets/rail/railpods-station.webp" type="image/webp"><img src="assets/rail/railpods-station.jpg" alt="Concept rendering of small red rail pods at a simple platform with waiting passengers" loading="lazy"></picture>
@@ -596,7 +596,7 @@
       </div>
     </div>
 
-    <p class="rv" style="margin-top:34px;max-width:900px;font-size:16px;color:#e9e5da;line-height:1.7">Notice what none of these require: new right of way, electrification wires, or a technology that has not left a laboratory. That is the whole point. The corridor is the expensive part, and it already exists.</p>
+    <p class="rv" style="margin-top:34px;max-width:900px;font-size:16px;color:var(--ink-deep);line-height:1.7">Notice what none of these require: new right of way, electrification wires, or a technology that has not left a laboratory. That is the whole point. The corridor is the expensive part, and it already exists.</p>
   </div>
 </section>
 
@@ -626,7 +626,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Constraint</div>
-      <h2>Passengers and freight, not passengers instead of freight</h2>
+      <h2>Passengers and freight together</h2>
       <p class="lead">The most common way a concept like this fails is by treating the railroad's existing business as an obstacle. The corridor performs an economic function today, its customers depend on it, and no serious proposal begins by proposing to take it away.</p>
     </div>
     <div class="rv" style="max-width:900px">
@@ -646,10 +646,10 @@
       <p class="lead">Beyond the commercial question of whether a railroad wants a partner, there are two technical obstacles that decide whether light passenger vehicles can run on an American freight corridor at all. Both are well documented, both have known approaches, and neither is solved by enthusiasm.</p>
     </div>
 
-    <div class="grid g2 rv">
+    <div class="grid g2 rv gf2">
       <div class="card on-alt">
         <h4>Problem one</h4>
-        <h3 style="font-size:20px;margin-bottom:10px">Light vehicles may not trip the track circuits</h3>
+        <h3 style="font-size:20px;margin-bottom:10px">Track circuits and light vehicles</h3>
         <p style="font-size:15px">Grade crossings and dispatch signals detect trains through electrical circuits in the rails, completed by the weight and steel mass of a passing train. A vehicle light enough to be cheap may be too light to reliably close that circuit, which is known as a shunting failure, and it is the difference between a crossing gate that drops and one that does not. Rust and light traffic on a lightly used line make it worse.</p>
         <p style="font-size:15px;margin-top:12px"><strong>Known approaches:</strong> auxiliary shunting devices that add an artificial impedance change to the circuit, or detection based on satellite positioning and train control rather than track circuits alone. The Federal Railroad Administration publishes on this specific problem, and grade crossing signal integrity is federally regulated.</p>
       </div>
@@ -685,7 +685,7 @@
       <p style="font-size:16px;line-height:1.7;margin-top:16px">We are deliberately not putting a number on that here. Any figure produced before a feasibility study would be invented, and this is a hypothesis to be modeled during predevelopment rather than a projected outcome. What the flywheel does justify is studying the corridor early, because if it works, it changes the underwriting of everything built around it.</p>
     </div>
     <div class="rv" style="margin-top:30px">
-      <h4 style="font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);margin-bottom:12px">Funding mechanisms worth studying</h4>
+      <h4 style="font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-ink);margin-bottom:12px">Funding mechanisms worth studying</h4>
       <p style="font-size:15px;max-width:900px">Tax increment and urban renewal, station area and joint development, development agreements, infrastructure districts, public-private partnerships, land value capture, federal and state transportation funding, clean mobility and demonstration grants, and technology partnerships. None of these is committed, applied for, or approved. They are the menu a feasibility study would price.</p>
     </div>
   </div>
@@ -699,32 +699,32 @@
       <p class="lead">The fastest way to discredit this idea would be to open with Portland. The credible sequence starts with questions, then a short demonstration, and earns the right to each following step.</p>
     </div>
     <div class="tl rv">
-      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra);margin-bottom:8px">Phase 0</div><h3 style="font-size:19px;margin-bottom:10px">Corridor discovery</h3><p style="font-size:14.5px">Ownership, operating rights, freight customers and volumes, track and bridge condition, crossings, signaling, right of way width, station opportunities, regulatory jurisdiction, and connections to existing transit. Mostly desk work and conversations. Cheap, and it either opens the door or closes it honestly.</p></div>
-      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra);margin-bottom:8px">Phase 1</div><h3 style="font-size:19px;margin-bottom:10px">A Salem demonstration</h3><p style="font-size:14.5px">A short segment that tests vehicle technology, operating compatibility with freight, station design, charging, community response and actual ridership. The district is the natural hub for it, because the district is being built anyway and can host the stop, the charging and the crowd.</p></div>
-      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra);margin-bottom:8px">Phase 2</div><h3 style="font-size:19px;margin-bottom:10px">A Salem and Keizer spine</h3><p style="font-size:14.5px">Extend to a useful passenger catchment and integrate properly with Cherriots, cycling infrastructure and the district circulator, so the rail line is part of a network rather than a novelty.</p></div>
-      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra);margin-bottom:8px">Phase 3</div><h3 style="font-size:19px;margin-bottom:10px">Regional connection</h3><p style="font-size:14.5px">Explore extension along the valley: north toward Wilsonville and the Portland metro, south toward Albany and from there to Corvallis and Eugene, with Amtrak Cascades as the express spine rather than a competitor. This is the phase everyone wants to start with, and the one that only works if the earlier phases have proven demand.</p></div>
-      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra);margin-bottom:8px">Phase 4</div><h3 style="font-size:19px;margin-bottom:10px">An autonomous corridor</h3><p style="font-size:14.5px">As regulation and technology mature, smaller vehicles at higher frequency with increasing automation. The corridor does not need to be rebuilt for this. The vehicles change; the infrastructure stays.</p></div>
+      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra-ink);margin-bottom:8px">Phase 0</div><h3 style="font-size:19px;margin-bottom:10px">Corridor discovery</h3><p style="font-size:14.5px">Ownership, operating rights, freight customers and volumes, track and bridge condition, crossings, signaling, right of way width, station opportunities, regulatory jurisdiction, and connections to existing transit. Mostly desk work and conversations. Cheap, and it either opens the door or closes it honestly.</p></div>
+      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra-ink);margin-bottom:8px">Phase 1</div><h3 style="font-size:19px;margin-bottom:10px">A Salem demonstration</h3><p style="font-size:14.5px">A short segment that tests vehicle technology, operating compatibility with freight, station design, charging, community response and actual ridership. The district is the natural hub for it, because the district is being built anyway and can host the stop, the charging and the crowd.</p></div>
+      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra-ink);margin-bottom:8px">Phase 2</div><h3 style="font-size:19px;margin-bottom:10px">A Salem and Keizer spine</h3><p style="font-size:14.5px">Extend to a useful passenger catchment and integrate properly with Cherriots, cycling infrastructure and the district circulator, so the rail line is part of a network rather than a novelty.</p></div>
+      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra-ink);margin-bottom:8px">Phase 3</div><h3 style="font-size:19px;margin-bottom:10px">Regional connection</h3><p style="font-size:14.5px">Explore extension along the valley: north toward Wilsonville and the Portland metro, south toward Albany and from there to Corvallis and Eugene, with Amtrak Cascades as the express spine rather than a competitor. This is the phase everyone wants to start with, and the one that only works if the earlier phases have proven demand.</p></div>
+      <div class="card"><div class="yr serif" style="font-size:20px;color:var(--terra-ink);margin-bottom:8px">Phase 4</div><h3 style="font-size:19px;margin-bottom:10px">An autonomous corridor</h3><p style="font-size:14.5px">As regulation and technology mature, smaller vehicles at higher frequency with increasing automation. The corridor does not need to be rebuilt for this. The vehicles change; the infrastructure stays.</p></div>
     </div>
     <p class="bigquote rv" style="margin-top:44px">The destination is not a train. It is a transportation protocol running on rail infrastructure, where the vehicles can evolve without rebuilding the corridor.</p>
   </div>
 </section>
 
-<section class="dark" id="unknowns">
+<section id="unknowns">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">Open Questions</div>
-      <h2>What we do not know yet</h2>
+      <h2>Open questions</h2>
       <p class="lead">This page would be worth less if it pretended otherwise. These are the questions Phase 0 exists to answer, and any one of them could end the idea. The two engineering problems above are no longer on this list, because they are now named, documented, and have known approaches. That is what progress looks like at this stage: questions moving from unknown to merely difficult.</p>
     </div>
     <div class="qgrid rv">
-      <div class="qcard" style="background:#2b2823;border-color:#3d392f"><b style="color:var(--cream)">Who holds the rights</b><span style="color:#b7b0a3">Ownership of the line, operating rights, and what a passenger operator would actually need to negotiate.</span></div>
-      <div class="qcard" style="background:#2b2823;border-color:#3d392f"><b style="color:var(--cream)">What the freight business needs</b><span style="color:#b7b0a3">Current customers, volumes, timing, and what a shared corridor would have to be worth to the railroad.</span></div>
-      <div class="qcard" style="background:#2b2823;border-color:#3d392f"><b style="color:var(--cream)">What the track can take</b><span style="color:#b7b0a3">Condition, bridges, crossings, signaling, and the cost of bringing any of it to passenger standard.</span></div>
-      <div class="qcard" style="background:#2b2823;border-color:#3d392f"><b style="color:var(--cream)">Who regulates it</b><span style="color:#b7b0a3">Federal, state and local jurisdiction, and what approvals a demonstration would actually require.</span></div>
-      <div class="qcard" style="background:#2b2823;border-color:#3d392f"><b style="color:var(--cream)">Whether anyone would ride</b><span style="color:#b7b0a3">Honest demand estimates for the segments that could realistically run first.</span></div>
-      <div class="qcard" style="background:#2b2823;border-color:#3d392f"><b style="color:var(--cream)">What it costs</b><span style="color:#b7b0a3">Capital and operating cost for a demonstration, and who would fund and operate it.</span></div>
+      <div class="qcard" style="background:var(--cream-2);border-color:var(--line)"><b style="color:var(--ink-deep)">Who holds the rights</b><span style="color:#4a463f">Ownership of the line, operating rights, and what a passenger operator would actually need to negotiate.</span></div>
+      <div class="qcard" style="background:var(--cream-2);border-color:var(--line)"><b style="color:var(--ink-deep)">What the freight business needs</b><span style="color:#4a463f">Current customers, volumes, timing, and what a shared corridor would have to be worth to the railroad.</span></div>
+      <div class="qcard" style="background:var(--cream-2);border-color:var(--line)"><b style="color:var(--ink-deep)">What the track can take</b><span style="color:#4a463f">Condition, bridges, crossings, signaling, and the cost of bringing any of it to passenger standard.</span></div>
+      <div class="qcard" style="background:var(--cream-2);border-color:var(--line)"><b style="color:var(--ink-deep)">Who regulates it</b><span style="color:#4a463f">Federal, state and local jurisdiction, and what approvals a demonstration would actually require.</span></div>
+      <div class="qcard" style="background:var(--cream-2);border-color:var(--line)"><b style="color:var(--ink-deep)">Whether anyone would ride</b><span style="color:#4a463f">Honest demand estimates for the segments that could realistically run first.</span></div>
+      <div class="qcard" style="background:var(--cream-2);border-color:var(--line)"><b style="color:var(--ink-deep)">What it costs</b><span style="color:#4a463f">Capital and operating cost for a demonstration, and who would fund and operate it.</span></div>
     </div>
-    <p class="rv" style="margin-top:30px;max-width:900px;font-size:15.5px;color:#c9c4b8">Partners who would need to be part of answering these: the City of Salem, ODOT, SKATS and the regional council, Cherriots, Portland &amp; Western, Oregon State University and other institutions, mobility technology companies, and the landowners and employers along the corridor. We are one participant among many, and on most of these questions we are not the ones with the answers.</p>
+    <p class="rv" style="margin-top:30px;max-width:900px;font-size:15.5px;color:#4a463f">Partners who would need to be part of answering these: the City of Salem, ODOT, SKATS and the regional council, Cherriots, Portland &amp; Western, Oregon State University and other institutions, mobility technology companies, and the landowners and employers along the corridor. We are one participant among many, and on most of these questions we are not the ones with the answers.</p>
   </div>
 </section>
 
@@ -739,7 +739,7 @@
       <p style="font-size:16.5px;line-height:1.7;margin-top:16px">What if the railroad became city-building infrastructure again? Salem has the corridor, a district being planned around it, and a regional railroad headquartered in town. That is an unusually good place to find out.</p>
       <p style="font-size:16.5px;line-height:1.7;margin-top:16px">The strategy is deliberately the inverse of how these things usually fail. Not a network, then an enormous capital program, then hope development follows. Instead: a place, then a demonstration, then a corridor, then a network, with each step earning the next. Big systems can start with small places, and this one would start here.</p>
     </div>
-    <div class="grid g3 rv" style="margin-top:40px">
+    <div class="grid g3 rv gf3" style="margin-top:40px">
       <div class="card"><h4>Mobility companies</h4><p style="font-size:14.5px">A district willing to host a demonstration, with a development team that can build the stop, the charging and the ridership around it.</p></div>
       <div class="card"><h4>Public agencies</h4><p style="font-size:14.5px">A privately funded first study of a corridor question the region will eventually have to answer anyway.</p></div>
       <div class="card"><h4>Railroads and investors</h4><p style="font-size:14.5px">A conversation about whether a shared corridor is worth more than an exclusive one, and what it would take to find out.</p></div>
@@ -751,10 +751,10 @@
   <div class="wrap rv">
     <div class="eyebrow">Next Step</div>
     <h2 class="serif" style="color:var(--ink-deep)">Build the demonstration<br>with us.</h2>
-    <p class="muted" style="max-width:660px;margin:0 auto;color:#4a463f">The next move is small and unglamorous: a corridor discovery study, done properly, with the people who hold the answers. If you are one of them, or you think this idea has a fatal flaw we have missed, we would like to hear from you. See also <a href="mobility-concepts.html" style="color:var(--terra);text-decoration:none">Salem Mobility Concepts</a>, <a href="whoosh.html" style="color:var(--terra);text-decoration:none">Whoosh</a> and <a href="mobility-research.html" style="color:var(--terra);text-decoration:none">District Mobility research</a>.</p>
+    <p class="muted" style="max-width:660px;margin:0 auto;color:#4a463f">The next move is small and unglamorous: a corridor discovery study, done properly, with the people who hold the answers. If you are one of them, or you think this idea has a fatal flaw we have missed, we would like to hear from you. See also <a href="mobility-concepts.html" style="color:var(--terra-ink);text-decoration:none">Salem Mobility Concepts</a>, <a href="whoosh.html" style="color:var(--terra-ink);text-decoration:none">Whoosh</a> and <a href="mobility-research.html" style="color:var(--terra-ink);text-decoration:none">District Mobility research</a>.</p>
     <div class="contacts">
-      <a href="mailto:erik@nowcitylabs.com" style="color:var(--terra)">erik@nowcitylabs.com &middot; +1 818 312 0491</a>
-      <a href="mailto:ritchie@nowcitylabs.com" style="color:var(--terra)">ritchie@nowcitylabs.com &middot; +1 718 916 1106</a>
+      <a href="mailto:erik@nowcitylabs.com" style="color:var(--terra-ink)">erik@nowcitylabs.com &middot; +1 818 312 0491</a>
+      <a href="mailto:ritchie@nowcitylabs.com" style="color:var(--terra-ink)">ritchie@nowcitylabs.com &middot; +1 718 916 1106</a>
     </div>
   </div>
 </section>

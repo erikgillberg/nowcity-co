@@ -15,37 +15,37 @@
 <style>
 .specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:22px;margin-top:6px}
 .spec .num{font-family:var(--serif);font-size:clamp(24px,3vw,34px);color:var(--green);line-height:1.05}
-.dark .spec .num{color:var(--cream)}
+.spec .num{color:var(--green)}
 .spec .lbl{font-size:12px;color:#6e6a61;margin-top:6px;line-height:1.4}
 .dark .spec .lbl{color:#a39d8f}
 .seq{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:30px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .seq .step{padding:22px 18px;border-right:1px solid var(--line)}
 .seq .step:last-child{border-right:none}
-.seq .step .n{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+.seq .step .n{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-ink)}
 .seq .step .t{font-family:var(--serif);font-size:16px;color:var(--ink-deep);margin:8px 0 8px}
 .seq .step p{font-size:12.5px;color:#6e6a61;line-height:1.55}
 @media(max-width:900px){.seq{grid-template-columns:1fr 1fr 1fr}.seq .step:nth-child(3){border-right:none}}
 @media(max-width:560px){.seq{grid-template-columns:1fr}.seq .step{border-right:none;border-bottom:1px solid var(--line)}.seq .step:last-child{border-bottom:none}}
 .who{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}
-.who th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:700;padding:0 12px 10px;border-bottom:2px solid var(--line)}
+.who th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;padding:0 12px 10px;border-bottom:2px solid var(--line)}
 .who td{padding:11px 12px;border-bottom:1px solid rgba(0,0,0,.06);vertical-align:top;line-height:1.5;color:#4a463f}
 .who td:first-child{font-weight:600;color:var(--ink-deep);white-space:nowrap}
 .who td:nth-child(2){font-weight:600;color:var(--green);white-space:nowrap}
 @media(max-width:640px){.who td:first-child,.who td:nth-child(2){white-space:normal}.who,.who th{font-size:12.5px}}
-.card .pl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-soft);margin-bottom:8px}
+.card .pl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-ink);margin-bottom:8px}
 .card .take{font-size:13px;color:#6e6a61;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
 .dark .card .take{border-color:rgba(255,255,255,.12);color:#b7b1a4}
 .card .pstat{font-size:12px;color:var(--green);font-weight:600;margin-top:10px;font-variant-numeric:tabular-nums;line-height:1.55}
-.card .prelink{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--terra);text-decoration:none}
+.card .prelink{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--terra-ink);text-decoration:none}
 .card .prelink:hover{text-decoration:underline}
 .statband{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:20px 24px;margin-top:8px}
 .statband .sv{font-family:var(--serif);font-size:clamp(26px,3.2vw,38px);color:var(--green);line-height:1.05}
-.dark .statband .sv{color:var(--cream)}
+.statband .sv{color:var(--green)}
 .statband .sl{font-size:12px;color:#6e6a61;margin-top:6px;line-height:1.4}
 .dark .statband .sl{color:#a39d8f}
 .photo{border-radius:10px;overflow:hidden;border:1px solid var(--line);margin-top:8px}
 .photo img{width:100%;display:block}
-.photo figcaption{font-size:12.5px;color:#8a857a;padding:9px 12px 11px;background:#fff}
+.photo figcaption{font-size:12.5px;color:var(--mute);padding:9px 12px 11px;background:#fff}
 .on-alt.photo figcaption,.alt .photo figcaption{background:var(--cream)}
 .photo.half{max-width:620px;margin-left:auto;margin-right:auto}
 .card .cardimg{margin:-30px -28px 18px;border-radius:5px 5px 0 0;overflow:hidden;display:block}
@@ -53,7 +53,7 @@
 .thesis{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:0;margin-top:30px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .thesis .ti{padding:22px 22px;border-right:1px solid var(--line)}
 .thesis .ti:last-child{border-right:none}
-.thesis .tl{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--terra);margin-bottom:9px;text-decoration:none;display:inline-block}
+.thesis .tl{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--terra-ink);margin-bottom:9px;text-decoration:none;display:inline-block}
 .thesis a.tl:hover{text-decoration:underline}
 .thesis .td{font-size:13.5px;color:#4a463f;line-height:1.6}
 @media(max-width:900px){.thesis{grid-template-columns:1fr 1fr}.thesis .ti{border-bottom:1px solid var(--line)}}
@@ -64,7 +64,7 @@
 .feat .rhs .fnum{font-family:var(--serif);font-size:30px;line-height:1.05}
 .feat .rhs .flbl{font-size:12px;color:#cdd5c2;margin:5px 0 20px}
 .feat .rhs .flbl:last-child{margin-bottom:0}
-.feat .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra)}
+.feat .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-ink)}
 @media(max-width:760px){.feat{grid-template-columns:1fr}}
 .mapwrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:8px;background:#eef0e6}
 .mapwrap img{width:100%;display:block}
@@ -74,13 +74,13 @@
 .imgcard{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:block;background:#fff}
 .dark .imgcard{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.03)}
 .imgcard img{width:100%;display:block}
-.imgcard figcaption{font-size:12.5px;color:#8a857a;padding:9px 13px 11px;background:#fff}
+.imgcard figcaption{font-size:12.5px;color:var(--mute);padding:9px 13px 11px;background:#fff}
 .alt .imgcard figcaption{background:var(--cream)}
 @media(max-width:780px){.split{grid-template-columns:1fr;gap:24px}}
-.thesis .ic{display:block;width:22px;height:22px;color:var(--terra);margin-bottom:11px}
+.thesis .ic{display:block;width:22px;height:22px;color:var(--terra-ink);margin-bottom:11px}
 .thesis .ic svg{width:22px;height:22px;display:block}
-.card .cic{display:block;width:26px;height:26px;color:var(--terra);margin-bottom:13px}
-.dark .card .cic{color:#d9a26c}
+.card .cic{display:block;width:26px;height:26px;color:var(--terra-ink);margin-bottom:13px}
+.card .cic{color:var(--terra-ink)}
 .card .cic svg{width:26px;height:26px;display:block}
 .bignum{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;margin-top:8px;padding:30px 30px;border-radius:12px;background:var(--green)}
 .bignum .b{text-align:left}
@@ -92,7 +92,7 @@
 .homes .ht strong{color:var(--ink-deep)}
 .measures{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1px;margin-top:30px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .measures .ms{background:#fff;padding:17px 20px;display:flex;gap:13px;align-items:flex-start}
-.measures .msn{font-family:var(--serif);font-size:15px;color:var(--terra);font-weight:700;min-width:20px;line-height:1.3}
+.measures .msn{font-family:var(--serif);font-size:15px;color:var(--terra-ink);font-weight:700;min-width:20px;line-height:1.3}
 .measures .ms h5{font-size:13.5px;color:var(--ink-deep);margin:1px 0 4px;font-weight:700}
 .measures .ms p{font-size:12.5px;color:#6e6a61;line-height:1.5}
 .shuman{display:flex;gap:18px;align-items:center;margin-top:30px;padding:20px 24px;border-radius:10px;background:var(--cream);border:1px solid var(--line)}
@@ -115,12 +115,12 @@
 .corridor .cy{font-family:var(--serif);font-size:16px;color:var(--ink-deep);padding:13px 0 13px 20px;border-top:1px solid rgba(0,0,0,.08);position:relative}
 .corridor .cy:before{content:'';position:absolute;left:0;top:20px;width:9px;height:9px;border-radius:50%;background:var(--green)}
 .corridor .cd{font-size:14px;line-height:1.62;color:#4a463f;padding:13px 0;border-top:1px solid rgba(0,0,0,.08)}
-.corridor .cy.hi{color:var(--terra)}
+.corridor .cy.hi{color:var(--terra-ink)}
 .corridor .cy.hi:before{background:var(--terra);width:12px;height:12px;left:-2px;top:19px}
 .corridor .cd b{color:var(--ink-deep);font-weight:600}
 @media(max-width:700px){.corridor{grid-template-columns:1fr}.corridor .cd{border-top:none;padding-top:0}}
 .mx{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
-.mx th{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--terra);font-weight:700;padding:0 8px 10px;border-bottom:2px solid var(--line);text-align:center;vertical-align:bottom;line-height:1.35}
+.mx th{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;padding:0 8px 10px;border-bottom:2px solid var(--line);text-align:center;vertical-align:bottom;line-height:1.35}
 .mx th:first-child{text-align:left;width:31%}
 .mx td{padding:11px 8px;border-bottom:1px solid rgba(0,0,0,.06);text-align:center;color:var(--green);font-size:15px}
 .mx td:first-child{text-align:left;font-size:13.5px;color:#4a463f;line-height:1.5}
@@ -137,16 +137,16 @@
 @media(max-width:860px){.role{grid-template-columns:1fr;gap:6px}}
 
 .gapt{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:14px}
-.gapt th{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--terra);font-weight:700;padding:0 12px 10px;border-bottom:2px solid var(--line);text-align:right}
+.gapt th{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;padding:0 12px 10px;border-bottom:2px solid var(--line);text-align:right}
 .gapt th:first-child{text-align:left}
 .gapt td{padding:13px 12px;border-bottom:1px solid rgba(0,0,0,.07);text-align:right;font-variant-numeric:tabular-nums;color:#4a463f}
 .gapt td:first-child{text-align:left;font-family:var(--serif);font-size:16px;color:var(--ink-deep)}
 .gapt tr.tot td{border-top:2px solid var(--line);border-bottom:none;font-weight:700;color:var(--ink-deep);padding-top:15px}
-.gapt tr.tot td:last-child{color:var(--terra)}
+.gapt tr.tot td:last-child{color:var(--terra-ink)}
 @media(max-width:700px){.gapt{display:block;overflow-x:auto;white-space:nowrap}}
 .con{display:grid;grid-template-columns:180px 1fr 1fr;gap:26px;padding:20px 0;border-top:1px solid rgba(0,0,0,.09);align-items:start}
 .con .cn{font-family:var(--serif);font-size:17px;color:var(--ink-deep)}
-.con .cn span{display:block;font-family:var(--sans,inherit);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);font-weight:700;margin-top:5px}
+.con .cn span{display:block;font-family:var(--sans,inherit);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;margin-top:5px}
 .con p{font-size:14px;line-height:1.65;color:#4a463f;margin:0}
 .con .st{color:var(--green)}
 .con .st strong{color:var(--ink-deep)}
@@ -161,7 +161,7 @@
 .worked .th{padding-right:26px;border-right:1px solid var(--line)}
 .worked .th:last-child{border-right:none;padding-right:0}
 @media(max-width:760px){.worked .th{border-right:none;padding-right:0}}
-.worked .th .n{font-family:var(--serif);font-size:15px;color:var(--terra);line-height:1}
+.worked .th .n{font-family:var(--serif);font-size:15px;color:var(--terra-ink);line-height:1}
 .worked .th h4{font-family:var(--serif);font-size:19px;color:var(--ink-deep);margin:9px 0 7px;line-height:1.25}
 .worked .th p{font-size:13.5px;line-height:1.6;color:#5c5850;margin:0}
 .worked .case{display:grid;grid-template-columns:1fr 1fr;gap:30px}
@@ -171,12 +171,12 @@
 .worked .kicker{margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
 .worked .kicker p{font-family:var(--serif);font-size:20px;line-height:1.55;color:var(--ink-deep)}
 @media(max-width:640px){.worked .kicker p{font-size:17px}}
-.worked .kicker em{font-style:normal;color:var(--terra)}
+.worked .kicker em{font-style:normal;color:var(--terra-ink)}
 @media(max-width:900px){.con{grid-template-columns:1fr;gap:8px}}
 .rings{display:grid;grid-template-columns:130px 1fr;gap:0 24px;margin-top:16px}
 .rings .rr{font-family:var(--serif);font-size:15.5px;color:var(--ink-deep);padding:12px 0;border-top:1px solid rgba(0,0,0,.08)}
 .rings .rv2{font-size:14px;line-height:1.6;color:#4a463f;padding:12px 0;border-top:1px solid rgba(0,0,0,.08)}
-.rings .rr.on{color:var(--terra)}
+.rings .rr.on{color:var(--terra-ink)}
 @media(max-width:640px){.rings{grid-template-columns:1fr}.rings .rv2{border-top:none;padding-top:0}}
 .gf3{grid-template-columns:repeat(3,1fr)!important}
 .gf2{grid-template-columns:repeat(2,1fr)!important}
@@ -193,11 +193,11 @@
 .doors{display:grid;grid-template-columns:230px 1fr;gap:0 24px;margin-top:14px}
 .doors .dw{font-family:var(--serif);font-size:15px;color:var(--ink-deep);padding:12px 0;border-top:1px solid rgba(0,0,0,.08)}
 .doors .dd{font-size:13.5px;line-height:1.62;color:#4a463f;padding:12px 0;border-top:1px solid rgba(0,0,0,.08)}
-.doors .dw span{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--terra);font-weight:700;margin-top:4px;font-family:inherit}
+.doors .dw span{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;margin-top:4px;font-family:inherit}
 @media(max-width:680px){.doors{grid-template-columns:1fr}.doors .dd{border-top:none;padding-top:0}}
 
 .wst{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px}
-.wst th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);font-weight:700;padding:0 10px 9px;border-bottom:2px solid var(--line);text-align:left}
+.wst th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;padding:0 10px 9px;border-bottom:2px solid var(--line);text-align:left}
 .wst th:nth-child(2){text-align:right;white-space:nowrap}
 .wst td{padding:10px;border-bottom:1px solid rgba(0,0,0,.06);color:#4a463f;line-height:1.5;vertical-align:top}
 .wst td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink-deep)}
@@ -207,7 +207,7 @@
 @media(max-width:700px){.wst{display:block;overflow-x:auto;white-space:nowrap}}
 
 .jobs{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px}
-.jobs th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);font-weight:700;padding:0 10px 9px;border-bottom:2px solid var(--line);text-align:right}
+.jobs th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;padding:0 10px 9px;border-bottom:2px solid var(--line);text-align:right}
 .jobs th:first-child{text-align:left}
 .jobs td{padding:10px;border-bottom:1px solid rgba(0,0,0,.06);color:#4a463f;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .jobs td:first-child{text-align:left;font-family:var(--serif);font-size:15px;color:var(--ink-deep);white-space:normal}
@@ -275,7 +275,7 @@
 </div>
 
 <header class="hero short" id="top">
-  <div class="bg" style="background-image:url('assets/props/bowtruss-ext.jpg')"></div><div class="shade"></div>
+  <div class="bg" style="background-image:url('assets/props/bowtruss-int2.jpg')"></div><div class="shade"></div>
   <div class="wrap">
     <div class="eyebrow">Working Strategy &middot; Oregon</div>
     <h1>Oregon as a housing<br>manufacturing base<br>for the West Coast</h1>
@@ -353,7 +353,7 @@
   </div>
 </section>
 
-<section id="five" class="dark">
+<section id="five">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Constraints</div>
@@ -362,37 +362,37 @@
     </div>
     <div class="rv" style="margin-top:26px">
       <div class="con" style="border-top:none">
-        <div class="cn" style="color:var(--terra)">Constraint<span>&nbsp;</span></div>
-        <div><p style="font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--terra);font-weight:700">The company answer, already tried</p></div>
-        <div><p style="font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--terra);font-weight:700">The state answer, not yet tried here</p></div>
+        <div class="cn" style="color:var(--terra-ink)">Constraint<span>&nbsp;</span></div>
+        <div><p style="font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--terra-ink);font-weight:700">The company answer, already tried</p></div>
+        <div><p style="font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--terra-ink);font-weight:700">The state answer, not yet tried here</p></div>
       </div>
       <div class="con">
         <div class="cn">Factory utilization<span>The killer</span></div>
-        <div><p style="color:#c9c4b8">A plant needs 70 to 80 percent throughput to break even, and construction demand is lumpy, seasonal and rate-sensitive. Every failure above built capacity ahead of committed orders.</p></div>
-        <div><p class="st" style="color:#cfe0bd"><strong>Aggregate demand into a standing order book.</strong> Public housing agencies, universities, health systems, cities and several developers, pooled into predictable annual volume. This is exactly what the durable European producers have and no American company has ever had.</p></div>
+        <div><p style="color:#4a463f">A plant needs 70 to 80 percent throughput to break even, and construction demand is lumpy, seasonal and rate-sensitive. Every failure above built capacity ahead of committed orders.</p></div>
+        <div><p class="st" style="color:#4a463f"><strong>Aggregate demand into a standing order book.</strong> Public housing agencies, universities, health systems, cities and several developers, pooled into predictable annual volume. This is exactly what the durable European producers have and no American company has ever had.</p></div>
       </div>
       <div class="con">
         <div class="cn">Transport distance<span>The physics</span></div>
-        <div><p style="color:#c9c4b8">Whole modules travel 250 to 400 miles economically. Transport runs $15 to $20 a mile before escorts, and buildings are cheap relative to their bulk. HUD found the same ceiling in the 1960s.</p></div>
-        <div><p class="st" style="color:#cfe0bd"><strong>Ship components rather than boxes, and change the cost per mile.</strong> Flat panels load densely on standard trailers with no oversize permits. Autonomous electric freight on the existing rail line attacks the constraint itself rather than working inside it, and no single company can build that.</p></div>
+        <div><p style="color:#4a463f">Whole modules travel 250 to 400 miles economically. Transport runs $15 to $20 a mile before escorts, and buildings are cheap relative to their bulk. HUD found the same ceiling in the 1960s.</p></div>
+        <div><p class="st" style="color:#4a463f"><strong>Ship components rather than boxes, and change the cost per mile.</strong> Flat panels load densely on standard trailers with no oversize permits. Autonomous electric freight on the existing rail line attacks the constraint itself rather than working inside it, and no single company can build that.</p></div>
       </div>
       <div class="con">
         <div class="cn">Construction finance<span>The quiet one</span></div>
-        <div><p style="color:#c9c4b8">Sixty to eighty percent of a building's value is completed inside a factory, months before anything appears on site. Lenders release draws against visible site progress, so the manufacturer carries the work in progress.</p></div>
-        <div><p class="st" style="color:#cfe0bd"><strong>A standing facility that lets lenders advance against factory work in progress.</strong> Credit enhancement or a state-backed off-site progress instrument. Small policy, large unlock, and it works for every manufacturer in the state rather than one deal at a time.</p></div>
+        <div><p style="color:#4a463f">Sixty to eighty percent of a building's value is completed inside a factory, months before anything appears on site. Lenders release draws against visible site progress, so the manufacturer carries the work in progress.</p></div>
+        <div><p class="st" style="color:#4a463f"><strong>A standing facility that lets lenders advance against factory work in progress.</strong> Credit enhancement or a state-backed off-site progress instrument. Small policy, large unlock, and it works for every manufacturer in the state rather than one deal at a time.</p></div>
       </div>
       <div class="con">
         <div class="cn">Code fragmentation<span>Already solved</span></div>
-        <div><p style="color:#c9c4b8">A wall engineered for one state's code does not transfer to another's, and each jurisdiction has its own approval. This is the single biggest reason manufactured housing outperforms modular: it has one federal code.</p></div>
-        <div><p class="st" style="color:#cfe0bd"><strong>Oregon already has this and does not market it.</strong> The Prefabricated Structures Program under ORS 455.705 gives one plan approval and a state insignia valid in every Oregon jurisdiction, with reciprocity agreements already in place with other states.</p></div>
+        <div><p style="color:#4a463f">A wall engineered for one state's code does not transfer to another's, and each jurisdiction has its own approval. This is the single biggest reason manufactured housing outperforms modular: it has one federal code.</p></div>
+        <div><p class="st" style="color:#4a463f"><strong>Oregon already has this and does not market it.</strong> The Prefabricated Structures Program under ORS 455.705 gives one plan approval and a state insignia valid in every Oregon jurisdiction, with reciprocity agreements already in place with other states.</p></div>
       </div>
       <div class="con">
         <div class="cn">Capital duration<span>The mismatch</span></div>
-        <div><p style="color:#c9c4b8">Venture capital wants scale in five to seven years. This business has low margins, high capital cost, a hard geographic ceiling and a payback measured in decades. Every durable success ran on patient balance sheets instead.</p></div>
-        <div><p class="st" style="color:#cfe0bd"><strong>Pension capital is the right duration.</strong> Oregon holds one of the largest public pension funds in the country. An in-state allocation to housing production infrastructure matches a thirty-year liability to a thirty-year asset, and it is a decision only the state can make.</p></div>
+        <div><p style="color:#4a463f">Venture capital wants scale in five to seven years. This business has low margins, high capital cost, a hard geographic ceiling and a payback measured in decades. Every durable success ran on patient balance sheets instead.</p></div>
+        <div><p class="st" style="color:#4a463f"><strong>Pension capital is the right duration.</strong> Oregon holds one of the largest public pension funds in the country. An in-state allocation to housing production infrastructure matches a thirty-year liability to a thirty-year asset, and it is a decision only the state can make.</p></div>
       </div>
     </div>
-    <div class="note rv" style="margin-top:30px;color:#a39d8f;border-color:rgba(255,255,255,.14)">Sources for the constraint figures: McKinsey's 2019 work on modular construction for the utilization and savings analysis; oversize transport permit and escort rates from commercial haulers; HUD's Operation Breakthrough evaluation for the historic shipping radius; the Construction Financial Management Association on off-site draw schedules; Oregon Building Codes Division for the Prefabricated Structures Program.</div>
+    <div class="note rv" style="margin-top:30px;color:#6e6a61;border-color:rgba(255,255,255,.14)">Sources for the constraint figures: McKinsey's 2019 work on modular construction for the utilization and savings analysis; oversize transport permit and escort rates from commercial haulers; HUD's Operation Breakthrough evaluation for the historic shipping radius; the Construction Financial Management Association on off-site draw schedules; Oregon Building Codes Division for the Prefabricated Structures Program.</div>
   </div>
 </section>
 
@@ -400,7 +400,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Position</div>
-      <h2>What Oregon already owns and does not use</h2>
+      <h2>What Oregon already owns</h2>
       <p class="lead"><strong>The unusual thing about this argument is how little of it requires anything new.</strong> Four of the five instruments already exist in Oregon. They have simply never been pointed at the same target.</p>
     </div>
     <div class="rings rv" style="margin-top:24px">
@@ -411,9 +411,9 @@
       <div class="rr on">Patient capital</div>
       <div class="rv2">A public pension fund of national scale, with the duration this kind of asset needs and a plausible in-state mandate.</div>
       <div class="rr on">A freight corridor</div>
-      <div class="rv2">An existing rail line down the middle of the state, and companies now building autonomous battery-electric rail vehicles for exactly this kind of regional freight. See <a href="corridor.html" style="color:var(--terra)">the rail corridor</a>.</div>
+      <div class="rv2">An existing rail line down the middle of the state, and companies now building autonomous battery-electric rail vehicles for exactly this kind of regional freight. See <a href="corridor.html" style="color:var(--terra-ink)">the rail corridor</a>.</div>
       <div class="rr">Robotics depth</div>
-      <div class="rv2">A robotics research lineage at Oregon State, a semiconductor cluster to the north, humanoid manufacturing already in Salem, and two federal Tech Hubs. The machines that would automate this factory are the same stack. See <a href="innovation-district.html" style="color:var(--terra)">the innovation district</a>.</div>
+      <div class="rv2">A robotics research lineage at Oregon State, a semiconductor cluster to the north, humanoid manufacturing already in Salem, and two federal Tech Hubs. The machines that would automate this factory are the same stack. See <a href="innovation-district.html" style="color:var(--terra-ink)">the innovation district</a>.</div>
       <div class="rr">Mass timber</div>
       <div class="rv2">A federal Tech Hub, the TallWood Design Institute, and a materials industry already in the state. The thing being manufactured can be grown here too.</div>
     </div>
@@ -479,7 +479,7 @@
       <div class="card"><h4>3. Fix the draw schedule</h4><p style="font-size:14px">Stand up an instrument that lets lenders advance against verified factory progress. Until this exists, every manufacturer in the state finances its own work in progress and most of them run out of money doing it.</p></div>
       <div class="card"><h4>4. Market the code advantage</h4><p style="font-size:14px">Oregon's statewide prefabrication approval and its reciprocity agreements are a genuine competitive asset that no one is selling. Extend the reciprocity list and put it in front of every manufacturer considering a West Coast site.</p></div>
       <div class="card"><h4>5. Match the capital to the asset</h4><p style="font-size:14px">Pension and insurance capital, structured for thirty years rather than seven. The failures in this sector were funded by money in a hurry, and the successes were not.</p></div>
-      <div class="card" style="background:rgba(168,112,63,.08);border-color:rgba(168,112,63,.4)"><h4 style="color:var(--terra)">And then automate</h4><p style="font-size:14px">With utilization solved and capital patient, robotic automation becomes worth its cost. The jobs move from framing crews to controls, maintenance, logistics and the building of the machines themselves, which is the same work the rest of the corridor already does.</p></div>
+      <div class="card" style="background:rgba(168,112,63,.08);border-color:rgba(168,112,63,.4)"><h4 style="color:var(--terra-ink)">And then automate</h4><p style="font-size:14px">With utilization solved and capital patient, robotic automation becomes worth its cost. The jobs move from framing crews to controls, maintenance, logistics and the building of the machines themselves, which is the same work the rest of the corridor already does.</p></div>
     </div>
   </div>
 </section>
@@ -537,16 +537,16 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">Where This Sits</div>
-      <h2>The district is the demonstration, not the point</h2>
+      <h2>The district as the demonstration</h2>
     </div>
     <div class="grid g3 gf3 rv" style="margin-top:26px">
-      <div class="card"><h4>The district is the proving ground</h4><p style="font-size:14px">Edgewater in West Salem, and potentially the east bank across the river, is where the first homes and the first shared facilities would go, and where the systems can be tested by people actually living with them. See <a href="index.html" style="color:var(--terra)">the District Vision</a>.</p></div>
+      <div class="card"><h4>The district is the proving ground</h4><p style="font-size:14px">Edgewater in West Salem, and potentially the east bank across the river, is where the first homes and the first shared facilities would go, and where the systems can be tested by people actually living with them. See <a href="index.html" style="color:var(--terra-ink)">the District Vision</a>.</p></div>
       <div class="card"><h4>The corridor is the market</h4><p style="font-size:14px">Interstate 5 and the rail line beside it run from British Columbia to the Mexican border. Salem sits within an hour of everything on the northern half and within reach of the rest if freight economics change. Oregon is where this would be based and where the enabling conditions sit. It is a mark of origin rather than a limit on who it serves.</p></div>
       <div class="card"><h4>The state is the enabling layer</h4><p style="font-size:14px">Four of the five constraints can only be addressed by a state, which is why these notes are addressed to Oregon rather than to investors. The instruments are the code program, a pension allocation, aggregated public demand and the freight corridor.</p></div>
     </div>
     <div class="rv" style="max-width:940px;margin-top:38px;padding:30px 32px;background:var(--cream-2,#fbf9f4);border:1px solid var(--line);border-left:4px solid var(--terra)">
       <div class="eyebrow" style="margin-bottom:8px">The Near-Term Ask</div>
-      <h3 style="font-family:var(--serif);font-size:23px;color:var(--ink-deep);margin-bottom:12px">Fund the study, not the factory</h3>
+      <h3 style="font-family:var(--serif);font-size:23px;color:var(--ink-deep);margin-bottom:12px">Fund the study first</h3>
       <p style="font-size:15.5px;line-height:1.75;color:#4a463f">Nothing on this page is a proposal to build anything yet. What we are looking for now is grant and other early funding to test it: a feasibility study covering both banks of the river in Salem, the innovation district concepts, and whether a mid-volume manufacturing base in Oregon holds up against real numbers on demand, transport, code, finance and cost.</p>
       <p style="font-size:15.5px;line-height:1.75;color:#4a463f;margin-top:12px">That study is worth funding whichever way it comes out. If the argument holds, it is the basis for a great deal of housing and a manufacturing base the state currently lacks. If it does not, Oregon learns cheaply why, and so does everyone else working on the same problem.</p>
     </div>
@@ -573,7 +573,7 @@
       </div>
       <div class="card">
         <h4>3. Mid-volume manufacturing</h4>
-        <p style="font-size:14px">The question this page raises, tested: whether aggregated demand can be assembled, what components actually cost to move down the corridor, whether the state code pathway and a factory-progress lending instrument work as described, and what any of it does to cost per home. See also the <a href="innovation-district.html" style="color:var(--terra)">innovation district</a>. Unpriced, because we have found nobody who has done it.</p>
+        <p style="font-size:14px">The question this page raises, tested: whether aggregated demand can be assembled, what components actually cost to move down the corridor, whether the state code pathway and a factory-progress lending instrument work as described, and what any of it does to cost per home. See also the <a href="innovation-district.html" style="color:var(--terra-ink)">innovation district</a>. Unpriced, because we have found nobody who has done it.</p>
       </div>
     </div>
 
@@ -669,8 +669,8 @@
     <h2 class="serif" style="color:var(--ink-deep)">Help us test whether<br>this holds up.</h2>
     <p class="muted" style="max-width:660px;margin:0 auto;color:#4a463f">If you work on housing production, manufacturing, freight, or state capital, we would like to be argued with while this is still early enough to change. And if you fund feasibility work, the ask above is the one that matters.</p>
     <div class="contacts">
-      <a href="mailto:erik@nowcitylabs.com" style="color:var(--terra)">erik@nowcitylabs.com &middot; +1 818 312 0491</a>
-      <a href="mailto:ritchie@nowcitylabs.com" style="color:var(--terra)">ritchie@nowcitylabs.com &middot; +1 718 916 1106</a>
+      <a href="mailto:erik@nowcitylabs.com" style="color:var(--terra-ink)">erik@nowcitylabs.com &middot; +1 818 312 0491</a>
+      <a href="mailto:ritchie@nowcitylabs.com" style="color:var(--terra-ink)">ritchie@nowcitylabs.com &middot; +1 718 916 1106</a>
     </div>
   </div>
 </section>

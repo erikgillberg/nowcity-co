@@ -16,19 +16,19 @@
 /* subnav pop + scroll highlight */
 #subnav .wrap{gap:6px}
 #subnav a{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6e6a61;padding:6px 12px;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s}
-#subnav a:hover{color:var(--terra);background:rgba(168,112,63,.08)}
-#subnav a.active{color:#fff;background:var(--terra);border-color:var(--terra)}
+#subnav a:hover{color:var(--terra-ink);background:rgba(168,112,63,.08)}
+#subnav a.active{color:#fff;background:#8f5c30;border-color:#8f5c30}
 .newsgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;margin-top:26px}
-.news{background:#2b2823;border:1px solid #3d392f;border-radius:10px;padding:24px 24px 20px;display:flex;flex-direction:column}
+.news{background:var(--cream-2);border:1px solid var(--line);border-radius:10px;padding:24px 24px 20px;display:flex;flex-direction:column}
 .news .ntop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-.news .ntag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d9a26c;border:1px solid rgba(217,162,108,.45);border-radius:14px;padding:4px 10px}
-.news .nsrc{font-size:11.5px;color:#8f897c}
-.news h3{font-family:var(--serif);font-size:18px;color:var(--cream);line-height:1.3;margin-bottom:10px}
-.news p{font-size:13.5px;line-height:1.6;color:#d8d2c4;flex:1}
-.news .nsig{background:rgba(217,162,108,.08);border-left:3px solid #d9a26c;border-radius:0 6px 6px 0;padding:10px 13px;font-size:12.5px;color:#e8e2d6;margin:13px 0;line-height:1.5}
-.news .nsig span{display:block;font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#d9a26c;margin-bottom:4px}
-.news .nlink{font-size:12.5px;color:#d9a26c;text-decoration:none}
-.livnote{background:rgba(217,162,108,.08);border:1px solid rgba(217,162,108,.35);border-radius:8px;padding:14px 18px;font-size:13px;color:#c9c2b2;margin-top:34px}
+.news .ntag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8f5c30;border:1px solid rgba(143,92,48,.4);border-radius:14px;padding:4px 10px}
+.news .nsrc{font-size:11.5px;color:#6e6a61}
+.news h3{font-family:var(--serif);font-size:18px;color:var(--ink-deep);line-height:1.3;margin-bottom:10px}
+.news p{font-size:13.5px;line-height:1.6;color:#4a463f;flex:1}
+.news .nsig{background:rgba(143,92,48,.07);border-left:3px solid #8f5c30;border-radius:0 6px 6px 0;padding:10px 13px;font-size:12.5px;color:#4a463f;margin:13px 0;line-height:1.5}
+.news .nsig span{display:block;font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8f5c30;margin-bottom:4px}
+.news .nlink{font-size:12.5px;color:#8f5c30;text-decoration:none}
+.livnote{background:rgba(143,92,48,.07);border:1px solid rgba(143,92,48,.3);border-radius:8px;padding:14px 18px;font-size:13px;color:#4a463f;margin-top:34px}
 </style>
 </head>
 <body>
@@ -77,7 +77,7 @@
 </div>
 
 <header class="hero short" id="top">
-  <div class="bg" style="background-image:url('assets/oregon/riverfront-park.jpg')"></div><div class="shade"></div>
+  <div class="bg" style="background-image:url('assets/props/325-aerial.jpg')"></div><div class="shade"></div>
   <div class="wrap">
     <div class="eyebrow">Research &amp; Precedents &middot; Living Scan</div>
     <h1>Global District<br>Developments</h1>
@@ -85,11 +85,11 @@
   </div>
 </header>
 
-<section class="dark" id="signals">
+<section id="signals">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">The Signal</div>
-      <h2>The district rides a wave, not a niche</h2>
+      <h2>The district sits inside a broad trend</h2>
       <p class="lead">Every month, more cities commit to landscape-led, car-light, mixed-use districts, and more capital follows them. This page is a running scan of that movement: public demand data, groundbreakings, masterplans, and market research from around the world, curated for the district stakeholders. The pattern across all of it is the same pattern the district is built on: housing, innovation space, and public realm designed together, on underused urban land, near water.</p>
     </div>
     <div class="stats statcards c4 rv">
@@ -101,7 +101,7 @@
   </div>
 </section>
 
-<section class="dark" id="europe" style="border-top:1px solid #3d392f">
+<section id="europe" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">Europe &amp; United Kingdom</div>
@@ -140,7 +140,7 @@
   </div>
 </section>
 
-<section class="dark" id="america" style="border-top:1px solid #3d392f">
+<section id="america" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">North America</div>
@@ -200,7 +200,7 @@
   </div>
 </section>
 
-<section class="dark" id="capital" style="border-top:1px solid #3d392f">
+<section id="capital" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">Capital &amp; Policy</div>
@@ -223,13 +223,13 @@
       </div>
       <div class="news rv">
         <div class="ntop"><span class="ntag">National</span><span class="nsrc">Urban Land Magazine &middot; 2025-26</span></div>
-        <h3>Creative placemaking shown to lift returns, not just spirits</h3>
+        <h3>Creative placemaking and returns</h3>
         <p>ULI&rsquo;s placemaking research, drawing on its Advisory Services casework, documents how arts- and culture-led placemaking revitalizes districts and boosts developer returns on investment.</p>
         <div class="nsig"><span>Signal for the district</span>The district&rsquo;s activation-first strategy (market, arts, riverfront programming) is the documented ROI path, not a soft cost.</div>
         <a class="nlink" href="https://urbanland.uli.org/economy-markets-trends/new-uli-report-highlights-models-for-creative-placemaking" target="_blank" rel="noopener">Source &rarr;</a>
       </div>
     </div>
-    <div class="livnote rv">A living scan, updated as the field moves. Entries summarize publicly available reporting for private stakeholder review; follow the source links for full coverage. Suggest additions: <a href="mailto:erik@nowcitylabs.com" style="color:#d9a26c">erik@nowcitylabs.com</a>.</div>
+    <div class="livnote rv">A living scan, updated as the field moves. Entries summarize publicly available reporting for private stakeholder review; follow the source links for full coverage. Suggest additions: <a href="mailto:erik@nowcitylabs.com" style="color:var(--terra-ink)">erik@nowcitylabs.com</a>.</div>
   </div>
 </section>
 

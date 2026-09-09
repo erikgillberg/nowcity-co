@@ -16,18 +16,18 @@
 .stage{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:30px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .stage .s{padding:20px 16px;border-right:1px solid var(--line);position:relative}
 .stage .s:last-child{border-right:none}
-.stage .s .n{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+.stage .s .n{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-ink)}
 .stage .s .t{font-family:var(--serif);font-size:15.5px;color:var(--ink-deep);margin:8px 0 6px}
 .stage .s p{font-size:12.5px;color:#6e6a61;line-height:1.55}
 @media(max-width:900px){.stage{grid-template-columns:1fr 1fr}.stage .s{border-bottom:1px solid var(--line)}}
 @media(max-width:560px){.stage{grid-template-columns:1fr}}
 
 .comps{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;min-width:1000px}
-.comps th{text-align:left;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);padding:0 12px 11px;border-bottom:2px solid var(--line);vertical-align:bottom}
+.comps th{text-align:left;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-ink);padding:0 12px 11px;border-bottom:2px solid var(--line);vertical-align:bottom}
 .comps th.r,.comps td.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .comps td{padding:12px;border-bottom:1px solid rgba(0,0,0,.07);vertical-align:top;line-height:1.45;color:#4a463f}
 .comps td.proj{font-weight:600;color:var(--ink-deep);white-space:nowrap}
-.comps td.proj span{display:block;font-weight:400;font-size:11.5px;color:#8a857a}
+.comps td.proj span{display:block;font-weight:400;font-size:11.5px;color:#5d594f}
 .comps tr.us td{background:rgba(60,74,52,.07)}
 .comps tr.us td.proj{color:var(--green)}
 .tscroll{overflow-x:auto;margin-top:8px;border-radius:8px}
@@ -35,7 +35,7 @@
 
 .twocol{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
 @media(max-width:760px){.twocol{grid-template-columns:1fr}}
-.fundcard h4{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.fundcard h4{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-ink);margin-bottom:14px}
 .fund{width:100%;border-collapse:collapse;font-size:14px}
 .fund td{padding:10px 2px;border-bottom:1px solid rgba(0,0,0,.08);color:#4a463f}
 .fund td.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600;color:var(--ink-deep)}
@@ -46,18 +46,18 @@
 .cs .meta-row{font-size:12px;color:var(--green);font-weight:600;margin:8px 0 0;font-variant-numeric:tabular-nums}
 
 .impact{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px;min-width:760px}
-.impact th{text-align:left;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);padding:0 12px 11px;border-bottom:2px solid var(--line);vertical-align:bottom}
+.impact th{text-align:left;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-ink);padding:0 12px 11px;border-bottom:2px solid var(--line);vertical-align:bottom}
 .impact td{padding:12px;border-bottom:1px solid rgba(0,0,0,.07);vertical-align:top;line-height:1.45;color:#4a463f}
 .impact td.proj{font-weight:600;color:var(--ink-deep);white-space:nowrap}
-.impact td.proj span{display:block;font-weight:400;font-size:11.5px;color:#8a857a}
+.impact td.proj span{display:block;font-weight:400;font-size:11.5px;color:#5d594f}
 
 .statband{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:8px}
 .statband .stat{background:var(--cream-2);border:1px solid var(--line);border-top:3px solid var(--terra);border-radius:8px;padding:22px 20px 18px;display:flex;flex-direction:column}
 .statband .sv{font-family:var(--serif);font-size:clamp(27px,3.3vw,39px);color:var(--green);line-height:1.04}
-.statband .sv .per{font-size:.46em;color:#8a857a;font-family:var(--sans);font-weight:600;letter-spacing:.02em}
+.statband .sv .per{font-size:.46em;color:var(--mute);font-family:var(--sans);font-weight:600;letter-spacing:.02em}
 .statband .sl{font-size:13px;color:#4a463f;margin-top:11px;line-height:1.48}
-.statband .src{font-size:11px;color:#8a857a;font-style:italic;margin-top:12px;padding-top:11px;border-top:1px solid rgba(0,0,0,.08)}
-.srclink{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--terra);text-decoration:none}
+.statband .src{font-size:11px;color:var(--mute);font-style:italic;margin-top:12px;padding-top:11px;border-top:1px solid rgba(0,0,0,.08)}
+.srclink{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--terra-ink);text-decoration:none}
 .srclink:hover{text-decoration:underline}
 </style>
 <style>
@@ -65,12 +65,12 @@
 .vstep{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 24px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .vstep .vnum{font-family:var(--serif);font-size:26px;color:var(--green);line-height:1.2}
 .vstep .vlbl{font-size:13.5px;color:var(--ink);margin-top:4px}
-.vstep.seed{border-color:var(--terra);border-width:2px}
-.vstep.seed .vnum{color:var(--terra)}
+.vstep.seed{border-color:var(--terra-ink);border-width:2px}
+.vstep.seed .vnum{color:var(--terra-ink)}
 .vstep .seedgrid{display:flex;gap:0;justify-content:center;flex-wrap:wrap}
 .vstep .seedgrid > div{padding:0 20px}
 .vstep .seedgrid > div + div{border-left:1px solid var(--line)}
-.varrow{text-align:center;color:var(--terra);font-size:22px;line-height:1;margin:9px 0}
+.varrow{text-align:center;color:var(--terra-ink);font-size:22px;line-height:1;margin:9px 0}
 @media(max-width:520px){.vstep .seedgrid > div + div{border-left:none;border-top:1px solid var(--line);margin-top:10px;padding-top:10px}}
 </style>
 </head>
@@ -122,7 +122,7 @@
 </div>
 
 <header class="hero short" id="top">
-  <div class="bg" style="background-image:url('assets/mp-05.jpg')"></div><div class="shade"></div>
+  <div class="bg" style="background-image:url('assets/props/298-aerial.jpg')"></div><div class="shade"></div>
   <div class="wrap">
     <div class="eyebrow">Research &middot; Field Notes</div>
     <h1>How Districts<br>Create Value</h1>
@@ -139,7 +139,7 @@
       <h2>The value is in the assembly</h2>
       <p class="lead">A single building is bought at retail. A district is created. Across the most-cited mixed-use and innovation districts of the last two decades, the largest, earliest gains came not from vertical construction but from controlling underused land, assembling it, securing entitlements, and master-planning a coherent whole. That work converts a set of ordinary parcels into an entitled platform worth far more than its raw basis, and opens a buildout opportunity many times larger again. The capital that funds the assembly captures the steepest part of the value curve. At the district, Now City plays that role as master developer: assembling and entitling the district, then developing and holding the phases as a long-term owner-operator, with the option to bring in best-in-class specialist builders on individual parcels.</p>
     </div>
-    <div class="grid g3 rv">
+    <div class="grid g3 rv gf3">
       <div class="card">
         <h4>Low-basis land</h4>
         <p style="font-size:14.5px">Nearly every comparable district started on underused land at a modest basis: a highway corridor, a brownfield, federal or port land, an aging harbor, a ballpark parking lot. The entry point is the opportunity.</p>
@@ -366,8 +366,8 @@
         <div class="vnum" style="font-size:19px">Platform Capital</div>
         <div class="vlbl"><strong>The catalytic slice</strong></div>
         <div class="seedgrid" style="margin-top:10px">
-          <div><div style="font-size:14px;font-family:var(--serif);color:var(--terra)">Land basis</div><div style="font-size:11px;color:#4e7a3f;font-weight:700;margin-top:3px">&#9679; incl. sponsor land contribution</div></div>
-          <div><div style="font-size:14px;font-family:var(--serif);color:var(--terra)">Working capital</div><div style="font-size:12px;color:#8a857a">entitlement &amp; activation</div></div>
+          <div><div style="font-size:14px;font-family:var(--serif);color:var(--terra-ink)">Land basis</div><div style="font-size:11px;color:#4e7a3f;font-weight:700;margin-top:3px">&#9679; incl. sponsor land contribution</div></div>
+          <div><div style="font-size:14px;font-family:var(--serif);color:var(--terra-ink)">Working capital</div><div style="font-size:12px;color:var(--mute)">entitlement &amp; activation</div></div>
         </div>
       </div>
       <div class="varrow">&#9660;</div>
@@ -380,16 +380,16 @@
       <div class="vstep"><div class="vnum" style="font-size:19px">Multiple Exits</div><div class="vlbl">Rolling recapitalizations and phase-level dispositions across the build-out, with an optional long-term Opportunity Zone hold</div></div>
     </div>
     <p class="muted rv" style="font-size:13px;text-align:center;max-width:640px;margin:16px auto 0">Infrastructure is largely carried by public and project sources, so the GP capital at risk is the catalytic slice shown above. The dollar-level flow, phasing, and exit windows live on District Capitalization (investor access).</p>
-    <div class="note rv">Illustrative, planning-level estimates for discussion, not a forecast or an offer. The infrastructure share of platform-creation capital is largely carried by public and project sources, so developer and GP equity at risk is a minority of the total (see <a href="#infrastructure" style="color:var(--terra)">Infrastructure</a>). Comparable figures are drawn from public reporting and vary in era and method. See District Capitalization for the capital structure and the <a href="innovation-district.html" style="color:var(--terra)">Innovation District</a> for the vision.</div>
+    <div class="note rv">Illustrative, planning-level estimates for discussion, not a forecast or an offer. The infrastructure share of platform-creation capital is largely carried by public and project sources, so developer and GP equity at risk is a minority of the total (see <a href="#infrastructure" style="color:var(--terra-ink)">Infrastructure</a>). Comparable figures are drawn from public reporting and vary in era and method. See District Capitalization for the capital structure and the <a href="innovation-district.html" style="color:var(--terra-ink)">Innovation District</a> for the vision.</div>
   </div>
 </section>
 
 <!-- CTA -->
-<section id="contact" class="dark cta" style="border-top:1px solid #3d392f">
+<section id="contact" class="cta" style="border-top:1px solid var(--line)">
   <div class="wrap rv">
     <div class="eyebrow">The Takeaway</div>
     <h2 class="serif">Value is created in<br>the assembly.</h2>
-    <p class="muted" style="max-width:600px;margin:0 auto">The districts that compounded value did the unglamorous early work first. The district is at that moment now. See District Capitalization, or learn more at <a href="https://nowcity.co" style="color:#d9a26c;text-decoration:none">nowcity.co</a>.</p>
+    <p class="muted" style="max-width:600px;margin:0 auto">The districts that compounded value did the unglamorous early work first. The district is at that moment now. See District Capitalization, or learn more at <a href="https://nowcity.co" style="color:var(--terra-ink);text-decoration:none">nowcity.co</a>.</p>
     <div class="contacts">
       <a href="mailto:erik@nowcitylabs.com">erik@nowcitylabs.com · +1 818 312 0491</a>
       <a href="mailto:ritchie@nowcitylabs.com">ritchie@nowcitylabs.com · +1 718 916 1106</a>
