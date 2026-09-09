@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=6">
+<link rel="stylesheet" href="assets/site.css?v=7">
 <script defer src="assets/nav.js?v=2"></script>
 <style>
 .tier{margin-top:40px}
@@ -61,7 +61,13 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
     <a class="brand" href="index.html">Salem River District<span class="brand-sub"> &middot; A Now City Initiative</span></a>
     <ul class="navlinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="innovation-district.html">Innovation District</a></li>
+      <li class="dd"><a href="river-district.html">District Vision</a>
+        <ul class="ddm">
+          <li><a href="river-district.html">The River District</a></li>
+          <li><a href="innovation-district.html">The Innovation District</a></li>
+        </ul>
+      </li>
+      <li><a href="study-plan.html">The Study Plan</a></li>
       <li class="dd"><a href="research.html">District Research</a>
         <ul class="ddm">
           <li class="dd-head">Economics &amp; Precedent</li>
@@ -238,15 +244,10 @@ table.matrix tr.sum th,table.matrix tr.sum td{border-top:2px solid var(--line);b
           <div class="metric">21 stations · 7.25M rides/yr · free</div>
           <p style="font-size:13px;color:#6e6a61;margin-top:6px">Ridership nearly doubled when the fare was removed in 2002.</p>
         </div>
-        <div class="card on-alt case">
-          <h4>Whoosh by Swyft Cities</h4>
-          <div class="loc">Irvine Great Park &middot; 2025</div>
-          <p style="font-size:14px">An autonomous, electric cable circulator with offline stations, so every trip is nonstop and zero-wait. Chosen by Irvine in April 2025.</p>
-          <div class="metric">12 stations · 27,000 daily projected</div>
-          <p style="font-size:13px;color:#6e6a61;margin-top:6px">Forecast 4&times; the ridership at 1/6 the operating cost per trip of a traditional circulator.</p>
-          <p class="caution">Frontier: not yet proven at production scale - only a quarter-scale demo to date.</p>
-        </div>
+        
       </div>
+      <div class="note" style="margin-top:22px"><strong>Whoosh by Swyft Cities, Irvine Great Park, 2025.</strong> An autonomous electric cable circulator with offline stations, so every trip is nonstop and zero-wait. Irvine chose it in April 2025: twelve stations and 27,000 daily trips projected, forecast at four times the ridership of a traditional circulator at roughly a sixth of the operating cost per trip. It sits apart from the cases above because it is the frontier option rather than a proven one, with only a quarter-scale demonstration built to date. <a href="whoosh.html" style="color:var(--terra-ink)">The full case</a>.</div>
+
     </div>
   </div>
 </section>
