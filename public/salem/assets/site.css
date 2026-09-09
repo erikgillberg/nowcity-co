@@ -305,3 +305,9 @@ table{max-width:100%}
 .gf3{grid-template-columns:repeat(3,1fr)!important}
 @media(max-width:900px){.gf3{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:620px){.gf3,.gf2{grid-template-columns:1fr!important}}
+
+/* current page marker in the nav: light terra over the hero, dark terra once the bar goes solid */
+.navlinks a.here,.navlinks a.here-parent{color:#e8c79d!important}
+nav.scrolled .navlinks a.here,nav.solid .navlinks a.here,nav.scrolled .navlinks a.here-parent,nav.solid .navlinks a.here-parent{color:var(--terra-ink)!important}
+.navlinks .ddm a.here{color:#e8c79d!important}
+.navlinks a.here{cursor:default}

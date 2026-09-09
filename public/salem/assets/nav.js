@@ -40,6 +40,19 @@
       });
     });
 
+    // Mark the current page in the nav so a menu item never reads as a live link to itself.
+    var here=(location.pathname.split('/').pop()||'index.html');
+    Array.prototype.forEach.call(links.querySelectorAll('a'),function(a){
+      var t=(a.getAttribute('href')||'').split('#')[0].split('/').pop();
+      if(t&&t===here){
+        a.setAttribute('aria-current','page');
+        a.classList.add('here');
+        if(!(a.parentNode&&a.parentNode.classList.contains('dd')))a.removeAttribute('href');
+        var g=a.closest&&a.closest('.dd');
+        if(g)g.querySelector('a').classList.add('here-parent');
+      }
+    });
+
     window.addEventListener('resize',function(){
       if(!mobile()){
         nav.classList.remove('navopen');
