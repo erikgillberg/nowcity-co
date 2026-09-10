@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="assets/nowcity-favicon-white.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oregon&rsquo;s Physical AI Corridor - Salem River District</title>
+<meta name="description" content="What Oregon already has along the Willamette: a semiconductor cluster, a robotics research base, a working farm valley, a health system and a mass timber sector.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Salem River District">
+<meta property="og:title" content="Oregon&rsquo;s Physical AI Corridor · Salem River District">
+<meta property="og:description" content="What Oregon already has along the Willamette: a semiconductor cluster, a robotics research base, a working farm valley, a health system and a mass timber sector.">
+<meta property="og:url" content="https://nowcity.co/salem/oregon-corridor">
+<meta property="og:image" content="https://nowcity.co/salem/assets/og/oregon-corridor.jpg?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Salem from the air, with the river and the corridor running through it">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oregon&rsquo;s Physical AI Corridor · Salem River District">
+<meta name="twitter:description" content="What Oregon already has along the Willamette: a semiconductor cluster, a robotics research base, a working farm valley, a health system and a mass timber sector.">
+<meta name="twitter:image" content="https://nowcity.co/salem/assets/og/oregon-corridor.jpg?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=9">
+<script defer src="assets/nav.js?v=2"></script>
+<style>
+.specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:22px;margin-top:6px}
+.spec .num{font-family:var(--serif);font-size:clamp(24px,3vw,34px);color:var(--green);line-height:1.05}
+.dark .spec .num{color:var(--cream)}
+.spec .lbl{font-size:12px;color:#6e6a61;margin-top:6px;line-height:1.4}
+.dark .spec .lbl{color:#a39d8f}
+.seq{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:30px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seq .step{padding:22px 18px;border-right:1px solid var(--line)}
+.seq .step:last-child{border-right:none}
+.seq .step .n{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-ink)}
+.seq .step .t{font-family:var(--serif);font-size:16px;color:var(--ink-deep);margin:8px 0 8px}
+.seq .step p{font-size:12.5px;color:#6e6a61;line-height:1.55}
+@media(max-width:900px){.seq{grid-template-columns:1fr 1fr 1fr}.seq .step:nth-child(3){border-right:none}}
+@media(max-width:560px){.seq{grid-template-columns:1fr}.seq .step{border-right:none;border-bottom:1px solid var(--line)}.seq .step:last-child{border-bottom:none}}
+.who{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}
+.who th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;padding:0 12px 10px;border-bottom:2px solid var(--line)}
+.who td{padding:11px 12px;border-bottom:1px solid rgba(0,0,0,.06);vertical-align:top;line-height:1.5;color:#4a463f}
+.who td:first-child{font-weight:600;color:var(--ink-deep);white-space:nowrap}
+.who td:nth-child(2){font-weight:600;color:var(--green);white-space:nowrap}
+@media(max-width:640px){.who td:first-child,.who td:nth-child(2){white-space:normal}.who,.who th{font-size:12.5px}}
+.card .pl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-ink);margin-bottom:8px}
+.card .take{font-size:13px;color:#6e6a61;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.dark .card .take{border-color:rgba(255,255,255,.12);color:#b7b1a4}
+.card .pstat{font-size:12px;color:var(--green);font-weight:600;margin-top:10px;font-variant-numeric:tabular-nums;line-height:1.55}
+.card .prelink{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--terra-ink);text-decoration:none}
+.card .prelink:hover{text-decoration:underline}
+.statband{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:20px 24px;margin-top:8px}
+.statband .sv{font-family:var(--serif);font-size:clamp(26px,3.2vw,38px);color:var(--green);line-height:1.05}
+.dark .statband .sv{color:var(--cream)}
+.statband .sl{font-size:12px;color:#6e6a61;margin-top:6px;line-height:1.4}
+.dark .statband .sl{color:#a39d8f}
+.photo{border-radius:10px;overflow:hidden;border:1px solid var(--line);margin-top:8px}
+.photo img{width:100%;display:block}
+.photo figcaption{font-size:12.5px;color:var(--mute);padding:9px 12px 11px;background:#fff}
+.on-alt.photo figcaption,.alt .photo figcaption{background:var(--cream)}
+.photo.half{max-width:620px;margin-left:auto;margin-right:auto}
+.card .cardimg{margin:-30px -28px 18px;border-radius:5px 5px 0 0;overflow:hidden;display:block}
+.card .cardimg img{width:100%;height:152px;object-fit:cover;display:block}
+.thesis{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:0;margin-top:30px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.thesis .ti{padding:22px 22px;border-right:1px solid var(--line)}
+.thesis .ti:last-child{border-right:none}
+.thesis .tl{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--terra-ink);margin-bottom:9px;text-decoration:none;display:inline-block}
+.thesis a.tl:hover{text-decoration:underline}
+.thesis .td{font-size:13.5px;color:#4a463f;line-height:1.6}
+@media(max-width:900px){.thesis{grid-template-columns:1fr 1fr}.thesis .ti{border-bottom:1px solid var(--line)}}
+@media(max-width:560px){.thesis{grid-template-columns:1fr}}
+.feat{display:grid;grid-template-columns:1.35fr 1fr;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-top:8px}
+.feat .lhs{padding:34px 36px}
+.feat .rhs{background:var(--green);color:var(--cream);padding:34px 30px;display:flex;flex-direction:column;justify-content:center}
+.feat .rhs .fnum{font-family:var(--serif);font-size:30px;line-height:1.05}
+.feat .rhs .flbl{font-size:12px;color:#cdd5c2;margin:5px 0 20px}
+.feat .rhs .flbl:last-child{margin-bottom:0}
+.feat .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-ink)}
+@media(max-width:760px){.feat{grid-template-columns:1fr}}
+.mapwrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:8px;background:#eef0e6}
+.mapwrap img{width:100%;display:block}
+.coalfig{max-width:620px;margin:8px auto 0;display:block;width:100%}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:8px}
+.split .col-tx .lead{margin-top:4px}
+.imgcard{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:block;background:#fff}
+.dark .imgcard{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.03)}
+.imgcard img{width:100%;display:block}
+.imgcard figcaption{font-size:12.5px;color:var(--mute);padding:9px 13px 11px;background:#fff}
+.alt .imgcard figcaption{background:var(--cream)}
+@media(max-width:780px){.split{grid-template-columns:1fr;gap:24px}}
+.thesis .ic{display:block;width:22px;height:22px;color:var(--terra-ink);margin-bottom:11px}
+.thesis .ic svg{width:22px;height:22px;display:block}
+.card .cic{display:block;width:26px;height:26px;color:var(--terra-ink);margin-bottom:13px}
+.dark .card .cic{color:#d9a26c}
+.card .cic svg{width:26px;height:26px;display:block}
+.bignum{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;margin-top:8px;padding:30px 30px;border-radius:12px;background:var(--green)}
+.bignum .b{text-align:left}
+.bignum .bv{font-family:var(--serif);font-size:clamp(30px,4vw,42px);color:#fff;line-height:1.02}
+.bignum .bl{font-size:12.5px;color:#cdd5c2;margin-top:7px;line-height:1.45}
+.homes{margin-top:22px;padding:26px 30px;border-radius:12px;border:1px solid var(--line);background:var(--cream);display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.homes .hn{font-family:var(--serif);font-size:clamp(30px,4.4vw,46px);line-height:1;color:var(--green);white-space:nowrap}
+.homes .ht{font-size:15px;line-height:1.62;color:#4a463f;flex:1;min-width:250px}
+.homes .ht strong{color:var(--ink-deep)}
+.measures{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1px;margin-top:30px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.measures .ms{background:#fff;padding:17px 20px;display:flex;gap:13px;align-items:flex-start}
+.measures .msn{font-family:var(--serif);font-size:15px;color:var(--terra-ink);font-weight:700;min-width:20px;line-height:1.3}
+.measures .ms h5{font-size:13.5px;color:var(--ink-deep);margin:1px 0 4px;font-weight:700}
+.measures .ms p{font-size:12.5px;color:#6e6a61;line-height:1.5}
+.shuman{display:flex;gap:18px;align-items:center;margin-top:30px;padding:20px 24px;border-radius:10px;background:var(--cream);border:1px solid var(--line)}
+.shuman .sq{font-family:var(--serif);font-size:15px;line-height:1.55;color:var(--ink-deep)}
+.shuman .sa{font-size:12.5px;color:#6e6a61;margin-top:6px}
+
+h1,h2,h3,h4,h5,.sub,.lead,figcaption,.eyebrow{text-wrap:balance}
+p,li,.td,.lbl,.sl{text-wrap:pretty}
+details.more{border:1px solid var(--line);border-radius:10px;margin-top:28px;background:#fff}
+.alt details.more{background:var(--cream-2,#fbf9f4)}
+.dark details.more{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.14)}
+details.more>summary{cursor:pointer;list-style:none;padding:15px 22px;font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--terra-ink)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary:after{content:"   +";white-space:pre}
+details.more[open]>summary:after{content:"   \2013";white-space:pre}
+details.more .inner{padding:2px 22px 26px}
+details.more .inner>*:first-child{margin-top:0}
+.rounds figcaption{max-width:300px}
+.callout{border-left:4px solid var(--terra);background:rgba(168,112,63,.08);padding:24px 28px;margin-top:26px;border-radius:0 8px 8px 0}
+.dark .callout{background:rgba(216,162,108,.10)}
+.callout h3{font-family:var(--serif);font-size:18.5px;color:var(--ink-deep);margin-bottom:9px}
+.dark .callout h3{color:#e8b785}
+.callout p{font-size:14.5px;line-height:1.72;color:#4a463f}
+.dark .callout p{color:#c9c4b8}
+.callout p+p{margin-top:10px}
+@media(max-width:640px){.callout{padding:20px 18px}}
+.pg{display:grid;gap:20px;margin-top:30px}
+.pg3{grid-template-columns:repeat(3,1fr)}
+.pg4{grid-template-columns:repeat(2,1fr)}
+.pg figure{margin:0}
+@media(max-width:900px){.pg3{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.pg3,.pg4{grid-template-columns:1fr}}
+.photo.wide{margin-top:30px}
+.photo.mid{max-width:860px;margin-left:auto;margin-right:auto;margin-top:30px}
+.dark .photo{border-color:rgba(255,255,255,.14)}
+.dark .photo figcaption{background:rgba(255,255,255,.045);color:#a39d8f}
+
+.gf3{grid-template-columns:repeat(3,1fr)!important}
+.gf2{grid-template-columns:repeat(2,1fr)!important}
+@media(max-width:900px){.gf3{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:620px){.gf3,.gf2{grid-template-columns:1fr!important}}
+.rounds{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;margin:36px 0 4px;justify-items:center}
+@media(max-width:560px){.rounds{grid-template-columns:1fr}}
+.rounds figure{margin:0;text-align:center;max-width:330px}
+.rounds .ph{position:relative;width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 26px rgba(33,31,28,.13)}
+.dark .rounds .ph{border-color:rgba(255,255,255,.14)}
+.rounds img{width:100%;height:100%;object-fit:cover;display:block}
+.rounds figcaption{font-size:12px;color:#6e6a61;margin-top:11px;line-height:1.5}
+.dark .rounds figcaption{color:#a39d8f}
+.corridor{display:grid;grid-template-columns:150px 1fr;gap:0 26px}
+.corridor .cy{font-family:var(--serif);font-size:16px;color:var(--ink-deep);padding:13px 0 13px 20px;border-top:1px solid rgba(0,0,0,.08);position:relative}
+.corridor .cy:before{content:'';position:absolute;left:0;top:20px;width:9px;height:9px;border-radius:50%;background:var(--green)}
+.corridor .cd{font-size:14px;line-height:1.62;color:#4a463f;padding:13px 0;border-top:1px solid rgba(0,0,0,.08)}
+.corridor .cy.hi{color:var(--terra-ink)}
+.corridor .cy.hi:before{background:var(--terra);width:12px;height:12px;left:-2px;top:19px}
+.corridor .cd b{color:var(--ink-deep);font-weight:600}
+@media(max-width:700px){.corridor{grid-template-columns:1fr}.corridor .cd{border-top:none;padding-top:0}}
+.mx{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
+.mx th{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;padding:0 8px 10px;border-bottom:2px solid var(--line);text-align:center;vertical-align:bottom;line-height:1.35}
+.mx th:first-child{text-align:left;width:31%}
+.mx td{padding:11px 8px;border-bottom:1px solid rgba(0,0,0,.06);text-align:center;color:var(--green);font-size:15px}
+.mx td:first-child{text-align:left;font-size:13.5px;color:#4a463f;line-height:1.5}
+.mx tr.us td{background:rgba(168,112,63,.07)}
+.mx tr.us td:first-child{font-weight:600;color:var(--ink-deep)}
+.mx .no{color:#c3bdb0}
+.mx .pt{color:var(--soft-green,#8a9c79)}
+@media(max-width:820px){.mx{display:block;overflow-x:auto;white-space:nowrap}}
+.roles{margin-top:8px}
+.role{display:grid;grid-template-columns:190px 1fr 1fr;gap:24px;padding:16px 0;border-top:1px solid rgba(0,0,0,.08);align-items:start}
+.role .rn{font-family:var(--serif);font-size:16px;color:var(--ink-deep)}
+.role p{font-size:13.5px;line-height:1.62;color:#4a463f;margin:0}
+.role .rw{color:var(--green)}
+@media(max-width:860px){.role{grid-template-columns:1fr;gap:6px}}
+
+.fund{background:var(--cream-2,#fbf9f4);border:1px solid var(--line);border-left:4px solid var(--terra);padding:34px 36px;margin-top:30px}
+@media(max-width:640px){.fund{padding:24px 20px}}
+.fund h3{font-family:var(--serif);font-size:19px;color:var(--ink-deep);margin-bottom:10px}
+.fund p{font-size:14.5px;line-height:1.7;color:#4a463f}
+.doors{display:grid;grid-template-columns:230px 1fr;gap:0 24px;margin-top:14px}
+.doors .dw{font-family:var(--serif);font-size:15px;color:var(--ink-deep);padding:12px 0;border-top:1px solid rgba(0,0,0,.08)}
+.doors .dd{font-size:13.5px;line-height:1.62;color:#4a463f;padding:12px 0;border-top:1px solid rgba(0,0,0,.08)}
+.doors .dw span{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;margin-top:4px;font-family:inherit}
+@media(max-width:680px){.doors{grid-template-columns:1fr}.doors .dd{border-top:none;padding-top:0}}
+
+.wst{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px}
+.wst th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;padding:0 10px 9px;border-bottom:2px solid var(--line);text-align:left}
+.wst th:nth-child(2){text-align:right;white-space:nowrap}
+.wst td{padding:10px;border-bottom:1px solid rgba(0,0,0,.06);color:#4a463f;line-height:1.5;vertical-align:top}
+.wst td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink-deep)}
+.wst tr.q td{background:rgba(168,112,63,.07)}
+.wst tr.q td:first-child{font-weight:600;color:var(--ink-deep)}
+.wst tr.tot td{border-top:2px solid var(--line);border-bottom:none;font-weight:700;color:var(--ink-deep);padding-top:13px}
+@media(max-width:700px){.wst{display:block;overflow-x:auto;white-space:nowrap}}
+
+.jobs{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px}
+.jobs th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-ink);font-weight:700;padding:0 10px 9px;border-bottom:2px solid var(--line);text-align:right}
+.jobs th:first-child{text-align:left}
+.jobs td{padding:10px;border-bottom:1px solid rgba(0,0,0,.06);color:#4a463f;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.jobs td:first-child{text-align:left;font-family:var(--serif);font-size:15px;color:var(--ink-deep);white-space:normal}
+.jobs td:last-child{text-align:left;white-space:normal;font-size:13px}
+.jobs tr.hi td{background:rgba(168,112,63,.07)}
+@media(max-width:760px){.jobs{display:block;overflow-x:auto;white-space:nowrap}}
+.dscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.dscroll svg{min-width:760px}
+@media print{.dscroll{overflow:visible}.dscroll svg{min-width:0}}
+.plate{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;margin-top:34px}
+.plate figcaption{font-size:13px;color:var(--mute);padding:13px 18px 15px;line-height:1.55;background:#fff}
+</style>
+</head>
+<body>
+
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Salem River District<span class="brand-sub"> &middot; A Now City Initiative</span></a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="dd"><a href="river-district.html">District Vision</a>
+        <ul class="ddm">
+          <li><a href="river-district.html">The River District</a></li>
+          <li><a href="innovation-district.html">The Innovation District</a></li>
+        </ul>
+      </li>
+      <li><a href="study-plan.html">The Study Plan</a></li>
+      <li class="dd"><a href="research.html">District Research</a>
+        <ul class="ddm">
+          <li class="dd-head">Economics &amp; Precedent</li>
+          <li><a href="research.html">District Economic Development</a></li>
+          <li><a href="oregon-corridor.html">Oregon's Physical AI Corridor</a></li>
+          <li><a href="district-precedents.html">Innovation District Precedents</a></li>
+          <li><a href="district-value.html">District Value Creation</a></li>
+          <li><a href="global-districts.html">Global District Developments</a></li>
+          <li><a href="copenhagen-salem.html">The Copenhagen Comparison</a></li>
+          <li><a href="uli-tap.html">ULI Salem TAP (2022)</a></li>
+          <li class="dd-head">Mobility</li>
+          <li><a href="corridor.html">The Rail Corridor</a></li>
+          <li><a href="mobility-concepts.html">Salem Mobility Concepts</a></li>
+          <li><a href="mobility-research.html">Global District Mobility</a></li>
+          <li><a href="whoosh.html">Whoosh by Swyft Cities</a></li>
+          <li class="dd-head">Housing</li>
+          <li><a href="homes-question.html">Housing Supply</a></li>
+          <li><a href="pab.html">Single-Stair / Point Access Block</a></li>
+          <li class="dd-head">Concepts</li>
+          <li><a href="placemaking.html">Placemaking</a></li>
+          <li><a href="edgewater-2036.html">Edgewater 2036</a></li>
+          <li><a href="wellness-institute.html">Women &amp; Family Health Institute</a></li>
+        </ul>
+      </li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero short" id="top">
+  <div class="bg" style="background-image:url('assets/river/factory-floor3.jpg')"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="eyebrow">Research &middot; Regional Economy</div>
+    <h1>Oregon&rsquo;s physical<br>AI corridor</h1>
+    <p class="sub">A semiconductor cluster, a robotics research base, a working farm valley, a health system and a mass timber sector, spread along a hundred miles of the Willamette.</p>
+    <div class="meta">Research notes &middot; Salem, Oregon &middot; September 2026</div>
+  </div>
+</header>
+
+<section id="corridor" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Why Here</div>
+      <h2>What Oregon already has</h2>
+      <p class="lead"><strong>Oregon already has the pieces. What it lacks is one place where they meet.</strong> The Silicon Forest runs the length of the Willamette, from Intel and the semiconductor cluster around Portland through instrumentation, robotics, materials and research talent all the way to Eugene. It holds one of the deepest concentrations of technology companies in the country, and Salem sits in the middle of it. What the valley lacks is a single place where these industries work near each other.</p>
+    </div>
+    <div class="statband rv" style="margin-top:8px">
+      <div><div class="sv">95,440</div><div class="sl">core high-tech jobs in Oregon in 2025, down from a peak of 103,200 in 2023</div></div>
+      <div><div class="sv">28,338</div><div class="sl">of those in semiconductor manufacturing, about $4.9B of payroll</div></div>
+      <div><div class="sv">$148,274</div><div class="sl">average high-tech wage, against a statewide private average near $72,000</div></div>
+      <div><div class="sv">2</div><div class="sl">federal Tech Hubs led by Oregon State: microfluidics, and mass timber</div></div>
+    </div>
+    <div class="note rv" style="margin-top:16px">Employment and wage figures: Oregon Employment Department, QualityInfo, 2025. Tech Hubs: US Economic Development Administration, designated October 2023. Oregon State is the only university leading two.</div>
+
+    <div class="rv" style="margin-top:44px">
+      <h3 style="font-family:var(--serif);font-size:23px;color:var(--ink-deep);margin-bottom:8px">The corridor, north to south</h3>
+      <p style="font-size:15.5px;line-height:1.72;color:#4a463f;max-width:860px;margin-bottom:22px">Everything below is confirmed at that location from a primary source. It is a reference rather than a complete inventory, and the omissions are honest ones: we left out anything we could not check.</p>
+<details class="more rv"><summary>The corridor, company by company</summary><div class="inner">
+      <div class="corridor">
+        <div class="cy">Hillsboro</div>
+        <div class="cd"><b>Intel</b> Ronler Acres, six wafer fabs and Oregon's largest private employer &middot; <b>Lattice Semiconductor</b> headquarters &middot; <b>Qorvo</b> RF fab and test &middot; <b>Thermo Fisher Scientific</b> semiconductor business unit and electron microscopy &middot; <b>Hitachi High-Tech America</b> nanotechnology center &middot; <b>Kokusai Electric</b> US demonstration center &middot; <b>AGC Electronics America</b> quartzware &middot; <b>Planar Systems</b> headquarters &middot; <b>Epson Portland Inc.</b></div>
+        <div class="cy">Beaverton</div>
+        <div class="cd"><b>Tektronix</b> global headquarters, test and measurement &middot; <b>Analog Devices</b> largest US site, mature-node manufacturing &middot; <b>Biamp</b> headquarters</div>
+        <div class="cy">Portland</div>
+        <div class="cd"><b>Siltronic</b> silicon wafer manufacturing &middot; <b>Daimler Truck North America</b> headquarters and engineering center on Swan Island, with a new electric and hydrogen fuel-cell facility &middot; <b>Ampere Computing</b> Arm server CPU design &middot; <b>AWS Elemental</b> video engineering &middot; <b>Jama Software</b> &middot; <b>Autodesk</b> &middot; <b>eBay</b> engineering &middot; <b>Puppet</b> &middot; <b>OHSU</b> Knight Cancer Institute, the Vollum Institute and Oregon's only biomedical engineering department &middot; <b>Portland State University</b> Maseeh College, with an intelligent robotics laboratory</div>
+        <div class="cy">Gresham</div>
+        <div class="cd"><b>onsemi</b> 200mm wafer fab across 83 acres &middot; <b>Microchip Technology</b> Fab 4</div>
+        <div class="cy">Tualatin</div>
+        <div class="cd"><b>Lam Research</b> R&amp;D and manufacturing campus, with a $620M cleanroom laboratory breaking ground in 2026 &middot; <b>Kinetics</b>, legally Mega Fluid Systems, chemical and gas delivery for fabs</div>
+        <div class="cy">Wilsonville</div>
+        <div class="cd"><b>Siemens EDA</b> headquarters, design automation &middot; <b>Teledyne FLIR</b> headquarters, thermal imaging &middot; <b>ESS Tech</b> headquarters and manufacturing, iron flow batteries</div>
+        <div class="cy hi">Salem</div>
+        <div class="cd"><b>Agility</b>, known until March 2026 as Agility Robotics, an Oregon State spinout building humanoid robots at RoboFab &middot; <b>Garmin AT</b> aviation avionics design and manufacturing near McNary Field &middot; <b>Salem Health</b> the mid-valley's largest private employer at about 6,400 staff, running clinical trials &middot; <b>Truitt Bros.</b> thermally processed foods &middot; <b>Willamette University</b> data science and dual-degree engineering &middot; <b>Chemeketa Community College</b> robotics, industrial electronics and machining programs</div>
+        <div class="cy">Albany and Millersburg</div>
+        <div class="cd"><b>ATI Specialty Alloys &amp; Components</b> titanium, zirconium and nickel alloys across 110 acres &middot; <b>Valliscor</b> fluorinated materials for semiconductor etch, new campus from 2025</div>
+        <div class="cy">Corvallis</div>
+        <div class="cd"><b>HP Inc.</b> Corvallis Division, microfluidics and printhead development &middot; <b>Inpria</b>, now part of JSR, EUV photoresist and an Oregon State spinout &middot; <b>Oregon State University</b> &middot; the <b>Corvallis Microfluidics Tech Hub</b></div>
+        <div class="cy">Eugene</div>
+        <div class="cd"><b>STRATACACHE</b> the 1.2M sq ft former SK Hynix plant, converting to micro-LED production &middot; <b>University of Oregon</b></div>
+      </div>
+</div></details>
+      <div class="note" style="margin-top:22px"><b>Where Salem sits.</b> About 47 miles by road from Portland, 35 from Corvallis and Oregon State, 60 from the Hillsboro fabs and 64 from Eugene. It is the only point on the corridor within an hour of all of them, and the only one that is also a state capital.</div>
+      <div class="note" style="margin-top:14px"><b>What we left out.</b> Widely repeated totals for Oregon high-tech businesses and semiconductor supply-chain companies are absent because we could not trace them to a dated primary source. Locations were confirmed against company sites, city economic-development pages and NIST CHIPS award pages. <b>FAST</b>, the Frontiers of Advanced Semiconductor Technology engine, is an NSF Regional Innovation Engine led by Oregon State with up to $160M over ten years and close to a hundred partner organizations across twelve counties.</div>
+    </div>
+
+    <div class="rv" style="margin-top:44px">
+      <h3 style="font-family:var(--serif);font-size:23px;color:var(--ink-deep);margin-bottom:8px">The work that is already here</h3>
+      <p style="font-size:15.5px;line-height:1.72;color:#4a463f;max-width:900px"><strong>Physical AI is a narrow technology that touches wide industries, and it is worth being clear which way round that is.</strong> Semiconductor manufacturing employs about 28,000 Oregonians. Health care employs three hundred thousand. Construction employs a hundred and eighteen thousand. Agriculture and food manufacturing together employ around eighty thousand. The technology on this page is small. The work it would touch is not, and most of it is not high-tech work.</p>
+      <table class="jobs">
+        <thead><tr><th>Sector in Oregon</th><th>Jobs</th><th>Average wage</th><th>Where it meets this</th></tr></thead>
+        <tbody>
+          <tr><td>Health care and social assistance</td><td>301,000</td><td>varies widely</td><td>The fastest-growing sector in the state, projected to add 40,400 jobs by 2034. Care robotics, lab automation and rehabilitation.</td></tr>
+          <tr><td>Construction</td><td>118,200</td><td>not published</td><td>Near a record high statewide, though down 3.8% in Salem this year. Off-site fabrication and assembly.</td></tr>
+          <tr><td>Transportation and warehousing</td><td>71,600</td><td>not published</td><td>Autonomy, materials handling, and the corridor itself.</td></tr>
+          <tr><td>Agriculture, forestry and fishing</td><td>52,924</td><td>$49,046</td><td>Field robotics and plant-level sensing. Farmworkers are about 39% of it, at $37,294.</td></tr>
+          <tr><td>Food manufacturing</td><td>28,207</td><td>$57,459</td><td>Marion County holds 13% of the state total, second only to Multnomah. Processing automation and inspection.</td></tr>
+          <tr class="hi"><td>Semiconductors and electronics</td><td>28,338</td><td>$173,152</td><td>The high-wage core of the stack, and the smallest number in this table.</td></tr>
+          <tr><td>Wood products manufacturing</td><td>22,400</td><td>$68,275 to $79,413</td><td>Engineered wood and sawmills. The material input to industrialized building, already made here.</td></tr>
+          <tr><td>Forestry and logging</td><td>8,787</td><td>$65,530</td><td>The front of the same supply chain, mostly rural.</td></tr>
+        </tbody>
+      </table>
+      <div class="rounds rv"><figure><div class="ph"><picture><source srcset="assets/adaptive/hydroponics.webp" type="image/webp"><img src="assets/adaptive/hydroponics.jpg" alt="An indoor hydroponics commons inside a reused bow-truss warehouse" loading="lazy"></picture></div><figcaption>Controlled-environment growing in a reused bay</figcaption></figure><figure><div class="ph"><picture><source srcset="assets/adaptive/agyard.webp" type="image/webp"><img src="assets/adaptive/agyard.jpg" alt="An ag-tech test yard between reused warehouses with raised beds, sensors and a small autonomous cultivator" loading="lazy"></picture></div><figcaption>Field trials a few minutes from the bench</figcaption></figure></div>
+    <div class="note" style="margin-top:20px">Oregon Employment Department, 2024 and 2025 figures. Oregon manufacturing overall is 178,900 jobs at an average wage of $90,100, though excluding semiconductors that average falls to roughly $73,000, which is about the statewide average of $71,964. Wage columns are left blank where no primary figure was available.</div>
+      <div class="note" style="margin-top:14px"><strong>Salem's own picture, which is the reason to do anything at all.</strong> The metro has 191,200 nonfarm jobs. Government is 47,100 of them, about a quarter, because this is the state capital. Manufacturing is 11,500 and fell 4.2% over the past year. Construction is 12,600 and fell 3.8%. The average weekly wage here is $1,280 against $1,569 nationally. A district that adds work across several of the sectors above, at several wage levels, matters more here than a district that adds only the highest-paid kind.</div>
+    </div>
+
+    <div class="grid g3 gf3 rv" style="margin-top:34px">
+      <div class="card">
+        <h3>Humanoid manufacturing in Salem</h3>
+        <p style="font-size:14px">Agility, an Oregon State spinout known until March 2026 as Agility Robotics, manufactures humanoid robots at RoboFab in Salem, reported as the first purpose-built factory of its kind.</p>
+      </div>
+      <div class="card">
+        <h3>Two federal Tech Hubs</h3>
+        <p style="font-size:14px">Oregon State leads two federally designated Tech Hubs, in semiconductors and in mass timber, among the few universities in the country to hold two. The research engine for an applied district sits 35 miles south.</p>
+      </div>
+      <div class="card">
+        <h3>Mass timber and clean construction</h3>
+        <p style="font-size:14px">Oregon's mass-timber sector, the OSU and University of Oregon TallWood Design Institute, and the Port of Portland's timber manufacturing campus show a region turning industrial waterfronts into clean-construction innovation. The district joins that map.</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>©2026 Now City Inc. All Rights Reserved.</div>
+    <div>Conceptual, for discussion. The district is a Now City initiative in formation. Precedent figures are as reported by the cited organizations and their economic-development bodies. Subject to feasibility, partners, and approvals.</div>
+  </div>
+</footer>
+
+<a href="#top" class="toplink" id="toplink" aria-label="Back to top">↑</a>
+<script>
+const nav=document.getElementById('nav');const sub=document.getElementById('subnav');const tl=document.getElementById('toplink');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);if(sub)sub.classList.toggle('show',scrollY>window.innerHeight*0.5);if(tl)tl.classList.toggle('show',scrollY>window.innerHeight)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+<script>
+(function(){
+})();
+</script>
+</body>
+</html>
