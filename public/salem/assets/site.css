@@ -317,6 +317,6 @@ nav.scrolled .navlinks a.here,nav.solid .navlinks a.here,nav.scrolled .navlinks 
 .exsum .xs{display:grid;grid-template-columns:46px 1fr;gap:0 20px;padding:24px 0;border-top:1px solid var(--line)}
 .exsum .xs:first-child{border-top:0;padding-top:4px}
 .exsum .xn{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--terra-ink);padding-top:4px}
-.exsum .xl{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink-deep);margin:0 0 8px}
+.exsum .xs p.xl{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink-deep);margin:0 0 8px}
 .exsum .xs p{font-size:16px;line-height:1.72;color:#4a463f;margin:0}
 @media(max-width:640px){.exsum .xs{grid-template-columns:1fr;gap:8px;padding:20px 0}}
